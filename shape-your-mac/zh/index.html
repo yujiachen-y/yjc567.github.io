@@ -1,0 +1,417 @@
+<!doctype html>
+<html lang="zh" data-theme="auto">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>打造你的 Mac | Jiachen Yu</title>
+        <meta name="description" content="打造你的 Mac" />
+    <meta property="og:title" content="打造你的 Mac | Jiachen Yu" />
+    <meta property="og:description" content="打造你的 Mac" />
+    <meta property="og:type" content="article" />
+    <meta property="og:url" content="https://www.yujiachen.com/shape-your-mac/zh/" />
+    <meta name="twitter:card" content="summary" />
+    <link rel="canonical" href="https://www.yujiachen.com/shape-your-mac/zh/" />
+    <link rel="alternate" type="text/markdown" href="https://www.yujiachen.com/posts/shape-your-mac/post.md" />
+    <link rel="alternate" hreflang="en" href="https://www.yujiachen.com/shape-your-mac/" />
+<link rel="alternate" hreflang="zh" href="https://www.yujiachen.com/shape-your-mac/zh/" /> <link rel="alternate" type="application/rss+xml" title="RSS" href="https://www.yujiachen.com/rss.xml" />
+<link rel="alternate" type="application/rss+xml" title="RSS (ZH)" href="https://www.yujiachen.com/rss-zh.xml" /> <link rel="icon" href="/favicon-32.png" type="image/png" sizes="32x32" />
+<link rel="icon" href="/favicon.png" type="image/png" />
+<link rel="icon" href="/favicon.ico" type="image/x-icon" />
+<link rel="apple-touch-icon" href="/apple-touch-icon.png" sizes="180x180" /> <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&amp;family=Source+Serif+4:ital,wght@0,400;0,600;0,700;1,400&amp;family=Noto+Serif+SC:wght@400;600;700&amp;display=swap" />
+    <link rel="stylesheet" href="/katex/katex.min.css" />
+    <link rel="stylesheet" href="/styles.css" />
+    <link rel="stylesheet" href="/fonts.css" />
+  </head>
+  <body data-page="post">
+    <div id="root">
+      
+<nav class="navbar">
+  <div class="nav-left">
+    <a href="/zh/" class="brand">Jiachen Yu</a>
+    <div class="nav-links">
+      <a class="nav-link-button" href="/about/zh/" data-nav="about">About</a>
+      <a class="nav-link-button" href="/blog/zh/" data-nav="blog">Blog</a>
+    </div>
+  </div>
+  <div class="controls">
+    <div class="action-controls">
+      <div class="lang-switcher" data-lang-switcher data-lang-switcher-mode="toggle">
+        <button class="lang-toggle" type="button" data-lang-toggle>EN</button>
+      </div>
+      <div class="theme-switcher" data-theme-switcher data-theme-state="light">
+        <button
+          class="theme-trigger"
+          type="button"
+          data-theme-trigger
+          aria-label="Theme mode toggle"
+          aria-pressed="false"
+        >
+          <span class="theme-trigger-icon">
+            <svg class="theme-icon theme-icon-dark" viewBox="0 0 24 24" aria-hidden="true">
+              <path
+                d="M21 12.8A8.5 8.5 0 1 1 11.2 3a7.5 7.5 0 0 0 9.8 9.8Z"
+                fill="currentColor"
+              />
+            </svg>
+            <svg class="theme-icon theme-icon-light" viewBox="0 0 24 24" aria-hidden="true">
+              <circle cx="12" cy="12" r="4" fill="currentColor" />
+              <path
+                d="M12 3v2M12 19v2M4.9 4.9l1.4 1.4M17.7 17.7l1.4 1.4M3 12h2M19 12h2M4.9 19.1l1.4-1.4M17.7 6.3l1.4-1.4"
+                stroke="currentColor"
+                stroke-width="2"
+                stroke-linecap="round"
+                fill="none"
+              />
+            </svg>
+          </span>
+        </button>
+      </div>
+      <a
+        class="ask-ai-entry"
+        href="/ask-ai/"
+        data-ask-ai-entry
+        aria-label="Open Ask AI"
+      >
+        <span class="ask-ai-entry-label">Ask AI</span>
+      </a>
+    </div>
+  </div>
+</nav>
+
+      <main class="page-shell article-page">
+        <div class="article-layout has-toc page-shell-content">
+          
+    <aside class="article-toc sidebar-panel" data-toc>
+      <button class="toc-toggle sidebar-toggle" type="button" data-toc-toggle aria-expanded="false">
+        <span class="toc-toggle-label">目录</span>
+        <span class="toc-toggle-icon" aria-hidden="true">⌄</span>
+      </button>
+      <div class="toc-panel sidebar-panel-content" data-toc-panel>
+        <div class="toc-title sidebar-title">目录</div>
+        <ol class="toc-list sidebar-list">
+      <li class="toc-item sidebar-item toc-level-1"><a class="sidebar-link" href="#前言">📖 前言</a></li>
+      <li class="toc-item sidebar-item toc-level-1"><a class="sidebar-link" href="#基础设置">🔧 基础设置</a></li>
+      <li class="toc-item sidebar-item toc-level-2"><a class="sidebar-link" href="#dotfiles">🗂️ Dotfiles</a></li>
+      <li class="toc-item sidebar-item toc-level-2"><a class="sidebar-link" href="#命令行配置">💻 命令行配置</a></li>
+      <li class="toc-item sidebar-item toc-level-2"><a class="sidebar-link" href="#系统设置">⚙️ 系统设置</a></li>
+      <li class="toc-item sidebar-item toc-level-1"><a class="sidebar-link" href="#应用">📱 应用</a></li>
+      <li class="toc-item sidebar-item toc-level-2"><a class="sidebar-link" href="#raycast">🌟 Raycast</a></li>
+      <li class="toc-item sidebar-item toc-level-2"><a class="sidebar-link" href="#alttab">🌟 AltTab</a></li>
+      <li class="toc-item sidebar-item toc-level-1"><a class="sidebar-link" href="#备份">💾 备份</a></li>
+      <li class="toc-item sidebar-item toc-level-2"><a class="sidebar-link" href="#3-2-1-原则">3-2-1 原则</a></li>
+      <li class="toc-item sidebar-item toc-level-1"><a class="sidebar-link" href="#反思">💭 反思</a></li>
+        </ol>
+      </div>
+    </aside>
+  
+          <div class="article-content">
+            
+
+<div class="article-text-content">
+  <div class="article-date">2024-07-14 · TECH</div>
+  <h1 class="article-hero">打造你的 Mac</h1>
+  <div class="article-body"><p><em>由 Claude 从英文原文翻译。</em></p>
+<h1 id="前言">📖 前言</h1>
+<p>你有没有自己布置过房间？说实话，我没有，因为我一直在租房。不过我确实会整理家里的东西。此刻，我正躺在沙发上写这篇文章。为了让它更生动，我决定放一张我现在环境的照片。</p>
+<p>
+<picture>
+  <source srcset="/assets/posts/shape-your-mac/zh/image_1.webp" type="image/webp" />
+  <img src="/assets/posts/shape-your-mac/zh/image_1.png" alt="" class="article-image" width="1080" height="810" />
+</picture>
+</p>
+<p>我搬到上海还不到两个月，但已经让这里变得很熟悉了。这让我能够生活得开心且有一定&quot;效率&quot;——意思是房间的布置完美契合了我的日常习惯。</p>
+<p>电脑也是一样，尤其是工作电脑。我们并不拥有工作电脑，它们属于公司。但既然我们大部分屏幕时间都花在上面，确保它们让我们感到愉快且高效就很重要。</p>
+<h1 id="基础设置">🔧 基础设置</h1>
+<h2 id="dotfiles">🗂️ Dotfiles</h2>
+<p><a href="https://github.com/yujiachen-y/dotfiles">https://github.com/yujiachen-y/dotfiles</a></p>
+<p>Dotfiles 可以看作是你电脑的元数据。我个人使用 <a href="https://github.com/yujiachen-y/dotfiles/blob/main/macos/Brewfile">Brewfile</a> 来管理 Mac 的依赖。只要一个应用能通过 Homebrew 安装，你就应该把它加到 Brewfile 里。实际上，只有极少数应用无法通过 Homebrew 安装。</p>
+<p>我还把 <a href="https://github.com/yujiachen-y/dotfiles/blob/main/zsh/.zshrc">.zshrc</a> 和 <a href="https://github.com/yujiachen-y/dotfiles/blob/main/.vimrc">.vimrc</a> 文件存在 Dotfiles 里，这样就不需要重复配置 zsh 和 vim。</p>
+<p>此外，把 <a href="https://github.com/yujiachen-y/dotfiles/blob/main/macos/system_settings.sh">Mac 设置</a>存在 dotfiles 里也是常见做法。不过，有些无法通过命令行修改的选项仍然需要去系统设置里手动配置。顺便说一句，每次我配置新 Mac 时，系统偏好设置里总会有 UI 变化和新选项。所以手动设置也帮我发现了苹果做了哪些改动 哈哈。</p>
+<h2 id="命令行配置">💻 命令行配置</h2>
+<p>
+<picture>
+  <source srcset="/assets/posts/shape-your-mac/zh/image_2.webp" type="image/webp" />
+  <img src="/assets/posts/shape-your-mac/zh/image_2.png" alt="" class="article-image" width="1080" height="719" />
+</picture>
+</p>
+<p>我使用 <a href="https://www.warp.dev/">Warp</a> 作为终端模拟器。不过我认为 Terminal.app、iTerm2 和 Warp 之间的差异并不大。对我来说，Warp 有三个主要优势：</p>
+<ol>
+<li>
+<p><strong>建议功能</strong>：我觉得比 <a href="https://github.com/zsh-users/zsh-autosuggestions">zsh-autosuggestions</a> 更好用。</p>
+</li>
+<li>
+<p><strong>AI Copilot</strong>：在我看来，所有 AI copilot 产品都可以被直接问 ChatGPT 替代。（更新：Warp 现在也有 agent 模式了。）</p>
+</li>
+<li>
+<p><strong>内置 Shell 提示符</strong>：虽然不如 <a href="https://github.com/romkatv/powerlevel10k">p10k</a> 灵活或功能丰富，但我正在考虑换回我之前的 <a href="https://github.com/yujiachen-y/dotfiles/blob/main/zsh/.p10k.zsh">.p10k.zsh</a> 配置。</p>
+</li>
+</ol>
+<p>你有没有看过你的 <code>.zshrc</code> 文件有多少行代码？那些行都在干什么？我检查了我的，只有 <a href="https://github.com/yujiachen-y/dotfiles/blob/3a77776963e3fee4a3df70c7e29230d40c1c2419/zsh/.zshrc">15 行</a>。通常，<code>.zshrc</code> 文件里全是 <code>[oh-my-zsh](https://github.com/ohmyzsh/ohmyzsh)</code> 的配置，但我只保留了几个必要的插件，删掉了不需要的。这里介绍几个值得一提的 <code>oh-my-zsh</code> 插件：</p>
+<ul>
+<li>
+<p><strong><a href="https://github.com/ohmyzsh/ohmyzsh/blob/master/plugins/dotenv/README.md">dotenv</a></strong>：自动将 .env 文件加载到环境变量中。</p>
+</li>
+<li>
+<p><strong><a href="https://github.com/ohmyzsh/ohmyzsh/blob/master/plugins/git/README.md">git</a></strong>：我每天都在用 <code>gaa</code>（<code>git add --all</code>）、<code>gsmsg</code>（<code>git commit --message</code>）和 <code>gcn!</code>（<code>git commit --verbose --no-edit --amend</code>）这些命令。</p>
+<ul>
+<li>一个 git 小技巧：请使用 <code>gcn!</code> 来避免 PR 中不必要的 commit 信息。</li>
+</ul>
+</li>
+<li>
+<p><strong><a href="https://github.com/ohmyzsh/ohmyzsh/blob/master/plugins/z/README.md">z</a></strong>：用极少的按键访问你最常去的目录。</p>
+</li>
+</ul>
+<p>如前所述，我使用 Warp 的内置 shell 提示符，它长这样：</p>
+<p>
+<picture>
+  <source srcset="/assets/posts/shape-your-mac/zh/image_3.webp" type="image/webp" />
+  <img src="/assets/posts/shape-your-mac/zh/image_3.png" alt="" class="article-image" width="1080" height="719" />
+</picture>
+</p>
+<p>不过，它不太灵活，也无法在其他终端模拟器中使用。如果你用 Warp 的 shell 提示符，在 VSCode 或其他文本编辑器和 IDE 中可能会遇到问题。<a href="https://github.com/warpdotdev/Warp/issues/257#issuecomment-1274198741">把 Warp 嵌入 VSCode 尤其困难</a>。</p>
+<p>
+<picture>
+  <source srcset="/assets/posts/shape-your-mac/zh/image_4.webp" type="image/webp" />
+  <img src="/assets/posts/shape-your-mac/zh/image_4.png" alt="" class="article-image" width="1080" height="719" />
+</picture>
+</p>
+<p>我推荐使用 <a href="https://github.com/romkatv/powerlevel10k">p10k</a> 作为你的 shell 提示符。它非常灵活，且不绑定特定终端模拟器，可以跨不同终端使用。</p>
+<p>
+<picture>
+  <source srcset="/assets/posts/shape-your-mac/zh/image_5.webp" type="image/webp" />
+  <img src="/assets/posts/shape-your-mac/zh/image_5.png" alt="" class="article-image" width="765" height="516" />
+</picture>
+</p>
+<p>这里我想提两个我最喜欢的 macOS 命令：<a href="https://ss64.com/mac/pbpaste.html">pbpaste</a> 和 <a href="https://ss64.com/mac/pbcopy.html">pbcopy</a>。它们的 Manual Page 上已经有一些实用的示例了。</p>
+<h2 id="系统设置">⚙️ 系统设置</h2>
+<blockquote>
+<p>如前所述，以下部分设置可以整合到你的 dotfiles 中。</p>
+</blockquote>
+<p>这些设置将提升你的生产力：</p>
+<ul>
+<li><strong>防止自动休眠</strong></li>
+</ul>
+<p>
+<picture>
+  <source srcset="/assets/posts/shape-your-mac/zh/image_6.webp" type="image/webp" />
+  <img src="/assets/posts/shape-your-mac/zh/image_6.png" alt="" class="article-image" width="1080" height="767" />
+</picture>
+</p>
+<ul>
+<li><strong>三指拖拽</strong></li>
+</ul>
+<p>
+<picture>
+  <source srcset="/assets/posts/shape-your-mac/zh/image_7.webp" type="image/webp" />
+  <img src="/assets/posts/shape-your-mac/zh/image_7.png" alt="" class="article-image" width="1080" height="767" />
+</picture>
+</p>
+<p><a href="https://youtu.be/-Fy6imaiHWE" title="Share link">How to select or drag using three fingers on your MacBook track pad</a></p>
+<ul>
+<li><strong>减少键盘延迟时间</strong>：将键盘延迟设置为最短。作为程序员，我们可不能浪费时间等键盘延迟。</li>
+</ul>
+<p>
+<picture>
+  <source srcset="/assets/posts/shape-your-mac/zh/image_8.webp" type="image/webp" />
+  <img src="/assets/posts/shape-your-mac/zh/image_8.png" alt="" class="article-image" width="1080" height="767" />
+</picture>
+</p>
+<ul>
+<li><strong>关闭双空格句号</strong>：这个功能很烦人，最好关掉。</li>
+</ul>
+<p>
+<picture>
+  <source srcset="/assets/posts/shape-your-mac/zh/image_9.webp" type="image/webp" />
+  <img src="/assets/posts/shape-your-mac/zh/image_9.png" alt="" class="article-image" width="1080" height="767" />
+</picture>
+</p>
+<ul>
+<li><strong>交换 Caps Lock 和 Command 键</strong>：你最常用的键应该更容易触达。把 Caps Lock 键和 Command 键互换。</li>
+</ul>
+<p>
+<picture>
+  <source srcset="/assets/posts/shape-your-mac/zh/image_10.webp" type="image/webp" />
+  <img src="/assets/posts/shape-your-mac/zh/image_10.png" alt="" class="article-image" width="1080" height="796" />
+</picture>
+</p>
+<ul>
+<li><strong>关闭长按弹出</strong>：这个设置只能通过命令行关闭。如果你使用 <a href="https://opusclip.larksuite.com/wiki/Uu5NwIeBFilqHRk2dhSu5MNYsUg#LlCwdefVKo7DO3xvxUquBptVs9f">Vim</a>，可能不需要关闭这个设置，因为在 Vim 中长按按键本身就不是好的操作习惯。</li>
+</ul>
+<p>
+<picture>
+  <source srcset="/assets/posts/shape-your-mac/zh/image_11.webp" type="image/webp" />
+  <img src="/assets/posts/shape-your-mac/zh/image_11.png" alt="" class="article-image" width="464" height="170" />
+</picture>
+</p>
+<pre class="hljs"><code>defaults write -g ApplePressAndHoldEnabled -bool <span class="hljs-literal">false</span>
+</code></pre>
+<h1 id="应用">📱 应用</h1>
+<blockquote>
+<p>如前所述，这里列出的所有应用都应该通过 Brewfile 来管理。</p>
+</blockquote>
+<h2 id="raycast">🌟 Raycast</h2>
+<p>
+<picture>
+  <source srcset="/assets/posts/shape-your-mac/zh/image_12.webp" type="image/webp" />
+  <img src="/assets/posts/shape-your-mac/zh/image_12.png" alt="" class="article-image" width="1080" height="701" />
+</picture>
+</p>
+<p><a href="https://www.raycast.com/store">Raycast 是 Mac 快捷操作的百宝箱。</a> 以下是我常用的一些快捷功能：</p>
+<table>
+<thead>
+<tr>
+<th>Clipboard History</th>
+<th>Search Emoji</th>
+<th>Window Management</th>
+<th>Music Control</th>
+<th>Kill Process</th>
+<th>Search Browser Tabs</th>
+<th>Reminder</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>
+<picture>
+  <source srcset="/assets/posts/shape-your-mac/zh/image_13.webp" type="image/webp" />
+  <img src="/assets/posts/shape-your-mac/zh/image_13.png" alt="" class="article-image" width="1080" height="661" />
+</picture>
+</td>
+<td>
+<picture>
+  <source srcset="/assets/posts/shape-your-mac/zh/image_14.webp" type="image/webp" />
+  <img src="/assets/posts/shape-your-mac/zh/image_14.png" alt="" class="article-image" width="1080" height="661" />
+</picture>
+</td>
+<td>
+<picture>
+  <source srcset="/assets/posts/shape-your-mac/zh/image_15.webp" type="image/webp" />
+  <img src="/assets/posts/shape-your-mac/zh/image_15.png" alt="" class="article-image" width="1080" height="661" />
+</picture>
+</td>
+<td>
+<picture>
+  <source srcset="/assets/posts/shape-your-mac/zh/image_16.webp" type="image/webp" />
+  <img src="/assets/posts/shape-your-mac/zh/image_16.png" alt="" class="article-image" width="1080" height="661" />
+</picture>
+</td>
+<td>
+<picture>
+  <source srcset="/assets/posts/shape-your-mac/zh/image_17.webp" type="image/webp" />
+  <img src="/assets/posts/shape-your-mac/zh/image_17.png" alt="" class="article-image" width="1080" height="661" />
+</picture>
+</td>
+<td>
+<picture>
+  <source srcset="/assets/posts/shape-your-mac/zh/image_18.webp" type="image/webp" />
+  <img src="/assets/posts/shape-your-mac/zh/image_18.png" alt="" class="article-image" width="1080" height="661" />
+</picture>
+</td>
+<td>
+<picture>
+  <source srcset="/assets/posts/shape-your-mac/zh/image_19.webp" type="image/webp" />
+  <img src="/assets/posts/shape-your-mac/zh/image_19.png" alt="" class="article-image" width="1080" height="661" />
+</picture>
+</td>
+</tr>
+</tbody>
+</table>
+<p>配合自定义快捷键，Raycast 会非常好用。</p>
+<p>
+<picture>
+  <source srcset="/assets/posts/shape-your-mac/zh/image_20.webp" type="image/webp" />
+  <img src="/assets/posts/shape-your-mac/zh/image_20.png" alt="" class="article-image" width="1080" height="702" />
+</picture>
+</p>
+<h2 id="alttab">🌟 AltTab</h2>
+<p>在 Mac 上，你可以用 Command + Tab 切换应用。但内置的应用切换器不支持在同一应用的不同窗口之间切换，如果你需要频繁在一个应用的多个窗口间来回切换，就会很不方便。</p>
+<p>
+<picture>
+  <source srcset="/assets/posts/shape-your-mac/zh/image_21.webp" type="image/webp" />
+  <img src="/assets/posts/shape-your-mac/zh/image_21.png" alt="" class="article-image" width="1080" height="701" />
+</picture>
+</p>
+<p><a href="https://alt-tab-macos.netlify.app/">AltTab</a> 解决了这个问题，它允许你在不同 Mac 桌面的窗口之间切换。这样你就不需要用鼠标来切换窗口和桌面了。</p>
+<p>
+<picture>
+  <source srcset="/assets/posts/shape-your-mac/zh/image_22.webp" type="image/webp" />
+  <img src="/assets/posts/shape-your-mac/zh/image_22.png" alt="" class="article-image" width="1080" height="701" />
+</picture>
+</p>
+<h1 id="备份">💾 备份</h1>
+<blockquote>
+<p>世界上有两种人：</p>
+<ul>
+<li>
+<p>做备份的人</p>
+</li>
+<li>
+<p>将来会做备份的人</p>
+</li>
+</ul>
+<p>你拥有但没有备份的数据，随时可能永远消失。下面我们将介绍一些良好的备份基础知识以及某些方法的陷阱。</p>
+<h2 id="3-2-1-原则"><strong>3-2-1 原则</strong></h2>
+<p><a href="https://www.us-cert.gov/sites/default/files/publications/data_backup_options.pdf">3-2-1 原则</a>是备份数据的通用推荐策略。它要求你：</p>
+<ul>
+<li>
+<p>至少有 <strong>3 份</strong>数据副本</p>
+</li>
+<li>
+<p><strong>2</strong> 份副本存储在<strong>不同的介质</strong>上</p>
+</li>
+<li>
+<p><strong>1</strong> 份副本存放在<strong>异地</strong></p>
+</li>
+</ul>
+<p>这个建议背后的核心思想是不要把所有鸡蛋放在一个篮子里。拥有 2 个不同的设备/磁盘可以确保单个硬件故障不会夺走你所有的数据。同样，如果你唯一的备份存放在家里，而房子着火了或被盗了，你就会失去一切——这就是异地备份的意义。本地备份提供可用性和速度，异地备份提供灾难恢复能力。</p>
+<p>来源：<a href="https://missing.csail.mit.edu/2019/backups/">Backups</a></p>
+</blockquote>
+<h1 id="反思">💭 反思</h1>
+<ul>
+<li>
+<p>定期审视你的工作流程，尝试提升效率。</p>
+</li>
+<li>
+<p><a href="https://www.catb.org/~esr/writings/taoup/html/ch01s06.html#id2878263">将知识折叠进数据，这样程序逻辑就可以简单而健壮。</a></p>
+</li>
+<li>
+<p><a href="https://www.catb.org/~esr/writings/taoup/html/ch01s06.html#id2878666">程序员的时间很宝贵；优先节省人的时间而非机器时间。</a></p>
+</li>
+<li>
+<p><a href="https://mcluhangalaxy.wordpress.com/2013/04/01/we-shape-our-tools-and-thereafter-our-tools-shape-us/">我们塑造了工具，然后工具塑造了我们。</a></p>
+</li>
+</ul>
+</div>
+</div>
+
+            <section class="comment-section" data-comment-section></section>
+          </div>
+        </div>
+      </main>
+    </div>
+
+    <script id="page-data" type="application/json">
+      {
+  "pageType": "post",
+  "lang": "zh",
+  "langSwitchUrl": "/shape-your-mac/",
+  "langSwitcherMode": "toggle",
+  "markdownUrl": "/posts/shape-your-mac/post.md",
+  "labels": {
+    "navAbout": "About",
+    "navBlog": "Blog",
+    "filterAll": "All"
+  },
+  "comments": {
+    "appId": "e224d3ce-6f5a-4777-bb80-b7bbf2e78d83",
+    "pageId": "shape-your-mac",
+    "pageUrl": "https://www.yujiachen.com/shape-your-mac/zh/",
+    "pageTitle": "打造你的 Mac"
+  }
+}
+    </script>
+    <script type="module" src="/app.js"></script>
+  </body>
+</html>

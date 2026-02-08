@@ -1,0 +1,324 @@
+<!doctype html>
+<html lang="zh" data-theme="auto">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>写给 PM 的 LLM 工程知识点 | Jiachen Yu</title>
+        <meta name="description" content="写给 PM 的 LLM 工程知识点" />
+    <meta property="og:title" content="写给 PM 的 LLM 工程知识点 | Jiachen Yu" />
+    <meta property="og:description" content="写给 PM 的 LLM 工程知识点" />
+    <meta property="og:type" content="article" />
+    <meta property="og:url" content="https://www.yujiachen.com/bridging-the-gap-how-engineers-and-pms-ship-winning-llm-features-together/zh/" />
+    <meta name="twitter:card" content="summary" />
+    <link rel="canonical" href="https://www.yujiachen.com/bridging-the-gap-how-engineers-and-pms-ship-winning-llm-features-together/zh/" />
+    <link rel="alternate" type="text/markdown" href="https://www.yujiachen.com/posts/bridging-the-gap-how-engineers-and-pms-ship-winning-llm-features-together/post.md" />
+    <link rel="alternate" hreflang="en" href="https://www.yujiachen.com/bridging-the-gap-how-engineers-and-pms-ship-winning-llm-features-together/" />
+<link rel="alternate" hreflang="zh" href="https://www.yujiachen.com/bridging-the-gap-how-engineers-and-pms-ship-winning-llm-features-together/zh/" /> <link rel="alternate" type="application/rss+xml" title="RSS" href="https://www.yujiachen.com/rss.xml" />
+<link rel="alternate" type="application/rss+xml" title="RSS (ZH)" href="https://www.yujiachen.com/rss-zh.xml" /> <link rel="icon" href="/favicon-32.png" type="image/png" sizes="32x32" />
+<link rel="icon" href="/favicon.png" type="image/png" />
+<link rel="icon" href="/favicon.ico" type="image/x-icon" />
+<link rel="apple-touch-icon" href="/apple-touch-icon.png" sizes="180x180" /> <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&amp;family=Source+Serif+4:ital,wght@0,400;0,600;0,700;1,400&amp;family=Noto+Serif+SC:wght@400;600;700&amp;display=swap" />
+    <link rel="stylesheet" href="/katex/katex.min.css" />
+    <link rel="stylesheet" href="/styles.css" />
+    <link rel="stylesheet" href="/fonts.css" />
+  </head>
+  <body data-page="post">
+    <div id="root">
+      
+<nav class="navbar">
+  <div class="nav-left">
+    <a href="/zh/" class="brand">Jiachen Yu</a>
+    <div class="nav-links">
+      <a class="nav-link-button" href="/about/zh/" data-nav="about">About</a>
+      <a class="nav-link-button" href="/blog/zh/" data-nav="blog">Blog</a>
+    </div>
+  </div>
+  <div class="controls">
+    <div class="action-controls">
+      <div class="lang-switcher" data-lang-switcher data-lang-switcher-mode="toggle">
+        <button class="lang-toggle" type="button" data-lang-toggle>EN</button>
+      </div>
+      <div class="theme-switcher" data-theme-switcher data-theme-state="light">
+        <button
+          class="theme-trigger"
+          type="button"
+          data-theme-trigger
+          aria-label="Theme mode toggle"
+          aria-pressed="false"
+        >
+          <span class="theme-trigger-icon">
+            <svg class="theme-icon theme-icon-dark" viewBox="0 0 24 24" aria-hidden="true">
+              <path
+                d="M21 12.8A8.5 8.5 0 1 1 11.2 3a7.5 7.5 0 0 0 9.8 9.8Z"
+                fill="currentColor"
+              />
+            </svg>
+            <svg class="theme-icon theme-icon-light" viewBox="0 0 24 24" aria-hidden="true">
+              <circle cx="12" cy="12" r="4" fill="currentColor" />
+              <path
+                d="M12 3v2M12 19v2M4.9 4.9l1.4 1.4M17.7 17.7l1.4 1.4M3 12h2M19 12h2M4.9 19.1l1.4-1.4M17.7 6.3l1.4-1.4"
+                stroke="currentColor"
+                stroke-width="2"
+                stroke-linecap="round"
+                fill="none"
+              />
+            </svg>
+          </span>
+        </button>
+      </div>
+      <a
+        class="ask-ai-entry"
+        href="/ask-ai/"
+        data-ask-ai-entry
+        aria-label="Open Ask AI"
+      >
+        <span class="ask-ai-entry-label">Ask AI</span>
+      </a>
+    </div>
+  </div>
+</nav>
+
+      <main class="page-shell article-page">
+        <div class="article-layout has-toc page-shell-content">
+          
+    <aside class="article-toc sidebar-panel" data-toc>
+      <button class="toc-toggle sidebar-toggle" type="button" data-toc-toggle aria-expanded="false">
+        <span class="toc-toggle-label">目录</span>
+        <span class="toc-toggle-icon" aria-hidden="true">⌄</span>
+      </button>
+      <div class="toc-panel sidebar-panel-content" data-toc-panel>
+        <div class="toc-title sidebar-title">目录</div>
+        <ol class="toc-list sidebar-list">
+      <li class="toc-item sidebar-item toc-level-1"><a class="sidebar-link" href="#写给-pm-的-llm-工程知识点">写给 PM 的 LLM 工程知识点</a></li>
+      <li class="toc-item sidebar-item toc-level-3"><a class="sidebar-link" href="#1-pm-到-prompt-的距离-pm-to-prompt-distance">1) PM 到 Prompt 的距离（PM-to-Prompt Distance）</a></li>
+      <li class="toc-item sidebar-item toc-level-3"><a class="sidebar-link" href="#2-kv-cache-把静态内容放前面">2) KV cache：把静态内容放前面</a></li>
+      <li class="toc-item sidebar-item toc-level-3"><a class="sidebar-link" href="#3-structured-output-schema-管格式-prompt-管语义">3) Structured Output：Schema 管格式，Prompt 管语义</a></li>
+      <li class="toc-item sidebar-item toc-level-3"><a class="sidebar-link" href="#把三件事串起来">把三件事串起来</a></li>
+      <li class="toc-item sidebar-item toc-level-3"><a class="sidebar-link" href="#下一步">下一步</a></li>
+        </ol>
+      </div>
+    </aside>
+  
+          <div class="article-content">
+            
+
+<div class="article-text-content">
+  <div class="article-date">2025-09-15 · TECH</div>
+  <h1 class="article-hero">写给 PM 的 LLM 工程知识点</h1>
+  <div class="article-body"><p><em>由 Claude 从英文原文翻译。</em></p>
+<blockquote>
+<p>这篇文章最初由我发布于 Medium 的 <strong>OpusClip Engineering</strong>。<br>
+原文：<a href="https://medium.com/opus-engineering/bridging-the-gap-how-engineers-and-pms-ship-winning-llm-features-together-147a36ab4089">Bridging the Gap: How Engineers and PMs Ship Winning LLM Features Together</a></p>
+</blockquote>
+<h1 id="写给-pm-的-llm-工程知识点">写给 PM 的 LLM 工程知识点</h1>
+<p><strong>TL;DR：</strong></p>
+<ul>
+<li><strong>Prompt 放在配置里，不要写死在代码里。</strong></li>
+<li><strong>动态变量尽量后置，最大化 KV cache 命中。</strong></li>
+<li><strong>Schema 管格式，Prompt 管语义。</strong></li>
+</ul>
+<p>我们在 OpusClip 落地这三件事后，prompt 迭代从按天变成按分钟，API 成本明显下降，线上稳定性也更好。下面按实践展开。</p>
+<h3 id="1-pm-到-prompt-的距离-pm-to-prompt-distance">1) PM 到 Prompt 的距离（PM-to-Prompt Distance）</h3>
+<p><strong>定义：</strong> 从产品诉求到模型最终收到的 prompt，中间经历了多少层转译。</p>
+<p>
+<picture>
+  <source srcset="/assets/posts/bridging-the-gap-how-engineers-and-pms-ship-winning-llm-features-together/zh/image_1.webp" type="image/webp" />
+  <img src="/assets/posts/bridging-the-gap-how-engineers-and-pms-ship-winning-llm-features-together/zh/image_1.png" alt="" class="article-image" width="1024" height="1572" />
+</picture>
+</p>
+<p><a href="https://www.linkedin.com/posts/manus-im_product-to-prompt-distance-is-fast-becoming-activity-7349444736048320512-zjjS?utm_source=share&amp;utm_medium=member_desktop&amp;rcm=ACoAACdAQCkBye_l2SHKxHq1FoCJdVQJdLz5Boc">Tao Zhang first defines this metric in Manus.</a></p>
+<p>一个常见链路是：</p>
+<ol>
+<li><strong>PM 写诉求</strong>：助手要“专业，但别生硬”。</li>
+<li><strong>PRD 转译</strong>：正式语气里允许少量口语化表达。</li>
+<li><strong>工程实现</strong>：写成系统 prompt。</li>
+<li><strong>运行时再拼接</strong>：用户信息、历史上下文等动态内容。</li>
+</ol>
+<p>链路越长，问题越容易出现：</p>
+<ul>
+<li><strong>迭代慢</strong>：改一行文案，要跨多个环节。</li>
+<li><strong>意图丢失</strong>：每一次转译都可能偏离原始需求。</li>
+<li><strong>排查难</strong>：线上看到的最终 prompt 和代码里的模板往往不是一回事。</li>
+</ul>
+<p><strong>落地建议：</strong></p>
+<ul>
+<li>Prompt 放到动态配置（或 prompt 管理平台）。</li>
+<li>做版本化管理，支持灰度和 A/B。</li>
+<li>线上日志保留“最终拼装后的 prompt”用于回溯。</li>
+</ul>
+<h3 id="2-kv-cache-把静态内容放前面">2) KV cache：把静态内容放前面</h3>
+<p><strong>KV cache 是什么？</strong>
+简单说，就是把已经算过的上下文结果缓存起来，后续请求可以复用，不用每次都从头计算。</p>
+<p>对产品和业务最直接的影响有两点：</p>
+<ul>
+<li><strong>延迟更低</strong>：响应更快。</li>
+<li><strong>成本更低</strong>：重复计算更少，token 费用更低。</li>
+</ul>
+<p>
+<picture>
+  <source srcset="/assets/posts/bridging-the-gap-how-engineers-and-pms-ship-winning-llm-features-together/zh/image_2.webp" type="image/webp" />
+  <img src="/assets/posts/bridging-the-gap-how-engineers-and-pms-ship-winning-llm-features-together/zh/image_2.png" alt="" class="article-image" width="1024" height="276" />
+</picture>
+</p>
+<blockquote>
+<p>在主流模型计费里，cached token 通常明显便宜于新 token。以 GPT-5 为例，输入 token 与 cached token 的单价存在约 10x 差异。</p>
+</blockquote>
+<p><strong>实操规则只有一条：</strong> 静态指令前置，动态变量后置。</p>
+<p>❌ <strong>不推荐结构</strong>（缓存命中低）：</p>
+<pre class="hljs"><code>User: {{user_name}}
+Question: {{user_question}}
+Conversation history: {{chat_history}}
+
+You are a customer support agent for TechCorp.
+Guidelines:
+- Be empathetic and professional
+- Check our knowledge base before answering
+- Escalate billing issues to human agents
+- Always verify account details first
+</code></pre>
+<p>✅ <strong>推荐结构</strong>（缓存命中高）：</p>
+<pre class="hljs"><code>You are a customer support agent for TechCorp.
+Guidelines:
+- Be empathetic and professional
+- Check our knowledge base before answering
+- Escalate billing issues to human agents
+- Always verify account details first
+
+User: {{user_name}}
+Question: {{user_question}}
+Conversation history: {{chat_history}}
+</code></pre>
+<p>在高频场景里，这个调整通常是“低风险、高收益”。例如每天 10,000 次客服对话，光这个改动就可能带来可见的日成本下降。</p>
+<h3 id="3-structured-output-schema-管格式-prompt-管语义">3) Structured Output：Schema 管格式，Prompt 管语义</h3>
+<p><strong>定义：</strong> 不是让模型返回自由文本，而是让它按 schema 返回结构化 JSON。</p>
+<p>关键点：</p>
+<ul>
+<li>Structured output 是 <strong>API 能力</strong>，不是 prompt 小技巧。</li>
+<li>schema 在代码里定义，运行时负责校验。</li>
+<li>prompt 不再描述“长什么样”，只描述“每个字段该填什么”。</li>
+</ul>
+<p>下面是一个示例：</p>
+<pre class="hljs"><code>import OpenAI from &quot;openai&quot;
+import { z } from &quot;zod&quot;
+import { zodTextFormat } from &quot;openai/helpers/zod&quot;
+
+// 1) Schema 留在代码中（Zod）
+const RelevancyItem = z.object({
+  clipId: z.string(),
+  relevant: z.boolean(),
+  relevantReason: z.string(),
+  advertisement: z.boolean(),
+})
+const RelevancyArray = z.array(RelevancyItem)
+type Relevancy = z.infer&lt;typeof RelevancyArray&gt;
+
+// 2) 构建纯语义 prompt（不写输出格式）
+const prompt = promptTemplate.join(&quot;\n&quot;).replace(INPUT_REPLACE, input)
+
+const openai = new OpenAI({ apiKey: process.env.OPENAI_API_KEY })
+
+// 3) Responses API 自动按 schema 解析和验证
+const response = await openai.responses.parse({
+  model: &quot;gpt-4o-mini&quot;,
+  input: [
+    { role: &quot;system&quot;, content: &quot;Judge search-trend relevancy using the definitions provided.&quot; },
+    { role: &quot;user&quot;, content: prompt },
+  ],
+  text: {
+    format: zodTextFormat(RelevancyArray, &quot;relevancy_results&quot;),
+  },
+})
+
+// 4) 结果已完成解析和校验
+const results: Relevancy = response.output_parsed
+
+// 5) 后置过滤
+const relatedResults = results.filter(
+  (r) =&gt; r.relevant &amp;&amp; r.evergreen &amp;&amp; !r.advertisement
+)
+</code></pre>
+<p><strong>常见错误：</strong> 代码里已经有 schema，prompt 里又写一遍输出格式要求。</p>
+<p>这样会带来三个后果：</p>
+<ul>
+<li>校验失败和重试增多，延迟和成本上升。</li>
+<li>模型在“内容”和“格式指令”之间来回拉扯，质量下降。</li>
+<li>下游 typed 解析更容易崩。</li>
+</ul>
+<p>一句话：<strong>Schema 决定长相，Prompt 决定内容。</strong></p>
+<p>❌ <strong>不推荐这样写 prompt：</strong></p>
+<pre class="hljs"><code>Analyze these search results and return a JSON object with:
+- videoId: the video identifier
+- isRelevant: boolean indicating if it matches
+- relevanceReason: explanation string
+- isPaid: boolean for sponsored content
+Format as valid JSON with these exact field names.
+</code></pre>
+<p>✅ <strong>推荐这样写 prompt：</strong></p>
+<pre class="hljs"><code>Analyze these search results for relevance to the user's query.
+
+For relevance assessment:
+- Consider semantic match, not just keyword overlap
+- Educational content is preferred over entertainment
+- Recent content (last 6 months) is more relevant
+
+For paid content detection:
+- Look for &quot;Sponsored&quot;, &quot;Ad&quot;, or &quot;#ad&quot; markers
+- Check if the channel name includes &quot;Official&quot; or &quot;Brand&quot;
+
+Provide clear reasoning for why content is or isn't relevant.
+</code></pre>
+<p>另外一个非常实际的坑：工程 schema 用 <code>videoId</code>，需求文案写成 <code>video_id</code> 或 <code>clip_id</code>，不对齐就会直接影响稳定性。</p>
+<h3 id="把三件事串起来">把三件事串起来</h3>
+<p>
+<picture>
+  <source srcset="/assets/posts/bridging-the-gap-how-engineers-and-pms-ship-winning-llm-features-together/zh/image_3.webp" type="image/webp" />
+  <img src="/assets/posts/bridging-the-gap-how-engineers-and-pms-ship-winning-llm-features-together/zh/image_3.png" alt="" class="article-image" width="1024" height="512" />
+</picture>
+</p>
+<ol>
+<li><strong>缩短 PM 到 Prompt 的距离</strong>：让迭代更快。</li>
+<li><strong>优化 KV cache 命中</strong>：让每次迭代更便宜。</li>
+<li><strong>用好结构化输出</strong>：让结果稳定可解析。</li>
+</ol>
+<h3 id="下一步">下一步</h3>
+<p>阅读完这篇文章的你可以做什么？</p>
+<ol>
+<li>盘点现状：prompt 在哪、变量是否后置、是否混写了格式指令。</li>
+<li>先改一个最高收益点：通常从 prompt 外置或变量后置开始。</li>
+<li>建立指标：追踪迭代周期、单次请求成本、解析失败率。</li>
+</ol>
+<p>如果你有任何的疑问，欢迎评论。</p>
+</div>
+</div>
+
+            <section class="comment-section" data-comment-section></section>
+          </div>
+        </div>
+      </main>
+    </div>
+
+    <script id="page-data" type="application/json">
+      {
+  "pageType": "post",
+  "lang": "zh",
+  "langSwitchUrl": "/bridging-the-gap-how-engineers-and-pms-ship-winning-llm-features-together/",
+  "langSwitcherMode": "toggle",
+  "markdownUrl": "/posts/bridging-the-gap-how-engineers-and-pms-ship-winning-llm-features-together/post.md",
+  "labels": {
+    "navAbout": "About",
+    "navBlog": "Blog",
+    "filterAll": "All"
+  },
+  "comments": {
+    "appId": "e224d3ce-6f5a-4777-bb80-b7bbf2e78d83",
+    "pageId": "bridging-the-gap-how-engineers-and-pms-ship-winning-llm-features-together",
+    "pageUrl": "https://www.yujiachen.com/bridging-the-gap-how-engineers-and-pms-ship-winning-llm-features-together/zh/",
+    "pageTitle": "写给 PM 的 LLM 工程知识点"
+  }
+}
+    </script>
+    <script type="module" src="/app.js"></script>
+  </body>
+</html>

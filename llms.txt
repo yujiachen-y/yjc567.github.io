@@ -1,0 +1,44 @@
+# Jiachen Yu
+
+This file lists canonical markdown URLs for original-language pages.
+Home: https://www.yujiachen.com/
+Blog: https://www.yujiachen.com/blog/
+Sitemap: https://www.yujiachen.com/sitemap.xml
+RSS: https://www.yujiachen.com/rss.xml
+Filter index: https://www.yujiachen.com/posts/filter-index.json
+
+Filter tabs:
+- en: All, Essays, Tech (page: https://www.yujiachen.com/blog/)
+- zh: All, Essays, Tech, Yearbook (page: https://www.yujiachen.com/blog/zh/)
+
+Pages:
+- About [en] (about) | html: https://www.yujiachen.com/ | markdown: https://www.yujiachen.com/posts/about/post.md
+- How Engineers and PMs Ship LLM Features Together [en] (bridging-the-gap-how-engineers-and-pms-ship-winning-llm-features-together) | html: https://www.yujiachen.com/bridging-the-gap-how-engineers-and-pms-ship-winning-llm-features-together/ | markdown: https://www.yujiachen.com/posts/bridging-the-gap-how-engineers-and-pms-ship-winning-llm-features-together/post.md
+- How to 1-on-1 [en] (how-to-1-on-1) | html: https://www.yujiachen.com/how-to-1-on-1/ | markdown: https://www.yujiachen.com/posts/how-to-1-on-1/post.md
+- 简单 vs 容易 [zh] (simple-vs-easy) | html: https://www.yujiachen.com/simple-vs-easy/zh/ | markdown: https://www.yujiachen.com/posts/simple-vs-easy/post.md
+- Learnings from ByteDance [zh] (learnings-from-bytedance) | html: https://www.yujiachen.com/learnings-from-bytedance/zh/ | markdown: https://www.yujiachen.com/posts/learnings-from-bytedance/post.md
+- 新事情 vs 旧事情 [zh] (new-things-vs-old-things) | html: https://www.yujiachen.com/new-things-vs-old-things/zh/ | markdown: https://www.yujiachen.com/posts/new-things-vs-old-things/post.md
+- 2024 年小结 [zh] (2024-year-in-review) | html: https://www.yujiachen.com/2024-year-in-review/ | markdown: https://www.yujiachen.com/posts/2024-year-in-review/post.md
+- Shape Your Mac [en] (shape-your-mac) | html: https://www.yujiachen.com/shape-your-mac/ | markdown: https://www.yujiachen.com/posts/shape-your-mac/post.md
+- 权限模型的迷思 [zh] (the-permission-model-myth) | html: https://www.yujiachen.com/the-permission-model-myth/zh/ | markdown: https://www.yujiachen.com/posts/the-permission-model-myth/post.md
+- 最大化 LLM 性能的技术概览 [zh] (maximizing-llm-performance) | html: https://www.yujiachen.com/maximizing-llm-performance/ | markdown: https://www.yujiachen.com/posts/maximizing-llm-performance/post.md
+- 2023 - pivot [zh] (2023-pivot) | html: https://www.yujiachen.com/2023-pivot/ | markdown: https://www.yujiachen.com/posts/2023-pivot/post.md
+- 【译】如何做出伟大工作 [zh] (how-to-do-great-work) | html: https://www.yujiachen.com/how-to-do-great-work/ | markdown: https://www.yujiachen.com/posts/how-to-do-great-work/post.md
+- Golang 泛型 [zh] (golang-generics) | html: https://www.yujiachen.com/golang-generics/zh/ | markdown: https://www.yujiachen.com/posts/golang-generics/post.md
+- re:2022 [zh] (re-2022) | html: https://www.yujiachen.com/re-2022/ | markdown: https://www.yujiachen.com/posts/re-2022/post.md
+- 哈佛商业评论摘抄 [zh] (harvard-business-review-excerpts) | html: https://www.yujiachen.com/harvard-business-review-excerpts/ | markdown: https://www.yujiachen.com/posts/harvard-business-review-excerpts/post.md
+- Software Design Book 小记 [zh] (software-design-book-notes) | html: https://www.yujiachen.com/software-design-book-notes/zh/ | markdown: https://www.yujiachen.com/posts/software-design-book-notes/post.md
+- 如何阅读一本书 [zh] (how-to-read-a-book) | html: https://www.yujiachen.com/how-to-read-a-book/ | markdown: https://www.yujiachen.com/posts/how-to-read-a-book/post.md
+- 个人数据备份实践 [zh] (personal-data-backup-practices) | html: https://www.yujiachen.com/personal-data-backup-practices/ | markdown: https://www.yujiachen.com/posts/personal-data-backup-practices/post.md
+- 编程以外的编程知识 [zh] (the-missing-semester-of-your-cs-education) | html: https://www.yujiachen.com/the-missing-semester-of-your-cs-education/ | markdown: https://www.yujiachen.com/posts/the-missing-semester-of-your-cs-education/post.md
+- 不要成为一个程序员 [zh] (dont-be-a-programmer) | html: https://www.yujiachen.com/dont-be-a-programmer/zh/ | markdown: https://www.yujiachen.com/posts/dont-be-a-programmer/post.md
+- 2021 年小结 [zh] (2021-year-in-review) | html: https://www.yujiachen.com/2021-year-in-review/ | markdown: https://www.yujiachen.com/posts/2021-year-in-review/post.md
+- 置身事内 [zh] (in-the-system) | html: https://www.yujiachen.com/in-the-system/ | markdown: https://www.yujiachen.com/posts/in-the-system/post.md
+- 关键迭代：可信赖的线上对照实验 [zh] (key-iterations-trustworthy-online-controlled-experiments) | html: https://www.yujiachen.com/key-iterations-trustworthy-online-controlled-experiments/zh/ | markdown: https://www.yujiachen.com/posts/key-iterations-trustworthy-online-controlled-experiments/post.md
+- 大教堂与集市 [zh] (the-cathedral-and-the-bazaar) | html: https://www.yujiachen.com/the-cathedral-and-the-bazaar/ | markdown: https://www.yujiachen.com/posts/the-cathedral-and-the-bazaar/post.md
+- 事务与共识 from DDIA [zh] (transactions-and-consensus-from-ddia) | html: https://www.yujiachen.com/transactions-and-consensus-from-ddia/zh/ | markdown: https://www.yujiachen.com/posts/transactions-and-consensus-from-ddia/post.md
+- 如何反对 [zh] (how-to-disagree) | html: https://www.yujiachen.com/how-to-disagree/ | markdown: https://www.yujiachen.com/posts/how-to-disagree/post.md
+- 特别的一年——2020 小结 [zh] (2020-summary) | html: https://www.yujiachen.com/2020-summary/ | markdown: https://www.yujiachen.com/posts/2020-summary/post.md
+- 2019 年小结 [zh] (2019-year-in-review) | html: https://www.yujiachen.com/2019-year-in-review/ | markdown: https://www.yujiachen.com/posts/2019-year-in-review/post.md
+- 2018 年小结 [zh] (2018-year-in-review) | html: https://www.yujiachen.com/2018-year-in-review/ | markdown: https://www.yujiachen.com/posts/2018-year-in-review/post.md
+- ring-allreduce 简介 [zh] (ring-allreduce) | html: https://www.yujiachen.com/ring-allreduce/zh/ | markdown: https://www.yujiachen.com/posts/ring-allreduce/post.md

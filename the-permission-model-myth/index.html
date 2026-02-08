@@ -1,0 +1,357 @@
+<!doctype html>
+<html lang="en" data-theme="auto">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>The Permission Model Myth | Jiachen Yu</title>
+        <meta name="description" content="The Permission Model Myth" />
+    <meta property="og:title" content="The Permission Model Myth | Jiachen Yu" />
+    <meta property="og:description" content="The Permission Model Myth" />
+    <meta property="og:type" content="article" />
+    <meta property="og:url" content="https://www.yujiachen.com/the-permission-model-myth/" />
+    <meta name="twitter:card" content="summary" />
+    <link rel="canonical" href="https://www.yujiachen.com/the-permission-model-myth/" />
+    <link rel="alternate" type="text/markdown" href="https://www.yujiachen.com/posts/the-permission-model-myth/post.md" />
+    <link rel="alternate" hreflang="en" href="https://www.yujiachen.com/the-permission-model-myth/" />
+<link rel="alternate" hreflang="zh" href="https://www.yujiachen.com/the-permission-model-myth/zh/" /> <link rel="alternate" type="application/rss+xml" title="RSS" href="https://www.yujiachen.com/rss.xml" />
+<link rel="alternate" type="application/rss+xml" title="RSS (EN)" href="https://www.yujiachen.com/rss-en.xml" /> <link rel="icon" href="/favicon-32.png" type="image/png" sizes="32x32" />
+<link rel="icon" href="/favicon.png" type="image/png" />
+<link rel="icon" href="/favicon.ico" type="image/x-icon" />
+<link rel="apple-touch-icon" href="/apple-touch-icon.png" sizes="180x180" /> <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&amp;family=Source+Serif+4:ital,wght@0,400;0,600;0,700;1,400&amp;family=Noto+Serif+SC:wght@400;600;700&amp;display=swap" />
+    <link rel="stylesheet" href="/katex/katex.min.css" />
+    <link rel="stylesheet" href="/styles.css" />
+    <link rel="stylesheet" href="/fonts.css" />
+  </head>
+  <body data-page="post">
+    <div id="root">
+      
+<nav class="navbar">
+  <div class="nav-left">
+    <a href="/" class="brand">Jiachen Yu</a>
+    <div class="nav-links">
+      <a class="nav-link-button" href="/about/" data-nav="about">About</a>
+      <a class="nav-link-button" href="/blog/" data-nav="blog">Blog</a>
+    </div>
+  </div>
+  <div class="controls">
+    <div class="action-controls">
+      <div class="lang-switcher" data-lang-switcher data-lang-switcher-mode="toggle">
+        <button class="lang-toggle" type="button" data-lang-toggle>EN</button>
+      </div>
+      <div class="theme-switcher" data-theme-switcher data-theme-state="light">
+        <button
+          class="theme-trigger"
+          type="button"
+          data-theme-trigger
+          aria-label="Theme mode toggle"
+          aria-pressed="false"
+        >
+          <span class="theme-trigger-icon">
+            <svg class="theme-icon theme-icon-dark" viewBox="0 0 24 24" aria-hidden="true">
+              <path
+                d="M21 12.8A8.5 8.5 0 1 1 11.2 3a7.5 7.5 0 0 0 9.8 9.8Z"
+                fill="currentColor"
+              />
+            </svg>
+            <svg class="theme-icon theme-icon-light" viewBox="0 0 24 24" aria-hidden="true">
+              <circle cx="12" cy="12" r="4" fill="currentColor" />
+              <path
+                d="M12 3v2M12 19v2M4.9 4.9l1.4 1.4M17.7 17.7l1.4 1.4M3 12h2M19 12h2M4.9 19.1l1.4-1.4M17.7 6.3l1.4-1.4"
+                stroke="currentColor"
+                stroke-width="2"
+                stroke-linecap="round"
+                fill="none"
+              />
+            </svg>
+          </span>
+        </button>
+      </div>
+      <a
+        class="ask-ai-entry"
+        href="/ask-ai/"
+        data-ask-ai-entry
+        aria-label="Open Ask AI"
+      >
+        <span class="ask-ai-entry-label">Ask AI</span>
+      </a>
+    </div>
+  </div>
+</nav>
+
+      <main class="page-shell article-page">
+        <div class="article-layout has-toc page-shell-content">
+          
+    <aside class="article-toc sidebar-panel" data-toc>
+      <button class="toc-toggle sidebar-toggle" type="button" data-toc-toggle aria-expanded="false">
+        <span class="toc-toggle-label">Contents</span>
+        <span class="toc-toggle-icon" aria-hidden="true">⌄</span>
+      </button>
+      <div class="toc-panel sidebar-panel-content" data-toc-panel>
+        <div class="toc-title sidebar-title">Contents</div>
+        <ol class="toc-list sidebar-list">
+      <li class="toc-item sidebar-item toc-level-1"><a class="sidebar-link" href="#basic-concepts">Basic Concepts</a></li>
+      <li class="toc-item sidebar-item toc-level-1"><a class="sidebar-link" href="#use-cases">Use Cases</a></li>
+      <li class="toc-item sidebar-item toc-level-2"><a class="sidebar-link" href="#file-system-permissions">File System Permissions</a></li>
+      <li class="toc-item sidebar-item toc-level-2"><a class="sidebar-link" href="#database-permissions">Database Permissions</a></li>
+      <li class="toc-item sidebar-item toc-level-1"><a class="sidebar-link" href="#access-control-models">Access Control Models</a></li>
+      <li class="toc-item sidebar-item toc-level-2"><a class="sidebar-link" href="#dac">DAC</a></li>
+      <li class="toc-item sidebar-item toc-level-2"><a class="sidebar-link" href="#rbac">RBAC</a></li>
+      <li class="toc-item sidebar-item toc-level-2"><a class="sidebar-link" href="#abac">ABAC</a></li>
+      <li class="toc-item sidebar-item toc-level-2"><a class="sidebar-link" href="#real-world-case-study">Real-World Case Study</a></li>
+      <li class="toc-item sidebar-item toc-level-1"><a class="sidebar-link" href="#industry-solutions">Industry Solutions</a></li>
+      <li class="toc-item sidebar-item toc-level-2"><a class="sidebar-link" href="#casbin">Casbin</a></li>
+      <li class="toc-item sidebar-item toc-level-2"><a class="sidebar-link" href="#zanzibar">Zanzibar</a></li>
+      <li class="toc-item sidebar-item toc-level-1"><a class="sidebar-link" href="#the-challenge-of-abstraction">The Challenge of Abstraction</a></li>
+      <li class="toc-item sidebar-item toc-level-2"><a class="sidebar-link" href="#extension-zero-trust-network-model">Extension: Zero Trust Network Model</a></li>
+        </ol>
+      </div>
+    </aside>
+  
+          <div class="article-content">
+            
+
+<div class="article-text-content">
+  <div class="article-date">2024-02-25 · TECH</div>
+  <h1 class="article-hero">The Permission Model Myth</h1>
+  <div class="article-body"><p><em>Translated by Claude from the Chinese original.</em></p>
+<h1 id="basic-concepts">Basic Concepts</h1>
+<p>Depending on context, “permission” can mean different things. This article focuses on authorization in computing. Related concepts include:</p>
+<ul>
+<li><strong>Authentication (AuthN)</strong>: The process of confirming the identity of a person or entity. In computer security, this typically involves verifying whether a user or system is truly who it claims to be. Authentication can be performed through various methods, including passwords, biometrics, smart cards, or digital certificates. Authentication is the first step in the access control process—only after successful identity verification will the system consider granting access permissions. Related technical protocols and frameworks include OAuth, OpenID, and SAML.</li>
+<li><strong>Authorization (AuthZ)</strong>: After a user’s identity has been verified, the system needs to decide which resources the user can access and what operations they can perform. Authorization is the process of defining and managing access permissions, determining what data or resources a verified user can view, use, modify, or delete. Its goal is to ensure that only users with appropriate permissions can access specific resources or data. Related authorization models include Role-Based Access Control (RBAC), Attribute-Based Access Control (ABAC), and others.</li>
+<li><strong>Access Control</strong>: A broader concept that encompasses both authentication and authorization. It refers to the various methods and technologies used to restrict access to and use of systems and data.</li>
+</ul>
+<h1 id="use-cases">Use Cases</h1>
+<p>Below are some access-control scenarios commonly encountered in engineering work.</p>
+<h2 id="file-system-permissions">File System Permissions</h2>
+<p>
+<picture>
+  <source srcset="/assets/posts/the-permission-model-myth/en/image_1.webp" type="image/webp" />
+  <img src="/assets/posts/the-permission-model-myth/en/image_1.png" alt="" class="article-image" width="1080" height="214" />
+</picture>
+</p>
+<p>The <code>drwx------</code> in the image is the mode string for a file-system entry. The first character indicates the file type (<code>-</code> for regular files, <code>d</code> for directories), followed by three groups of three characters representing read, write, and execute permissions for owner, group, and others. Some entries also include <code>@</code> or <code>+</code>. <code>@</code> means the file or directory has extended attributes (not discussed here). <code>+</code> means an Access Control List (ACL) is present. ACLs provide finer-grained rules beyond standard rwx bits, with per-user/per-group configuration. Using <code>ls -le</code>, we can inspect these ACL entries:
+
+<picture>
+  <source srcset="/assets/posts/the-permission-model-myth/en/image_2.webp" type="image/webp" />
+  <img src="/assets/posts/the-permission-model-myth/en/image_2.png" alt="" class="article-image" width="1080" height="349" />
+</picture>
+</p>
+<p>For more details, see <code>man chmod</code>. Two observations:</p>
+<ul>
+<li>Unix permission granularity is too coarse, only supporting read, write, and execute—three types of operations. Other operating systems chose to add additional ACL mechanisms as a patch.</li>
+<li>macOS ACL rule format is a triplet of: <code>(user, allow/deny, operation)</code>.
+
+<picture>
+  <source srcset="/assets/posts/the-permission-model-myth/en/image_3.webp" type="image/webp" />
+  <img src="/assets/posts/the-permission-model-myth/en/image_3.png" alt="" class="article-image" width="1080" height="810" />
+</picture>
+Screenshot from macOS 14.2 manual</li>
+</ul>
+<h2 id="database-permissions">Database Permissions</h2>
+<p>Database systems provide permissions (and permission combinations), allowing administrators to grant and audit access for users or user groups.</p>
+<p>The screenshots below show one example of granting and inspecting permissions:
+
+<picture>
+  <source srcset="/assets/posts/the-permission-model-myth/en/image_4.webp" type="image/webp" />
+  <img src="/assets/posts/the-permission-model-myth/en/image_4.png" alt="" class="article-image" width="1080" height="114" />
+</picture>
+Granting: Granting SELECT permission on the ‘lark.message’ table to the user ‘admin’.
+
+<picture>
+  <source srcset="/assets/posts/the-permission-model-myth/en/image_5.webp" type="image/webp" />
+  <img src="/assets/posts/the-permission-model-myth/en/image_5.png" alt="" class="article-image" width="1080" height="232" />
+</picture>
+Viewing a user’s global permissions: The ‘admin’ user has no global permissions.
+
+<picture>
+  <source srcset="/assets/posts/the-permission-model-myth/en/image_6.webp" type="image/webp" />
+  <img src="/assets/posts/the-permission-model-myth/en/image_6.png" alt="" class="article-image" width="1080" height="152" />
+</picture>
+Viewing a user’s permissions on a specific table: The ‘admin’ user has SELECT permission on the ‘lark.message’ table.</p>
+<p>From the examples above, we also observe:</p>
+<ol>
+<li>MySQL authorization operates at multiple levels—a user can have global permissions and table-level permissions.</li>
+<li>MySQL’s permission control also follows the <code>(user, allow/deny, operation)</code> triplet pattern.</li>
+</ol>
+<h1 id="access-control-models">Access Control Models</h1>
+<p>Several commonly used access control models exist in the industry: Discretionary Access Control (DAC), Mandatory Access Control (MAC), Role-Based Access Control (RBAC), Attribute-Based Access Control (ABAC), and Policy-Based Access Control (PBAC).</p>
+<blockquote>
+<p>Note: While these access control models represent a general consensus, there is currently no unified industry standard for determining which access control model a real-world solution belongs to. Therefore, the descriptions below serve mainly as conceptual explanations rather than definitive definitions and distinctions.</p>
+</blockquote>
+<h2 id="dac">DAC</h2>
+<p>DAC is the most basic access control model, allowing resource owners to control access to their resources. In the DAC model, users can assign access permissions to other users based on their own judgment.</p>
+<p>The file system permissions and database permissions examples above are actually DAC systems—they directly specify “who can perform what operations,” such as the file system’s <code>User 1 allow read</code> and the database’s <code>GRANT SELECT ON lark.message TO 'admin'@'%';</code>.</p>
+<h2 id="rbac">RBAC</h2>
+<p>RBAC is an access control model based on user roles. It allows system administrators to assign users to different roles according to organizational functions and responsibilities, with each role having a set of predefined access permissions. RBAC simplifies permission management because administrators only need to manage the relationship between roles and permissions, rather than each user’s individual permissions.</p>
+<p>The following article describes how to configure RBAC in SAP:</p>
+<p><a href="https://community.sap.com/t5/human-capital-management-blogs-by-sap/sap-commissions-implementing-authorization-with-user-roles-rbac/ba-p/13554527">SAP Commissions - Implementing Authorization With User Roles (RBAC)</a></p>
+<p>In many RBAC implementations, user groups (or roles) bind users to predefined permissions.
+
+<picture>
+  <source srcset="/assets/posts/the-permission-model-myth/en/image_7.webp" type="image/webp" />
+  <img src="/assets/posts/the-permission-model-myth/en/image_7.png" alt="" class="article-image" width="1080" height="650" />
+</picture>
+</p>
+<p>RBAC has the advantages of simplified management and flexible configuration, but in practice it also exhibits the following drawbacks:</p>
+<ol>
+<li><strong>Role explosion</strong>: In complex organizations, a large number of roles may need to be created to cover all access requirements, which can make role management complex and difficult to maintain.</li>
+<li><strong>Complex initial setup</strong>: Correctly implementing an RBAC system may require significant upfront planning and configuration, especially when migrating existing permissions to the RBAC model.</li>
+<li><strong>Limited flexibility</strong>: While RBAC improves permission management efficiency, in some cases it may limit flexibility for individual users’ specific needs.</li>
+<li><strong>Performance issues</strong>: In large systems with many users, roles, and permission rules, permission checks may cause performance problems.</li>
+<li><strong>Management challenges</strong>: As organizations grow, managing and updating roles and their permissions can become complex, especially without automated tooling support.</li>
+</ol>
+<h2 id="abac">ABAC</h2>
+<p>ABAC is a more flexible and dynamic access control model that determines access permissions based on attributes of the requester (such as age, position, etc.), resource attributes, and environmental conditions (such as time). ABAC provides more fine-grained access control, supports more complex security policies, and is suitable for scenarios requiring highly customized access control.</p>
+<p>The main advantage of ABAC over RBAC is flexibility at the individual record level. RBAC grants are group-based, so members in one group usually share permissions. In a healthcare system, if each nurse should only see records for assigned patients, pure RBAC may require one role/group per nurse. With ABAC, one rule like <code>record.assignedNurse == currentUser</code> can express this directly.</p>
+<p>A common pattern is hybrid: use RBAC to assign rule sets to users, then use ABAC within those rules to evaluate user/resource/environment attributes for the final decision.</p>
+<h2 id="real-world-case-study">Real-World Case Study</h2>
+<p><a href="https://www.youtube.com/watch?v=ZUmzELJ2UcM&amp;list=PLnobS_RgN7JZxK1wjUvQ84jMFqRZoJXbD&amp;index=1">https://www.youtube.com/watch?v=ZUmzELJ2UcM&amp;list=PLnobS_RgN7JZxK1wjUvQ84jMFqRZoJXbD&amp;index=1</a></p>
+<p>
+<picture>
+  <source srcset="/assets/posts/the-permission-model-myth/en/image_8.webp" type="image/webp" />
+  <img src="/assets/posts/the-permission-model-myth/en/image_8.png" alt="" class="article-image" width="1080" height="608" />
+</picture>
+</p>
+<p>The video demonstrates 4 types of access control:</p>
+<ol>
+<li>IP and login time determine whether a user can access the organization.</li>
+<li>User permission groups determine whether a user can access objects.</li>
+<li>Roles and reporting lines determine whether a user can access specific records.</li>
+<li>User permission groups determine whether a user can access specific fields on a record.</li>
+</ol>
+<p>We can see that different access control models exist at different levels of the system, which is one of the key challenges in abstracting permission systems.</p>
+<h1 id="industry-solutions">Industry Solutions</h1>
+<p>Many early solutions did not clearly separate authentication (AuthN) from authorization (AuthZ). In my observation, RBAC is often the first-class model in these frameworks: once identity is user-centric, downstream authorization also tends to be user-centric.</p>
+<ul>
+<li><a href="https://github.com/spring-projects/spring-security">Spring Security</a>: No control panel; provides various APIs but doesn’t support configuration files.</li>
+<li><a href="https://github.com/apache/shiro">Apache Shiro</a>: No control panel; supports configuration files but doesn’t support ABAC.</li>
+</ul>
+<p>The above two solutions and other earlier open-source solutions have relatively simple support for access control models and are therefore outside the scope of this article. In recent years, two solutions have provided more comprehensive support for access control models:</p>
+<ul>
+<li><a href="https://github.com/casbin/casbin">Casbin</a>: Open source, positioned as an SDK, supports various access control models, integrates with existing systems, and defines permissions through configuration.</li>
+<li><a href="https://research.google/pubs/zanzibar-googles-consistent-global-authorization-system/">Zanzibar</a>: Closed source, positioned as an authorization service, also supports various access control models with finer control granularity, and permissions are configured through API calls.</li>
+</ul>
+<h2 id="casbin">Casbin</h2>
+<p>Here’s an example of creating RBAC with Casbin.</p>
+<p>Model file:</p>
+<pre class="hljs"><code>[<span class="hljs-string">request_definition</span>]
+<span class="hljs-string">r</span> <span class="hljs-string">=</span> <span class="hljs-string">sub,</span> <span class="hljs-string">act,</span> <span class="hljs-string">obj</span>
+
+[<span class="hljs-string">policy_definition</span>]
+<span class="hljs-string">p</span> <span class="hljs-string">=</span> <span class="hljs-string">sub,</span> <span class="hljs-string">act,</span> <span class="hljs-string">obj</span>
+
+[<span class="hljs-string">role_definition</span>]
+<span class="hljs-string">g</span> <span class="hljs-string">=</span> <span class="hljs-string">_,</span> <span class="hljs-string">_</span>
+<span class="hljs-string">g2</span> <span class="hljs-string">=</span> <span class="hljs-string">_,</span> <span class="hljs-string">_</span>
+
+[<span class="hljs-string">policy_effect</span>]
+<span class="hljs-string">e</span> <span class="hljs-string">=</span> <span class="hljs-string">some(where</span> <span class="hljs-string">(p.eft</span> <span class="hljs-string">==</span> <span class="hljs-string">allow))</span>
+
+[<span class="hljs-string">matchers</span>]
+<span class="hljs-string">m</span> <span class="hljs-string">=</span> <span class="hljs-string">r.sub</span> <span class="hljs-string">==</span> <span class="hljs-string">p.sub</span> <span class="hljs-string">&amp;&amp;</span> <span class="hljs-string">g(p.act,</span> <span class="hljs-string">r.act)</span> <span class="hljs-string">&amp;&amp;</span> <span class="hljs-string">g2(p.obj,</span> <span class="hljs-string">r.obj)</span>
+</code></pre>
+<p>Policy file:</p>
+<pre class="hljs"><code><span class="hljs-string">p,</span> <span class="hljs-string">alice,</span> <span class="hljs-string">sub-reader,</span> <span class="hljs-string">sub1</span>
+<span class="hljs-string">p,</span> <span class="hljs-string">bob,</span> <span class="hljs-string">rg-owner,</span> <span class="hljs-string">rg2</span>
+
+<span class="hljs-string">//</span> <span class="hljs-string">subscription</span> <span class="hljs-string">role</span> <span class="hljs-string">to</span> <span class="hljs-string">subscription</span> <span class="hljs-string">action</span> <span class="hljs-string">mapping</span>
+<span class="hljs-string">g,</span> <span class="hljs-string">sub-reader,</span> <span class="hljs-string">sub-read</span>
+<span class="hljs-string">g,</span> <span class="hljs-string">sub-owner,</span> <span class="hljs-string">sub-read</span>
+<span class="hljs-string">g,</span> <span class="hljs-string">sub-owner,</span> <span class="hljs-string">sub-write</span>
+
+<span class="hljs-string">//</span> <span class="hljs-string">resourceGroup</span> <span class="hljs-string">role</span> <span class="hljs-string">to</span> <span class="hljs-string">resourceGroup</span> <span class="hljs-string">action</span> <span class="hljs-string">mapping</span>
+<span class="hljs-string">g,</span> <span class="hljs-string">rg-reader,</span> <span class="hljs-string">rg-read</span>
+<span class="hljs-string">g,</span> <span class="hljs-string">rg-owner,</span> <span class="hljs-string">rg-read</span>
+<span class="hljs-string">g,</span> <span class="hljs-string">rg-owner,</span> <span class="hljs-string">rg-write</span>
+
+<span class="hljs-string">//</span> <span class="hljs-string">subscription</span> <span class="hljs-string">role</span> <span class="hljs-string">to</span> <span class="hljs-string">resourceGroup</span> <span class="hljs-string">role</span> <span class="hljs-string">mapping</span>
+<span class="hljs-string">g,</span> <span class="hljs-string">sub-reader,</span> <span class="hljs-string">rg-reader</span>
+<span class="hljs-string">g,</span> <span class="hljs-string">sub-owner,</span> <span class="hljs-string">rg-owner</span>
+
+<span class="hljs-string">//</span> <span class="hljs-string">subscription</span> <span class="hljs-string">resource</span> <span class="hljs-string">to</span> <span class="hljs-string">resourceGroup</span> <span class="hljs-string">resource</span> <span class="hljs-string">mapping</span>
+<span class="hljs-string">g2,</span> <span class="hljs-string">sub1,</span> <span class="hljs-string">rg1</span>
+<span class="hljs-string">g2,</span> <span class="hljs-string">sub2,</span> <span class="hljs-string">rg2</span>
+</code></pre>
+<p>Request: <code>alice, rg-read, rg1</code> -&gt; <code>true</code>.</p>
+<p>Reasoning flow: first match the subject. Alice’s policy entry is <code>alice, sub-reader, sub1</code>.
+
+<picture>
+  <source srcset="/assets/posts/the-permission-model-myth/en/image_9.webp" type="image/webp" />
+  <img src="/assets/posts/the-permission-model-myth/en/image_9.png" alt="" class="article-image" width="1080" height="573" />
+</picture>
+
+Then match the action. The requested action is <code>rg-read</code>, while Alice’s role is <code>sub-reader</code>. Through <code>g, sub-reader, rg-reader</code> and <code>g, rg-reader, rg-read</code>, we infer that <code>sub-reader</code> implies <code>rg-read</code>.
+
+<picture>
+  <source srcset="/assets/posts/the-permission-model-myth/en/image_10.webp" type="image/webp" />
+  <img src="/assets/posts/the-permission-model-myth/en/image_10.png" alt="" class="article-image" width="1080" height="593" />
+</picture>
+
+Finally, match the resource. The requested object is <code>rg1</code>, and Alice’s mapped resource is <code>sub1</code>; <code>g2, sub1, rg1</code> links the two.
+
+<picture>
+  <source srcset="/assets/posts/the-permission-model-myth/en/image_11.webp" type="image/webp" />
+  <img src="/assets/posts/the-permission-model-myth/en/image_11.png" alt="" class="article-image" width="1080" height="583" />
+</picture>
+</p>
+<h2 id="zanzibar">Zanzibar</h2>
+<p>This article skips the detailed introduction of Zanzibar. The following URL provides a comprehensive introduction:</p>
+<p><a href="https://zanzibar.academy/">Zanzibar: A Global Authorization System - Presented by Auth0</a></p>
+<p>One key difference is architecture: Zanzibar is a standalone service, while Casbin is an SDK. A standalone service needs its own relationship-data storage plus caching and consistency management. Zanzibar is generally more full-featured, but that also implies higher operational cost and potentially tougher integration than an embedded SDK.</p>
+<h1 id="the-challenge-of-abstraction">The Challenge of Abstraction</h1>
+<p>Permission systems do not have a universal standard like TCP/IP, mainly because requirements and implementations vary widely across domains. TCP/IP provides a common interoperability layer for networks, while authorization systems are deeply coupled to business logic, organizational structures, and security constraints that differ by product. Key reasons include:</p>
+<ol>
+<li><strong>Diverse business requirements</strong>: Different types of applications have different business models and security needs. For example, a financial industry permission management system needs to consider complex compliance and audit requirements, while a social media platform’s permission system may focus more on user privacy and content management. This diversity makes it difficult to establish a unified standard covering all scenarios.</li>
+<li><strong>Organizational structure differences</strong>: Different organizations’ structures, policies, and management processes also affect permission management implementation. Large enterprises may need a complex role hierarchy and fine-grained permission control, while small teams may only need a simple permission model.</li>
+<li><strong>Rapid technological development</strong>: The rapid advancement of IT technology (including software development frameworks, database technology, cloud services, etc.) means new permission management methods and tools are constantly emerging, making it difficult to maintain a long-term effective unified standard.</li>
+<li><strong>Balancing security and flexibility</strong>: Permission systems need to find a balance between security and flexibility. Different application scenarios may prioritize these two aspects differently, leading to different permission management strategies.</li>
+<li><strong>Difficulty of standardization</strong>: Although some permission management concepts (such as RBAC) are widely accepted and used, extending these concepts to a universal standard covering all possible use cases is extremely difficult. Attempting to create such a standard could result in something overly complex and unwieldy, unable to adapt to rapidly changing technology and business requirements.</li>
+</ol>
+<p>Therefore, while some degree of standardization is possible in certain areas (such as authentication and encryption technology), the specific implementation of permission management systems often needs to be customized based on specific application scenarios and requirements.</p>
+<h2 id="extension-zero-trust-network-model">Extension: Zero Trust Network Model</h2>
+<p>Zero Trust leans more toward identity verification (AuthN), but many of its principles are closely related to AuthZ design. So this article ends with a brief Zero Trust overview.</p>
+<p>Zero Trust is a cybersecurity model whose core principle is “never trust, always verify.” This model requires strict identity verification for all users and devices attempting to access network resources, regardless of whether they are inside or outside the network. The Zero Trust model’s starting point is to no longer assume the internal network is safe, but instead to consider that threats can come from anywhere, and therefore every access request needs to be verified and authorized.</p>
+<p>The core principles of the Zero Trust model include:</p>
+<ol>
+<li><strong>Principle of least privilege</strong>: Users and devices receive only the minimum permissions needed to complete their tasks, limiting access to sensitive information and systems.</li>
+<li><strong>Continuous verification</strong>: The system continuously monitors and verifies the trust status of users and devices, never assuming they are secure at any point.</li>
+<li><strong>Explicit verification</strong>: All access attempts must undergo authentication and authorization, regardless of user or device location.</li>
+<li><strong>Multi-factor authentication (MFA)</strong>: Adding security layers by requiring two or more identity-proving factors to reduce the risk of password compromise.</li>
+<li><strong>Micro-segmentation</strong>: Dividing the network into small, managed segments to reduce the potential attacker’s range of movement and limit access to sensitive data.</li>
+<li><strong>Risk-based adaptive policies</strong>: Dynamically adjusting access control policies based on factors such as user behavior, device security status, access time, and location.</li>
+</ol>
+</div>
+</div>
+
+            <section class="comment-section" data-comment-section></section>
+          </div>
+        </div>
+      </main>
+    </div>
+
+    <script id="page-data" type="application/json">
+      {
+  "pageType": "post",
+  "lang": "en",
+  "langSwitchUrl": "/the-permission-model-myth/zh/",
+  "langSwitcherMode": "toggle",
+  "markdownUrl": "/posts/the-permission-model-myth/post.md",
+  "labels": {
+    "navAbout": "About",
+    "navBlog": "Blog",
+    "filterAll": "All"
+  },
+  "comments": {
+    "appId": "e224d3ce-6f5a-4777-bb80-b7bbf2e78d83",
+    "pageId": "the-permission-model-myth",
+    "pageUrl": "https://www.yujiachen.com/the-permission-model-myth/",
+    "pageTitle": "The Permission Model Myth"
+  }
+}
+    </script>
+    <script type="module" src="/app.js"></script>
+  </body>
+</html>

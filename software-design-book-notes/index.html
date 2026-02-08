@@ -1,0 +1,245 @@
+<!doctype html>
+<html lang="en" data-theme="auto">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Notes on A Philosophy of Software Design | Jiachen Yu</title>
+        <meta name="description" content="Notes on A Philosophy of Software Design" />
+    <meta property="og:title" content="Notes on A Philosophy of Software Design | Jiachen Yu" />
+    <meta property="og:description" content="Notes on A Philosophy of Software Design" />
+    <meta property="og:type" content="article" />
+    <meta property="og:url" content="https://www.yujiachen.com/software-design-book-notes/" />
+    <meta name="twitter:card" content="summary" />
+    <link rel="canonical" href="https://www.yujiachen.com/software-design-book-notes/" />
+    <link rel="alternate" type="text/markdown" href="https://www.yujiachen.com/posts/software-design-book-notes/post.md" />
+    <link rel="alternate" hreflang="en" href="https://www.yujiachen.com/software-design-book-notes/" />
+<link rel="alternate" hreflang="zh" href="https://www.yujiachen.com/software-design-book-notes/zh/" /> <link rel="alternate" type="application/rss+xml" title="RSS" href="https://www.yujiachen.com/rss.xml" />
+<link rel="alternate" type="application/rss+xml" title="RSS (EN)" href="https://www.yujiachen.com/rss-en.xml" /> <link rel="icon" href="/favicon-32.png" type="image/png" sizes="32x32" />
+<link rel="icon" href="/favicon.png" type="image/png" />
+<link rel="icon" href="/favicon.ico" type="image/x-icon" />
+<link rel="apple-touch-icon" href="/apple-touch-icon.png" sizes="180x180" /> <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&amp;family=Source+Serif+4:ital,wght@0,400;0,600;0,700;1,400&amp;family=Noto+Serif+SC:wght@400;600;700&amp;display=swap" />
+    <link rel="stylesheet" href="/katex/katex.min.css" />
+    <link rel="stylesheet" href="/styles.css" />
+    <link rel="stylesheet" href="/fonts.css" />
+  </head>
+  <body data-page="post">
+    <div id="root">
+      
+<nav class="navbar">
+  <div class="nav-left">
+    <a href="/" class="brand">Jiachen Yu</a>
+    <div class="nav-links">
+      <a class="nav-link-button" href="/about/" data-nav="about">About</a>
+      <a class="nav-link-button" href="/blog/" data-nav="blog">Blog</a>
+    </div>
+  </div>
+  <div class="controls">
+    <div class="action-controls">
+      <div class="lang-switcher" data-lang-switcher data-lang-switcher-mode="toggle">
+        <button class="lang-toggle" type="button" data-lang-toggle>EN</button>
+      </div>
+      <div class="theme-switcher" data-theme-switcher data-theme-state="light">
+        <button
+          class="theme-trigger"
+          type="button"
+          data-theme-trigger
+          aria-label="Theme mode toggle"
+          aria-pressed="false"
+        >
+          <span class="theme-trigger-icon">
+            <svg class="theme-icon theme-icon-dark" viewBox="0 0 24 24" aria-hidden="true">
+              <path
+                d="M21 12.8A8.5 8.5 0 1 1 11.2 3a7.5 7.5 0 0 0 9.8 9.8Z"
+                fill="currentColor"
+              />
+            </svg>
+            <svg class="theme-icon theme-icon-light" viewBox="0 0 24 24" aria-hidden="true">
+              <circle cx="12" cy="12" r="4" fill="currentColor" />
+              <path
+                d="M12 3v2M12 19v2M4.9 4.9l1.4 1.4M17.7 17.7l1.4 1.4M3 12h2M19 12h2M4.9 19.1l1.4-1.4M17.7 6.3l1.4-1.4"
+                stroke="currentColor"
+                stroke-width="2"
+                stroke-linecap="round"
+                fill="none"
+              />
+            </svg>
+          </span>
+        </button>
+      </div>
+      <a
+        class="ask-ai-entry"
+        href="/ask-ai/"
+        data-ask-ai-entry
+        aria-label="Open Ask AI"
+      >
+        <span class="ask-ai-entry-label">Ask AI</span>
+      </a>
+    </div>
+  </div>
+</nav>
+
+      <main class="page-shell article-page">
+        <div class="article-layout has-toc page-shell-content">
+          
+    <aside class="article-toc sidebar-panel" data-toc>
+      <button class="toc-toggle sidebar-toggle" type="button" data-toc-toggle aria-expanded="false">
+        <span class="toc-toggle-label">Contents</span>
+        <span class="toc-toggle-icon" aria-hidden="true">⌄</span>
+      </button>
+      <div class="toc-panel sidebar-panel-content" data-toc-panel>
+        <div class="toc-title sidebar-title">Contents</div>
+        <ol class="toc-list sidebar-list">
+      <li class="toc-item sidebar-item toc-level-2"><a class="sidebar-link" href="#definition-of-complexity">Definition of Complexity</a></li>
+      <li class="toc-item sidebar-item toc-level-2"><a class="sidebar-link" href="#strategic-programming-vs-tactical-programming">Strategic Programming vs Tactical Programming</a></li>
+      <li class="toc-item sidebar-item toc-level-2"><a class="sidebar-link" href="#modules-should-be-deep">Modules Should Be Deep</a></li>
+      <li class="toc-item sidebar-item toc-level-2"><a class="sidebar-link" href="#information-hiding-and-leaking">Information Hiding (and Leaking)</a></li>
+      <li class="toc-item sidebar-item toc-level-2"><a class="sidebar-link" href="#the-more-general-the-simpler">The More General, the Simpler</a></li>
+      <li class="toc-item sidebar-item toc-level-2"><a class="sidebar-link" href="#different-layers-different-abstractions">Different Layers, Different Abstractions</a></li>
+      <li class="toc-item sidebar-item toc-level-2"><a class="sidebar-link" href="#in-defense-of-long-functions">In Defense of Long Functions</a></li>
+      <li class="toc-item sidebar-item toc-level-2"><a class="sidebar-link" href="#comments">Comments</a></li>
+      <li class="toc-item sidebar-item toc-level-3"><a class="sidebar-link" href="#should-we-write-comments">Should We Write Comments?</a></li>
+      <li class="toc-item sidebar-item toc-level-3"><a class="sidebar-link" href="#comments-should-describe-non-obvious-parts-of-code">Comments Should Describe Non-Obvious Parts of Code</a></li>
+      <li class="toc-item sidebar-item toc-level-3"><a class="sidebar-link" href="#write-comments-first-code-second">Write Comments First, Code Second</a></li>
+        </ol>
+      </div>
+    </aside>
+  
+          <div class="article-content">
+            
+
+<div class="article-text-content">
+  <div class="article-date">2022-10-09 · TECH</div>
+  <h1 class="article-hero">Notes on A Philosophy of Software Design</h1>
+  <div class="article-body"><p><em>Translated by Claude from the Chinese original.</em></p>
+<p>About six months ago, I borrowed <em>A Philosophy of Software Design</em> from a friend who had not finished it yet, and then left it unread myself. During the National Day holiday, I spent three on-and-off days finishing it. The most useful part for me was its revised-edition pushback against some views in <em>Clean Code</em>. Software engineering is still a young discipline: there are best practices that many people agree on, but almost nothing is universally correct. I had also seen many of this book’s ideas in other books, sometimes in a stronger form. For example, this book explains why inheritance can be problematic but spends less time on alternatives, while <em>Effective Java</em> explicitly argues to “prefer composition over inheritance,” and <em>The Pragmatic Programmer</em> also discusses extensibility.</p>
+<p>The book’s discussions on complexity are very helpful for software development, while the other parts are more ordinary—experienced developers can skim them quickly.</p>
+<h2 id="definition-of-complexity">Definition of Complexity</h2>
+<p>Summarized by a formula: software complexity is the sum of each component’s complexity multiplied by how frequently it’s modified. That is, to reduce software complexity, we can either lower individual component complexity or take a holistic view and place highly complex logic in modules that are modified less frequently.</p>
+<p>Growing complexity brings 3 problems:</p>
+<ol>
+<li>Increased modification complexity—one change requires changes everywhere.</li>
+<li>Heavier cognitive burden—needing to understand too many concepts before knowing how to make changes.</li>
+<li>Unknown unknowns—not knowing what knowledge is needed to understand a problem, let alone how to acquire it. Even if the engineer makes incorrect changes or misses some changes, they have no way of knowing.</li>
+</ol>
+<p>Tangled dependencies between code lead to problems 1 and 2, while missing critical information (e.g., inconsistencies between code and documentation) leads to problems 3 and 2.</p>
+<h2 id="strategic-programming-vs-tactical-programming">Strategic Programming vs Tactical Programming</h2>
+<ul>
+<li><strong>Strategic programming</strong>: Prioritizes overall software design. Minimum viability and shortest time are not considered in isolation (though reasonable development costs and working code are important parts of design).</li>
+<li><strong>Tactical programming</strong>: Using the shortest programming time to produce minimally viable code.</li>
+</ul>
+<p>Note that “strategic” here still operates within agile cycles, not the waterfall model. In waterfall, projects are too large with execution times and feedback cycles too long, which is unfavorable for designing better software architecture.</p>
+<p>The book says that investing 10%-20% more time beyond tactical programming can transform it into strategic programming. I disagree—strategic programming generates a lot of throwaway work from various comparisons and research. Overall, I believe <strong>rigorous</strong> strategic programming costs about twice as much as <strong>bare-minimum</strong> tactical programming. However, I very much agree with one illustration in the book: with strategic programming, progress and time spent have a nearly linear relationship, while with tactical programming, achieving one unit of progress requires nearly exponential development time investment. This is because strategic programming leverages good architecture to hide complexity, making each unit of progress as independent as possible from existing code. Tactical programming, on the other hand, often means every piece of new code must account for existing old code, making the burden increasingly heavy.</p>
+<p>
+<picture>
+  <source srcset="/assets/posts/software-design-book-notes/en/image_1.webp" type="image/webp" />
+  <img src="/assets/posts/software-design-book-notes/en/image_1.png" alt="" class="article-image" width="640" height="391" />
+</picture>
+</p>
+<p>The 10-20% time mentioned in the book reminds me of:</p>
+<ul>
+<li>Google’s 20% free work time.</li>
+<li>Asana dedicates one week per quarter specifically to software refactoring. (Accounting for vacation and the fact that engineers don’t spend all their time coding, this is also close to 10%?) I read about this in <em>The Effective Engineer</em>—I helped review the Chinese edition, so go buy it!</li>
+</ul>
+<p>The book argues that good code attracts better developers, and that some startups believe tactical programming lets them move faster and they can hire better developers to fix the code later once the business takes off—but this approach is inadvisable. I think this is certainly true for a technology company, but for a business-driven company, it may depend on whether the business itself actually needs strong technical support. Some businesses genuinely don’t.</p>
+<h2 id="modules-should-be-deep">Modules Should Be Deep</h2>
+<p>A module is “deep” when it hides substantial implementation complexity behind a small and convenient interface.</p>
+<p><img src="https://img2.doubanio.com/view/thing_review/l/public/p7997103.jpg" alt="" /></p>
+<p>The book gives a fascinating example: GC in Go and Java. The implementation is very complex, but GC means the language does not need to expose manual memory-management interfaces to users. Even when we add substantial internal complexity, good modularization can still reduce the number of exposed interfaces.</p>
+<p>The GC example feels similar to the server-compute/client-render pattern: centralizing complex computation in one place means clients do not each need to maintain their own copy of that logic.</p>
+<p>The author also notes that some modern developers tend to make functions and classes smaller and smaller, which can also make them shallow (not deep). This is worth keeping in mind during everyday development.</p>
+<h2 id="information-hiding-and-leaking">Information Hiding (and Leaking)</h2>
+<p>This chapter argues that different modules should own orthogonal (unrelated) concerns. I summarized the traits emphasized by the examples:</p>
+<ul>
+<li><strong>Low coupling</strong>
+<ul>
+<li>After breaking a large function into multiple smaller ones, those smaller functions should not depend on each other. Pay special attention to call order: whether a function executes correctly should not depend on specific preceding functions having run.</li>
+<li>It’s unreasonable for both a file-read module and a file-write module to carry file-format parsing knowledge. Consider merging them into one read-write module, or extracting file-format parsing into a separate module.</li>
+</ul>
+</li>
+<li><strong>High cohesion</strong>
+<ul>
+<li>Code generating an HTTP response should not first set the HTTP version and then delegate the response to other modules. Instead, responsibility for setting protocol details should be encapsulated in the relevant modules.</li>
+</ul>
+</li>
+<li><strong>Hide implementation</strong>
+<ul>
+<li>A class that internally uses a map should not expose that map directly. Otherwise external code can mutate internal state, and replacing the map with another implementation later becomes much harder.</li>
+</ul>
+</li>
+</ul>
+<h2 id="the-more-general-the-simpler">The More General, the Simpler</h2>
+<p>(My loose translation—the original heading is “General-Purpose Modules are Deeper.” In this book, “deep” refers to modules that hide significant complexity behind a simple interface.)</p>
+<p>My understanding is: once complexity is reduced to a certain point, it is often transferred rather than eliminated. Distributing complexity between interface and implementation determines how often users encounter that complexity. Usually, the simpler and more general the interface, the more complex the implementation, and thus the deeper the module.</p>
+<p>The author also emphasizes that designing general interfaces does not mean over-designing. A general interface may accommodate future needs, but those needs may never arrive, or may even break the existing interface. So we can preserve interface generality while implementing only current requirements. If new needs emerge later, we can extend internals behind the same interface and make the module deeper.</p>
+<h2 id="different-layers-different-abstractions">Different Layers, Different Abstractions</h2>
+<p>Different layers should have different abstractions. If different layers share the same abstraction, it often indicates that the code at those layers isn’t deep enough.</p>
+<p>For example, the classic Principle of Least Knowledge: in a call chain A -&gt; B -&gt; C, if B only forwards requests to C, then A should call C directly instead of B. Adding code always increases complexity, so we must evaluate whether new code brings enough benefit. In this case, B adds complexity without benefit and increases future maintenance costs.</p>
+<p>The book also discusses decorators and pass-through variables.</p>
+<p>Regarding decorators, Java and Python provide relatively ergonomic language support. In other languages, the author suggests considering alternatives to decorators:</p>
+<ul>
+<li>Add the new functionality directly into the decorated method or object.</li>
+<li>If the decorator adds functionality for special cases while the decorated method handles general cases, consider whether these special cases can be handled elsewhere.</li>
+<li>Add the new functionality into other existing decorators.</li>
+</ul>
+<p>Pass-through variables are values that must be threaded through every method in a call chain, such as Go’s <code>ctx context.Context</code>. The author suggests using something like thread-local storage to keep context in an instance, but I don’t think there is a universally good solution today. A potentially cleaner approach might be thread-scoped dependency injection (for example, via frameworks like Guice): delegate thread-local read/write mechanics to the framework, let it inject available values automatically, and expose only remaining values to callers. I have not used this approach in production yet.</p>
+<h2 id="in-defense-of-long-functions">In Defense of Long Functions</h2>
+<p>The book mentions Robert Martin’s <em>Clean Code</em>, which advocates that functions should be as short as possible.</p>
+<p>However, the author disagrees that all functions should be as short as possible: “Each method should do one thing and do it completely.” If a function is hard to decompose into shorter independent units, or if the extracted functions still depend on shared context, that kind of decomposition can increase complexity and maintenance cost.</p>
+<h2 id="comments">Comments</h2>
+<h3 id="should-we-write-comments">Should We Write Comments?</h3>
+<p>Here the author again explicitly disagrees with <em>Clean Code</em>, which treats comments as a “necessary evil” and argues that comments often indicate failure to write expressive code.</p>
+<p>The author argues that comments and code are complementary: together they reduce complexity, and missing comments can increase it. For example, comments can reduce the need for excessively long function names (the book’s example: <code>isLeastRelevantMultipleOfNextLargerPrimeFactor</code>) and can avoid forced decomposition into many short but interdependent functions.</p>
+<p>Function comments let callers use code without reading implementations, which is itself a form of abstraction. Comments can also capture design information that cannot be fully expressed in code alone.</p>
+<h3 id="comments-should-describe-non-obvious-parts-of-code">Comments Should Describe Non-Obvious Parts of Code</h3>
+<p>The author discourages writing information in comments that can be directly derived from reading the code. The book’s counterexample:</p>
+<pre class="hljs"><code>ptr_copy=get_copy(obj)    #Get pointer copy
+if is_unlocked(ptr_copy):  #Is obj free?
+return obj                 #return current obj
+</code></pre>
+<p>Comments can be classified into these categories, each with different standards:</p>
+<ul>
+<li><strong>Lower-level comments</strong>: Help developers understand certain details in the code more precisely.</li>
+<li><strong>Higher-level comments</strong>: Help developers intuitively understand what the code does without reading it.</li>
+<li><strong>Interface documentation</strong>: Doesn’t describe implementation details, but lets developers know how to use the corresponding interface. Good interface documentation represents good abstraction; if interface documentation must describe internal implementation, the underlying implementation may be too shallow.</li>
+<li><strong>Implementation comments</strong>: Describe what the code does and why, but don’t need to describe how—because the code itself contains that information (what and why, not how).</li>
+</ul>
+<p>For cross-module designs shared by multiple modules, the author suggests writing notes in shared structural definitions, or adding a <code>designNotes</code> file to the source code.</p>
+<h3 id="write-comments-first-code-second">Write Comments First, Code Second</h3>
+<p>The author believes writing comments after finishing code isn’t a good habit, because writing comments after all code is done increases the resistance to writing them. Also, after finishing code, some critical information may have already been discarded by the brain and is difficult to recover.</p>
+<p>This is similar to how I write reading notes immediately after finishing a book—it’s the most efficient approach.</p>
+<p>So the author advocates writing comments first, then code.</p>
+<p>A common counterargument is that code usually goes through several rounds of changes before it stabilizes, so writing comments only at the end seems more efficient. But the author argues that repeatedly modifying code is more expensive than iterating on comments first. Writing comments in advance helps stabilize structure; if the design keeps changing, revise the comments first, where iteration is cheaper.</p>
+</div>
+</div>
+
+            <section class="comment-section" data-comment-section></section>
+          </div>
+        </div>
+      </main>
+    </div>
+
+    <script id="page-data" type="application/json">
+      {
+  "pageType": "post",
+  "lang": "en",
+  "langSwitchUrl": "/software-design-book-notes/zh/",
+  "langSwitcherMode": "toggle",
+  "markdownUrl": "/posts/software-design-book-notes/post.md",
+  "labels": {
+    "navAbout": "About",
+    "navBlog": "Blog",
+    "filterAll": "All"
+  },
+  "comments": {
+    "appId": "e224d3ce-6f5a-4777-bb80-b7bbf2e78d83",
+    "pageId": "software-design-book-notes",
+    "pageUrl": "https://www.yujiachen.com/software-design-book-notes/",
+    "pageTitle": "Notes on A Philosophy of Software Design"
+  }
+}
+    </script>
+    <script type="module" src="/app.js"></script>
+  </body>
+</html>

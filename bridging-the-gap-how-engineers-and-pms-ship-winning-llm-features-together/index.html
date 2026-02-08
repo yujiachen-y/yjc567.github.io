@@ -1,0 +1,325 @@
+<!doctype html>
+<html lang="en" data-theme="auto">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>How Engineers and PMs Ship LLM Features Together | Jiachen Yu</title>
+        <meta name="description" content="How Engineers and PMs Ship LLM Features Together" />
+    <meta property="og:title" content="How Engineers and PMs Ship LLM Features Together | Jiachen Yu" />
+    <meta property="og:description" content="How Engineers and PMs Ship LLM Features Together" />
+    <meta property="og:type" content="article" />
+    <meta property="og:url" content="https://www.yujiachen.com/bridging-the-gap-how-engineers-and-pms-ship-winning-llm-features-together/" />
+    <meta name="twitter:card" content="summary" />
+    <link rel="canonical" href="https://www.yujiachen.com/bridging-the-gap-how-engineers-and-pms-ship-winning-llm-features-together/" />
+    <link rel="alternate" type="text/markdown" href="https://www.yujiachen.com/posts/bridging-the-gap-how-engineers-and-pms-ship-winning-llm-features-together/post.md" />
+    <link rel="alternate" hreflang="en" href="https://www.yujiachen.com/bridging-the-gap-how-engineers-and-pms-ship-winning-llm-features-together/" />
+<link rel="alternate" hreflang="zh" href="https://www.yujiachen.com/bridging-the-gap-how-engineers-and-pms-ship-winning-llm-features-together/zh/" /> <link rel="alternate" type="application/rss+xml" title="RSS" href="https://www.yujiachen.com/rss.xml" />
+<link rel="alternate" type="application/rss+xml" title="RSS (EN)" href="https://www.yujiachen.com/rss-en.xml" /> <link rel="icon" href="/favicon-32.png" type="image/png" sizes="32x32" />
+<link rel="icon" href="/favicon.png" type="image/png" />
+<link rel="icon" href="/favicon.ico" type="image/x-icon" />
+<link rel="apple-touch-icon" href="/apple-touch-icon.png" sizes="180x180" /> <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&amp;family=Source+Serif+4:ital,wght@0,400;0,600;0,700;1,400&amp;family=Noto+Serif+SC:wght@400;600;700&amp;display=swap" />
+    <link rel="stylesheet" href="/katex/katex.min.css" />
+    <link rel="stylesheet" href="/styles.css" />
+    <link rel="stylesheet" href="/fonts.css" />
+  </head>
+  <body data-page="post">
+    <div id="root">
+      
+<nav class="navbar">
+  <div class="nav-left">
+    <a href="/" class="brand">Jiachen Yu</a>
+    <div class="nav-links">
+      <a class="nav-link-button" href="/about/" data-nav="about">About</a>
+      <a class="nav-link-button" href="/blog/" data-nav="blog">Blog</a>
+    </div>
+  </div>
+  <div class="controls">
+    <div class="action-controls">
+      <div class="lang-switcher" data-lang-switcher data-lang-switcher-mode="toggle">
+        <button class="lang-toggle" type="button" data-lang-toggle>EN</button>
+      </div>
+      <div class="theme-switcher" data-theme-switcher data-theme-state="light">
+        <button
+          class="theme-trigger"
+          type="button"
+          data-theme-trigger
+          aria-label="Theme mode toggle"
+          aria-pressed="false"
+        >
+          <span class="theme-trigger-icon">
+            <svg class="theme-icon theme-icon-dark" viewBox="0 0 24 24" aria-hidden="true">
+              <path
+                d="M21 12.8A8.5 8.5 0 1 1 11.2 3a7.5 7.5 0 0 0 9.8 9.8Z"
+                fill="currentColor"
+              />
+            </svg>
+            <svg class="theme-icon theme-icon-light" viewBox="0 0 24 24" aria-hidden="true">
+              <circle cx="12" cy="12" r="4" fill="currentColor" />
+              <path
+                d="M12 3v2M12 19v2M4.9 4.9l1.4 1.4M17.7 17.7l1.4 1.4M3 12h2M19 12h2M4.9 19.1l1.4-1.4M17.7 6.3l1.4-1.4"
+                stroke="currentColor"
+                stroke-width="2"
+                stroke-linecap="round"
+                fill="none"
+              />
+            </svg>
+          </span>
+        </button>
+      </div>
+      <a
+        class="ask-ai-entry"
+        href="/ask-ai/"
+        data-ask-ai-entry
+        aria-label="Open Ask AI"
+      >
+        <span class="ask-ai-entry-label">Ask AI</span>
+      </a>
+    </div>
+  </div>
+</nav>
+
+      <main class="page-shell article-page">
+        <div class="article-layout has-toc page-shell-content">
+          
+    <aside class="article-toc sidebar-panel" data-toc>
+      <button class="toc-toggle sidebar-toggle" type="button" data-toc-toggle aria-expanded="false">
+        <span class="toc-toggle-label">Contents</span>
+        <span class="toc-toggle-icon" aria-hidden="true">⌄</span>
+      </button>
+      <div class="toc-panel sidebar-panel-content" data-toc-panel>
+        <div class="toc-title sidebar-title">Contents</div>
+        <ol class="toc-list sidebar-list">
+      <li class="toc-item sidebar-item toc-level-1"><a class="sidebar-link" href="#how-engineers-and-pms-ship-winning-llm-features-faster-3-technical-decisions">How Engineers and PMs Ship Winning LLM Features Faster: 3 Technical Decisions</a></li>
+      <li class="toc-item sidebar-item toc-level-3"><a class="sidebar-link" href="#pm-to-prompt-distance">PM to Prompt Distance</a></li>
+      <li class="toc-item sidebar-item toc-level-3"><a class="sidebar-link" href="#kv-cache">KV‑Cache</a></li>
+      <li class="toc-item sidebar-item toc-level-3"><a class="sidebar-link" href="#structured-output-response-schema">Structured Output / Response Schema</a></li>
+      <li class="toc-item sidebar-item toc-level-3"><a class="sidebar-link" href="#putting-it-all-together">Putting It All Together</a></li>
+      <li class="toc-item sidebar-item toc-level-3"><a class="sidebar-link" href="#next-steps">Next Steps</a></li>
+      <li class="toc-item sidebar-item toc-level-3"><a class="sidebar-link" href="#join-our-team">Join Our Team</a></li>
+        </ol>
+      </div>
+    </aside>
+  
+          <div class="article-content">
+            
+
+<div class="article-text-content">
+  <div class="article-date">2025-09-15 · TECH</div>
+  <h1 class="article-hero">How Engineers and PMs Ship LLM Features Together</h1>
+  <div class="article-body"><blockquote>
+<p>Originally published on Medium via <strong>OpusClip Engineering</strong>; reposted here on my blog.<br>
+Original: <a href="https://medium.com/opus-engineering/bridging-the-gap-how-engineers-and-pms-ship-winning-llm-features-together-147a36ab4089">Bridging the Gap: How Engineers and PMs Ship Winning LLM Features Together</a></p>
+</blockquote>
+<h1 id="how-engineers-and-pms-ship-winning-llm-features-faster-3-technical-decisions">How Engineers and PMs Ship Winning LLM Features Faster: 3 Technical Decisions</h1>
+<p><strong>TL;DR:</strong></p>
+<ul>
+<li><strong>Prompts belong in configs, not code:</strong> Enable rapid iteration without deployments</li>
+<li><strong>Variables go last:</strong> Save 90% on costs through KV-cache optimization</li>
+<li><strong>Separate semantics from schema</strong>: PMs own meaning, engineers own structure</li>
+</ul>
+<p>The best LLM features aren’t built in silos. When engineers and PMs at <strong>OpusClip</strong> started collaborating on prompt architecture, <strong>iteration cycles dropped from days to minutes</strong>, <strong>API costs fell by 10x</strong>, and <strong>prompts in production are more reliable</strong>. Here are the three technical decisions that made the biggest difference.</p>
+<h3 id="pm-to-prompt-distance">PM to Prompt Distance</h3>
+<p><strong>What it is:</strong> The number of hops — and the amount of interpretation — between your product requirement and the exact text/settings the model actually receives.</p>
+<p>
+<picture>
+  <source srcset="/assets/posts/bridging-the-gap-how-engineers-and-pms-ship-winning-llm-features-together/en/image_1.webp" type="image/webp" />
+  <img src="/assets/posts/bridging-the-gap-how-engineers-and-pms-ship-winning-llm-features-together/en/image_1.png" alt="" class="article-image" width="1024" height="1572" />
+</picture>
+</p>
+<p><a href="https://www.linkedin.com/posts/manus-im_product-to-prompt-distance-is-fast-becoming-activity-7349444736048320512-zjjS?utm_source=share&amp;utm_medium=member_desktop&amp;rcm=ACoAACdAQCkBye_l2SHKxHq1FoCJdVQJdLz5Boc">Tao Zhang first defines this metric in Manus.</a></p>
+<p>Here’s what typically happens:</p>
+<ol>
+<li><strong>PM writes</strong>: “The assistant should be professional but approachable”</li>
+<li><strong>Spec translates</strong>: “Use formal language with occasional casual phrases”</li>
+<li><strong>Engineer implements</strong>: “You are a professional assistant. Maintain formal tone while being friendly.”</li>
+<li><strong>Runtime adds context</strong>: “You are a professional assistant. Maintain formal tone while being friendly. Current user: {user_name}. Previous context: {history}”</li>
+</ol>
+<p>Each step adds interpretation and delay.</p>
+<p><strong>Why it matters:</strong></p>
+<ul>
+<li><strong>Speed of iteration.</strong> Fewer hops = faster experiments.</li>
+<li><strong>Quality &amp; intent fidelity.</strong> Each handoff (PM → spec → UI copy → template → runtime prompt) adds interpretation risk.</li>
+<li><strong>Observability.</strong> When prompts are hidden in code, it’s hard to debug.</li>
+</ul>
+<p><strong>How to reduce distance:</strong> Ask your engineer teammates to put prompts on dynamic configs, or a prompt management platform. Don’t put prompts on code.</p>
+<h3 id="kv-cache">KV‑Cache</h3>
+<p><strong>What it is:</strong> KV-Cache (Key-Value Cache) is like a smart notebook that lets LLMs remember their previous calculations. Without it, every time your chatbot generates a new word, it would need to re-read the entire conversation from scratch.</p>
+<p>Imagine you’re having a conversation with a chatbot. Each time you send a new message, the chatbot needs to understand the entire conversation history to provide a relevant response. Without a KV-Cache, the model would have to re-read and re-process the whole conversation from the beginning every single time it generates a new word. This is incredibly inefficient and slow, leading to a frustratingly laggy user experience, especially with longer conversations or longer prompts.</p>
+<p>
+<picture>
+  <source srcset="/assets/posts/bridging-the-gap-how-engineers-and-pms-ship-winning-llm-features-together/en/image_2.webp" type="image/webp" />
+  <img src="/assets/posts/bridging-the-gap-how-engineers-and-pms-ship-winning-llm-features-together/en/image_2.png" alt="" class="article-image" width="1024" height="276" />
+</picture>
+</p>
+<p>KV-Cache has two major benefits:</p>
+<ul>
+<li><strong>Faster Response Times (Same response qualities but faster speeds):</strong> By avoiding redundant computations, the KV-Cache allows the LLM to generate responses much more quickly. For users, this means less waiting and a more fluid, natural interaction with your AI feature.</li>
+<li><strong>Reduced Computational Costs (Same money but more users):</strong> Re-processing less data means using less computational power. This directly translates to lower operational costs for running your LLM, making your product more scalable.</li>
+</ul>
+<p><strong>Why PMs should care:</strong> modern LLM providers now charge 10x less for cached tokens than new tokens.</p>
+<blockquote>
+<p>For example, GPT-5 charges $1.25 for 1M input tokens, but it only charges $0.125 for 1M cached tokens.</p>
+</blockquote>
+<p><strong>How to leverage KV-cache:</strong> Always put variables at the end of your prompts.</p>
+<p>❌ <strong>Bad prompt structure</strong> (minimal caching):</p>
+<pre class="hljs"><code>User: {{user_name}}  
+Question: {{user_question}}  
+Conversation history: {{chat_history}}  
+  
+You are a customer support agent for TechCorp.  
+Guidelines:  
+- Be empathetic and professional  
+- Check our knowledge base before answering  
+- Escalate billing issues to human agents  
+- Always verify account details first
+</code></pre>
+<p>✅ <strong>Good prompt structure</strong> (maximum caching):</p>
+<pre class="hljs"><code>You are a customer support agent for TechCorp.  
+Guidelines:  
+- Be empathetic and professional    
+- Check our knowledge base before answering  
+- Escalate billing issues to human agents  
+- Always verify account details first  
+  
+User: {{user_name}}  
+Question: {{user_question}}  
+Conversation history: {{chat_history}}
+</code></pre>
+<p>The static instructions get cached across all requests, while only the dynamic user content changes. For a support bot handling 10,000 daily conversations, this restructuring alone could save $200–300 or more per day.</p>
+<h3 id="structured-output-response-schema">Structured Output / Response Schema</h3>
+<p><strong>What it is:</strong> Instead of returning free‑form text, the model returns <strong>well‑formed JSON</strong>. You define a schema — fields, types, enums — and the model adheres to it.</p>
+<p><strong>This is counterintuitive for many PMs: you don’t need to describe the format in your prompt at all.</strong></p>
+<ul>
+<li><strong>Structured output is an API-level feature</strong>, not a prompt trick. You turn it on <strong>in code</strong> by registering a schema/response format; then the runtime enforces it.</li>
+<li><strong>Once it’s configured, don’t re-specify the format in the prompt.</strong> Tell the model <em>what</em> to fill, not <em>how to format</em> it.</li>
+<li><strong>Consumer chatbot UIs (e.g., ChatGPT-style apps) generally don’t expose this.</strong> They’re optimized for human-readable text, not machine-parsable payloads.</li>
+</ul>
+<p><strong>We have to show some code here to explain it:</strong></p>
+<pre class="hljs"><code>import OpenAI from &quot;openai&quot;  
+import { z } from &quot;zod&quot;  
+import { zodTextFormat } from &quot;openai/helpers/zod&quot;  
+  
+// 1) Your schema stays in code (Zod)  
+const RelevancyItem = z.object({  
+  clipId: z.string(),  
+  relevant: z.boolean(),  
+  relevantReason: z.string(),  
+  advertisement: z.boolean(),  
+})  
+const RelevancyArray = z.array(RelevancyItem)  
+type Relevancy = z.infer&lt;typeof RelevancyArray&gt;  
+  
+// 2) Build the semantics-only prompt (no format instructions)  
+const prompt = promptTemplate.join(&quot;\n&quot;).replace(INPUT_REPLACE, input)  
+  
+const openai = new OpenAI({ apiKey: process.env.OPENAI_API_KEY })  
+  
+// 3) Call Responses API and let the helper parse &amp; validate for you  
+const response = await openai.responses.parse({  
+  model: &quot;gpt-4o-mini&quot;,  
+  input: [  
+    { role: &quot;system&quot;, content: &quot;Judge search-trend relevancy using the definitions provided.&quot; },  
+    { role: &quot;user&quot;, content: prompt },  
+  ],  
+  text: {  
+    // zodTextFormat drives structured output and runtime validation  
+    format: zodTextFormat(RelevancyArray, &quot;relevancy_results&quot;),  
+  },  
+})  
+  
+// 4) Already parsed &amp; validated:  
+const results: Relevancy = response.output_parsed  
+  
+// 5) Same post-filtering  
+const relatedResults = results.filter(  
+  (r) =&gt; r.relevant &amp;&amp; r.evergreen &amp;&amp; !r.advertisement  
+)
+</code></pre>
+<p><strong>⚠️ Conflict Notice (VERY IMPORTANT)</strong></p>
+<p>Once a <strong>schema/responseFormat</strong> is set in code, <strong>do not describe output formatting in the prompt</strong>. Mixing prompt-format rules with the engineer-defined schema creates two sources of truth and measurably hurts reliability:</p>
+<ul>
+<li><strong>Validation failures &amp; retries</strong> → higher latency/cost; occasional data loss if coerced.</li>
+<li><strong>Instruction dilution</strong> → worse task quality (model juggles format vs. content).</li>
+<li><strong>Downstream breakage</strong> → typed logic fails on “pretty” but invalid payloads.</li>
+</ul>
+<p><strong>Please remember:</strong> <em>Schema owns format; prompt owns semantics.</em> Keep prompts about what each field should contain (definitions, decision rules), <strong>not</strong> how to format.</p>
+<p>❌ <strong>Your prompt should NOT say</strong>:</p>
+<pre class="hljs"><code>Analyze these search results and return a JSON object with:  
+- videoId: the video identifier  
+- isRelevant: boolean indicating if it matches  
+- relevanceReason: explanation string  
+- isPaid: boolean for sponsored content  
+Format as valid JSON with these exact field names.
+</code></pre>
+<p>✅ <strong>Your prompt SHOULD say</strong>:</p>
+<pre class="hljs"><code>Analyze these search results for relevance to the user's query.  
+  
+For relevance assessment:  
+- Consider semantic match, not just keyword overlap  
+- Educational content is preferred over entertainment  
+- Recent content (last 6 months) is more relevant  
+  
+For paid content detection:  
+- Look for &quot;Sponsored&quot;, &quot;Ad&quot;, or &quot;#ad&quot; markers  
+- Check if the channel name includes &quot;Official&quot; or &quot;Brand&quot;  
+  
+Provide clear reasoning for why content is or isn't relevant.
+</code></pre>
+<p>Notice: all semantics, zero formatting. The schema handles structure; your prompt handles meaning.</p>
+<p>One worth-to-mention common pitfall that PMs to avoid: changing field names in prompts without coordinating with engineering. If your engineer’s schema says videoId but your prompt mentions video_id or clip_id, you’re creating confusion that degrades performance.</p>
+<h3 id="putting-it-all-together">Putting It All Together</h3>
+<p>
+<picture>
+  <source srcset="/assets/posts/bridging-the-gap-how-engineers-and-pms-ship-winning-llm-features-together/en/image_3.webp" type="image/webp" />
+  <img src="/assets/posts/bridging-the-gap-how-engineers-and-pms-ship-winning-llm-features-together/en/image_3.png" alt="" class="article-image" width="1024" height="512" />
+</picture>
+</p>
+<ol>
+<li><strong>Low pm to prompt distance</strong> lets you iterate quickly on prompt improvements</li>
+<li><strong>Optimized KV-cache</strong> makes those iterations cheaper to test at scale</li>
+<li><strong>Proper structured output</strong> ensures reliable, parseable responses regardless of prompt changes</li>
+</ol>
+<h3 id="next-steps">Next Steps</h3>
+<ol>
+<li><strong>Audit your current setup</strong>: Where do your prompts live? Are variables at the end? Are you mixing format and content instructions?</li>
+<li><strong>Start one conversation</strong>: Pick the highest-impact improvement and discuss with your engineering team. Most engineers appreciate PMs who understand these constraints.</li>
+<li><strong>Measure the impact</strong>: Track iteration speed, cost per request, and error rates before and after changes.</li>
+</ol>
+<p><strong>Questions?</strong> Drop them in the comments. Our team loves talking about efficient engineering &amp; pm collaborations.</p>
+<h3 id="join-our-team">Join Our Team</h3>
+<p>If these practical takeaways resonate with you and you’re passionate about solving complex technical challenges at scale, we’d love to hear from you.</p>
+<p>Check out our open positions: <a href="https://www.opus.pro/careers">opus.pro/careers</a></p>
+</div>
+</div>
+
+            <section class="comment-section" data-comment-section></section>
+          </div>
+        </div>
+      </main>
+    </div>
+
+    <script id="page-data" type="application/json">
+      {
+  "pageType": "post",
+  "lang": "en",
+  "langSwitchUrl": "/bridging-the-gap-how-engineers-and-pms-ship-winning-llm-features-together/zh/",
+  "langSwitcherMode": "toggle",
+  "markdownUrl": "/posts/bridging-the-gap-how-engineers-and-pms-ship-winning-llm-features-together/post.md",
+  "labels": {
+    "navAbout": "About",
+    "navBlog": "Blog",
+    "filterAll": "All"
+  },
+  "comments": {
+    "appId": "e224d3ce-6f5a-4777-bb80-b7bbf2e78d83",
+    "pageId": "bridging-the-gap-how-engineers-and-pms-ship-winning-llm-features-together",
+    "pageUrl": "https://www.yujiachen.com/bridging-the-gap-how-engineers-and-pms-ship-winning-llm-features-together/",
+    "pageTitle": "How Engineers and PMs Ship LLM Features Together"
+  }
+}
+    </script>
+    <script type="module" src="/app.js"></script>
+  </body>
+</html>

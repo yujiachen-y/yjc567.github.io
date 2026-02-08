@@ -1,0 +1,590 @@
+[
+  {
+    "translationKey": "bridging-the-gap-how-engineers-and-pms-ship-winning-llm-features-together",
+    "lang": "en",
+    "title": "How Engineers and PMs Ship LLM Features Together",
+    "date": "2025-09-15",
+    "shortDate": "09-15",
+    "year": "2025",
+    "categories": [
+      "Tech"
+    ],
+    "categoryColorIndex": 1,
+    "coverImage": null,
+    "url": "/bridging-the-gap-how-engineers-and-pms-ship-winning-llm-features-together/"
+  },
+  {
+    "translationKey": "how-to-1-on-1",
+    "lang": "en",
+    "title": "How to 1-on-1",
+    "date": "2025-02-15",
+    "shortDate": "02-15",
+    "year": "2025",
+    "categories": [
+      "Essays"
+    ],
+    "categoryColorIndex": 0,
+    "coverImage": null,
+    "url": "/how-to-1-on-1/"
+  },
+  {
+    "translationKey": "simple-vs-easy",
+    "lang": "en",
+    "title": "Simple vs Easy",
+    "date": "2025-01-19",
+    "shortDate": "01-19",
+    "year": "2025",
+    "categories": [
+      "Essays"
+    ],
+    "categoryColorIndex": 0,
+    "coverImage": null,
+    "url": "/simple-vs-easy/"
+  },
+  {
+    "translationKey": "learnings-from-bytedance",
+    "lang": "en",
+    "title": "Learnings from ByteDance",
+    "date": "2025-01-02",
+    "shortDate": "01-02",
+    "year": "2025",
+    "categories": [
+      "Essays"
+    ],
+    "categoryColorIndex": 0,
+    "coverImage": null,
+    "url": "/learnings-from-bytedance/"
+  },
+  {
+    "translationKey": "new-things-vs-old-things",
+    "lang": "en",
+    "title": "New Things vs Old Things",
+    "date": "2024-12-26",
+    "shortDate": "12-26",
+    "year": "2024",
+    "categories": [
+      "Essays"
+    ],
+    "categoryColorIndex": 0,
+    "coverImage": null,
+    "url": "/new-things-vs-old-things/"
+  },
+  {
+    "translationKey": "shape-your-mac",
+    "lang": "en",
+    "title": "Shape Your Mac",
+    "date": "2024-07-14",
+    "shortDate": "07-14",
+    "year": "2024",
+    "categories": [
+      "Tech"
+    ],
+    "categoryColorIndex": 1,
+    "coverImage": null,
+    "url": "/shape-your-mac/"
+  },
+  {
+    "translationKey": "the-permission-model-myth",
+    "lang": "en",
+    "title": "The Permission Model Myth",
+    "date": "2024-02-25",
+    "shortDate": "02-25",
+    "year": "2024",
+    "categories": [
+      "Tech"
+    ],
+    "categoryColorIndex": 1,
+    "coverImage": null,
+    "url": "/the-permission-model-myth/"
+  },
+  {
+    "translationKey": "golang-generics",
+    "lang": "en",
+    "title": "Golang Generics",
+    "date": "2023-05-26",
+    "shortDate": "05-26",
+    "year": "2023",
+    "categories": [
+      "Tech"
+    ],
+    "categoryColorIndex": 1,
+    "coverImage": null,
+    "url": "/golang-generics/"
+  },
+  {
+    "translationKey": "software-design-book-notes",
+    "lang": "en",
+    "title": "Notes on A Philosophy of Software Design",
+    "date": "2022-10-09",
+    "shortDate": "10-09",
+    "year": "2022",
+    "categories": [
+      "Tech"
+    ],
+    "categoryColorIndex": 1,
+    "coverImage": null,
+    "url": "/software-design-book-notes/"
+  },
+  {
+    "translationKey": "dont-be-a-programmer",
+    "lang": "en",
+    "title": "Don't Be a Programmer",
+    "date": "2022-05-01",
+    "shortDate": "05-01",
+    "year": "2022",
+    "categories": [
+      "Essays"
+    ],
+    "categoryColorIndex": 0,
+    "coverImage": null,
+    "url": "/dont-be-a-programmer/"
+  },
+  {
+    "translationKey": "key-iterations-trustworthy-online-controlled-experiments",
+    "lang": "en",
+    "title": "Key Iterations: Trustworthy Online Controlled Experiments",
+    "date": "2021-12-24",
+    "shortDate": "12-24",
+    "year": "2021",
+    "categories": [
+      "Tech"
+    ],
+    "categoryColorIndex": 1,
+    "coverImage": null,
+    "url": "/key-iterations-trustworthy-online-controlled-experiments/"
+  },
+  {
+    "translationKey": "transactions-and-consensus-from-ddia",
+    "lang": "en",
+    "title": "Transactions and Consensus from DDIA",
+    "date": "2021-09-27",
+    "shortDate": "09-27",
+    "year": "2021",
+    "categories": [
+      "Tech"
+    ],
+    "categoryColorIndex": 1,
+    "coverImage": null,
+    "url": "/transactions-and-consensus-from-ddia/"
+  },
+  {
+    "translationKey": "ring-allreduce",
+    "lang": "en",
+    "title": "Introduction to Ring-Allreduce",
+    "date": "2018-05-24",
+    "shortDate": "05-24",
+    "year": "2018",
+    "categories": [
+      "Tech"
+    ],
+    "categoryColorIndex": 1,
+    "coverImage": null,
+    "url": "/ring-allreduce/"
+  },
+  {
+    "translationKey": "bridging-the-gap-how-engineers-and-pms-ship-winning-llm-features-together",
+    "lang": "zh",
+    "title": "写给 PM 的 LLM 工程知识点",
+    "date": "2025-09-15",
+    "shortDate": "09-15",
+    "year": "2025",
+    "categories": [
+      "Tech"
+    ],
+    "categoryColorIndex": 1,
+    "coverImage": null,
+    "url": "/bridging-the-gap-how-engineers-and-pms-ship-winning-llm-features-together/zh/"
+  },
+  {
+    "translationKey": "how-to-1-on-1",
+    "lang": "zh",
+    "title": "如何进行 1-on-1",
+    "date": "2025-02-15",
+    "shortDate": "02-15",
+    "year": "2025",
+    "categories": [
+      "Essays"
+    ],
+    "categoryColorIndex": 0,
+    "coverImage": null,
+    "url": "/how-to-1-on-1/zh/"
+  },
+  {
+    "translationKey": "simple-vs-easy",
+    "lang": "zh",
+    "title": "简单 vs 容易",
+    "date": "2025-01-19",
+    "shortDate": "01-19",
+    "year": "2025",
+    "categories": [
+      "Essays"
+    ],
+    "categoryColorIndex": 0,
+    "coverImage": null,
+    "url": "/simple-vs-easy/zh/"
+  },
+  {
+    "translationKey": "learnings-from-bytedance",
+    "lang": "zh",
+    "title": "Learnings from ByteDance",
+    "date": "2025-01-02",
+    "shortDate": "01-02",
+    "year": "2025",
+    "categories": [
+      "Essays"
+    ],
+    "categoryColorIndex": 0,
+    "coverImage": null,
+    "url": "/learnings-from-bytedance/zh/"
+  },
+  {
+    "translationKey": "new-things-vs-old-things",
+    "lang": "zh",
+    "title": "新事情 vs 旧事情",
+    "date": "2024-12-26",
+    "shortDate": "12-26",
+    "year": "2024",
+    "categories": [
+      "Essays"
+    ],
+    "categoryColorIndex": 0,
+    "coverImage": null,
+    "url": "/new-things-vs-old-things/zh/"
+  },
+  {
+    "translationKey": "2024-year-in-review",
+    "lang": "zh",
+    "title": "2024 年小结",
+    "date": "2024-08-03",
+    "shortDate": "08-03",
+    "year": "2024",
+    "categories": [
+      "Yearbook"
+    ],
+    "categoryColorIndex": 2,
+    "coverImage": null,
+    "url": "/2024-year-in-review/"
+  },
+  {
+    "translationKey": "shape-your-mac",
+    "lang": "zh",
+    "title": "打造你的 Mac",
+    "date": "2024-07-14",
+    "shortDate": "07-14",
+    "year": "2024",
+    "categories": [
+      "Tech"
+    ],
+    "categoryColorIndex": 1,
+    "coverImage": null,
+    "url": "/shape-your-mac/zh/"
+  },
+  {
+    "translationKey": "the-permission-model-myth",
+    "lang": "zh",
+    "title": "权限模型的迷思",
+    "date": "2024-02-25",
+    "shortDate": "02-25",
+    "year": "2024",
+    "categories": [
+      "Tech"
+    ],
+    "categoryColorIndex": 1,
+    "coverImage": null,
+    "url": "/the-permission-model-myth/zh/"
+  },
+  {
+    "translationKey": "maximizing-llm-performance",
+    "lang": "zh",
+    "title": "最大化 LLM 性能的技术概览",
+    "date": "2023-11-26",
+    "shortDate": "11-26",
+    "year": "2023",
+    "categories": [
+      "Tech"
+    ],
+    "categoryColorIndex": 1,
+    "coverImage": null,
+    "url": "/maximizing-llm-performance/"
+  },
+  {
+    "translationKey": "2023-pivot",
+    "lang": "zh",
+    "title": "2023 - pivot",
+    "date": "2023-09-21",
+    "shortDate": "09-21",
+    "year": "2023",
+    "categories": [
+      "Yearbook"
+    ],
+    "categoryColorIndex": 2,
+    "coverImage": null,
+    "url": "/2023-pivot/"
+  },
+  {
+    "translationKey": "how-to-do-great-work",
+    "lang": "zh",
+    "title": "【译】如何做出伟大工作",
+    "date": "2023-08-12",
+    "shortDate": "08-12",
+    "year": "2023",
+    "categories": [
+      "Essays"
+    ],
+    "categoryColorIndex": 0,
+    "coverImage": null,
+    "url": "/how-to-do-great-work/"
+  },
+  {
+    "translationKey": "golang-generics",
+    "lang": "zh",
+    "title": "Golang 泛型",
+    "date": "2023-05-26",
+    "shortDate": "05-26",
+    "year": "2023",
+    "categories": [
+      "Tech"
+    ],
+    "categoryColorIndex": 1,
+    "coverImage": null,
+    "url": "/golang-generics/zh/"
+  },
+  {
+    "translationKey": "re-2022",
+    "lang": "zh",
+    "title": "re:2022",
+    "date": "2023-01-25",
+    "shortDate": "01-25",
+    "year": "2023",
+    "categories": [
+      "Yearbook"
+    ],
+    "categoryColorIndex": 2,
+    "coverImage": null,
+    "url": "/re-2022/"
+  },
+  {
+    "translationKey": "harvard-business-review-excerpts",
+    "lang": "zh",
+    "title": "哈佛商业评论摘抄",
+    "date": "2023-01-02",
+    "shortDate": "01-02",
+    "year": "2023",
+    "categories": [
+      "Essays"
+    ],
+    "categoryColorIndex": 0,
+    "coverImage": null,
+    "url": "/harvard-business-review-excerpts/"
+  },
+  {
+    "translationKey": "software-design-book-notes",
+    "lang": "zh",
+    "title": "Software Design Book 小记",
+    "date": "2022-10-09",
+    "shortDate": "10-09",
+    "year": "2022",
+    "categories": [
+      "Tech"
+    ],
+    "categoryColorIndex": 1,
+    "coverImage": null,
+    "url": "/software-design-book-notes/zh/"
+  },
+  {
+    "translationKey": "how-to-read-a-book",
+    "lang": "zh",
+    "title": "如何阅读一本书",
+    "date": "2022-08-14",
+    "shortDate": "08-14",
+    "year": "2022",
+    "categories": [
+      "Essays"
+    ],
+    "categoryColorIndex": 0,
+    "coverImage": null,
+    "url": "/how-to-read-a-book/"
+  },
+  {
+    "translationKey": "personal-data-backup-practices",
+    "lang": "zh",
+    "title": "个人数据备份实践",
+    "date": "2022-07-02",
+    "shortDate": "07-02",
+    "year": "2022",
+    "categories": [
+      "Tech"
+    ],
+    "categoryColorIndex": 1,
+    "coverImage": null,
+    "url": "/personal-data-backup-practices/"
+  },
+  {
+    "translationKey": "the-missing-semester-of-your-cs-education",
+    "lang": "zh",
+    "title": "编程以外的编程知识",
+    "date": "2022-06-14",
+    "shortDate": "06-14",
+    "year": "2022",
+    "categories": [
+      "Tech"
+    ],
+    "categoryColorIndex": 1,
+    "coverImage": null,
+    "url": "/the-missing-semester-of-your-cs-education/"
+  },
+  {
+    "translationKey": "dont-be-a-programmer",
+    "lang": "zh",
+    "title": "不要成为一个程序员",
+    "date": "2022-05-01",
+    "shortDate": "05-01",
+    "year": "2022",
+    "categories": [
+      "Essays"
+    ],
+    "categoryColorIndex": 0,
+    "coverImage": null,
+    "url": "/dont-be-a-programmer/zh/"
+  },
+  {
+    "translationKey": "2021-year-in-review",
+    "lang": "zh",
+    "title": "2021 年小结",
+    "date": "2021-12-28",
+    "shortDate": "12-28",
+    "year": "2021",
+    "categories": [
+      "Yearbook"
+    ],
+    "categoryColorIndex": 2,
+    "coverImage": null,
+    "url": "/2021-year-in-review/"
+  },
+  {
+    "translationKey": "in-the-system",
+    "lang": "zh",
+    "title": "置身事内",
+    "date": "2021-12-28",
+    "shortDate": "12-28",
+    "year": "2021",
+    "categories": [
+      "Essays"
+    ],
+    "categoryColorIndex": 0,
+    "coverImage": null,
+    "url": "/in-the-system/"
+  },
+  {
+    "translationKey": "key-iterations-trustworthy-online-controlled-experiments",
+    "lang": "zh",
+    "title": "关键迭代：可信赖的线上对照实验",
+    "date": "2021-12-24",
+    "shortDate": "12-24",
+    "year": "2021",
+    "categories": [
+      "Tech"
+    ],
+    "categoryColorIndex": 1,
+    "coverImage": null,
+    "url": "/key-iterations-trustworthy-online-controlled-experiments/zh/"
+  },
+  {
+    "translationKey": "the-cathedral-and-the-bazaar",
+    "lang": "zh",
+    "title": "大教堂与集市",
+    "date": "2021-12-24",
+    "shortDate": "12-24",
+    "year": "2021",
+    "categories": [
+      "Tech"
+    ],
+    "categoryColorIndex": 1,
+    "coverImage": null,
+    "url": "/the-cathedral-and-the-bazaar/"
+  },
+  {
+    "translationKey": "transactions-and-consensus-from-ddia",
+    "lang": "zh",
+    "title": "事务与共识 from DDIA",
+    "date": "2021-09-27",
+    "shortDate": "09-27",
+    "year": "2021",
+    "categories": [
+      "Tech"
+    ],
+    "categoryColorIndex": 1,
+    "coverImage": null,
+    "url": "/transactions-and-consensus-from-ddia/zh/"
+  },
+  {
+    "translationKey": "how-to-disagree",
+    "lang": "zh",
+    "title": "如何反对",
+    "date": "2021-04-06",
+    "shortDate": "04-06",
+    "year": "2021",
+    "categories": [
+      "Essays"
+    ],
+    "categoryColorIndex": 0,
+    "coverImage": null,
+    "url": "/how-to-disagree/"
+  },
+  {
+    "translationKey": "2020-summary",
+    "lang": "zh",
+    "title": "特别的一年——2020 小结",
+    "date": "2020-12-20",
+    "shortDate": "12-20",
+    "year": "2020",
+    "categories": [
+      "Yearbook"
+    ],
+    "categoryColorIndex": 2,
+    "coverImage": null,
+    "url": "/2020-summary/"
+  },
+  {
+    "translationKey": "2019-year-in-review",
+    "lang": "zh",
+    "title": "2019 年小结",
+    "date": "2019-12-31",
+    "shortDate": "12-31",
+    "year": "2019",
+    "categories": [
+      "Yearbook"
+    ],
+    "categoryColorIndex": 2,
+    "coverImage": null,
+    "url": "/2019-year-in-review/"
+  },
+  {
+    "translationKey": "2018-year-in-review",
+    "lang": "zh",
+    "title": "2018 年小结",
+    "date": "2018-12-29",
+    "shortDate": "12-29",
+    "year": "2018",
+    "categories": [
+      "Yearbook"
+    ],
+    "categoryColorIndex": 2,
+    "coverImage": null,
+    "url": "/2018-year-in-review/"
+  },
+  {
+    "translationKey": "ring-allreduce",
+    "lang": "zh",
+    "title": "ring-allreduce 简介",
+    "date": "2018-05-24",
+    "shortDate": "05-24",
+    "year": "2018",
+    "categories": [
+      "Tech"
+    ],
+    "categoryColorIndex": 1,
+    "coverImage": null,
+    "url": "/ring-allreduce/zh/"
+  }
+]

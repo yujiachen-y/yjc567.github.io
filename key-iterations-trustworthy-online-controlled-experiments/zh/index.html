@@ -1,0 +1,363 @@
+<!doctype html>
+<html lang="zh" data-theme="auto">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>关键迭代：可信赖的线上对照实验 | Jiachen Yu</title>
+        <meta name="description" content="关键迭代：可信赖的线上对照实验" />
+    <meta property="og:title" content="关键迭代：可信赖的线上对照实验 | Jiachen Yu" />
+    <meta property="og:description" content="关键迭代：可信赖的线上对照实验" />
+    <meta property="og:type" content="article" />
+    <meta property="og:url" content="https://www.yujiachen.com/key-iterations-trustworthy-online-controlled-experiments/zh/" />
+    <meta name="twitter:card" content="summary" />
+    <link rel="canonical" href="https://www.yujiachen.com/key-iterations-trustworthy-online-controlled-experiments/zh/" />
+    <link rel="alternate" type="text/markdown" href="https://www.yujiachen.com/posts/key-iterations-trustworthy-online-controlled-experiments/post.md" />
+    <link rel="alternate" hreflang="en" href="https://www.yujiachen.com/key-iterations-trustworthy-online-controlled-experiments/" />
+<link rel="alternate" hreflang="zh" href="https://www.yujiachen.com/key-iterations-trustworthy-online-controlled-experiments/zh/" /> <link rel="alternate" type="application/rss+xml" title="RSS" href="https://www.yujiachen.com/rss.xml" />
+<link rel="alternate" type="application/rss+xml" title="RSS (ZH)" href="https://www.yujiachen.com/rss-zh.xml" /> <link rel="icon" href="/favicon-32.png" type="image/png" sizes="32x32" />
+<link rel="icon" href="/favicon.png" type="image/png" />
+<link rel="icon" href="/favicon.ico" type="image/x-icon" />
+<link rel="apple-touch-icon" href="/apple-touch-icon.png" sizes="180x180" /> <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&amp;family=Source+Serif+4:ital,wght@0,400;0,600;0,700;1,400&amp;family=Noto+Serif+SC:wght@400;600;700&amp;display=swap" />
+    <link rel="stylesheet" href="/katex/katex.min.css" />
+    <link rel="stylesheet" href="/styles.css" />
+    <link rel="stylesheet" href="/fonts.css" />
+  </head>
+  <body data-page="post">
+    <div id="root">
+      
+<nav class="navbar">
+  <div class="nav-left">
+    <a href="/zh/" class="brand">Jiachen Yu</a>
+    <div class="nav-links">
+      <a class="nav-link-button" href="/about/zh/" data-nav="about">About</a>
+      <a class="nav-link-button" href="/blog/zh/" data-nav="blog">Blog</a>
+    </div>
+  </div>
+  <div class="controls">
+    <div class="action-controls">
+      <div class="lang-switcher" data-lang-switcher data-lang-switcher-mode="toggle">
+        <button class="lang-toggle" type="button" data-lang-toggle>EN</button>
+      </div>
+      <div class="theme-switcher" data-theme-switcher data-theme-state="light">
+        <button
+          class="theme-trigger"
+          type="button"
+          data-theme-trigger
+          aria-label="Theme mode toggle"
+          aria-pressed="false"
+        >
+          <span class="theme-trigger-icon">
+            <svg class="theme-icon theme-icon-dark" viewBox="0 0 24 24" aria-hidden="true">
+              <path
+                d="M21 12.8A8.5 8.5 0 1 1 11.2 3a7.5 7.5 0 0 0 9.8 9.8Z"
+                fill="currentColor"
+              />
+            </svg>
+            <svg class="theme-icon theme-icon-light" viewBox="0 0 24 24" aria-hidden="true">
+              <circle cx="12" cy="12" r="4" fill="currentColor" />
+              <path
+                d="M12 3v2M12 19v2M4.9 4.9l1.4 1.4M17.7 17.7l1.4 1.4M3 12h2M19 12h2M4.9 19.1l1.4-1.4M17.7 6.3l1.4-1.4"
+                stroke="currentColor"
+                stroke-width="2"
+                stroke-linecap="round"
+                fill="none"
+              />
+            </svg>
+          </span>
+        </button>
+      </div>
+      <a
+        class="ask-ai-entry"
+        href="/ask-ai/"
+        data-ask-ai-entry
+        aria-label="Open Ask AI"
+      >
+        <span class="ask-ai-entry-label">Ask AI</span>
+      </a>
+    </div>
+  </div>
+</nav>
+
+      <main class="page-shell article-page">
+        <div class="article-layout has-toc page-shell-content">
+          
+    <aside class="article-toc sidebar-panel" data-toc>
+      <button class="toc-toggle sidebar-toggle" type="button" data-toc-toggle aria-expanded="false">
+        <span class="toc-toggle-label">目录</span>
+        <span class="toc-toggle-icon" aria-hidden="true">⌄</span>
+      </button>
+      <div class="toc-panel sidebar-panel-content" data-toc-panel>
+        <div class="toc-title sidebar-title">目录</div>
+        <ol class="toc-list sidebar-list">
+      <li class="toc-item sidebar-item toc-level-1"><a class="sidebar-link" href="#准备测试">准备测试</a></li>
+      <li class="toc-item sidebar-item toc-level-2"><a class="sidebar-link" href="#想成功就多失败">想成功就多失败</a></li>
+      <li class="toc-item sidebar-item toc-level-2"><a class="sidebar-link" href="#测试是战术-决策是战略">测试是战术，决策是战略</a></li>
+      <li class="toc-item sidebar-item toc-level-2"><a class="sidebar-link" href="#什么是显著结果">什么是显著结果</a></li>
+      <li class="toc-item sidebar-item toc-level-1"><a class="sidebar-link" href="#搭建测试">搭建测试</a></li>
+      <li class="toc-item sidebar-item toc-level-2"><a class="sidebar-link" href="#变体分配">变体分配</a></li>
+      <li class="toc-item sidebar-item toc-level-2"><a class="sidebar-link" href="#指标分类">指标分类</a></li>
+      <li class="toc-item sidebar-item toc-level-2"><a class="sidebar-link" href="#指标选择">指标选择</a></li>
+      <li class="toc-item sidebar-item toc-level-3"><a class="sidebar-link" href="#代理指标">代理指标</a></li>
+      <li class="toc-item sidebar-item toc-level-3"><a class="sidebar-link" href="#指标归一化">指标归一化</a></li>
+      <li class="toc-item sidebar-item toc-level-3"><a class="sidebar-link" href="#对偶性">对偶性</a></li>
+      <li class="toc-item sidebar-item toc-level-3"><a class="sidebar-link" href="#预防子指标冲突">预防子指标冲突</a></li>
+      <li class="toc-item sidebar-item toc-level-2"><a class="sidebar-link" href="#陷阱">陷阱</a></li>
+      <li class="toc-item sidebar-item toc-level-3"><a class="sidebar-link" href="#警惕极端结果">警惕极端结果</a></li>
+      <li class="toc-item sidebar-item toc-level-3"><a class="sidebar-link" href="#辛普森悖论">辛普森悖论</a></li>
+      <li class="toc-item sidebar-item toc-level-3"><a class="sidebar-link" href="#用户群改变">用户群改变</a></li>
+      <li class="toc-item sidebar-item toc-level-3"><a class="sidebar-link" href="#不确定的混淆因素">不确定的混淆因素</a></li>
+      <li class="toc-item sidebar-item toc-level-3"><a class="sidebar-link" href="#others">Others</a></li>
+      <li class="toc-item sidebar-item toc-level-2"><a class="sidebar-link" href="#长期实验">长期实验</a></li>
+      <li class="toc-item sidebar-item toc-level-2"><a class="sidebar-link" href="#伦理">伦理</a></li>
+      <li class="toc-item sidebar-item toc-level-2"><a class="sidebar-link" href="#一个例子-设计一个减速实验">一个例子：设计一个减速实验</a></li>
+      <li class="toc-item sidebar-item toc-level-2"><a class="sidebar-link" href="#替代方案">替代方案</a></li>
+      <li class="toc-item sidebar-item toc-level-1"><a class="sidebar-link" href="#数学推导">数学推导</a></li>
+      <li class="toc-item sidebar-item toc-level-2"><a class="sidebar-link" href="#方差相关问题">方差相关问题</a></li>
+      <li class="toc-item sidebar-item toc-level-3"><a class="sidebar-link" href="#增量-以及比率指标的方差计算">增量，以及比率指标的方差计算</a></li>
+      <li class="toc-item sidebar-item toc-level-3"><a class="sidebar-link" href="#离群值">离群值</a></li>
+      <li class="toc-item sidebar-item toc-level-3"><a class="sidebar-link" href="#提高灵敏度">提高灵敏度</a></li>
+      <li class="toc-item sidebar-item toc-level-2"><a class="sidebar-link" href="#p-value-的取值问题">p-value 的取值问题</a></li>
+      <li class="toc-item sidebar-item toc-level-2"><a class="sidebar-link" href="#样本量n要多大">样本量n要多大</a></li>
+      <li class="toc-item sidebar-item toc-level-2"><a class="sidebar-link" href="#tbd-为什么选择t-分布">TBD 为什么选择t 分布？</a></li>
+        </ol>
+      </div>
+    </aside>
+  
+          <div class="article-content">
+            
+
+<div class="article-text-content">
+  <div class="article-date">2021-12-24 · TECH</div>
+  <h1 class="article-hero">关键迭代：可信赖的线上对照实验</h1>
+  <div class="article-body"><p>本文是对《关键迭代：可信赖的线上对照实验》的摘抄和总结。或者说一位 Airbnb 的读者，对一本作者与译者均来自 Airbnb 的技术书做的小结 😁。如有错误恳请指出，欢迎各种评论。</p>
+<blockquote class="callout callout-note">
+<p>💡 如果你只有一个锤子，那你看什么都像钉子。——亚伯拉罕·马斯洛</p>
+</blockquote>
+<h1 id="准备测试">准备测试</h1>
+<h2 id="想成功就多失败">想成功就多失败</h2>
+<p>实验的带来的认知改变也和预期于现实的差距有关。</p>
+<p>如果你认为一件事情会发生，然后它真的发生了，那么你不会学到什么。如果你认为一件事情会发生，但没有发生，那么你会学到一些重要的东西。如果你原本认为一件事情不值一提，但它带来了惊人的或突破性的结果，那么你会学到一些非常有价值的东西。</p>
+<p>团队认为一个产品功能有用才会去开发它，然而，很多领域的大部分想法都无法提升关键指标。在微软，被测试过的想法仅有三分之一能改善目标指标。在已经高度优化的产品领域，如必应和谷歌，想要成功就更难了，测试的成功率仅在10%～20%之间。 必应几百人的关联算法团队每年的任务就是将单个OEC指标提高2%。</p>
+<h2 id="测试是战术-决策是战略">测试是战术，决策是战略</h2>
+<p>测试大胆的想法时，运行和评估实验的方式也有所变化。</p>
+<ul>
+<li>实验的运行时长，房间里温度的小幅提升不会引起变化，而一旦达到熔点，冰块就会开始融化。</li>
+<li>被测试的创意数量。每个实验只测试一个具体的战术，该战术是总体战略的一个组成部分。个别实验的失败不代表总体战略有问题。但如果经对照实验评估后的很多战术都以失败告终，那大概率就是战略的问题。用实验来验证战略是极其消耗成本的，制定战略所需的数据应该从已收集的可用数据中得出。</li>
+</ul>
+<p>OKR 的一种解释就是确定战略 O，其后的 KR 衍生出一系列战术来满足 KR 并回馈到 O。</p>
+<h2 id="什么是显著结果">什么是显著结果</h2>
+<p>不是所有用户显著的结果都有实际意义。以人均营收为例，多大的差异从业务角度来说是紧要的？换句话说，什么演的变化是<strong>实际显著</strong>的（practically significant）？构建这一实质性的边界很重要，它可以帮助理解一个差异是否值得话费相应改动所需的成本。如果你的网站像谷歌和必应那样有数十亿美金的营收，那么 0.2% 的变化是实际显著的。作为对比，一个初创公司可能认为 2% 的增长都太小了，因为他们追求的是 10% 或更大的增长。</p>
+<p>2012年 bing 每 10 毫秒的性能提升（眨眼速度的 1/30）足以支付雇佣一个全职工程师一年的成本。到了 2015 年这个数字变成了 4 毫秒。</p>
+<h1 id="搭建测试">搭建测试</h1>
+<h2 id="变体分配">变体分配</h2>
+<p>如何把实验分配给用户</p>
+<ul>
+<li>单层方法。把用户分桶，比如1000 个桶，每次拿两个用户桶做实验。</li>
+<li>并行实验。
+<ul>
+<li>把代码架构分层，每层只有一个实验。</li>
+<li>不关心实验互相影响，默认实验都是正交的，如果有不正交的实验，依赖执行团队发现并解决矛盾。</li>
+</ul>
+</li>
+</ul>
+<h2 id="指标分类">指标分类</h2>
+<ul>
+<li><strong>目标指标</strong>，也被称为<strong>成功指标</strong>或<strong>北极星指标</strong>，它体现了机构终极关心的是什么。能用语言把你的目标清楚表达出来是重要的，因为从目标到指标的转化通常都不完美，你的目标指标也许只是你真正关心事物的一个近似，并且需要随着时间推移而迭代改进。让人们能理解这个局限性，以及指标与目标陈述之间的区别，对于把握公司的正确方向是至关重要的。</li>
+<li><strong>驱动指标</strong>，也被称为<strong>路标指标</strong>、<strong>代理指标</strong>、<strong>间接</strong>或<strong>预测指标</strong>，一般比目标指标更短期，变化更快也更灵敏。驱动指标反映了一个思维上的因果模型，它是关于如何做可以让机构更成功，也就是对成功的驱动力的假设，而非关于成功本身是什么样的。</li>
+<li><strong>护栏指标</strong>，保证我们在通往成功的道路上有正确的权衡取舍，不会违背重要的限制。</li>
+</ul>
+<h2 id="指标选择">指标选择</h2>
+<p>指标选择在不能违反数理常识的前提下，还取决于设计者的价值选择（“人是目的，不是手段”）。指标代表着你想要系统怎么去理解数据，你的关心是什么。例如关注极端值就要用P95 P99，关注整体情况就用平均值和中位数。</p>
+<h3 id="代理指标">代理指标</h3>
+<p>一些订阅服务以年为单位续订。除非你愿意运行一个长达一年的实验，否则很难测量对续订量的影响。对于这种情况，我们不能用续订率作为实验指标，而是需要寻找代理指标，比如服务的使用量，这类指标往往可以提早显示用户对服务的满意度，并最终影响续订率。</p>
+<h3 id="指标归一化">指标归一化</h3>
+<p>即便想要提高的是营收总和，也不建议将营收总和作为指标，因为它依赖于变体对应的用户数量。即便各变体被等量分配，实际用户数也可能因为偶然性而有所不同。我们推荐按实际样本量归一化的关键指标，因此<strong>人均营收</strong>才是一个好的综合评估标准。</p>
+<h3 id="对偶性">对偶性</h3>
+<p>有时候精确测量你不想要的事物反而比测量你想要的更简单，如用户的不满意度和不幸福度。 从观测数据中建立因果关系是很难的，但一个仔细进行的观测研究有助于否定错误的假设。</p>
+<h3 id="预防子指标冲突">预防子指标冲突</h3>
+<p>要仔细检查大指标下面的各个子指标，很有可能子指标之间是互相冲突的，例如搜索引擎的人均搜索量 = 人均会话数 * 会话平均的去重查询个数。</p>
+<p>一个会话的开始被定义为用户开始第一次查询，结束则是用户30分钟内在搜索引擎上没有活动。</p>
+<ul>
+<li>人均会话数大概率是一个正向的指标，用户对搜索引擎越喜欢，其使用频次就会上升，那么人均会话数也会上升。</li>
+<li>会话的平均去重查询却应该减少，这个与总目标相违背。因为单次会话的平均去重查询减少代表用户解决问题的步骤变少了，但是也有可能代表用户放弃了查询。我们最好伴随这个指标在建立一个查询中途放弃的指标。</li>
+</ul>
+<h2 id="陷阱">陷阱</h2>
+<h3 id="警惕极端结果">警惕极端结果</h3>
+<p>当看到令人惊讶的正面结果（例如对关键指标的重大改进）时，我们倾向于围绕它构思一个故事，分享并庆祝。当结果出人意料地是负面的时候，我们倾向于找出这项研究的某些局限性或较小的缺陷，并将其忽略掉。 经验告诉我们，许多极端结果更有可能是由工具化记录（例如，日志记录）的错误、数据丢失（或数据重复）或计算错误导致的。</p>
+<h3 id="辛普森悖论">辛普森悖论</h3>
+<p>在某个条件下的两组数据，分别讨论时都会满足某种性质，可是一旦合并考虑，却可能导致相反的结论。</p>
+<p><a href="https://en.wikipedia.org/wiki/Simpson%27s_paradox">Simpson’s paradox - Wikipedia</a></p>
+<p>当实验feature 导致了两个互为穷尽且互斥的细分群中的个体发生迁移，也会导致类似的情况（虽然书中强调这不是辛普森悖论）。</p>
+<p>例如某个feature 让等级2 的用户回到了等级1，可能两个等级的数据都变好了，因为等级2 的用户群剔除了表现差的用户，而等级1 的用户群增加了表现好的用户，但可能两个等级的总用户表现不会有变化甚至会变差。</p>
+<p>在理想情况下，只应该通过在实验之前就确定的值来进行细分，这样实验不会导致用户对应细分群的更改，但实际上在某些案例下我们很难限制这种细分。</p>
+<h3 id="用户群改变">用户群改变</h3>
+<p>当计算指标或运行实验时，所有的数据都来自现有的用户群。尤其是对早期产品和初创企业来说，早期用户可能无法代表业务长期发展所希望获取的用户群。</p>
+<h3 id="不确定的混淆因素">不确定的混淆因素</h3>
+<p>共享这些因素可能会导致实验失败：</p>
+<ul>
+<li><strong>市场资源</strong>。民宿、网约车有这样的问题，一旦进入supply constraint，一个组抢占过多的资源会让另一个组失去原有的资源。</li>
+<li><strong>广告活动的预算</strong>。</li>
+<li><strong>关联模型训练</strong>。一旦两个模型都是用全量用户的数据计算的，那么几天后很可能两个模型的知识会发生共享。</li>
+<li><strong>CPU或其他计算资源</strong>。</li>
+</ul>
+<h3 id="others">Others</h3>
+<p>Goodhart 法则：当一个测量变成目标时，它就不再是一个好的测量。</p>
+<p>Lucas 批判观察到在历史观测数据中的关系是无法被考虑为结构性的或者因果关系的。政策上的决定会改变经济模型的结构，这样以来历史上的关联性就不再成立了。随着时间的变化，可能我们之前倚赖的因果关系都会变化。</p>
+<h2 id="长期实验">长期实验</h2>
+<p>短期实验和长期实验结果可能不同的原因：</p>
+<ul>
+<li>用户的习得效应。</li>
+<li>网络效应。</li>
+<li>延迟的体验和评估。</li>
+<li>生态系统的变化
+<ul>
+<li>启动其他新功能。</li>
+<li>季节性。</li>
+<li>竞争格局。</li>
+<li>政府政策。</li>
+<li>概念漂移。</li>
+<li>软件性能下降。</li>
+</ul>
+</li>
+</ul>
+<p>长期运行实验的改善方法：</p>
+<ul>
+<li><strong>群组分析</strong>。长期跟踪一个稳定群组的用户数据。</li>
+<li><strong>后期分析</strong>。运行一段时间后关闭实验/或者把实验开放给所有用户，然后继续测量对照组和实验组的差异。</li>
+<li><strong>时间交错时实验</strong>。把实验开始时间t 作为变量创建多个实验组，比较不同t 之间用户的差异表现。</li>
+<li><strong>留出和反转实验</strong>。
+<ul>
+<li>留出：留下10%的用户在对照组；</li>
+<li>反转：几个月后吧10%的用户重新放到对照组。去测量用户的表现。</li>
+</ul>
+</li>
+</ul>
+<h2 id="伦理">伦理</h2>
+<ul>
+<li><strong>尊重人</strong>：尊重实验参与者是有自主行为能力的个体，并在他们丧失这种能力时保护他们。这一原则的重点是透明、真实和自愿（选择和同意）。</li>
+<li><strong>有益性</strong>：保护人们免受伤害。正确评估风险和收益，并在审查拟议研究时适当平衡风险和收益。</li>
+<li><strong>正义性</strong>：确保不剥削参与者，并公平分配风险和收益。</li>
+</ul>
+<h2 id="一个例子-设计一个减速实验">一个例子：设计一个减速实验</h2>
+<p>为什么减速实验可以测出加速对产品的影响？</p>
+<p>假设相关指标（如营收）对性能（如速度）的变化图线，在当前值附近可以很好的被线性拟合。这就是一阶泰勒展开的近似，或者说是线性近似。</p>
+<p>即如果我们改进性能，得到的指标变化是可以用降低性能得到的指标变化来近似的。</p>
+<p>还有两个原因可以支持这个假设</p>
+<ul>
+<li>从我们自己作为用户的经验来看，网站速度是越快越好的。即大家都喜欢性能好的产品。</li>
+<li>我们还可以去验证线性假设，比如测试一下延迟100ms 和延迟250ms 的指标，看一看在这两个情况下得到的指标是否符合线性关系。</li>
+</ul>
+<h2 id="替代方案">替代方案</h2>
+<p>如何去测量虚拟事实呢？考虑要计算一个测试对象为人群的实验，想要知道此实验的虚拟事实和现实的偏差，我们有：</p>
+<pre class="hljs"><code>  受影响人群的结果 - 未受影响人群的结果
+=（受影响人群的结果 - 受影响人群如果未受影响的结果） +
+ （受影响人群如果未受影响的结果 - 未受影响人群的结果）
+= 变动对于受影响人群的作用 + 选择性偏差
+</code></pre>
+<p>我们能观测到的是是否收到影响人群的表现，但我们想知道的是变动对于受影响人群的作用，所以我们期望系统中的选择性偏差为0。</p>
+<p>A/B 测试就是选择性偏差为0 的系统，但是很多实际情况我们无法把A/B 测试施加到一个现实问题中，比如没有随机化单元，比如实验会带来巨大的（机会）成本浪费，比如实验会有违伦理道德。</p>
+<p>一般有这些方法来替代A/B 测试，但这一类方案总是会比A/B 测试带来更大的误差和夸张的结果：</p>
+<ul>
+<li><strong>中断时间序列</strong>，把实验时间分割成许多小段，每段时间均匀（且随机、或者就是轮询）地分配给各个事实，然后对此进行测量和分析（一些时序模型可以派上用场，比如贝叶斯结构时间序列分析）。</li>
+<li><strong>交错式实验</strong>，经常用于排名算法，奇数位置展示算法A，偶数位置展示算法B，以此来比较差异。</li>
+<li><strong>断点回归设计</strong>，当受实验影响的人群是由一个明确阈值识别的情况下时考虑该方法，把刚好低于阈值的人群作为对照组，将刚好高于阈值的人群作为实验组，通过比较这两组人群来减少选择性偏差。比如研究奖学金对学生的影响，80分以上的考生可以有奖学金，那我们就研究84-80 和79-75 这两个考生群体。</li>
+<li><strong>工具变量和自然实验</strong>，如果能在被研究流程中找到可以帮助我们实现随机分组的工具，那么利用这个工具来分析实验，比如采取抽签制的征兵和入学分配，若可以判定抽签过程是随机的，那么就可以用抽签作为随机化单元。</li>
+<li><strong>倾向评分匹配</strong>，虽然我们无法随机化，但是如果我们可以分清楚不同组别之间可能会影响我们对变量判断的混淆因素（协变量），又或者可以确定无法辨别的混淆因素不会影响分析，那我们就可以去分析变量和结果之间的因果关系，通常很难做到。</li>
+<li><strong>双重差分法</strong>，识别出与实验组尽可能相似的对照组，假设两组在趋势上是相同的。比如选择两个各类特征都相近的两个城市作为对照城市，一个开启新feature，一个不是，然后比较两个城市之间的差异。</li>
+</ul>
+<p>这一类分析需要小心使用，可能会因为如下原因失效：</p>
+<ul>
+<li><strong>共同原因</strong>，手掌越小寿命越长，其实是女性的寿命越长。</li>
+<li><strong>伪相关性或欺骗性的相关性</strong>，全美拼写比赛的单词长度和当年被毒蜘蛛咬死的人数正相关，但这显然是伪相关性。</li>
+</ul>
+<h1 id="数学推导">数学推导</h1>
+<p>
+<picture>
+  <source srcset="/assets/posts/key-iterations-trustworthy-online-controlled-experiments/zh/image_1.webp" type="image/webp" />
+  <img src="/assets/posts/key-iterations-trustworthy-online-controlled-experiments/zh/image_1.png" alt="" class="article-image" width="1055" height="506" />
+</picture>
+</p>
+<p>我们用双样本t检验来计算p-value，这符合实际的实验设置。</p>
+<section><eqn><span class="katex-display"><span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML" display="block"><semantics><mrow><mi>T</mi><mo>=</mo><mfrac><mi>Δ</mi><msqrt><mrow><mtext>var</mtext><mo stretchy="false">(</mo><mi>Δ</mi><mo stretchy="false">)</mo></mrow></msqrt></mfrac></mrow><annotation encoding="application/x-tex"> T = \frac{\mathit{\Delta}}{\sqrt{\text{var} (\mathit{\Delta})}} </annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.6833em;"></span><span class="mord mathnormal" style="margin-right:0.13889em;">T</span><span class="mspace" style="margin-right:0.2778em;"></span><span class="mrel">=</span><span class="mspace" style="margin-right:0.2778em;"></span></span><span class="base"><span class="strut" style="height:2.4903em;vertical-align:-1.13em;"></span><span class="mord"><span class="mopen nulldelimiter"></span><span class="mfrac"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:1.3603em;"><span style="top:-2.175em;"><span class="pstrut" style="height:3em;"></span><span class="mord"><span class="mord sqrt"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.935em;"><span class="svg-align" style="top:-3.2em;"><span class="pstrut" style="height:3.2em;"></span><span class="mord" style="padding-left:1em;"><span class="mord text"><span class="mord">var</span></span><span class="mopen">(</span><span class="mord mathit">Δ</span><span class="mclose">)</span></span></span><span style="top:-2.895em;"><span class="pstrut" style="height:3.2em;"></span><span class="hide-tail" style="min-width:1.02em;height:1.28em;"><svg xmlns="http://www.w3.org/2000/svg" width="400em" height="1.28em" viewBox="0 0 400000 1296" preserveAspectRatio="xMinYMin slice"><path d="M263,681c0.7,0,18,39.7,52,119
+c34,79.3,68.167,158.7,102.5,238c34.3,79.3,51.8,119.3,52.5,120
+c340,-704.7,510.7,-1060.3,512,-1067
+l0 -0
+c4.7,-7.3,11,-11,19,-11
+H40000v40H1012.3
+s-271.3,567,-271.3,567c-38.7,80.7,-84,175,-136,283c-52,108,-89.167,185.3,-111.5,232
+c-22.3,46.7,-33.8,70.3,-34.5,71c-4.7,4.7,-12.3,7,-23,7s-12,-1,-12,-1
+s-109,-253,-109,-253c-72.7,-168,-109.3,-252,-110,-252c-10.7,8,-22,16.7,-34,26
+c-22,17.3,-33.3,26,-34,26s-26,-26,-26,-26s76,-59,76,-59s76,-60,76,-60z
+M1001 80h400000v40h-400000z"/></svg></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.305em;"><span></span></span></span></span></span></span></span><span style="top:-3.23em;"><span class="pstrut" style="height:3em;"></span><span class="frac-line" style="border-bottom-width:0.04em;"></span></span><span style="top:-3.677em;"><span class="pstrut" style="height:3em;"></span><span class="mord"><span class="mord mathit">Δ</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:1.13em;"><span></span></span></span></span></span><span class="mclose nulldelimiter"></span></span></span></span></span></span></eqn></section><p>其中<eq><span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>Δ</mi><mo>=</mo><mover accent="true"><msup><mi>Y</mi><mi>t</mi></msup><mo stretchy="true">‾</mo></mover><mo>−</mo><mover accent="true"><msup><mi>Y</mi><mi>c</mi></msup><mo stretchy="true">‾</mo></mover></mrow><annotation encoding="application/x-tex">\mathit{\Delta} = \overline{Y^t} - \overline{Y^c}</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.6833em;"></span><span class="mord mathit">Δ</span><span class="mspace" style="margin-right:0.2778em;"></span><span class="mrel">=</span><span class="mspace" style="margin-right:0.2778em;"></span></span><span class="base"><span class="strut" style="height:1.0029em;vertical-align:-0.0833em;"></span><span class="mord overline"><span class="vlist-t"><span class="vlist-r"><span class="vlist" style="height:0.9196em;"><span style="top:-3em;"><span class="pstrut" style="height:3em;"></span><span class="mord"><span class="mord"><span class="mord mathnormal" style="margin-right:0.22222em;">Y</span><span class="msupsub"><span class="vlist-t"><span class="vlist-r"><span class="vlist" style="height:0.7196em;"><span style="top:-2.989em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mathnormal mtight">t</span></span></span></span></span></span></span></span></span></span><span style="top:-3.8396em;"><span class="pstrut" style="height:3em;"></span><span class="overline-line" style="border-bottom-width:0.04em;"></span></span></span></span></span></span><span class="mspace" style="margin-right:0.2222em;"></span><span class="mbin">−</span><span class="mspace" style="margin-right:0.2222em;"></span></span><span class="base"><span class="strut" style="height:0.8833em;"></span><span class="mord overline"><span class="vlist-t"><span class="vlist-r"><span class="vlist" style="height:0.8833em;"><span style="top:-3em;"><span class="pstrut" style="height:3em;"></span><span class="mord"><span class="mord"><span class="mord mathnormal" style="margin-right:0.22222em;">Y</span><span class="msupsub"><span class="vlist-t"><span class="vlist-r"><span class="vlist" style="height:0.5904em;"><span style="top:-2.989em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mathnormal mtight">c</span></span></span></span></span></span></span></span></span></span><span style="top:-3.8033em;"><span class="pstrut" style="height:3em;"></span><span class="overline-line" style="border-bottom-width:0.04em;"></span></span></span></span></span></span></span></span></span></eq> 是实验组均值和对照组均值之差，<eq><span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mover accent="true"><msup><mi>Y</mi><mi>t</mi></msup><mo stretchy="true">‾</mo></mover></mrow><annotation encoding="application/x-tex">\overline{Y^t}</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.9196em;"></span><span class="mord overline"><span class="vlist-t"><span class="vlist-r"><span class="vlist" style="height:0.9196em;"><span style="top:-3em;"><span class="pstrut" style="height:3em;"></span><span class="mord"><span class="mord"><span class="mord mathnormal" style="margin-right:0.22222em;">Y</span><span class="msupsub"><span class="vlist-t"><span class="vlist-r"><span class="vlist" style="height:0.7196em;"><span style="top:-2.989em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mathnormal mtight">t</span></span></span></span></span></span></span></span></span></span><span style="top:-3.8396em;"><span class="pstrut" style="height:3em;"></span><span class="overline-line" style="border-bottom-width:0.04em;"></span></span></span></span></span></span></span></span></span></eq> 和 <eq><span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mover accent="true"><msup><mi>Y</mi><mi>c</mi></msup><mo stretchy="true">‾</mo></mover></mrow><annotation encoding="application/x-tex">\overline{Y^c}</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.8833em;"></span><span class="mord overline"><span class="vlist-t"><span class="vlist-r"><span class="vlist" style="height:0.8833em;"><span style="top:-3em;"><span class="pstrut" style="height:3em;"></span><span class="mord"><span class="mord"><span class="mord mathnormal" style="margin-right:0.22222em;">Y</span><span class="msupsub"><span class="vlist-t"><span class="vlist-r"><span class="vlist" style="height:0.5904em;"><span style="top:-2.989em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mathnormal mtight">c</span></span></span></span></span></span></span></span></span></span><span style="top:-3.8033em;"><span class="pstrut" style="height:3em;"></span><span class="overline-line" style="border-bottom-width:0.04em;"></span></span></span></span></span></span></span></span></span></eq> 因为中心极限定理符合正态分布。</p>
+<p>考虑独立变量的方差公式 <eq><span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mtext>var</mtext><mo stretchy="false">(</mo><mi>a</mi><mi>x</mi><mo>+</mo><mi>b</mi><mi>y</mi><mo stretchy="false">)</mo><mo>=</mo><msup><mi>a</mi><mn>2</mn></msup><mtext>var</mtext><mo stretchy="false">(</mo><mi>x</mi><mo stretchy="false">)</mo><mo>+</mo><msup><mi>b</mi><mn>2</mn></msup><mtext>var</mtext><mo stretchy="false">(</mo><mi>y</mi><mo stretchy="false">)</mo></mrow><annotation encoding="application/x-tex">\text{var}(ax+by) = a^2\text{var}(x) + b^2\text{var}(y)</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord text"><span class="mord">var</span></span><span class="mopen">(</span><span class="mord mathnormal">a</span><span class="mord mathnormal">x</span><span class="mspace" style="margin-right:0.2222em;"></span><span class="mbin">+</span><span class="mspace" style="margin-right:0.2222em;"></span></span><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord mathnormal">b</span><span class="mord mathnormal" style="margin-right:0.03588em;">y</span><span class="mclose">)</span><span class="mspace" style="margin-right:0.2778em;"></span><span class="mrel">=</span><span class="mspace" style="margin-right:0.2778em;"></span></span><span class="base"><span class="strut" style="height:1.0641em;vertical-align:-0.25em;"></span><span class="mord"><span class="mord mathnormal">a</span><span class="msupsub"><span class="vlist-t"><span class="vlist-r"><span class="vlist" style="height:0.8141em;"><span style="top:-3.063em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight">2</span></span></span></span></span></span></span></span><span class="mord text"><span class="mord">var</span></span><span class="mopen">(</span><span class="mord mathnormal">x</span><span class="mclose">)</span><span class="mspace" style="margin-right:0.2222em;"></span><span class="mbin">+</span><span class="mspace" style="margin-right:0.2222em;"></span></span><span class="base"><span class="strut" style="height:1.0641em;vertical-align:-0.25em;"></span><span class="mord"><span class="mord mathnormal">b</span><span class="msupsub"><span class="vlist-t"><span class="vlist-r"><span class="vlist" style="height:0.8141em;"><span style="top:-3.063em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight">2</span></span></span></span></span></span></span></span><span class="mord text"><span class="mord">var</span></span><span class="mopen">(</span><span class="mord mathnormal" style="margin-right:0.03588em;">y</span><span class="mclose">)</span></span></span></span></eq>：</p>
+<section><eqn><span class="katex-display"><span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML" display="block"><semantics><mrow><mtext>var</mtext><mo stretchy="false">(</mo><mi>Δ</mi><mo stretchy="false">)</mo><mo>=</mo><mtext>var</mtext><mo stretchy="false">(</mo><mover accent="true"><msup><mi>Y</mi><mi>t</mi></msup><mo stretchy="true">‾</mo></mover><mo>−</mo><mover accent="true"><msup><mi>Y</mi><mi>c</mi></msup><mo stretchy="true">‾</mo></mover><mo stretchy="false">)</mo><mo>=</mo><mtext>var</mtext><mo stretchy="false">(</mo><mover accent="true"><msup><mi>Y</mi><mi>t</mi></msup><mo stretchy="true">‾</mo></mover><mo stretchy="false">)</mo><mo>+</mo><mtext>var</mtext><mo stretchy="false">(</mo><mover accent="true"><msup><mi>Y</mi><mi>c</mi></msup><mo stretchy="true">‾</mo></mover><mo stretchy="false">)</mo></mrow><annotation encoding="application/x-tex"> \text{var}(\mathit{\Delta}) = \text{var}(\overline{Y^t} - \overline{Y^c}) = \text{var}(\overline{Y^t}) + \text{var}(\overline{Y^c}) </annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord text"><span class="mord">var</span></span><span class="mopen">(</span><span class="mord mathit">Δ</span><span class="mclose">)</span><span class="mspace" style="margin-right:0.2778em;"></span><span class="mrel">=</span><span class="mspace" style="margin-right:0.2778em;"></span></span><span class="base"><span class="strut" style="height:1.1696em;vertical-align:-0.25em;"></span><span class="mord text"><span class="mord">var</span></span><span class="mopen">(</span><span class="mord overline"><span class="vlist-t"><span class="vlist-r"><span class="vlist" style="height:0.9196em;"><span style="top:-3em;"><span class="pstrut" style="height:3em;"></span><span class="mord"><span class="mord"><span class="mord mathnormal" style="margin-right:0.22222em;">Y</span><span class="msupsub"><span class="vlist-t"><span class="vlist-r"><span class="vlist" style="height:0.7196em;"><span style="top:-2.989em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mathnormal mtight">t</span></span></span></span></span></span></span></span></span></span><span style="top:-3.8396em;"><span class="pstrut" style="height:3em;"></span><span class="overline-line" style="border-bottom-width:0.04em;"></span></span></span></span></span></span><span class="mspace" style="margin-right:0.2222em;"></span><span class="mbin">−</span><span class="mspace" style="margin-right:0.2222em;"></span></span><span class="base"><span class="strut" style="height:1.1333em;vertical-align:-0.25em;"></span><span class="mord overline"><span class="vlist-t"><span class="vlist-r"><span class="vlist" style="height:0.8833em;"><span style="top:-3em;"><span class="pstrut" style="height:3em;"></span><span class="mord"><span class="mord"><span class="mord mathnormal" style="margin-right:0.22222em;">Y</span><span class="msupsub"><span class="vlist-t"><span class="vlist-r"><span class="vlist" style="height:0.5904em;"><span style="top:-2.989em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mathnormal mtight">c</span></span></span></span></span></span></span></span></span></span><span style="top:-3.8033em;"><span class="pstrut" style="height:3em;"></span><span class="overline-line" style="border-bottom-width:0.04em;"></span></span></span></span></span></span><span class="mclose">)</span><span class="mspace" style="margin-right:0.2778em;"></span><span class="mrel">=</span><span class="mspace" style="margin-right:0.2778em;"></span></span><span class="base"><span class="strut" style="height:1.1696em;vertical-align:-0.25em;"></span><span class="mord text"><span class="mord">var</span></span><span class="mopen">(</span><span class="mord overline"><span class="vlist-t"><span class="vlist-r"><span class="vlist" style="height:0.9196em;"><span style="top:-3em;"><span class="pstrut" style="height:3em;"></span><span class="mord"><span class="mord"><span class="mord mathnormal" style="margin-right:0.22222em;">Y</span><span class="msupsub"><span class="vlist-t"><span class="vlist-r"><span class="vlist" style="height:0.7196em;"><span style="top:-2.989em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mathnormal mtight">t</span></span></span></span></span></span></span></span></span></span><span style="top:-3.8396em;"><span class="pstrut" style="height:3em;"></span><span class="overline-line" style="border-bottom-width:0.04em;"></span></span></span></span></span></span><span class="mclose">)</span><span class="mspace" style="margin-right:0.2222em;"></span><span class="mbin">+</span><span class="mspace" style="margin-right:0.2222em;"></span></span><span class="base"><span class="strut" style="height:1.1333em;vertical-align:-0.25em;"></span><span class="mord text"><span class="mord">var</span></span><span class="mopen">(</span><span class="mord overline"><span class="vlist-t"><span class="vlist-r"><span class="vlist" style="height:0.8833em;"><span style="top:-3em;"><span class="pstrut" style="height:3em;"></span><span class="mord"><span class="mord"><span class="mord mathnormal" style="margin-right:0.22222em;">Y</span><span class="msupsub"><span class="vlist-t"><span class="vlist-r"><span class="vlist" style="height:0.5904em;"><span style="top:-2.989em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mathnormal mtight">c</span></span></span></span></span></span></span></span></span></span><span style="top:-3.8033em;"><span class="pstrut" style="height:3em;"></span><span class="overline-line" style="border-bottom-width:0.04em;"></span></span></span></span></span></span><span class="mclose">)</span></span></span></span></span></eqn></section><p>其中<eq><span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mtext>var</mtext><mo stretchy="false">(</mo><mover accent="true"><mi>Y</mi><mo stretchy="true">‾</mo></mover><mo stretchy="false">)</mo><mo>=</mo><mtext>var</mtext><mo stretchy="false">(</mo><mfrac><mn>1</mn><mi>n</mi></mfrac><msubsup><mo>∑</mo><mrow><mi>i</mi><mo>=</mo><mn>1</mn></mrow><mi>n</mi></msubsup><msub><mi>Y</mi><mi>i</mi></msub><mo stretchy="false">)</mo><mo>=</mo><mfrac><mn>1</mn><msup><mi>n</mi><mn>2</mn></msup></mfrac><mo>∗</mo><mi>n</mi><mo>∗</mo><mtext>var</mtext><mo stretchy="false">(</mo><mi>Y</mi><mo stretchy="false">)</mo><mo>=</mo><mfrac><mrow><mtext>var</mtext><mo stretchy="false">(</mo><mi>Y</mi><mo stretchy="false">)</mo></mrow><mi>n</mi></mfrac></mrow><annotation encoding="application/x-tex">\text{var}(\overline Y) = \text{var}(\frac 1n \sum^n_{i=1}Y_i)=\frac 1 {n^2} * n * \text{var}(Y) = \frac{\text{var}(Y)}n</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1.1333em;vertical-align:-0.25em;"></span><span class="mord text"><span class="mord">var</span></span><span class="mopen">(</span><span class="mord overline"><span class="vlist-t"><span class="vlist-r"><span class="vlist" style="height:0.8833em;"><span style="top:-3em;"><span class="pstrut" style="height:3em;"></span><span class="mord"><span class="mord mathnormal" style="margin-right:0.22222em;">Y</span></span></span><span style="top:-3.8033em;"><span class="pstrut" style="height:3em;"></span><span class="overline-line" style="border-bottom-width:0.04em;"></span></span></span></span></span></span><span class="mclose">)</span><span class="mspace" style="margin-right:0.2778em;"></span><span class="mrel">=</span><span class="mspace" style="margin-right:0.2778em;"></span></span><span class="base"><span class="strut" style="height:1.1901em;vertical-align:-0.345em;"></span><span class="mord text"><span class="mord">var</span></span><span class="mopen">(</span><span class="mord"><span class="mopen nulldelimiter"></span><span class="mfrac"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.8451em;"><span style="top:-2.655em;"><span class="pstrut" style="height:3em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord mathnormal mtight">n</span></span></span></span><span style="top:-3.23em;"><span class="pstrut" style="height:3em;"></span><span class="frac-line" style="border-bottom-width:0.04em;"></span></span><span style="top:-3.394em;"><span class="pstrut" style="height:3em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord mtight">1</span></span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.345em;"><span></span></span></span></span></span><span class="mclose nulldelimiter"></span></span><span class="mspace" style="margin-right:0.1667em;"></span><span class="mop"><span class="mop op-symbol small-op" style="position:relative;top:0em;">∑</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.8043em;"><span style="top:-2.4003em;margin-left:0em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord mathnormal mtight">i</span><span class="mrel mtight">=</span><span class="mord mtight">1</span></span></span></span><span style="top:-3.2029em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mathnormal mtight">n</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.2997em;"><span></span></span></span></span></span></span><span class="mspace" style="margin-right:0.1667em;"></span><span class="mord"><span class="mord mathnormal" style="margin-right:0.22222em;">Y</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.3117em;"><span style="top:-2.55em;margin-left:-0.2222em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mathnormal mtight">i</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span><span class="mclose">)</span><span class="mspace" style="margin-right:0.2778em;"></span><span class="mrel">=</span><span class="mspace" style="margin-right:0.2778em;"></span></span><span class="base"><span class="strut" style="height:1.1901em;vertical-align:-0.345em;"></span><span class="mord"><span class="mopen nulldelimiter"></span><span class="mfrac"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.8451em;"><span style="top:-2.655em;"><span class="pstrut" style="height:3em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord mtight"><span class="mord mathnormal mtight">n</span><span class="msupsub"><span class="vlist-t"><span class="vlist-r"><span class="vlist" style="height:0.7463em;"><span style="top:-2.786em;margin-right:0.0714em;"><span class="pstrut" style="height:2.5em;"></span><span class="sizing reset-size3 size1 mtight"><span class="mord mtight">2</span></span></span></span></span></span></span></span></span></span></span><span style="top:-3.23em;"><span class="pstrut" style="height:3em;"></span><span class="frac-line" style="border-bottom-width:0.04em;"></span></span><span style="top:-3.394em;"><span class="pstrut" style="height:3em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord mtight">1</span></span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.345em;"><span></span></span></span></span></span><span class="mclose nulldelimiter"></span></span><span class="mspace" style="margin-right:0.2222em;"></span><span class="mbin">∗</span><span class="mspace" style="margin-right:0.2222em;"></span></span><span class="base"><span class="strut" style="height:0.4653em;"></span><span class="mord mathnormal">n</span><span class="mspace" style="margin-right:0.2222em;"></span><span class="mbin">∗</span><span class="mspace" style="margin-right:0.2222em;"></span></span><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord text"><span class="mord">var</span></span><span class="mopen">(</span><span class="mord mathnormal" style="margin-right:0.22222em;">Y</span><span class="mclose">)</span><span class="mspace" style="margin-right:0.2778em;"></span><span class="mrel">=</span><span class="mspace" style="margin-right:0.2778em;"></span></span><span class="base"><span class="strut" style="height:1.355em;vertical-align:-0.345em;"></span><span class="mord"><span class="mopen nulldelimiter"></span><span class="mfrac"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:1.01em;"><span style="top:-2.655em;"><span class="pstrut" style="height:3em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord mathnormal mtight">n</span></span></span></span><span style="top:-3.23em;"><span class="pstrut" style="height:3em;"></span><span class="frac-line" style="border-bottom-width:0.04em;"></span></span><span style="top:-3.485em;"><span class="pstrut" style="height:3em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord text mtight"><span class="mord mtight">var</span></span><span class="mopen mtight">(</span><span class="mord mathnormal mtight" style="margin-right:0.22222em;">Y</span><span class="mclose mtight">)</span></span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.345em;"><span></span></span></span></span></span><span class="mclose nulldelimiter"></span></span></span></span></span></eq></p>
+<p>p-value 在事实上就是一个条件概率，这个条件概率是：“当零假设为真时，观测到当前差异甚至更大差异的条件概率”，即 <eq><span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>P</mi><mo stretchy="false">(</mo><mtext>观测到</mtext><mi>Δ</mi><mi mathvariant="normal">∣</mi><msub><mi>H</mi><mn>0</mn></msub><mtext>为真</mtext><mo stretchy="false">)</mo></mrow><annotation encoding="application/x-tex">P(观测到\mathit{\Delta}|H_0 为真)</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord mathnormal" style="margin-right:0.13889em;">P</span><span class="mopen">(</span><span class="mord cjk_fallback">观测到</span><span class="mord mathit">Δ</span><span class="mord">∣</span><span class="mord"><span class="mord mathnormal" style="margin-right:0.08125em;">H</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.3011em;"><span style="top:-2.55em;margin-left:-0.0813em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight">0</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span><span class="mord cjk_fallback">为真</span><span class="mclose">)</span></span></span></span></eq>。这里的<eq><span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>Δ</mi></mrow><annotation encoding="application/x-tex">\mathit \Delta</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.6833em;"></span><span class="mord mathit">Δ</span></span></span></span></eq> 其实是经过归一化后的 <eq><span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>T</mi></mrow><annotation encoding="application/x-tex">T</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.6833em;"></span><span class="mord mathnormal" style="margin-right:0.13889em;">T</span></span></span></span></eq>，这个条件概率是可以无视具体实验提前计算出来的，所以我们认为<strong>p-value具有普适性</strong>。</p>
+<p>有人会误以为p-value 代表“当观测到当前差异甚至更大差异时，零假设为真的概率是多少”，其实这里面隐含的条件“观测到当前差异甚至更大差异”的概率是针对每个实验不同的， 没有普适性。可以用贝叶斯定理推导两者的关系：</p>
+<section><eqn><span class="katex-display"><span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML" display="block"><semantics><mtable rowspacing="0.25em" columnalign="right left" columnspacing="0em"><mtr><mtd><mstyle scriptlevel="0" displaystyle="true"><mrow><mi>P</mi><mo stretchy="false">(</mo><msub><mi>H</mi><mn>0</mn></msub><mtext>为真</mtext><mi mathvariant="normal">∣</mi><mtext>观测到</mtext><mi>Δ</mi><mo stretchy="false">)</mo></mrow></mstyle></mtd><mtd><mstyle scriptlevel="0" displaystyle="true"><mrow><mrow></mrow><mo>=</mo><mfrac><mrow><mi>P</mi><mo stretchy="false">(</mo><mtext>观测到</mtext><mi>Δ</mi><mi mathvariant="normal">∣</mi><msub><mi>H</mi><mn>0</mn></msub><mtext>为真</mtext><mo stretchy="false">)</mo><mi>P</mi><mo stretchy="false">(</mo><msub><mi>H</mi><mn>0</mn></msub><mtext>为真</mtext><mo stretchy="false">)</mo></mrow><mrow><mi>P</mi><mo stretchy="false">(</mo><mtext>观测到</mtext><mi>Δ</mi><mo stretchy="false">)</mo></mrow></mfrac></mrow></mstyle></mtd></mtr><mtr><mtd><mstyle scriptlevel="0" displaystyle="true"><mrow></mrow></mstyle></mtd><mtd><mstyle scriptlevel="0" displaystyle="true"><mrow><mrow></mrow><mo>=</mo><mfrac><mrow><mi>P</mi><mo stretchy="false">(</mo><msub><mi>H</mi><mn>0</mn></msub><mtext>为真</mtext><mo stretchy="false">)</mo></mrow><mrow><mi>P</mi><mo stretchy="false">(</mo><mtext>观测到</mtext><mi>Δ</mi><mo stretchy="false">)</mo></mrow></mfrac><mo>∗</mo><mi>P</mi><mo stretchy="false">(</mo><mtext>观测到</mtext><mi>Δ</mi><mi mathvariant="normal">∣</mi><msub><mi>H</mi><mn>0</mn></msub><mtext>为真</mtext><mo stretchy="false">)</mo></mrow></mstyle></mtd></mtr><mtr><mtd><mstyle scriptlevel="0" displaystyle="true"><mrow></mrow></mstyle></mtd><mtd><mstyle scriptlevel="0" displaystyle="true"><mrow><mrow></mrow><mo>=</mo><mfrac><mrow><mi>P</mi><mo stretchy="false">(</mo><msub><mi>H</mi><mn>0</mn></msub><mtext>为真</mtext><mo stretchy="false">)</mo></mrow><mrow><mi>P</mi><mo stretchy="false">(</mo><mtext>观测到</mtext><mi>Δ</mi><mo stretchy="false">)</mo></mrow></mfrac><mo>∗</mo><mi>p</mi><mtext>值</mtext></mrow></mstyle></mtd></mtr></mtable><annotation encoding="application/x-tex"> \begin{align*} P(H_0 为真|观测到\mathit{\Delta}) &amp;= \frac {P(观测到\mathit{\Delta}|H_0 为真)P(H_0 为真)} {P(观测到\mathit{\Delta})} \\ &amp;= \frac {P(H_0 为真)}{P(观测到\mathit{\Delta})} * P(观测到\mathit{\Delta}|H_0 为真) \\ &amp;= \frac {P(H_0 为真)}{P(观测到\mathit{\Delta})} * p值 \end{align*} </annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:7.989em;vertical-align:-3.7445em;"></span><span class="mord"><span class="mtable"><span class="col-align-r"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:4.2445em;"><span style="top:-6.2445em;"><span class="pstrut" style="height:3.427em;"></span><span class="mord"><span class="mord mathnormal" style="margin-right:0.13889em;">P</span><span class="mopen">(</span><span class="mord"><span class="mord mathnormal" style="margin-right:0.08125em;">H</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.3011em;"><span style="top:-2.55em;margin-left:-0.0813em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight">0</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span><span class="mord cjk_fallback">为真</span><span class="mord">∣</span><span class="mord cjk_fallback">观测到</span><span class="mord mathit">Δ</span><span class="mclose">)</span></span></span><span style="top:-3.5815em;"><span class="pstrut" style="height:3.427em;"></span><span class="mord"></span></span><span style="top:-0.9185em;"><span class="pstrut" style="height:3.427em;"></span><span class="mord"></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:3.7445em;"><span></span></span></span></span></span><span class="col-align-l"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:4.2445em;"><span style="top:-6.2445em;"><span class="pstrut" style="height:3.427em;"></span><span class="mord"><span class="mord"></span><span class="mspace" style="margin-right:0.2778em;"></span><span class="mrel">=</span><span class="mspace" style="margin-right:0.2778em;"></span><span class="mord"><span class="mopen nulldelimiter"></span><span class="mfrac"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:1.427em;"><span style="top:-2.314em;"><span class="pstrut" style="height:3em;"></span><span class="mord"><span class="mord mathnormal" style="margin-right:0.13889em;">P</span><span class="mopen">(</span><span class="mord cjk_fallback">观测到</span><span class="mord mathit">Δ</span><span class="mclose">)</span></span></span><span style="top:-3.23em;"><span class="pstrut" style="height:3em;"></span><span class="frac-line" style="border-bottom-width:0.04em;"></span></span><span style="top:-3.677em;"><span class="pstrut" style="height:3em;"></span><span class="mord"><span class="mord mathnormal" style="margin-right:0.13889em;">P</span><span class="mopen">(</span><span class="mord cjk_fallback">观测到</span><span class="mord mathit">Δ</span><span class="mord">∣</span><span class="mord"><span class="mord mathnormal" style="margin-right:0.08125em;">H</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.3011em;"><span style="top:-2.55em;margin-left:-0.0813em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight">0</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span><span class="mord cjk_fallback">为真</span><span class="mclose">)</span><span class="mord mathnormal" style="margin-right:0.13889em;">P</span><span class="mopen">(</span><span class="mord"><span class="mord mathnormal" style="margin-right:0.08125em;">H</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.3011em;"><span style="top:-2.55em;margin-left:-0.0813em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight">0</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span><span class="mord cjk_fallback">为真</span><span class="mclose">)</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.936em;"><span></span></span></span></span></span><span class="mclose nulldelimiter"></span></span></span></span><span style="top:-3.5815em;"><span class="pstrut" style="height:3.427em;"></span><span class="mord"><span class="mord"></span><span class="mspace" style="margin-right:0.2778em;"></span><span class="mrel">=</span><span class="mspace" style="margin-right:0.2778em;"></span><span class="mord"><span class="mopen nulldelimiter"></span><span class="mfrac"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:1.427em;"><span style="top:-2.314em;"><span class="pstrut" style="height:3em;"></span><span class="mord"><span class="mord mathnormal" style="margin-right:0.13889em;">P</span><span class="mopen">(</span><span class="mord cjk_fallback">观测到</span><span class="mord mathit">Δ</span><span class="mclose">)</span></span></span><span style="top:-3.23em;"><span class="pstrut" style="height:3em;"></span><span class="frac-line" style="border-bottom-width:0.04em;"></span></span><span style="top:-3.677em;"><span class="pstrut" style="height:3em;"></span><span class="mord"><span class="mord mathnormal" style="margin-right:0.13889em;">P</span><span class="mopen">(</span><span class="mord"><span class="mord mathnormal" style="margin-right:0.08125em;">H</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.3011em;"><span style="top:-2.55em;margin-left:-0.0813em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight">0</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span><span class="mord cjk_fallback">为真</span><span class="mclose">)</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.936em;"><span></span></span></span></span></span><span class="mclose nulldelimiter"></span></span><span class="mspace" style="margin-right:0.2222em;"></span><span class="mbin">∗</span><span class="mspace" style="margin-right:0.2222em;"></span><span class="mord mathnormal" style="margin-right:0.13889em;">P</span><span class="mopen">(</span><span class="mord cjk_fallback">观测到</span><span class="mord mathit">Δ</span><span class="mord">∣</span><span class="mord"><span class="mord mathnormal" style="margin-right:0.08125em;">H</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.3011em;"><span style="top:-2.55em;margin-left:-0.0813em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight">0</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span><span class="mord cjk_fallback">为真</span><span class="mclose">)</span></span></span><span style="top:-0.9185em;"><span class="pstrut" style="height:3.427em;"></span><span class="mord"><span class="mord"></span><span class="mspace" style="margin-right:0.2778em;"></span><span class="mrel">=</span><span class="mspace" style="margin-right:0.2778em;"></span><span class="mord"><span class="mopen nulldelimiter"></span><span class="mfrac"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:1.427em;"><span style="top:-2.314em;"><span class="pstrut" style="height:3em;"></span><span class="mord"><span class="mord mathnormal" style="margin-right:0.13889em;">P</span><span class="mopen">(</span><span class="mord cjk_fallback">观测到</span><span class="mord mathit">Δ</span><span class="mclose">)</span></span></span><span style="top:-3.23em;"><span class="pstrut" style="height:3em;"></span><span class="frac-line" style="border-bottom-width:0.04em;"></span></span><span style="top:-3.677em;"><span class="pstrut" style="height:3em;"></span><span class="mord"><span class="mord mathnormal" style="margin-right:0.13889em;">P</span><span class="mopen">(</span><span class="mord"><span class="mord mathnormal" style="margin-right:0.08125em;">H</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.3011em;"><span style="top:-2.55em;margin-left:-0.0813em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight">0</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span><span class="mord cjk_fallback">为真</span><span class="mclose">)</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.936em;"><span></span></span></span></span></span><span class="mclose nulldelimiter"></span></span><span class="mspace" style="margin-right:0.2222em;"></span><span class="mbin">∗</span><span class="mspace" style="margin-right:0.2222em;"></span><span class="mord mathnormal">p</span><span class="mord cjk_fallback">值</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:3.7445em;"><span></span></span></span></span></span></span></span></span></span></span></span></eqn></section><h2 id="方差相关问题">方差相关问题</h2>
+<p>p-value 的计算依赖方差，方差估计常见问题：</p>
+<h3 id="增量-以及比率指标的方差计算"><strong>增量%，以及比率指标的方差计算</strong></h3>
+<p>此时注意，如果指标的含义和分析单元是不同的，很可能会导致一些取值不是独立同分布的。比如算页面转化率，而实验单位是用户，那么用户多次访问页面，让页面数据变成非独立同分布的数据。这时候方差需要从比率计算公式的分子分母各自对应的方差计算得来，不能根据比率公式算出比率再算方差。</p>
+<p>下面是正确的计算方法 我们把比率指标写成两个用户指标平均指标的比率</p>
+<section><eqn><span class="katex-display"><span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML" display="block"><semantics><mrow><mi>M</mi><mo>=</mo><mfrac><mover accent="true"><mi>X</mi><mo stretchy="true">‾</mo></mover><mover accent="true"><mi>Y</mi><mo stretchy="true">‾</mo></mover></mfrac></mrow><annotation encoding="application/x-tex"> M = \frac {\overline X} {\overline Y} </annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.6833em;"></span><span class="mord mathnormal" style="margin-right:0.10903em;">M</span><span class="mspace" style="margin-right:0.2778em;"></span><span class="mrel">=</span><span class="mspace" style="margin-right:0.2778em;"></span></span><span class="base"><span class="strut" style="height:2.3337em;vertical-align:-0.7733em;"></span><span class="mord"><span class="mopen nulldelimiter"></span><span class="mfrac"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:1.5603em;"><span style="top:-2.2267em;"><span class="pstrut" style="height:3em;"></span><span class="mord"><span class="mord overline"><span class="vlist-t"><span class="vlist-r"><span class="vlist" style="height:0.8833em;"><span style="top:-3em;"><span class="pstrut" style="height:3em;"></span><span class="mord"><span class="mord mathnormal" style="margin-right:0.22222em;">Y</span></span></span><span style="top:-3.8033em;"><span class="pstrut" style="height:3em;"></span><span class="overline-line" style="border-bottom-width:0.04em;"></span></span></span></span></span></span></span></span><span style="top:-3.23em;"><span class="pstrut" style="height:3em;"></span><span class="frac-line" style="border-bottom-width:0.04em;"></span></span><span style="top:-3.677em;"><span class="pstrut" style="height:3em;"></span><span class="mord"><span class="mord overline"><span class="vlist-t"><span class="vlist-r"><span class="vlist" style="height:0.8833em;"><span style="top:-3em;"><span class="pstrut" style="height:3em;"></span><span class="mord"><span class="mord mathnormal" style="margin-right:0.07847em;">X</span></span></span><span style="top:-3.8033em;"><span class="pstrut" style="height:3em;"></span><span class="overline-line" style="border-bottom-width:0.04em;"></span></span></span></span></span></span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.7733em;"><span></span></span></span></span></span><span class="mclose nulldelimiter"></span></span></span></span></span></span></eqn></section><p>通过delta 方法，跳过推导，最后的方差公式是：</p>
+<section><eqn><span class="katex-display"><span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML" display="block"><semantics><mrow><mtext>var</mtext><mo stretchy="false">(</mo><mi>Δ</mi><mi mathvariant="normal">%</mi><mo stretchy="false">)</mo><mo>=</mo><mfrac><mn>1</mn><msup><mover accent="true"><msup><mi>Y</mi><mi>c</mi></msup><mo stretchy="true">‾</mo></mover><mn>2</mn></msup></mfrac><mtext>var</mtext><mo stretchy="false">(</mo><mover accent="true"><msup><mi>Y</mi><mi>t</mi></msup><mo stretchy="true">‾</mo></mover><mo stretchy="false">)</mo><mo>+</mo><mfrac><msup><mover accent="true"><msup><mi>Y</mi><mi>t</mi></msup><mo stretchy="true">‾</mo></mover><mn>2</mn></msup><msup><mover accent="true"><msup><mi>Y</mi><mi>c</mi></msup><mo stretchy="true">‾</mo></mover><mn>4</mn></msup></mfrac><mtext>var</mtext><mo stretchy="false">(</mo><mover accent="true"><msup><mi>Y</mi><mi>c</mi></msup><mo stretchy="true">‾</mo></mover><mo stretchy="false">)</mo></mrow><annotation encoding="application/x-tex"> \text{var}(\mathit \Delta \%) = \frac 1 {\overline{Y^c}^2}\text{var}(\overline{Y^t}) + \frac{\overline{Y^t}^2}{\overline{Y^c}^4}\text{var}(\overline{Y^c}) </annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord text"><span class="mord">var</span></span><span class="mopen">(</span><span class="mord mathit">Δ</span><span class="mord">%</span><span class="mclose">)</span><span class="mspace" style="margin-right:0.2778em;"></span><span class="mrel">=</span><span class="mspace" style="margin-right:0.2778em;"></span></span><span class="base"><span class="strut" style="height:2.2988em;vertical-align:-0.9773em;"></span><span class="mord"><span class="mopen nulldelimiter"></span><span class="mfrac"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:1.3214em;"><span style="top:-2.11em;"><span class="pstrut" style="height:3.0873em;"></span><span class="mord"><span class="mord"><span class="mord overline"><span class="vlist-t"><span class="vlist-r"><span class="vlist" style="height:0.8833em;"><span style="top:-3em;"><span class="pstrut" style="height:3em;"></span><span class="mord"><span class="mord"><span class="mord mathnormal" style="margin-right:0.22222em;">Y</span><span class="msupsub"><span class="vlist-t"><span class="vlist-r"><span class="vlist" style="height:0.5904em;"><span style="top:-2.989em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mathnormal mtight">c</span></span></span></span></span></span></span></span></span></span><span style="top:-3.8033em;"><span class="pstrut" style="height:3em;"></span><span class="overline-line" style="border-bottom-width:0.04em;"></span></span></span></span></span></span><span class="msupsub"><span class="vlist-t"><span class="vlist-r"><span class="vlist" style="height:1.0873em;"><span style="top:-3.3362em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight">2</span></span></span></span></span></span></span></span></span></span><span style="top:-3.3173em;"><span class="pstrut" style="height:3.0873em;"></span><span class="frac-line" style="border-bottom-width:0.04em;"></span></span><span style="top:-3.7643em;"><span class="pstrut" style="height:3.0873em;"></span><span class="mord"><span class="mord">1</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.9773em;"><span></span></span></span></span></span><span class="mclose nulldelimiter"></span></span><span class="mord text"><span class="mord">var</span></span><span class="mopen">(</span><span class="mord overline"><span class="vlist-t"><span class="vlist-r"><span class="vlist" style="height:0.9196em;"><span style="top:-3em;"><span class="pstrut" style="height:3em;"></span><span class="mord"><span class="mord"><span class="mord mathnormal" style="margin-right:0.22222em;">Y</span><span class="msupsub"><span class="vlist-t"><span class="vlist-r"><span class="vlist" style="height:0.7196em;"><span style="top:-2.989em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mathnormal mtight">t</span></span></span></span></span></span></span></span></span></span><span style="top:-3.8396em;"><span class="pstrut" style="height:3em;"></span><span class="overline-line" style="border-bottom-width:0.04em;"></span></span></span></span></span></span><span class="mclose">)</span><span class="mspace" style="margin-right:0.2222em;"></span><span class="mbin">+</span><span class="mspace" style="margin-right:0.2222em;"></span></span><span class="base"><span class="strut" style="height:2.7779em;vertical-align:-0.9773em;"></span><span class="mord"><span class="mopen nulldelimiter"></span><span class="mfrac"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:1.8006em;"><span style="top:-2.1462em;"><span class="pstrut" style="height:3.1236em;"></span><span class="mord"><span class="mord"><span class="mord overline"><span class="vlist-t"><span class="vlist-r"><span class="vlist" style="height:0.8833em;"><span style="top:-3em;"><span class="pstrut" style="height:3em;"></span><span class="mord"><span class="mord"><span class="mord mathnormal" style="margin-right:0.22222em;">Y</span><span class="msupsub"><span class="vlist-t"><span class="vlist-r"><span class="vlist" style="height:0.5904em;"><span style="top:-2.989em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mathnormal mtight">c</span></span></span></span></span></span></span></span></span></span><span style="top:-3.8033em;"><span class="pstrut" style="height:3em;"></span><span class="overline-line" style="border-bottom-width:0.04em;"></span></span></span></span></span></span><span class="msupsub"><span class="vlist-t"><span class="vlist-r"><span class="vlist" style="height:1.0873em;"><span style="top:-3.3362em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight">4</span></span></span></span></span></span></span></span></span></span><span style="top:-3.3536em;"><span class="pstrut" style="height:3.1236em;"></span><span class="frac-line" style="border-bottom-width:0.04em;"></span></span><span style="top:-3.8006em;"><span class="pstrut" style="height:3.1236em;"></span><span class="mord"><span class="mord"><span class="mord overline"><span class="vlist-t"><span class="vlist-r"><span class="vlist" style="height:0.9196em;"><span style="top:-3em;"><span class="pstrut" style="height:3em;"></span><span class="mord"><span class="mord"><span class="mord mathnormal" style="margin-right:0.22222em;">Y</span><span class="msupsub"><span class="vlist-t"><span class="vlist-r"><span class="vlist" style="height:0.7196em;"><span style="top:-2.989em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mathnormal mtight">t</span></span></span></span></span></span></span></span></span></span><span style="top:-3.8396em;"><span class="pstrut" style="height:3em;"></span><span class="overline-line" style="border-bottom-width:0.04em;"></span></span></span></span></span></span><span class="msupsub"><span class="vlist-t"><span class="vlist-r"><span class="vlist" style="height:1.1236em;"><span style="top:-3.3725em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight">2</span></span></span></span></span></span></span></span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.9773em;"><span></span></span></span></span></span><span class="mclose nulldelimiter"></span></span><span class="mord text"><span class="mord">var</span></span><span class="mopen">(</span><span class="mord overline"><span class="vlist-t"><span class="vlist-r"><span class="vlist" style="height:0.8833em;"><span style="top:-3em;"><span class="pstrut" style="height:3em;"></span><span class="mord"><span class="mord"><span class="mord mathnormal" style="margin-right:0.22222em;">Y</span><span class="msupsub"><span class="vlist-t"><span class="vlist-r"><span class="vlist" style="height:0.5904em;"><span style="top:-2.989em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mathnormal mtight">c</span></span></span></span></span></span></span></span></span></span><span style="top:-3.8033em;"><span class="pstrut" style="height:3em;"></span><span class="overline-line" style="border-bottom-width:0.04em;"></span></span></span></span></span></span><span class="mclose">)</span></span></span></span></span></eqn></section><h3 id="离群值"><strong>离群值</strong></h3>
+<p>离群值会干扰试验，可以对观测指标添加一个合理的阈值，其他方法自己搜索。</p>
+<h3 id="提高灵敏度"><strong>提高灵敏度</strong></h3>
+<p>方差越小显著性越高，这些方法可以减小方差：</p>
+<ul>
+<li><strong>通过添加阈值、二元化和对数转化来改变指标</strong>。购买量比是否购买有更大的方差，人均观看时长比观看超过x小时有更大的方差。</li>
+<li><strong>通过触发分析移除噪音</strong>。</li>
+<li><strong>通过分层采样，控制变量法或者CUPED在采样范围内进行分层</strong>。最后把每层的结果合并得到总值，这样计算出的方差更小。</li>
+<li><strong>选择颗粒度更精细的随机化单元</strong>。</li>
+<li><strong>共享对照组</strong>。合理计算出一个对照组的大小，和多个实验组做比较，这样的方差更小，可以提高所有实验组的功效，但也会带来一些问题。</li>
+</ul>
+<h2 id="p-value-的取值问题"><strong>p-value 的取值问题</strong></h2>
+<p>警惕这样一个事实：当p-value 为0.05时，测试一个不显著的feature（比如没有任何改动的feature，此时零假设为真）100次，那么在统计上有5次测试我们会错误地认为这个feature 是显著的（测量到了极端值）。这里我们引入两个概念：</p>
+<ul>
+<li><strong>第一型错误</strong>，测量结果是显著差异的，但是真实情况是没有差异的。</li>
+<li><strong>第二型错误</strong>，测量结果是非显著差异的，但是真实情况是有差异的。</li>
+</ul>
+<p>不难发现，p-value 越小，第一型错误越少，但第二型错误会增多；反之第一型错误变大，第二型错误变小。</p>
+<p>为了防止前述“在统计上有5次测试我们会错误地认为这个feature 是显著的”，这样的第一型错误产生，我们可以对一些确认与实验无关（或间接相关）的指标施加更小的p-value，防止第一型错误发生。<strong>信心越坚定，所需的显著性水平越低。</strong></p>
+<p>同时，对比较敏感，我们不希望没有发现差异的guardrail metrics，应该放大p-value。特别是一些指标我们明确其不变化幅度不能超过x%，那我们应该遵循工业界，检验应有80%统计功效的原则（统计功效 = 1 - 第二型错误，一些具体的近似公式请自行查询），根据x 的数值去计算更具体的p-value。</p>
+<h2 id="样本量n要多大"><strong>样本量n要多大</strong></h2>
+<p>这一段和提高灵敏度那一段重复了一些内容。</p>
+<p>样本量n越大越好的理论基础是什么呢？这是因为t分布的前提假设之一就是其测算分布是正态分布，而根据<strong>中心极限定理</strong>，在适当的条件下，大量相互独立随机变量的均值经适当标准化后依分布收敛于标准正态分布。所以我们需要n足够大。</p>
+<p>前面叙述的统计功效近似公式可以在给定条件下帮我们测算n的大小，但这个公式需要我们去指定变化幅度x%，只适用在一些guardrail metrics上。</p>
+<p>那为了让均值服从正态分布，我们还有基于偏态系数的经验公式来计算n，一些差异较大的指标偏态系数也会很大，我们可以通过限制差异（比如超过10的数值都为10）来降低偏态系数和n，只要限制差异的条件不违反我们的假设就可以。</p>
+<p>当然还可以通过构建零分布来验证，但是涉及的概念就更复杂了，此处略过。</p>
+<h2 id="tbd-为什么选择t-分布">TBD 为什么选择t 分布？</h2>
+<p>需要比较几个抽样分布的特点，可以参考一下大学教材中的总结。</p>
+</div>
+</div>
+
+            <section class="comment-section" data-comment-section></section>
+          </div>
+        </div>
+      </main>
+    </div>
+
+    <script id="page-data" type="application/json">
+      {
+  "pageType": "post",
+  "lang": "zh",
+  "langSwitchUrl": "/key-iterations-trustworthy-online-controlled-experiments/",
+  "langSwitcherMode": "toggle",
+  "markdownUrl": "/posts/key-iterations-trustworthy-online-controlled-experiments/post.md",
+  "labels": {
+    "navAbout": "About",
+    "navBlog": "Blog",
+    "filterAll": "All"
+  },
+  "comments": {
+    "appId": "e224d3ce-6f5a-4777-bb80-b7bbf2e78d83",
+    "pageId": "key-iterations-trustworthy-online-controlled-experiments",
+    "pageUrl": "https://www.yujiachen.com/key-iterations-trustworthy-online-controlled-experiments/zh/",
+    "pageTitle": "关键迭代：可信赖的线上对照实验"
+  }
+}
+    </script>
+    <script type="module" src="/app.js"></script>
+  </body>
+</html>

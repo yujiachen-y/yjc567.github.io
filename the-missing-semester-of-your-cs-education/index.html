@@ -1,0 +1,319 @@
+<!doctype html>
+<html lang="zh" data-theme="auto">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>编程以外的编程知识 | Jiachen Yu</title>
+        <meta name="description" content="编程以外的编程知识" />
+    <meta property="og:title" content="编程以外的编程知识 | Jiachen Yu" />
+    <meta property="og:description" content="编程以外的编程知识" />
+    <meta property="og:type" content="article" />
+    <meta property="og:url" content="https://www.yujiachen.com/the-missing-semester-of-your-cs-education/" />
+    <meta name="twitter:card" content="summary" />
+    <link rel="canonical" href="https://www.yujiachen.com/the-missing-semester-of-your-cs-education/" />
+    <link rel="alternate" type="text/markdown" href="https://www.yujiachen.com/posts/the-missing-semester-of-your-cs-education/post.md" />
+    <link rel="alternate" hreflang="zh" href="https://www.yujiachen.com/the-missing-semester-of-your-cs-education/" /> <link rel="alternate" type="application/rss+xml" title="RSS" href="https://www.yujiachen.com/rss.xml" />
+<link rel="alternate" type="application/rss+xml" title="RSS (ZH)" href="https://www.yujiachen.com/rss-zh.xml" /> <link rel="icon" href="/favicon-32.png" type="image/png" sizes="32x32" />
+<link rel="icon" href="/favicon.png" type="image/png" />
+<link rel="icon" href="/favicon.ico" type="image/x-icon" />
+<link rel="apple-touch-icon" href="/apple-touch-icon.png" sizes="180x180" /> <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&amp;family=Source+Serif+4:ital,wght@0,400;0,600;0,700;1,400&amp;family=Noto+Serif+SC:wght@400;600;700&amp;display=swap" />
+    <link rel="stylesheet" href="/katex/katex.min.css" />
+    <link rel="stylesheet" href="/styles.css" />
+    <link rel="stylesheet" href="/fonts.css" />
+  </head>
+  <body data-page="post">
+    <div id="root">
+      
+<nav class="navbar">
+  <div class="nav-left">
+    <a href="/zh/" class="brand">Jiachen Yu</a>
+    <div class="nav-links">
+      <a class="nav-link-button" href="/about/zh/" data-nav="about">About</a>
+      <a class="nav-link-button" href="/blog/zh/" data-nav="blog">Blog</a>
+    </div>
+  </div>
+  <div class="controls">
+    <div class="action-controls">
+      <div class="lang-switcher" data-lang-switcher data-lang-switcher-mode="hidden">
+        <button class="lang-toggle" type="button" data-lang-toggle>EN</button>
+      </div>
+      <div class="theme-switcher" data-theme-switcher data-theme-state="light">
+        <button
+          class="theme-trigger"
+          type="button"
+          data-theme-trigger
+          aria-label="Theme mode toggle"
+          aria-pressed="false"
+        >
+          <span class="theme-trigger-icon">
+            <svg class="theme-icon theme-icon-dark" viewBox="0 0 24 24" aria-hidden="true">
+              <path
+                d="M21 12.8A8.5 8.5 0 1 1 11.2 3a7.5 7.5 0 0 0 9.8 9.8Z"
+                fill="currentColor"
+              />
+            </svg>
+            <svg class="theme-icon theme-icon-light" viewBox="0 0 24 24" aria-hidden="true">
+              <circle cx="12" cy="12" r="4" fill="currentColor" />
+              <path
+                d="M12 3v2M12 19v2M4.9 4.9l1.4 1.4M17.7 17.7l1.4 1.4M3 12h2M19 12h2M4.9 19.1l1.4-1.4M17.7 6.3l1.4-1.4"
+                stroke="currentColor"
+                stroke-width="2"
+                stroke-linecap="round"
+                fill="none"
+              />
+            </svg>
+          </span>
+        </button>
+      </div>
+      <a
+        class="ask-ai-entry"
+        href="/ask-ai/"
+        data-ask-ai-entry
+        aria-label="Open Ask AI"
+      >
+        <span class="ask-ai-entry-label">Ask AI</span>
+      </a>
+    </div>
+  </div>
+</nav>
+
+      <main class="page-shell article-page">
+        <div class="article-layout has-toc page-shell-content">
+          
+    <aside class="article-toc sidebar-panel" data-toc>
+      <button class="toc-toggle sidebar-toggle" type="button" data-toc-toggle aria-expanded="false">
+        <span class="toc-toggle-label">目录</span>
+        <span class="toc-toggle-icon" aria-hidden="true">⌄</span>
+      </button>
+      <div class="toc-panel sidebar-panel-content" data-toc-panel>
+        <div class="toc-title sidebar-title">目录</div>
+        <ol class="toc-list sidebar-list">
+      <li class="toc-item sidebar-item toc-level-1"><a class="sidebar-link" href="#shell">Shell</a></li>
+      <li class="toc-item sidebar-item toc-level-2"><a class="sidebar-link" href="#tools">Tools</a></li>
+      <li class="toc-item sidebar-item toc-level-2"><a class="sidebar-link" href="#job-control">Job Control</a></li>
+      <li class="toc-item sidebar-item toc-level-2"><a class="sidebar-link" href="#aliases">Aliases</a></li>
+      <li class="toc-item sidebar-item toc-level-2"><a class="sidebar-link" href="#dotfiles">Dotfiles</a></li>
+      <li class="toc-item sidebar-item toc-level-3"><a class="sidebar-link" href="#portability">Portability</a></li>
+      <li class="toc-item sidebar-item toc-level-2"><a class="sidebar-link" href="#ssh-configuration">SSH Configuration</a></li>
+      <li class="toc-item sidebar-item toc-level-3"><a class="sidebar-link" href="#key-based-authentication">Key based authentication</a></li>
+      <li class="toc-item sidebar-item toc-level-3"><a class="sidebar-link" href="#copying-files-over-ssh">Copying files over SSH</a></li>
+      <li class="toc-item sidebar-item toc-level-2"><a class="sidebar-link" href="#zsh">ZSH</a></li>
+      <li class="toc-item sidebar-item toc-level-1"><a class="sidebar-link" href="#editors-vim">Editors (Vim)</a></li>
+      <li class="toc-item sidebar-item toc-level-1"><a class="sidebar-link" href="#keyboard-remapping">Keyboard remapping</a></li>
+      <li class="toc-item sidebar-item toc-level-1"><a class="sidebar-link" href="#daemon-automation">Daemon &amp; Automation</a></li>
+      <li class="toc-item sidebar-item toc-level-1"><a class="sidebar-link" href="#fuse">FUSE</a></li>
+      <li class="toc-item sidebar-item toc-level-1"><a class="sidebar-link" href="#backups">Backups</a></li>
+      <li class="toc-item sidebar-item toc-level-1"><a class="sidebar-link" href="#filesystem-hierarchy-standard">Filesystem Hierarchy Standard</a></li>
+        </ol>
+      </div>
+    </aside>
+  
+          <div class="article-content">
+            
+
+<div class="article-text-content">
+  <div class="article-date">2022-06-14 · TECH</div>
+  <h1 class="article-hero">编程以外的编程知识</h1>
+  <div class="article-body"><blockquote class="callout callout-note">
+<p>💡 学习完这门课程后，我也有了自己的 dotfile repo：<a href="https://github.com/yujiachen-y/dotfiles">https://github.com/yujiachen-y/dotfiles</a></p>
+</blockquote>
+<p>知道的前提是知道自己不知道什么。</p>
+<p><a href="https://missing.csail.mit.edu/">The Missing Semester of Your CS Education</a></p>
+<h1 id="shell">Shell</h1>
+<ul>
+<li>Connecting programs
+<ul>
+<li><code>&lt; file</code> and <code>&gt; file</code> rewire the input and output streams of a program to a file.</li>
+<li><code>&gt;&gt;</code> to append to a file.</li>
+<li><code>|</code> chain programs by the output of one is the input of another.</li>
+</ul>
+</li>
+<li><code>sysfs</code> exposes a number of kernel parameters as files.</li>
+<li>Conditionally execute commands, <code>&amp;&amp;</code> and <code>||</code></li>
+<li>Separate commands within the same line <code>;</code></li>
+<li>Get the output of a command as a variable.
+<ul>
+<li><code>$( CMD )</code> , directly replace the output in the command.</li>
+<li><code>&lt;( CMD )</code> , execute <code>CMD</code> and place the output in a temporary file and substitute the <code>&lt;()</code> with that file’s name.</li>
+</ul>
+</li>
+<li>Shell globbing
+<ul>
+<li><code>?</code> and <code>*</code> to match one or any amount of characters.</li>
+<li><code>{}</code> expand a series of commands
+<ul>
+<li>e.g. <code>convert image.{png,jpg}</code></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<p><a href="https://tldp.org/LDP/abs/html/special-chars.html">Special Characters</a></p>
+<p><a href="https://github.com/koalaman/shellcheck">GitHub - koalaman/shellcheck: ShellCheck, a static analysis tool for shell scripts</a></p>
+<h2 id="tools">Tools</h2>
+<p><a href="https://en.wikipedia.org/wiki/List_of_GNU_Core_Utilities_commands">GNU coreutils</a> via <a href="https://formulae.brew.sh/formula/coreutils">Homebrew</a></p>
+<ul>
+<li><code>xargs</code></li>
+<li><code>man</code> replacement: <a href="https://tldr.sh/"><code>TLDR</code></a></li>
+<li>Finding files <a href="https://github.com/sharkdp/fd"><code>fd</code></a></li>
+<li>Finding code <code>grep</code> <a href="https://github.com/beyondgrep/ack3"><code>ack</code></a> <a href="https://github.com/ggreer/the_silver_searcher"><code>ag</code></a> <a href="https://github.com/BurntSushi/ripgrep"><code>rg</code></a></li>
+<li>Shell finding commands <a href="https://github.com/junegunn/fzf/wiki/Configuring-shell-key-bindings#ctrl-r"><code>fzf</code></a></li>
+<li>Directory Navigation <a href="https://github.com/clvv/fasd"><code>fasd</code></a> <a href="https://github.com/wting/autojump"><code>autojump</code></a> <a href="https://web.archive.org/web/20210421120120/https://developer.mozilla.org/en-US/docs/Mozilla/Tech/Places/Frecency_algorithm"><code>frecency</code></a></li>
+<li>View directory structure <a href="https://linux.die.net/man/1/tree"><code>tree</code></a> <a href="https://github.com/Canop/broot"><code>broot</code></a> <a href="https://github.com/jarun/nnn"><code>nnn</code></a> <a href="https://github.com/ranger/ranger"><code>ranger</code></a></li>
+<li>Stream editor <code>sed</code> , a useful programming language <code>awk</code> (人生苦短，我用Python</li>
+<li><a href="https://www.man7.org/linux/man-pages/man1/rsync.1.html"><code>rsync</code></a></li>
+</ul>
+<h2 id="job-control">Job Control</h2>
+<ul>
+<li><code>kill</code></li>
+<li>Stop a process <code>Ctrl-Z</code></li>
+<li>Continue the paused job in the foreground or in the background using <code>fg</code> or <code>bg</code></li>
+<li><code>jobs</code></li>
+<li><code>tmux</code></li>
+</ul>
+<h2 id="aliases">Aliases</h2>
+<p>Note that there is no space around the equal sign <code>=</code>, because <a href="https://www.man7.org/linux/man-pages/man1/alias.1p.html"><code>alias</code></a>  is a shell command that takes a single argument.</p>
+<h2 id="dotfiles">Dotfiles</h2>
+<p><a href="https://dotfiles.github.io/">GitHub does dotfiles - dotfiles.github.io</a></p>
+<p><a href="https://abdullah.today/encrypted-dotfiles/">Use Git to manage secret content</a> via creating bash functions to encrypt / decrypt secret content into / from Git.</p>
+<h3 id="portability">Portability</h3>
+<pre class="hljs"><code><span class="hljs-keyword">if</span> [[ <span class="hljs-string">&quot;<span class="hljs-subst">$(uname)</span>&quot;</span> == <span class="hljs-string">&quot;Linux&quot;</span> ]]; <span class="hljs-keyword">then</span> {do_something}; <span class="hljs-keyword">fi</span>
+
+<span class="hljs-comment"># Check before using shell-specific features</span>
+<span class="hljs-keyword">if</span> [[ <span class="hljs-string">&quot;<span class="hljs-variable">$SHELL</span>&quot;</span> == <span class="hljs-string">&quot;zsh&quot;</span> ]]; <span class="hljs-keyword">then</span> {do_something}; <span class="hljs-keyword">fi</span>
+
+<span class="hljs-comment"># You can also make it machine-specific</span>
+<span class="hljs-keyword">if</span> [[ <span class="hljs-string">&quot;<span class="hljs-subst">$(hostname)</span>&quot;</span> == <span class="hljs-string">&quot;myServer&quot;</span> ]]; <span class="hljs-keyword">then</span> {do_something}; <span class="hljs-keyword">fi</span>
+
+<span class="hljs-comment"># Test if ~/.aliases exists and source it</span>
+<span class="hljs-keyword">if</span> [ -f ~/.aliases ]; <span class="hljs-keyword">then</span>
+    <span class="hljs-built_in">source</span> ~/.aliases
+<span class="hljs-keyword">fi</span>
+</code></pre>
+<p>gitconfig supports including configurations from local files.</p>
+<pre class="hljs"><code>[include]
+    path = ~/.gitconfig_local
+</code></pre>
+<h2 id="ssh-configuration">SSH Configuration</h2>
+<ul>
+<li>generate a key pair → <code>ssh-keygen</code></li>
+<li>manage passphrase → <code>ssh-agent</code> <code>gpg-agent</code></li>
+</ul>
+<p><a href="https://help.github.com/articles/connecting-to-github-with-ssh/">Connecting to GitHub with SSH - GitHub Docs</a></p>
+<p><a href="https://unix.stackexchange.com/questions/115897/whats-ssh-port-forwarding-and-whats-the-difference-between-ssh-local-and-remot">What’s ssh port forwarding and what’s the difference between ssh local and remote port forwarding</a></p>
+<p><code>~/.ssh/config</code></p>
+<pre class="hljs"><code>Host vm
+    User foobar
+    HostName 172.16.174.141
+    Port 2222
+    IdentityFile ~/.ssh/id_ed25519
+    LocalForward 9999 localhost:8888
+
+# Configs can also take wildcards
+Host *.mit.edu
+    User foobaz
+</code></pre>
+<h3 id="key-based-authentication">Key based authentication</h3>
+<pre class="hljs"><code><span class="hljs-built_in">cat</span> .ssh/id_ed25519.pub | ssh foobar@remote <span class="hljs-string">&#x27;cat &gt;&gt; ~/.ssh/authorized_keys&#x27;</span>
+
+<span class="hljs-comment"># Or</span>
+ssh-copy-id -i .ssh/id_ed25519 foobar@remote
+</code></pre>
+<h3 id="copying-files-over-ssh">Copying files over SSH</h3>
+<p><code>rsync</code></p>
+<h2 id="zsh">ZSH</h2>
+<p>为什么不使用fish？</p>
+<p>因为我对shell不够了解，fish不支持Posix标准，我觉得有很多我不知道的坑。</p>
+<h1 id="editors-vim">Editors (Vim)</h1>
+<p>Know keyboard shortcuts about your most recently used editor!d</p>
+<p><a href="https://missing.csail.mit.edu/2020/files/vimrc"></a></p>
+<p><a href="https://vimawesome.com/"></a></p>
+<p><a href="https://reversed.top/2016-08-13/big-list-of-vim-like-software">The big list of Vim-like software</a></p>
+<h1 id="keyboard-remapping">Keyboard remapping</h1>
+<p><a href="https://pqrs.org/osx/karabiner/">Karabiner-Elements</a></p>
+<p><a href="https://github.com/koekeishiya/skhd">GitHub - koekeishiya/skhd: Simple hotkey daemon for macOS</a></p>
+<p><a href="https://folivora.ai/">folivora.ai - Great Tools for your Mac!</a></p>
+<h1 id="daemon-automation">Daemon &amp; Automation</h1>
+<p><code>systemd</code></p>
+<pre class="hljs"><code><span class="hljs-comment"># /etc/systemd/system/myapp.service</span>
+[Unit]
+Description=My Custom App
+After=network.target
+
+[Service]
+User=foo
+Group=foo
+WorkingDirectory=/home/foo/projects/mydaemon
+ExecStart=/usr/bin/local/python3.7 app.py
+Restart=on-failure
+
+[Install]
+WantedBy=multi-user.target
+</code></pre>
+<p><code>cron</code></p>
+<p><a href="https://www.hammerspoon.org/">Hammerspoon</a></p>
+<h1 id="fuse">FUSE</h1>
+<p>filesystem in user space，对文件系统的中间抽象，用来加上远程、分布式、加密等功能。</p>
+<ul>
+<li><a href="https://github.com/libfuse/sshfs">sshfs</a> - Open locally remote files/folder through an SSH connection.</li>
+<li><a href="https://rclone.org/commands/rclone_mount/">rclone</a> - Mount cloud storage services like Dropbox, GDrive, Amazon S3 or Google Cloud Storage and open data locally.</li>
+<li><a href="https://nuetzlich.net/gocryptfs/">gocryptfs</a> - Encrypted overlay system. Files are stored encrypted but once the FS is mounted they appear as plaintext in the mountpoint.</li>
+<li><a href="https://keybase.io/docs/kbfs">kbfs</a> - Distributed filesystem with end-to-end encryption. You can have private, shared and public folders.</li>
+<li><a href="https://borgbackup.readthedocs.io/en/stable/usage/mount.html">borgbackup</a> - Mount your deduplicated, compressed and encrypted backups for ease of browsing.</li>
+</ul>
+<h1 id="backups">Backups</h1>
+<p><a href="https://www.cisa.gov/uscert/sites/default/files/publications/data_backup_options.pdf">https://www.cisa.gov/uscert/sites/default/files/publications/data_backup_options.pdf</a></p>
+<h1 id="filesystem-hierarchy-standard">Filesystem Hierarchy Standard</h1>
+<ul>
+<li><code>/bin</code> - Essential command binaries</li>
+<li><code>/sbin</code> - Essential system binaries, usually to be run by root</li>
+<li><code>/dev</code> - Device files, special files that often are interfaces to hardware devices</li>
+<li><code>/etc</code> - Host-specific system-wide configuration files</li>
+<li><code>/home</code> - Home directories for users in the system</li>
+<li><code>/lib</code> - Common libraries for system programs</li>
+<li><code>/opt</code> - Optional application software</li>
+<li><code>/sys</code> - Contains information and configuration for the system</li>
+<li><code>/tmp</code> - Temporary files (also <code>/var/tmp</code>). Usually deleted between reboots.</li>
+<li><code>/usr/</code> - Read only user data
+<ul>
+<li><code>/usr/bin</code> - Non-essential command binaries</li>
+<li><code>/usr/sbin</code> - Non-essential system binaries, usually to be run by root</li>
+<li><code>/usr/local/bin</code> - Binaries for user compiled programs</li>
+</ul>
+</li>
+<li><code>/var</code> - Variable files like logs or caches</li>
+</ul>
+</div>
+</div>
+
+            <section class="comment-section" data-comment-section></section>
+          </div>
+        </div>
+      </main>
+    </div>
+
+    <script id="page-data" type="application/json">
+      {
+  "pageType": "post",
+  "lang": "zh",
+  "langSwitchUrl": null,
+  "langSwitcherMode": "hidden",
+  "markdownUrl": "/posts/the-missing-semester-of-your-cs-education/post.md",
+  "labels": {
+    "navAbout": "About",
+    "navBlog": "Blog",
+    "filterAll": "All"
+  },
+  "comments": {
+    "appId": "e224d3ce-6f5a-4777-bb80-b7bbf2e78d83",
+    "pageId": "the-missing-semester-of-your-cs-education",
+    "pageUrl": "https://www.yujiachen.com/the-missing-semester-of-your-cs-education/",
+    "pageTitle": "编程以外的编程知识"
+  }
+}
+    </script>
+    <script type="module" src="/app.js"></script>
+  </body>
+</html>

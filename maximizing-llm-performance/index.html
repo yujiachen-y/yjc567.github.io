@@ -1,0 +1,310 @@
+<!doctype html>
+<html lang="zh" data-theme="auto">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>最大化 LLM 性能的技术概览 | Jiachen Yu</title>
+        <meta name="description" content="最大化 LLM 性能的技术概览" />
+    <meta property="og:title" content="最大化 LLM 性能的技术概览 | Jiachen Yu" />
+    <meta property="og:description" content="最大化 LLM 性能的技术概览" />
+    <meta property="og:type" content="article" />
+    <meta property="og:url" content="https://www.yujiachen.com/maximizing-llm-performance/" />
+    <meta name="twitter:card" content="summary" />
+    <link rel="canonical" href="https://www.yujiachen.com/maximizing-llm-performance/" />
+    <link rel="alternate" type="text/markdown" href="https://www.yujiachen.com/posts/maximizing-llm-performance/post.md" />
+    <link rel="alternate" hreflang="zh" href="https://www.yujiachen.com/maximizing-llm-performance/" /> <link rel="alternate" type="application/rss+xml" title="RSS" href="https://www.yujiachen.com/rss.xml" />
+<link rel="alternate" type="application/rss+xml" title="RSS (ZH)" href="https://www.yujiachen.com/rss-zh.xml" /> <link rel="icon" href="/favicon-32.png" type="image/png" sizes="32x32" />
+<link rel="icon" href="/favicon.png" type="image/png" />
+<link rel="icon" href="/favicon.ico" type="image/x-icon" />
+<link rel="apple-touch-icon" href="/apple-touch-icon.png" sizes="180x180" /> <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&amp;family=Source+Serif+4:ital,wght@0,400;0,600;0,700;1,400&amp;family=Noto+Serif+SC:wght@400;600;700&amp;display=swap" />
+    <link rel="stylesheet" href="/katex/katex.min.css" />
+    <link rel="stylesheet" href="/styles.css" />
+    <link rel="stylesheet" href="/fonts.css" />
+  </head>
+  <body data-page="post">
+    <div id="root">
+      
+<nav class="navbar">
+  <div class="nav-left">
+    <a href="/zh/" class="brand">Jiachen Yu</a>
+    <div class="nav-links">
+      <a class="nav-link-button" href="/about/zh/" data-nav="about">About</a>
+      <a class="nav-link-button" href="/blog/zh/" data-nav="blog">Blog</a>
+    </div>
+  </div>
+  <div class="controls">
+    <div class="action-controls">
+      <div class="lang-switcher" data-lang-switcher data-lang-switcher-mode="hidden">
+        <button class="lang-toggle" type="button" data-lang-toggle>EN</button>
+      </div>
+      <div class="theme-switcher" data-theme-switcher data-theme-state="light">
+        <button
+          class="theme-trigger"
+          type="button"
+          data-theme-trigger
+          aria-label="Theme mode toggle"
+          aria-pressed="false"
+        >
+          <span class="theme-trigger-icon">
+            <svg class="theme-icon theme-icon-dark" viewBox="0 0 24 24" aria-hidden="true">
+              <path
+                d="M21 12.8A8.5 8.5 0 1 1 11.2 3a7.5 7.5 0 0 0 9.8 9.8Z"
+                fill="currentColor"
+              />
+            </svg>
+            <svg class="theme-icon theme-icon-light" viewBox="0 0 24 24" aria-hidden="true">
+              <circle cx="12" cy="12" r="4" fill="currentColor" />
+              <path
+                d="M12 3v2M12 19v2M4.9 4.9l1.4 1.4M17.7 17.7l1.4 1.4M3 12h2M19 12h2M4.9 19.1l1.4-1.4M17.7 6.3l1.4-1.4"
+                stroke="currentColor"
+                stroke-width="2"
+                stroke-linecap="round"
+                fill="none"
+              />
+            </svg>
+          </span>
+        </button>
+      </div>
+      <a
+        class="ask-ai-entry"
+        href="/ask-ai/"
+        data-ask-ai-entry
+        aria-label="Open Ask AI"
+      >
+        <span class="ask-ai-entry-label">Ask AI</span>
+      </a>
+    </div>
+  </div>
+</nav>
+
+      <main class="page-shell article-page">
+        <div class="article-layout has-toc page-shell-content">
+          
+    <aside class="article-toc sidebar-panel" data-toc>
+      <button class="toc-toggle sidebar-toggle" type="button" data-toc-toggle aria-expanded="false">
+        <span class="toc-toggle-label">目录</span>
+        <span class="toc-toggle-icon" aria-hidden="true">⌄</span>
+      </button>
+      <div class="toc-panel sidebar-panel-content" data-toc-panel>
+        <div class="toc-title sidebar-title">目录</div>
+        <ol class="toc-list sidebar-list">
+      <li class="toc-item sidebar-item toc-level-1"><a class="sidebar-link" href="#优化-llm-性能的难点">优化 LLM 性能的难点</a></li>
+      <li class="toc-item sidebar-item toc-level-1"><a class="sidebar-link" href="#优化路径">优化路径</a></li>
+      <li class="toc-item sidebar-item toc-level-1"><a class="sidebar-link" href="#prompt-engineering">Prompt Engineering</a></li>
+      <li class="toc-item sidebar-item toc-level-2"><a class="sidebar-link" href="#优点">优点</a></li>
+      <li class="toc-item sidebar-item toc-level-2"><a class="sidebar-link" href="#缺点">缺点</a></li>
+      <li class="toc-item sidebar-item toc-level-2"><a class="sidebar-link" href="#最佳实践">最佳实践</a></li>
+      <li class="toc-item sidebar-item toc-level-2"><a class="sidebar-link" href="#后续步骤">后续步骤</a></li>
+      <li class="toc-item sidebar-item toc-level-1"><a class="sidebar-link" href="#rag">RAG</a></li>
+      <li class="toc-item sidebar-item toc-level-2"><a class="sidebar-link" href="#优点-2">优点</a></li>
+      <li class="toc-item sidebar-item toc-level-2"><a class="sidebar-link" href="#缺点-2">缺点</a></li>
+      <li class="toc-item sidebar-item toc-level-2"><a class="sidebar-link" href="#进阶技巧">进阶技巧</a></li>
+      <li class="toc-item sidebar-item toc-level-2"><a class="sidebar-link" href="#评估">评估</a></li>
+      <li class="toc-item sidebar-item toc-level-1"><a class="sidebar-link" href="#fine-tuning">Fine-tuning</a></li>
+      <li class="toc-item sidebar-item toc-level-2"><a class="sidebar-link" href="#优点-3">优点</a></li>
+      <li class="toc-item sidebar-item toc-level-2"><a class="sidebar-link" href="#缺点-3">缺点</a></li>
+      <li class="toc-item sidebar-item toc-level-2"><a class="sidebar-link" href="#例子">例子</a></li>
+      <li class="toc-item sidebar-item toc-level-2"><a class="sidebar-link" href="#步骤">步骤</a></li>
+      <li class="toc-item sidebar-item toc-level-2"><a class="sidebar-link" href="#最佳实践-2">最佳实践</a></li>
+        </ol>
+      </div>
+    </aside>
+  
+          <div class="article-content">
+            
+
+<div class="article-text-content">
+  <div class="article-date">2023-11-26 · TECH</div>
+  <h1 class="article-hero">最大化 LLM 性能的技术概览</h1>
+  <div class="article-body"><blockquote>
+<p>注：这里的”性能“原文为”performance”，指 LLM 回答问题的准确率，而不是运行时的计算资源消耗性能。</p>
+</blockquote>
+<p>原视频来自 OpenAI</p>
+<p><a href="https://www.youtube.com/watch?v=ahnGLM-RC1Y">https://www.youtube.com/watch?v=ahnGLM-RC1Y</a></p>
+<h1 id="优化-llm-性能的难点">优化 LLM 性能的难点</h1>
+<ul>
+<li>从各种噪声中找到信号，辨认出问题并不容易。</li>
+<li>LLM 的性能评估抽象且难量化。</li>
+<li>不知道从何入手解决问题。</li>
+</ul>
+<h1 id="优化路径">优化路径</h1>
+<p>LLM 的优化路径</p>
+<ul>
+<li>上下文优化，让模型知道更多。</li>
+<li>LLM 优化，改变模型的行为和方法。</li>
+</ul>
+<p>
+<picture>
+  <source srcset="/assets/posts/maximizing-llm-performance/zh/image_1.webp" type="image/webp" />
+  <img src="/assets/posts/maximizing-llm-performance/zh/image_1.png" alt="" class="article-image" width="1080" height="539" />
+</picture>
+</p>
+<p>一般的演化方向</p>
+<ol>
+<li>Prompt engineering</li>
+<li>RAG，类比给 LLM 加上短期记忆，针对具体问题提供具体信息。</li>
+<li>Fine-tune model，类比给 LLM 加上长期记忆，让模型持续地遵循某种行为模式或输出结构。</li>
+</ol>
+<p>拿考试举例子，Fine-tuning 是闭卷考，你需要记住所有知识才能参加考试；RAG 是开卷考，你带着各种参考资料进考场。</p>
+<p>
+<picture>
+  <source srcset="/assets/posts/maximizing-llm-performance/zh/image_2.webp" type="image/webp" />
+  <img src="/assets/posts/maximizing-llm-performance/zh/image_2.png" alt="" class="article-image" width="1080" height="526" />
+</picture>
+</p>
+<h1 id="prompt-engineering">Prompt Engineering</h1>
+<p>先用简单的提示词工程尝试解决问题，找到评估基准，判断性能瓶颈是上下文还是模型的行为模式。</p>
+<p>当确定基准后，可以在 prompt 里添加 few-shot 示例，看是否可以带来性能提升。</p>
+<h2 id="优点">优点</h2>
+<ul>
+<li>尽快地测试并获得反馈。</li>
+<li>结合性能评估，这确定了性能优化的基准线。</li>
+</ul>
+<h2 id="缺点">缺点</h2>
+<ul>
+<li>prompt 中引入了新信息。</li>
+<li>被上下文窗口限制。</li>
+<li>token 使用效率低。</li>
+</ul>
+<h2 id="最佳实践">最佳实践</h2>
+<ul>
+<li>编写清晰的指令。</li>
+<li>把复杂任务拆分成简单的子任务。</li>
+<li>让 LLM 有时间思考，例如 CoT，ReAct。</li>
+<li>用控制变量法系统性地测试改动控制变量法。</li>
+</ul>
+<h2 id="后续步骤">后续步骤</h2>
+<ul>
+<li>提供参考文本。</li>
+<li>接入外部工具。</li>
+</ul>
+<h1 id="rag">RAG</h1>
+<p>先根据问题找到相关的上下文，再要求 LLM 回答。</p>
+<h2 id="优点-2">优点</h2>
+<ul>
+<li>可以不断向 LLM 提供最新的信息。</li>
+<li>通过控制参考文本降低幻觉。</li>
+</ul>
+<h2 id="缺点-2">缺点</h2>
+<ul>
+<li>提供给 LLM 的信息仅限上下文片段，无法让 LLM 拥有更宽泛的领域知识。</li>
+<li>不擅长让 LLM 按照规定格式或特定语言输出结果。</li>
+<li>不利于降低 token 使用率。</li>
+</ul>
+<h2 id="进阶技巧">进阶技巧</h2>
+<ul>
+<li>用 cosine 计算向量相似度。</li>
+<li>HyDE (Hypothetical Document Embedding)，让模型先回答，用回答去搜索上下文。</li>
+<li>Fine-tuning embedding 模型。</li>
+<li>分片后再进行 embedding。</li>
+<li>重排，搜索到上下文后，重新计算和问题的相似程度，或施加一些人工规则，重新排序和剔除上下文。</li>
+<li>分类，让模型先判断问题相关的上下文有可能在哪些数据集中找到，之后再进行搜索。</li>
+<li>并行计算，把问题拆分成多个子问题，独立计算后合并答案。</li>
+</ul>
+<h2 id="评估">评估</h2>
+<p>RAG 实质上给 LLM 引入了一个新的环节：检索，这也可能成为一个瓶颈。检索结果的质量很重要，如果一些无关、或者低质量的上下文被检索到，LLM 会给出和幻觉无差别的低质量回答。</p>
+<p><a href="https://github.com/explodinggradients/ragas">https://github.com/explodinggradients/ragas</a></p>
+<p>这里介绍了 Ragas 用来评测 RAG 的表现，评测分为两大类四个维度</p>
+<ul>
+<li>生成，LLM 回答的质量。
+<ul>
+<li>Faithfulness，生成回答的真实准确性。</li>
+<li>Answer relevancy，生成回答和问题的相关性。</li>
+</ul>
+</li>
+<li>检索，被检索文本和问题的相关性。
+<ul>
+<li>Context precision，被检索内容的信噪比。</li>
+<li>Context recall，能否检索出所有和问题相关的内容。</li>
+</ul>
+</li>
+</ul>
+<p>
+<picture>
+  <source srcset="/assets/posts/maximizing-llm-performance/zh/image_3.webp" type="image/webp" />
+  <img src="/assets/posts/maximizing-llm-performance/zh/image_3.png" alt="" class="article-image" width="1080" height="529" />
+</picture>
+</p>
+<h1 id="fine-tuning">Fine-tuning</h1>
+<p>继续在更小、特定领域的数据集上训练，优化特定任务的表现和效率。</p>
+<ul>
+<li>提高模型在特定任务上的表现。
+<ul>
+<li>不需要用 prompt 来规范模型的表现；和 few-shot learning 相比，你可以让模型充分学习相关的数据。</li>
+</ul>
+</li>
+<li>提高模型的效率。
+<ul>
+<li>节省更多的上下文窗口，LLM 处理更快也更节省 token。</li>
+<li>可以让小模型在特定任务上达到更多参数模型的表现，而小模型的费用和延时更优。</li>
+</ul>
+</li>
+</ul>
+<h2 id="优点-3">优点</h2>
+<ul>
+<li>强化模型中已有的知识。</li>
+<li>自定义回答的结构或语气。</li>
+<li>让模型学会复杂的指令，避开复杂的 prompt engineering。</li>
+</ul>
+<h2 id="缺点-3">缺点</h2>
+<ul>
+<li>如果 prompt engineering 无法提高模型的表现，那么 fine-tuning 也不行。</li>
+<li>无法向基础模型中添加新知识。</li>
+<li>无法适应新使用场景。</li>
+</ul>
+<h2 id="例子">例子</h2>
+<p>Canva 使用 fine-tuning 来规范 LLM 的输出格式。</p>
+<p>一个博客作者使用 Slack 聊天记录来 fine-tuning LLM，期望 LLM 学会他的语气，但 LLM 实际上学会了他消极怠工的态度，因此高质量的 fine-tuning 数据很重要。</p>
+<h2 id="步骤">步骤</h2>
+<ol>
+<li>准备数据：收集、验证、格式化数据。</li>
+<li>训练：选择超参数、损失函数，注意 LLM 的损失函数是 next token prediction 任务的代理，但这和 LLM 负责的下游任务不一定有相关性，比如在代码生成中，你有很多方式来解决一个代码问题，而不需要生成的代码和标准答案完全匹配。</li>
+<li>评估：人工评估、LLM 评估。</li>
+<li>推理</li>
+</ol>
+<p>
+<picture>
+  <source srcset="/assets/posts/maximizing-llm-performance/zh/image_4.webp" type="image/webp" />
+  <img src="/assets/posts/maximizing-llm-performance/zh/image_4.png" alt="" class="article-image" width="1080" height="608" />
+</picture>
+</p>
+<h2 id="最佳实践-2">最佳实践</h2>
+<ul>
+<li>先从 prompt engineering 和 few-shot learning 开始，确认 LLM 适合你的使用场景。</li>
+<li>确认性能基准，确保 fine-tuning 后的 LLM 表现可衡量可比较。</li>
+<li>从小数据集开始，注重数据质量，LLM 的训练过程已经解决了数据量的问题，fine-tuning 要着重注意数据质量。</li>
+</ul>
+</div>
+</div>
+
+            <section class="comment-section" data-comment-section></section>
+          </div>
+        </div>
+      </main>
+    </div>
+
+    <script id="page-data" type="application/json">
+      {
+  "pageType": "post",
+  "lang": "zh",
+  "langSwitchUrl": null,
+  "langSwitcherMode": "hidden",
+  "markdownUrl": "/posts/maximizing-llm-performance/post.md",
+  "labels": {
+    "navAbout": "About",
+    "navBlog": "Blog",
+    "filterAll": "All"
+  },
+  "comments": {
+    "appId": "e224d3ce-6f5a-4777-bb80-b7bbf2e78d83",
+    "pageId": "maximizing-llm-performance",
+    "pageUrl": "https://www.yujiachen.com/maximizing-llm-performance/",
+    "pageTitle": "最大化 LLM 性能的技术概览"
+  }
+}
+    </script>
+    <script type="module" src="/app.js"></script>
+  </body>
+</html>

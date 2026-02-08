@@ -1,0 +1,467 @@
+<!doctype html>
+<html lang="en" data-theme="auto">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Transactions and Consensus from DDIA | Jiachen Yu</title>
+        <meta name="description" content="Transactions and Consensus from DDIA" />
+    <meta property="og:title" content="Transactions and Consensus from DDIA | Jiachen Yu" />
+    <meta property="og:description" content="Transactions and Consensus from DDIA" />
+    <meta property="og:type" content="article" />
+    <meta property="og:url" content="https://www.yujiachen.com/transactions-and-consensus-from-ddia/" />
+    <meta name="twitter:card" content="summary" />
+    <link rel="canonical" href="https://www.yujiachen.com/transactions-and-consensus-from-ddia/" />
+    <link rel="alternate" type="text/markdown" href="https://www.yujiachen.com/posts/transactions-and-consensus-from-ddia/post.md" />
+    <link rel="alternate" hreflang="en" href="https://www.yujiachen.com/transactions-and-consensus-from-ddia/" />
+<link rel="alternate" hreflang="zh" href="https://www.yujiachen.com/transactions-and-consensus-from-ddia/zh/" /> <link rel="alternate" type="application/rss+xml" title="RSS" href="https://www.yujiachen.com/rss.xml" />
+<link rel="alternate" type="application/rss+xml" title="RSS (EN)" href="https://www.yujiachen.com/rss-en.xml" /> <link rel="icon" href="/favicon-32.png" type="image/png" sizes="32x32" />
+<link rel="icon" href="/favicon.png" type="image/png" />
+<link rel="icon" href="/favicon.ico" type="image/x-icon" />
+<link rel="apple-touch-icon" href="/apple-touch-icon.png" sizes="180x180" /> <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&amp;family=Source+Serif+4:ital,wght@0,400;0,600;0,700;1,400&amp;family=Noto+Serif+SC:wght@400;600;700&amp;display=swap" />
+    <link rel="stylesheet" href="/katex/katex.min.css" />
+    <link rel="stylesheet" href="/styles.css" />
+    <link rel="stylesheet" href="/fonts.css" />
+  </head>
+  <body data-page="post">
+    <div id="root">
+      
+<nav class="navbar">
+  <div class="nav-left">
+    <a href="/" class="brand">Jiachen Yu</a>
+    <div class="nav-links">
+      <a class="nav-link-button" href="/about/" data-nav="about">About</a>
+      <a class="nav-link-button" href="/blog/" data-nav="blog">Blog</a>
+    </div>
+  </div>
+  <div class="controls">
+    <div class="action-controls">
+      <div class="lang-switcher" data-lang-switcher data-lang-switcher-mode="toggle">
+        <button class="lang-toggle" type="button" data-lang-toggle>EN</button>
+      </div>
+      <div class="theme-switcher" data-theme-switcher data-theme-state="light">
+        <button
+          class="theme-trigger"
+          type="button"
+          data-theme-trigger
+          aria-label="Theme mode toggle"
+          aria-pressed="false"
+        >
+          <span class="theme-trigger-icon">
+            <svg class="theme-icon theme-icon-dark" viewBox="0 0 24 24" aria-hidden="true">
+              <path
+                d="M21 12.8A8.5 8.5 0 1 1 11.2 3a7.5 7.5 0 0 0 9.8 9.8Z"
+                fill="currentColor"
+              />
+            </svg>
+            <svg class="theme-icon theme-icon-light" viewBox="0 0 24 24" aria-hidden="true">
+              <circle cx="12" cy="12" r="4" fill="currentColor" />
+              <path
+                d="M12 3v2M12 19v2M4.9 4.9l1.4 1.4M17.7 17.7l1.4 1.4M3 12h2M19 12h2M4.9 19.1l1.4-1.4M17.7 6.3l1.4-1.4"
+                stroke="currentColor"
+                stroke-width="2"
+                stroke-linecap="round"
+                fill="none"
+              />
+            </svg>
+          </span>
+        </button>
+      </div>
+      <a
+        class="ask-ai-entry"
+        href="/ask-ai/"
+        data-ask-ai-entry
+        aria-label="Open Ask AI"
+      >
+        <span class="ask-ai-entry-label">Ask AI</span>
+      </a>
+    </div>
+  </div>
+</nav>
+
+      <main class="page-shell article-page">
+        <div class="article-layout has-toc page-shell-content">
+          
+    <aside class="article-toc sidebar-panel" data-toc>
+      <button class="toc-toggle sidebar-toggle" type="button" data-toc-toggle aria-expanded="false">
+        <span class="toc-toggle-label">Contents</span>
+        <span class="toc-toggle-icon" aria-hidden="true">⌄</span>
+      </button>
+      <div class="toc-panel sidebar-panel-content" data-toc-panel>
+        <div class="toc-title sidebar-title">Contents</div>
+        <ol class="toc-list sidebar-list">
+      <li class="toc-item sidebar-item toc-level-1"><a class="sidebar-link" href="#some-reflections">Some Reflections</a></li>
+      <li class="toc-item sidebar-item toc-level-1"><a class="sidebar-link" href="#are-paradigms-useful">Are Paradigms Useful?</a></li>
+      <li class="toc-item sidebar-item toc-level-1"><a class="sidebar-link" href="#what-are-concurrency-problems">What Are Concurrency Problems?</a></li>
+      <li class="toc-item sidebar-item toc-level-1"><a class="sidebar-link" href="#single-machine-concurrency-problems">Single-Machine Concurrency Problems</a></li>
+      <li class="toc-item sidebar-item toc-level-2"><a class="sidebar-link" href="#dirty-reads">Dirty Reads</a></li>
+      <li class="toc-item sidebar-item toc-level-2"><a class="sidebar-link" href="#dirty-writes">Dirty Writes</a></li>
+      <li class="toc-item sidebar-item toc-level-2"><a class="sidebar-link" href="#non-repeatable-reads-read-skew">Non-Repeatable Reads / Read Skew</a></li>
+      <li class="toc-item sidebar-item toc-level-2"><a class="sidebar-link" href="#lost-updates">Lost Updates</a></li>
+      <li class="toc-item sidebar-item toc-level-2"><a class="sidebar-link" href="#write-skew">Write Skew</a></li>
+      <li class="toc-item sidebar-item toc-level-3"><a class="sidebar-link" href="#materializing-conflicts">Materializing Conflicts</a></li>
+      <li class="toc-item sidebar-item toc-level-2"><a class="sidebar-link" href="#phantom-reads">Phantom Reads</a></li>
+      <li class="toc-item sidebar-item toc-level-1"><a class="sidebar-link" href="#preventing-lost-updates">Preventing Lost Updates</a></li>
+      <li class="toc-item sidebar-item toc-level-2"><a class="sidebar-link" href="#atomic-write-operations">Atomic Write Operations</a></li>
+      <li class="toc-item sidebar-item toc-level-2"><a class="sidebar-link" href="#explicit-locking">Explicit Locking</a></li>
+      <li class="toc-item sidebar-item toc-level-2"><a class="sidebar-link" href="#automatically-detecting-lost-updates">Automatically Detecting Lost Updates</a></li>
+      <li class="toc-item sidebar-item toc-level-2"><a class="sidebar-link" href="#atomic-compare-and-set">Atomic Compare-and-Set</a></li>
+      <li class="toc-item sidebar-item toc-level-2"><a class="sidebar-link" href="#conflict-resolution-and-replication">Conflict Resolution and Replication</a></li>
+      <li class="toc-item sidebar-item toc-level-1"><a class="sidebar-link" href="#isolation-levels">Isolation Levels</a></li>
+      <li class="toc-item sidebar-item toc-level-2"><a class="sidebar-link" href="#read-committed">Read Committed</a></li>
+      <li class="toc-item sidebar-item toc-level-3"><a class="sidebar-link" href="#row-level-read-locks">Row-Level Read Locks</a></li>
+      <li class="toc-item sidebar-item toc-level-3"><a class="sidebar-link" href="#old-new-value-snapshots">Old/New Value Snapshots</a></li>
+      <li class="toc-item sidebar-item toc-level-3"><a class="sidebar-link" href="#multi-version-concurrency-control-mvcc">Multi-Version Concurrency Control / MVCC</a></li>
+      <li class="toc-item sidebar-item toc-level-2"><a class="sidebar-link" href="#snapshot-isolation">Snapshot Isolation</a></li>
+      <li class="toc-item sidebar-item toc-level-3"><a class="sidebar-link" href="#multi-version-concurrency-control-mvcc-2">Multi-Version Concurrency Control / MVCC</a></li>
+      <li class="toc-item sidebar-item toc-level-2"><a class="sidebar-link" href="#serializable-isolation">Serializable Isolation</a></li>
+      <li class="toc-item sidebar-item toc-level-3"><a class="sidebar-link" href="#actual-serial-execution">Actual Serial Execution</a></li>
+      <li class="toc-item sidebar-item toc-level-3"><a class="sidebar-link" href="#two-phase-locking">Two-Phase Locking</a></li>
+      <li class="toc-item sidebar-item toc-level-3"><a class="sidebar-link" href="#serializable-snapshot-isolation">Serializable Snapshot Isolation</a></li>
+      <li class="toc-item sidebar-item toc-level-1"><a class="sidebar-link" href="#distributed-system-challenges">Distributed System Challenges</a></li>
+      <li class="toc-item sidebar-item toc-level-2"><a class="sidebar-link" href="#byzantine-faults">Byzantine Faults</a></li>
+      <li class="toc-item sidebar-item toc-level-1"><a class="sidebar-link" href="#consensus">Consensus</a></li>
+      <li class="toc-item sidebar-item toc-level-2"><a class="sidebar-link" href="#linearizability">Linearizability</a></li>
+      <li class="toc-item sidebar-item toc-level-2"><a class="sidebar-link" href="#ordering-guarantees">Ordering Guarantees</a></li>
+      <li class="toc-item sidebar-item toc-level-3"><a class="sidebar-link" href="#causal-consistency">Causal Consistency</a></li>
+      <li class="toc-item sidebar-item toc-level-3"><a class="sidebar-link" href="#total-order-broadcast">Total Order Broadcast</a></li>
+      <li class="toc-item sidebar-item toc-level-2"><a class="sidebar-link" href="#implementing-total-order-broadcast">Implementing Total Order Broadcast</a></li>
+      <li class="toc-item sidebar-item toc-level-3"><a class="sidebar-link" href="#two-phase-commit-2pc">Two-Phase Commit (2PC)</a></li>
+      <li class="toc-item sidebar-item toc-level-3"><a class="sidebar-link" href="#fault-tolerant-consensus">Fault-Tolerant Consensus</a></li>
+      <li class="toc-item sidebar-item toc-level-3"><a class="sidebar-link" href="#membership-and-coordination-services">Membership and Coordination Services</a></li>
+        </ol>
+      </div>
+    </aside>
+  
+          <div class="article-content">
+            
+
+<div class="article-text-content">
+  <div class="article-date">2021-09-27 · TECH</div>
+  <h1 class="article-hero">Transactions and Consensus from DDIA</h1>
+  <div class="article-body"><p><em>Translated by Claude from the Chinese original.</em></p>
+<h1 id="some-reflections">Some Reflections</h1>
+<p>Most applications are built by layering data models on top of one another.</p>
+<p>The problem of surplus and scarcity of computing resources will always exist. “Resource-saving technologies only lead to increased resource usage” (<a href="https://en.wikipedia.org/wiki/Jevons_paradox">Jevons paradox</a>).</p>
+<p>Many problems discussed in the book follow a pattern: under constraint P (the real-world problem), find the lowest-cost C (consistency level) that still achieves the best A (availability/outcome). One example in the book is multi-core CPUs. While multi-core CPUs can be viewed as distributed systems, they are not constrained by inter-machine network latency, so partition tolerance is effectively assumed. Even so, to maximize throughput, multi-core designs may still trade some consistency for higher availability, accepting occasional redundant or incorrect computation to squeeze out more performance.</p>
+<h1 id="are-paradigms-useful">Are Paradigms Useful?</h1>
+<p>Paradigms exist to standardize how we use data. But as hardware improves and application scenarios expand, breaking those rules can sometimes bring bigger gains. Otherwise NoSQL would not have emerged: store a large JSON document, skip strict relational modeling, and iteration speed can increase dramatically.</p>
+<p>So should we still follow paradigms? Actually, paradigms are just a yardstick that tells us what to do in which scenario and what happens if we don’t—not rules we must rigidly follow.</p>
+<h1 id="what-are-concurrency-problems">What Are Concurrency Problems?</h1>
+<p>A single machine with a single thread can always avoid various concurrency problems, but this approach is too slow. So we develop multi-threading, multi-processing, multi-machine, and distributed systems. Along with these come concurrency problems—problems that fit the following condition:</p>
+<blockquote>
+<p>Under identical conditions, if the results of two tasks executed serially differ from those executed in parallel, a race condition has occurred, causing a concurrency problem.</p>
+</blockquote>
+<h1 id="single-machine-concurrency-problems">Single-Machine Concurrency Problems</h1>
+<p>Let’s first discuss concurrency problems that arise even with a single machine running multiple threads/processes.</p>
+<p>Discussion model:</p>
+<ol>
+<li>There are exactly 2 transactions involved in the problem scenario.</li>
+<li>For real-world problems caused by more than 2 transactions, we use induction to reduce the problem to 2 concurrent transactions. For example, we group multiple non-conflicting transactions into 1, or split the problem into different causes, each corresponding to 2 transactions.</li>
+</ol>
+<p>Scenario 1—Transaction 1 is reading, Transaction 2 is writing, leading to:</p>
+<ul>
+<li>Dirty reads</li>
+<li>Non-repeatable reads / Read skew</li>
+</ul>
+<p>Scenario 2—Both transactions are writing, leading to:</p>
+<ul>
+<li>Lost updates</li>
+<li>Dirty writes</li>
+<li>Write skew</li>
+</ul>
+<h2 id="dirty-reads">Dirty Reads</h2>
+<blockquote>
+<p>Prerequisite: One transaction reads partial modification results of another uncommitted transaction.</p>
+</blockquote>
+<p>Without read-committed isolation, dirty reads occur in these scenarios:</p>
+<ul>
+<li>One transaction updates multiple objects while another transaction sees only some of the updated objects, not all.</li>
+<li>One transaction aborts, and during rollback another transaction sees partially un-rolled-back objects.</li>
+</ul>
+<p>Examples:</p>
+<p>Example 1: Alice has two bank accounts—Account 1 has 100 yuan and Account 2 has 0. Account 1 transfers 100 yuan to Account 2. The transaction deducts 100 from Account 1 and adds 100 to Account 2. If Alice reads her total balance after the deduction from Account 1 but before the addition to Account 2, the result is 0. (Note: non-repeatable reads can also cause the same situation—we’ll discuss this in the non-repeatable reads section.)</p>
+<p>Example 2: Building on Example 1, Account 2 is a Class II account with a single-transfer limit of 50 yuan. If the transfer exceeds the limit, the transaction rolls back. After deducting 100 from Account 1, another query reads Account 1’s balance as 0 yuan. Then the transfer fails and rolls back. Due to transaction atomicity, Account 1’s balance never actually became 0—yet at a certain moment, another transaction saw it as 0.</p>
+<h2 id="dirty-writes">Dirty Writes</h2>
+<blockquote>
+<p>Prerequisite: One transaction modifies partial modification results of another uncommitted transaction.</p>
+</blockquote>
+<p>Without read-committed isolation, dirty writes occur in this scenario:</p>
+<ul>
+<li>Transaction 1 updates multiple objects while Transaction 2 modifies some of those objects (through updates, creates, deletes, or their rollbacks). Then Transaction 1 updates the remaining unmodified objects.</li>
+</ul>
+<p>Example:</p>
+<p>On a trading website, a purchase updates both the item’s recipient and the payer. Alice and Bob simultaneously buy the same item. Alice’s transaction sets the recipient to Alice. Then Bob’s transaction changes the recipient to Bob and declares Bob as the payer. Then Alice’s transaction updates the payer to Alice. Result: Bob receives the item but Alice pays.</p>
+<h2 id="non-repeatable-reads-read-skew">Non-Repeatable Reads / Read Skew</h2>
+<blockquote>
+<p>Prerequisite: Transaction 2’s execution starts after Transaction 1 begins but completes before Transaction 1 ends, and Transaction 1 reads Transaction 2’s modifications.</p>
+</blockquote>
+<p>Most business scenarios don’t want non-repeatable reads. These scenarios especially cannot tolerate them:</p>
+<ul>
+<li>Backups</li>
+<li>Long-running analytical queries and integrity checks</li>
+</ul>
+<p>Non-repeatable reads are also called “read skew” because: ideally, a transaction should read all data in an instant. When non-repeatable reads occur, the transaction’s reads are spread across the timeline rather than happening at a single point—hence the read is “skewed.”</p>
+<p>Example:</p>
+<p>Continuing from dirty read Example 1: Alice starts a balance-reading Transaction 1 before initiating transfer Transaction 2. Transaction 1 first reads Account 2’s 0 yuan (this conforms to read-committed). Then Transaction 2 completes—Account 1 becomes 0, Account 2 becomes 100. Finally Transaction 1 reads Account 1’s 0 yuan (also conforming to read-committed). Total: 0 yuan.</p>
+<h2 id="lost-updates">Lost Updates</h2>
+<blockquote>
+<p>Two transactions simultaneously execute read-modify-write sequences, where one overwrites the other’s write without incorporating the other’s latest value, ultimately causing some modified data to be lost.</p>
+</blockquote>
+<p>Examples:</p>
+<ul>
+<li>Incrementing counters</li>
+<li>Modifying part of a complex object (e.g., multiple users editing a large JSON)</li>
+</ul>
+<h2 id="write-skew">Write Skew</h2>
+<p>An escalated version of lost updates, differing in its greater dependency on application-layer logic. It follows this pattern:</p>
+<ol>
+<li><strong>Read</strong>: Input some matching conditions and query.</li>
+<li><strong>Decide</strong>: Based on query results, application-layer code decides the next action.</li>
+<li><strong>Write</strong>: If the application decides to proceed, it initiates a database write.</li>
+</ol>
+<p>Generally, if 2 transactions updating different objects cause errors (usually semantic errors at the application layer), that’s write skew. If they update the same object, it’s likely dirty writes or lost updates.</p>
+<p>Why “write skew”: Referencing the meaning of read skew—ideally, a transaction’s write operations should happen in an instant. But when write skew occurs, a transaction typically reads stale data, the data gets modified, and the transaction unknowingly writes invalid data. The transaction’s reads and writes are spread across the timeline—hence the write is “skewed.”</p>
+<p>Example: A user has an expense ledger with a balance constraint. Two transactions each insert expense items that individually don’t exceed the balance. But since neither notices the other, the combined expenses push the balance negative (application-layer logic violation).</p>
+<p>Here we discuss one solution with limited feasibility:</p>
+<h3 id="materializing-conflicts">Materializing Conflicts</h3>
+<blockquote>
+<p>Write skew often occurs because query results contain no objects, so there’s nothing to lock. Solution: pre-create lockable objects.</p>
+</blockquote>
+<p>For the balance example above, we create a total balance table with a new field for pending changes—meaning only one change can affect the balance at a time. This transforms the problem into a lost update or dirty write problem.</p>
+<p>The main issue with materializing conflicts is excessive database storage. For instance, should we materialize all room-and-time combinations for the next 6 months in a meeting room booking system?</p>
+<p><strong>This method is generally not used unless absolutely necessary.</strong></p>
+<h2 id="phantom-reads">Phantom Reads</h2>
+<blockquote>
+<p>A write in one transaction changing the query results of another transaction is called a phantom read.</p>
+</blockquote>
+<p>Phantom reads are a highly general concept. I believe most concurrency problems discussed so far could be classified as phantom reads.</p>
+<h1 id="preventing-lost-updates">Preventing Lost Updates</h1>
+<blockquote>
+<p>We must prevent lost updates to avoid many other phantom-read-like anomalies. As we’ll see, the key to distributed transactions is achieving consensus, and consensus is largely about preventing lost updates.</p>
+</blockquote>
+<p>Lost update scenarios are simpler than other concurrency problems, and the solutions are easier to understand. So we discuss lost update prevention first.</p>
+<h2 id="atomic-write-operations">Atomic Write Operations</h2>
+<p>If the DB supports atomic write operations, use them whenever possible.</p>
+<p>The DB can implement atomic writes through exclusive locks or by executing all atomic operations on a single thread.</p>
+<h2 id="explicit-locking">Explicit Locking</h2>
+<p>The application explicitly locks relevant objects. DDIA uses the <code>FOR UPDATE</code> keyword to represent application-layer requests to lock <code>SELECT</code> results.</p>
+<p>This approach might seem to solve write skew too, but write skew also includes cases like “checking whether rows matching a search condition exist (expected result: empty).” In that case, there is nothing concrete to lock. We discuss write-skew solutions in other sections.</p>
+<hr>
+<p>Above we discussed two lock-based solutions. Now let’s discuss lock-free solutions.</p>
+<h2 id="automatically-detecting-lost-updates">Automatically Detecting Lost Updates</h2>
+<p>Allow updates to execute concurrently. If the transaction manager detects a lost-update risk, it aborts the current transaction and retries using a safe read-modify-write path.</p>
+<p>The database can use snapshot-level isolation for detection. A rough intuition is that an object can only have one uncommitted version at a given moment, though finer-grained detection methods likely exist.</p>
+<h2 id="atomic-compare-and-set">Atomic Compare-and-Set</h2>
+<p>Only allow updates when the data hasn’t changed since the last read. If it has changed, fall back to another read-modify-write approach or retry.</p>
+<p>Implementation: CAS (compare-and-swap)—modern CPUs support this instruction. Or explicitly add conditions like <code>WHERE content = 'old content'</code> during execution. The danger is that if <code>WHERE</code> executes against a snapshot, the <code>content</code> value may not be the latest.</p>
+<h2 id="conflict-resolution-and-replication">Conflict Resolution and Replication</h2>
+<p>Details are discussed in the distributed concurrency section. The general idea: the application layer has logic, or data structures have logic, to handle conflicting writes. Or, design operations to be order-independent, so update conflicts naturally don’t occur.</p>
+<h1 id="isolation-levels">Isolation Levels</h1>
+<h2 id="read-committed">Read Committed</h2>
+<blockquote>
+<p>The most basic transaction isolation level: a transaction’s internal execution won’t be affected by other transactions.</p>
+</blockquote>
+<p>Solves:</p>
+<ul>
+<li>Dirty reads</li>
+<li>Dirty writes</li>
+</ul>
+<p>Why “read committed”? My interpretation is: reads should observe only committed data.</p>
+<p>Implementation methods:</p>
+<h3 id="row-level-read-locks">Row-Level Read Locks</h3>
+<p>Read locks certainly achieve read committed, but with drawbacks:</p>
+<ul>
+<li>Poor performance</li>
+<li>Potential deadlocks</li>
+</ul>
+<h3 id="old-new-value-snapshots">Old/New Value Snapshots</h3>
+<p>For each object pending update, maintain two versions: the old value and the new value the lock-holding transaction will set. Before the transaction commits, all other reads return the old value. Only after the write transaction commits does the system switch to the new value.</p>
+<h3 id="multi-version-concurrency-control-mvcc">Multi-Version Concurrency Control / MVCC</h3>
+<p>Discussed in the next section.</p>
+<h2 id="snapshot-isolation">Snapshot Isolation</h2>
+<blockquote>
+<p>Each transaction reads a consistent snapshot of the database—once read, data doesn’t change.</p>
+</blockquote>
+<p>Prevents:</p>
+<ul>
+<li>Non-repeatable reads / Read skew</li>
+</ul>
+<h3 id="multi-version-concurrency-control-mvcc-2">Multi-Version Concurrency Control / MVCC</h3>
+<p>The database maintains multiple committed versions of objects, adding <code>created_by</code> and <code>deleted_by</code> fields to each row, representing versions created by different transaction operations. A periodic garbage collection task cleans up versions no longer needed.</p>
+<p>A transaction cannot see:</p>
+<ul>
+<li>Changes made by transactions still running when this transaction started</li>
+<li>Changes made by any aborted transactions</li>
+<li>Changes made by transactions that start after this transaction</li>
+<li>All other changes are visible to this transaction (I understand “other changes” refers to non-transactional changes)</li>
+</ul>
+<p>Conversely, a transaction can see:</p>
+<ul>
+<li>Objects created or updated by already-committed transactions before this transaction started</li>
+<li>Objects not deleted by uncommitted transactions before this transaction started</li>
+</ul>
+<p>MVCC indexing has roughly two implementation approaches:</p>
+<ul>
+<li><strong>Index points to all versions of an object</strong>: PostgreSQL uses this method, placing all versions on a single memory page for performance optimization.</li>
+<li><strong>Persistent data structures</strong>: Typically a persistent B-tree. Different transactions create their own database entry nodes when writing. When reading, use the node corresponding to the latest committed transaction as the entry point.</li>
+</ul>
+<h2 id="serializable-isolation">Serializable Isolation</h2>
+<blockquote>
+<p>Even if transactions may execute in parallel, the final result is the same as if they executed one at a time (serially).</p>
+</blockquote>
+<p>Generally considered the strongest isolation level.</p>
+<p>But achieving serializability in practice is very difficult. Here are three implementation approaches.</p>
+<h3 id="actual-serial-execution">Actual Serial Execution</h3>
+<p>With continuous hardware advances, database researchers have recognized that single-threaded transaction execution is feasible and efficient.</p>
+<p>These conditions help achieve serializable isolation using memory and a single CPU:</p>
+<ul>
+<li>Transactions must be short and efficient—otherwise a slow transaction affects all others (since it’s single-threaded).</li>
+<li>Limited to scenarios where the active dataset fits entirely in memory.</li>
+<li>Write throughput must be low enough for a single CPU core to handle; otherwise partitioning is needed, ideally without cross-partition transactions.</li>
+<li>Cross-partition transactions can be supported but must be a very small proportion.</li>
+</ul>
+<p>In practice, we can encapsulate transactions in stored procedures. Typical OLTP operations are short, and as long as user I/O is excluded from the transaction path, single-threaded execution can be very efficient. The business server packages logic as data and sends it to the database server, which executes it directly in memory. Historically, stored procedures were criticized because each database had its own language. A modern approach is to use general-purpose languages where possible (for example, Redis uses Lua).</p>
+<h3 id="two-phase-locking">Two-Phase Locking</h3>
+<p>The only widely used serialization algorithm for nearly 30 years.</p>
+<ol>
+<li>Use locking to achieve serializable isolation: transactions need shared locks before reading objects and exclusive locks before modifying them, excluding all other transactions from reading or writing the modified objects (two phases: acquire locks before start, release after end). The database system automatically detects deadlocks between transactions and forcibly terminates one to break the deadlock.</li>
+<li>For the “nothing to lock” case discussed in the read-skew section (execute only when query results are empty), apply predicate locks. Predicate locks apply to all rows matching certain search conditions (similar to locking a <code>WHERE</code> predicate so overlapping ranges from concurrent transactions are disallowed). However, predicate locks are hard to implement and inefficient.</li>
+<li>In practice, index-range locks often replace predicate locks by widening the protected scope. By locking one or more index ranges of queried objects, those ranges become exclusively locked. In the worst case, a single transaction may lock the whole table.</li>
+</ol>
+<h3 id="serializable-snapshot-isolation">Serializable Snapshot Isolation</h3>
+<p>An optimistic-control algorithm proposed on top of MVCC in 2008, with limited real-world adoption. The DDIA author believes it will become a future standard in databases for these reasons:</p>
+<ul>
+<li>Pessimistic control shuts down too many transactions—retry costs are too high.</li>
+<li>Hardware still has much room for improvement. In the future we’ll encounter fewer concurrency problems, so we should adopt optimistic control strategies.</li>
+</ul>
+<p>Building on MVCC snapshot isolation, we apply optimistic control with these principles:</p>
+<ul>
+<li>Before a transaction reads, check whether concurrent uncommitted writes could make that read stale.</li>
+<li>Before a transaction commits, check whether writes that occurred after its read phase could create conflicts with other transactions.</li>
+</ul>
+<p>If conflicts are found, roll back.</p>
+<p>Serializable Snapshot Isolation (SSI) relies on SSI locks, similar to index-range locks, but SSI locks only record—they don’t block. After a transaction commits, SSI locks notify other related transactions and are discarded.</p>
+<p>The implementation tradeoff is lock granularity: too coarse may misjudge conflicts and expand a transaction’s impact; too fine may cause excessive metadata overhead.</p>
+<h1 id="distributed-system-challenges">Distributed System Challenges</h1>
+<ul>
+<li>Network latency</li>
+<li>Clock synchronization</li>
+<li>Process pausing/crashing</li>
+</ul>
+<p>Why go distributed?</p>
+<ul>
+<li>Scalability</li>
+<li>Fault tolerance</li>
+<li>Low latency</li>
+<li>If you can avoid opening Pandora’s box, keeping everything on one machine is worth trying</li>
+</ul>
+<p>Properties:</p>
+<ul>
+<li><strong>Safety</strong>: Properties that must never be violated—once violated, the system design has failed.</li>
+<li><strong>Liveness</strong>: Availability the system guarantees under certain preconditions. If preconditions fail, restoring them returns the system to normal.</li>
+</ul>
+<p>The following discussions assume we’ve already solved some problems through transactions.</p>
+<h2 id="byzantine-faults">Byzantine Faults</h2>
+<p>Not worth considering.</p>
+<ul>
+<li>Too expensive.</li>
+<li>Environmental issues like radiation can cause Byzantine faults, but the probability on Earth’s surface is extremely low. Of course, machines operating in space must consider this.</li>
+<li>Software bugs can cause machine errors, but all machines run the same code. Bugs can’t be prevented unless all machines’ software is independently developed and only a few have bugs—which is clearly unrealistic.</li>
+<li>Network intrusions could cause machine errors, but once an intruder can compromise one machine, there’s no reason to believe they can’t compromise all machines. Authentication, encryption, and firewalls are better approaches to network intrusion.</li>
+</ul>
+<h1 id="consensus">Consensus</h1>
+<p>Consensus is one of the most important abstractions in distributed systems: all nodes agree on a proposal. Based on this, many distributed-system challenges can be addressed. The solutions below can achieve consensus. In that sense, consensus is a bit like Turing completeness: once you implement one strong consensus mechanism, you can derive many others from it.</p>
+<h2 id="linearizability">Linearizability</h2>
+<blockquote>
+<p>Basic idea: Make a system appear as if there’s only one data copy, and all operations are atomic. As we’ll see, because linearizability has a simple definition, we can use whether other solutions can achieve linearizability to verify whether they’re consensus algorithms.</p>
+</blockquote>
+<p>Notes:</p>
+<ul>
+<li>Linearizability’s most intuitive requirement: once the system returns the latest value for a read, even if the related write hasn’t committed, all subsequent reads must return the latest value.</li>
+<li>Atomic operations. This property can be expressed as CAS (compare-and-set), similar to preventing lost updates in single-machine transactions.</li>
+<li>Building on the above, we <strong>don’t consider the effects of external network latency when observing the system</strong>—i.e., we don’t need to consider phantom reads. Once linearizability is achieved, we can naturally build distributed transactions to handle phantom reads. But when thinking about the problem model, be clear: transactions address data inconsistency between tables (a business-layer concern); distributed system challenges address data synchronization inconsistency between replicas (an infrastructure-layer concern).</li>
+<li>Note the distinction between serializability and linearizability: the former concerns <strong>concurrent</strong> transaction results matching serial execution; the latter concerns data replicas appearing as a single copy—the strongest linearizability prevents the outside world from perceiving <strong>parallelism</strong>.</li>
+<li>Actual serial execution and two-phase locking first achieve linearizability by restricting parallelism and concurrency, thereby achieving serializability. Serializable snapshot isolation, however, uses different snapshots for optimistic concurrency control; snapshot states and their changes can proceed in parallel, so linearizability is not guaranteed. Multiple SSI-based transactions may read different values, but conflicting ones cannot both commit. The first two approaches try to prevent this situation up front.</li>
+</ul>
+<p>Quorum can achieve linearizability, provided there’s no uncertain network latency.</p>
+<blockquote>
+<p>As long as there’s an unreliable network, there’s a risk of violating linearizability. This is CAP theory: the network is definitely unreliable; between availability and consistency, you can only choose one.</p>
+</blockquote>
+<h2 id="ordering-guarantees">Ordering Guarantees</h2>
+<h3 id="causal-consistency">Causal Consistency</h3>
+<p>Linearizability’s constraints are too strict. Can we achieve consensus with weaker requirements? We think of causal consistency: as long as causally related events occur in order and other events happen in parallel, the difficulty should be less than linearizability (which is equivalent to no parallelism).</p>
+<blockquote>
+<p>If a system obeys the order prescribed by causal relationships, we call it causally consistent. If neither of two operations happened before the other, they’re concurrent; otherwise they’re causal and can be ordered.</p>
+</blockquote>
+<p>How do we causally order operations? One approach is Lamport timestamps: assign each operation/client a sequence number composed of an incrementing counter plus a node ID. Sequence numbers are ordered by counter first, then node ID on ties. Every request carries a timestamp. Whenever a node or client observes a larger sequence number, it advances its own counter so the next request uses an even larger value. This allows ordering of operations.</p>
+<p>As long as there’s no uncertain network latency, ordering is guaranteed. With network latency, implementing CAS with Lamport timestamps requires each node to first confirm no concurrent CAS requests (resolving ties by sequence number), so network latency directly stalls the system. (Lamport timestamps’ operating environment requires more assumptions that we won’t discuss.)</p>
+<h3 id="total-order-broadcast">Total Order Broadcast</h3>
+<p>Lamport timestamps and other causal-consistency approaches can fail here because they behave like synchronous coordination models (decision waits for information from all nodes). If we switch to an asynchronous model, CAS can be implemented.</p>
+<p>Regardless of implementation environment, CAS can be achieved with these two conditions:</p>
+<ul>
+<li><strong>Reliable delivery</strong>: No message loss. If a message is sent to one node, it must be sent to all nodes.</li>
+<li><strong>Strict ordering</strong>: Messages are always delivered to each node in the same order.</li>
+</ul>
+<p>With this, CAS only needs to be implemented on one node, and all other nodes must follow that CAS operation because operations are reliably delivered and strictly ordered.</p>
+<p>So does implementing total order broadcast achieve consensus? We can verify by checking whether total order broadcast can achieve linearizability. It turns out that asynchronous models can’t handle the reading problem: <strong>system-internal network latency</strong> (not external—we said we don’t need to consider external network latency) may cause the outside world to read a new value followed by an old value.</p>
+<p>Therefore:</p>
+<ul>
+<li>We say total order broadcast satisfies write linearizability (which is essentially serializability) but not read linearizability.</li>
+<li>But is that really the case? Actually, if we treat reads (or reads requiring strict accuracy) as operations and add them to the operation queue, read linearizability is satisfied. ZooKeeper and etcd have similar implementations.</li>
+</ul>
+<p>The key takeaway from the two paragraphs above is:</p>
+<blockquote>
+<p>Fully asynchronous consensus is impossible to achieve. Synchronous consensus is possible but has performance issues.</p>
+</blockquote>
+<p>So how do we implement total order broadcast? (Answer: using linearizability…)</p>
+<h2 id="implementing-total-order-broadcast">Implementing Total Order Broadcast</h2>
+<p>Finally, we discuss achieving consensus through total order broadcast.</p>
+<p>We first discuss a feasible approximate solution, then extend it to total order broadcast.</p>
+<h3 id="two-phase-commit-2pc">Two-Phase Commit (2PC)</h3>
+<p>Introduce a new component: the coordinator. The coordinator and nodes implement two-phase commit as follows:</p>
+<ol>
+<li>Send a prepare request to all nodes, asking if they can commit.</li>
+<li>If all nodes return “yes,” the coordinator issues a commit request and nodes commit. If any node returns “no,” the coordinator tells all nodes to abort.</li>
+</ol>
+<p>This can clearly produce agreement in the happy path. The problem, as always, is network latency and failures. So we enhance the coordinator’s fault tolerance:</p>
+<h3 id="fault-tolerant-consensus">Fault-Tolerant Consensus</h3>
+<p>The book introduces several fault-tolerant consensus algorithms: VSR, Paxos, Raft, and Zab. I’m most familiar with Raft (MIT 6.824), so I’ll use Raft to explain how to extend 2PC for better fault tolerance.</p>
+<p>The coordinator can also be the leader node. Whenever a problem occurs, if we can elect a new leader from available nodes to serve as coordinator, consensus remains valid. Electing a new node is itself a consensus problem—this consensus only needs to be acknowledged by more than half the nodes.</p>
+<p>Whenever a node detects leader failure, it can declare itself the new leader. As long as it gains acknowledgment from more than half the nodes, it becomes the leader. This leader then acts as coordinator, ordering operations for follower nodes—any operation approved by more than half the nodes is immediately executed.</p>
+<p>If more than half the nodes go down, the system enters a crash state. The benefit of requiring a majority: there’s always at least one node that participated in every vote, ensuring split-brain doesn’t occur and consensus is maintained.</p>
+<h3 id="membership-and-coordination-services">Membership and Coordination Services</h3>
+<p>Now we know how to achieve consensus. We also see that not all operations need consensus participation; only certain critical operations do. Therefore, we can use packaged systems like ZooKeeper (Zab) and etcd (Raft) to establish consensus for small, memory-resident datasets and build highly reliable coordination paths.</p>
+</div>
+</div>
+
+            <section class="comment-section" data-comment-section></section>
+          </div>
+        </div>
+      </main>
+    </div>
+
+    <script id="page-data" type="application/json">
+      {
+  "pageType": "post",
+  "lang": "en",
+  "langSwitchUrl": "/transactions-and-consensus-from-ddia/zh/",
+  "langSwitcherMode": "toggle",
+  "markdownUrl": "/posts/transactions-and-consensus-from-ddia/post.md",
+  "labels": {
+    "navAbout": "About",
+    "navBlog": "Blog",
+    "filterAll": "All"
+  },
+  "comments": {
+    "appId": "e224d3ce-6f5a-4777-bb80-b7bbf2e78d83",
+    "pageId": "transactions-and-consensus-from-ddia",
+    "pageUrl": "https://www.yujiachen.com/transactions-and-consensus-from-ddia/",
+    "pageTitle": "Transactions and Consensus from DDIA"
+  }
+}
+    </script>
+    <script type="module" src="/app.js"></script>
+  </body>
+</html>

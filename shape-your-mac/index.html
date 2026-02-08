@@ -1,0 +1,416 @@
+<!doctype html>
+<html lang="en" data-theme="auto">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Shape Your Mac | Jiachen Yu</title>
+        <meta name="description" content="Shape Your Mac" />
+    <meta property="og:title" content="Shape Your Mac | Jiachen Yu" />
+    <meta property="og:description" content="Shape Your Mac" />
+    <meta property="og:type" content="article" />
+    <meta property="og:url" content="https://www.yujiachen.com/shape-your-mac/" />
+    <meta name="twitter:card" content="summary" />
+    <link rel="canonical" href="https://www.yujiachen.com/shape-your-mac/" />
+    <link rel="alternate" type="text/markdown" href="https://www.yujiachen.com/posts/shape-your-mac/post.md" />
+    <link rel="alternate" hreflang="en" href="https://www.yujiachen.com/shape-your-mac/" />
+<link rel="alternate" hreflang="zh" href="https://www.yujiachen.com/shape-your-mac/zh/" /> <link rel="alternate" type="application/rss+xml" title="RSS" href="https://www.yujiachen.com/rss.xml" />
+<link rel="alternate" type="application/rss+xml" title="RSS (EN)" href="https://www.yujiachen.com/rss-en.xml" /> <link rel="icon" href="/favicon-32.png" type="image/png" sizes="32x32" />
+<link rel="icon" href="/favicon.png" type="image/png" />
+<link rel="icon" href="/favicon.ico" type="image/x-icon" />
+<link rel="apple-touch-icon" href="/apple-touch-icon.png" sizes="180x180" /> <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&amp;family=Source+Serif+4:ital,wght@0,400;0,600;0,700;1,400&amp;family=Noto+Serif+SC:wght@400;600;700&amp;display=swap" />
+    <link rel="stylesheet" href="/katex/katex.min.css" />
+    <link rel="stylesheet" href="/styles.css" />
+    <link rel="stylesheet" href="/fonts.css" />
+  </head>
+  <body data-page="post">
+    <div id="root">
+      
+<nav class="navbar">
+  <div class="nav-left">
+    <a href="/" class="brand">Jiachen Yu</a>
+    <div class="nav-links">
+      <a class="nav-link-button" href="/about/" data-nav="about">About</a>
+      <a class="nav-link-button" href="/blog/" data-nav="blog">Blog</a>
+    </div>
+  </div>
+  <div class="controls">
+    <div class="action-controls">
+      <div class="lang-switcher" data-lang-switcher data-lang-switcher-mode="toggle">
+        <button class="lang-toggle" type="button" data-lang-toggle>EN</button>
+      </div>
+      <div class="theme-switcher" data-theme-switcher data-theme-state="light">
+        <button
+          class="theme-trigger"
+          type="button"
+          data-theme-trigger
+          aria-label="Theme mode toggle"
+          aria-pressed="false"
+        >
+          <span class="theme-trigger-icon">
+            <svg class="theme-icon theme-icon-dark" viewBox="0 0 24 24" aria-hidden="true">
+              <path
+                d="M21 12.8A8.5 8.5 0 1 1 11.2 3a7.5 7.5 0 0 0 9.8 9.8Z"
+                fill="currentColor"
+              />
+            </svg>
+            <svg class="theme-icon theme-icon-light" viewBox="0 0 24 24" aria-hidden="true">
+              <circle cx="12" cy="12" r="4" fill="currentColor" />
+              <path
+                d="M12 3v2M12 19v2M4.9 4.9l1.4 1.4M17.7 17.7l1.4 1.4M3 12h2M19 12h2M4.9 19.1l1.4-1.4M17.7 6.3l1.4-1.4"
+                stroke="currentColor"
+                stroke-width="2"
+                stroke-linecap="round"
+                fill="none"
+              />
+            </svg>
+          </span>
+        </button>
+      </div>
+      <a
+        class="ask-ai-entry"
+        href="/ask-ai/"
+        data-ask-ai-entry
+        aria-label="Open Ask AI"
+      >
+        <span class="ask-ai-entry-label">Ask AI</span>
+      </a>
+    </div>
+  </div>
+</nav>
+
+      <main class="page-shell article-page">
+        <div class="article-layout has-toc page-shell-content">
+          
+    <aside class="article-toc sidebar-panel" data-toc>
+      <button class="toc-toggle sidebar-toggle" type="button" data-toc-toggle aria-expanded="false">
+        <span class="toc-toggle-label">Contents</span>
+        <span class="toc-toggle-icon" aria-hidden="true">⌄</span>
+      </button>
+      <div class="toc-panel sidebar-panel-content" data-toc-panel>
+        <div class="toc-title sidebar-title">Contents</div>
+        <ol class="toc-list sidebar-list">
+      <li class="toc-item sidebar-item toc-level-1"><a class="sidebar-link" href="#foreword">📖 Foreword</a></li>
+      <li class="toc-item sidebar-item toc-level-1"><a class="sidebar-link" href="#basic-settings">🔧 Basic Settings</a></li>
+      <li class="toc-item sidebar-item toc-level-2"><a class="sidebar-link" href="#dotfiles">🗂️ Dotfiles</a></li>
+      <li class="toc-item sidebar-item toc-level-2"><a class="sidebar-link" href="#command-line-config">💻 Command Line Config</a></li>
+      <li class="toc-item sidebar-item toc-level-2"><a class="sidebar-link" href="#system-settings">⚙️ System Settings</a></li>
+      <li class="toc-item sidebar-item toc-level-1"><a class="sidebar-link" href="#apps">📱 Apps</a></li>
+      <li class="toc-item sidebar-item toc-level-2"><a class="sidebar-link" href="#raycast">🌟 Raycast</a></li>
+      <li class="toc-item sidebar-item toc-level-2"><a class="sidebar-link" href="#alttab">🌟 AltTab</a></li>
+      <li class="toc-item sidebar-item toc-level-1"><a class="sidebar-link" href="#backup">💾 Backup</a></li>
+      <li class="toc-item sidebar-item toc-level-2"><a class="sidebar-link" href="#3-2-1-rule">3-2-1 Rule</a></li>
+      <li class="toc-item sidebar-item toc-level-1"><a class="sidebar-link" href="#reflecting-thoughts">💭 Reflecting thoughts</a></li>
+        </ol>
+      </div>
+    </aside>
+  
+          <div class="article-content">
+            
+
+<div class="article-text-content">
+  <div class="article-date">2024-07-14 · TECH</div>
+  <h1 class="article-hero">Shape Your Mac</h1>
+  <div class="article-body"><h1 id="foreword">📖 Foreword</h1>
+<p>Have you ever furnished your own house? To be honest, I haven’t, since I always rent. However, I do arrange things in my home. Right now, I’m lying on my sofa and writing this doc. To make it more engaging, I decided to include a picture of my current setup.</p>
+<p>
+<picture>
+  <source srcset="/assets/posts/shape-your-mac/en/image_1.webp" type="image/webp" />
+  <img src="/assets/posts/shape-your-mac/en/image_1.png" alt="" class="article-image" width="1080" height="810" />
+</picture>
+</p>
+<p>I moved to Shanghai less than two months ago, but I’ve already made this place feel familiar. This has allowed me to live happily and somewhat “efficiently” — meaning the room’s arrangement perfectly suits my daily routine.</p>
+<p>It’s the same with a computer, especially a work computer. We don’t own our work computers; they belong to the company. But since we spend most of our screen time on them, it’s important to make sure they make us feel happy and efficient.</p>
+<h1 id="basic-settings">🔧 Basic Settings</h1>
+<h2 id="dotfiles">🗂️ Dotfiles</h2>
+<p><a href="https://github.com/yujiachen-y/dotfiles">https://github.com/yujiachen-y/dotfiles</a></p>
+<p>Dotfiles can be considered the metadata of your computer. Personally, I use <a href="https://github.com/yujiachen-y/dotfiles/blob/main/macos/Brewfile">a Brewfile</a> to manage my Mac’s dependencies. As long as an app can be installed via Homebrew, you should add it to your Brewfile. In fact, only a few apps cannot be installed using Homebrew.</p>
+<p>I also store my <a href="https://github.com/yujiachen-y/dotfiles/blob/main/zsh/.zshrc">.zshrc</a> and <a href="https://github.com/yujiachen-y/dotfiles/blob/main/.vimrc">.vimrc</a> files in Dotfiles, so that I don’t need to configure my zsh and vim repeatedly.</p>
+<p>Additionally, it’s common practice to store <a href="https://github.com/yujiachen-y/dotfiles/blob/main/macos/system_settings.sh">Mac settings</a> in dotfiles. However, you still need to go to System Settings to configure some options that can’t be changed via command lines. BTW, every time I set up a Mac, there are often UI changes and new options in System Preferences. So, the manual setup helps me discover what changes Apple has made lol.</p>
+<h2 id="command-line-config">💻 Command Line Config</h2>
+<p>
+<picture>
+  <source srcset="/assets/posts/shape-your-mac/en/image_2.webp" type="image/webp" />
+  <img src="/assets/posts/shape-your-mac/en/image_2.png" alt="" class="article-image" width="1080" height="719" />
+</picture>
+</p>
+<p>I use <a href="https://www.warp.dev/">Warp</a> as my terminal emulator. However, I believe the differences between Terminal.app, iTerm2, and Warp are not significant. For me, Warp has 3 main advantages:</p>
+<ol>
+<li>
+<p><strong>Suggestions</strong>: I find them better than <a href="https://github.com/zsh-users/zsh-autosuggestions">zsh-autosuggestions</a>.</p>
+</li>
+<li>
+<p><strong>AI Copilot</strong>: In my opinion, all AI copilot products can be replaced by directly asking ChatGPT. (Update: Warp has agent mode too.)</p>
+</li>
+<li>
+<p><strong>Built-in Shell Prompt</strong>: Although it’s not as flexible or functional as <a href="https://github.com/romkatv/powerlevel10k">p10k</a>, I’m considering reverting to my old <a href="https://github.com/yujiachen-y/dotfiles/blob/main/zsh/.p10k.zsh">.p10k.zsh</a> setup.</p>
+</li>
+</ol>
+<p>Have you ever checked how many lines of code are in your <code>.zshrc</code> file? What do those lines do? I checked mine, and it’s only <a href="https://github.com/yujiachen-y/dotfiles/blob/3a77776963e3fee4a3df70c7e29230d40c1c2419/zsh/.zshrc">15 lines</a>. Typically, a <code>.zshrc</code> file is full of <code>[oh-my-zsh](https://github.com/ohmyzsh/ohmyzsh)</code> configurations, but I only keep a few essential plugins and delete the unnecessary ones. Here are some <code>oh-my-zsh</code> plugins worth mentioning:</p>
+<ul>
+<li>
+<p><strong><a href="https://github.com/ohmyzsh/ohmyzsh/blob/master/plugins/dotenv/README.md">dotenv</a></strong>: Automatically loads your .env files into environment variables.</p>
+</li>
+<li>
+<p><strong><a href="https://github.com/ohmyzsh/ohmyzsh/blob/master/plugins/git/README.md">git</a></strong>: I use commands like <code>gaa</code> (<code>git add --all</code>), <code>gsmsg</code> (<code>git commit --message</code>), and <code>gcn!</code> (<code>git commit --verbose --no-edit --amend</code>) every day.</p>
+<ul>
+<li>A git tip: please use <code>gcn!</code> to avoid unnecessary commit information in PR.</li>
+</ul>
+</li>
+<li>
+<p><strong><a href="https://github.com/ohmyzsh/ohmyzsh/blob/master/plugins/z/README.md">z</a></strong>: Access your most visited directories with very few keystrokes.</p>
+</li>
+</ul>
+<p>As mentioned earlier, I use Warp for its built-in shell prompt, which looks like this:</p>
+<p>
+<picture>
+  <source srcset="/assets/posts/shape-your-mac/en/image_3.webp" type="image/webp" />
+  <img src="/assets/posts/shape-your-mac/en/image_3.png" alt="" class="article-image" width="1080" height="719" />
+</picture>
+</p>
+<p>However, it’s not very flexible and cannot be used in other terminal emulators. If you use Warp’s shell prompt, you might encounter issues in VSCode or other text editors and IDEs. <a href="https://github.com/warpdotdev/Warp/issues/257#issuecomment-1274198741">Embedding Warp into VSCode is particularly challenging</a>.</p>
+<p>
+<picture>
+  <source srcset="/assets/posts/shape-your-mac/en/image_4.webp" type="image/webp" />
+  <img src="/assets/posts/shape-your-mac/en/image_4.png" alt="" class="article-image" width="1080" height="719" />
+</picture>
+</p>
+<p>I recommend using <a href="https://github.com/romkatv/powerlevel10k">p10k</a> as your shell prompt. It’s highly flexible and can be used across different terminal emulators since it’s not tied to any specific one.</p>
+<p>
+<picture>
+  <source srcset="/assets/posts/shape-your-mac/en/image_5.webp" type="image/webp" />
+  <img src="/assets/posts/shape-your-mac/en/image_5.png" alt="" class="article-image" width="765" height="516" />
+</picture>
+</p>
+<p>I want to mention 2 of my favorite macOS commands here: <a href="https://ss64.com/mac/pbpaste.html">pbpaste</a> and <a href="https://ss64.com/mac/pbcopy.html">pbcopy</a>. There are already some useful examples on the manual pages.</p>
+<h2 id="system-settings">⚙️ System Settings</h2>
+<blockquote>
+<p>As mentioned earlier, some settings below can be incorporated into your dotfiles.</p>
+</blockquote>
+<p>Implementing these settings will enhance your productivity:</p>
+<ul>
+<li><strong>Prevent Automatic Sleeping</strong></li>
+</ul>
+<p>
+<picture>
+  <source srcset="/assets/posts/shape-your-mac/en/image_6.webp" type="image/webp" />
+  <img src="/assets/posts/shape-your-mac/en/image_6.png" alt="" class="article-image" width="1080" height="767" />
+</picture>
+</p>
+<ul>
+<li><strong>Three Finger Drag</strong></li>
+</ul>
+<p>
+<picture>
+  <source srcset="/assets/posts/shape-your-mac/en/image_7.webp" type="image/webp" />
+  <img src="/assets/posts/shape-your-mac/en/image_7.png" alt="" class="article-image" width="1080" height="767" />
+</picture>
+</p>
+<p><a href="https://youtu.be/-Fy6imaiHWE" title="Share link">How to select or drag using three fingers on your MacBook track pad</a></p>
+<ul>
+<li><strong>Reduce Keyboard Delay Time</strong>: Set your keyboard delay time to the shortest possible setting. As coders, we can’t afford to waste time waiting for keyboard delays.</li>
+</ul>
+<p>
+<picture>
+  <source srcset="/assets/posts/shape-your-mac/en/image_8.webp" type="image/webp" />
+  <img src="/assets/posts/shape-your-mac/en/image_8.png" alt="" class="article-image" width="1080" height="767" />
+</picture>
+</p>
+<ul>
+<li><strong>Disable Double-Space Period</strong>: This feature can be annoying, so it’s best to turn it off.</li>
+</ul>
+<p>
+<picture>
+  <source srcset="/assets/posts/shape-your-mac/en/image_9.webp" type="image/webp" />
+  <img src="/assets/posts/shape-your-mac/en/image_9.png" alt="" class="article-image" width="1080" height="767" />
+</picture>
+</p>
+<ul>
+<li><strong>Swap Caps Lock and Command Keys</strong>: The keys you use most frequently should be more accessible. Swap the Caps Lock key with the Command key.</li>
+</ul>
+<p>
+<picture>
+  <source srcset="/assets/posts/shape-your-mac/en/image_10.webp" type="image/webp" />
+  <img src="/assets/posts/shape-your-mac/en/image_10.png" alt="" class="article-image" width="1080" height="796" />
+</picture>
+</p>
+<ul>
+<li><strong>Disable Press and Hold</strong>: This setting can only be disabled via the command line. If you use <a href="https://opusclip.larksuite.com/wiki/Uu5NwIeBFilqHRk2dhSu5MNYsUg#LlCwdefVKo7DO3xvxUquBptVs9f">Vim</a>, you might not need to disable this setting, as pressing and holding a key is not considered good practice in Vim.</li>
+</ul>
+<p>
+<picture>
+  <source srcset="/assets/posts/shape-your-mac/en/image_11.webp" type="image/webp" />
+  <img src="/assets/posts/shape-your-mac/en/image_11.png" alt="" class="article-image" width="464" height="170" />
+</picture>
+</p>
+<pre class="hljs"><code>defaults write -g ApplePressAndHoldEnabled -bool <span class="hljs-literal">false</span>
+</code></pre>
+<h1 id="apps">📱 Apps</h1>
+<blockquote>
+<p>As I mentioned earlier, all apps listed here should be managed by your Brewfile.</p>
+</blockquote>
+<h2 id="raycast">🌟 Raycast</h2>
+<p>
+<picture>
+  <source srcset="/assets/posts/shape-your-mac/en/image_12.webp" type="image/webp" />
+  <img src="/assets/posts/shape-your-mac/en/image_12.png" alt="" class="article-image" width="1080" height="701" />
+</picture>
+</p>
+<p><a href="https://www.raycast.com/store">Raycast is an everything store for Mac shortcuts.</a> Here are some shortcuts I often use:</p>
+<table>
+<thead>
+<tr>
+<th>Clipboard History</th>
+<th>Search Emoji</th>
+<th>Window Management</th>
+<th>Music Control</th>
+<th>Kill Process</th>
+<th>Search Browser Tabs</th>
+<th>Reminder</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>
+<picture>
+  <source srcset="/assets/posts/shape-your-mac/en/image_13.webp" type="image/webp" />
+  <img src="/assets/posts/shape-your-mac/en/image_13.png" alt="" class="article-image" width="1080" height="661" />
+</picture>
+</td>
+<td>
+<picture>
+  <source srcset="/assets/posts/shape-your-mac/en/image_14.webp" type="image/webp" />
+  <img src="/assets/posts/shape-your-mac/en/image_14.png" alt="" class="article-image" width="1080" height="661" />
+</picture>
+</td>
+<td>
+<picture>
+  <source srcset="/assets/posts/shape-your-mac/en/image_15.webp" type="image/webp" />
+  <img src="/assets/posts/shape-your-mac/en/image_15.png" alt="" class="article-image" width="1080" height="661" />
+</picture>
+</td>
+<td>
+<picture>
+  <source srcset="/assets/posts/shape-your-mac/en/image_16.webp" type="image/webp" />
+  <img src="/assets/posts/shape-your-mac/en/image_16.png" alt="" class="article-image" width="1080" height="661" />
+</picture>
+</td>
+<td>
+<picture>
+  <source srcset="/assets/posts/shape-your-mac/en/image_17.webp" type="image/webp" />
+  <img src="/assets/posts/shape-your-mac/en/image_17.png" alt="" class="article-image" width="1080" height="661" />
+</picture>
+</td>
+<td>
+<picture>
+  <source srcset="/assets/posts/shape-your-mac/en/image_18.webp" type="image/webp" />
+  <img src="/assets/posts/shape-your-mac/en/image_18.png" alt="" class="article-image" width="1080" height="661" />
+</picture>
+</td>
+<td>
+<picture>
+  <source srcset="/assets/posts/shape-your-mac/en/image_19.webp" type="image/webp" />
+  <img src="/assets/posts/shape-your-mac/en/image_19.png" alt="" class="article-image" width="1080" height="661" />
+</picture>
+</td>
+</tr>
+</tbody>
+</table>
+<p>Raycast is super useful with your custom hotkeys.</p>
+<p>
+<picture>
+  <source srcset="/assets/posts/shape-your-mac/en/image_20.webp" type="image/webp" />
+  <img src="/assets/posts/shape-your-mac/en/image_20.png" alt="" class="article-image" width="1080" height="702" />
+</picture>
+</p>
+<h2 id="alttab">🌟 AltTab</h2>
+<p>On a Mac, you can use Command + Tab to switch between apps. However, the built-in app switcher doesn’t allow you to switch between windows within the same application, which can be inconvenient if you need to frequently switch between windows of a single app.</p>
+<p>
+<picture>
+  <source srcset="/assets/posts/shape-your-mac/en/image_21.webp" type="image/webp" />
+  <img src="/assets/posts/shape-your-mac/en/image_21.png" alt="" class="article-image" width="1080" height="701" />
+</picture>
+</p>
+<p><a href="https://alt-tab-macos.netlify.app/">AltTab</a> solves this problem by allowing you to switch between windows across different Mac desktops. This way, you don’t need to use a mouse to switch between windows and desktops.</p>
+<p>
+<picture>
+  <source srcset="/assets/posts/shape-your-mac/en/image_22.webp" type="image/webp" />
+  <img src="/assets/posts/shape-your-mac/en/image_22.png" alt="" class="article-image" width="1080" height="701" />
+</picture>
+</p>
+<h1 id="backup">💾 Backup</h1>
+<blockquote>
+<p>There are two types of people:</p>
+<ul>
+<li>
+<p>Those who do backups</p>
+</li>
+<li>
+<p>Those who will do backups</p>
+</li>
+</ul>
+<p>Any data you own that you haven’t backed up is data that could be gone at any moment, forever. Here we will cover some good backup basics and the pitfalls of some approaches.</p>
+<h2 id="3-2-1-rule"><strong>3-2-1 Rule</strong></h2>
+<p>The <a href="https://www.us-cert.gov/sites/default/files/publications/data_backup_options.pdf">3-2-1 rule</a> is a general recommended strategy for backing up your data. It state that you should have:</p>
+<ul>
+<li>
+<p>at least <strong>3 copies</strong> of your data</p>
+</li>
+<li>
+<p><strong>2</strong> copies in <strong>different mediums</strong></p>
+</li>
+<li>
+<p><strong>1</strong> of the copies being <strong>offsite</strong></p>
+</li>
+</ul>
+<p>The main idea behind this recommendation is not to put all your eggs in one basket. Having 2 different devices/disks ensures that a single hardware failure doesn’t take away all your data. Similarly, if you store your only backup at home and the house burns down or gets robbed you lose everything, that’s what the offsite copy is there for. Onsite backups give you availability and speed, offsite give you the resiliency should a disaster happen.</p>
+<p>From <a href="https://missing.csail.mit.edu/2019/backups/">Backups</a></p>
+</blockquote>
+<h1 id="reflecting-thoughts">💭 Reflecting thoughts</h1>
+<ul>
+<li>
+<p>Routinely review your workflow and try to improve your efficiency.</p>
+</li>
+<li>
+<p><a href="https://www.catb.org/~esr/writings/taoup/html/ch01s06.html#id2878263">Fold knowledge into data, so program logic can be stupid and robust.</a></p>
+</li>
+<li>
+<p><a href="https://www.catb.org/~esr/writings/taoup/html/ch01s06.html#id2878666">Programmer time is expensive; conserve it in preference to machine time.</a></p>
+</li>
+<li>
+<p><a href="https://mcluhangalaxy.wordpress.com/2013/04/01/we-shape-our-tools-and-thereafter-our-tools-shape-us/">We shape our tools and thereafter our tools shape us</a></p>
+</li>
+</ul>
+</div>
+</div>
+
+            <section class="comment-section" data-comment-section></section>
+          </div>
+        </div>
+      </main>
+    </div>
+
+    <script id="page-data" type="application/json">
+      {
+  "pageType": "post",
+  "lang": "en",
+  "langSwitchUrl": "/shape-your-mac/zh/",
+  "langSwitcherMode": "toggle",
+  "markdownUrl": "/posts/shape-your-mac/post.md",
+  "labels": {
+    "navAbout": "About",
+    "navBlog": "Blog",
+    "filterAll": "All"
+  },
+  "comments": {
+    "appId": "e224d3ce-6f5a-4777-bb80-b7bbf2e78d83",
+    "pageId": "shape-your-mac",
+    "pageUrl": "https://www.yujiachen.com/shape-your-mac/",
+    "pageTitle": "Shape Your Mac"
+  }
+}
+    </script>
+    <script type="module" src="/app.js"></script>
+  </body>
+</html>

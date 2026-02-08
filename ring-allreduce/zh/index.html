@@ -1,0 +1,177 @@
+<!doctype html>
+<html lang="zh" data-theme="auto">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>ring-allreduce 简介 | Jiachen Yu</title>
+        <meta name="description" content="ring-allreduce 简介" />
+    <meta property="og:title" content="ring-allreduce 简介 | Jiachen Yu" />
+    <meta property="og:description" content="ring-allreduce 简介" />
+    <meta property="og:type" content="article" />
+    <meta property="og:url" content="https://www.yujiachen.com/ring-allreduce/zh/" />
+    <meta name="twitter:card" content="summary" />
+    <link rel="canonical" href="https://www.yujiachen.com/ring-allreduce/zh/" />
+    <link rel="alternate" type="text/markdown" href="https://www.yujiachen.com/posts/ring-allreduce/post.md" />
+    <link rel="alternate" hreflang="en" href="https://www.yujiachen.com/ring-allreduce/" />
+<link rel="alternate" hreflang="zh" href="https://www.yujiachen.com/ring-allreduce/zh/" /> <link rel="alternate" type="application/rss+xml" title="RSS" href="https://www.yujiachen.com/rss.xml" />
+<link rel="alternate" type="application/rss+xml" title="RSS (ZH)" href="https://www.yujiachen.com/rss-zh.xml" /> <link rel="icon" href="/favicon-32.png" type="image/png" sizes="32x32" />
+<link rel="icon" href="/favicon.png" type="image/png" />
+<link rel="icon" href="/favicon.ico" type="image/x-icon" />
+<link rel="apple-touch-icon" href="/apple-touch-icon.png" sizes="180x180" /> <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&amp;family=Source+Serif+4:ital,wght@0,400;0,600;0,700;1,400&amp;family=Noto+Serif+SC:wght@400;600;700&amp;display=swap" />
+    <link rel="stylesheet" href="/katex/katex.min.css" />
+    <link rel="stylesheet" href="/styles.css" />
+    <link rel="stylesheet" href="/fonts.css" />
+  </head>
+  <body data-page="post">
+    <div id="root">
+      
+<nav class="navbar">
+  <div class="nav-left">
+    <a href="/zh/" class="brand">Jiachen Yu</a>
+    <div class="nav-links">
+      <a class="nav-link-button" href="/about/zh/" data-nav="about">About</a>
+      <a class="nav-link-button" href="/blog/zh/" data-nav="blog">Blog</a>
+    </div>
+  </div>
+  <div class="controls">
+    <div class="action-controls">
+      <div class="lang-switcher" data-lang-switcher data-lang-switcher-mode="toggle">
+        <button class="lang-toggle" type="button" data-lang-toggle>EN</button>
+      </div>
+      <div class="theme-switcher" data-theme-switcher data-theme-state="light">
+        <button
+          class="theme-trigger"
+          type="button"
+          data-theme-trigger
+          aria-label="Theme mode toggle"
+          aria-pressed="false"
+        >
+          <span class="theme-trigger-icon">
+            <svg class="theme-icon theme-icon-dark" viewBox="0 0 24 24" aria-hidden="true">
+              <path
+                d="M21 12.8A8.5 8.5 0 1 1 11.2 3a7.5 7.5 0 0 0 9.8 9.8Z"
+                fill="currentColor"
+              />
+            </svg>
+            <svg class="theme-icon theme-icon-light" viewBox="0 0 24 24" aria-hidden="true">
+              <circle cx="12" cy="12" r="4" fill="currentColor" />
+              <path
+                d="M12 3v2M12 19v2M4.9 4.9l1.4 1.4M17.7 17.7l1.4 1.4M3 12h2M19 12h2M4.9 19.1l1.4-1.4M17.7 6.3l1.4-1.4"
+                stroke="currentColor"
+                stroke-width="2"
+                stroke-linecap="round"
+                fill="none"
+              />
+            </svg>
+          </span>
+        </button>
+      </div>
+      <a
+        class="ask-ai-entry"
+        href="/ask-ai/"
+        data-ask-ai-entry
+        aria-label="Open Ask AI"
+      >
+        <span class="ask-ai-entry-label">Ask AI</span>
+      </a>
+    </div>
+  </div>
+</nav>
+
+      <main class="page-shell article-page">
+        <div class="article-layout no-toc page-shell-content">
+          
+          <div class="article-content">
+            
+
+<div class="article-text-content">
+  <div class="article-date">2018-05-24 · TECH</div>
+  <h1 class="article-hero">ring-allreduce 简介</h1>
+  <div class="article-body"><p>今天无聊看到了ring-allreduce的gpu通信算法，本来希望在<a href="http://research.baidu.com/bringing-hpc-techniques-deep-learning/">相关网页</a>上看看相关介绍的，但是在baidu research上却搜不到相关的东西，后来看了看<a href="https://github.com/baidu-research/baidu-allreduce">baidu-allreduce</a>代码的注释，才明白。这是一个说明起来挺简单的算法，自己打算随便说说。</p>
+<p>觉得英文好的可以直接看看GitHub上注释，写的很清晰：<a href="https://github.com/baidu-research/baidu-allreduce/blob/master/collectives.cu#L156">https://github.com/baidu-research/baidu-allreduce/blob/master/collectives.cu#L156</a></p>
+<ul>
+<li><em>如无特殊说明，本博客的图片都来自于<a href="https://www.zhihu.com/question/57799212/answer/292494636?utm_source=ZHShareTargetIDMore&amp;utm_medium=social&amp;utm_oi=37729630945280">知乎上的一个回答</a>，主要原因是baidu research上找不到这篇文章，所以相关的图例只在这个知乎回答里找到了</em>*</li>
+</ul>
+<p>一般的多卡gpu训练有一个很大的缺陷，就是因为每次都需要一个gpu从其他gpu上收集训练的梯度，然后将新的模型分发到其他gpu上。如下图：</p>
+<p>
+<picture>
+  <source srcset="/assets/posts/ring-allreduce/zh/image_1.webp" type="image/webp" />
+  <img src="/assets/posts/ring-allreduce/zh/image_1.png" alt="" class="article-image" width="452" height="310" />
+</picture>
+</p>
+<p>这样的模型最大的缺陷是gpu 0的通信时间是随着gpu卡数的增长而线性增长的。所以就有了ring-allreduce，如下图：</p>
+<p>
+<picture>
+  <source srcset="/assets/posts/ring-allreduce/zh/image_2.webp" type="image/webp" />
+  <img src="/assets/posts/ring-allreduce/zh/image_2.png" alt="" class="article-image" width="419" height="330" />
+</picture>
+
+该算法的基本思想是取消Reducer，让数据在gpu形成的环内流动，整个ring-allreduce的过程分为两大步，第一步是scatter-reduce，第二步是allgather。</p>
+<p>先说第一步：首先我们有n块gpu，那么我们把每个gpu上的数据（均等的）划分成n块，并给每个gpu指定它的左右邻居（图中0号gpu的左邻居是4号，右邻居是1号，1号gpu的左邻居是0号，右邻居是2号……），然后开始执行n-1次操作，在第i次操作时，gpu j会将自己的第(j - i)%n块数据发送给gpu j+1，并接受gpu j-1的(j - i - 1)%n块数据。并将接受来的数据进行reduce操作，示意图如下：</p>
+<p>
+<picture>
+  <source srcset="/assets/posts/ring-allreduce/zh/image_3.webp" type="image/webp" />
+  <img src="/assets/posts/ring-allreduce/zh/image_3.png" alt="" class="article-image" width="480" height="335" />
+</picture>
+
+当n-1次操作完成后，ring-allreduce的第一大步scatter-reduce就已经完成了，此时，第i块gpu的第(i + 1) % n块数据已经收集到了所有n块gpu的第(i + 1) % n块数据，那么，再进行一次allgather就可以完成算法了。</p>
+<p>第二步allgather做的事情很简单，就是通过n-1次传递，把第i块gpu的第(i + 1) % n块数据传递给其他gpu，同样也是在i次传递时，gpu j把自己的第(j - i - 1)%n块数据发送给右邻居，接受左邻居的第(j - i - 2) % n数据，但是接受来的数据不需要像第一步那样做reduce，而是直接用接受来的数据代替自己的数据就好了。</p>
+<p>最后每个gpu的数据就变成了这样：</p>
+<p>
+<picture>
+  <source srcset="/assets/posts/ring-allreduce/zh/image_4.webp" type="image/webp" />
+  <img src="/assets/posts/ring-allreduce/zh/image_4.png" alt="" class="article-image" width="572" height="321" />
+</picture>
+
+如果觉得不懂的话，我们举一个3gpu的例子：</p>
+<p>首先是第一步，scatter-reduce：</p>
+<p>
+<picture>
+  <source srcset="/assets/posts/ring-allreduce/zh/image_5.webp" type="image/webp" />
+  <img src="/assets/posts/ring-allreduce/zh/image_5.png" alt="" class="article-image" width="772" height="913" />
+</picture>
+</p>
+<p>然后是allgather的例子：</p>
+<p>
+<picture>
+  <source srcset="/assets/posts/ring-allreduce/zh/image_6.webp" type="image/webp" />
+  <img src="/assets/posts/ring-allreduce/zh/image_6.png" alt="" class="article-image" width="1080" height="1321" />
+</picture>
+</p>
+<p>reference:</p>
+<p><a href="https://github.com/baidu-research/baidu-allreduce">https://github.com/baidu-research/baidu-allreduce</a></p>
+<p><a href="https://www.zhihu.com/question/57799212/answer/292494636?utm_source=ZHShareTargetIDMore&amp;utm_medium=social&amp;utm_oi=37729630945280">https://www.zhihu.com/question/57799212/answer/292494636?utm_source=ZHShareTargetIDMore&amp;utm_medium=social&amp;utm_oi=37729630945280</a></p>
+</div>
+</div>
+
+            <section class="comment-section" data-comment-section></section>
+          </div>
+        </div>
+      </main>
+    </div>
+
+    <script id="page-data" type="application/json">
+      {
+  "pageType": "post",
+  "lang": "zh",
+  "langSwitchUrl": "/ring-allreduce/",
+  "langSwitcherMode": "toggle",
+  "markdownUrl": "/posts/ring-allreduce/post.md",
+  "labels": {
+    "navAbout": "About",
+    "navBlog": "Blog",
+    "filterAll": "All"
+  },
+  "comments": {
+    "appId": "e224d3ce-6f5a-4777-bb80-b7bbf2e78d83",
+    "pageId": "ring-allreduce",
+    "pageUrl": "https://www.yujiachen.com/ring-allreduce/zh/",
+    "pageTitle": "ring-allreduce 简介"
+  }
+}
+    </script>
+    <script type="module" src="/app.js"></script>
+  </body>
+</html>

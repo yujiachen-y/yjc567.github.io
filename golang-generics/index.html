@@ -1,0 +1,732 @@
+<!doctype html>
+<html lang="en" data-theme="auto">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Golang Generics | Jiachen Yu</title>
+        <meta name="description" content="Golang Generics" />
+    <meta property="og:title" content="Golang Generics | Jiachen Yu" />
+    <meta property="og:description" content="Golang Generics" />
+    <meta property="og:type" content="article" />
+    <meta property="og:url" content="https://www.yujiachen.com/golang-generics/" />
+    <meta name="twitter:card" content="summary" />
+    <link rel="canonical" href="https://www.yujiachen.com/golang-generics/" />
+    <link rel="alternate" type="text/markdown" href="https://www.yujiachen.com/posts/golang-generics/post.md" />
+    <link rel="alternate" hreflang="en" href="https://www.yujiachen.com/golang-generics/" />
+<link rel="alternate" hreflang="zh" href="https://www.yujiachen.com/golang-generics/zh/" /> <link rel="alternate" type="application/rss+xml" title="RSS" href="https://www.yujiachen.com/rss.xml" />
+<link rel="alternate" type="application/rss+xml" title="RSS (EN)" href="https://www.yujiachen.com/rss-en.xml" /> <link rel="icon" href="/favicon-32.png" type="image/png" sizes="32x32" />
+<link rel="icon" href="/favicon.png" type="image/png" />
+<link rel="icon" href="/favicon.ico" type="image/x-icon" />
+<link rel="apple-touch-icon" href="/apple-touch-icon.png" sizes="180x180" /> <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&amp;family=Source+Serif+4:ital,wght@0,400;0,600;0,700;1,400&amp;family=Noto+Serif+SC:wght@400;600;700&amp;display=swap" />
+    <link rel="stylesheet" href="/katex/katex.min.css" />
+    <link rel="stylesheet" href="/styles.css" />
+    <link rel="stylesheet" href="/fonts.css" />
+  </head>
+  <body data-page="post">
+    <div id="root">
+      
+<nav class="navbar">
+  <div class="nav-left">
+    <a href="/" class="brand">Jiachen Yu</a>
+    <div class="nav-links">
+      <a class="nav-link-button" href="/about/" data-nav="about">About</a>
+      <a class="nav-link-button" href="/blog/" data-nav="blog">Blog</a>
+    </div>
+  </div>
+  <div class="controls">
+    <div class="action-controls">
+      <div class="lang-switcher" data-lang-switcher data-lang-switcher-mode="toggle">
+        <button class="lang-toggle" type="button" data-lang-toggle>EN</button>
+      </div>
+      <div class="theme-switcher" data-theme-switcher data-theme-state="light">
+        <button
+          class="theme-trigger"
+          type="button"
+          data-theme-trigger
+          aria-label="Theme mode toggle"
+          aria-pressed="false"
+        >
+          <span class="theme-trigger-icon">
+            <svg class="theme-icon theme-icon-dark" viewBox="0 0 24 24" aria-hidden="true">
+              <path
+                d="M21 12.8A8.5 8.5 0 1 1 11.2 3a7.5 7.5 0 0 0 9.8 9.8Z"
+                fill="currentColor"
+              />
+            </svg>
+            <svg class="theme-icon theme-icon-light" viewBox="0 0 24 24" aria-hidden="true">
+              <circle cx="12" cy="12" r="4" fill="currentColor" />
+              <path
+                d="M12 3v2M12 19v2M4.9 4.9l1.4 1.4M17.7 17.7l1.4 1.4M3 12h2M19 12h2M4.9 19.1l1.4-1.4M17.7 6.3l1.4-1.4"
+                stroke="currentColor"
+                stroke-width="2"
+                stroke-linecap="round"
+                fill="none"
+              />
+            </svg>
+          </span>
+        </button>
+      </div>
+      <a
+        class="ask-ai-entry"
+        href="/ask-ai/"
+        data-ask-ai-entry
+        aria-label="Open Ask AI"
+      >
+        <span class="ask-ai-entry-label">Ask AI</span>
+      </a>
+    </div>
+  </div>
+</nav>
+
+      <main class="page-shell article-page">
+        <div class="article-layout has-toc page-shell-content">
+          
+    <aside class="article-toc sidebar-panel" data-toc>
+      <button class="toc-toggle sidebar-toggle" type="button" data-toc-toggle aria-expanded="false">
+        <span class="toc-toggle-label">Contents</span>
+        <span class="toc-toggle-icon" aria-hidden="true">⌄</span>
+      </button>
+      <div class="toc-panel sidebar-panel-content" data-toc-panel>
+        <div class="toc-title sidebar-title">Contents</div>
+        <ol class="toc-list sidebar-list">
+      <li class="toc-item sidebar-item toc-level-1"><a class="sidebar-link" href="#terminology">Terminology</a></li>
+      <li class="toc-item sidebar-item toc-level-1"><a class="sidebar-link" href="#overview">Overview</a></li>
+      <li class="toc-item sidebar-item toc-level-1"><a class="sidebar-link" href="#type-constraints">Type Constraints</a></li>
+      <li class="toc-item sidebar-item toc-level-2"><a class="sidebar-link" href="#underlying-type">Underlying Type</a></li>
+      <li class="toc-item sidebar-item toc-level-2"><a class="sidebar-link" href="#difference-between-using-type-parameters-and-using-interfaces-directly">Difference Between Using Type Parameters and Using Interfaces Directly</a></li>
+      <li class="toc-item sidebar-item toc-level-1"><a class="sidebar-link" href="#type-inference">Type Inference</a></li>
+      <li class="toc-item sidebar-item toc-level-2"><a class="sidebar-link" href="#type-unification">Type Unification</a></li>
+      <li class="toc-item sidebar-item toc-level-3"><a class="sidebar-link" href="#description">Description</a></li>
+      <li class="toc-item sidebar-item toc-level-3"><a class="sidebar-link" href="#operations">Operations</a></li>
+      <li class="toc-item sidebar-item toc-level-2"><a class="sidebar-link" href="#function-argument-type-inference">Function Argument Type Inference</a></li>
+      <li class="toc-item sidebar-item toc-level-3"><a class="sidebar-link" href="#description-2">Description</a></li>
+      <li class="toc-item sidebar-item toc-level-3"><a class="sidebar-link" href="#implementation">Implementation</a></li>
+      <li class="toc-item sidebar-item toc-level-2"><a class="sidebar-link" href="#constraint-type-inference">Constraint Type Inference</a></li>
+      <li class="toc-item sidebar-item toc-level-3"><a class="sidebar-link" href="#description-3">Description</a></li>
+      <li class="toc-item sidebar-item toc-level-3"><a class="sidebar-link" href="#implementation-2">Implementation</a></li>
+      <li class="toc-item sidebar-item toc-level-2"><a class="sidebar-link" href="#type-inference-execution-steps">Type Inference Execution Steps</a></li>
+      <li class="toc-item sidebar-item toc-level-1"><a class="sidebar-link" href="#other-topics">Other Topics</a></li>
+      <li class="toc-item sidebar-item toc-level-2"><a class="sidebar-link" href="#the-generics-dilemma">The Generics Dilemma</a></li>
+      <li class="toc-item sidebar-item toc-level-2"><a class="sidebar-link" href="#using-t-instead-of-t">Using [T] Instead of &lt;T&gt;</a></li>
+      <li class="toc-item sidebar-item toc-level-2"><a class="sidebar-link" href="#why-don-t-go-generics-support-methods">Why Don’t Go Generics Support Methods?</a></li>
+      <li class="toc-item sidebar-item toc-level-2"><a class="sidebar-link" href="#supporting-pointer-methods">Supporting Pointer Methods</a></li>
+      <li class="toc-item sidebar-item toc-level-2"><a class="sidebar-link" href="#using-generics-in-practice">Using Generics in Practice</a></li>
+      <li class="toc-item sidebar-item toc-level-1"><a class="sidebar-link" href="#type-inference-code">Type Inference Code</a></li>
+      <li class="toc-item sidebar-item toc-level-2"><a class="sidebar-link" href="#type-unification-2">Type Unification</a></li>
+      <li class="toc-item sidebar-item toc-level-2"><a class="sidebar-link" href="#function-argument-type-inference-2">Function Argument Type Inference</a></li>
+      <li class="toc-item sidebar-item toc-level-3"><a class="sidebar-link" href="#typed-arguments-are-directly-unified">Typed Arguments Are Directly Unified</a></li>
+      <li class="toc-item sidebar-item toc-level-3"><a class="sidebar-link" href="#untyped-arguments-are-assigned-constant-default-values-then-unified">Untyped Arguments Are Assigned Constant Default Values Then Unified</a></li>
+      <li class="toc-item sidebar-item toc-level-2"><a class="sidebar-link" href="#constraint-type-inference-2">Constraint Type Inference</a></li>
+      <li class="toc-item sidebar-item toc-level-3"><a class="sidebar-link" href="#core-type-processing-for-type-parameters">Core Type Processing for Type Parameters</a></li>
+      <li class="toc-item sidebar-item toc-level-3"><a class="sidebar-link" href="#mapping-simplification">Mapping Simplification</a></li>
+        </ol>
+      </div>
+    </aside>
+  
+          <div class="article-content">
+            
+
+<div class="article-text-content">
+  <div class="article-date">2023-05-26 · TECH</div>
+  <h1 class="article-hero">Golang Generics</h1>
+  <div class="article-body"><p><em>Translated by Claude from the Chinese original.</em></p>
+<p>Generics let us write reusable, type-safe logic over a family of types. In languages such as Java, C++, and C#, generics have long been a core feature. Go intentionally launched without generics, which kept the language simpler but made some abstractions awkward. As Go evolved, the community introduced generics to better support reusable data structures and common algorithms in production code.</p>
+<p>An example:</p>
+<pre class="hljs"><code><span class="hljs-keyword">import</span> <span class="hljs-string">&quot;golang.org/x/exp/constraints&quot;</span>
+
+<span class="hljs-function"><span class="hljs-keyword">func</span> <span class="hljs-title">GMin</span>[<span class="hljs-title">T</span> <span class="hljs-title">constraints</span>.<span class="hljs-title">Ordered</span>]<span class="hljs-params">(x, y T)</span></span> T {
+    <span class="hljs-keyword">if</span> x &lt; y {
+        <span class="hljs-keyword">return</span> x
+    }
+    <span class="hljs-keyword">return</span> y
+}
+
+</code></pre>
+<p>Go generics are similar in spirit to other languages, but different in several important details. This article starts from Go’s type-parameters proposal and uses implementation snippets plus examples to explain key behavior, with the goal of helping you use generics more effectively in real code.</p>
+<blockquote>
+<p>Main reference: <a href="https://go.googlesource.com/proposal/+/HEAD/design/43651-type-parameters.md">https://go.googlesource.com/proposal/+/HEAD/design/43651-type-parameters.md</a></p>
+</blockquote>
+<h1 id="terminology">Terminology</h1>
+<ul>
+<li><strong>parameter</strong> (formal parameter): A placeholder declared in a function definition, e.g., <code>a</code> and <code>b</code> in <code>func Add(a, b int) int</code>. In this article, “type parameter” refers to this concept; for example, <code>T</code> in <code>func Add[T any](a, b T) T</code>.</li>
+<li><strong>argument</strong> (actual argument): A concrete value passed at a call site, e.g., <code>a</code> and <code>2</code> in <code>sum := Add[int](a, 2)</code>. In this article, “type argument” refers to this concept; for example, <code>int</code> in <code>Add[int]</code>.</li>
+<li><strong>function</strong>: Refers to a function in Go, such as <code>func Add(a, b int) int</code>. <a href="https://go.dev/ref/spec#Function_types">https://go.dev/ref/spec#Function_types</a></li>
+<li><strong>method</strong>: Refers to a struct method in Go, such as <code>func (s *Struct) Get() string</code>. <a href="https://go.dev/ref/spec#Method_declarations">https://go.dev/ref/spec#Method_declarations</a></li>
+<li><strong>operation</strong>: Can be understood as operators supported by Go’s built-in types (see below). The Go spec uses the term “operator.” <a href="https://go.dev/ref/spec#Operators">https://go.dev/ref/spec#Operators</a></li>
+</ul>
+<pre class="hljs"><code>Expression = UnaryExpr | Expression binary_op Expression .
+UnaryExpr  = PrimaryExpr | unary_op UnaryExpr .
+
+binary_op  = &quot;||&quot; | &quot;&amp;&amp;&quot; | rel_op | add_op | mul_op .
+rel_op     = &quot;==&quot; | &quot;!=&quot; | &quot;&lt;&quot; | &quot;&lt;=&quot; | &quot;&gt;&quot; | &quot;&gt;=&quot; .
+add_op     = &quot;+&quot; | &quot;-&quot; | &quot;|&quot; | &quot;^&quot; .
+mul_op     = &quot;*&quot; | &quot;/&quot; | &quot;%&quot; | &quot;&lt;&lt;&quot; | &quot;&gt;&gt;&quot; | &quot;&amp;&quot; | &quot;&amp;^&quot; .
+
+unary_op   = &quot;+&quot; | &quot;-&quot; | &quot;!&quot; | &quot;^&quot; | &quot;*&quot; | &quot;&amp;&quot; | &quot;&lt;-&quot; .
+
+</code></pre>
+<h1 id="overview">Overview</h1>
+<p>The Go type parameters proposal summarizes several key points (<a href="https://go.googlesource.com/proposal/+/HEAD/design/43651-type-parameters.md#summary">https://go.googlesource.com/proposal/+/HEAD/design/43651-type-parameters.md#summary</a>):</p>
+<ul>
+<li>Functions and types can have type parameters, and those parameters are constrained by interface types. (Methods are not included here; methods cannot declare their own type parameters.)</li>
+<li>Constraints define which concrete types are allowed as type arguments, and which methods those arguments must provide.</li>
+<li>Constraints also determine which operations are valid on type parameters inside generic code.</li>
+<li>At call sites, type inference may infer missing type arguments, so explicit arguments are not always required. For example, with <code>func Add[T any](a, b T) T</code>, we can often write <code>sum := Add(a, 2)</code> instead of <code>sum := Add[int](a, 2)</code>.</li>
+</ul>
+<p>Next, we’ll explain Go generics design and usage from these perspectives:</p>
+<ul>
+<li>The specific definition of type constraints</li>
+<li>How type inference is implemented</li>
+<li>Some other related topics</li>
+<li>Selected type inference code</li>
+</ul>
+<h1 id="type-constraints">Type Constraints</h1>
+<p>Go type constraints can be seen as the “type” of type parameters. For example, in the following, <code>T</code> is the type parameter and <code>Stringer</code> is the type constraint—i.e., the type of <code>T</code>.</p>
+<pre class="hljs"><code><span class="hljs-function"><span class="hljs-keyword">func</span> <span class="hljs-title">Stringify</span>[<span class="hljs-title">T</span> <span class="hljs-title">Stringer</span>]<span class="hljs-params">(s []T)</span></span> (ret []<span class="hljs-type">string</span>) {
+        <span class="hljs-keyword">for</span> _, v := <span class="hljs-keyword">range</span> s {
+                ret = <span class="hljs-built_in">append</span>(ret, v.String())
+        }
+        <span class="hljs-keyword">return</span> ret
+}
+
+</code></pre>
+<p>The type of a type constraint itself is <code>interface</code>. Before Go 1.18, an interface was a collection of methods. In the example above, <code>Stringer</code> describes that T should be a type with the method <code>func (T) String() string</code>. But if an interface can only be a collection of methods, the following function cannot be implemented:</p>
+<pre class="hljs"><code><span class="hljs-function"><span class="hljs-keyword">func</span> <span class="hljs-title">Add</span>[<span class="hljs-title">T</span> <span class="hljs-title">constraints</span>.<span class="hljs-title">Integer</span>]<span class="hljs-params">(a, b T)</span></span> T {
+        <span class="hljs-keyword">return</span> a + b
+}
+
+</code></pre>
+<p>How can <code>constraints.Integer</code>, as an interface, express support for the <code>+</code> operation? The actual definition in the <a href="https://pkg.go.dev/golang.org/x/exp/constraints">constraints</a> package is:</p>
+<pre class="hljs"><code><span class="hljs-keyword">type</span> Integer <span class="hljs-keyword">interface</span> {
+        Signed | Unsigned
+}
+
+<span class="hljs-keyword">type</span> Signed <span class="hljs-keyword">interface</span> {
+        ~<span class="hljs-type">int</span> | ~<span class="hljs-type">int8</span> | ~<span class="hljs-type">int16</span> | ~<span class="hljs-type">int32</span> | ~<span class="hljs-type">int64</span>
+}
+
+<span class="hljs-keyword">type</span> Unsigned <span class="hljs-keyword">interface</span> {
+        ~<span class="hljs-type">uint</span> | ~<span class="hljs-type">uint8</span> | ~<span class="hljs-type">uint16</span> | ~<span class="hljs-type">uint32</span> | ~<span class="hljs-type">uint64</span> | ~<span class="hljs-type">uintptr</span>
+}
+
+</code></pre>
+<p>As we can see, the <code>Integer</code> interface doesn’t define any methods. This brings us to the concept of underlying types.</p>
+<h2 id="underlying-type">Underlying Type</h2>
+<blockquote>
+<p>Reference: <a href="https://go.dev/ref/spec#Underlying_types">https://go.dev/ref/spec#Underlying_types</a></p>
+</blockquote>
+<p>To make constraints more expressive, generics expanded interfaces from “sets of methods” to “sets of types.” The key difference is built-in operators. In Go, operators such as <code>&lt;</code> and <code>==</code> cannot be overloaded, so user-defined methods alone cannot describe operator support. With underlying types, a named type can reuse operators supported by its underlying type. As a result, interfaces can now express both method sets and type sets (for example, with syntax like <code>~underlying_type</code>).</p>
+<p>The rules for determining a type’s underlying type are:</p>
+<ol>
+<li>Types that are their own underlying type:
+<ol>
+<li>boolean</li>
+<li>numeric</li>
+<li>string</li>
+<li>type literal
+<ol>
+<li>ArrayType</li>
+<li>StructType</li>
+<li>PointerType</li>
+<li>FunctionType</li>
+<li>InterfaceType</li>
+<li>SliceType</li>
+<li>MapType</li>
+<li>ChannelType</li>
+</ol>
+</li>
+</ol>
+</li>
+<li>When none of the above apply, a type’s underlying type is the underlying type of the type it was created from. For example:</li>
+</ol>
+<pre class="hljs"><code><span class="hljs-keyword">type</span> (
+    A1 = <span class="hljs-type">string</span>
+    A2 = A1
+)
+
+</code></pre>
+<p>Here A1 follows rule 1, so its underlying type is string. A2 follows rule 2, and its underlying type is also string.</p>
+<p>Looking back at the definition of <code>constraints.Integer</code>, it represents the set of all types whose underlying type is <code>int</code>, <code>int8</code>, <code>int16</code>, <code>int32</code>, <code>int64</code>, <code>uint</code>, <code>uint8</code>, <code>uint16</code>, <code>uint32</code>, <code>uint64</code>, or <code>uintptr</code>. All these types support the <code>+</code> operation, so the <code>Add</code> function can be defined.</p>
+<h2 id="difference-between-using-type-parameters-and-using-interfaces-directly">Difference Between Using Type Parameters and Using Interfaces Directly</h2>
+<blockquote>
+<p>Reference: <a href="https://go.googlesource.com/proposal/+/HEAD/design/43651-type-parameters.md#values-of-type-parameters-are-not-boxed">https://go.googlesource.com/proposal/+/HEAD/design/43651-type-parameters.md#values-of-type-parameters-are-not-boxed</a></p>
+</blockquote>
+<p>Because constraints are interfaces, Go generics can look similar to interface-based programming. A key difference is that generic functions can preserve and return concrete types, rather than forcing everything through <code>interface{}</code>.</p>
+<p>Using the <code>Add</code> example, if we remove the type parameter, it becomes:</p>
+<pre class="hljs"><code><span class="hljs-function"><span class="hljs-keyword">func</span> <span class="hljs-title">Add</span><span class="hljs-params">(a, b <span class="hljs-keyword">interface</span>{})</span></span> <span class="hljs-keyword">interface</span>{} {
+        n, _ := a.(<span class="hljs-type">int</span>)
+        m, _ := b.(<span class="hljs-type">int</span>)
+        <span class="hljs-keyword">return</span> n + m
+}
+
+</code></pre>
+<p>With this non-generic implementation, the function returns <code>interface{}</code> rather than a caller-specific concrete type. The caller then needs a type assertion to recover the concrete type:</p>
+<pre class="hljs"><code><span class="hljs-function"><span class="hljs-keyword">func</span> <span class="hljs-title">main</span><span class="hljs-params">()</span></span> {
+        a, b := <span class="hljs-number">1</span>, <span class="hljs-number">2</span>
+        c := Add(a, b)
+        d, ok := c.(<span class="hljs-type">int</span>)
+        ...
+}
+
+</code></pre>
+<p>Also recall how Go interfaces are represented: an interface value carries both dynamic type information and the underlying value. That extra boxing/unboxing path may add overhead, which generics can often avoid.</p>
+<h1 id="type-inference">Type Inference</h1>
+<p>Not every call to a generic function requires explicit type arguments. Under certain conditions, the compiler can infer missing type arguments. Note that inference itself does not complete all semantic checks; some checks happen afterward.</p>
+<p>The following sections introduce 3 key concepts of type inference, followed by the complete type inference process.</p>
+<h2 id="type-unification">Type Unification</h2>
+<blockquote>
+<p>Reference: <a href="https://go.dev/ref/spec#Type_unification">https://go.dev/ref/spec#Type_unification</a></p>
+</blockquote>
+<h3 id="description">Description</h3>
+<p><strong>Input</strong></p>
+<ol>
+<li>A mapping P -&gt; A, where P is a type parameter and A is a known type argument. For example, for <code>func Add[T any](a, b T) T</code>, a possible mapping is T -&gt; int.</li>
+<li>Two types, which may or may not contain type parameters.</li>
+</ol>
+<p><strong>Output</strong></p>
+<ol>
+<li>Given known mappings, determine whether the two input types can be unified.</li>
+</ol>
+<h3 id="operations">Operations</h3>
+<ol>
+<li>For types without type parameters: the type must be equivalent to the comparison type, otherwise unification fails.
+<ol>
+<li>Two identical types are naturally equivalent.</li>
+<li>If both types are channel types, they can be considered equivalent if they are identical after ignoring channel direction.</li>
+<li>If two types have the same underlying types, they can also be considered equivalent.</li>
+</ol>
+</li>
+<li>For types with type parameters: after abstracting over type parameters, the structure must still align; otherwise unification fails.
+<ol>
+<li>For example, <code>[]map[T1]T2</code> and <code>[]T3</code> are structurally consistent—<code>T3</code> can be substituted with <code>map[T1]T2</code>. Similarly, <code>[]map[T1]bool</code> and <code>[]map[string]T2</code> are structurally consistent.</li>
+<li>For example, <code>[]map[T1]T2</code> and <code>int</code>, <code>struct{}</code>, <code>[]struct{}</code> etc. cannot possibly be structurally consistent.</li>
+</ol>
+</li>
+<li>If matching succeeds and the type contains type parameters, we learn a new P’ -&gt; A’ mapping, which is added to the existing mappings.</li>
+</ol>
+<h2 id="function-argument-type-inference">Function Argument Type Inference</h2>
+<blockquote>
+<p>References:</p>
+<ul>
+<li><a href="https://go.googlesource.com/proposal/+/HEAD/design/43651-type-parameters.md#function-argument-type-inference">https://go.googlesource.com/proposal/+/HEAD/design/43651-type-parameters.md#function-argument-type-inference</a></li>
+<li><a href="https://go.dev/ref/spec#Function_argument_type_inference">https://go.dev/ref/spec#Function_argument_type_inference</a></li>
+</ul>
+</blockquote>
+<h3 id="description-2">Description</h3>
+<ol>
+<li>When calling a function with type parameters, if the caller doesn’t pass type arguments, infer the type arguments from the actual arguments.</li>
+</ol>
+<h3 id="implementation">Implementation</h3>
+<ol>
+<li>Get a set of <code>(parameter, argument)</code> pairs from the caller’s actual arguments.</li>
+<li>First ignore combinations where the <code>argument</code> has no type (i.e., constants, which have their own type inference rules). For typed <code>(parameter, argument)</code> pairs, perform type unification on their corresponding types and continuously update the mapping P -&gt; A.</li>
+<li>Next, handle constant <code>(parameter, argument)</code> pairs. If a parameter’s corresponding type parameter was already inferred in step 2, ignore it. If not, treat the constant argument as its default type and perform type unification.</li>
+<li>When all <code>(parameter, argument)</code> pairs have been processed, inference is complete. If any processing fails along the way, inference fails.</li>
+</ol>
+<p>Here’s an example illustrating the above steps:</p>
+<pre class="hljs"><code><span class="hljs-function"><span class="hljs-keyword">func</span> <span class="hljs-title">scale</span>[<span class="hljs-title">Number</span> ~<span class="hljs-title">int64</span>|~<span class="hljs-title">float64</span>|~<span class="hljs-title">complex128</span>]<span class="hljs-params">(v []Number, s Number)</span></span> []Number {
+        ...
+}
+
+<span class="hljs-function"><span class="hljs-keyword">func</span> <span class="hljs-title">main</span><span class="hljs-params">()</span></span> {
+        <span class="hljs-keyword">var</span> vector []<span class="hljs-type">float64</span>
+        scaledVector := scale(vector, <span class="hljs-number">42</span>)
+        ...
+}
+
+</code></pre>
+<p>When function argument type inference begins, we get two <code>(parameter, argument)</code> pairs:</p>
+<ol>
+<li><code>(v []Number, vector []float64)</code></li>
+<li><code>(s Number, 42)</code></li>
+</ol>
+<p>First, perform type unification on <code>(v []Number, vector []float64)</code>, yielding the mapping <code>Number -&gt; float64</code>.</p>
+<p>Since we’ve already inferred the mapping <code>Number -&gt; float64</code>, the <code>(s Number, 42)</code> pair doesn’t need type unification.</p>
+<p>If there were no mapping <code>Number -&gt; float64</code>, the type of 42 in <code>(s Number, 42)</code> would be treated as the default type <code>int</code>, and the mapping would be <code>Number -&gt; int</code>.</p>
+<h2 id="constraint-type-inference">Constraint Type Inference</h2>
+<blockquote>
+<p>Reference: <a href="https://go.dev/ref/spec#Constraint_type_inference">https://go.dev/ref/spec#Constraint_type_inference</a></p>
+</blockquote>
+<h3 id="description-3">Description</h3>
+<ol>
+<li>Based on defined type parameter constraints, infer other unknown type parameters from a known type parameter.</li>
+<li>For example, given a function <code>func Double[S ~[]E, E constraints.Integer](s S) S</code>, called as <code>Double([]int{1, 2, 3})</code>, we can infer <code>E -&gt; int</code> from the type constraint <code>S ~[]E</code> and <code>S -&gt; []int</code>.</li>
+</ol>
+<h3 id="implementation-2">Implementation</h3>
+<ol>
+<li>Iterate through all type parameters:
+<ol>
+<li>If a type parameter already has a corresponding argument, perform unification on their underlying types. In the <code>Double</code> example, the underlying type of <code>S</code> is <code>[]E</code>, so we unify <code>[]E</code> and the known argument <code>[]int</code>, inferring <code>E -&gt; int</code>.</li>
+<li>If a type parameter doesn’t have a corresponding argument, but its type constraint has only one type, infer that the type parameter’s argument is the constraint type.</li>
+</ol>
+</li>
+<li>In known mappings, if we have P -&gt; A and Q -&gt; B and A contains Q, substitute Q in A with B. For example, in <code>func Copy[T any, P *T](value T, dst P)</code>, given <code>T -&gt; int</code> and <code>P -&gt; *T</code>, we can infer <code>P -&gt; *int</code>.</li>
+<li>Repeat step 2 until no type parameter P can be found that is contained in some type argument A.</li>
+</ol>
+<h2 id="type-inference-execution-steps">Type Inference Execution Steps</h2>
+<blockquote>
+<p>Reference: <a href="https://github.com/golang/go/blob/go1.18/src/cmd/compile/internal/types2/infer.go#L33">https://github.com/golang/go/blob/go1.18/src/cmd/compile/internal/types2/infer.go#L33</a></p>
+</blockquote>
+<p>Based on comments in the compiler code, inference proceeds in these steps:</p>
+<ol>
+<li>Perform function argument type inference using type arguments.</li>
+<li>Perform constraint type inference.</li>
+<li>Perform function argument type inference on remaining untyped arguments.</li>
+<li>Perform a final round of constraint type inference.</li>
+</ol>
+<p>An example:</p>
+<pre class="hljs"><code><span class="hljs-keyword">package</span> main
+
+<span class="hljs-keyword">import</span> <span class="hljs-string">&quot;fmt&quot;</span>
+<span class="hljs-keyword">import</span> <span class="hljs-string">&quot;golang.org/x/exp/constraints&quot;</span>
+
+<span class="hljs-function"><span class="hljs-keyword">func</span> <span class="hljs-title">Multiple</span>[<span class="hljs-title">S</span> ~[]<span class="hljs-title">E</span>, <span class="hljs-title">E</span>, <span class="hljs-title">X</span> <span class="hljs-title">constraints</span>.<span class="hljs-title">Integer</span>]<span class="hljs-params">(s S, x X)</span></span> S {
+        <span class="hljs-keyword">for</span> i, e := <span class="hljs-keyword">range</span> s {
+                s[i] *= x
+        }
+        <span class="hljs-keyword">return</span> s
+}
+
+<span class="hljs-keyword">type</span> IntVector []<span class="hljs-type">int</span>
+
+<span class="hljs-function"><span class="hljs-keyword">func</span> <span class="hljs-title">main</span><span class="hljs-params">()</span></span> {
+        vector := IntVector{<span class="hljs-number">0</span>, <span class="hljs-number">1</span>, <span class="hljs-number">2</span>, <span class="hljs-number">3</span>, <span class="hljs-number">4</span>}
+        vector = Multiple(vector, <span class="hljs-number">3</span>)
+        fmt.Printf(<span class="hljs-string">&quot;%s\\n&quot;</span>, vector)
+        <span class="hljs-comment">// output: [0, 3, 6, 9, 12]</span>
+}
+
+</code></pre>
+<p>The type inference steps for <code>Multiple</code>:</p>
+<ol>
+<li>Perform type inference on typed function arguments, i.e., on <code>(s S, vector IntVector)</code>, yielding: <code>S -&gt; IntVector</code>.</li>
+<li>Perform constraint type inference. <code>S</code>’s constraint is <code>[]E</code>, and <code>IntVector</code>’s underlying type is <code>[]int</code>, so unify <code>[]E</code> and <code>[]int</code>, yielding <code>E -&gt; int</code>.</li>
+<li>Perform type inference on untyped function arguments, i.e., on <code>(x X, 3)</code>. Take the default value <code>int</code> for constant <code>3</code>, yielding <code>X -&gt; int</code>.</li>
+<li>Perform constraint type inference again, but since all parameter types are known, it terminates early.</li>
+</ol>
+<h1 id="other-topics">Other Topics</h1>
+<p>A few related notes.</p>
+<h2 id="the-generics-dilemma">The Generics Dilemma</h2>
+<blockquote>
+<p>Reference: <a href="https://research.swtch.com/generic">https://research.swtch.com/generic</a></p>
+</blockquote>
+<p>Adding generics to a programming language inevitably increases complexity for at least one of three parties:</p>
+<ul>
+<li><strong>The programmer</strong>: C takes this approach—it only supports generic syntax, but the compiler and runtime don’t address problems introduced by generics. If there are issues, the programmer debugs them.</li>
+<li><strong>Compilation</strong>: C++ takes this approach—types are resolved at compile time and templates are instantiated into concrete code. This increases compilation time and binary size.</li>
+<li><strong>Runtime</strong>: Java takes a different approach centered on erasure, with trade-offs in runtime behavior and type expressiveness.</li>
+</ul>
+<p>As discussed above, Go mainly chooses to pay more at compile time: type information needed for generic function instantiation is resolved during compilation.</p>
+<h2 id="using-t-instead-of-t">Using [T] Instead of <code>&lt;T&gt;</code></h2>
+<p>Many developers’ first impression of generics comes from the <code>&lt;T&gt;</code> syntax in C++ or Java. <a href="https://go.googlesource.com/proposal/+/HEAD/design/43651-type-parameters.md#why-not-use-the-syntax-like-c_and-java">The proposal explains</a> that since <code>&lt;</code> and <code>&gt;</code> are also used as comparison operators, distinguishing whether <code>&lt;</code> and <code>&gt;</code> represent comparison or type parameters would create additional burden. So <code>[T]</code> was chosen instead.</p>
+<h2 id="why-don-t-go-generics-support-methods">Why Don’t Go Generics Support Methods?</h2>
+<blockquote>
+<p>This section is somewhat brief. For more detailed explanations and examples, see: <a href="https://go.googlesource.com/proposal/+/HEAD/design/43651-type-parameters.md#no-parameterized-methods">https://go.googlesource.com/proposal/+/HEAD/design/43651-type-parameters.md#no-parameterized-methods</a></p>
+</blockquote>
+<p>In Go, structs can use type parameters, but a struct’s methods are not allowed to have type parameters. The primary reason is Go’s interface characteristics. As mentioned above, interfaces can express “collections of methods”—meaning an interface can represent all structs that implement its defined methods. If methods supported generics, we’d have interface definitions like:</p>
+<pre class="hljs"><code><span class="hljs-keyword">type</span> Phone <span class="hljs-keyword">interface</span> {
+        Call[N PhoneNumber](n N)
+        Download[A App](a A)
+}
+
+</code></pre>
+<p>Since Go has no explicit <code>implements</code> or <code>extends</code> declaration between structs and interfaces, adding method-level type parameters would require much heavier inference to decide interface conformance, with significant compiler complexity and cost.</p>
+<h2 id="supporting-pointer-methods">Supporting Pointer Methods</h2>
+<p>When we define a generic function <code>F[T C]</code> and constraint <code>C</code> requires methods, passing a type <code>X</code> will fail if those required methods exist on <code>*X</code> rather than on <code>X</code>.</p>
+<p>A concrete example:</p>
+<pre class="hljs"><code><span class="hljs-keyword">type</span> Setter <span class="hljs-keyword">interface</span> {
+        Set(<span class="hljs-type">string</span>)
+}
+
+<span class="hljs-function"><span class="hljs-keyword">func</span> <span class="hljs-title">FromStrings</span>[<span class="hljs-title">T</span> <span class="hljs-title">Setter</span>]<span class="hljs-params">(s []<span class="hljs-type">string</span>)</span></span> []T {
+        result := <span class="hljs-built_in">make</span>([]T, <span class="hljs-built_in">len</span>(s))
+        <span class="hljs-keyword">for</span> i, v := <span class="hljs-keyword">range</span> s {
+                result[i].Set(v)
+        }
+        <span class="hljs-keyword">return</span> result
+}
+
+<span class="hljs-keyword">type</span> Settable <span class="hljs-type">int</span>
+
+<span class="hljs-function"><span class="hljs-keyword">func</span> <span class="hljs-params">(p *Settable)</span></span> Set(s <span class="hljs-type">string</span>) {
+        i, _ := strconv.Atoi(s) <span class="hljs-comment">// real code should not ignore the error</span>
+        *p = Settable(i)
+}
+
+<span class="hljs-function"><span class="hljs-keyword">func</span> <span class="hljs-title">F</span><span class="hljs-params">()</span></span> {
+        <span class="hljs-comment">// INVALID</span>
+        nums := FromStrings[Settable]([]<span class="hljs-type">string</span>{<span class="hljs-string">&quot;1&quot;</span>, <span class="hljs-string">&quot;2&quot;</span>})
+        <span class="hljs-comment">// Here we want nums to be []Settable{1, 2}.</span>
+        ...
+}
+
+</code></pre>
+<p>In the example above, <code>result</code>’s type is <code>[]Settable</code>, but <code>Settable</code> doesn’t support the <code>Set</code> method—<code>*Settable</code> does. So <code>result[i].Set(v)</code> can’t be called normally.</p>
+<p>The solution:</p>
+<pre class="hljs"><code><span class="hljs-keyword">type</span> Setter2[B any] <span class="hljs-keyword">interface</span> {
+        Set(<span class="hljs-type">string</span>)
+        *B <span class="hljs-comment">// non-interface type constraint element</span>
+}
+
+<span class="hljs-function"><span class="hljs-keyword">func</span> <span class="hljs-title">FromStrings2</span>[<span class="hljs-title">T</span> <span class="hljs-title">any</span>, <span class="hljs-title">PT</span> <span class="hljs-title">Setter2</span>[<span class="hljs-title">T</span>]]<span class="hljs-params">(s []<span class="hljs-type">string</span>)</span></span> []T {
+        result := <span class="hljs-built_in">make</span>([]T, <span class="hljs-built_in">len</span>(s))
+        <span class="hljs-keyword">for</span> i, v := <span class="hljs-keyword">range</span> s {
+                <span class="hljs-comment">// The type of &amp;result[i] is *T which is in the type set</span>
+                <span class="hljs-comment">// of Setter2, so we can convert it to PT.</span>
+                p := PT(&amp;result[i])
+                <span class="hljs-comment">// PT has a Set method.</span>
+                p.Set(v)
+        }
+        <span class="hljs-keyword">return</span> result
+}
+
+</code></pre>
+<p>This pattern explicitly distinguishes value type <code>T</code> from pointer type <code>PT</code>, and encodes their relationship in <code>Setter2[B any]</code>. We then convert <code>&amp;result[i]</code> to <code>PT</code>, so calling <code>Set</code> succeeds.</p>
+<h2 id="using-generics-in-practice">Using Generics in Practice</h2>
+<p>With the above knowledge of defining generic functions through type constraints and understanding of type inference, let’s discuss practical applications of generics:</p>
+<ul>
+<li>Container operations.</li>
+<li>General-purpose data structures.</li>
+<li>General-purpose operation logic. In my own code, I call a data-gateway service that returns a fixed structure. I used generics to wrap request/response handling so data from different sources can be converted into target structs with less boilerplate.</li>
+</ul>
+<p>If you have other ways of using generics in your work or have recommendations for useful generic libraries, feel free to share in the comments :)</p>
+<h1 id="type-inference-code">Type Inference Code</h1>
+<h2 id="type-unification-2">Type Unification</h2>
+<blockquote>
+<p>Reference: <a href="https://github.com/golang/go/blob/go1.18/src/cmd/compile/internal/types2/unify.go">https://github.com/golang/go/blob/go1.18/src/cmd/compile/internal/types2/unify.go</a></p>
+</blockquote>
+<p>Recursively checks whether <code>x, y Type</code> can unify under mapping <code>p *ifacePair</code>. If <code>x</code> or <code>y</code> is an uninferred type parameter, it can be matched and inference proceeds.</p>
+<pre class="hljs"><code><span class="hljs-comment">// nify implements the core unification algorithm which is an</span>
+<span class="hljs-comment">// adapted version of Checker.identical. For changes to that</span>
+<span class="hljs-comment">// code the corresponding changes should be made here.</span>
+<span class="hljs-comment">// Must not be called directly from outside the unifier.</span>
+<span class="hljs-function"><span class="hljs-keyword">func</span> <span class="hljs-params">(u *unifier)</span></span> nify(x, y Type, p *ifacePair) (result <span class="hljs-type">bool</span>) {
+
+        ......
+
+        <span class="hljs-comment">// Cases where at least one of x or y is a type parameter.</span>
+        <span class="hljs-keyword">switch</span> i, j := u.x.index(x), u.y.index(y); {
+        <span class="hljs-keyword">case</span> i &gt;= <span class="hljs-number">0</span> &amp;&amp; j &gt;= <span class="hljs-number">0</span>:
+                <span class="hljs-comment">// both x and y are type parameters</span>
+                <span class="hljs-keyword">if</span> u.join(i, j) {
+                        <span class="hljs-keyword">return</span> <span class="hljs-literal">true</span>
+                }
+                <span class="hljs-comment">// both x and y have an inferred type - they must match</span>
+                <span class="hljs-keyword">return</span> u.nifyEq(u.x.at(i), u.y.at(j), p)
+
+        <span class="hljs-keyword">case</span> i &gt;= <span class="hljs-number">0</span>:
+                <span class="hljs-comment">// x is a type parameter, y is not</span>
+                <span class="hljs-keyword">if</span> tx := u.x.at(i); tx != <span class="hljs-literal">nil</span> {
+                        <span class="hljs-keyword">return</span> u.nifyEq(tx, y, p)
+                }
+                <span class="hljs-comment">// otherwise, infer type from y</span>
+                u.x.set(i, y)
+                <span class="hljs-keyword">return</span> <span class="hljs-literal">true</span>
+
+        <span class="hljs-keyword">case</span> j &gt;= <span class="hljs-number">0</span>:
+
+                ......
+
+        }
+
+        ......
+
+        <span class="hljs-keyword">switch</span> x := x.(<span class="hljs-keyword">type</span>) {
+
+        ......
+
+        <span class="hljs-keyword">case</span> *Slice:
+                <span class="hljs-comment">// Two slice types are identical if they have identical element types.</span>
+                <span class="hljs-keyword">if</span> y, ok := y.(*Slice); ok {
+                        <span class="hljs-keyword">return</span> u.nify(x.elem, y.elem, p)
+                }
+
+        <span class="hljs-keyword">case</span> *Struct:
+                <span class="hljs-comment">// Two struct types are identical if they have the same sequence of fields,</span>
+                <span class="hljs-comment">// and if corresponding fields have the same names, and identical types,</span>
+                <span class="hljs-comment">// and identical tags. Two embedded fields are considered to have the same</span>
+                <span class="hljs-comment">// name. Lower-case field names from different packages are always different.</span>
+                <span class="hljs-keyword">if</span> y, ok := y.(*Struct); ok {
+                        <span class="hljs-keyword">if</span> x.NumFields() == y.NumFields() {
+                                <span class="hljs-keyword">for</span> i, f := <span class="hljs-keyword">range</span> x.fields {
+                                        g := y.fields[i]
+                                        <span class="hljs-keyword">if</span> f.embedded != g.embedded ||
+                                                x.Tag(i) != y.Tag(i) ||
+                                                !f.sameId(g.pkg, g.name) ||
+                                                !u.nify(f.typ, g.typ, p) {
+                                                <span class="hljs-keyword">return</span> <span class="hljs-literal">false</span>
+                                        }
+                                }
+                                <span class="hljs-keyword">return</span> <span class="hljs-literal">true</span>
+                        }
+                }
+
+        ......
+
+        <span class="hljs-keyword">default</span>:
+                <span class="hljs-built_in">panic</span>(sprintf(<span class="hljs-literal">nil</span>, <span class="hljs-literal">true</span>, <span class="hljs-string">&quot;u.nify(%s, %s), u.x.tparams = %s&quot;</span>, x, y, u.x.tparams))
+        }
+
+        <span class="hljs-keyword">return</span> <span class="hljs-literal">false</span>
+}
+
+</code></pre>
+<h2 id="function-argument-type-inference-2">Function Argument Type Inference</h2>
+<h3 id="typed-arguments-are-directly-unified">Typed Arguments Are Directly Unified</h3>
+<blockquote>
+<p>Reference: <a href="https://github.com/golang/go/blob/go1.18/src/cmd/compile/internal/types2/infer.go#L250">https://github.com/golang/go/blob/go1.18/src/cmd/compile/internal/types2/infer.go#L250</a></p>
+</blockquote>
+<pre class="hljs"><code>        <span class="hljs-comment">// indices of the generic parameters with untyped arguments - save for later</span>
+        <span class="hljs-keyword">var</span> indices []<span class="hljs-type">int</span>
+        <span class="hljs-keyword">for</span> i, arg := <span class="hljs-keyword">range</span> args {
+                par := params.At(i)
+                <span class="hljs-comment">// If we permit bidirectional unification, this conditional code needs to be</span>
+                <span class="hljs-comment">// executed even if par.typ is not parameterized since the argument may be a</span>
+                <span class="hljs-comment">// generic function (for which we want to infer its type arguments).</span>
+                <span class="hljs-keyword">if</span> isParameterized(tparams, par.typ) {
+                        <span class="hljs-keyword">if</span> arg.mode == invalid {
+                                <span class="hljs-comment">// An error was reported earlier. Ignore this targ</span>
+                                <span class="hljs-comment">// and continue, we may still be able to infer all</span>
+                                <span class="hljs-comment">// targs resulting in fewer follow-on errors.</span>
+                                <span class="hljs-keyword">continue</span>
+                        }
+                        <span class="hljs-keyword">if</span> targ := arg.typ; isTyped(targ) {
+                                <span class="hljs-comment">// If we permit bidirectional unification, and targ is</span>
+                                <span class="hljs-comment">// a generic function, we need to initialize u.y with</span>
+                                <span class="hljs-comment">// the respective type parameters of targ.</span>
+                                <span class="hljs-keyword">if</span> !u.unify(par.typ, targ) {
+                                        errorf(<span class="hljs-string">&quot;type&quot;</span>, par.typ, targ, arg)
+                                        <span class="hljs-keyword">return</span> <span class="hljs-literal">nil</span>
+                                }
+                        } <span class="hljs-keyword">else</span> <span class="hljs-keyword">if</span> _, ok := par.typ.(*TypeParam); ok {
+                                <span class="hljs-comment">// Since default types are all basic (i.e., non-composite) types, an</span>
+                                <span class="hljs-comment">// untyped argument will never match a composite parameter type; the</span>
+                                <span class="hljs-comment">// only parameter type it can possibly match against is a *TypeParam.</span>
+                                <span class="hljs-comment">// Thus, for untyped arguments we only need to look at parameter types</span>
+                                <span class="hljs-comment">// that are single type parameters.</span>
+                                indices = <span class="hljs-built_in">append</span>(indices, i)
+                        }
+                }
+        }
+
+</code></pre>
+<h3 id="untyped-arguments-are-assigned-constant-default-values-then-unified">Untyped Arguments Are Assigned Constant Default Values Then Unified</h3>
+<blockquote>
+<p>Reference: <a href="https://github.com/golang/go/blob/go1.18/src/cmd/compile/internal/types2/infer.go#L297">https://github.com/golang/go/blob/go1.18/src/cmd/compile/internal/types2/infer.go#L297</a></p>
+</blockquote>
+<pre class="hljs"><code>        <span class="hljs-comment">// Use any untyped arguments to infer additional type arguments.</span>
+        <span class="hljs-comment">// Some generic parameters with untyped arguments may have been given</span>
+        <span class="hljs-comment">// a type by now, we can ignore them.</span>
+        <span class="hljs-keyword">for</span> _, i := <span class="hljs-keyword">range</span> indices {
+                tpar := params.At(i).typ.(*TypeParam) <span class="hljs-comment">// is type parameter by construction of indices</span>
+                <span class="hljs-comment">// Only consider untyped arguments for which the corresponding type</span>
+                <span class="hljs-comment">// parameter doesn&#x27;t have an inferred type yet.</span>
+                <span class="hljs-keyword">if</span> targs[tpar.index] == <span class="hljs-literal">nil</span> {
+                        arg := args[i]
+                        targ := Default(arg.typ)
+                        <span class="hljs-comment">// The default type for an untyped nil is untyped nil. We must not</span>
+                        <span class="hljs-comment">// infer an untyped nil type as type parameter type. Ignore untyped</span>
+                        <span class="hljs-comment">// nil by making sure all default argument types are typed.</span>
+                        <span class="hljs-keyword">if</span> isTyped(targ) &amp;&amp; !u.unify(tpar, targ) {
+                                errorf(<span class="hljs-string">&quot;default type&quot;</span>, tpar, targ, arg)
+                                <span class="hljs-keyword">return</span> <span class="hljs-literal">nil</span>
+                        }
+                }
+        }
+
+</code></pre>
+<h2 id="constraint-type-inference-2">Constraint Type Inference</h2>
+<blockquote>
+<p>Reference: <a href="https://github.com/golang/go/blob/go1.18/src/cmd/compile/internal/types2/infer.go#L468">https://github.com/golang/go/blob/go1.18/src/cmd/compile/internal/types2/infer.go#L468</a></p>
+</blockquote>
+<h3 id="core-type-processing-for-type-parameters">Core Type Processing for Type Parameters</h3>
+<p>In the first phase of constraint type inference, a new concept called “core type” is introduced. We won’t go into too much detail here—it can be understood as the underlying type of the type corresponding to a type constraint. Using core types and known arguments, some type inferences can be completed.</p>
+<pre class="hljs"><code>                <span class="hljs-keyword">for</span> i, tpar := <span class="hljs-keyword">range</span> tparams {
+                        <span class="hljs-comment">// If there is a core term (i.e., a core type with tilde information)</span>
+                        <span class="hljs-comment">// unify the type parameter with the core type.</span>
+                        <span class="hljs-keyword">if</span> core, single := coreTerm(tpar); core != <span class="hljs-literal">nil</span> {
+                                <span class="hljs-comment">// A type parameter can be unified with its core type in two cases.</span>
+                                tx := u.x.at(i)
+                                <span class="hljs-keyword">switch</span> {
+                                <span class="hljs-keyword">case</span> tx != <span class="hljs-literal">nil</span>:
+
+                                        ......
+
+                                        <span class="hljs-keyword">if</span> !u.unify(tx, core.typ) {
+                                                <span class="hljs-comment">// TODO(gri) improve error message by providing the type arguments</span>
+                                                <span class="hljs-comment">//           which we know already</span>
+                                                <span class="hljs-comment">// Don&#x27;t use term.String() as it always qualifies types, even if they</span>
+                                                <span class="hljs-comment">// are in the current package.</span>
+                                                tilde := <span class="hljs-string">&quot;&quot;</span>
+                                                <span class="hljs-keyword">if</span> core.tilde {
+                                                        tilde = <span class="hljs-string">&quot;~&quot;</span>
+                                                }
+                                                check.errorf(pos, <span class="hljs-string">&quot;%s does not match %s%s&quot;</span>, tpar, tilde, core.typ)
+                                                <span class="hljs-keyword">return</span> <span class="hljs-literal">nil</span>, <span class="hljs-number">0</span>
+                                        }
+
+                                <span class="hljs-keyword">case</span> single &amp;&amp; !core.tilde:
+                                        <span class="hljs-comment">// The corresponding type argument tx is unknown and there&#x27;s a single</span>
+                                        <span class="hljs-comment">// specific type and no tilde.</span>
+                                        <span class="hljs-comment">// In this case the type argument must be that single type; set it.</span>
+                                        u.x.set(i, core.typ)
+
+                                <span class="hljs-keyword">default</span>:
+                                        <span class="hljs-comment">// Unification is not possible and no progress was made.</span>
+                                        <span class="hljs-keyword">continue</span>
+                                }
+
+                                ......
+
+                        }
+                }
+
+</code></pre>
+<h3 id="mapping-simplification">Mapping Simplification</h3>
+<p>The second phase of constraint type inference continuously simplifies the mappings.</p>
+<pre class="hljs"><code>                smap := makeSubstMap(tparams, types)
+                n := <span class="hljs-number">0</span>
+                <span class="hljs-keyword">for</span> _, index := <span class="hljs-keyword">range</span> dirty {
+                        t0 := types[index]
+                        <span class="hljs-keyword">if</span> t1 := check.subst(nopos, t0, smap, <span class="hljs-literal">nil</span>); t1 != t0 {
+                                types[index] = t1
+                                dirty[n] = index
+                                n++
+                        }
+                }
+
+</code></pre>
+</div>
+</div>
+
+            <section class="comment-section" data-comment-section></section>
+          </div>
+        </div>
+      </main>
+    </div>
+
+    <script id="page-data" type="application/json">
+      {
+  "pageType": "post",
+  "lang": "en",
+  "langSwitchUrl": "/golang-generics/zh/",
+  "langSwitcherMode": "toggle",
+  "markdownUrl": "/posts/golang-generics/post.md",
+  "labels": {
+    "navAbout": "About",
+    "navBlog": "Blog",
+    "filterAll": "All"
+  },
+  "comments": {
+    "appId": "e224d3ce-6f5a-4777-bb80-b7bbf2e78d83",
+    "pageId": "golang-generics",
+    "pageUrl": "https://www.yujiachen.com/golang-generics/",
+    "pageTitle": "Golang Generics"
+  }
+}
+    </script>
+    <script type="module" src="/app.js"></script>
+  </body>
+</html>
