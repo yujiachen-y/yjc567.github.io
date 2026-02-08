@@ -12,6 +12,7 @@ Filter tabs:
 - zh: All, Essays, Tech, Yearbook (page: https://www.yujiachen.com/blog/zh/)
 
 Pages:
+- Thoughts on the Video Quality Evaluation [en] (thoughts-on-the-video-quality-evaluation) | html: https://www.yujiachen.com/thoughts-on-the-video-quality-evaluation/ | markdown: https://www.yujiachen.com/posts/thoughts-on-the-video-quality-evaluation/post.md
 - About [en] (about) | html: https://www.yujiachen.com/ | markdown: https://www.yujiachen.com/posts/about/post.md
 - How Engineers and PMs Ship LLM Features Together [en] (bridging-the-gap-how-engineers-and-pms-ship-winning-llm-features-together) | html: https://www.yujiachen.com/bridging-the-gap-how-engineers-and-pms-ship-winning-llm-features-together/ | markdown: https://www.yujiachen.com/posts/bridging-the-gap-how-engineers-and-pms-ship-winning-llm-features-together/post.md
 - How to 1-on-1 [en] (how-to-1-on-1) | html: https://www.yujiachen.com/how-to-1-on-1/ | markdown: https://www.yujiachen.com/posts/how-to-1-on-1/post.md

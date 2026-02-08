@@ -5,8 +5,57 @@
     <link>https://www.yujiachen.com/blog/zh/</link>
     <description>Jiachen Yu</description>
     <language>zh-CN</language>
-    <lastBuildDate>Mon, 15 Sep 2025 00:00:00 GMT</lastBuildDate>
+    <lastBuildDate>Sun, 08 Feb 2026 00:00:00 GMT</lastBuildDate>
     <atom:link href="https://www.yujiachen.com/rss-zh.xml" rel="self" type="application/rss+xml" />
+  <item>
+    <title>经验之谈：视频质量评估</title>
+    <link>https://www.yujiachen.com/thoughts-on-the-video-quality-evaluation/zh/</link>
+    <guid isPermaLink="true">https://www.yujiachen.com/thoughts-on-the-video-quality-evaluation/zh/</guid>
+    <pubDate>Sun, 08 Feb 2026 00:00:00 GMT</pubDate>
+    <category>Tech</category>
+    <content:encoded><![CDATA[<p><em>由 Claude 从英文原文翻译。</em></p>
+<p>去年，我带领团队构建了 OpusClip 的 LLM-as-a-Judge 系统。既然我们已经发布了一篇关于<a href="https://medium.com/opus-engineering/a-scalable-llm-as-a-judge-framework-for-video-quality-evaluation-74612034bd1e">视频质量评估</a>的文章，我可以在这里做一个简短的回顾。目前我正在为 AgentOpus 做另一个方向的评估工作，所以文末我会提出一个我个人觉得很有意思的相关问题。</p>
+<h2 id="去年我们做了什么">去年我们做了什么</h2>
+<p>完整细节可以参考<a href="https://medium.com/opus-engineering/a-scalable-llm-as-a-judge-framework-for-video-quality-evaluation-74612034bd1e">博客原文</a>，以下是简要回顾。</p>
+<p>我们的目标是构建一个视频质量评判系统，能够从不同维度（rubric）对视频质量进行打分。</p>
+<h3 id="构建第一个评判维度">构建第一个评判维度</h3>
+<p>第一步是数据收集。我们从内部和外部来源共收集了约 300 个样本。这个数字的由来是：以 80% 的目标一致率和 95% 的置信水平（±5% 误差范围），所需的最小样本量约为 246。<sup class="footnote-ref"><a href="#fn1" id="fnref1">[1]</a></sup></p>
+<p>与此同时，我们为评判系统定义了多个维度，涵盖 hook（开头吸引力）、内容、画面和音频四大类。我们手动标注的第一个维度是 hook engagement。我邀请了团队中的所有人以及外部专家来标注视频。重要的是，人工标注者需要首先达到 80% 的一致率。</p>
+<p>每个视频的标注结果很简单：视频是否符合该维度？结果为 0（不符合）、1（部分符合）或 2（符合）。随着标注的推进，我们需要对数据集进行再平衡，以确保 0/1/2 样本的数量大致相等。</p>
+<p>拿到标注结果后，我们在 Gemini 2.5 Pro（后来升级到 Gemini 3 Pro）上测试不同的 prompt。与人工标注一致性最高的 prompt 会被选为当前维度的&quot;评判者&quot;。</p>
+<h3 id="扩展到更多维度">扩展到更多维度</h3>
+<p>一旦我们知道如何为一个维度构建评判者，扩展到其他维度就很直接了。我们通过 LLM 预标注加速了标注流程，减少了高一致率样本所需的标注人数。我们还构建了一个内部 agent，自动在不同维度上迭代 prompt。</p>
+<p>最终，我们得到了一个 LLM-as-a-Judge 系统，可以为视频输出质量分数。视频的质量分数等于各维度评判结果（每项 0、1 或 2）的总和，对于 N 个维度，分数范围为 0 到 2N。</p>
+<p>我们还通过在新样本上测试来交叉验证评判系统，计算导出率与评判分数之间的相关性。结果表明，评判分数越高，导出率也越高。</p>
+<p>
+<picture>
+  <source srcset="https://www.yujiachen.com/assets/posts/thoughts-on-the-video-quality-evaluation/zh/image_1.webp" type="image/webp" />
+  <img src="https://www.yujiachen.com/assets/posts/thoughts-on-the-video-quality-evaluation/zh/image_1.png" alt="" class="article-image" width="1080" height="602" />
+</picture>
+</p>
+<p>*图 1. 评判分数与导出率在留出集上的关系。每个点代表一个分数区间。趋势是单调的：更高的评判分数对应更高的导出率。</p>
+<h3 id="成果">成果</h3>
+<p>我们用这个系统来筛选另一个系统产出的剪辑策略，从而提升了线上导出率。该系统在 B2B 客户的视频剪辑上也表现出色，为其他团队提升了业务指标。</p>
+<p>这些成果让我对基于维度的质量评判建立了信心。同时，也引出了一个我个人很感兴趣的问题：评估能否从最终结果反推出一条合理的执行路径？它在让 agent 评估更加可解释方面看起来很有前景。</p>
+<h2 id="今年我在关注什么">今年我在关注什么？</h2>
+<p>核心问题是：评估能否不仅仅给出一个分数，还能解释 agent <em>为什么</em>失败了？</p>
+<p>这很重要，原因有二：</p>
+<ol>
+<li>如果 agent 本身太弱（换句话说，没什么用），评估就变得毫无意义——因为我们可能没有有效的方法通过评估来改进 agent 本身。</li>
+<li>反过来，如果我们能从结果中推断出执行路径，就可以把这些知识迁移到 agent 中。这样，agent 就拥有了和评估者相同的知识。</li>
+</ol>
+<p>OpenAI 有<a href="https://github.com/openai/skills/tree/main/skills/.experimental/codex-readiness-integration-test">一个很有意思的做法</a>：让 Codex CLI 评估自身的表现。我从中学到的是，我们应该尝试让评估者和 agent 处于同一层级，这样当评估者改进 agent 时，agent 本身也能反过来改进评估者。</p>
+<p>由此，我们可以构建一个数据飞轮——一个 agent 的自我改进引导机制。然后通过不断注入更多数据和案例，快速迭代 agent 的能力。</p>
+<p>我在这个方向上还处于早期探索阶段，但背后的问题值得一问：如果评估者能给 agent 一个具体的诊断，而不仅仅是一个分数，这会如何改变你构建和迭代 agent 系统的方式？</p>
+<hr class="footnotes-sep">
+<section class="footnotes">
+<ol class="footnotes-list">
+<li id="fn1" class="footnote-item"><p>n = z² · p · (1 − p) / e²，其中 z = 1.96，p = 0.8，e = 0.05。该计算假设样本近似独立，并以原始一致率作为主要指标。 <a href="#fnref1" class="footnote-backref">↩︎</a></p>
+</li>
+</ol>
+</section>
+]]></content:encoded>
+  </item>
   <item>
     <title>写给 PM 的 LLM 工程知识点</title>
     <link>https://www.yujiachen.com/bridging-the-gap-how-engineers-and-pms-ship-winning-llm-features-together/zh/</link>

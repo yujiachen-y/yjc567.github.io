@@ -1,0 +1,181 @@
+<!doctype html>
+<html lang="en" data-theme="auto">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Thoughts on the Video Quality Evaluation | Jiachen Yu</title>
+        <meta name="description" content="Thoughts on the Video Quality Evaluation" />
+    <meta property="og:title" content="Thoughts on the Video Quality Evaluation | Jiachen Yu" />
+    <meta property="og:description" content="Thoughts on the Video Quality Evaluation" />
+    <meta property="og:type" content="article" />
+    <meta property="og:url" content="https://www.yujiachen.com/thoughts-on-the-video-quality-evaluation/" />
+    <meta name="twitter:card" content="summary" />
+    <link rel="canonical" href="https://www.yujiachen.com/thoughts-on-the-video-quality-evaluation/" />
+    <link rel="alternate" type="text/markdown" href="https://www.yujiachen.com/posts/thoughts-on-the-video-quality-evaluation/post.md" />
+    <link rel="alternate" hreflang="en" href="https://www.yujiachen.com/thoughts-on-the-video-quality-evaluation/" />
+<link rel="alternate" hreflang="zh" href="https://www.yujiachen.com/thoughts-on-the-video-quality-evaluation/zh/" /> <link rel="alternate" type="application/rss+xml" title="RSS" href="https://www.yujiachen.com/rss.xml" />
+<link rel="alternate" type="application/rss+xml" title="RSS (EN)" href="https://www.yujiachen.com/rss-en.xml" /> <link rel="icon" href="/favicon-32.png" type="image/png" sizes="32x32" />
+<link rel="icon" href="/favicon.png" type="image/png" />
+<link rel="icon" href="/favicon.ico" type="image/x-icon" />
+<link rel="apple-touch-icon" href="/apple-touch-icon.png" sizes="180x180" /> <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&amp;family=Source+Serif+4:ital,wght@0,400;0,600;0,700;1,400&amp;family=Noto+Serif+SC:wght@400;600;700&amp;display=swap" />
+    <link rel="stylesheet" href="/katex/katex.min.css" />
+    <link rel="stylesheet" href="/styles.css" />
+    <link rel="stylesheet" href="/fonts.css" />
+  </head>
+  <body data-page="post">
+    <div id="root">
+
+<nav class="navbar">
+  <div class="nav-left">
+    <a href="/" class="brand">Jiachen Yu</a>
+    <div class="nav-links">
+      <a class="nav-link-button" href="/about/" data-nav="about">About</a>
+      <a class="nav-link-button" href="/blog/" data-nav="blog">Blog</a>
+    </div>
+  </div>
+  <div class="controls">
+    <div class="action-controls">
+      <div class="lang-switcher" data-lang-switcher data-lang-switcher-mode="toggle">
+        <button class="lang-toggle" type="button" data-lang-toggle>EN</button>
+      </div>
+      <div class="theme-switcher" data-theme-switcher data-theme-state="light">
+        <button
+          class="theme-trigger"
+          type="button"
+          data-theme-trigger
+          aria-label="Theme mode toggle"
+          aria-pressed="false"
+        >
+          <span class="theme-trigger-icon">
+            <svg class="theme-icon theme-icon-dark" viewBox="0 0 24 24" aria-hidden="true">
+              <path
+                d="M21 12.8A8.5 8.5 0 1 1 11.2 3a7.5 7.5 0 0 0 9.8 9.8Z"
+                fill="currentColor"
+              />
+            </svg>
+            <svg class="theme-icon theme-icon-light" viewBox="0 0 24 24" aria-hidden="true">
+              <circle cx="12" cy="12" r="4" fill="currentColor" />
+              <path
+                d="M12 3v2M12 19v2M4.9 4.9l1.4 1.4M17.7 17.7l1.4 1.4M3 12h2M19 12h2M4.9 19.1l1.4-1.4M17.7 6.3l1.4-1.4"
+                stroke="currentColor"
+                stroke-width="2"
+                stroke-linecap="round"
+                fill="none"
+              />
+            </svg>
+          </span>
+        </button>
+      </div>
+      <a
+        class="ask-ai-entry"
+        href="/ask-ai/"
+        data-ask-ai-entry
+        aria-label="Open Ask AI"
+      >
+        <span class="ask-ai-entry-label">Ask AI</span>
+      </a>
+    </div>
+  </div>
+</nav>
+
+      <main class="page-shell article-page">
+        <div class="article-layout has-toc page-shell-content">
+
+    <aside class="article-toc sidebar-panel" data-toc>
+      <button class="toc-toggle sidebar-toggle" type="button" data-toc-toggle aria-expanded="false">
+        <span class="toc-toggle-label">Contents</span>
+        <span class="toc-toggle-icon" aria-hidden="true">⌄</span>
+      </button>
+      <div class="toc-panel sidebar-panel-content" data-toc-panel>
+        <div class="toc-title sidebar-title">Contents</div>
+        <ol class="toc-list sidebar-list">
+      <li class="toc-item sidebar-item toc-level-2"><a class="sidebar-link" href="#what-we-did-last-year">What We Did Last Year</a></li>
+      <li class="toc-item sidebar-item toc-level-3"><a class="sidebar-link" href="#building-the-first-rubric">Building the First Rubric</a></li>
+      <li class="toc-item sidebar-item toc-level-3"><a class="sidebar-link" href="#scaling-to-more-rubrics">Scaling to More Rubrics</a></li>
+      <li class="toc-item sidebar-item toc-level-3"><a class="sidebar-link" href="#results">Results</a></li>
+      <li class="toc-item sidebar-item toc-level-2"><a class="sidebar-link" href="#what-am-i-curious-about-this-year">What Am I Curious About This Year?</a></li>
+        </ol>
+      </div>
+    </aside>
+
+          <div class="article-content">
+
+
+<div class="article-text-content">
+  <div class="article-date">2026-02-08 · TECH</div>
+  <h1 class="article-hero">Thoughts on the Video Quality Evaluation</h1>
+  <div class="article-body"><p>Last year, I led the team behind OpusClip’s LLM-as-a-Judge system. Since we already published a post about <a href="https://medium.com/opus-engineering/a-scalable-llm-as-a-judge-framework-for-video-quality-evaluation-74612034bd1e">video quality evaluation</a>, I can share a short recap here. I am currently working on a separate evaluation track for AgentOpus, so I will close with a related question that I find personally interesting.</p>
+<h2 id="what-we-did-last-year">What We Did Last Year</h2>
+<p>You can check <a href="https://medium.com/opus-engineering/a-scalable-llm-as-a-judge-framework-for-video-quality-evaluation-74612034bd1e">the blog</a> for full details; below is a short summary.</p>
+<p>Our goal was to build a video quality judge system that can score video quality across different rubrics.</p>
+<h3 id="building-the-first-rubric">Building the First Rubric</h3>
+<p>The first step was data collection. We collected 300 samples from both internal and external sources. With a target agreement rate of 80% and a 95% confidence level (±5% margin of error), the minimum required sample size is about 246. <sup class="footnote-ref"><a href="#fn1" id="fnref1">[1]</a></sup></p>
+<p>At the same time, we defined rubrics for the judge. We set up a number of rubrics under the hook, content, visual, and audio categories. The first rubric we annotated manually was hook engagement. I asked everyone on the team, as well as external experts, to annotate videos. It was important that human annotators achieve an 80% agreement rate first.</p>
+<p>The annotation result for each video is simple: Does the video meet the rubric? The result is 0 (does not meet), 1 (partially meets), or 2 (meets). As the annotation progressed, we needed to rebalance the dataset to ensure the number of 0/1/2 samples remained roughly equal.</p>
+<p>Once we had the annotation results, we tested different prompts on Gemini 2.5 Pro (and later Gemini 3 Pro). The prompt that aligned most with human annotations was selected as the “judge” for the current rubric.</p>
+<h3 id="scaling-to-more-rubrics">Scaling to More Rubrics</h3>
+<p>Once we knew how to build the judge for one rubric, scaling to others was straightforward. We sped up the annotation process via LLM pre-annotation, reducing the number of annotators needed for high-agreement samples. We also built an internal agent to iterate on prompts across different rubrics automatically.</p>
+<p>In the end, we had an LLM-as-a-Judge system that gave quality scores for videos. A video’s quality score equals the sum of its per-rubric results (each 0, 1, or 2), yielding a score range of 0 to 2N for N rubrics.</p>
+<p>We also cross-validated the judge by testing it on new samples and calculating the correlation between export rate and judge score. The results show that a higher judge score indicates a higher export rate.</p>
+<p>
+<picture>
+  <source srcset="/assets/posts/thoughts-on-the-video-quality-evaluation/en/image_1.webp" type="image/webp" />
+  <img src="/assets/posts/thoughts-on-the-video-quality-evaluation/en/image_1.png" alt="" class="article-image" width="1080" height="602" />
+</picture>
+</p>
+<p><em>Figure 1. Judge score vs. export rate on a holdout set. Each point represents a score bucket. The trend is monotonic: higher judge scores are associated with higher export rates.</em></p>
+<h3 id="results">Results</h3>
+<p>We used this system to curate clipping strategies produced by another system, and it improved our online export rate. The system also worked effectively on our B2B customer clips, increasing business metrics for other teams.</p>
+<p>These results gave me confidence in rubric-based quality judging. At the same time, they raised a question I find personally interesting: can an evaluation infer a plausible execution path from the final result? I am still exploring this direction, but it seems promising for making agent evaluation more interpretable.</p>
+<h2 id="what-am-i-curious-about-this-year">What Am I Curious About This Year?</h2>
+<p>The core question is: can an evaluation do more than assign a score — can it also explain <em>why</em> the agent failed?</p>
+<p>This matters for two reasons:</p>
+<ol>
+<li>If the agent is too weak (in other words, useless), the evaluation becomes meaningless because we may not have an effective way to use it to improve the agent itself.</li>
+<li>On the other hand, if we can infer an execution path from a result, then we can transfer that knowledge into the agent. As a result, the agent will have the same knowledge as the evaluator.</li>
+</ol>
+<p>OpenAI has <a href="https://github.com/openai/skills/tree/main/skills/.experimental/codex-readiness-integration-test">a very interesting approach</a>: they ask Codex CLI to evaluate its own performance. What I learned from this is that we should try to put the evaluator and the agent at the same level, so that when the evaluator improves the agent, the agent can also improve the evaluator.</p>
+<p>With that, we can build a data flywheel — a self-improving bootstrap for the agent. Then we can iterate on its performance quickly by feeding more data and more cases into the system.</p>
+<p>I am still early in exploring this direction, but the underlying question feels worth asking: if your evaluator could hand the agent a concrete diagnosis instead of just a score, how would that change the way you build and iterate on agent systems?</p>
+<hr class="footnotes-sep">
+<section class="footnotes">
+<ol class="footnotes-list">
+<li id="fn1" class="footnote-item"><p>n = z² · p · (1 − p) / e², with z = 1.96, p = 0.8, e = 0.05. This assumes approximately independent samples and uses raw agreement as the primary metric. <a href="#fnref1" class="footnote-backref">↩︎</a></p>
+</li>
+</ol>
+</section>
+</div>
+</div>
+
+            <section class="citation-section" data-citation-section></section>
+            <section class="comment-section" data-comment-section></section>
+          </div>
+        </div>
+      </main>
+    </div>
+
+    <script id="page-data" type="application/json">
+      {
+  "pageType": "post",
+  "lang": "en",
+  "langSwitchUrl": "/thoughts-on-the-video-quality-evaluation/zh/",
+  "langSwitcherMode": "toggle",
+  "markdownUrl": "/posts/thoughts-on-the-video-quality-evaluation/post.md",
+  "labels": {
+    "navAbout": "About",
+    "navBlog": "Blog",
+    "filterAll": "All"
+  },
+  "comments": {
+    "appId": "e224d3ce-6f5a-4777-bb80-b7bbf2e78d83",
+    "pageId": "thoughts-on-the-video-quality-evaluation",
+    "pageUrl": "https://www.yujiachen.com/thoughts-on-the-video-quality-evaluation/",
+    "pageTitle": "Thoughts on the Video Quality Evaluation"
+  }
+}
+    </script>
+    <script type="module" src="/app.js"></script>
+  </body>
+</html>

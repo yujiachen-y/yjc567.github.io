@@ -1,5 +1,19 @@
 [
   {
+    "translationKey": "thoughts-on-the-video-quality-evaluation",
+    "lang": "en",
+    "title": "Thoughts on the Video Quality Evaluation",
+    "date": "2026-02-08",
+    "shortDate": "02-08",
+    "year": "2026",
+    "categories": [
+      "Tech"
+    ],
+    "categoryColorIndex": 1,
+    "coverImage": null,
+    "url": "/thoughts-on-the-video-quality-evaluation/"
+  },
+  {
     "translationKey": "bridging-the-gap-how-engineers-and-pms-ship-winning-llm-features-together",
     "lang": "en",
     "title": "How Engineers and PMs Ship LLM Features Together",
@@ -180,6 +194,20 @@
     "categoryColorIndex": 1,
     "coverImage": null,
     "url": "/ring-allreduce/"
+  },
+  {
+    "translationKey": "thoughts-on-the-video-quality-evaluation",
+    "lang": "zh",
+    "title": "经验之谈：视频质量评估",
+    "date": "2026-02-08",
+    "shortDate": "02-08",
+    "year": "2026",
+    "categories": [
+      "Tech"
+    ],
+    "categoryColorIndex": 1,
+    "coverImage": null,
+    "url": "/thoughts-on-the-video-quality-evaluation/zh/"
   },
   {
     "translationKey": "bridging-the-gap-how-engineers-and-pms-ship-winning-llm-features-together",
