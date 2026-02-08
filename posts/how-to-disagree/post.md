@@ -39,3 +39,20 @@
 同时，我在这里也慷他人之慨，贴一个同事分享的对网上争论的看法：
 
 > 这个对话的平台是中立的么（反例是 Fox News 或者铁血论坛）这个对话的平台还有其中的参与者是为了诉求真知还是为了满足社交偷窥癖（也就是吃人血馒头），后者的话，大家是不会去关注或者相信不「精彩」的故事的，所以参与就是抱薪救火，不管你的态度是什么这个话题本身是可证伪的么（比如讨论星座或者八卦就不会有结论）自己是回答这个话题最好的人么参与这个话题的人在现实生活中能 hold accountable 么
+
+## 引用本文
+
+APA：
+Yu, J. (2021年4月6日). 如何反对. Jiachen Yu. https://www.yujiachen.com/how-to-disagree/
+
+BibTeX：
+```bibtex
+@online{yu2021howtodisagree,
+  author = {Yu, Jiachen},
+  title = {如何反对},
+  year = {2021},
+  publisher = {Jiachen Yu},
+  url = {https://www.yujiachen.com/how-to-disagree/},
+  urldate = {2026-02-08},
+}
+```

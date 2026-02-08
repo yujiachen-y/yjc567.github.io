@@ -485,3 +485,20 @@
 的确，你需要付出极大的努力。但许多人都在为他们的目标而努力。如果你正在做的事情真的让你兴趣盎然，那么相比于许多同龄人的日常工作，你的任务或许会显得更为有趣，甚至更轻松。
 
 那些伟大的发现就在那里，等待着有人去探索、去挖掘。为何那个人不能是你呢？
+
+## 引用本文
+
+APA：
+Yu, J. (2023年8月12日). 【译】如何做出伟大工作. Jiachen Yu. https://www.yujiachen.com/how-to-do-great-work/
+
+BibTeX：
+```bibtex
+@online{yu2023howtodogreatwork,
+  author = {Yu, Jiachen},
+  title = {【译】如何做出伟大工作},
+  year = {2023},
+  publisher = {Jiachen Yu},
+  url = {https://www.yujiachen.com/how-to-do-great-work/},
+  urldate = {2026-02-08},
+}
+```

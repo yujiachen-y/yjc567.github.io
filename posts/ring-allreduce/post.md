@@ -40,3 +40,20 @@ reference:
 [https://github.com/baidu-research/baidu-allreduce](https://github.com/baidu-research/baidu-allreduce)
 
 [https://www.zhihu.com/question/57799212/answer/292494636?utm_source=ZHShareTargetIDMore&utm_medium=social&utm_oi=37729630945280](https://www.zhihu.com/question/57799212/answer/292494636?utm_source=ZHShareTargetIDMore&utm_medium=social&utm_oi=37729630945280)
+
+## 引用本文
+
+APA：
+Yu, J. (2018年5月24日). ring-allreduce 简介. Jiachen Yu. https://www.yujiachen.com/ring-allreduce/zh/
+
+BibTeX：
+```bibtex
+@online{yu2018ringallreduce,
+  author = {Yu, Jiachen},
+  title = {ring-allreduce 简介},
+  year = {2018},
+  publisher = {Jiachen Yu},
+  url = {https://www.yujiachen.com/ring-allreduce/zh/},
+  urldate = {2026-02-08},
+}
+```

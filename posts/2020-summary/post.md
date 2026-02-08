@@ -132,3 +132,20 @@
 困惑？
 
 ![](attachments/Pasted%20image%2020250927171719.png)感谢单向街对本文的帮助 : )
+
+## 引用本文
+
+APA：
+Yu, J. (2020年12月20日). 特别的一年——2020 小结. Jiachen Yu. https://www.yujiachen.com/2020-summary/
+
+BibTeX：
+```bibtex
+@online{yu20202020summary,
+  author = {Yu, Jiachen},
+  title = {特别的一年——2020 小结},
+  year = {2020},
+  publisher = {Jiachen Yu},
+  url = {https://www.yujiachen.com/2020-summary/},
+  urldate = {2026-02-08},
+}
+```

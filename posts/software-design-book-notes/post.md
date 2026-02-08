@@ -126,3 +126,20 @@ returnobj                 #re*turncurrentobj
 所以作者提倡先写注释，后写代码。
 
 作者说一般人不这么做的理由通常是代码需要来回几次修改才能最终固定下来，所以等代码写完再写注释最省力。但作者提出反复修改代码的代价太大，提前写注释其实就是一种固定代码结构的方法，如果代码的结构需要反复修改，不如就在注释中反复修改，这样修改成本更小，开发成本反而更低。
+
+## 引用本文
+
+APA：
+Yu, J. (2022年10月9日). Software Design Book 小记. Jiachen Yu. https://www.yujiachen.com/software-design-book-notes/zh/
+
+BibTeX：
+```bibtex
+@online{yu2022softwaredesignbooknotes,
+  author = {Yu, Jiachen},
+  title = {Software Design Book 小记},
+  year = {2022},
+  publisher = {Jiachen Yu},
+  url = {https://www.yujiachen.com/software-design-book-notes/zh/},
+  urldate = {2026-02-08},
+}
+```

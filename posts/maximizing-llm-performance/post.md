@@ -144,3 +144,20 @@ Canva 使用 fine-tuning 来规范 LLM 的输出格式。
 - 先从 prompt engineering 和 few-shot learning 开始，确认 LLM 适合你的使用场景。
 - 确认性能基准，确保 fine-tuning 后的 LLM 表现可衡量可比较。
 - 从小数据集开始，注重数据质量，LLM 的训练过程已经解决了数据量的问题，fine-tuning 要着重注意数据质量。
+
+## 引用本文
+
+APA：
+Yu, J. (2023年11月26日). 最大化 LLM 性能的技术概览. Jiachen Yu. https://www.yujiachen.com/maximizing-llm-performance/
+
+BibTeX：
+```bibtex
+@online{yu2023maximizingllmperformance,
+  author = {Yu, Jiachen},
+  title = {最大化 LLM 性能的技术概览},
+  year = {2023},
+  publisher = {Jiachen Yu},
+  url = {https://www.yujiachen.com/maximizing-llm-performance/},
+  urldate = {2026-02-08},
+}
+```

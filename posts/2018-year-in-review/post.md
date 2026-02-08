@@ -170,3 +170,20 @@ SSSS.GRIDMAN
 耶路撒冷
 
 耶路撒冷，三教圣城，很难想象这一个地方几千年来直到现在还在被不同的力量争夺着。我们的生活里没有宗教，人们对耶路撒冷的疯狂是我难以想象的，而且我也对这座城中沉甸甸的历史感到兴趣。我对其了解的不多，只知道耶稣就是在这里被钉上了十字架。希望自己可以多了解相关的历史，然后能去这里短住一段时间。
+
+## 引用本文
+
+APA：
+Yu, J. (2018年12月29日). 2018 年小结. Jiachen Yu. https://www.yujiachen.com/2018-year-in-review/
+
+BibTeX：
+```bibtex
+@online{yu20182018yearinreview,
+  author = {Yu, Jiachen},
+  title = {2018 年小结},
+  year = {2018},
+  publisher = {Jiachen Yu},
+  url = {https://www.yujiachen.com/2018-year-in-review/},
+  urldate = {2026-02-08},
+}
+```

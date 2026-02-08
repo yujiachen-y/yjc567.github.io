@@ -75,3 +75,20 @@ Flomo还有一个好处是不强迫用户去分类，很多时候想记一个东
 
 ---- 
 嘛……总的来说今年是经历了很多事情的一年，收获了很多宝贵美好的经历，于是乎我又老了一岁。想起今年的某个深夜，街道上空阔无人，小雨落下几滴后就停住了，天上虽然有乌云但仿佛我可以看到繁星，那一刻我想起曾经读到的夜晚都市故事，都是那么的安详静谧。如今这个时刻也一并消失在了过去，没有什么会成为唯一和永恒，但那一场经历也因此变得独特而珍惜。
+
+## 引用本文
+
+APA：
+Yu, J. (2021年12月28日). 2021 年小结. Jiachen Yu. https://www.yujiachen.com/2021-year-in-review/
+
+BibTeX：
+```bibtex
+@online{yu20212021yearinreview,
+  author = {Yu, Jiachen},
+  title = {2021 年小结},
+  year = {2021},
+  publisher = {Jiachen Yu},
+  url = {https://www.yujiachen.com/2021-year-in-review/},
+  urldate = {2026-02-08},
+}
+```

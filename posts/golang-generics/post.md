@@ -633,3 +633,20 @@ func (u *unifier) nify(x, y Type, p *ifacePair) (result bool) {
                 }
 
 ```
+
+## 引用本文
+
+APA：
+Yu, J. (2023年5月26日). Golang 泛型. Jiachen Yu. https://www.yujiachen.com/golang-generics/zh/
+
+BibTeX：
+```bibtex
+@online{yu2023golanggenerics,
+  author = {Yu, Jiachen},
+  title = {Golang 泛型},
+  year = {2023},
+  publisher = {Jiachen Yu},
+  url = {https://www.yujiachen.com/golang-generics/zh/},
+  urldate = {2026-02-08},
+}
+```

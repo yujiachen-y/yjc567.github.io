@@ -72,3 +72,20 @@
 
 
 谢谢你读完了我今年的故事和感悟，朋友。
+
+## 引用本文
+
+APA：
+Yu, J. (2024年8月3日). 2024 年小结. Jiachen Yu. https://www.yujiachen.com/2024-year-in-review/
+
+BibTeX：
+```bibtex
+@online{yu20242024yearinreview,
+  author = {Yu, Jiachen},
+  title = {2024 年小结},
+  year = {2024},
+  publisher = {Jiachen Yu},
+  url = {https://www.yujiachen.com/2024-year-in-review/},
+  urldate = {2026-02-08},
+}
+```

@@ -382,3 +382,20 @@ Lamport 时间戳和其他因果一致性模型失败的原因是它是一个同
 ### 成员与协调服务
 
 至此我们知道了如何实现共识，并在讨论中我们发现，不是所有操作都需要共识的参与，只要一些关键的操作符合共识，我们就能构建出稳定的分布式系统。因此我们可以用封装好的ZooKeeper (Zab)，etcd (Raft) 针对少量、可完全载入内存的数据建立共识，以次达成高可靠的共识算法。
+
+## 引用本文
+
+APA：
+Yu, J. (2021年9月27日). 事务与共识 from DDIA. Jiachen Yu. https://www.yujiachen.com/transactions-and-consensus-from-ddia/zh/
+
+BibTeX：
+```bibtex
+@online{yu2021transactionsandconsensusfrom,
+  author = {Yu, Jiachen},
+  title = {事务与共识 from DDIA},
+  year = {2021},
+  publisher = {Jiachen Yu},
+  url = {https://www.yujiachen.com/transactions-and-consensus-from-ddia/zh/},
+  urldate = {2026-02-08},
+}
+```

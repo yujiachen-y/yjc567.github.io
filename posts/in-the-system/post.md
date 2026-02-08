@@ -150,3 +150,20 @@
 写这样一本书，若想说清观点，作者有时必须装得成竹在胸一点。想让自己的论述站得稳，便不能甫一下笔就顾虑重重。论述这些问题实非易事，我有时轻描淡写，斩钉截铁，但其实心中始终有所顾虑，也许读者能够体谅。
 
 ——凯恩斯《论概率》
+
+## 引用本文
+
+APA：
+Yu, J. (2021年12月28日). 置身事内. Jiachen Yu. https://www.yujiachen.com/in-the-system/
+
+BibTeX：
+```bibtex
+@online{yu2021inthesystem,
+  author = {Yu, Jiachen},
+  title = {置身事内},
+  year = {2021},
+  publisher = {Jiachen Yu},
+  url = {https://www.yujiachen.com/in-the-system/},
+  urldate = {2026-02-08},
+}
+```

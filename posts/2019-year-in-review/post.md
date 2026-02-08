@@ -129,3 +129,20 @@
 # 总结
 
 曾经有段时间，自己一直在日记，以此来督促自己，可能是天性懒惰，坚持了一段时间后觉得没啥作用，逐作罢。某种意义上，小结这件事情是希望一段时光变得有意义，这想法本身就有一种媚俗的意味，人是有着遗忘的天赋的（就连LSTM 也是因为有了遗忘的特性才能处理不定常的序列），所以有些事情也不必一定要有一个小结。Anyway，说了这么多小结的坏话还是写完了这个小结，新的一年，祝自己武运昌盛。
+
+## 引用本文
+
+APA：
+Yu, J. (2019年12月31日). 2019 年小结. Jiachen Yu. https://www.yujiachen.com/2019-year-in-review/
+
+BibTeX：
+```bibtex
+@online{yu20192019yearinreview,
+  author = {Yu, Jiachen},
+  title = {2019 年小结},
+  year = {2019},
+  publisher = {Jiachen Yu},
+  url = {https://www.yujiachen.com/2019-year-in-review/},
+  urldate = {2026-02-08},
+}
+```

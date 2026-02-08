@@ -31,3 +31,20 @@
 > Character is built not in good times, but in bad times; not in a time of plenty, but in a time of adversity.
 以及他谈到 Pixar 的新办公楼时，对设计的理解：
 > But when you decide to design your own building, you have to ask the question, “Who are we?” Because you want to capture some of the soul of the company in the building and reflect who we are.
+
+## 引用本文
+
+APA：
+Yu, J. (2023年9月21日). 2023 - pivot. Jiachen Yu. https://www.yujiachen.com/2023-pivot/
+
+BibTeX：
+```bibtex
+@online{yu20232023pivot,
+  author = {Yu, Jiachen},
+  title = {2023 - pivot},
+  year = {2023},
+  publisher = {Jiachen Yu},
+  url = {https://www.yujiachen.com/2023-pivot/},
+  urldate = {2026-02-08},
+}
+```

@@ -206,3 +206,20 @@
 ## 哲学书
 
 能够保留孩子看世界的眼光，又能成熟地了解到保留这些问题的意义，确实是非常稀有的能力——拥有这种能力的人也才可能对我们的思想有重大的贡献。
+
+## 引用本文
+
+APA：
+Yu, J. (2022年8月14日). 如何阅读一本书. Jiachen Yu. https://www.yujiachen.com/how-to-read-a-book/
+
+BibTeX：
+```bibtex
+@online{yu2022howtoreadabook,
+  author = {Yu, Jiachen},
+  title = {如何阅读一本书},
+  year = {2022},
+  publisher = {Jiachen Yu},
+  url = {https://www.yujiachen.com/how-to-read-a-book/},
+  urldate = {2026-02-08},
+}
+```

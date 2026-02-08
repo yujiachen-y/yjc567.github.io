@@ -43,3 +43,20 @@
 ![](attachments/Pasted%20image%2020250927164532.png)
 
 一年就这样结束了。
+
+## 引用本文
+
+APA：
+Yu, J. (2023年1月25日). re:2022. Jiachen Yu. https://www.yujiachen.com/re-2022/
+
+BibTeX：
+```bibtex
+@online{yu2023re2022,
+  author = {Yu, Jiachen},
+  title = {re:2022},
+  year = {2023},
+  publisher = {Jiachen Yu},
+  url = {https://www.yujiachen.com/re-2022/},
+  urldate = {2026-02-08},
+}
+```

@@ -5,3 +5,20 @@
 4. 逃离重力：每个公司都有能力圈，如果一家公司的引力比你大，不要在这个范围内做事。
 5. 需求供给是市场的核心：做业务最幸福的事情莫过于一群人需要你的资源，而另一群人愿意提供其他高价值的资源从你这里置换能力。所以多边的平台好过双边的，而双边的好过工具。工具不过是一种局部的手段。
 6. 关注事实：幻想对改造现实没有帮助，而现实是基于物理法则演变而来，必然是合理的。
+
+## 引用本文
+
+APA：
+Yu, J. (2025年1月2日). Learnings from ByteDance. Jiachen Yu. https://www.yujiachen.com/learnings-from-bytedance/zh/
+
+BibTeX：
+```bibtex
+@online{yu2025learningsfrombytedance,
+  author = {Yu, Jiachen},
+  title = {Learnings from ByteDance},
+  year = {2025},
+  publisher = {Jiachen Yu},
+  url = {https://www.yujiachen.com/learnings-from-bytedance/zh/},
+  urldate = {2026-02-08},
+}
+```

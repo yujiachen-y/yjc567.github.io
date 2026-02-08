@@ -200,3 +200,20 @@ filesystem in user space，对文件系统的中间抽象，用来加上远程�
     - `/usr/sbin` - Non-essential system binaries, usually to be run by root
     - `/usr/local/bin` - Binaries for user compiled programs
 - `/var` - Variable files like logs or caches
+
+## 引用本文
+
+APA：
+Yu, J. (2022年6月14日). 编程以外的编程知识. Jiachen Yu. https://www.yujiachen.com/the-missing-semester-of-your-cs-education/
+
+BibTeX：
+```bibtex
+@online{yu2022themissingsemesterofyourcsed,
+  author = {Yu, Jiachen},
+  title = {编程以外的编程知识},
+  year = {2022},
+  publisher = {Jiachen Yu},
+  url = {https://www.yujiachen.com/the-missing-semester-of-your-cs-education/},
+  urldate = {2026-02-08},
+}
+```

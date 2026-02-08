@@ -39,3 +39,20 @@ A more practical reason is that your relationship with your manager largely dete
 > I’m not sure how you feel about this. But I would feel that CEOs and leaders are quite troubled if they were to soak in an “manage up” environment where information is “retouched”. Suppose the information that directs to you is specially angled, or what we call “SEO-ed (search engine-optimized) information” at ByteDance, you will have to verify the information via other channels. That would be very counter-efficient.
 > 
 > From: \<[ByteDance’s Zhang Yiming: “Bring Outside in” and Avoid “Managing up”— How to Protect the Company from Diseconomies of Scale](https://sourcecodecap.com/code-class-post/bytedances-zhang-yiming-bring-outside-in-and-avoid-managing-up-how-to-protect-the-comp/)\>
+
+## Cite this article
+
+APA:
+Yu, J. (February 15, 2025). How to 1-on-1. Jiachen Yu. https://www.yujiachen.com/how-to-1-on-1/
+
+BibTeX:
+```bibtex
+@online{yu2025howto1on1,
+  author = {Yu, Jiachen},
+  title = {How to 1-on-1},
+  year = {2025},
+  publisher = {Jiachen Yu},
+  url = {https://www.yujiachen.com/how-to-1-on-1/},
+  urldate = {2026-02-08},
+}
+```

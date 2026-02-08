@@ -206,3 +206,20 @@ One worth-to-mention common pitfall that PMs to avoid: changing field names in p
 If these practical takeaways resonate with you and you’re passionate about solving complex technical challenges at scale, we’d love to hear from you.
 
 Check out our open positions: [opus.pro/careers](https://www.opus.pro/careers)
+
+## Cite this article
+
+APA:
+Yu, J. (September 15, 2025). How Engineers and PMs Ship LLM Features Together. Jiachen Yu. https://www.yujiachen.com/bridging-the-gap-how-engineers-and-pms-ship-winning-llm-features-together/
+
+BibTeX:
+```bibtex
+@online{yu2025bridgingthegaphowengineersan,
+  author = {Yu, Jiachen},
+  title = {How Engineers and PMs Ship LLM Features Together},
+  year = {2025},
+  publisher = {Jiachen Yu},
+  url = {https://www.yujiachen.com/bridging-the-gap-how-engineers-and-pms-ship-winning-llm-features-together/},
+  urldate = {2026-02-08},
+}
+```

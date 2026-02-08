@@ -193,3 +193,20 @@ On a Mac, you can use Command + Tab to switch between apps. However, the built-i
 - [Programmer time is expensive; conserve it in preference to machine time.](https://www.catb.org/~esr/writings/taoup/html/ch01s06.html#id2878666)
     
 - [We shape our tools and thereafter our tools shape us](https://mcluhangalaxy.wordpress.com/2013/04/01/we-shape-our-tools-and-thereafter-our-tools-shape-us/)
+
+## Cite this article
+
+APA:
+Yu, J. (July 14, 2024). Shape Your Mac. Jiachen Yu. https://www.yujiachen.com/shape-your-mac/
+
+BibTeX:
+```bibtex
+@online{yu2024shapeyourmac,
+  author = {Yu, Jiachen},
+  title = {Shape Your Mac},
+  year = {2024},
+  publisher = {Jiachen Yu},
+  url = {https://www.yujiachen.com/shape-your-mac/},
+  urldate = {2026-02-08},
+}
+```

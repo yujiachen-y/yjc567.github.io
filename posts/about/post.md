@@ -7,3 +7,20 @@ I have years of experience in backend engineering. I also worked as a business l
 - 2022.07, **Software Engineer**, *ByteDance* - Lark User Growth and Monetization.
 - 2019.07, **Software Engineer**, *Airbnb* - Pricing and Availability of China Listing.
 - 2018.06, **AI Intern**, *Megvii* - Face Recognition.
+
+## Cite this article
+
+APA:
+Yu, J. (January 25, 2026). About. Jiachen Yu. https://www.yujiachen.com/
+
+BibTeX:
+```bibtex
+@online{yu2026about,
+  author = {Yu, Jiachen},
+  title = {About},
+  year = {2026},
+  publisher = {Jiachen Yu},
+  url = {https://www.yujiachen.com/},
+  urldate = {2026-02-08},
+}
+```

@@ -198,3 +198,20 @@ Henry Spencer([henry@spsystems.net](mailto:henry@spsystems.net)）指出：通�
 就在刚刚自己看了《互联网之子》纪录片，让SOPA法案破产的一个关键因素就是Wikipedia、Reddit 和其他互联网服务商用关停服务的方式表达对SOPA的不满。
 
 黑客要“太懒以至于无所不能”。
+
+## 引用本文
+
+APA：
+Yu, J. (2021年12月24日). 大教堂与集市. Jiachen Yu. https://www.yujiachen.com/the-cathedral-and-the-bazaar/
+
+BibTeX：
+```bibtex
+@online{yu2021thecathedralandthebazaar,
+  author = {Yu, Jiachen},
+  title = {大教堂与集市},
+  year = {2021},
+  publisher = {Jiachen Yu},
+  url = {https://www.yujiachen.com/the-cathedral-and-the-bazaar/},
+  urldate = {2026-02-08},
+}
+```

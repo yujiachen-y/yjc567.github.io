@@ -195,3 +195,20 @@ g2, sub2, rg2
 4. **使用多因素认证**（MFA）：增加安全层次，通过要求提供两个或更多证明身份的因素来降低密码泄露的风险。
 5. **微分段**：将网络划分为小的、受管理的段，以减少潜在攻击者的移动范围，并限制对敏感数据的访问。
 6. **基于风险的适应性策略**：根据用户的行为、设备的安全状态、访问时间和位置等因素，动态调整访问控制策略。
+
+## 引用本文
+
+APA：
+Yu, J. (2024年2月25日). 权限模型的迷思. Jiachen Yu. https://www.yujiachen.com/the-permission-model-myth/zh/
+
+BibTeX：
+```bibtex
+@online{yu2024thepermissionmodelmyth,
+  author = {Yu, Jiachen},
+  title = {权限模型的迷思},
+  year = {2024},
+  publisher = {Jiachen Yu},
+  url = {https://www.yujiachen.com/the-permission-model-myth/zh/},
+  urldate = {2026-02-08},
+}
+```

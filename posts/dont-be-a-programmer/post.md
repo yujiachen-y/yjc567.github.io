@@ -25,3 +25,20 @@
   
 
 拥抱更多的不确定性吧，拥抱真正的热爱，用语言去重新组织生活，热爱代码，热爱编程，热爱结构化和设计模式，但不要去成为一个所谓的程序员。
+
+## 引用本文
+
+APA：
+Yu, J. (2022年5月1日). 不要成为一个程序员. Jiachen Yu. https://www.yujiachen.com/dont-be-a-programmer/zh/
+
+BibTeX：
+```bibtex
+@online{yu2022dontbeaprogrammer,
+  author = {Yu, Jiachen},
+  title = {不要成为一个程序员},
+  year = {2022},
+  publisher = {Jiachen Yu},
+  url = {https://www.yujiachen.com/dont-be-a-programmer/zh/},
+  urldate = {2026-02-08},
+}
+```

@@ -37,3 +37,20 @@
 3. 日常做事上，把评价事物的标准从注重”完成度“转换到注重”创新性“：我自己有一个很不好的学生思维就是明明花 20% 的时间可以拿到 80% 的成果，但自己会去花 100% 的时间去拿到 100% 的成果，但其实多出来的 20% 成果很多都是一些琐碎或不重要之事；现在对我来说，快速地 deliver 结果，验证 idea 的价值是更重要的事情。剩下的 20%，如果你的 80% 足够重要，那么会有很多人来愿意做的。
 ---- 
 不知道的东西永远比已知的东西有价值。
+
+## 引用本文
+
+APA：
+Yu, J. (2024年12月26日). 新事情 vs 旧事情. Jiachen Yu. https://www.yujiachen.com/new-things-vs-old-things/zh/
+
+BibTeX：
+```bibtex
+@online{yu2024newthingsvsoldthings,
+  author = {Yu, Jiachen},
+  title = {新事情 vs 旧事情},
+  year = {2024},
+  publisher = {Jiachen Yu},
+  url = {https://www.yujiachen.com/new-things-vs-old-things/zh/},
+  urldate = {2026-02-08},
+}
+```

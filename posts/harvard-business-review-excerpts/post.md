@@ -115,3 +115,20 @@
 [我们如何对自己进行自我管理](https://mp.weixin.qq.com/s/GS5SjC1LNVZGWA5V2yYfMw)
 
 [德鲁克 | 管理自我 （Managing Oneself）](https://mp.weixin.qq.com/s/puFziJd4G6Wb1XP4FEsGzQ)
+
+## 引用本文
+
+APA：
+Yu, J. (2023年1月2日). 哈佛商业评论摘抄. Jiachen Yu. https://www.yujiachen.com/harvard-business-review-excerpts/
+
+BibTeX：
+```bibtex
+@online{yu2023harvardbusinessreviewexcerpt,
+  author = {Yu, Jiachen},
+  title = {哈佛商业评论摘抄},
+  year = {2023},
+  publisher = {Jiachen Yu},
+  url = {https://www.yujiachen.com/harvard-business-review-excerpts/},
+  urldate = {2026-02-08},
+}
+```

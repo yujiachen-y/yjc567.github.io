@@ -260,3 +260,20 @@ $$ \text{var}(\mathit \Delta \%) = \frac 1 {\overline{Y^c}^2}\text{var}(\overlin
 ## TBD 为什么选择t 分布？
 
 需要比较几个抽样分布的特点，可以参考一下大学教材中的总结。
+
+## 引用本文
+
+APA：
+Yu, J. (2021年12月24日). 关键迭代：可信赖的线上对照实验. Jiachen Yu. https://www.yujiachen.com/key-iterations-trustworthy-online-controlled-experiments/zh/
+
+BibTeX：
+```bibtex
+@online{yu2021keyiterationstrustworthyonli,
+  author = {Yu, Jiachen},
+  title = {关键迭代：可信赖的线上对照实验},
+  year = {2021},
+  publisher = {Jiachen Yu},
+  url = {https://www.yujiachen.com/key-iterations-trustworthy-online-controlled-experiments/zh/},
+  urldate = {2026-02-08},
+}
+```

@@ -35,3 +35,20 @@
 ## 隐私
 
 密码和一些证件照片我则是统一收集到了1Password里面，这一类的备份并不是特别重要，首先证件照片即使丢失也有本体，密码的话我有重设密码的方法。
+
+## 引用本文
+
+APA：
+Yu, J. (2022年7月2日). 个人数据备份实践. Jiachen Yu. https://www.yujiachen.com/personal-data-backup-practices/
+
+BibTeX：
+```bibtex
+@online{yu2022personaldatabackuppractices,
+  author = {Yu, Jiachen},
+  title = {个人数据备份实践},
+  year = {2022},
+  publisher = {Jiachen Yu},
+  url = {https://www.yujiachen.com/personal-data-backup-practices/},
+  urldate = {2026-02-08},
+}
+```
