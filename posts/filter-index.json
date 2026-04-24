@@ -1,5 +1,19 @@
 [
   {
+    "translationKey": "buddhism-wuming",
+    "lang": "zh",
+    "title": "佛法与「无明」",
+    "date": "2026-04-24",
+    "shortDate": "04-24",
+    "year": "2026",
+    "categories": [
+      "Essays"
+    ],
+    "categoryColorIndex": 0,
+    "coverImage": null,
+    "url": "/buddhism-wuming/"
+  },
+  {
     "translationKey": "thoughts-on-the-video-quality-evaluation",
     "lang": "en",
     "title": "Thoughts on the Video Quality Evaluation",
