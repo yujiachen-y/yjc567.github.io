@@ -1,291 +1,295 @@
 
-# 佛法与「无明」：一个两千五百年前的诊断
+# Buddhism and Avidyā: A 2,500-Year-Old Diagnosis
 
 > **Author: Claude (AI)**
-> 本条目由 AI 基于用户的笔记线索与网络资料综合写成，非用户手写。
+> This article was drafted by AI based on notes and publicly available sources, not hand-written by the author.
 
-## 引子
+## Opening
 
-你大概有过这样的夜晚——为了一件没能拿到的结果反复回放：复盘自己哪句话说错了，对方哪个神情意味着什么，如果当时换一种做法会不会不同。你知道这件事已经过去了，但脑子停不下来。
+You've probably had nights like this. You're lying in bed replaying something that didn't go your way — what you should have said differently, what that one look meant, whether it would have turned out differently if you'd done just one thing otherwise. You know the event is over. Your mind will not stop.
 
-我第一次读到"无明"这个词的时候，起初以为是"没文化"的意思。后来才发现这是佛陀两千五百年前对我那种夜晚的诊断：不是你不够聪明，也不是你运气差，而是你看世界的方式，在一个根本的地方错位了。
+When I first came across the word **avidyā** (无明 in Chinese, often translated as "ignorance"), I assumed it meant "uneducated." It turns out it's the Buddha's 2,500-year-old diagnosis for exactly those nights: the problem isn't that you're not smart enough or unlucky — it's that your default way of seeing the world is, in a fundamental place, slightly off.
 
-这篇文章想把这个诊断讲清楚——不是为了劝谁信佛，而是因为这套框架本身就是一把很好用的尺子。
+This essay tries to lay out that diagnosis clearly. Not to convert anyone — but because the framework itself turns out to be an unusually good ruler for measuring one's own mind.
 
-## 一、佛陀为什么只讲「苦」
+## I. Why the Buddha Only Talked About Suffering
 
-《中阿含经》里有一个很有名的故事，叫**箭喻经**。
+There's a well-known story in the *Majjhima Nikāya* called the **Parable of the Poisoned Arrow**.
 
-有个弟子跑来问佛陀一串形而上的大问题：宇宙是有边还是无边？灵魂和肉体是一还是异？人死后还在不在？佛陀一个都不回答。他打了一个比方：
+A student once came to the Buddha with a list of metaphysical questions: Is the universe finite or infinite? Are soul and body one thing or two? Does the self continue after death? The Buddha refused to answer any of them. Instead he offered this image:
 
-> 一个人中了毒箭，命悬一线。有人要给他拔箭，他却说："别拔，我要先知道——射箭的人是什么种姓？姓什么？高还是矮？用的弓是什么木头做的？箭羽是什么鸟的羽毛？"
+> Imagine a man struck by a poisoned arrow, dying. Someone tries to pull it out, and he protests: "Wait — I need to know first. What caste was the archer? What was his name? Was he tall or short? What wood was the bow made of? What bird's feather was the fletching?"
 >
-> 还没等问完，人就死了。
+> Before he's finished asking, he dies.
 
-佛陀说，我来这个世界不是为了解答那些你回答得了回答不了都不影响你继续痛苦的问题。**我只做一件事：教你怎么拔箭。**
+The Buddha's point was: I am not here to answer questions whose answers have no bearing on whether you keep suffering. **I do exactly one thing — I teach you how to pull out the arrow.**
 
-所以佛法从一开始就不是一套形而上学，而是一套**关于如何停止制造痛苦的操作指南**。这是读懂它的前提。
+So from the very beginning, Buddhism is not a metaphysical system. It's **an operating manual for how to stop manufacturing your own suffering**. That framing is a prerequisite for reading anything that follows.
 
-## 二、诊断：四圣谛
+## II. The Diagnosis: The Four Noble Truths
 
-佛陀第一次说法讲的就是四圣谛，逻辑和看病惊人地像：
+The Buddha's very first sermon laid out the Four Noble Truths, and the logical shape is almost eerily like a medical diagnosis:
 
-| 谛 | 含义 | 看病类比 |
+| Truth | Meaning | Medical analogue |
 |---|---|---|
-| **苦** | 生老病死、爱别离、求不得——人生本质上不圆满 | 症状 |
-| **集** | 苦的根源：贪欲与执着；而贪欲的深层来自**无明** | 病因 |
-| **灭** | 从执着里解脱，不再被无明驱动 | 痊愈 |
-| **道** | 八正道：正见、正思、正语、正业、正命、正精进、正念、正定 | 药方 |
+| **Dukkha (Suffering)** | Birth, aging, sickness, death, separation from loved ones, not getting what you want — life is structurally unsatisfactory | Symptoms |
+| **Samudaya (Origin)** | The root of suffering is craving and clinging; and craving, at depth, comes from **avidyā** | Diagnosis |
+| **Nirodha (Cessation)** | Freedom from clinging; no longer driven by avidyā | Recovery |
+| **Magga (Path)** | The Noble Eightfold Path: right view, intention, speech, action, livelihood, effort, mindfulness, concentration | Prescription |
 
-四圣谛最关键的一句断言是：**苦是有原因的，原因是可以断的。** 不是命运、不是惩罚、不是天生倒霉。这在当时是很激进的主张——大部分宗教告诉你苦是神的安排、是业报、是你必须承受的东西；佛陀说，苦是个**技术问题**，有因有果，有因就能断。
+The radical claim of the Four Noble Truths is this: **suffering has causes, and those causes can be cut.** Not fate, not punishment, not cosmic design. In its day, this was bold to the point of heresy — most religions told you suffering was the will of the gods, karmic debt, or simply the price of being alive. The Buddha said: suffering is an **engineering problem**. Cause and effect. Break the cause and you break the effect.
 
-## 三、苦是怎么生起来的：第二支箭
+## III. How Suffering Actually Arises: The Second Arrow
 
-那苦到底怎么生起来？佛陀在**第二支箭经**（*Sallatha Sutta*）里讲了一个更短的比喻：
+So how does suffering arise, concretely? The Buddha lays it out in a shorter parable, the **Sallatha Sutta** (*The Second Arrow*):
 
-> 一个人被射中了一箭，身上很痛。这是第一支箭。
-> 紧接着他开始想：为什么是我？谁干的？我下次怎么躲？我这辈子是不是完了？——于是他又中了第二支箭。
+> A man is hit by an arrow. His body hurts. That's the first arrow.
+> Immediately he begins thinking: *Why me? Who did this? How do I avoid this next time? Is my life over?* — and so he is hit by a second arrow.
 >
-> **凡夫中两箭，圣者只中一箭。**
+> **An ordinary person is struck by two arrows; one who has seen clearly is struck by only one.**
 
-第一支箭是世界给你的——工作丢了、恋人走了、考试砸了、朋友误会你了。这是真实的痛，没办法。
+The first arrow is what the world does to you: a lost job, a relationship ending, a failed interview, a friend misreading you. Real pain. No way around it.
 
-第二支箭是你**自己射自己的**——反刍、抗拒、怨恨、幻想、自我否定。它才是让痛延长十倍一百倍的东西。
+The second arrow is what **you do to yourself**: rumination, resistance, resentment, fantasy, self-indictment. It's the second arrow that stretches pain ten, a hundred times longer than it needed to be.
 
-而从"第一支箭"到"第二支箭"之间，发生了什么？佛陀把这个过程拆成了十二步，叫**十二因缘**：
+And between the first arrow and the second, what happens? The Buddha mapped the process as twelve steps, the **Twelve Links of Dependent Origination**:
 
-> 无明 → 行 → 识 → 名色 → 六入 → 触 → 受 → 爱 → 取 → 有 → 生 → 老死
+> Avidyā → Volitional formations → Consciousness → Name-and-form → Six sense bases → Contact → Feeling → Craving → Clinging → Becoming → Birth → Aging-and-death
 
-细节不重要，重要的是**这条链的起点叫「无明」**。只要无明在，这条链就会一遍一遍地自动运行——遇到一件小事，它也能跑完全程。要想中断，得从源头下手。
+The details matter less than this single fact: **the chain starts at avidyā**. As long as avidyā is in place, the chain runs itself — even a tiny event is enough to kick the whole sequence off. To interrupt it, you have to go back to the source.
 
-## 四、「无明」到底是什么
+## IV. What Avidyā Actually Is
 
-### 不是"没文化"
+### Not "uneducated"
 
-"无明"是梵语 **Avidyā** 的意译。拆开看：
+*Avidyā* is the Sanskrit; 无明 is how it entered Chinese. Taken apart:
 
-- **a-** = 否定前缀，"非"
-- **vidyā** = 知、明、了知
+- **a-** — negative prefix, "non-"
+- **vidyā** — knowing, seeing, understanding
 
-巧合（或者不巧合）的是，vidyā 和英语里的 *wisdom*、*video*、*vision* 同源，都来自印欧词根 \*weid-「看见、知道」。所以"无明"最字面的意思是"**看不见**"。不是没学问，而是——**看错了事物本来的样子**。
+Not coincidentally, *vidyā* shares a root with English *wisdom*, *video*, *vision* — all tracing back to Proto-Indo-European \*weid-, "to see, to know." So the most literal reading of *avidyā* is simply "**not seeing**." Not a lack of schooling — a failure to **see things as they actually are**.
 
-### 三个看错
+### Three Misperceptions
 
-具体看错什么？佛陀说主要是这三件事：
+What, specifically, do we fail to see? The Buddha identifies three:
 
-| 真实 | 无明的误解 | 典型后果 |
+| Reality | Avidyā's misread | Typical consequence |
 |---|---|---|
-| 诸行**无常**（一切都在变） | 以为人、关系、情绪、成就是不会变的 | 一旦失去，就觉得"本不该失去"而痛苦 |
-| 诸法**无我**（没有一个固定的"我"） | 执着一个恒定的"我"/ "我的" | 一旦被否定，就觉得是本体受伤 |
-| 诸法**缘起**（事物互相依存） | 以为事物是独立存在、可以单独抓取的 | 看不见自己正处在一张条件网里 |
+| All things are **impermanent** | Treating people, relationships, emotions, and achievements as if they were permanent | When they change, we feel "this shouldn't have happened" and suffer |
+| There is no fixed **self** | Clinging to a stable "me" / "mine" | When challenged, we feel the very core of us is under attack |
+| Everything **arises dependently** | Treating things as if they existed independently and could be grasped in isolation | We can't see the web of conditions we're already living inside |
 
-这三条听起来很抽象，但它们每天都在我们身上发生。下面两个佛经里的小故事，应该能让你立刻明白。
+These sound abstract on the page, but they happen to all of us daily. Two short stories from the Buddhist canon make them instantly concrete.
 
-### 故事一：Kisa Gotami 与芥菜子（讲"无常"）
+### Story 1: Kisa Gotami and the Mustard Seed (on Impermanence)
 
-这是佛陀时代最有名的故事之一，出自《法句经》注疏。
+One of the most famous stories from the Buddha's lifetime, preserved in the commentaries to the *Dhammapada*.
 
-> Kisa Gotami 是一个年轻的母亲，她唯一的儿子病死了。她疯了一样抱着孩子的尸体，满城找人救他，没有人能帮她。最后有人说："你去找佛陀吧。"
+> Kisa Gotami was a young mother whose only son had just died. Half-mad with grief, she carried his body from house to house, begging someone to bring him back. No one could. Finally someone said, "Go find the Buddha."
 >
-> 她抱着孩子跪在佛陀面前哀求："请让我的儿子活过来。"
+> She knelt before him and pleaded, "Please — bring my son back to life."
 >
-> 佛陀说："可以。但你要先给我找一样东西——**一粒芥菜子**。条件是：这粒芥菜子必须来自一户从来没有死过人的家庭。"
+> The Buddha said, "I can. But first you must bring me something — **a mustard seed**. One condition: the seed must come from a household that has never lost anyone to death."
 >
-> Kisa Gotami 大喜，挨家挨户去问。每一家都愿意给她芥菜子——芥菜子在印度和今天的盐一样便宜，家家都有。但当她问到"你家里有没有死过人"，每一家都沉默，然后告诉她：我们失去过父亲，失去过祖母，失去过孩子，失去过兄长……
+> She was overjoyed — mustard seeds in India were as common as salt is today; every household had some. But when she asked, "Has anyone in this home ever died?" — each family fell silent, and then told her: we have lost a father, a grandmother, a child, a brother…
 >
-> 她走完整个村庄，手里没有一粒芥菜子。但她懂了。
+> By the end of the village, her hands were empty. But she understood.
 >
-> 她回到佛陀面前，安葬了孩子，成为了佛陀的弟子。
+> She returned, buried her son, and became one of the Buddha's disciples.
 
-这个故事最狠的地方是：佛陀没有跟她讲"无常"这个概念一个字。他让她**自己走出来看到**。
+What's devastating about this story is that **the Buddha never spoke the word "impermanence" to her**. He let her **walk out into it and see it for herself**.
 
-这就是佛法里"慧"的本来面目——**不是想明白，是看明白**。
+This is what Buddhist *wisdom* actually looks like — **not figuring it out; seeing it.**
 
-### 故事二：盲人摸象（讲"无明作为把局部当全部"）
+### Story 2: The Blind Men and the Elephant (on Mistaking the Part for the Whole)
 
-出自《长阿含经》和《涅槃经》。
+From the *Dīgha Nikāya*, and echoed in the *Mahāparinirvāṇa Sūtra*.
 
-> 一个国王召集了一群盲人，让他们摸一头大象，然后说出大象是什么样子。
+> A king gathered a group of blind men and told them to feel an elephant and describe what it was like.
 >
-> 摸到象牙的说："大象像一根白萝卜。"
-> 摸到耳朵的说："不对，大象像一把扇子。"
-> 摸到腿的说："你们全错了，大象像一根柱子。"
-> 摸到肚子的说："大象分明像一堵墙。"
-> 摸到尾巴的说："你们都胡说，大象就是一根绳子。"
+> The one who felt the tusk said, "An elephant is like a smooth white root."
+> The one who felt the ear said, "No, an elephant is like a fan."
+> The one who felt the leg said, "You're both wrong — an elephant is like a pillar."
+> The one who felt the belly said, "No, clearly it's like a wall."
+> The one who felt the tail said, "Nonsense — an elephant is a rope."
 >
-> 他们吵了起来，每个人都坚信自己摸到的才是真相。
+> They argued, each certain his own description was the truth.
 
-国王在一旁看着笑。佛陀说，众生就是这些盲人。
+The king stood off to the side and laughed. The Buddha said: we are those blind men.
 
-注意——**他们每个人说的都没错**。象牙确实像白萝卜，耳朵确实像扇子。无明不是说他们"感觉错了"，而是说他们**把自己那一小段触感，误当成了大象的全部**。
+Notice — **not one of them was wrong about what they'd felt**. Tusks really are smooth; ears really are like fans. Avidyā isn't the claim their perception was hallucinated. It's that each of them **took his small piece of contact and mistook it for the whole elephant**.
 
-回头看我们自己：一次失败被当成"我这个人不行"；一次被拒绝被当成"世界讨厌我"；一段感情的终结被当成"我再也不会被爱了"。每一次，我们都在把一根象腿当成整头大象。
+Now think about yourself. One failure becomes "I'm just not good enough." One rejection becomes "the world doesn't want me." The end of one relationship becomes "I'll never be loved again." Every time, we take one leg and call it the whole elephant.
 
-## 五、缘起性空：佛法对"真实"的正面回答
+## V. Dependent Origination and Emptiness: Buddhism's Positive Answer
 
-上面说的"无明"是诊断——告诉你看错了什么。但佛法并没有停在"你错了"这里；它还给出了事物**实际上**是什么样的正面描述，这就是 **缘起性空**。
+Everything so far is the *diagnosis* — what we're failing to see. But Buddhism doesn't stop at "you're seeing wrong." It also describes **what is actually there**. This is the teaching of **dependent origination and emptiness** (缘起性空 in Chinese).
 
-这四个字是佛法里最精妙、也最容易被误解的一组概念。它同时也是大乘佛教（尤其是中观学派）的理论核心。
+This pair is the conceptual core of Mahāyāna Buddhism — especially the Mādhyamika school — and also the most misunderstood pair in the whole tradition.
 
-### 缘起：此有故彼有
+### Dependent Origination: "When this exists, that exists"
 
-"缘起"的梵文是 **Pratītyasamutpāda**，字面意思就是"依赖条件而生起"。佛陀在《杂阿含经》里用一句话把它讲尽：
+The Sanskrit is **pratītyasamutpāda**, literally "arising-in-dependence." The Buddha states it in one compact formula in the *Samyutta Nikāya*:
 
-> **此有故彼有，此生故彼生；此无故彼无，此灭故彼灭。**
+> **When this exists, that exists; when this arises, that arises.**
+> **When this does not exist, neither does that; when this ceases, that ceases.**
 
-一件事之所以存在，是因为另外一堆条件同时存在；它之所以消失，是因为那堆条件变了。**没有任何事物是从自己里面长出来的**。
+A thing exists because another cluster of conditions is simultaneously in place. It vanishes when those conditions shift. **Nothing grows out of itself.**
 
-举一个最平常的例子——你手里这杯茶。
+Take the most ordinary example — the cup of tea in your hand.
 
-它不是凭空出现的：需要水、茶叶、热、杯子。再往前追溯，水来自雨，雨来自海的蒸发，蒸发需要阳光；茶叶来自一棵茶树，茶树需要土壤、雨水、采茶人、晾晒工、运输工人、整条供应链；杯子背后是陶土、窑火、一个几千年传下来的手艺。
+It didn't appear out of nowhere. It needed water, leaves, heat, a cup. Trace further back: the water was rain, the rain came from ocean evaporation, which needed sunlight; the leaves came from a tea plant, which needed soil, rain, a picker, a dryer, an entire supply chain; the cup traces back to clay, a kiln, a ceramic tradition passed down over centuries.
 
-任何一环没对上，你现在手里就不会有这杯茶。它不是"一个独立的东西恰好存在于此"，而是**整个宇宙在这一刻恰好这样配合，呈现成了一杯茶的样子**。
+Miss any link, and the cup in your hand doesn't exist. It's not "a discrete object that happens to be here." It is **the entire universe, in this moment, configured to look like a cup of tea.**
 
-### 性空：没有独立自性
+### Emptiness: No Independent Self-Existence
 
-那"空"呢？这是全篇最需要讲清楚的一个字，因为它被误解得最严重。
+And then there's "emptiness" — the most misread word in this entire essay.
 
-**"空"不是"什么都没有"**（那是虚无主义），**也不是"看破红尘、人生如梦"**（那是消极主义）。它的准确含义是：
+**Emptiness is *not* "nothing exists"** (that's nihilism). **It is *not* "life is meaningless, see through it all"** (that's world-weariness). The precise meaning is:
 
-> **没有独立自性**——empty of inherent self-existence。
+> **Empty of inherent self-existence** — no independent, self-contained essence.
 
-《那先比丘经》里有一段经典的对话。弥兰陀王（希腊化的米南德王）去找那先比丘，劈头就问："你叫那先，那到底什么是'那先'？"那先不直接回答，反问他：
+The *Milinda Pañhā* contains a classic dialogue on this. King Milinda (the Hellenistic king Menander I) comes to the monk Nāgasena and asks, point-blank: "You're called Nāgasena — what exactly *is* 'Nāgasena'?" Nāgasena doesn't answer directly; instead:
 
-> "大王，您是坐车来的吗？"
-> "是。"
-> "那么请问大王——**车轴**是车吗？**轮子**是车吗？**辕木**是车吗？**车身**是车吗？"
-> 王一一回答"不是"。
-> "那么——离开了轴、轮、辕、身，另外有没有一个'车'的本体？"
-> 王只好回答："也没有。"
+> "Great King — did you come here by chariot?"
+> "I did."
+> "Then let me ask — is the **axle** the chariot? Are the **wheels** the chariot? Is the **pole** the chariot? Is the **body** the chariot?"
+> The king answered "no" to each.
+> "Then, apart from axle, wheels, pole, and body — is there some **chariot itself**?"
+> The king had to admit: "No, not apart from those."
 >
-> 那先说："对了。'车'只是当轴、轮、辕、身按某种方式组合起来时，我们给这个组合起的一个**名字**。离开了条件，没有独立的'车'。'那先'也一样。"
+> Nāgasena said: "Exactly. 'Chariot' is simply the name we use when axle, wheels, pole, and body are assembled in a certain way. Apart from the conditions, there is no independent 'chariot.' 'Nāgasena' is the same."
 
-这就是"性空"最清楚的解释。"车"不是不存在——你确实坐着它来了；但它**没有独立自性**，它是一组条件的暂时聚合，我们给这个聚合起了一个**假名**。
+That's about as clean a statement of emptiness as exists. The chariot doesn't *fail to exist* — the king really did ride it here. But it has **no independent essence**; it's a temporary aggregate of conditions, to which we've attached a **conventional name**.
 
-你、我、这杯茶、这段关系、你所谓的"自我"——全都是这样。
+You, me, this cup of tea, that relationship, the thing you call "myself" — all the same way.
 
-### 缘起即性空
+### Dependent Origination *is* Emptiness
 
-看到这里你可能已经猜到：**缘起和性空其实是同一件事的两面**。
+By now you may have sensed it: **dependent origination and emptiness are two sides of a single fact.**
 
-公元二世纪的龙树菩萨在《中论》里用一首偈子把这点钉死：
+The 2nd-century philosopher Nāgārjuna pinned this in one verse of the *Mūlamadhyamakakārikā*:
 
-> **众因缘生法，我说即是空，亦为是假名，亦是中道义。**
+> **Whatever arises through causes and conditions —
+> that, I say, is emptiness.
+> It is also a conventional designation.
+> And this itself is the middle way.**
 
-翻译过来：凡是由因缘聚合而生的东西，我就说它是"空"的（没有独立自性）；它只是一个暂时的名字；而这正是不偏于"实有"、也不偏于"虚无"的**中道**。
+Translation: anything that arises through conditions *is* empty (of independent essence); it is also a conventional name; and this is exactly the "middle way" between "things are truly real" and "nothing exists at all."
 
-**因为一切都是缘起，所以一切都是性空。** 这两者不是前后关系，而是同一个事实的两种说法。
+**Because everything arises dependently, everything is empty.** Not a sequence — an identity.
 
-这也是为什么《心经》里那句著名的"**色即是空，空即是色**"并不玄——"色"（现象）本身就是缘起聚合的，所以它本身就是"空"（无自性）；反过来，正因为它无自性、可以被条件改变，它才能显现成一个一个具体的"色"。两个不是对立的，是互相成立的。
+This is also why the famous line from the *Heart Sūtra* — "**form is emptiness, emptiness is form**" — isn't mystical at all. "Form" — any phenomenon — is already a composite of conditions, so it is already "empty" of independent self-existence. And precisely *because* it has no fixed essence, it can appear as this or that specific form. The two aren't opposites; they are each other.
 
-### 因陀罗网：一颗宝珠里映出整个宇宙
+### Indra's Net: The Universe in a Single Bead
 
-《华严经》给这个思想留下了一个极美的意象，叫**因陀罗网**。
+The *Avataṃsaka Sūtra* gives this idea one of the most beautiful images in all of Buddhist literature — **Indra's Net**:
 
-> 天帝因陀罗的宫殿上空，挂着一张巨大的网。网的每一个结上都缀着一颗宝珠。每颗宝珠都清澈无比，能映出周围所有其他宝珠的影子。
+> Stretched above Indra's palace is a vast net. At every knot of the net hangs a jewel. Each jewel is perfectly clear — it reflects every other jewel in the net.
 >
-> 而每一颗被映出的宝珠里，又映着它周围所有宝珠的影子；那些影子里，又映着更多宝珠的影子……层层无穷，重重无尽。
+> And inside each reflected jewel, you can see the reflections of all the jewels around it. Inside those reflections, more reflections. Layer after layer, without end.
 >
-> 你取下任何一颗宝珠，整张网都会改变。
-> 你注视任何一颗宝珠，都在同时注视着整个宇宙。
+> Remove any single jewel, and the entire net is different.
+> Gaze at any single jewel, and you are gazing at the entire universe.
 
-这是缘起的极致图像。没有一颗宝珠能"独立"存在——它的光来自其他宝珠的反射，它的映像又构成了别的宝珠的光。整张网是一个不可分割的整体。
+This is dependent origination rendered in light. No jewel exists alone — its light is the reflected light of every other jewel; its reflections are what allow the others to shine. The net is one undivided whole.
 
-人也是这样。你之所以是今天的你，是因为你的父母、你的语言、你的童年、你今天读的这篇文章、你昨晚做的那个梦……一切条件在这一刻恰好这样配合。任何一环抽掉，你都不是这个"你"了。
+A person is the same. You are this particular you because of your parents, your language, your childhood, the essay you're reading right now, the dream you had last night — every condition, configured exactly this way at this moment. Take any one strand out, and you are no longer *this* you.
 
-### 这对"无明"意味着什么
+### What This Says About Avidyā
 
-现在可以回头看了。无明的三个误解——把无常当恒常、把无我当有我、把缘起当独立——其实是**同一个误解的三个侧面**：
+Now we can close the loop. The three misperceptions of avidyā — mistaking impermanence for permanence, non-self for self, dependent arising for independence — are really **three faces of one mistake**:
 
-> 以为事物有一个独立的、自足的、恒定的本质。
+> Believing that things have an independent, self-contained, fixed essence.
 
-而缘起性空是一面镜子，把这个误解照得无处可藏。一旦你真的看见"这杯茶是整个宇宙此刻的配合"，你也就同时看见了它**不会永恒**（无常）、**里面没有一个'茶的本体'**（无我）、**它和万物牵连**（缘起）。三件事是一件事。
+Dependent origination and emptiness is the mirror that leaves this mistake no place to hide. The moment you truly see "this cup of tea is the whole universe, this instant, configured just so," you simultaneously see: it won't last (impermanence), there's no "tea-essence" inside it (non-self), and it is woven with everything else (dependent origination). Three things at once.
 
-Kisa Gotami 走完村庄那一刻，看见的不是"无常"三个字，而是**她自己身处的那张因陀罗网**——每一家都有一颗"失去"的宝珠在闪光，那些光映在她的宝珠上，她终于看见自己并不是一个独立承受不幸的个体。
+When Kisa Gotami finished walking her village, what she saw wasn't the word "impermanence." She saw **the net she herself was standing in** — every home had its own jewel of loss shining, and those lights were reflected back onto her own jewel. She finally saw that she wasn't an isolated individual bearing an unjust fate.
 
-这也是为什么佛经里说"**见缘起即见法，见法即见佛**"。**看见缘起，就是走出无明的那一步。**
+This is why the sutras say: "**To see dependent origination is to see the Dharma; to see the Dharma is to see the Buddha.**" **Seeing dependent origination is the step out of avidyā.**
 
-## 六、怎么对治——戒、定、慧：从单体服务重构成微服务
+## VI. The Cure: Sīla, Samādhi, Prajñā — Refactoring a Monolith into Microservices
 
-这一节我换一套科技从业者更熟悉的语言来讲。
+Let me switch into a register that will feel native to anyone who's worked in tech.
 
-**把"自我"想象成一个在线服务**。大多数人的心智是一个**单体服务（monolith）**——代码高度耦合、状态全局共享、没有限流、没有熔断、没有隔离。只要一个小 bug 打进来（同事一个眼神、PR 被打回、一次面试没过、伴侣一句话），整个系统就会 500——饭不想吃、觉不想睡、别的事也做不下去。这种时刻你会觉得"**我这个人完了**"，因为确实，那个瞬间，你那个"我"就是一整块崩掉了。
+**Imagine "the self" as an online service.** Most people's minds are a **monolith** — tightly coupled code, globally shared state, no rate limits, no circuit breakers, no isolation. A single bad request comes in (a colleague's look, a PR rejected, a failed interview, an offhand comment from your partner) and the whole system 500s — you can't eat, can't sleep, can't focus on anything else. In those moments you feel "**my whole life is ruined**" — because in a sense it *is*; the self, as a single block, has gone down.
 
-**修行的本质，就是把这个心智系统从单体重构成微服务**——每个模块有自己的边界、有限流、有熔断、有监控。同样一个事件进来，它只会触发对应的那一个服务，别的服务继续健康运行。一次失败就只是一次失败，而不是"整个人生的故障"。
+**The point of spiritual practice is to refactor that mental system from a monolith into microservices.** Each module has its own boundary, its own rate limits, its own circuit breakers, its own monitoring. The same event comes in, hits only the relevant service; everything else keeps running. A failure is just a failure, not "a total outage of my entire life."
 
-佛法给出的重构路径叫 **三学**：戒（sīla）、定（samādhi）、慧（prajñā）。
+Buddhism calls the refactoring path the **Three Trainings** — Sīla (ethics), Samādhi (concentration), Prajñā (wisdom).
 
-### 戒：限流与熔断
+### Sīla: Rate Limiting and Circuit Breaking
 
-先不伤人、不妄语、不过度刺激自己——这不是道德要求，而是**系统稳定性的前置条件**。
+Don't harm people, don't lie, don't over-stimulate yourself — this isn't a moral commandment, it's a **precondition for system stability**.
 
-一个已经 CPU 99%、内存快要 OOM 的系统，你没法在上面做任何精细的重构。你得先把不必要的流量挡在外面（限流），把疯狂重试的下游切掉（熔断）。对应到生活里就是：睡够、吃好、少喝酒、少刷手机、远离那些让你更动摇的人和环境。
+A system running at 99% CPU, moments from OOM, can't be refactored in flight. You first have to reject non-essential traffic (rate limit), cut off downstreams stuck in retry storms (circuit break). In daily life, that looks like: sleep enough, eat properly, drink less, stop doomscrolling, get away from people and environments that keep destabilizing you.
 
-这一步不性感，但跳过它，后面两步都做不了。
+It's unglamorous, but skip it and the next two steps are impossible.
 
-### 定：给黑盒装上可观测性
+### Samādhi: Adding Observability to the Black Box
 
-"定"就是给心装上 **observability**——metrics、tracing、logging。
+Samādhi is installing **observability** — metrics, tracing, logging — into your own mind.
 
-单体系统最痛苦的地方是：出了问题你不知道是哪里出了问题。没日志、没监控、全凭猜。大多数人的心就是这样——你知道自己"心情不好"，但说不出具体是**哪一个子系统**在报警、它是在**哪个时刻、被哪条消息**触发的，只能笼统地说"今天状态很差"。
+The worst thing about a monolithic system is that when something goes wrong, you have no idea *where* it went wrong. No logs, no monitoring, just guessing. Most people's inner life is exactly this. You know you're "in a bad mood," but you can't name *which subsystem* is firing alerts, *when* it started, or *what payload* triggered it. All you have is "today just sucks."
 
-"定"的训练就是给内心装上采集层。最经典的练习是**数呼吸**——坐下，数 1 到 10，然后重新开始。听起来很蠢，但真做 10 分钟你就会发现：你数不到 3 就跑神了。你的心一直在疯狂地发消息，只是从来没有一个 consumer 去消费它们。
+The training is installing the instrumentation layer. The classic exercise is **counting breaths** — sit down, count from 1 to 10, then start over. Laughably simple. Try it for ten minutes and you'll find out: you don't make it to 3 before your mind wanders. Your mind has been broadcasting messages nonstop for years — there was just never a consumer reading them.
 
-装上这一层之后，你才能回答最基本的问题——**此刻我在想什么？正在感受什么？是哪个触发点让我启动了这条反刍线程？**
+Once the instrumentation is in place, you can finally answer the basic questions: **what am I thinking right now? what am I feeling? what was the trigger that started the rumination thread currently running?**
 
-### 慧：把单体拆成微服务
+### Prajñā: Breaking the Monolith into Services
 
-慧是真正的重构——**把那团耦合在一起的"我"，拆成一组有清晰边界的服务**。
+Prajñā is the actual refactor — **decomposing the tangled "self" into services with clear boundaries.**
 
-回到上一节的缘起性空：你此刻的痛苦不是"一个整块的我在痛苦"，它是一张临时组起来的因陀罗网——昨晚没睡好（基础资源不足）、早上看到一条触发的消息（一条异常 payload）、胃里有点饿（底层服务异常）、对方那个神情让你想起了父亲（一条很旧的缓存被击中）。这些调用链同时被触发，你就崩了。
+Go back to dependent origination and emptiness. Your suffering right now is not "one monolithic self in pain." It is a temporary net of conditions: you slept badly (base resources low), you saw a triggering message this morning (bad payload in), you're hungry (underlying service unhealthy), someone's expression reminded you of your father (an old cache got hit). All these call chains fired at once — and you crashed.
 
-"**慧**"就是在事情发生的那一瞬间，看见整条调用链。一旦你看见"这次崩溃不是'我这个人不行'，而是 A 服务收到了一条异常请求，顺手又触发了 B 服务里的一条老逻辑"——整个事件就从**全局灾难**降级成**一次可以被处理的局部 incident**。
+**Prajñā is the capacity, in that very moment, to see the whole call chain.** Once you can see "this crash isn't 'I'm broken as a person' — it's service A receiving a malformed request and cascading into some legacy logic in service B," the event downgrades from **a global outage** into **a local incident you can actually handle.**
 
-**看见它是网，它就松了。** 这就是慧为什么能从无明里走出来——**无明就是把所有事都当成单体故障**（"我完了 / 我不值得被爱 / 这辈子没救了"）；**慧就是看见一切都是微服务级的、局部的、可拆解的、可恢复的**。
+**See that it's a net, and the net loosens.** That's why prajñā defeats avidyā — **avidyā treats everything as a monolithic failure** ("I'm done / I don't deserve love / my life is over"); **prajñā sees that everything is microservice-level — local, decomposable, recoverable.**
 
-人的成长过程，其实就是这张架构图的不断重构。同样一件事，20 岁时能让你崩溃一个月，30 岁时只需要崩一下午——不是因为事情变小了，是因为你心里的服务边界变清楚了。换句话说：
+Growing up, in a real sense, is the ongoing refactoring of this architecture diagram. The same event that would have crashed you for a month at 20 only takes you out for an afternoon at 30 — not because the event got smaller, but because your internal service boundaries got clearer. In other words:
 
-> **修行不是让你变得更少痛苦，而是让你的痛苦变得更有边界。**
+> **The goal of practice isn't to make you suffer less — it's to give your suffering better boundaries.**
 
-## 七、最后一个提醒——渡河舍筏
+## VII. One Last Warning: The Raft
 
-《中阿含经》里还有一个很有意思的比喻，叫**筏喻**。
+There's one more classic parable in the *Majjhima Nikāya* — the **Raft Simile**.
 
-> 一个人要过河。他砍木头造了一个筏子，靠着它渡到了对岸。上岸以后他想："这个筏子帮了我这么大的忙，我要把它扛在肩上，带着它走一辈子。"
+> A man needs to cross a river. He cuts wood, lashes a raft, and makes it to the far shore. Standing on the other side, he thinks: "This raft served me so well. I'll carry it on my shoulders for the rest of my life."
 >
-> 佛陀说：这个人聪明吗？不聪明。
+> The Buddha asks: is this man wise? No.
 >
-> **法如筏，渡过了就要放下。**
+> **The Dharma is a raft. Once you've crossed, you put it down.**
 
-这是佛陀一个非常重要的提醒——**连佛法本身都不能执着**。你抓着"我在修行"、"我懂了空性"、"我比别人觉悟"不放，那又是一种新的无明。
+This is one of the Buddha's most important warnings: **even the Dharma itself must not be clung to.** The moment you start clutching "I'm practicing," "I've understood emptiness," "I'm more awakened than others," you've manufactured a fresh, elegant species of avidyā.
 
-《心经》里那句很多人听过的"**无无明，亦无无明尽**"，就是这个意思：真正到了那一步，连"无明"和"缘起性空"这两个概念也不必再握在手里。指向月亮的手指，不要当成月亮本身。
+This is the meaning of the often-quoted line from the *Heart Sūtra*: "**no avidyā, and no ending of avidyā.**" At some point, even the concepts of "avidyā" and "dependent origination and emptiness" should be set down. Don't mistake the finger pointing at the moon for the moon itself.
 
-## 一句话总结
+## One-Line Summary
 
-> **无明是误以为现象是一个独立的实体；缘起性空是看见它本就不是。佛法的全部努力，就是让你看清这件事——先看清，再放下。**
+> **Avidyā is mistaking a phenomenon for an independent entity. Dependent origination and emptiness is seeing that it never was one. The whole effort of Buddhism is to let you see this clearly — and then let even that seeing go.**
 
-## 参考
+## References
 
-- 《杂阿含经》/《中阿含经》——佛陀早期说法的主要记录，毒箭喻、第二支箭、筏喻、"此有故彼有"都出自这里。
-- 《法句经》及其注疏——Kisa Gotami 的故事经典出处。
-- 《长阿含经·世记经》——盲人摸象故事。
-- 《那先比丘经》/《弥兰陀王问经》——"车喻"的出处，讲性空最好的故事。
-- 《华严经》——"因陀罗网"的出处。
-- 龙树《中论》——"众因缘生法，我说即是空"，中观学派对缘起性空的系统论述。
-- 《心经》——两百六十个字把"空性"和"无明"讲到了极致。
-- 一行禅师《正念的奇迹》、铃木俊隆《禅者的初心》——两本很好的入门读物，没有门槛。
+- *Majjhima Nikāya* and *Samyutta Nikāya* — the main records of the Buddha's early teaching. The Poisoned Arrow, the Second Arrow, the Raft, and "when this exists, that exists" all come from here.
+- *Dhammapada* and its commentaries — the classic source for the story of Kisa Gotami.
+- *Dīgha Nikāya* — the Blind Men and the Elephant.
+- *Milinda Pañhā* — source of the chariot parable and one of the clearest teachings on emptiness.
+- *Avataṃsaka Sūtra* — origin of Indra's Net.
+- Nāgārjuna, *Mūlamadhyamakakārikā* — "whatever arises through conditions, I say is emptiness." The systematic Mādhyamika account of dependent origination and emptiness.
+- *Heart Sūtra* — 260 characters that push emptiness and avidyā to their edge.
+- Thich Nhat Hanh, *The Miracle of Mindfulness*; Shunryu Suzuki, *Zen Mind, Beginner's Mind* — two excellent, accessible entry points.
 
-## 引用本文
+## Cite this article
 
-APA：
-Yu, J. (2026年4月24日). 佛法与「无明」. Jiachen Yu. https://www.yujiachen.com/buddhism-wuming/
+APA:
+Yu, J. (April 24, 2026). Buddhism and Avidyā. Jiachen Yu. https://www.yujiachen.com/buddhism-wuming/
 
-BibTeX：
+BibTeX:
 ```bibtex
 @online{yu2026buddhismwuming,
   author = {Yu, Jiachen},
-  title = {佛法与「无明」},
+  title = {Buddhism and Avidyā},
   year = {2026},
   publisher = {Jiachen Yu},
   url = {https://www.yujiachen.com/buddhism-wuming/},

@@ -17,7 +17,7 @@ The best LLM features aren’t built in silos. When engineers and PMs at **OpusC
 
 **What it is:** The number of hops — and the amount of interpretation — between your product requirement and the exact text/settings the model actually receives.
 
-![](https://cdn-images-1.medium.com/max/1024/1*zLLFbHw29DqVCOuTB7jkcQ.png)
+![](attachments/bridging-zLLFbHw29DqVCOuTB7jkcQ.png)
 
 [Tao Zhang first defines this metric in Manus.](https://www.linkedin.com/posts/manus-im_product-to-prompt-distance-is-fast-becoming-activity-7349444736048320512-zjjS?utm_source=share&utm_medium=member_desktop&rcm=ACoAACdAQCkBye_l2SHKxHq1FoCJdVQJdLz5Boc)
 
@@ -44,7 +44,7 @@ Each step adds interpretation and delay.
 
 Imagine you’re having a conversation with a chatbot. Each time you send a new message, the chatbot needs to understand the entire conversation history to provide a relevant response. Without a KV-Cache, the model would have to re-read and re-process the whole conversation from the beginning every single time it generates a new word. This is incredibly inefficient and slow, leading to a frustratingly laggy user experience, especially with longer conversations or longer prompts.
 
-![](https://cdn-images-1.medium.com/max/1024/1*h8t0jEhBl2fpC89sKmjmxw.png)
+![](attachments/bridging-h8t0jEhBl2fpC89sKmjmxw.png)
 
 KV-Cache has two major benefits:
 
@@ -187,7 +187,7 @@ One worth-to-mention common pitfall that PMs to avoid: changing field names in p
 
 ### Putting It All Together
 
-![](https://cdn-images-1.medium.com/max/1024/1*qCAC6ywG17E1WbUqvhuZRg.png)
+![](attachments/bridging-qCAC6ywG17E1WbUqvhuZRg.png)
 
 1. **Low pm to prompt distance** lets you iterate quickly on prompt improvements
 2. **Optimized KV-cache** makes those iterations cheaper to test at scale

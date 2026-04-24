@@ -1,5 +1,19 @@
 [
   {
+    "translationKey": "buddhism-wuming",
+    "lang": "en",
+    "title": "Buddhism and Avidyā",
+    "date": "2026-04-24",
+    "shortDate": "04-24",
+    "year": "2026",
+    "categories": [
+      "Essays"
+    ],
+    "categoryColorIndex": 0,
+    "coverImage": null,
+    "url": "/buddhism-wuming/"
+  },
+  {
     "translationKey": "thoughts-on-the-video-quality-evaluation",
     "lang": "en",
     "title": "Thoughts on the Video Quality Evaluation",
@@ -207,7 +221,7 @@
     ],
     "categoryColorIndex": 0,
     "coverImage": null,
-    "url": "/buddhism-wuming/"
+    "url": "/buddhism-wuming/zh/"
   },
   {
     "translationKey": "thoughts-on-the-video-quality-evaluation",
