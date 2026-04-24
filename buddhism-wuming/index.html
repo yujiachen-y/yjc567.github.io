@@ -1,2366 +1,394 @@
 <!doctype html>
-<html lang="zh">
-<head>
-<meta charset="utf-8" />
-<title>佛法与「无明」</title>
-<link rel="preconnect" href="https://fonts.googleapis.com">
+<html lang="zh" data-theme="auto">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>佛法与「无明」 | Jiachen Yu</title>
+        <meta name="description" content="佛法与「无明」" />
+    <meta property="og:title" content="佛法与「无明」 | Jiachen Yu" />
+    <meta property="og:description" content="佛法与「无明」" />
+    <meta property="og:type" content="article" />
+    <meta property="og:url" content="https://www.yujiachen.com/buddhism-wuming/" />
+    <meta name="twitter:card" content="summary" />
+    <link rel="canonical" href="https://www.yujiachen.com/buddhism-wuming/" />
+    <link rel="alternate" type="text/markdown" href="https://www.yujiachen.com/posts/buddhism-wuming/post.md" />
+    <link rel="alternate" hreflang="zh" href="https://www.yujiachen.com/buddhism-wuming/" /> <link rel="alternate" type="application/rss+xml" title="RSS" href="https://www.yujiachen.com/rss.xml" />
+<link rel="alternate" type="application/rss+xml" title="RSS (ZH)" href="https://www.yujiachen.com/rss-zh.xml" /> <link rel="icon" href="/favicon-32.png" type="image/png" sizes="32x32" />
+<link rel="icon" href="/favicon.png" type="image/png" />
+<link rel="icon" href="/favicon.ico" type="image/x-icon" />
+<link rel="apple-touch-icon" href="/apple-touch-icon.png" sizes="180x180" /> <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Noto+Serif+SC:wght@300;400;500;600;700;900&family=EB+Garamond:ital,wght@0,400;0,500;0,600;1,400&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
-<script src="deck-stage.js"></script>
-<template id="__bundler_thumbnail" data-bg-color="#F3ECDF">
-  <svg viewBox="0 0 1200 800" xmlns="http://www.w3.org/2000/svg">
-    <rect width="1200" height="800" fill="#F3ECDF"/>
-    <g transform="translate(600 400)">
-      <circle r="280" fill="none" stroke="#A63A27" stroke-width="2" opacity="0.3"/>
-      <circle r="200" fill="none" stroke="#A63A27" stroke-width="1" opacity="0.25" stroke-dasharray="6 8"/>
-      <text x="0" y="30" font-family="Noto Serif SC, serif" font-size="180" font-weight="600" fill="#A63A27" text-anchor="middle">无明</text>
-      <text x="0" y="110" font-family="EB Garamond, serif" font-style="italic" font-size="28" fill="#726B5E" text-anchor="middle" letter-spacing="4">avidyā</text>
-    </g>
-  </svg>
-</template>
-<style>
-  :root {
-    /* Paper-warm background, ink-black foreground, single cinnabar (朱砂) accent */
-    --paper: #F3ECDF;
-    --paper-deep: #E8DFCC;
-    --paper-soft: #EFE6D3;
-    --ink: #1C1A17;
-    --ink-soft: #3A3732;
-    --ink-mute: #726B5E;
-    --ink-faint: #A89F8E;
-    --rule: #C8BDA5;
-    --cinnabar: #A63A27;
-    --cinnabar-deep: #7C2A1B;
-
-    /* Type scale — slide-appropriate */
-    --t-display: 132px;
-    --t-title: 76px;
-    --t-subtitle: 48px;
-    --t-body: 34px;
-    --t-small: 26px;
-    --t-micro: 20px;
-
-    /* Spacing */
-    --pad-x: 120px;
-    --pad-top: 100px;
-    --pad-bottom: 90px;
-    --title-gap: 52px;
-    --item-gap: 28px;
-  }
-
-  * { box-sizing: border-box; }
-  html, body {
-    margin: 0; padding: 0;
-    background: #0E0D0B;
-    font-family: "Noto Serif SC", "Songti SC", "STSong", "EB Garamond", serif;
-    color: var(--ink);
-    -webkit-font-smoothing: antialiased;
-    text-rendering: optimizeLegibility;
-  }
-
-  deck-stage { background: #0E0D0B; }
-
-  /* =========================================================
-     ENTRANCE ANIMATIONS — triggered by [data-deck-active]
-     Contemplative: gentle fade + rise, slow ease.
-     ========================================================= */
-  @keyframes riseFade {
-    from { opacity: 0; transform: translateY(22px); }
-    to   { opacity: 1; transform: translateY(0); }
-  }
-  @keyframes softFade {
-    from { opacity: 0; }
-    to   { opacity: 1; }
-  }
-  @keyframes inkDraw {
-    from { transform: scaleX(0); }
-    to   { transform: scaleX(1); }
-  }
-  @keyframes stampIn {
-    0%   { opacity: 0; transform: rotate(-4deg) scale(1.6); }
-    70%  { opacity: 1; transform: rotate(-4deg) scale(0.96); }
-    100% { opacity: 0.92; transform: rotate(-4deg) scale(1); }
-  }
-  @keyframes slideFromLeft {
-    from { opacity: 0; transform: translateX(-28px); }
-    to   { opacity: 1; transform: translateX(0); }
-  }
-  @keyframes pearlBloom {
-    from { opacity: 0; transform: scale(0.3); }
-    to   { opacity: var(--final-op, 0.75); transform: scale(1); }
-  }
-  @keyframes dimFade {
-    from { opacity: 0; }
-    to   { opacity: 0.55; }
-  }
-
-  /* Default: hide decorative children until slide is active */
-  section[data-deck-slide] .anim,
-  section[data-deck-slide] h1.slide-title,
-  section[data-deck-slide] h2.slide-subtitle,
-  section[data-deck-slide] p.body,
-  section[data-deck-slide] blockquote.pull,
-  section[data-deck-slide] table.book tbody tr,
-  section[data-deck-slide] table.book thead tr,
-  section[data-deck-slide] .chapter-mark,
-  section[data-deck-slide] .footer-mark,
-  section[data-deck-slide] .chain .node,
-  section[data-deck-slide] .chain .arrow,
-  section[data-deck-slide] ul.zen > li,
-  section[data-deck-slide] .cond,
-  section[data-deck-slide] .arrow-card,
-  section[data-deck-slide] .svc-card,
-  section[data-deck-slide] .story-aside,
-  section[data-deck-slide] .story-body p,
-  section[data-deck-slide] .etym-grid > *,
-  section[data-deck-slide] .closing-sentence,
-  section[data-deck-slide] .cover-title,
-  section[data-deck-slide] .cover-sub,
-  section[data-deck-slide] .cover-meta,
-  section[data-deck-slide] .vertical-rail,
-  section[data-deck-slide] .seal-stamp,
-  section[data-deck-slide] .divider .chapter-num,
-  section[data-deck-slide] .divider .chapter-title,
-  section[data-deck-slide] .divider .chapter-sub {
-    opacity: 0;
-  }
-
-  /* Active: run animations */
-  section[data-deck-active] h1.slide-title { animation: riseFade 0.9s cubic-bezier(.22,.61,.36,1) 0.15s both; }
-  section[data-deck-active] h2.slide-subtitle { animation: riseFade 0.9s cubic-bezier(.22,.61,.36,1) 0.25s both; }
-  section[data-deck-active] p.body { animation: riseFade 1s cubic-bezier(.22,.61,.36,1) 0.5s both; }
-  section[data-deck-active] blockquote.pull { animation: riseFade 1.1s cubic-bezier(.22,.61,.36,1) 0.35s both; }
-  section[data-deck-active] .chapter-mark { animation: slideFromLeft 0.8s ease-out 0.1s both; }
-  section[data-deck-active] .footer-mark { animation: softFade 1s ease-out 0.9s both; }
-
-  /* Table rows: stagger */
-  section[data-deck-active] table.book thead tr { animation: riseFade 0.7s ease-out 0.35s both; }
-  section[data-deck-active] table.book tbody tr:nth-child(1) { animation: riseFade 0.7s ease-out 0.50s both; }
-  section[data-deck-active] table.book tbody tr:nth-child(2) { animation: riseFade 0.7s ease-out 0.65s both; }
-  section[data-deck-active] table.book tbody tr:nth-child(3) { animation: riseFade 0.7s ease-out 0.80s both; }
-  section[data-deck-active] table.book tbody tr:nth-child(4) { animation: riseFade 0.7s ease-out 0.95s both; }
-
-  /* Twelve-link chain: one node at a time */
-  section[data-deck-active] .chain > :nth-child(1) { animation: riseFade 0.5s ease-out 0.30s both; }
-  section[data-deck-active] .chain > :nth-child(2) { animation: softFade 0.4s ease-out 0.40s both; }
-  section[data-deck-active] .chain > :nth-child(3) { animation: riseFade 0.5s ease-out 0.48s both; }
-  section[data-deck-active] .chain > :nth-child(4) { animation: softFade 0.4s ease-out 0.56s both; }
-  section[data-deck-active] .chain > :nth-child(5) { animation: riseFade 0.5s ease-out 0.64s both; }
-  section[data-deck-active] .chain > :nth-child(6) { animation: softFade 0.4s ease-out 0.72s both; }
-  section[data-deck-active] .chain > :nth-child(7) { animation: riseFade 0.5s ease-out 0.80s both; }
-  section[data-deck-active] .chain > :nth-child(8) { animation: softFade 0.4s ease-out 0.88s both; }
-  section[data-deck-active] .chain > :nth-child(9) { animation: riseFade 0.5s ease-out 0.96s both; }
-  section[data-deck-active] .chain > :nth-child(10) { animation: softFade 0.4s ease-out 1.04s both; }
-  section[data-deck-active] .chain > :nth-child(11) { animation: riseFade 0.5s ease-out 1.12s both; }
-  section[data-deck-active] .chain > :nth-child(12) { animation: softFade 0.4s ease-out 1.20s both; }
-  section[data-deck-active] .chain > :nth-child(13) { animation: riseFade 0.5s ease-out 1.28s both; }
-  section[data-deck-active] .chain > :nth-child(14) { animation: softFade 0.4s ease-out 1.36s both; }
-  section[data-deck-active] .chain > :nth-child(15) { animation: riseFade 0.5s ease-out 1.44s both; }
-  section[data-deck-active] .chain > :nth-child(16) { animation: softFade 0.4s ease-out 1.52s both; }
-  section[data-deck-active] .chain > :nth-child(17) { animation: riseFade 0.5s ease-out 1.60s both; }
-  section[data-deck-active] .chain > :nth-child(18) { animation: softFade 0.4s ease-out 1.68s both; }
-  section[data-deck-active] .chain > :nth-child(19) { animation: riseFade 0.5s ease-out 1.76s both; }
-  section[data-deck-active] .chain > :nth-child(20) { animation: softFade 0.4s ease-out 1.84s both; }
-  section[data-deck-active] .chain > :nth-child(21) { animation: riseFade 0.5s ease-out 1.92s both; }
-  section[data-deck-active] .chain > :nth-child(22) { animation: softFade 0.4s ease-out 2.00s both; }
-  section[data-deck-active] .chain > :nth-child(23) { animation: riseFade 0.5s ease-out 2.08s both; }
-
-  /* Zen list bullets stagger */
-  section[data-deck-active] ul.zen > li:nth-child(1) { animation: riseFade 0.7s ease-out 0.40s both; }
-  section[data-deck-active] ul.zen > li:nth-child(2) { animation: riseFade 0.7s ease-out 0.55s both; }
-  section[data-deck-active] ul.zen > li:nth-child(3) { animation: riseFade 0.7s ease-out 0.70s both; }
-  section[data-deck-active] ul.zen > li:nth-child(4) { animation: riseFade 0.7s ease-out 0.85s both; }
-  section[data-deck-active] ul.zen > li:nth-child(5) { animation: riseFade 0.7s ease-out 1.00s both; }
-
-  /* conditions (tea) — grid stagger */
-  section[data-deck-active] .cond:nth-child(1) { animation: riseFade 0.6s ease-out 0.30s both; }
-  section[data-deck-active] .cond:nth-child(2) { animation: riseFade 0.6s ease-out 0.38s both; }
-  section[data-deck-active] .cond:nth-child(3) { animation: riseFade 0.6s ease-out 0.46s both; }
-  section[data-deck-active] .cond:nth-child(4) { animation: riseFade 0.6s ease-out 0.54s both; }
-  section[data-deck-active] .cond:nth-child(5) { animation: riseFade 0.6s ease-out 0.62s both; }
-  section[data-deck-active] .cond:nth-child(6) { animation: riseFade 0.6s ease-out 0.70s both; }
-  section[data-deck-active] .cond:nth-child(7) { animation: riseFade 0.6s ease-out 0.78s both; }
-  section[data-deck-active] .cond:nth-child(8) { animation: riseFade 0.6s ease-out 0.86s both; }
-  section[data-deck-active] .cond:nth-child(9) { animation: riseFade 0.6s ease-out 0.94s both; }
-  section[data-deck-active] .cond:nth-child(10) { animation: riseFade 0.6s ease-out 1.02s both; }
-  section[data-deck-active] .cond:nth-child(11) { animation: riseFade 0.6s ease-out 1.10s both; }
-  section[data-deck-active] .cond:nth-child(12) { animation: riseFade 0.6s ease-out 1.18s both; }
-  section[data-deck-active] .cond:nth-child(13) { animation: riseFade 0.6s ease-out 1.26s both; }
-  section[data-deck-active] .cond:nth-child(14) { animation: riseFade 0.6s ease-out 1.34s both; }
-  section[data-deck-active] .cond:nth-child(15) { animation: riseFade 0.6s ease-out 1.42s both; }
-  section[data-deck-active] .cond:nth-child(16) { animation: riseFade 0.6s ease-out 1.50s both; }
-
-  /* Arrow cards slide from each side */
-  section[data-deck-active] .arrow-card:nth-child(1) { animation: riseFade 0.9s cubic-bezier(.22,.61,.36,1) 0.35s both; }
-  section[data-deck-active] .arrow-card:nth-child(2) { animation: riseFade 0.9s cubic-bezier(.22,.61,.36,1) 0.75s both; }
-  section[data-deck-active] .svc-card:nth-child(1) { animation: riseFade 0.9s cubic-bezier(.22,.61,.36,1) 0.35s both; }
-  section[data-deck-active] .svc-card:nth-child(2) { animation: riseFade 0.9s cubic-bezier(.22,.61,.36,1) 0.75s both; }
-
-  /* Story layout */
-  section[data-deck-active] .story-aside { animation: riseFade 0.8s ease-out 0.3s both; }
-  section[data-deck-active] .story-body p:nth-child(1) { animation: riseFade 0.7s ease-out 0.55s both; }
-  section[data-deck-active] .story-body p:nth-child(2) { animation: riseFade 0.7s ease-out 0.85s both; }
-  section[data-deck-active] .story-body p:nth-child(3) { animation: riseFade 0.7s ease-out 1.15s both; }
-  section[data-deck-active] .story-body p:nth-child(4) { animation: riseFade 0.7s ease-out 1.45s both; }
-  section[data-deck-active] .story-body p:nth-child(5) { animation: riseFade 0.7s ease-out 1.75s both; }
-  section[data-deck-active] .story-body p:nth-child(6) { animation: riseFade 0.7s ease-out 2.05s both; }
-
-  /* Etymology tokens */
-  section[data-deck-active] .etym-grid > :nth-child(3n+1) { animation: slideFromLeft 0.7s ease-out 0.4s both; }
-  section[data-deck-active] .etym-grid > :nth-child(3n+2) { animation: softFade 0.5s ease-out 0.55s both; }
-  section[data-deck-active] .etym-grid > :nth-child(3n+3) { animation: riseFade 0.7s ease-out 0.65s both; }
-  section[data-deck-active] .etym-grid > :nth-child(n+4):nth-child(-n+6) { animation-delay: 0.85s, 1.0s, 1.1s; }
-  section[data-deck-active] .etym-grid > :nth-child(n+7) { animation-delay: 1.3s, 1.45s, 1.55s; }
-
-  /* Cover sequence */
-  section[data-deck-active] .cover-title { animation: riseFade 1.2s cubic-bezier(.22,.61,.36,1) 0.3s both; }
-  section[data-deck-active] .cover-sub { animation: riseFade 1s ease-out 0.9s both; }
-  section[data-deck-active] .cover-meta { animation: softFade 1s ease-out 1.3s both; }
-  section[data-deck-active] .vertical-rail { animation: softFade 1.4s ease-out 1.6s both; }
-  section[data-deck-active] .seal-stamp { animation: stampIn 0.7s cubic-bezier(.25,1.4,.5,1) 1.2s both; }
-
-  /* Divider chapter cards */
-  section[data-deck-active] .divider .chapter-num { animation: slideFromLeft 0.8s ease-out 0.3s both; }
-  section[data-deck-active] .divider .chapter-title { animation: riseFade 1s cubic-bezier(.22,.61,.36,1) 0.55s both; }
-  section[data-deck-active] .divider .chapter-sub { animation: softFade 1s ease-out 1.0s both; }
-
-  /* Closing sentence */
-  section[data-deck-active] .closing-sentence { animation: riseFade 1.2s cubic-bezier(.22,.61,.36,1) 0.4s both; }
-
-  /* Indra's net — pearls bloom outward from the center */
-  section[data-deck-active] #pearls circle {
-    transform-origin: center;
-    transform-box: fill-box;
-    animation: pearlBloom 0.6s ease-out both;
-  }
-
-  /* Subtle cinnabar "breath" on key accent — infinite, very slow */
-  @keyframes breathe {
-    0%, 100% { opacity: 0.92; }
-    50% { opacity: 0.7; }
-  }
-  section[data-deck-active] .seal-stamp {
-    animation: stampIn 0.7s cubic-bezier(.25,1.4,.5,1) 1.2s both,
-               breathe 6s ease-in-out 2.2s infinite;
-  }
-
-  /* Respect reduced-motion */
-  @media (prefers-reduced-motion: reduce) {
-    section[data-deck-slide] * { animation: none !important; opacity: 1 !important; transform: none !important; }
-  }
-
-  /* =========================================================
-     THEMATIC DECORATIVE ART — watermark-style SVGs
-     Fills negative space on sparse story/quote slides.
-     ========================================================= */
-  .theme-art {
-    position: absolute;
-    pointer-events: none;
-    z-index: 0;
-    color: var(--cinnabar);
-  }
-  .theme-art svg { display: block; width: 100%; height: 100%; overflow: visible; }
-
-  /* Ensure content sits above art */
-  section[data-deck-slide] .frame,
-  section[data-deck-slide] .chapter-mark,
-  section[data-deck-slide] .footer-mark { position: absolute; z-index: 2; }
-
-  /* Vertical Chinese colophon along the right edge */
-  .colophon {
-    position: absolute;
-    right: 60px;
-    top: 50%;
-    transform: translateY(-50%);
-    writing-mode: vertical-rl;
-    font-family: "Noto Serif SC", serif;
-    font-size: 22px;
-    letter-spacing: 0.5em;
-    color: var(--ink-faint);
-    z-index: 1;
-  }
-  .colophon .seal {
-    display: block;
-    width: 28px; height: 28px;
-    background: var(--cinnabar);
-    margin: 18px auto;
-    opacity: 0.9;
-  }
-
-  /* Ornamental corner motif — thin ink lines */
-  .corner-motif {
-    position: absolute;
-    z-index: 1;
-    opacity: 0.28;
-  }
-  .corner-motif svg { stroke: var(--ink); fill: none; stroke-width: 1; }
-
-  /* Faded repeated glyph */
-  .echo-glyph {
-    position: absolute;
-    font-family: "Noto Serif SC", serif;
-    font-weight: 300;
-    color: var(--cinnabar);
-    opacity: 0.04;
-    line-height: 1;
-    letter-spacing: 0.05em;
-    z-index: 0;
-    pointer-events: none;
-    user-select: none;
-    /* Ensure text is decorative, not flagged as content */
-  }
-  .echo-glyph, .theme-art, .lotus-mark, .arrow-flight, .elephant-art, .tea-steam, .enso, .wash-edge, .corner-motif, .bamboo-columns, .colophon {
-    /* exclude decorative layers from text-overlap validators */
-  }
-
-  /* Arrow flight line (for 箭喻 / 两支箭) */
-  .arrow-flight {
-    position: absolute;
-    z-index: 1;
-    opacity: 0.45;
-  }
-  .arrow-flight svg { stroke: var(--cinnabar); fill: var(--cinnabar); }
-
-  /* Elephant silhouette (for 盲人摸象) — refined ink-style */
-  .elephant-art {
-    position: absolute;
-    right: 90px;
-    bottom: 110px;
-    width: 640px;
-    height: 420px;
-    opacity: 0.95;
-    z-index: 0;
-    pointer-events: none;
-  }
-  .elephant-art svg { width: 100%; height: 100%; display: block; }
-
-  /* Tea steam for the tea slide */
-  .tea-steam {
-    position: absolute;
-    right: 80px; top: 60px;
-    width: 160px; height: 180px;
-    opacity: 0.25;
-  }
-  .tea-steam svg { stroke: var(--cinnabar); fill: none; stroke-width: 1.5; stroke-linecap: round; }
-
-  /* Lotus geometric mark (section dividers, closing) */
-  .lotus-mark {
-    position: absolute;
-    opacity: 0.18;
-    z-index: 0;
-  }
-  .lotus-mark svg { stroke: var(--cinnabar); stroke-width: 1; fill: none; }
-
-  /* Text column — bamboo-scroll columns of tiny vertical text */
-  .bamboo-columns {
-    position: absolute;
-    display: flex;
-    gap: 24px;
-    z-index: 1;
-    opacity: 0.38;
-  }
-  .bamboo-columns .col {
-    writing-mode: vertical-rl;
-    font-family: "Noto Serif SC", serif;
-    font-size: 18px;
-    letter-spacing: 0.3em;
-    color: var(--ink-mute);
-    line-height: 1.6;
-    max-height: 520px;
-  }
-  .bamboo-columns .col.cinnabar { color: var(--cinnabar); opacity: 0.7; }
-
-  /* Circle (enso) for final slides */
-  .enso {
-    position: absolute;
-    width: 260px; height: 260px;
-    opacity: 0.15;
-    z-index: 0;
-  }
-  .enso svg { stroke: var(--ink); stroke-width: 3; fill: none; stroke-linecap: round; }
-
-  /* Rice-paper edge — a subtle ink-wash strip along one side */
-  .wash-edge {
-    position: absolute;
-    z-index: 0;
-    pointer-events: none;
-    background: linear-gradient(90deg, rgba(166,58,39,0.05), transparent 60%);
-  }
-  .wash-edge.right {
-    right: 0; top: 0; bottom: 0; width: 160px;
-    background: linear-gradient(270deg, rgba(166,58,39,0.07), transparent 70%);
-  }
-
-  /* Story frame variants with art */
-  .story-frame { position: relative; z-index: 2; }
-
-  section {
-    background: var(--paper);
-    color: var(--ink);
-    font-family: "Noto Serif SC", "EB Garamond", serif;
-    font-weight: 400;
-    position: relative;
-    overflow: hidden;
-    /* paper grain via two very subtle noise gradients */
-    background-image:
-      radial-gradient(circle at 15% 20%, rgba(118, 90, 55, 0.04) 0, transparent 40%),
-      radial-gradient(circle at 85% 80%, rgba(118, 90, 55, 0.05) 0, transparent 45%);
-  }
-
-  /* Latin text inside body gets EB Garamond via :lang fallback */
-  .latin, em.latin, i {
-    font-family: "EB Garamond", "Noto Serif SC", serif;
-    font-style: italic;
-    font-weight: 500;
-  }
-  .mono { font-family: "JetBrains Mono", ui-monospace, monospace; font-weight: 400; }
-
-  /* ----- Shared chrome ----- */
-  .frame {
-    position: absolute;
-    inset: var(--pad-top) var(--pad-x) var(--pad-bottom) var(--pad-x);
-    display: flex;
-    flex-direction: column;
-  }
-
-  .chapter-mark {
-    position: absolute;
-    top: 56px;
-    left: var(--pad-x);
-    display: flex;
-    align-items: center;
-    gap: 18px;
-    font-size: 24px;
-    letter-spacing: 0.18em;
-    color: var(--ink-mute);
-    font-family: "EB Garamond", "Noto Serif SC", serif;
-  }
-  .chapter-mark .num {
-    font-variant-numeric: tabular-nums;
-    color: var(--cinnabar);
-    font-weight: 500;
-  }
-  .chapter-mark .bar {
-    width: 44px; height: 1px; background: var(--ink-faint);
-  }
-  .chapter-mark .zh {
-    font-family: "Noto Serif SC", serif;
-    letter-spacing: 0.2em;
-  }
-
-  .footer-mark {
-    position: absolute;
-    bottom: 48px;
-    left: var(--pad-x);
-    right: var(--pad-x);
-    display: flex;
-    justify-content: space-between;
-    font-family: "EB Garamond", "Noto Serif SC", serif;
-    font-size: 18px;
-    color: var(--ink-faint);
-    letter-spacing: 0.15em;
-  }
-  .footer-mark .title { font-style: italic; }
-
-  h1.slide-title {
-    margin: 0;
-    font-size: var(--t-title);
-    font-weight: 600;
-    line-height: 1.1;
-    letter-spacing: -0.01em;
-    color: var(--ink);
-  }
-  h2.slide-subtitle {
-    margin: 0;
-    font-size: var(--t-subtitle);
-    font-weight: 400;
-    line-height: 1.25;
-    color: var(--ink-soft);
-  }
-  p.body {
-    margin: 0;
-    font-size: var(--t-body);
-    line-height: 1.55;
-    color: var(--ink-soft);
-    text-wrap: pretty;
-  }
-  p.body .em { color: var(--ink); font-weight: 500; }
-  p.body .seal { color: var(--cinnabar); font-weight: 500; }
-
-  .rule {
-    height: 1px;
-    background: var(--rule);
-    width: 100%;
-  }
-
-  .cinnabar-dot {
-    display: inline-block;
-    width: 14px; height: 14px;
-    background: var(--cinnabar);
-    border-radius: 50%;
-    vertical-align: middle;
-  }
-
-  /* ----- Cover ----- */
-  .cover {
-    background: var(--paper);
-  }
-  .cover .seal-stamp {
-    position: absolute;
-    top: 120px; right: 140px;
-    width: 120px; height: 120px;
-    border: 3px solid var(--cinnabar);
-    color: var(--cinnabar);
-    font-family: "Noto Serif SC", serif;
-    font-weight: 700;
-    font-size: 38px;
-    line-height: 1;
-    display: grid;
-    place-items: center;
-    letter-spacing: 0.05em;
-    transform: rotate(-4deg);
-    opacity: 0.92;
-  }
-  .cover .seal-stamp span {
-    display: block;
-    text-align: center;
-  }
-  .cover .seal-stamp .two {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 4px;
-    font-size: 34px;
-  }
-  .cover-title {
-    font-size: 168px;
-    font-weight: 700;
-    line-height: 1;
-    letter-spacing: -0.01em;
-    margin: 0;
-  }
-  .cover-title .ac { color: var(--cinnabar); }
-  .cover-sub {
-    margin-top: 36px;
-    font-size: 40px;
-    font-weight: 400;
-    color: var(--ink-soft);
-    line-height: 1.4;
-    max-width: 1200px;
-  }
-  .cover-meta {
-    position: absolute;
-    left: var(--pad-x);
-    bottom: var(--pad-bottom);
-    display: flex;
-    flex-direction: column;
-    gap: 8px;
-    font-family: "EB Garamond", serif;
-    color: var(--ink-mute);
-    font-size: 24px;
-    font-style: italic;
-  }
-  .cover-meta .zh {
-    font-family: "Noto Serif SC", serif;
-    font-style: normal;
-    font-size: 22px;
-    letter-spacing: 0.2em;
-    color: var(--ink-faint);
-  }
-  .cover .vertical-rail {
-    position: absolute;
-    right: 140px;
-    bottom: var(--pad-bottom);
-    writing-mode: vertical-rl;
-    font-family: "Noto Serif SC", serif;
-    font-size: 24px;
-    letter-spacing: 0.45em;
-    color: var(--ink-faint);
-  }
-
-  /* ----- Section dividers ----- */
-  .divider {
-    display: grid;
-    place-items: center;
-    text-align: center;
-  }
-  .divider .chapter-num {
-    font-family: "EB Garamond", serif;
-    font-style: italic;
-    font-size: 64px;
-    color: var(--cinnabar);
-    margin-bottom: 24px;
-    letter-spacing: 0.05em;
-  }
-  .divider .chapter-num .slash { color: var(--ink-faint); margin: 0 10px; }
-  .divider .chapter-title {
-    font-size: 108px;
-    font-weight: 600;
-    letter-spacing: 0.02em;
-    line-height: 1.1;
-    color: var(--ink);
-    max-width: 1400px;
-  }
-  .divider .chapter-sub {
-    margin-top: 36px;
-    font-size: 32px;
-    color: var(--ink-mute);
-    font-family: "EB Garamond", serif;
-    font-style: italic;
-    letter-spacing: 0.05em;
-  }
-
-  /* ----- Quote block ----- */
-  blockquote.pull {
-    margin: 0;
-    padding: 0 0 0 48px;
-    border-left: 3px solid var(--cinnabar);
-    font-size: 52px;
-    line-height: 1.5;
-    font-weight: 500;
-    color: var(--ink);
-    letter-spacing: 0.01em;
-  }
-  blockquote.pull.small { font-size: 38px; line-height: 1.55; font-weight: 400; }
-  blockquote.pull .attrib {
-    display: block;
-    margin-top: 28px;
-    font-size: 24px;
-    color: var(--ink-mute);
-    font-family: "EB Garamond", serif;
-    font-style: italic;
-    letter-spacing: 0.05em;
-    font-weight: 400;
-  }
-
-  /* ----- Two-col layout ----- */
-  .two-col {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 80px;
-    flex: 1;
-    min-height: 0;
-  }
-  .col-head {
-    font-family: "EB Garamond", serif;
-    font-size: 22px;
-    letter-spacing: 0.25em;
-    color: var(--cinnabar);
-    margin-bottom: 24px;
-    text-transform: uppercase;
-  }
-  .col-head .en { font-style: italic; }
-
-  /* ----- Table styling (four truths, three misreadings, etc) ----- */
-  table.book {
-    width: 100%;
-    border-collapse: collapse;
-    font-size: 28px;
-  }
-  table.book th, table.book td {
-    padding: 22px 20px;
-    text-align: left;
-    vertical-align: top;
-    line-height: 1.5;
-    border-bottom: 1px solid var(--rule);
-  }
-  table.book th {
-    font-weight: 500;
-    color: var(--cinnabar);
-    font-size: 22px;
-    letter-spacing: 0.2em;
-    text-transform: uppercase;
-    font-family: "EB Garamond", serif;
-    font-style: italic;
-    padding-bottom: 16px;
-    border-bottom: 2px solid var(--ink);
-  }
-  table.book td.lead {
-    font-weight: 600;
-    font-size: 34px;
-    color: var(--ink);
-    width: 160px;
-  }
-  table.book td.lead .en {
-    display: block;
-    font-family: "EB Garamond", serif;
-    font-style: italic;
-    font-weight: 400;
-    font-size: 20px;
-    color: var(--ink-mute);
-    margin-top: 4px;
-  }
-  table.book tr:last-child th, table.book tr:last-child td { border-bottom: none; }
-
-  /* Story narrative layout */
-  .story-frame {
-    display: grid;
-    grid-template-columns: 360px 1fr;
-    gap: 80px;
-    flex: 1;
-    min-height: 0;
-  }
-  .story-aside {
-    font-family: "EB Garamond", serif;
-    font-style: italic;
-    color: var(--ink-mute);
-    padding-top: 8px;
-  }
-  .story-aside .label {
-    font-size: 22px;
-    letter-spacing: 0.25em;
-    color: var(--cinnabar);
-    text-transform: uppercase;
-    font-style: normal;
-    margin-bottom: 14px;
-  }
-  .story-aside .name {
-    font-family: "Noto Serif SC", serif;
-    font-style: normal;
-    color: var(--ink);
-    font-size: 38px;
-    font-weight: 500;
-    line-height: 1.3;
-    margin-bottom: 10px;
-  }
-  .story-aside .source {
-    font-size: 20px;
-    line-height: 1.5;
-  }
-  .story-body {
-    font-size: 30px;
-    line-height: 1.65;
-    color: var(--ink);
-    text-wrap: pretty;
-  }
-  .story-body p { margin: 0 0 22px; }
-  .story-body p:last-child { margin-bottom: 0; }
-  .story-body .em { color: var(--cinnabar); font-weight: 500; }
-
-  /* "twelve links" chain */
-  .chain {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 14px 18px;
-    align-items: center;
-    font-size: 30px;
-    color: var(--ink-soft);
-    line-height: 1.4;
-  }
-  .chain .node {
-    padding: 8px 0;
-  }
-  .chain .arrow {
-    color: var(--ink-faint);
-    font-family: "EB Garamond", serif;
-  }
-  .chain .start {
-    color: var(--cinnabar);
-    font-weight: 600;
-    border-bottom: 2px solid var(--cinnabar);
-    padding-bottom: 4px;
-  }
-
-  /* Two arrows slide */
-  .arrows-layout {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 80px;
-    flex: 1;
-    align-items: stretch;
-  }
-  .arrow-card {
-    padding-top: 40px;
-    border-top: 3px solid var(--ink);
-    display: flex;
-    flex-direction: column;
-  }
-  .arrow-card.second {
-    border-top-color: var(--cinnabar);
-  }
-  .arrow-card .n {
-    font-family: "EB Garamond", serif;
-    font-style: italic;
-    font-size: 28px;
-    color: var(--ink-mute);
-    margin-bottom: 12px;
-    letter-spacing: 0.1em;
-  }
-  .arrow-card.second .n { color: var(--cinnabar); }
-  .arrow-card h3 {
-    margin: 0 0 28px;
-    font-size: 56px;
-    font-weight: 600;
-    line-height: 1.1;
-    color: var(--ink);
-  }
-  .arrow-card p {
-    font-size: 28px;
-    line-height: 1.6;
-    color: var(--ink-soft);
-    margin: 0 0 18px;
-  }
-  .arrow-card .punch {
-    margin-top: auto;
-    padding-top: 30px;
-    border-top: 1px dashed var(--rule);
-    font-size: 24px;
-    color: var(--ink-mute);
-    font-family: "EB Garamond", serif;
-    font-style: italic;
-  }
-
-  /* Etymology block */
-  .etym-grid {
-    display: grid;
-    grid-template-columns: auto auto 1fr;
-    column-gap: 40px;
-    row-gap: 22px;
-    font-size: 36px;
-    align-items: baseline;
-  }
-  .etym-grid .tok {
-    font-family: "EB Garamond", serif;
-    font-style: italic;
-    font-weight: 500;
-    color: var(--cinnabar);
-    font-size: 44px;
-    letter-spacing: 0.02em;
-  }
-  .etym-grid .eq {
-    color: var(--ink-faint);
-    font-family: "EB Garamond", serif;
-    font-style: italic;
-    font-size: 32px;
-  }
-  .etym-grid .gloss { color: var(--ink); }
-  .etym-note {
-    margin-top: 56px;
-    font-size: 26px;
-    line-height: 1.6;
-    color: var(--ink-mute);
-    max-width: 1300px;
-  }
-  .etym-note .em { color: var(--cinnabar); font-weight: 500; }
-
-  /* Big-number slide */
-  .big-stat {
-    display: grid;
-    grid-template-columns: auto 1fr;
-    gap: 100px;
-    align-items: center;
-    flex: 1;
-  }
-  .big-stat .num {
-    font-family: "EB Garamond", serif;
-    font-style: italic;
-    font-size: 520px;
-    line-height: 0.85;
-    color: var(--cinnabar);
-    font-weight: 500;
-  }
-  .big-stat .caption {
-    font-size: 44px;
-    line-height: 1.45;
-    color: var(--ink);
-  }
-  .big-stat .caption .em { color: var(--cinnabar); font-weight: 500; }
-  .big-stat .caption .mute { color: var(--ink-mute); font-size: 30px; display: block; margin-top: 20px; }
-
-  /* Diagram — three concentric rings for 缘起 */
-  .rings-layout { display: grid; grid-template-columns: 1fr 1fr; gap: 80px; flex: 1; align-items: center; }
-
-  /* Indra's net — visual */
-  .indra-svg { width: 100%; height: 100%; }
-
-  /* Simple two-up (title + body) */
-  .two-up {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 100px;
-    flex: 1;
-    min-height: 0;
-  }
-
-  /* List with cinnabar bullets */
-  ul.zen {
-    list-style: none;
-    padding: 0;
-    margin: 0;
-    display: flex;
-    flex-direction: column;
-    gap: 24px;
-  }
-  ul.zen > li {
-    position: relative;
-    padding-left: 40px;
-    font-size: 30px;
-    line-height: 1.55;
-    color: var(--ink);
-  }
-  ul.zen > li::before {
-    content: "";
-    position: absolute;
-    left: 0; top: 18px;
-    width: 12px; height: 12px;
-    background: var(--cinnabar);
-    border-radius: 50%;
-  }
-  ul.zen > li .k { display: block; color: var(--ink-mute); font-size: 22px; letter-spacing: 0.15em; margin-bottom: 4px; font-family: "EB Garamond", serif; font-style: italic; }
-
-  /* Monastic arch / software microservice diagram */
-  .service-grid {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 60px;
-    flex: 1;
-    align-items: stretch;
-  }
-  .svc-card {
-    border: 1px solid var(--ink);
-    padding: 48px 44px;
-    display: flex;
-    flex-direction: column;
-    background: var(--paper-soft);
-  }
-  .svc-card .tag {
-    font-family: "JetBrains Mono", monospace;
-    font-size: 18px;
-    letter-spacing: 0.1em;
-    color: var(--cinnabar);
-    margin-bottom: 20px;
-  }
-  .svc-card h4 {
-    margin: 0 0 24px;
-    font-size: 44px;
-    font-weight: 600;
-  }
-  .svc-card p {
-    margin: 0 0 16px;
-    font-size: 26px;
-    line-height: 1.55;
-    color: var(--ink-soft);
-  }
-  .svc-card .monolith {
-    margin-top: auto;
-    padding-top: 20px;
-    border-top: 1px dashed var(--rule);
-    font-family: "JetBrains Mono", monospace;
-    font-size: 18px;
-    color: var(--ink-mute);
-    letter-spacing: 0.05em;
-  }
-
-  /* Final closing */
-  .closing-sentence {
-    font-size: 72px;
-    line-height: 1.35;
-    font-weight: 500;
-    color: var(--ink);
-    text-align: center;
-    max-width: 1500px;
-    margin: 0 auto;
-    letter-spacing: 0.01em;
-  }
-  .closing-sentence .em { color: var(--cinnabar); }
-
-  /* Thanks page (bibliography) */
-  .biblio {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 48px 80px;
-    font-size: 24px;
-    line-height: 1.55;
-    color: var(--ink-soft);
-  }
-  .biblio .item .t { color: var(--ink); font-weight: 500; display: block; margin-bottom: 6px; }
-  .biblio .item .d { color: var(--ink-mute); font-size: 22px; }
-
-</style>
-</head>
-<body>
-
-<script type="application/json" id="speaker-notes">
-[]
-</script>
-
-<deck-stage width="1920" height="1080">
-
-  <!-- 01 COVER -->
-  <section data-label="01 Cover" class="cover">
-    <div class="seal-stamp">
-      <div class="two"><span>无</span><span>明</span></div>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&amp;family=Source+Serif+4:ital,wght@0,400;0,600;0,700;1,400&amp;family=Noto+Serif+SC:wght@400;600;700&amp;display=swap" />
+    <link rel="stylesheet" href="/katex/katex.min.css" />
+    <link rel="stylesheet" href="/styles.css" />
+    <link rel="stylesheet" href="/fonts.css" />
+  </head>
+  <body data-page="post">
+    <div id="root">
+      
+<nav class="navbar">
+  <div class="nav-left">
+    <a href="/zh/" class="brand">Jiachen Yu</a>
+    <div class="nav-links">
+      <a class="nav-link-button" href="/about/zh/" data-nav="about">About</a>
+      <a class="nav-link-button" href="/blog/zh/" data-nav="blog">Blog</a>
     </div>
-    <div class="frame" style="justify-content: center;">
-      <div style="font-family: 'EB Garamond', serif; font-style: italic; font-size: 28px; color: var(--cinnabar); letter-spacing: 0.2em; margin-bottom: 56px;">A DIAGNOSIS FROM 2,500 YEARS AGO</div>
-      <h1 class="cover-title">佛法与<span class="ac">「无明」</span></h1>
-      <div class="cover-sub">不是你不够聪明，也不是你运气差——<br/>而是你看世界的方式，在一个根本的地方错位了。</div>
-    </div>
-    <div class="cover-meta">
-      <div class="zh" style="font-size: 24px;">三十分钟 · 一次分享</div>
-      <div>On Buddhism &amp; the Root of Suffering</div>
-    </div>
-    <div class="vertical-rail">此有故彼有 · 此生故彼生</div>
-  </section>
-
-  <!-- 02 引子 -->
-  <section data-label="02 引子">
-    <div class="chapter-mark"><span class="num">00</span><span class="bar"></span><span class="zh">引子</span></div>
-    <div class="frame" style="justify-content: center;">
-      <blockquote class="pull" style="max-width: 1500px;">
-        你大概有过这样的夜晚——为了一件没能拿到的结果反复回放。<br/>
-        你知道这件事已经过去了，但脑子停不下来。
-        <span class="attrib">— 大多数人，大多数时候</span>
-      </blockquote>
-      <p class="body" style="margin-top: 64px; max-width: 1400px; font-size: 32px;">
-        这不是你不够聪明，也不是你运气差。<br/>
-        两千五百年前，佛陀给了这种夜晚一个诊断——<span class="seal">「无明」</span>。
-      </p>
-    </div>
-    <div class="footer-mark"><span class="title">佛法与无明</span><span>02 / 30</span></div>
-  </section>
-
-  <!-- 03 Divider: Part I -->
-  <section data-label="03 Part I — 佛陀只做一件事">
-    <div aria-hidden="true" class="lotus-mark" style="right: 120px; top: 50%; transform: translateY(-50%); width: 520px; height: 520px;">
-      <svg viewBox="0 0 520 520" xmlns="http://www.w3.org/2000/svg">
-        <g transform="translate(260 260)">
-          <circle r="240"/>
-          <circle r="180"/>
-          <circle r="120"/>
-          <circle r="60"/>
-          <g stroke="#A63A27" stroke-width="0.8">
-            <line x1="0" y1="-240" x2="0" y2="240"/>
-            <line x1="-240" y1="0" x2="240" y2="0"/>
-            <line x1="-170" y1="-170" x2="170" y2="170"/>
-            <line x1="170" y1="-170" x2="-170" y2="170"/>
-          </g>
-        </g>
-      </svg>
-    </div>
-    <div class="frame divider">
-      <div>
-        <div class="chapter-num">PART <span class="slash">/</span> I</div>
-        <div class="chapter-title">佛陀只做一件事</div>
-        <div class="chapter-sub">The Parable of the Poisoned Arrow</div>
+  </div>
+  <div class="controls">
+    <div class="action-controls">
+      <div class="lang-switcher" data-lang-switcher data-lang-switcher-mode="hidden">
+        <button class="lang-toggle" type="button" data-lang-toggle>EN</button>
       </div>
-    </div>
-  </section>
-
-  <!-- 04 箭喻 story -->
-  <section data-label="04 箭喻经">
-    <div class="wash-edge right"></div>
-    <!-- Echo glyph: giant translucent 箭 character in background -->
-    <div aria-hidden="true" class="echo-glyph" style="right: 40px; bottom: -180px; font-size: 900px; font-weight: 700;">箭</div>
-    <!-- Flying arrow SVG spanning the slide diagonally -->
-    <div aria-hidden="true" class="arrow-flight" style="right: 80px; top: 120px; width: 720px; height: 520px;">
-      <svg viewBox="0 0 720 520" xmlns="http://www.w3.org/2000/svg">
-        <defs>
-          <marker id="arrow-head-04" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="8" markerHeight="8" orient="auto-start-reverse">
-            <path d="M0,0 L10,5 L0,10 z" fill="#A63A27"/>
-          </marker>
-        </defs>
-        <!-- curved arrow path (simulating trajectory) -->
-        <path d="M 40 460 Q 280 140 700 50" stroke="#A63A27" stroke-width="1.5" fill="none" stroke-dasharray="3 6" opacity="0.7"/>
-        <!-- feathers at tail -->
-        <g transform="translate(40 460) rotate(-58)" opacity="0.8">
-          <path d="M0 0 L-24 -6 L-18 0 L-24 6 Z" fill="#A63A27"/>
-          <path d="M-8 0 L-32 -10 L-26 0 L-32 10 Z" fill="#A63A27" opacity="0.6"/>
-        </g>
-        <!-- arrow shaft at head -->
-        <line x1="640" y1="72" x2="712" y2="45" stroke="#A63A27" stroke-width="2.5"/>
-        <polygon points="712,45 692,40 694,52" fill="#A63A27"/>
-      </svg>
-    </div>
-    <div class="chapter-mark"><span class="num">I</span><span class="bar"></span><span class="zh">箭喻经</span></div>
-    <div class="frame">
-      <h1 class="slide-title">一个中箭的人</h1>
-      <div style="height: var(--title-gap)"></div>
-      <div class="story-frame">
-        <div class="story-aside">
-          <div class="label">出处</div>
-          <div class="name">《中阿含经》<br/>箭喻经</div>
-          <div class="source">Cūḷa-Māluṅkyovāda Sutta<br/>MN 63</div>
-        </div>
-        <div class="story-body" style="font-size: 32px;">
-          <p>一个人中了毒箭，命悬一线。有人要给他拔箭，他却说：</p>
-          <p style="padding-left: 40px; border-left: 3px solid var(--cinnabar); color: var(--ink-soft); font-size: 30px;">
-            "别拔——我要先知道：<br/>
-            射箭的人是什么种姓？姓什么？高还是矮？<br/>
-            用的弓是什么木头做的？箭羽是什么鸟的羽毛？"
-          </p>
-          <p><span class="em">还没等问完，人就死了。</span></p>
-        </div>
+      <div class="theme-switcher" data-theme-switcher data-theme-state="light">
+        <button
+          class="theme-trigger"
+          type="button"
+          data-theme-trigger
+          aria-label="Theme mode toggle"
+          aria-pressed="false"
+        >
+          <span class="theme-trigger-icon">
+            <svg class="theme-icon theme-icon-dark" viewBox="0 0 24 24" aria-hidden="true">
+              <path
+                d="M21 12.8A8.5 8.5 0 1 1 11.2 3a7.5 7.5 0 0 0 9.8 9.8Z"
+                fill="currentColor"
+              />
+            </svg>
+            <svg class="theme-icon theme-icon-light" viewBox="0 0 24 24" aria-hidden="true">
+              <circle cx="12" cy="12" r="4" fill="currentColor" />
+              <path
+                d="M12 3v2M12 19v2M4.9 4.9l1.4 1.4M17.7 17.7l1.4 1.4M3 12h2M19 12h2M4.9 19.1l1.4-1.4M17.7 6.3l1.4-1.4"
+                stroke="currentColor"
+                stroke-width="2"
+                stroke-linecap="round"
+                fill="none"
+              />
+            </svg>
+          </span>
+        </button>
       </div>
+      <a
+        class="ask-ai-entry"
+        href="/ask-ai/"
+        data-ask-ai-entry
+        aria-label="Open Ask AI"
+      >
+        <span class="ask-ai-entry-label">Ask AI</span>
+      </a>
     </div>
-    <div class="footer-mark"><span class="title">佛法与无明</span><span>04 / 30</span></div>
-  </section>
+  </div>
+</nav>
 
-  <!-- 05 拔箭，不是研究箭 -->
-  <section data-label="05 拔箭而已">
-    <!-- Giant translucent hand/arrow motif -->
-    <div aria-hidden="true" class="echo-glyph" style="left: -60px; top: -120px; font-size: 560px; font-weight: 300;">拔</div>
-    <div aria-hidden="true" class="echo-glyph" style="right: 80px; bottom: -140px; font-size: 560px; font-weight: 300;">箭</div>
-    <!-- Horizontal arrow crossing the slide -->
-    <div aria-hidden="true" class="arrow-flight" style="left: 60px; top: 400px; width: 1800px; height: 80px; opacity: 0.25;">
-      <svg viewBox="0 0 1800 80" xmlns="http://www.w3.org/2000/svg">
-        <line x1="0" y1="40" x2="1760" y2="40" stroke="#A63A27" stroke-width="1" stroke-dasharray="2 10"/>
-        <polygon points="1760,40 1730,30 1735,40 1730,50" fill="#A63A27"/>
-        <g transform="translate(0 40)" opacity="0.8">
-          <path d="M0 0 L30 -10 L22 0 L30 10 Z" fill="#A63A27"/>
-        </g>
-      </svg>
-    </div>
-    <div class="chapter-mark"><span class="num">I</span><span class="bar"></span><span class="zh">佛陀只做一件事</span></div>
-    <div class="frame" style="justify-content: center;">
-      <h2 class="slide-subtitle" style="color: var(--ink-mute); font-size: 34px; letter-spacing: 0.05em;">佛陀说——</h2>
-      <div style="height: 36px;"></div>
-      <blockquote class="pull" style="font-size: 68px; line-height: 1.3;">
-        我来这个世界，不是为了解答<br/>
-        那些回答得了回答不了都不影响你继续痛苦的问题。<br/>
-        <span style="color: var(--cinnabar);">我只做一件事：教你怎么拔箭。</span>
-      </blockquote>
-      <p class="body" style="margin-top: 80px; max-width: 1500px; font-size: 30px;">
-        所以佛法从一开始就不是一套形而上学——它是一套 <span class="em">关于如何停止制造痛苦的操作指南</span>。
-      </p>
-    </div>
-    <div class="footer-mark"><span class="title">佛法与无明</span><span>05 / 30</span></div>
-  </section>
-
-  <!-- 06 四圣谛 table -->
-  <section data-label="06 四圣谛">
-    <div class="chapter-mark"><span class="num">I</span><span class="bar"></span><span class="zh">诊断</span></div>
-    <div class="frame">
-      <h1 class="slide-title">四圣谛：像看病一样看苦</h1>
-      <div style="height: var(--title-gap)"></div>
-      <table class="book">
-        <thead>
-          <tr>
-            <th style="width: 160px;">谛</th>
-            <th>含义</th>
-            <th style="width: 280px;">看病类比</th>
-          </tr>
-        </thead>
-        <tbody>
-          <tr>
-            <td class="lead">苦 <span class="en">Dukkha</span></td>
-            <td>生老病死、爱别离、求不得——人生本质上不圆满</td>
-            <td style="color: var(--cinnabar); font-weight: 500;">症状</td>
-          </tr>
-          <tr>
-            <td class="lead">集 <span class="en">Samudaya</span></td>
-            <td>苦的根源：贪欲与执着；而贪欲的深层来自 <span style="color: var(--cinnabar); font-weight: 500;">无明</span></td>
-            <td style="color: var(--cinnabar); font-weight: 500;">病因</td>
-          </tr>
-          <tr>
-            <td class="lead">灭 <span class="en">Nirodha</span></td>
-            <td>从执着里解脱，不再被无明驱动</td>
-            <td style="color: var(--cinnabar); font-weight: 500;">痊愈</td>
-          </tr>
-          <tr>
-            <td class="lead">道 <span class="en">Magga</span></td>
-            <td>八正道：正见、正思、正语、正业、正命、正精进、正念、正定</td>
-            <td style="color: var(--cinnabar); font-weight: 500;">药方</td>
-          </tr>
-        </tbody>
-      </table>
-    </div>
-    <div class="footer-mark"><span class="title">佛法与无明</span><span>06 / 30</span></div>
-  </section>
-
-  <!-- 07 苦是技术问题 -->
-  <section data-label="07 苦是技术问题">
-    <div class="chapter-mark"><span class="num">I</span><span class="bar"></span><span class="zh">一个激进的主张</span></div>
-    <div class="frame" style="justify-content: center;">
-      <div style="font-family: 'EB Garamond', serif; font-style: italic; font-size: 34px; color: var(--ink-mute); margin-bottom: 36px;">Four Noble Truths → one claim:</div>
-      <blockquote class="pull" style="font-size: 80px; line-height: 1.25; border-left-color: var(--cinnabar);">
-        苦是有原因的，<br/>
-        原因是可以断的。
-      </blockquote>
-      <div style="margin-top: 80px; display: grid; grid-template-columns: repeat(3, 1fr); gap: 60px; font-size: 26px; color: var(--ink-mute); line-height: 1.5;">
-        <div><span style="display:block; color: var(--ink-faint); font-family: 'EB Garamond',serif; font-style: italic; font-size: 20px; letter-spacing: 0.2em; margin-bottom: 10px;">NOT</span>不是命运的安排</div>
-        <div><span style="display:block; color: var(--ink-faint); font-family: 'EB Garamond',serif; font-style: italic; font-size: 20px; letter-spacing: 0.2em; margin-bottom: 10px;">NOT</span>不是神的惩罚</div>
-        <div><span style="display:block; color: var(--ink-faint); font-family: 'EB Garamond',serif; font-style: italic; font-size: 20px; letter-spacing: 0.2em; margin-bottom: 10px;">NOT</span>不是天生倒霉</div>
+      <main class="page-shell article-page">
+        <div class="article-layout has-toc page-shell-content">
+          
+    <aside class="article-toc sidebar-panel" data-toc>
+      <button class="toc-toggle sidebar-toggle" type="button" data-toc-toggle aria-expanded="false">
+        <span class="toc-toggle-label">目录</span>
+        <span class="toc-toggle-icon" aria-hidden="true">⌄</span>
+      </button>
+      <div class="toc-panel sidebar-panel-content" data-toc-panel>
+        <div class="toc-title sidebar-title">目录</div>
+        <ol class="toc-list sidebar-list">
+      <li class="toc-item sidebar-item toc-level-1"><a class="sidebar-link" href="#佛法与-无明-一个两千五百年前的诊断">佛法与「无明」：一个两千五百年前的诊断</a></li>
+      <li class="toc-item sidebar-item toc-level-2"><a class="sidebar-link" href="#引子">引子</a></li>
+      <li class="toc-item sidebar-item toc-level-2"><a class="sidebar-link" href="#一-佛陀为什么只讲-苦">一、佛陀为什么只讲「苦」</a></li>
+      <li class="toc-item sidebar-item toc-level-2"><a class="sidebar-link" href="#二-诊断-四圣谛">二、诊断：四圣谛</a></li>
+      <li class="toc-item sidebar-item toc-level-2"><a class="sidebar-link" href="#三-苦是怎么生起来的-第二支箭">三、苦是怎么生起来的：第二支箭</a></li>
+      <li class="toc-item sidebar-item toc-level-2"><a class="sidebar-link" href="#四-无明-到底是什么">四、「无明」到底是什么</a></li>
+      <li class="toc-item sidebar-item toc-level-3"><a class="sidebar-link" href="#不是-没文化">不是&quot;没文化&quot;</a></li>
+      <li class="toc-item sidebar-item toc-level-3"><a class="sidebar-link" href="#三个看错">三个看错</a></li>
+      <li class="toc-item sidebar-item toc-level-3"><a class="sidebar-link" href="#故事一-kisa-gotami-与芥菜子-讲-无常">故事一：Kisa Gotami 与芥菜子（讲&quot;无常&quot;）</a></li>
+      <li class="toc-item sidebar-item toc-level-3"><a class="sidebar-link" href="#故事二-盲人摸象-讲-无明作为把局部当全部">故事二：盲人摸象（讲&quot;无明作为把局部当全部&quot;）</a></li>
+      <li class="toc-item sidebar-item toc-level-2"><a class="sidebar-link" href="#五-缘起性空-佛法对-真实-的正面回答">五、缘起性空：佛法对&quot;真实&quot;的正面回答</a></li>
+      <li class="toc-item sidebar-item toc-level-3"><a class="sidebar-link" href="#缘起-此有故彼有">缘起：此有故彼有</a></li>
+      <li class="toc-item sidebar-item toc-level-3"><a class="sidebar-link" href="#性空-没有独立自性">性空：没有独立自性</a></li>
+      <li class="toc-item sidebar-item toc-level-3"><a class="sidebar-link" href="#缘起即性空">缘起即性空</a></li>
+      <li class="toc-item sidebar-item toc-level-3"><a class="sidebar-link" href="#因陀罗网-一颗宝珠里映出整个宇宙">因陀罗网：一颗宝珠里映出整个宇宙</a></li>
+      <li class="toc-item sidebar-item toc-level-3"><a class="sidebar-link" href="#这对-无明-意味着什么">这对&quot;无明&quot;意味着什么</a></li>
+      <li class="toc-item sidebar-item toc-level-2"><a class="sidebar-link" href="#六-怎么对治-戒-定-慧-从单体服务重构成微服务">六、怎么对治——戒、定、慧：从单体服务重构成微服务</a></li>
+      <li class="toc-item sidebar-item toc-level-3"><a class="sidebar-link" href="#戒-限流与熔断">戒：限流与熔断</a></li>
+      <li class="toc-item sidebar-item toc-level-3"><a class="sidebar-link" href="#定-给黑盒装上可观测性">定：给黑盒装上可观测性</a></li>
+      <li class="toc-item sidebar-item toc-level-3"><a class="sidebar-link" href="#慧-把单体拆成微服务">慧：把单体拆成微服务</a></li>
+      <li class="toc-item sidebar-item toc-level-2"><a class="sidebar-link" href="#七-最后一个提醒-渡河舍筏">七、最后一个提醒——渡河舍筏</a></li>
+      <li class="toc-item sidebar-item toc-level-2"><a class="sidebar-link" href="#一句话总结">一句话总结</a></li>
+      <li class="toc-item sidebar-item toc-level-2"><a class="sidebar-link" href="#参考">参考</a></li>
+        </ol>
       </div>
-      <p class="body" style="margin-top: 80px; max-width: 1400px; font-size: 32px;">
-        苦是一个 <span class="em">技术问题</span>——有因有果，有因就能断。
-      </p>
-    </div>
-    <div class="footer-mark"><span class="title">佛法与无明</span><span>07 / 30</span></div>
-  </section>
+    </aside>
+  
+          <div class="article-content">
+            
 
-  <!-- 08 Part II divider -->
-  <section data-label="08 Part II — 第二支箭">
-    <div aria-hidden="true" class="lotus-mark" style="right: 120px; top: 50%; transform: translateY(-50%); width: 520px; height: 520px;">
-      <svg viewBox="0 0 520 520" xmlns="http://www.w3.org/2000/svg">
-        <g transform="translate(260 260)" stroke="#A63A27" stroke-width="1" fill="none">
-          <!-- Two arrows crossing -->
-          <line x1="-220" y1="-180" x2="220" y2="180"/>
-          <polygon points="220,180 200,165 210,178 200,195" fill="#A63A27"/>
-          <polygon points="-220,-180 -200,-165 -210,-178 -200,-195" fill="#A63A27"/>
-          <line x1="-220" y1="180" x2="220" y2="-180"/>
-          <polygon points="220,-180 200,-195 210,-178 200,-165" fill="#A63A27"/>
-          <circle r="6" fill="#A63A27"/>
-        </g>
-      </svg>
-    </div>
-    <div class="frame divider">
-      <div>
-        <div class="chapter-num">PART <span class="slash">/</span> II</div>
-        <div class="chapter-title">第二支箭</div>
-        <div class="chapter-sub">How Suffering Actually Compounds</div>
-      </div>
-    </div>
-  </section>
+<div class="article-text-content">
+  <div class="article-date">2026-04-24 · ESSAYS</div>
+  <h1 class="article-hero">佛法与「无明」</h1>
+  <div class="article-artifacts">
+    <a class="article-artifact article-artifact-slides" href="/buddhism-wuming-slides/"><span class="article-artifact-label">打开演示稿（30 张）</span><span class="article-artifact-arrow" aria-hidden="true">→</span></a>
+  </div>
+  <div class="article-body"><h1 id="佛法与-无明-一个两千五百年前的诊断">佛法与「无明」：一个两千五百年前的诊断</h1>
+<blockquote>
+<p><strong>Author: Claude (AI)</strong>
+本条目由 AI 基于用户的笔记线索与网络资料综合写成，非用户手写。</p>
+</blockquote>
+<h2 id="引子">引子</h2>
+<p>你大概有过这样的夜晚——为了一件没能拿到的结果反复回放：复盘自己哪句话说错了，对方哪个神情意味着什么，如果当时换一种做法会不会不同。你知道这件事已经过去了，但脑子停不下来。</p>
+<p>我第一次读到&quot;无明&quot;这个词的时候，起初以为是&quot;没文化&quot;的意思。后来才发现这是佛陀两千五百年前对我那种夜晚的诊断：不是你不够聪明，也不是你运气差，而是你看世界的方式，在一个根本的地方错位了。</p>
+<p>这篇文章想把这个诊断讲清楚——不是为了劝谁信佛，而是因为这套框架本身就是一把很好用的尺子。</p>
+<h2 id="一-佛陀为什么只讲-苦">一、佛陀为什么只讲「苦」</h2>
+<p>《中阿含经》里有一个很有名的故事，叫<strong>箭喻经</strong>。</p>
+<p>有个弟子跑来问佛陀一串形而上的大问题：宇宙是有边还是无边？灵魂和肉体是一还是异？人死后还在不在？佛陀一个都不回答。他打了一个比方：</p>
+<blockquote>
+<p>一个人中了毒箭，命悬一线。有人要给他拔箭，他却说：“别拔，我要先知道——射箭的人是什么种姓？姓什么？高还是矮？用的弓是什么木头做的？箭羽是什么鸟的羽毛？”</p>
+<p>还没等问完，人就死了。</p>
+</blockquote>
+<p>佛陀说，我来这个世界不是为了解答那些你回答得了回答不了都不影响你继续痛苦的问题。<strong>我只做一件事：教你怎么拔箭。</strong></p>
+<p>所以佛法从一开始就不是一套形而上学，而是一套<strong>关于如何停止制造痛苦的操作指南</strong>。这是读懂它的前提。</p>
+<h2 id="二-诊断-四圣谛">二、诊断：四圣谛</h2>
+<p>佛陀第一次说法讲的就是四圣谛，逻辑和看病惊人地像：</p>
+<table>
+<thead>
+<tr>
+<th>谛</th>
+<th>含义</th>
+<th>看病类比</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>苦</strong></td>
+<td>生老病死、爱别离、求不得——人生本质上不圆满</td>
+<td>症状</td>
+</tr>
+<tr>
+<td><strong>集</strong></td>
+<td>苦的根源：贪欲与执着；而贪欲的深层来自<strong>无明</strong></td>
+<td>病因</td>
+</tr>
+<tr>
+<td><strong>灭</strong></td>
+<td>从执着里解脱，不再被无明驱动</td>
+<td>痊愈</td>
+</tr>
+<tr>
+<td><strong>道</strong></td>
+<td>八正道：正见、正思、正语、正业、正命、正精进、正念、正定</td>
+<td>药方</td>
+</tr>
+</tbody>
+</table>
+<p>四圣谛最关键的一句断言是：<strong>苦是有原因的，原因是可以断的。</strong> 不是命运、不是惩罚、不是天生倒霉。这在当时是很激进的主张——大部分宗教告诉你苦是神的安排、是业报、是你必须承受的东西；佛陀说，苦是个<strong>技术问题</strong>，有因有果，有因就能断。</p>
+<h2 id="三-苦是怎么生起来的-第二支箭">三、苦是怎么生起来的：第二支箭</h2>
+<p>那苦到底怎么生起来？佛陀在<strong>第二支箭经</strong>（<em>Sallatha Sutta</em>）里讲了一个更短的比喻：</p>
+<blockquote>
+<p>一个人被射中了一箭，身上很痛。这是第一支箭。
+紧接着他开始想：为什么是我？谁干的？我下次怎么躲？我这辈子是不是完了？——于是他又中了第二支箭。</p>
+<p><strong>凡夫中两箭，圣者只中一箭。</strong></p>
+</blockquote>
+<p>第一支箭是世界给你的——工作丢了、恋人走了、考试砸了、朋友误会你了。这是真实的痛，没办法。</p>
+<p>第二支箭是你<strong>自己射自己的</strong>——反刍、抗拒、怨恨、幻想、自我否定。它才是让痛延长十倍一百倍的东西。</p>
+<p>而从&quot;第一支箭&quot;到&quot;第二支箭&quot;之间，发生了什么？佛陀把这个过程拆成了十二步，叫<strong>十二因缘</strong>：</p>
+<blockquote>
+<p>无明 → 行 → 识 → 名色 → 六入 → 触 → 受 → 爱 → 取 → 有 → 生 → 老死</p>
+</blockquote>
+<p>细节不重要，重要的是<strong>这条链的起点叫「无明」</strong>。只要无明在，这条链就会一遍一遍地自动运行——遇到一件小事，它也能跑完全程。要想中断，得从源头下手。</p>
+<h2 id="四-无明-到底是什么">四、「无明」到底是什么</h2>
+<h3 id="不是-没文化">不是&quot;没文化&quot;</h3>
+<p>&quot;无明&quot;是梵语 <strong>Avidyā</strong> 的意译。拆开看：</p>
+<ul>
+<li><strong>a-</strong> = 否定前缀，“非”</li>
+<li><strong>vidyā</strong> = 知、明、了知</li>
+</ul>
+<p>巧合（或者不巧合）的是，vidyā 和英语里的 <em>wisdom</em>、<em>video</em>、<em>vision</em> 同源，都来自印欧词根 *weid-「看见、知道」。所以&quot;无明&quot;最字面的意思是&quot;<strong>看不见</strong>&quot;。不是没学问，而是——<strong>看错了事物本来的样子</strong>。</p>
+<h3 id="三个看错">三个看错</h3>
+<p>具体看错什么？佛陀说主要是这三件事：</p>
+<table>
+<thead>
+<tr>
+<th>真实</th>
+<th>无明的误解</th>
+<th>典型后果</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>诸行<strong>无常</strong>（一切都在变）</td>
+<td>以为人、关系、情绪、成就是不会变的</td>
+<td>一旦失去，就觉得&quot;本不该失去&quot;而痛苦</td>
+</tr>
+<tr>
+<td>诸法<strong>无我</strong>（没有一个固定的&quot;我&quot;）</td>
+<td>执着一个恒定的&quot;我&quot;/ “我的”</td>
+<td>一旦被否定，就觉得是本体受伤</td>
+</tr>
+<tr>
+<td>诸法<strong>缘起</strong>（事物互相依存）</td>
+<td>以为事物是独立存在、可以单独抓取的</td>
+<td>看不见自己正处在一张条件网里</td>
+</tr>
+</tbody>
+</table>
+<p>这三条听起来很抽象，但它们每天都在我们身上发生。下面两个佛经里的小故事，应该能让你立刻明白。</p>
+<h3 id="故事一-kisa-gotami-与芥菜子-讲-无常">故事一：Kisa Gotami 与芥菜子（讲&quot;无常&quot;）</h3>
+<p>这是佛陀时代最有名的故事之一，出自《法句经》注疏。</p>
+<blockquote>
+<p>Kisa Gotami 是一个年轻的母亲，她唯一的儿子病死了。她疯了一样抱着孩子的尸体，满城找人救他，没有人能帮她。最后有人说：“你去找佛陀吧。”</p>
+<p>她抱着孩子跪在佛陀面前哀求：“请让我的儿子活过来。”</p>
+<p>佛陀说：“可以。但你要先给我找一样东西——<strong>一粒芥菜子</strong>。条件是：这粒芥菜子必须来自一户从来没有死过人的家庭。”</p>
+<p>Kisa Gotami 大喜，挨家挨户去问。每一家都愿意给她芥菜子——芥菜子在印度和今天的盐一样便宜，家家都有。但当她问到&quot;你家里有没有死过人&quot;，每一家都沉默，然后告诉她：我们失去过父亲，失去过祖母，失去过孩子，失去过兄长……</p>
+<p>她走完整个村庄，手里没有一粒芥菜子。但她懂了。</p>
+<p>她回到佛陀面前，安葬了孩子，成为了佛陀的弟子。</p>
+</blockquote>
+<p>这个故事最狠的地方是：佛陀没有跟她讲&quot;无常&quot;这个概念一个字。他让她<strong>自己走出来看到</strong>。</p>
+<p>这就是佛法里&quot;慧&quot;的本来面目——<strong>不是想明白，是看明白</strong>。</p>
+<h3 id="故事二-盲人摸象-讲-无明作为把局部当全部">故事二：盲人摸象（讲&quot;无明作为把局部当全部&quot;）</h3>
+<p>出自《长阿含经》和《涅槃经》。</p>
+<blockquote>
+<p>一个国王召集了一群盲人，让他们摸一头大象，然后说出大象是什么样子。</p>
+<p>摸到象牙的说：“大象像一根白萝卜。”
+摸到耳朵的说：“不对，大象像一把扇子。”
+摸到腿的说：“你们全错了，大象像一根柱子。”
+摸到肚子的说：“大象分明像一堵墙。”
+摸到尾巴的说：“你们都胡说，大象就是一根绳子。”</p>
+<p>他们吵了起来，每个人都坚信自己摸到的才是真相。</p>
+</blockquote>
+<p>国王在一旁看着笑。佛陀说，众生就是这些盲人。</p>
+<p>注意——<strong>他们每个人说的都没错</strong>。象牙确实像白萝卜，耳朵确实像扇子。无明不是说他们&quot;感觉错了&quot;，而是说他们<strong>把自己那一小段触感，误当成了大象的全部</strong>。</p>
+<p>回头看我们自己：一次失败被当成&quot;我这个人不行&quot;；一次被拒绝被当成&quot;世界讨厌我&quot;；一段感情的终结被当成&quot;我再也不会被爱了&quot;。每一次，我们都在把一根象腿当成整头大象。</p>
+<h2 id="五-缘起性空-佛法对-真实-的正面回答">五、缘起性空：佛法对&quot;真实&quot;的正面回答</h2>
+<p>上面说的&quot;无明&quot;是诊断——告诉你看错了什么。但佛法并没有停在&quot;你错了&quot;这里；它还给出了事物<strong>实际上</strong>是什么样的正面描述，这就是 <strong>缘起性空</strong>。</p>
+<p>这四个字是佛法里最精妙、也最容易被误解的一组概念。它同时也是大乘佛教（尤其是中观学派）的理论核心。</p>
+<h3 id="缘起-此有故彼有">缘起：此有故彼有</h3>
+<p>“缘起&quot;的梵文是 <strong>Pratītyasamutpāda</strong>，字面意思就是&quot;依赖条件而生起”。佛陀在《杂阿含经》里用一句话把它讲尽：</p>
+<blockquote>
+<p><strong>此有故彼有，此生故彼生；此无故彼无，此灭故彼灭。</strong></p>
+</blockquote>
+<p>一件事之所以存在，是因为另外一堆条件同时存在；它之所以消失，是因为那堆条件变了。<strong>没有任何事物是从自己里面长出来的</strong>。</p>
+<p>举一个最平常的例子——你手里这杯茶。</p>
+<p>它不是凭空出现的：需要水、茶叶、热、杯子。再往前追溯，水来自雨，雨来自海的蒸发，蒸发需要阳光；茶叶来自一棵茶树，茶树需要土壤、雨水、采茶人、晾晒工、运输工人、整条供应链；杯子背后是陶土、窑火、一个几千年传下来的手艺。</p>
+<p>任何一环没对上，你现在手里就不会有这杯茶。它不是&quot;一个独立的东西恰好存在于此&quot;，而是<strong>整个宇宙在这一刻恰好这样配合，呈现成了一杯茶的样子</strong>。</p>
+<h3 id="性空-没有独立自性">性空：没有独立自性</h3>
+<p>那&quot;空&quot;呢？这是全篇最需要讲清楚的一个字，因为它被误解得最严重。</p>
+<p><strong>“空&quot;不是&quot;什么都没有”</strong>（那是虚无主义），<strong>也不是&quot;看破红尘、人生如梦&quot;</strong>（那是消极主义）。它的准确含义是：</p>
+<blockquote>
+<p><strong>没有独立自性</strong>——empty of inherent self-existence。</p>
+</blockquote>
+<p>《那先比丘经》里有一段经典的对话。弥兰陀王（希腊化的米南德王）去找那先比丘，劈头就问：&quot;你叫那先，那到底什么是’那先’？&quot;那先不直接回答，反问他：</p>
+<blockquote>
+<p>“大王，您是坐车来的吗？”
+“是。”
+“那么请问大王——<strong>车轴</strong>是车吗？<strong>轮子</strong>是车吗？<strong>辕木</strong>是车吗？<strong>车身</strong>是车吗？”
+王一一回答&quot;不是&quot;。
+“那么——离开了轴、轮、辕、身，另外有没有一个’车’的本体？”
+王只好回答：“也没有。”</p>
+<p>那先说：“对了。‘车’只是当轴、轮、辕、身按某种方式组合起来时，我们给这个组合起的一个<strong>名字</strong>。离开了条件，没有独立的’车’。'那先’也一样。”</p>
+</blockquote>
+<p>这就是&quot;性空&quot;最清楚的解释。&quot;车&quot;不是不存在——你确实坐着它来了；但它<strong>没有独立自性</strong>，它是一组条件的暂时聚合，我们给这个聚合起了一个<strong>假名</strong>。</p>
+<p>你、我、这杯茶、这段关系、你所谓的&quot;自我&quot;——全都是这样。</p>
+<h3 id="缘起即性空">缘起即性空</h3>
+<p>看到这里你可能已经猜到：<strong>缘起和性空其实是同一件事的两面</strong>。</p>
+<p>公元二世纪的龙树菩萨在《中论》里用一首偈子把这点钉死：</p>
+<blockquote>
+<p><strong>众因缘生法，我说即是空，亦为是假名，亦是中道义。</strong></p>
+</blockquote>
+<p>翻译过来：凡是由因缘聚合而生的东西，我就说它是&quot;空&quot;的（没有独立自性）；它只是一个暂时的名字；而这正是不偏于&quot;实有&quot;、也不偏于&quot;虚无&quot;的<strong>中道</strong>。</p>
+<p><strong>因为一切都是缘起，所以一切都是性空。</strong> 这两者不是前后关系，而是同一个事实的两种说法。</p>
+<p>这也是为什么《心经》里那句著名的&quot;<strong>色即是空，空即是色</strong>&quot;并不玄——“色”（现象）本身就是缘起聚合的，所以它本身就是&quot;空&quot;（无自性）；反过来，正因为它无自性、可以被条件改变，它才能显现成一个一个具体的&quot;色&quot;。两个不是对立的，是互相成立的。</p>
+<h3 id="因陀罗网-一颗宝珠里映出整个宇宙">因陀罗网：一颗宝珠里映出整个宇宙</h3>
+<p>《华严经》给这个思想留下了一个极美的意象，叫<strong>因陀罗网</strong>。</p>
+<blockquote>
+<p>天帝因陀罗的宫殿上空，挂着一张巨大的网。网的每一个结上都缀着一颗宝珠。每颗宝珠都清澈无比，能映出周围所有其他宝珠的影子。</p>
+<p>而每一颗被映出的宝珠里，又映着它周围所有宝珠的影子；那些影子里，又映着更多宝珠的影子……层层无穷，重重无尽。</p>
+<p>你取下任何一颗宝珠，整张网都会改变。
+你注视任何一颗宝珠，都在同时注视着整个宇宙。</p>
+</blockquote>
+<p>这是缘起的极致图像。没有一颗宝珠能&quot;独立&quot;存在——它的光来自其他宝珠的反射，它的映像又构成了别的宝珠的光。整张网是一个不可分割的整体。</p>
+<p>人也是这样。你之所以是今天的你，是因为你的父母、你的语言、你的童年、你今天读的这篇文章、你昨晚做的那个梦……一切条件在这一刻恰好这样配合。任何一环抽掉，你都不是这个&quot;你&quot;了。</p>
+<h3 id="这对-无明-意味着什么">这对&quot;无明&quot;意味着什么</h3>
+<p>现在可以回头看了。无明的三个误解——把无常当恒常、把无我当有我、把缘起当独立——其实是<strong>同一个误解的三个侧面</strong>：</p>
+<blockquote>
+<p>以为事物有一个独立的、自足的、恒定的本质。</p>
+</blockquote>
+<p>而缘起性空是一面镜子，把这个误解照得无处可藏。一旦你真的看见&quot;这杯茶是整个宇宙此刻的配合&quot;，你也就同时看见了它<strong>不会永恒</strong>（无常）、<strong>里面没有一个’茶的本体’</strong>（无我）、<strong>它和万物牵连</strong>（缘起）。三件事是一件事。</p>
+<p>Kisa Gotami 走完村庄那一刻，看见的不是&quot;无常&quot;三个字，而是<strong>她自己身处的那张因陀罗网</strong>——每一家都有一颗&quot;失去&quot;的宝珠在闪光，那些光映在她的宝珠上，她终于看见自己并不是一个独立承受不幸的个体。</p>
+<p>这也是为什么佛经里说&quot;<strong>见缘起即见法，见法即见佛</strong>&quot;。<strong>看见缘起，就是走出无明的那一步。</strong></p>
+<h2 id="六-怎么对治-戒-定-慧-从单体服务重构成微服务">六、怎么对治——戒、定、慧：从单体服务重构成微服务</h2>
+<p>这一节我换一套科技从业者更熟悉的语言来讲。</p>
+<p><strong>把&quot;自我&quot;想象成一个在线服务</strong>。大多数人的心智是一个<strong>单体服务（monolith）</strong>——代码高度耦合、状态全局共享、没有限流、没有熔断、没有隔离。只要一个小 bug 打进来（同事一个眼神、PR 被打回、一次面试没过、伴侣一句话），整个系统就会 500——饭不想吃、觉不想睡、别的事也做不下去。这种时刻你会觉得&quot;<strong>我这个人完了</strong>&quot;，因为确实，那个瞬间，你那个&quot;我&quot;就是一整块崩掉了。</p>
+<p><strong>修行的本质，就是把这个心智系统从单体重构成微服务</strong>——每个模块有自己的边界、有限流、有熔断、有监控。同样一个事件进来，它只会触发对应的那一个服务，别的服务继续健康运行。一次失败就只是一次失败，而不是&quot;整个人生的故障&quot;。</p>
+<p>佛法给出的重构路径叫 <strong>三学</strong>：戒（sīla）、定（samādhi）、慧（prajñā）。</p>
+<h3 id="戒-限流与熔断">戒：限流与熔断</h3>
+<p>先不伤人、不妄语、不过度刺激自己——这不是道德要求，而是<strong>系统稳定性的前置条件</strong>。</p>
+<p>一个已经 CPU 99%、内存快要 OOM 的系统，你没法在上面做任何精细的重构。你得先把不必要的流量挡在外面（限流），把疯狂重试的下游切掉（熔断）。对应到生活里就是：睡够、吃好、少喝酒、少刷手机、远离那些让你更动摇的人和环境。</p>
+<p>这一步不性感，但跳过它，后面两步都做不了。</p>
+<h3 id="定-给黑盒装上可观测性">定：给黑盒装上可观测性</h3>
+<p>&quot;定&quot;就是给心装上 <strong>observability</strong>——metrics、tracing、logging。</p>
+<p>单体系统最痛苦的地方是：出了问题你不知道是哪里出了问题。没日志、没监控、全凭猜。大多数人的心就是这样——你知道自己&quot;心情不好&quot;，但说不出具体是<strong>哪一个子系统</strong>在报警、它是在<strong>哪个时刻、被哪条消息</strong>触发的，只能笼统地说&quot;今天状态很差&quot;。</p>
+<p>&quot;定&quot;的训练就是给内心装上采集层。最经典的练习是<strong>数呼吸</strong>——坐下，数 1 到 10，然后重新开始。听起来很蠢，但真做 10 分钟你就会发现：你数不到 3 就跑神了。你的心一直在疯狂地发消息，只是从来没有一个 consumer 去消费它们。</p>
+<p>装上这一层之后，你才能回答最基本的问题——<strong>此刻我在想什么？正在感受什么？是哪个触发点让我启动了这条反刍线程？</strong></p>
+<h3 id="慧-把单体拆成微服务">慧：把单体拆成微服务</h3>
+<p>慧是真正的重构——<strong>把那团耦合在一起的&quot;我&quot;，拆成一组有清晰边界的服务</strong>。</p>
+<p>回到上一节的缘起性空：你此刻的痛苦不是&quot;一个整块的我在痛苦&quot;，它是一张临时组起来的因陀罗网——昨晚没睡好（基础资源不足）、早上看到一条触发的消息（一条异常 payload）、胃里有点饿（底层服务异常）、对方那个神情让你想起了父亲（一条很旧的缓存被击中）。这些调用链同时被触发，你就崩了。</p>
+<p>“<strong>慧</strong>&quot;就是在事情发生的那一瞬间，看见整条调用链。一旦你看见&quot;这次崩溃不是’我这个人不行’，而是 A 服务收到了一条异常请求，顺手又触发了 B 服务里的一条老逻辑”——整个事件就从<strong>全局灾难</strong>降级成<strong>一次可以被处理的局部 incident</strong>。</p>
+<p><strong>看见它是网，它就松了。</strong> 这就是慧为什么能从无明里走出来——<strong>无明就是把所有事都当成单体故障</strong>（“我完了 / 我不值得被爱 / 这辈子没救了”）；<strong>慧就是看见一切都是微服务级的、局部的、可拆解的、可恢复的</strong>。</p>
+<p>人的成长过程，其实就是这张架构图的不断重构。同样一件事，20 岁时能让你崩溃一个月，30 岁时只需要崩一下午——不是因为事情变小了，是因为你心里的服务边界变清楚了。换句话说：</p>
+<blockquote>
+<p><strong>修行不是让你变得更少痛苦，而是让你的痛苦变得更有边界。</strong></p>
+</blockquote>
+<h2 id="七-最后一个提醒-渡河舍筏">七、最后一个提醒——渡河舍筏</h2>
+<p>《中阿含经》里还有一个很有意思的比喻，叫<strong>筏喻</strong>。</p>
+<blockquote>
+<p>一个人要过河。他砍木头造了一个筏子，靠着它渡到了对岸。上岸以后他想：“这个筏子帮了我这么大的忙，我要把它扛在肩上，带着它走一辈子。”</p>
+<p>佛陀说：这个人聪明吗？不聪明。</p>
+<p><strong>法如筏，渡过了就要放下。</strong></p>
+</blockquote>
+<p>这是佛陀一个非常重要的提醒——<strong>连佛法本身都不能执着</strong>。你抓着&quot;我在修行&quot;、“我懂了空性”、&quot;我比别人觉悟&quot;不放，那又是一种新的无明。</p>
+<p>《心经》里那句很多人听过的&quot;<strong>无无明，亦无无明尽</strong>&quot;，就是这个意思：真正到了那一步，连&quot;无明&quot;和&quot;缘起性空&quot;这两个概念也不必再握在手里。指向月亮的手指，不要当成月亮本身。</p>
+<h2 id="一句话总结">一句话总结</h2>
+<blockquote>
+<p><strong>无明是误以为现象是一个独立的实体；缘起性空是看见它本就不是。佛法的全部努力，就是让你看清这件事——先看清，再放下。</strong></p>
+</blockquote>
+<h2 id="参考">参考</h2>
+<ul>
+<li>《杂阿含经》/《中阿含经》——佛陀早期说法的主要记录，毒箭喻、第二支箭、筏喻、&quot;此有故彼有&quot;都出自这里。</li>
+<li>《法句经》及其注疏——Kisa Gotami 的故事经典出处。</li>
+<li>《长阿含经·世记经》——盲人摸象故事。</li>
+<li>《那先比丘经》/《弥兰陀王问经》——&quot;车喻&quot;的出处，讲性空最好的故事。</li>
+<li>《华严经》——&quot;因陀罗网&quot;的出处。</li>
+<li>龙树《中论》——“众因缘生法，我说即是空”，中观学派对缘起性空的系统论述。</li>
+<li>《心经》——两百六十个字把&quot;空性&quot;和&quot;无明&quot;讲到了极致。</li>
+<li>一行禅师《正念的奇迹》、铃木俊隆《禅者的初心》——两本很好的入门读物，没有门槛。</li>
+</ul>
+</div>
+</div>
 
-  <!-- 09 Two arrows -->
-  <section data-label="09 两支箭">
-    <div class="chapter-mark"><span class="num">II</span><span class="bar"></span><span class="zh">第二支箭经</span></div>
-    <div class="frame">
-      <h1 class="slide-title">凡夫中两箭，圣者只中一箭</h1>
-      <div style="height: var(--title-gap)"></div>
-      <div class="arrows-layout">
-        <div class="arrow-card">
-          <div class="n">THE FIRST ARROW</div>
-          <h3>第一支箭<br/>— 世界射向你 —</h3>
-          <p>工作丢了。</p>
-          <p>恋人走了。</p>
-          <p>考试砸了。</p>
-          <p>朋友误会你了。</p>
-          <div class="punch">这是真实的痛，没办法。</div>
-        </div>
-        <div class="arrow-card second">
-          <div class="n">THE SECOND ARROW</div>
-          <h3>第二支箭<br/>— 你射向自己 —</h3>
-          <p>为什么是我？</p>
-          <p>谁干的？</p>
-          <p>我下次怎么躲？</p>
-          <p>我这辈子是不是完了？</p>
-          <div class="punch" style="color: var(--cinnabar);">让痛延长十倍一百倍的东西。</div>
-        </div>
-      </div>
-    </div>
-    <div class="footer-mark"><span class="title">佛法与无明</span><span>09 / 30</span></div>
-  </section>
-
-  <!-- 10 十二因缘 -->
-  <section data-label="10 十二因缘">
-    <div class="chapter-mark"><span class="num">II</span><span class="bar"></span><span class="zh">十二因缘</span></div>
-    <div class="frame">
-      <h1 class="slide-title">这条链的起点叫「无明」</h1>
-      <div style="height: 36px"></div>
-      <div style="display: grid; grid-template-columns: 1.15fr 0.85fr; gap: 80px; flex: 1; min-height: 0; align-items: start;">
-        <!-- LEFT: chain + body -->
-        <div>
-          <div class="chain" style="font-size: 26px;">
-            <span class="node start">无明</span>
-            <span class="arrow">→</span><span class="node">行</span>
-            <span class="arrow">→</span><span class="node">识</span>
-            <span class="arrow">→</span><span class="node">名色</span>
-            <span class="arrow">→</span><span class="node">六入</span>
-            <span class="arrow">→</span><span class="node">触</span>
-            <span class="arrow">→</span><span class="node">受</span>
-            <span class="arrow">→</span><span class="node">爱</span>
-            <span class="arrow">→</span><span class="node">取</span>
-            <span class="arrow">→</span><span class="node">有</span>
-            <span class="arrow">→</span><span class="node">生</span>
-            <span class="arrow">→</span><span class="node">老死</span>
-          </div>
-          <div style="margin-top: 48px; max-width: 900px;">
-            <p class="body" style="font-size: 28px;">
-              细节不重要。重要的是——只要 <span class="em">无明</span> 在，这条链就会一遍一遍地自动运行。遇到一件小事，它也能跑完全程。
-            </p>
-            <p class="body" style="font-size: 28px; margin-top: 24px; color: var(--cinnabar);">
-              要想中断，得从源头下手。
-            </p>
-          </div>
-          <!-- A lived example of the chain firing -->
-          <div style="margin-top: 48px; padding: 28px 32px; background: var(--paper-deep); border-left: 3px solid var(--cinnabar); max-width: 900px;">
-            <div style="font-family:'EB Garamond',serif; font-style: italic; font-size: 20px; letter-spacing: 0.2em; color: var(--cinnabar); margin-bottom: 12px;">ONE SMALL EVENT, WHOLE CHAIN FIRES</div>
-            <div style="font-size: 22px; line-height: 1.55; color: var(--ink-soft);">
-              同事发了一条略冷的消息 → <span style="color: var(--ink);">触</span> → 心里一紧（<span style="color: var(--ink);">受</span>）→ 想抓回ta的认可（<span style="color: var(--ink);">爱 · 取</span>）→ 开始反刍（<span style="color: var(--ink);">有 · 生</span>）→ 一整晚的自我否定（<span style="color: var(--ink);">老死</span>）。
-            </div>
+            <section class="citation-section" data-citation-section></section>
+            <section class="comment-section" data-comment-section></section>
           </div>
         </div>
-        <!-- RIGHT: circular wheel diagram -->
-        <div style="position: relative;">
-          <div style="font-family:'EB Garamond',serif; font-style: italic; font-size: 22px; letter-spacing: 0.2em; color: var(--cinnabar); margin-bottom: 16px; text-align: center;">THE WHEEL &nbsp;·&nbsp; BHAVACAKRA</div>
-          <svg viewBox="0 0 520 520" style="width: 100%; height: auto; max-height: 520px; display: block;" xmlns="http://www.w3.org/2000/svg">
-            <defs>
-              <radialGradient id="wheelFade" cx="50%" cy="50%" r="50%">
-                <stop offset="0%" stop-color="#A63A27" stop-opacity="0.08"/>
-                <stop offset="100%" stop-color="#A63A27" stop-opacity="0"/>
-              </radialGradient>
-            </defs>
-            <circle cx="260" cy="260" r="220" fill="url(#wheelFade)"/>
-            <circle cx="260" cy="260" r="220" fill="none" stroke="#C8BDA5" stroke-width="1"/>
-            <circle cx="260" cy="260" r="150" fill="none" stroke="#C8BDA5" stroke-width="0.5" stroke-dasharray="2 4"/>
-            <!-- spokes -->
-            <g stroke="#C8BDA5" stroke-width="0.6">
-              <script/>
-            </g>
-            <g id="wheel-spokes-10"></g>
-            <g id="wheel-labels-10" font-family="Noto Serif SC, serif" font-size="22" fill="#1C1A17" text-anchor="middle"></g>
-            <!-- Hub -->
-            <circle cx="260" cy="260" r="54" fill="#A63A27" opacity="0.12"/>
-            <circle cx="260" cy="260" r="54" fill="none" stroke="#A63A27" stroke-width="1.2"/>
-            <text x="260" y="254" font-family="Noto Serif SC, serif" font-size="28" font-weight="600" fill="#A63A27" text-anchor="middle">无明</text>
-            <text x="260" y="284" font-family="EB Garamond, serif" font-style="italic" font-size="14" fill="#726B5E" text-anchor="middle">avidyā</text>
-          </svg>
-          <script>
-            (function(){
-              const labels = ['无明','行','识','名色','六入','触','受','爱','取','有','生','老死'];
-              const spokes = document.getElementById('wheel-spokes-10');
-              const labelG = document.getElementById('wheel-labels-10');
-              const cx = 260, cy = 260, rLabel = 190, rSpokeIn = 62, rSpokeOut = 218;
-              for (let i = 0; i < 12; i++){
-                const ang = -Math.PI/2 + (i * 2 * Math.PI / 12);
-                const x = cx + Math.cos(ang) * rLabel;
-                const y = cy + Math.sin(ang) * rLabel + 8;
-                const t = document.createElementNS('http://www.w3.org/2000/svg','text');
-                t.setAttribute('x', x); t.setAttribute('y', y);
-                t.textContent = labels[i];
-                if (i === 0) { t.setAttribute('fill', '#A63A27'); t.setAttribute('font-weight', '600'); t.setAttribute('font-size', '26'); }
-                labelG.appendChild(t);
-                // spoke line
-                const x1 = cx + Math.cos(ang) * rSpokeIn;
-                const y1 = cy + Math.sin(ang) * rSpokeIn;
-                const x2 = cx + Math.cos(ang) * rSpokeOut;
-                const y2 = cy + Math.sin(ang) * rSpokeOut;
-                const line = document.createElementNS('http://www.w3.org/2000/svg','line');
-                line.setAttribute('x1', x1); line.setAttribute('y1', y1);
-                line.setAttribute('x2', x2); line.setAttribute('y2', y2);
-                line.setAttribute('stroke', i === 0 ? '#A63A27' : '#C8BDA5');
-                line.setAttribute('stroke-width', i === 0 ? '1.4' : '0.6');
-                spokes.appendChild(line);
-              }
-              // direction arrow — clockwise
-              const arrow = document.createElementNS('http://www.w3.org/2000/svg','path');
-              arrow.setAttribute('d', 'M 440 260 A 180 180 0 0 1 428 320');
-              arrow.setAttribute('stroke', '#A63A27'); arrow.setAttribute('stroke-width', '1.5');
-              arrow.setAttribute('fill','none'); arrow.setAttribute('marker-end','url(#wheelArrow10)');
-              spokes.parentElement.appendChild(arrow);
-              const defs = spokes.parentElement.querySelector('defs');
-              const m = document.createElementNS('http://www.w3.org/2000/svg','marker');
-              m.setAttribute('id','wheelArrow10'); m.setAttribute('viewBox','0 0 10 10');
-              m.setAttribute('refX','8'); m.setAttribute('refY','5');
-              m.setAttribute('markerWidth','6'); m.setAttribute('markerHeight','6');
-              m.setAttribute('orient','auto-start-reverse');
-              m.innerHTML = '<path d="M 0 0 L 10 5 L 0 10 Z" fill="#A63A27"/>';
-              defs.appendChild(m);
-            })();
-          </script>
-          <div style="margin-top: 20px; text-align: center; font-family:'EB Garamond',serif; font-style: italic; font-size: 20px; color: var(--ink-mute);">
-            cut the hub, the wheel stops turning.
-          </div>
-        </div>
-      </div>
+      </main>
     </div>
-    <div class="footer-mark"><span class="title">佛法与无明</span><span>10 / 30</span></div>
-  </section>
 
-  <!-- 11 Part III divider -->
-  <section data-label="11 Part III — 无明是什么">
-    <div aria-hidden="true" class="lotus-mark" style="right: 120px; top: 50%; transform: translateY(-50%); width: 520px; height: 520px;">
-      <svg viewBox="0 0 520 520" xmlns="http://www.w3.org/2000/svg">
-        <g transform="translate(260 260)" stroke="#A63A27" stroke-width="1" fill="none">
-          <!-- eye / mandala -->
-          <ellipse rx="220" ry="110"/>
-          <ellipse rx="180" ry="90"/>
-          <circle r="60"/>
-          <circle r="30" fill="#A63A27" opacity="0.3"/>
-          <circle r="12" fill="#A63A27"/>
-        </g>
-      </svg>
-    </div>
-    <div class="frame divider">
-      <div>
-        <div class="chapter-num">PART <span class="slash">/</span> III</div>
-        <div class="chapter-title">「无明」到底是什么</div>
-        <div class="chapter-sub">Not Ignorance. Mis-seeing.</div>
-      </div>
-    </div>
-  </section>
-
-  <!-- 12 Etymology -->
-  <section data-label="12 词源">
-    <div class="chapter-mark"><span class="num">III</span><span class="bar"></span><span class="zh">词源</span></div>
-    <div class="frame">
-      <h1 class="slide-title">无明 <span style="color: var(--ink-faint); font-family: 'EB Garamond',serif; font-style: italic; font-weight: 400;">≠</span> 没文化</h1>
-      <div style="height: 40px"></div>
-      <div style="display: grid; grid-template-columns: 1.2fr 0.8fr; gap: 80px; flex: 1; min-height: 0;">
-        <!-- LEFT: etymology breakdown + note -->
-        <div>
-          <div class="etym-grid" style="font-size: 32px;">
-            <div class="tok" style="font-size: 40px;">Avidyā</div>
-            <div class="eq">=</div>
-            <div class="gloss" style="font-size: 30px;"><span style="font-family:'EB Garamond',serif; font-style: italic; color: var(--ink-mute);">a-</span> + <span style="font-family:'EB Garamond',serif; font-style: italic; color: var(--ink-mute);">vidyā</span><br/><span style="font-size: 24px; color: var(--ink-mute);">否定前缀 + 知 / 明 / 了知</span></div>
-
-            <div class="tok" style="font-size: 40px;">vidyā</div>
-            <div class="eq">~</div>
-            <div class="gloss" style="font-size: 28px;"><span style="font-family:'EB Garamond',serif; font-style: italic;">wisdom · video · vision</span><br/><span style="font-size: 22px; color: var(--ink-mute);">同源于印欧词根 <span class="mono" style="color: var(--cinnabar);">*weid-</span></span></div>
-
-            <div class="tok" style="font-size: 40px;">*weid-</div>
-            <div class="eq">=</div>
-            <div class="gloss" style="font-size: 30px;">看见 · 知道</div>
-          </div>
-
-          <p class="etym-note" style="margin-top: 48px; font-size: 28px;">
-            所以"无明"最字面的意思是 <span class="em">"看不见"</span>——<br/>
-            不是没学问，而是 <span class="em">看错了事物本来的样子。</span>
-          </p>
-        </div>
-        <!-- RIGHT: cross-linguistic cognate tree — a scholar's marginal note -->
-        <div style="padding: 32px 36px; background: var(--paper-deep); border: 1px solid var(--rule); position: relative;">
-          <div style="position: absolute; top: -14px; left: 28px; background: var(--paper-deep); padding: 0 12px; font-family:'EB Garamond',serif; font-style: italic; font-size: 20px; letter-spacing: 0.2em; color: var(--cinnabar);">COGNATES ACROSS TIME</div>
-          <div style="text-align: center; margin-top: 16px;">
-            <div style="font-family:'JetBrains Mono',monospace; font-size: 24px; color: var(--cinnabar); letter-spacing: 0.08em;">*weid-</div>
-            <div style="font-size: 18px; color: var(--ink-mute); font-family:'EB Garamond',serif; font-style: italic; margin-top: 4px;">Proto-Indo-European · "to see, to know"</div>
-          </div>
-          <div style="margin-top: 20px; display: flex; justify-content: center;">
-            <svg viewBox="0 0 300 40" width="300" height="40"><g stroke="#A63A27" stroke-width="0.8" fill="none"><line x1="150" y1="0" x2="150" y2="14"/><line x1="30" y1="14" x2="270" y2="14"/><line x1="30" y1="14" x2="30" y2="36"/><line x1="90" y1="14" x2="90" y2="36"/><line x1="150" y1="14" x2="150" y2="36"/><line x1="210" y1="14" x2="210" y2="36"/><line x1="270" y1="14" x2="270" y2="36"/></g></svg>
-          </div>
-          <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 16px 24px; font-size: 22px; line-height: 1.45;">
-            <div><span style="font-family:'EB Garamond',serif; font-style: italic; color: var(--cinnabar);">vidyā</span> <span style="font-size: 18px; color: var(--ink-mute);">梵 · 知识</span></div>
-            <div><span style="font-family:'EB Garamond',serif; font-style: italic; color: var(--cinnabar);">wisdom</span> <span style="font-size: 18px; color: var(--ink-mute);">英 · 智慧</span></div>
-            <div><span style="font-family:'EB Garamond',serif; font-style: italic; color: var(--cinnabar);">video</span> <span style="font-size: 18px; color: var(--ink-mute);">拉 · 我看见</span></div>
-            <div><span style="font-family:'EB Garamond',serif; font-style: italic; color: var(--cinnabar);">vision</span> <span style="font-size: 18px; color: var(--ink-mute);">视力 · 远见</span></div>
-            <div><span style="font-family:'EB Garamond',serif; font-style: italic; color: var(--cinnabar);">οἶδα</span> <span style="font-size: 18px; color: var(--ink-mute);">希 · 我知</span></div>
-            <div><span style="font-family:'EB Garamond',serif; font-style: italic; color: var(--cinnabar);">witan</span> <span style="font-size: 18px; color: var(--ink-mute);">古英 · 知晓</span></div>
-          </div>
-          <div style="margin-top: 28px; padding-top: 22px; border-top: 1px dashed var(--rule); font-size: 22px; line-height: 1.55; color: var(--ink-soft);">
-            <span style="color: var(--cinnabar);">◆</span> 跨越梵语、希腊语、拉丁语、日耳曼语——
-            <span style="color: var(--ink);">"知" 和 "看" 原本是同一个动作。</span>
-          </div>
-          <div style="margin-top: 20px; font-size: 22px; line-height: 1.55; color: var(--ink-soft);">
-            <span style="color: var(--cinnabar);">◆</span> 佛陀使用"无明"这个词时，借助的是 <span style="color: var(--ink);">眼睛的隐喻</span>，不是头脑的隐喻。
-          </div>
-        </div>
-      </div>
-    </div>
-    <div class="footer-mark"><span class="title">佛法与无明</span><span>12 / 30</span></div>
-  </section>
-
-  <!-- 13 三个看错 table -->
-  <section data-label="13 三个看错">
-    <div class="chapter-mark"><span class="num">III</span><span class="bar"></span><span class="zh">具体看错什么</span></div>
-    <div class="frame">
-      <h1 class="slide-title">三个看错</h1>
-      <div style="height: var(--title-gap)"></div>
-      <table class="book">
-        <thead>
-          <tr>
-            <th style="width: 420px;">真实</th>
-            <th style="width: 520px;">无明的误解</th>
-            <th>典型后果</th>
-          </tr>
-        </thead>
-        <tbody>
-          <tr>
-            <td class="lead" style="width: 420px;">诸行无常<span class="en">all things pass</span></td>
-            <td>以为人、关系、情绪、成就是不会变的</td>
-            <td style="color: var(--ink-soft);">一旦失去，就觉得<br/>"本不该失去"而痛苦</td>
-          </tr>
-          <tr>
-            <td class="lead" style="width: 420px;">诸法无我<span class="en">no fixed self</span></td>
-            <td>执着一个恒定的"我" / "我的"</td>
-            <td style="color: var(--ink-soft);">一旦被否定，<br/>就觉得是本体受伤</td>
-          </tr>
-          <tr>
-            <td class="lead" style="width: 420px;">诸法缘起<span class="en">dependent arising</span></td>
-            <td>以为事物是独立存在、可以单独抓取的</td>
-            <td style="color: var(--ink-soft);">看不见自己正处在<br/>一张条件网里</td>
-          </tr>
-        </tbody>
-      </table>
-    </div>
-    <div class="footer-mark"><span class="title">佛法与无明</span><span>13 / 30</span></div>
-  </section>
-
-  <!-- 14 Kisa Gotami setup -->
-  <section data-label="14 Kisa Gotami 故事">
-    <!-- Mustard seeds scattered in the right margin -->
-    <div aria-hidden="true" class="theme-art" style="right: 60px; top: 80px; width: 260px; height: 900px; opacity: 0.55;">
-      <svg viewBox="0 0 260 900" xmlns="http://www.w3.org/2000/svg">
-        <g fill="#A63A27" opacity="0.8">
-          <circle cx="40" cy="60" r="5"/>
-          <circle cx="110" cy="80" r="4"/>
-          <circle cx="180" cy="50" r="6"/>
-          <circle cx="70" cy="140" r="4"/>
-          <circle cx="210" cy="180" r="5"/>
-          <circle cx="150" cy="220" r="4"/>
-          <circle cx="60" cy="280" r="6"/>
-          <circle cx="180" cy="320" r="4"/>
-          <circle cx="100" cy="380" r="5"/>
-          <circle cx="220" cy="440" r="4"/>
-          <circle cx="40" cy="480" r="6"/>
-          <circle cx="160" cy="530" r="4"/>
-          <circle cx="90" cy="600" r="5"/>
-          <circle cx="210" cy="650" r="4"/>
-          <circle cx="50" cy="700" r="6"/>
-          <circle cx="140" cy="760" r="4"/>
-          <circle cx="200" cy="820" r="5"/>
-        </g>
-        <g fill="none" stroke="#A63A27" stroke-width="0.5" opacity="0.3">
-          <circle cx="40" cy="60" r="14"/>
-          <circle cx="180" cy="50" r="16"/>
-          <circle cx="60" cy="280" r="16"/>
-          <circle cx="40" cy="480" r="16"/>
-          <circle cx="50" cy="700" r="16"/>
-        </g>
-      </svg>
-    </div>
-    <div aria-hidden="true" class="echo-glyph" style="left: -40px; bottom: -160px; font-size: 500px; font-weight: 400;">常</div>
-    <div class="chapter-mark"><span class="num">III</span><span class="bar"></span><span class="zh">故事一 · 讲"无常"</span></div>
-    <div class="frame">
-      <h1 class="slide-title">Kisa Gotami 与一粒芥菜子</h1>
-      <div style="height: var(--title-gap)"></div>
-      <div class="story-frame">
-        <div class="story-aside">
-          <div class="label">出处</div>
-          <div class="name">《法句经》注疏<br/>Dhammapada Aṭṭhakathā</div>
-          <div class="source" style="margin-top: 18px;">一个年轻的母亲，<br/>唯一的儿子病死了。</div>
-        </div>
-        <div class="story-body">
-          <p>她疯了一样抱着孩子的尸体，满城找人救他。没有人能帮她。</p>
-          <p>最后有人说："你去找佛陀吧。"</p>
-          <p>她跪在佛陀面前："请让我的儿子活过来。"</p>
-          <p>佛陀说："可以。但你要先给我找一样东西——<span class="em">一粒芥菜子</span>。条件是：这粒芥菜子必须来自一户从来没有死过人的家庭。"</p>
-        </div>
-      </div>
-    </div>
-    <div class="footer-mark"><span class="title">佛法与无明</span><span>14 / 30</span></div>
-  </section>
-
-  <!-- 15 She walked the whole village -->
-  <section data-label="15 走完整个村庄">
-    <!-- footsteps trail -->
-    <div aria-hidden="true" class="theme-art" style="left: 0; bottom: 60px; width: 1920px; height: 140px; opacity: 0.25;">
-      <svg viewBox="0 0 1920 140" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="none">
-        <g fill="#A63A27">
-          <ellipse cx="100" cy="70" rx="10" ry="18"/>
-          <ellipse cx="180" cy="90" rx="10" ry="18"/>
-          <ellipse cx="280" cy="60" rx="10" ry="18"/>
-          <ellipse cx="380" cy="85" rx="10" ry="18"/>
-          <ellipse cx="490" cy="65" rx="10" ry="18"/>
-          <ellipse cx="600" cy="88" rx="10" ry="18"/>
-          <ellipse cx="720" cy="62" rx="10" ry="18"/>
-          <ellipse cx="840" cy="86" rx="10" ry="18"/>
-          <ellipse cx="960" cy="64" rx="10" ry="18"/>
-          <ellipse cx="1080" cy="88" rx="10" ry="18"/>
-          <ellipse cx="1200" cy="66" rx="10" ry="18"/>
-          <ellipse cx="1320" cy="88" rx="10" ry="18"/>
-          <ellipse cx="1440" cy="64" rx="10" ry="18"/>
-          <ellipse cx="1560" cy="86" rx="10" ry="18"/>
-          <ellipse cx="1680" cy="60" rx="10" ry="18"/>
-          <ellipse cx="1800" cy="82" rx="10" ry="18"/>
-        </g>
-      </svg>
-    </div>
-    <div aria-hidden="true" class="echo-glyph" style="right: -40px; top: -80px; font-size: 420px; font-weight: 300;">走</div>
-    <div class="chapter-mark"><span class="num">III</span><span class="bar"></span><span class="zh">故事一</span></div>
-    <div class="frame">
-      <div class="two-up">
-        <div style="display: flex; flex-direction: column; justify-content: center;">
-          <div style="font-family: 'EB Garamond', serif; font-style: italic; font-size: 26px; color: var(--cinnabar); letter-spacing: 0.2em; margin-bottom: 20px;">AND SO SHE WALKED —</div>
-          <p style="font-size: 38px; line-height: 1.5; color: var(--ink); margin: 0;">
-            每一家都愿意给她芥菜子。<br/><br/>
-            但当她问到 <span style="color: var(--cinnabar);">"你家里有没有死过人"</span>——<br/>
-            每一家都沉默。
-          </p>
-        </div>
-        <div style="display: flex; flex-direction: column; justify-content: center; padding-left: 60px; border-left: 1px solid var(--rule);">
-          <ul class="zen" style="gap: 16px; font-size: 28px;">
-            <li>我们失去过父亲。</li>
-            <li>失去过祖母。</li>
-            <li>失去过孩子。</li>
-            <li>失去过兄长……</li>
-          </ul>
-          <div style="margin-top: 60px; padding-top: 32px; border-top: 1px dashed var(--rule); font-size: 30px; line-height: 1.55; color: var(--ink);">
-            她走完整个村庄，<br/>
-            手里没有一粒芥菜子。<br/>
-            <span style="color: var(--cinnabar); font-weight: 500;">但她懂了。</span>
-          </div>
-        </div>
-      </div>
-    </div>
-    <div class="footer-mark"><span class="title">佛法与无明</span><span>15 / 30</span></div>
-  </section>
-
-  <!-- 16 慧 =看明白 -->
-  <section data-label="16 慧是看明白">
-    <div class="chapter-mark"><span class="num">III</span><span class="bar"></span><span class="zh">故事一 · 小结</span></div>
-    <div class="frame">
-      <div style="font-family: 'EB Garamond', serif; font-style: italic; font-size: 30px; color: var(--ink-mute); margin-bottom: 32px;">The Buddha didn't explain impermanence. He had her walk.</div>
-      <div style="display: grid; grid-template-columns: 1.25fr 0.95fr; gap: 80px; flex: 1; min-height: 0; align-items: start;">
-        <!-- LEFT: the main claim + reading -->
-        <div>
-          <blockquote class="pull" style="font-size: 76px; line-height: 1.25; border-left-color: var(--cinnabar);">
-            慧不是想明白，<br/>
-            是<span style="color: var(--cinnabar);">看明白</span>。
-          </blockquote>
-          <p class="body" style="margin-top: 56px; font-size: 28px; max-width: 850px;">
-            佛陀没有讲"无常"这个词一个字。<br/>
-            他让她 <span class="em">自己走出来看到</span>。
-          </p>
-          <p class="body" style="margin-top: 28px; font-size: 26px; max-width: 850px; color: var(--ink-mute);">
-            道理听一百遍也不会松手。<br/>
-            唯有 <span style="color: var(--ink);">亲眼走一遍</span>，才放得下。
-          </p>
-        </div>
-        <!-- RIGHT: think vs see, side by side -->
-        <div>
-          <div style="font-family:'EB Garamond',serif; font-style: italic; font-size: 22px; letter-spacing: 0.2em; color: var(--cinnabar); margin-bottom: 18px;">TWO KINDS OF KNOWING</div>
-          <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 0;">
-            <div style="padding: 28px 24px 24px; border-top: 2px solid var(--ink-faint); border-right: 1px dashed var(--rule);">
-              <div style="font-size: 34px; font-weight: 600; color: var(--ink-soft); margin-bottom: 8px;">想明白</div>
-              <div style="font-family:'EB Garamond',serif; font-style: italic; font-size: 20px; color: var(--ink-mute); margin-bottom: 20px;">understanding</div>
-              <ul style="list-style:none; padding: 0; margin: 0; font-size: 22px; line-height: 1.55; color: var(--ink-soft);">
-                <li style="margin-bottom: 14px;">从概念到概念</li>
-                <li style="margin-bottom: 14px;">知识的积累</li>
-                <li style="margin-bottom: 14px;">头脑说"是的"</li>
-                <li style="margin-bottom: 0;">心还在抓</li>
-              </ul>
-            </div>
-            <div style="padding: 28px 24px 24px; border-top: 2px solid var(--cinnabar);">
-              <div style="font-size: 34px; font-weight: 600; color: var(--cinnabar); margin-bottom: 8px;">看明白</div>
-              <div style="font-family:'EB Garamond',serif; font-style: italic; font-size: 20px; color: var(--cinnabar); margin-bottom: 20px;">prajñā · seeing</div>
-              <ul style="list-style:none; padding: 0; margin: 0; font-size: 22px; line-height: 1.55; color: var(--ink);">
-                <li style="margin-bottom: 14px;">从现象本身看见</li>
-                <li style="margin-bottom: 14px;">一次性的松脱</li>
-                <li style="margin-bottom: 14px;">心说"啊，是这样"</li>
-                <li style="margin-bottom: 0;">手自然松开</li>
-              </ul>
-            </div>
-          </div>
-          <div style="margin-top: 36px; padding: 24px 28px; background: var(--paper-deep); border-left: 3px solid var(--cinnabar); font-size: 24px; line-height: 1.55; color: var(--ink);">
-            <span style="color: var(--cinnabar); font-family:'EB Garamond',serif; font-style: italic;">The Pāli term:</span><br/>
-            <span style="font-family:'EB Garamond',serif; font-style: italic; color: var(--cinnabar); font-size: 28px;">paññā</span> = 不是 knowledge，而是 <span style="font-weight: 500;">insight</span>——<br/>
-            <span style="color: var(--ink-mute); font-size: 22px;">穿透现象的、直接的看见。</span>
-          </div>
-        </div>
-      </div>
-    </div>
-    <div class="footer-mark"><span class="title">佛法与无明</span><span>16 / 30</span></div>
-  </section>
-
-  <!-- 17 盲人摸象 -->
-  <section data-label="17 盲人摸象">
-    <!-- Elephant removed -->
-    <div aria-hidden="true" class="echo-glyph" style="right: 40px; top: 20px; font-size: 340px; font-weight: 400;">象</div>
-    <div class="chapter-mark"><span class="num">III</span><span class="bar"></span><span class="zh">故事二 · 讲"把局部当全部"</span></div>
-    <div class="frame">
-      <h1 class="slide-title">盲人摸象</h1>
-      <div style="height: var(--title-gap)"></div>
-      <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 80px; flex: 1;">
-        <ul class="zen" style="font-size: 32px; gap: 28px;">
-          <li><span class="k">THE TUSK</span>大象像一根白萝卜。</li>
-          <li><span class="k">THE EAR</span>大象像一把扇子。</li>
-          <li><span class="k">THE LEG</span>大象像一根柱子。</li>
-          <li><span class="k">THE BELLY</span>大象像一堵墙。</li>
-          <li><span class="k">THE TAIL</span>大象就是一根绳子。</li>
-        </ul>
-        <div style="display: flex; flex-direction: column; justify-content: center;">
-          <p class="body" style="font-size: 32px;">
-            他们吵了起来——每个人都坚信自己摸到的才是真相。
-          </p>
-          <p class="body" style="font-size: 32px; margin-top: 32px;">
-            注意：<span class="em">他们每个人说的都没错。</span><br/>
-            象牙确实像白萝卜，耳朵确实像扇子。
-          </p>
-          <p class="body" style="font-size: 32px; margin-top: 32px; color: var(--cinnabar);">
-            错在——把自己那一小段触感，<br/>
-            误当成了大象的全部。
-          </p>
-        </div>
-      </div>
-    </div>
-    <div class="footer-mark"><span class="title">佛法与无明</span><span>17 / 30</span></div>
-  </section>
-
-  <!-- 18 把象腿当成整头大象 -->
-  <section data-label="18 把象腿当成整头大象">
-    <div aria-hidden="true" class="echo-glyph" style="right: -80px; bottom: -160px; font-size: 680px; font-weight: 300;">全</div>
-    <div aria-hidden="true" class="echo-glyph" style="left: -40px; top: -80px; font-size: 340px; font-weight: 400; opacity: 0.04;">局部</div>
-    <div class="chapter-mark"><span class="num">III</span><span class="bar"></span><span class="zh">回头看我们自己</span></div>
-    <div class="frame" style="justify-content: center;">
-      <div style="display: grid; grid-template-columns: 1fr auto 1fr; gap: 60px; align-items: center;">
-        <div style="text-align: right;">
-          <div style="font-family: 'EB Garamond',serif; font-style: italic; font-size: 22px; letter-spacing: 0.2em; color: var(--ink-mute); margin-bottom: 24px;">ONE SHARD</div>
-          <div style="font-size: 38px; line-height: 1.5; color: var(--ink-soft);">
-            一次失败<br/>
-            一次被拒绝<br/>
-            一段感情的终结
-          </div>
-        </div>
-        <div style="font-size: 80px; color: var(--cinnabar); font-family: 'EB Garamond', serif; font-weight: 300;">⟶</div>
-        <div>
-          <div style="font-family: 'EB Garamond',serif; font-style: italic; font-size: 22px; letter-spacing: 0.2em; color: var(--cinnabar); margin-bottom: 24px;">BECOMES THE WHOLE</div>
-          <div style="font-size: 38px; line-height: 1.5; color: var(--ink);">
-            "我这个人不行"<br/>
-            "世界讨厌我"<br/>
-            "我再也不会被爱了"
-          </div>
-        </div>
-      </div>
-      <div style="margin-top: 120px; text-align: center;">
-        <p class="body" style="font-size: 40px; color: var(--ink);">
-          每一次，我们都在 <span class="em">把一根象腿当成整头大象</span>。
-        </p>
-      </div>
-    </div>
-    <div class="footer-mark"><span class="title">佛法与无明</span><span>18 / 30</span></div>
-  </section>
-
-  <!-- 19 Part IV divider -->
-  <section data-label="19 Part IV — 缘起性空">
-    <div aria-hidden="true" class="lotus-mark" style="right: 120px; top: 50%; transform: translateY(-50%); width: 520px; height: 520px;">
-      <svg viewBox="0 0 520 520" xmlns="http://www.w3.org/2000/svg">
-        <g transform="translate(260 260)" stroke="#A63A27" stroke-width="0.8" fill="none">
-          <!-- Indra's net abstract -->
-          <g opacity="0.8">
-            <circle cx="-120" cy="-120" r="10"/><circle cx="0" cy="-120" r="10"/><circle cx="120" cy="-120" r="10"/>
-            <circle cx="-120" cy="0" r="10"/><circle cx="0" cy="0" r="18" fill="#A63A27"/><circle cx="120" cy="0" r="10"/>
-            <circle cx="-120" cy="120" r="10"/><circle cx="0" cy="120" r="10"/><circle cx="120" cy="120" r="10"/>
-          </g>
-          <g opacity="0.5">
-            <line x1="-120" y1="-120" x2="120" y2="-120"/>
-            <line x1="-120" y1="0" x2="120" y2="0"/>
-            <line x1="-120" y1="120" x2="120" y2="120"/>
-            <line x1="-120" y1="-120" x2="-120" y2="120"/>
-            <line x1="0" y1="-120" x2="0" y2="120"/>
-            <line x1="120" y1="-120" x2="120" y2="120"/>
-          </g>
-        </g>
-      </svg>
-    </div>
-    <div class="frame divider">
-      <div>
-        <div class="chapter-num">PART <span class="slash">/</span> IV</div>
-        <div class="chapter-title">缘起性空</div>
-        <div class="chapter-sub">What's Actually There, Instead</div>
-      </div>
-    </div>
-  </section>
-
-  <!-- 20 此有故彼有 -->
-  <section data-label="20 此有故彼有">
-    <div class="chapter-mark"><span class="num">IV</span><span class="bar"></span><span class="zh">缘起 · Pratītyasamutpāda</span></div>
-    <div class="frame">
-      <div style="font-family: 'EB Garamond', serif; font-style: italic; font-size: 28px; color: var(--ink-mute); margin-bottom: 28px;">The Buddha, in one sentence:</div>
-      <div style="display: grid; grid-template-columns: 1.2fr 0.8fr; gap: 80px; flex: 1; min-height: 0; align-items: start;">
-        <!-- LEFT: quote + body -->
-        <div>
-          <blockquote class="pull" style="font-size: 56px; line-height: 1.35; border-left-color: var(--cinnabar);">
-            此有故彼有，此生故彼生；<br/>
-            此无故彼无，此灭故彼灭。
-            <span class="attrib">— 《杂阿含经》 · Saṃyukta Āgama</span>
-          </blockquote>
-          <p class="body" style="margin-top: 56px; font-size: 28px; max-width: 900px;">
-            一件事之所以存在，是因为另外一堆条件同时存在。<br/>
-            <span class="em">没有任何事物是从自己里面长出来的。</span>
-          </p>
-          <!-- Gloss of the four clauses -->
-          <div style="margin-top: 48px; display: grid; grid-template-columns: auto 1fr; gap: 12px 28px; font-size: 24px; line-height: 1.5; max-width: 900px;">
-            <div style="color: var(--cinnabar); font-weight: 500;">此有故彼有</div>
-            <div style="color: var(--ink-soft);">这个存在，所以那个存在</div>
-            <div style="color: var(--cinnabar); font-weight: 500;">此生故彼生</div>
-            <div style="color: var(--ink-soft);">这个生起，所以那个生起</div>
-            <div style="color: var(--cinnabar); font-weight: 500;">此无故彼无</div>
-            <div style="color: var(--ink-soft);">这个不在，那个也就不在</div>
-            <div style="color: var(--cinnabar); font-weight: 500;">此灭故彼灭</div>
-            <div style="color: var(--ink-soft);">这个熄灭，那个跟着熄灭</div>
-          </div>
-        </div>
-        <!-- RIGHT: 此 / 彼 visual coupling -->
-        <div>
-          <div style="font-family:'EB Garamond',serif; font-style: italic; font-size: 22px; letter-spacing: 0.2em; color: var(--cinnabar); margin-bottom: 24px;">THIS &nbsp;↔&nbsp; THAT</div>
-          <svg viewBox="0 0 460 320" width="100%" style="max-width: 460px; display: block;">
-            <defs>
-              <marker id="coupArr" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse"><path d="M 0 0 L 10 5 L 0 10 Z" fill="#A63A27"/></marker>
-            </defs>
-            <!-- Two interlocked circles -->
-            <circle cx="160" cy="160" r="110" fill="none" stroke="#A63A27" stroke-width="1.4"/>
-            <circle cx="300" cy="160" r="110" fill="none" stroke="#A63A27" stroke-width="1.4"/>
-            <text x="110" y="168" font-family="Noto Serif SC, serif" font-size="54" font-weight="600" fill="#1C1A17" text-anchor="middle">此</text>
-            <text x="350" y="168" font-family="Noto Serif SC, serif" font-size="54" font-weight="600" fill="#1C1A17" text-anchor="middle">彼</text>
-            <!-- up arrow (有→有) -->
-            <path d="M 175 110 Q 230 80 285 110" stroke="#A63A27" stroke-width="1.2" fill="none" marker-end="url(#coupArr)"/>
-            <text x="230" y="82" font-family="EB Garamond, serif" font-style="italic" font-size="18" fill="#A63A27" text-anchor="middle">arising</text>
-            <!-- down arrow (灭→灭) -->
-            <path d="M 175 210 Q 230 240 285 210" stroke="#726B5E" stroke-width="1.2" fill="none" stroke-dasharray="4 3" marker-end="url(#coupArr)"/>
-            <text x="230" y="260" font-family="EB Garamond, serif" font-style="italic" font-size="18" fill="#726B5E" text-anchor="middle">ceasing</text>
-          </svg>
-          <div style="margin-top: 28px; padding: 24px 28px; background: var(--paper-deep); border: 1px solid var(--rule); font-size: 22px; line-height: 1.6; color: var(--ink-soft);">
-            <span style="color: var(--cinnabar); font-family:'EB Garamond',serif; font-style: italic; letter-spacing: 0.1em;">NOT —</span>
-            因为 A 所以 B（线性因果）<br/>
-            <span style="color: var(--cinnabar); font-family:'EB Garamond',serif; font-style: italic; letter-spacing: 0.1em;">BUT —</span>
-            <span style="color: var(--ink); font-weight: 500;">A 和 B 相互依存，一起在，一起不在。</span>
-          </div>
-        </div>
-      </div>
-    </div>
-    <div class="footer-mark"><span class="title">佛法与无明</span><span>20 / 30</span></div>
-  </section>
-
-  <!-- 21 一杯茶背后的宇宙 -->
-  <section data-label="21 一杯茶">
-    <!-- Tea cup with steam (top right) -->
-    <div aria-hidden="true" class="theme-art" style="right: 100px; top: 80px; width: 200px; height: 260px; opacity: 0.35;">
-      <svg viewBox="0 0 200 260" xmlns="http://www.w3.org/2000/svg">
-        <g stroke="#A63A27" stroke-width="1.5" fill="none" stroke-linecap="round">
-          <!-- steam wisps -->
-          <path d="M 70 30 C 60 50, 80 70, 70 90"/>
-          <path d="M 100 20 C 90 45, 110 70, 100 95"/>
-          <path d="M 130 30 C 120 55, 140 80, 130 100"/>
-          <!-- cup -->
-          <path d="M 50 130 L 60 220 Q 100 235, 140 220 L 150 130 Z" fill="#F3ECDF"/>
-          <!-- tea surface -->
-          <ellipse cx="100" cy="130" rx="50" ry="8" fill="#A63A27" opacity="0.3"/>
-          <!-- saucer -->
-          <ellipse cx="100" cy="240" rx="70" ry="8"/>
-        </g>
-      </svg>
-    </div>
-    <div class="chapter-mark"><span class="num">IV</span><span class="bar"></span><span class="zh">缘起 · 一个例子</span></div>
-    <div class="frame">
-      <h1 class="slide-title">你手里这杯茶</h1>
-      <div style="height: 36px"></div>
-      <p class="body" style="font-size: 28px; max-width: 1600px;">它不是凭空出现的——</p>
-      <div style="margin-top: 36px; display: grid; grid-template-columns: repeat(4, 1fr); gap: 32px 40px;">
-        <!-- conditions -->
-        <div class="cond"><span class="k">#01</span>水</div>
-        <div class="cond"><span class="k">#02</span>茶叶</div>
-        <div class="cond"><span class="k">#03</span>热</div>
-        <div class="cond"><span class="k">#04</span>杯子</div>
-        <div class="cond"><span class="k">#05</span>雨</div>
-        <div class="cond"><span class="k">#06</span>海的蒸发</div>
-        <div class="cond"><span class="k">#07</span>阳光</div>
-        <div class="cond"><span class="k">#08</span>一棵茶树</div>
-        <div class="cond"><span class="k">#09</span>土壤 · 雨水</div>
-        <div class="cond"><span class="k">#10</span>采茶人</div>
-        <div class="cond"><span class="k">#11</span>晾晒与运输</div>
-        <div class="cond"><span class="k">#12</span>陶土 · 窑火</div>
-        <div class="cond"><span class="k">#13</span>几千年的手艺</div>
-        <div class="cond"><span class="k">...</span>整条供应链</div>
-        <div class="cond"><span class="k">...</span>此刻的你</div>
-        <div class="cond"><span class="k">...</span>此刻的宇宙</div>
-      </div>
-      <p class="body" style="font-size: 30px; margin-top: 48px; max-width: 1600px; color: var(--ink);">
-        它不是"一个独立的东西恰好存在于此"。<br/>
-        是 <span class="em">整个宇宙在这一刻恰好这样配合，呈现成了一杯茶的样子</span>。
-      </p>
-    </div>
-    <style>
-      .cond {
-        padding: 16px 0;
-        border-top: 1px solid var(--rule);
-        font-size: 26px;
-        color: var(--ink);
-        position: relative;
-      }
-      .cond .k {
-        display: block;
-        font-family: 'JetBrains Mono', monospace;
-        color: var(--cinnabar);
-        font-size: 15px;
-        letter-spacing: 0.15em;
-        margin-bottom: 8px;
-      }
-    </style>
-    <div class="footer-mark"><span class="title">佛法与无明</span><span>21 / 30</span></div>
-  </section>
-
-  <!-- 22 性空 -->
-  <section data-label="22 性空">
-    <div class="chapter-mark"><span class="num">IV</span><span class="bar"></span><span class="zh">性空 · Śūnyatā</span></div>
-    <div class="frame" style="justify-content: center;">
-      <h1 class="slide-title" style="text-align: center; font-size: 96px;">"空" 不是</h1>
-      <div style="height: 60px"></div>
-      <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 80px; max-width: 1500px; margin: 0 auto;">
-        <div style="padding: 40px; border: 1px solid var(--ink-faint); opacity: 0.55;">
-          <div style="font-family: 'EB Garamond', serif; font-style: italic; font-size: 22px; letter-spacing: 0.25em; color: var(--ink-mute); margin-bottom: 16px;">NOT —</div>
-          <div style="font-size: 36px; color: var(--ink-soft); line-height: 1.4;">"什么都没有"<br/><span style="font-size: 22px; color: var(--ink-faint); font-family: 'EB Garamond',serif; font-style: italic;">(nihilism)</span></div>
-        </div>
-        <div style="padding: 40px; border: 1px solid var(--ink-faint); opacity: 0.55;">
-          <div style="font-family: 'EB Garamond', serif; font-style: italic; font-size: 22px; letter-spacing: 0.25em; color: var(--ink-mute); margin-bottom: 16px;">NOT —</div>
-          <div style="font-size: 36px; color: var(--ink-soft); line-height: 1.4;">"看破红尘"<br/><span style="font-size: 22px; color: var(--ink-faint); font-family: 'EB Garamond',serif; font-style: italic;">(escapism)</span></div>
-        </div>
-      </div>
-      <div style="margin-top: 80px; text-align: center;">
-        <div style="font-family: 'EB Garamond', serif; font-style: italic; font-size: 28px; letter-spacing: 0.2em; color: var(--cinnabar); margin-bottom: 20px;">— BUT —</div>
-        <div style="font-size: 54px; color: var(--ink); font-weight: 500; line-height: 1.3;">
-          没有独立自性<br/>
-          <span style="font-family: 'EB Garamond',serif; font-style: italic; font-size: 38px; color: var(--cinnabar); font-weight: 400;">empty of inherent self-existence</span>
-        </div>
-      </div>
-    </div>
-    <div class="footer-mark"><span class="title">佛法与无明</span><span>22 / 30</span></div>
-  </section>
-
-  <!-- 23 车喻 -->
-  <section data-label="23 车喻">
-    <!-- Deconstructed chariot wheel parts -->
-    <div aria-hidden="true" class="theme-art" style="right: 80px; top: 120px; width: 380px; height: 380px; opacity: 0.18;">
-      <svg viewBox="0 0 380 380" xmlns="http://www.w3.org/2000/svg">
-        <g stroke="#1C1A17" stroke-width="1.5" fill="none">
-          <circle cx="190" cy="190" r="160"/>
-          <circle cx="190" cy="190" r="120"/>
-          <circle cx="190" cy="190" r="30"/>
-          <!-- spokes -->
-          <line x1="190" y1="30" x2="190" y2="350"/>
-          <line x1="30" y1="190" x2="350" y2="190"/>
-          <line x1="77" y1="77" x2="303" y2="303"/>
-          <line x1="303" y1="77" x2="77" y2="303"/>
-          <line x1="190" y1="60" x2="190" y2="320" opacity="0.5"/>
-        </g>
-        <circle cx="190" cy="190" r="8" fill="#A63A27"/>
-      </svg>
-    </div>
-    <div aria-hidden="true" class="echo-glyph" style="left: 60px; bottom: -120px; font-size: 440px; font-weight: 400;">车</div>
-    <div class="chapter-mark"><span class="num">IV</span><span class="bar"></span><span class="zh">那先比丘经 · 车喻</span></div>
-    <div class="frame">
-      <h1 class="slide-title">什么是"车"？</h1>
-      <div style="height: var(--title-gap)"></div>
-      <div class="story-frame">
-        <div class="story-aside">
-          <div class="label">出处</div>
-          <div class="name">《那先比丘经》<br/>Milindapañha</div>
-          <div class="source" style="margin-top: 18px;">弥兰陀王（希腊化的米南德王）与那先比丘的对话。</div>
-        </div>
-        <div class="story-body" style="font-size: 28px;">
-          <p><span style="color: var(--cinnabar);">那先：</span>"大王，车轴是车吗？"  <span style="color: var(--ink-mute);">— 王：不是。</span></p>
-          <p><span style="color: var(--cinnabar);">那先：</span>"轮子是车吗？"  <span style="color: var(--ink-mute);">— 不是。</span></p>
-          <p><span style="color: var(--cinnabar);">那先：</span>"辕木？车身？"  <span style="color: var(--ink-mute);">— 都不是。</span></p>
-          <p><span style="color: var(--cinnabar);">那先：</span>"那么离开了轴、轮、辕、身，另外有没有一个'车'的本体？"  <span style="color: var(--ink-mute);">— 也没有。</span></p>
-          <p style="margin-top: 28px; padding-top: 24px; border-top: 1px solid var(--rule); font-size: 30px;">
-            '车' 只是这些条件按某种方式组合起来时，<br/>
-            我们给这个组合起的一个 <span class="em">名字</span>。<br/>
-            <span style="color: var(--cinnabar); font-weight: 500;">离开了条件，没有独立的'车'。</span>
-          </p>
-        </div>
-      </div>
-    </div>
-    <div class="footer-mark"><span class="title">佛法与无明</span><span>23 / 30</span></div>
-  </section>
-
-  <!-- 24 龙树中论 -->
-  <section data-label="24 龙树中论">
-    <div class="chapter-mark"><span class="num">IV</span><span class="bar"></span><span class="zh">中观学派 · 龙树</span></div>
-    <div class="frame">
-      <div style="font-family: 'EB Garamond', serif; font-style: italic; font-size: 28px; color: var(--ink-mute); margin-bottom: 28px;">Nāgārjuna, 2nd c. CE — pinning it down in four lines:</div>
-      <div style="display: grid; grid-template-columns: 1.15fr 0.85fr; gap: 80px; flex: 1; min-height: 0; align-items: start;">
-        <!-- LEFT: quote + gloss -->
-        <div>
-          <blockquote class="pull" style="font-size: 54px; line-height: 1.35; border-left-color: var(--cinnabar);">
-            众因缘生法，我说即是空，<br/>
-            亦为是假名，亦是中道义。
-            <span class="attrib">— 龙树菩萨 《中论》 · Mūlamadhyamakakārikā</span>
-          </blockquote>
-          <div style="margin-top: 56px; font-size: 26px; line-height: 1.8; color: var(--ink-soft); max-width: 900px;">
-            因缘聚合而生的东西 &nbsp;→&nbsp;
-            <span style="color: var(--cinnabar); font-weight: 500;">是"空"（没有独立自性）</span><br/>
-            &nbsp;→&nbsp; <span style="color: var(--ink); font-weight: 500;">只是一个暂时的假名</span><br/>
-            &nbsp;→&nbsp; 不偏于"实有"、也不偏于"虚无" = <span class="em">中道</span>
-          </div>
-        </div>
-        <!-- RIGHT: two truths / middle way visual -->
-        <div>
-          <div style="font-family:'EB Garamond',serif; font-style: italic; font-size: 22px; letter-spacing: 0.2em; color: var(--cinnabar); margin-bottom: 20px;">THE MIDDLE WAY · 中道</div>
-          <div style="position: relative; padding: 32px 28px; background: var(--paper-deep); border: 1px solid var(--rule);">
-            <!-- Two extremes -->
-            <div style="display: grid; grid-template-columns: 1fr auto 1fr; gap: 20px; align-items: center; text-align: center;">
-              <div style="padding: 18px 12px; border: 1px solid var(--ink-faint); opacity: 0.7;">
-                <div style="font-size: 28px; font-weight: 600; color: var(--ink-soft);">实有</div>
-                <div style="font-family:'EB Garamond',serif; font-style: italic; font-size: 16px; color: var(--ink-mute); margin-top: 4px;">eternalism</div>
-                <div style="font-size: 18px; color: var(--ink-mute); margin-top: 8px;">万物有恒定本质</div>
-              </div>
-              <div style="color: var(--cinnabar); font-family:'EB Garamond',serif; font-style: italic; font-size: 18px;">vs</div>
-              <div style="padding: 18px 12px; border: 1px solid var(--ink-faint); opacity: 0.7;">
-                <div style="font-size: 28px; font-weight: 600; color: var(--ink-soft);">虚无</div>
-                <div style="font-family:'EB Garamond',serif; font-style: italic; font-size: 16px; color: var(--ink-mute); margin-top: 4px;">nihilism</div>
-                <div style="font-size: 18px; color: var(--ink-mute); margin-top: 8px;">什么都不存在</div>
-              </div>
-            </div>
-            <!-- arrow down to middle -->
-            <div style="text-align: center; margin: 18px 0 14px; color: var(--cinnabar); font-family:'EB Garamond',serif; font-style: italic; font-size: 22px;">↓</div>
-            <div style="padding: 22px 20px; border: 2px solid var(--cinnabar); text-align: center; background: var(--paper-soft);">
-              <div style="font-size: 34px; font-weight: 600; color: var(--cinnabar);">中道</div>
-              <div style="font-family:'EB Garamond',serif; font-style: italic; font-size: 18px; color: var(--cinnabar); margin-top: 4px;">madhyamā-pratipadā</div>
-              <div style="font-size: 20px; color: var(--ink); margin-top: 10px; line-height: 1.5;">现象真实地呈现，<br/>但没有独立的自性。</div>
-            </div>
-          </div>
-          <!-- Two truths -->
-          <div style="margin-top: 28px; display: grid; grid-template-columns: 1fr 1fr; gap: 14px;">
-            <div style="padding: 16px 18px; border-top: 2px solid var(--ink);">
-              <div style="font-family:'EB Garamond',serif; font-style: italic; font-size: 16px; letter-spacing: 0.15em; color: var(--cinnabar); margin-bottom: 6px;">CONVENTIONAL</div>
-              <div style="font-size: 24px; font-weight: 500; color: var(--ink);">俗谛</div>
-              <div style="font-size: 18px; color: var(--ink-mute); line-height: 1.45; margin-top: 4px;">世间层面的真实——<br/>杯子就是杯子</div>
-            </div>
-            <div style="padding: 16px 18px; border-top: 2px solid var(--cinnabar);">
-              <div style="font-family:'EB Garamond',serif; font-style: italic; font-size: 16px; letter-spacing: 0.15em; color: var(--cinnabar); margin-bottom: 6px;">ULTIMATE</div>
-              <div style="font-size: 24px; font-weight: 500; color: var(--cinnabar);">真谛</div>
-              <div style="font-size: 18px; color: var(--ink-mute); line-height: 1.45; margin-top: 4px;">究竟层面的真实——<br/>没有独立的"杯性"</div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-    <div class="footer-mark"><span class="title">佛法与无明</span><span>24 / 30</span></div>
-  </section>
-
-  <!-- 25 Indra's net -->
-  <section data-label="25 因陀罗网">
-    <div class="chapter-mark"><span class="num">IV</span><span class="bar"></span><span class="zh">华严经 · 因陀罗网</span></div>
-    <div class="frame">
-      <h1 class="slide-title">一颗宝珠里映出整个宇宙</h1>
-      <div style="height: var(--title-gap)"></div>
-      <div style="display: grid; grid-template-columns: 1.05fr 1fr; gap: 80px; flex: 1; align-items: center;">
-        <!-- SVG of indra's net — just a grid of nodes and lines -->
-        <div style="position: relative; aspect-ratio: 1 / 1; max-height: 620px;">
-          <svg viewBox="0 0 600 600" class="indra-svg" xmlns="http://www.w3.org/2000/svg">
-            <defs>
-              <radialGradient id="pearl" cx="50%" cy="50%" r="50%">
-                <stop offset="0%" stop-color="#ffffff" stop-opacity="0.95"/>
-                <stop offset="40%" stop-color="#EFE6D3" stop-opacity="0.9"/>
-                <stop offset="100%" stop-color="#A63A27" stop-opacity="0.9"/>
-              </radialGradient>
-            </defs>
-            <g stroke="#C8BDA5" stroke-width="0.6" opacity="0.85">
-              <!-- grid lines -->
-              <g id="grid-lines"></g>
-            </g>
-            <g id="pearls"></g>
-          </svg>
-          <script>
-            (function(){
-              const svg = document.currentScript.parentElement.querySelector('svg');
-              const linesG = svg.querySelector('#grid-lines');
-              const pearlsG = svg.querySelector('#pearls');
-              const N = 7;
-              const margin = 50;
-              const step = (600 - margin*2) / (N-1);
-              // diagonal lines (net)
-              for (let i = 0; i < N; i++){
-                // horizontal
-                const y = margin + i*step;
-                const h = document.createElementNS('http://www.w3.org/2000/svg','line');
-                h.setAttribute('x1', margin); h.setAttribute('x2', 600-margin);
-                h.setAttribute('y1', y); h.setAttribute('y2', y);
-                linesG.appendChild(h);
-                // vertical
-                const x = margin + i*step;
-                const v = document.createElementNS('http://www.w3.org/2000/svg','line');
-                v.setAttribute('y1', margin); v.setAttribute('y2', 600-margin);
-                v.setAttribute('x1', x); v.setAttribute('x2', x);
-                linesG.appendChild(v);
-              }
-              // diagonals
-              for (let i = 0; i < N; i++){
-                for (let j = 0; j < N; j++){
-                  const x = margin + j*step;
-                  const y = margin + i*step;
-                  const r = (i===3 && j===3) ? 22 : 10;
-                  const c = document.createElementNS('http://www.w3.org/2000/svg','circle');
-                  c.setAttribute('cx', x); c.setAttribute('cy', y); c.setAttribute('r', r);
-                  c.setAttribute('fill', 'url(#pearl)');
-                  c.setAttribute('stroke', '#7C2A1B');
-                  c.setAttribute('stroke-width', '0.6');
-                  const finalOp = (i===3 && j===3) ? 1 : 0.75;
-                  c.setAttribute('opacity', finalOp);
-                  // Bloom delay: distance from center, so ripple outward
-                  const di = i - 3, dj = j - 3;
-                  const dist = Math.sqrt(di*di + dj*dj);
-                  c.style.setProperty('--final-op', finalOp);
-                  c.style.animationDelay = (0.3 + dist * 0.12) + 's';
-                  pearlsG.appendChild(c);
-                }
-              }
-            })();
-          </script>
-        </div>
-        <div>
-          <p class="body" style="font-size: 30px;">
-            天帝因陀罗的宫殿上空，挂着一张巨大的网。<br/>
-            每一个结上都缀着一颗宝珠。
-          </p>
-          <p class="body" style="font-size: 30px; margin-top: 28px;">
-            每颗宝珠都清澈无比，<br/>
-            能映出周围所有其他宝珠的影子——<br/>
-            而那些影子里，又映着更多宝珠的影子。
-          </p>
-          <p class="body" style="font-size: 30px; margin-top: 28px; color: var(--ink);">
-            你取下任何一颗宝珠，<br/>
-            <span class="em">整张网都会改变</span>。
-          </p>
-        </div>
-      </div>
-    </div>
-    <div class="footer-mark"><span class="title">佛法与无明</span><span>25 / 30</span></div>
-  </section>
-
-  <!-- 26 三个误解是一个误解 -->
-  <section data-label="26 三个误解是一个误解">
-    <div class="chapter-mark"><span class="num">IV</span><span class="bar"></span><span class="zh">合上</span></div>
-    <div class="frame" style="justify-content: center;">
-      <h1 class="slide-title" style="font-size: 60px;">无明的三个误解——其实是同一个误解</h1>
-      <div style="height: 60px"></div>
-      <div style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 40px;">
-        <div style="padding: 32px 0; border-top: 2px solid var(--ink);">
-          <div style="font-family:'EB Garamond',serif; font-style: italic; color: var(--cinnabar); font-size: 20px; letter-spacing: 0.2em; margin-bottom: 12px;">① IMPERMANENCE</div>
-          <div style="font-size: 32px; color: var(--ink); line-height: 1.4;">以为恒常 →<br/>其实无常</div>
-        </div>
-        <div style="padding: 32px 0; border-top: 2px solid var(--ink);">
-          <div style="font-family:'EB Garamond',serif; font-style: italic; color: var(--cinnabar); font-size: 20px; letter-spacing: 0.2em; margin-bottom: 12px;">② SELF</div>
-          <div style="font-size: 32px; color: var(--ink); line-height: 1.4;">以为有我 →<br/>其实无我</div>
-        </div>
-        <div style="padding: 32px 0; border-top: 2px solid var(--ink);">
-          <div style="font-family:'EB Garamond',serif; font-style: italic; color: var(--cinnabar); font-size: 20px; letter-spacing: 0.2em; margin-bottom: 12px;">③ INDEPENDENCE</div>
-          <div style="font-size: 32px; color: var(--ink); line-height: 1.4;">以为独立 →<br/>其实缘起</div>
-        </div>
-      </div>
-      <div style="margin-top: 80px; padding: 40px 48px; background: var(--paper-deep); border-left: 3px solid var(--cinnabar);">
-        <div style="font-family:'EB Garamond',serif; font-style: italic; font-size: 22px; color: var(--cinnabar); letter-spacing: 0.2em; margin-bottom: 14px;">THE ONE MISTAKE</div>
-        <div style="font-size: 40px; line-height: 1.4; color: var(--ink); font-weight: 500;">
-          以为事物有一个 <span style="color: var(--cinnabar);">独立的、自足的、恒定的</span> 本质。
-        </div>
-      </div>
-    </div>
-    <div class="footer-mark"><span class="title">佛法与无明</span><span>26 / 30</span></div>
-  </section>
-
-  <!-- 27 Part V divider -->
-  <section data-label="27 Part V — 戒定慧">
-    <div aria-hidden="true" class="lotus-mark" style="right: 120px; top: 50%; transform: translateY(-50%); width: 520px; height: 520px;">
-      <svg viewBox="0 0 520 520" xmlns="http://www.w3.org/2000/svg">
-        <g transform="translate(260 260)" stroke="#A63A27" stroke-width="1" fill="none">
-          <!-- three nested squares rotated -->
-          <rect x="-200" y="-200" width="400" height="400"/>
-          <rect x="-200" y="-200" width="400" height="400" transform="rotate(15)"/>
-          <rect x="-200" y="-200" width="400" height="400" transform="rotate(30)"/>
-          <circle r="60"/>
-          <circle r="24" fill="#A63A27" opacity="0.5"/>
-        </g>
-      </svg>
-    </div>
-    <div class="frame divider">
-      <div>
-        <div class="chapter-num">PART <span class="slash">/</span> V</div>
-        <div class="chapter-title">对治：戒、定、慧</div>
-        <div class="chapter-sub">From Monolith to Microservices</div>
-      </div>
-    </div>
-  </section>
-
-  <!-- 28 monolith analogy -->
-  <section data-label="28 单体 vs 微服务">
-    <div class="chapter-mark"><span class="num">V</span><span class="bar"></span><span class="zh">一个比喻</span></div>
-    <div class="frame">
-      <h1 class="slide-title">把"自我"想象成一个在线服务</h1>
-      <div style="height: var(--title-gap)"></div>
-      <div class="service-grid">
-        <div class="svc-card">
-          <div class="tag">BEFORE / 凡夫</div>
-          <h4>Monolith · 单体</h4>
-          <p>代码高度耦合 · 状态全局共享</p>
-          <p>没有限流 · 没有熔断 · 没有隔离</p>
-          <p>一个小 bug 进来（同事一个眼神、PR 被打回、一次面试没过）——</p>
-          <p style="color: var(--cinnabar); font-weight: 500;">整个系统 500，饭不想吃，觉不想睡。</p>
-          <div class="monolith">$ status → FATAL &nbsp; "我这个人完了"</div>
-        </div>
-        <div class="svc-card" style="border-color: var(--cinnabar);">
-          <div class="tag">AFTER / 修行</div>
-          <h4>Microservices · 微服务</h4>
-          <p>每个模块有自己的边界。</p>
-          <p>有限流 · 熔断 · 监控。</p>
-          <p>同样一个事件进来，只触发对应的那一个服务——</p>
-          <p style="color: var(--cinnabar); font-weight: 500;">别的服务继续健康运行。</p>
-          <div class="monolith">$ status → 1/47 degraded &nbsp; "只是一次失败"</div>
-        </div>
-      </div>
-    </div>
-    <div class="footer-mark"><span class="title">佛法与无明</span><span>28 / 30</span></div>
-  </section>
-
-  <!-- 29 戒定慧 three  -->
-  <section data-label="29 戒定慧">
-    <div class="chapter-mark"><span class="num">V</span><span class="bar"></span><span class="zh">三学</span></div>
-    <div class="frame">
-      <h1 class="slide-title">戒 · 定 · 慧</h1>
-      <div style="height: var(--title-gap)"></div>
-      <table class="book">
-        <thead>
-          <tr>
-            <th style="width: 280px;">三学</th>
-            <th style="width: 360px;">工程类比</th>
-            <th>做什么</th>
-          </tr>
-        </thead>
-        <tbody>
-          <tr>
-            <td class="lead" style="width: 280px;">戒 <span class="en">sīla</span></td>
-            <td style="color: var(--cinnabar); font-weight: 500; width: 360px;">限流 · 熔断</td>
-            <td>睡够、吃好、少喝酒、少刷手机、远离让你更动摇的人和环境。<br/><span style="color: var(--ink-mute); font-size: 24px;">不性感，但跳过它，后面两步都做不了。</span></td>
-          </tr>
-          <tr>
-            <td class="lead" style="width: 280px;">定 <span class="en">samādhi</span></td>
-            <td style="color: var(--cinnabar); font-weight: 500; width: 360px;">可观测性 · observability</td>
-            <td>给心装上 metrics、tracing、logging。数呼吸 1 到 10。<br/><span style="color: var(--ink-mute); font-size: 24px;">你会发现：数不到 3 就跑神了。</span></td>
-          </tr>
-          <tr>
-            <td class="lead" style="width: 280px;">慧 <span class="en">prajñā</span></td>
-            <td style="color: var(--cinnabar); font-weight: 500; width: 360px;">架构重构</td>
-            <td>在事情发生那一瞬间，看见整条调用链——把"我完了"降级成一次可处理的局部 incident。<br/><span style="color: var(--ink-mute); font-size: 24px;">看见它是网，它就松了。</span></td>
-          </tr>
-        </tbody>
-      </table>
-    </div>
-    <div class="footer-mark"><span class="title">佛法与无明</span><span>29 / 30</span></div>
-  </section>
-
-  <!-- 30 修行不是更少痛苦 -->
-  <section data-label="30 更有边界">
-    <div class="chapter-mark"><span class="num">V</span><span class="bar"></span><span class="zh">换一种说法</span></div>
-    <div class="frame">
-      <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 100px; flex: 1; min-height: 0; align-items: center;">
-        <!-- LEFT: the headline -->
-        <div>
-          <blockquote class="pull" style="font-size: 68px; line-height: 1.3; border-left-color: var(--cinnabar);">
-            修行不是让你<br/>
-            <span style="color: var(--ink-faint); text-decoration: line-through;">变得更少痛苦</span><br/>
-            ——是让你的痛苦<br/>
-            <span style="color: var(--cinnabar);">变得更有边界</span>。
-          </blockquote>
-          <p class="body" style="margin-top: 48px; font-size: 26px; max-width: 820px; color: var(--ink-mute);">
-            同样一件事进来——<br/>
-            不再是整个人生的故障，<br/>
-            只是一次可被处理的 <span style="color: var(--ink); font-weight: 500;">局部 incident</span>。
-          </p>
-        </div>
-        <!-- RIGHT: same event, three ages — compression timeline -->
-        <div>
-          <div style="font-family:'EB Garamond',serif; font-style: italic; font-size: 22px; letter-spacing: 0.2em; color: var(--cinnabar); margin-bottom: 24px;">SAME EVENT &nbsp;·&nbsp; ACROSS TIME</div>
-          <div style="font-size: 20px; color: var(--ink-mute); margin-bottom: 24px;">被同事当众否定一次——恢复所需的时间。</div>
-          <!-- Bar chart as three stacked rows -->
-          <div style="display: flex; flex-direction: column; gap: 24px;">
-            <div>
-              <div style="display: flex; justify-content: space-between; font-size: 22px; margin-bottom: 6px;">
-                <span style="color: var(--ink); font-weight: 500;">20 岁</span>
-                <span style="color: var(--ink-mute);">一个月</span>
-              </div>
-              <div style="height: 22px; background: var(--paper-deep); position: relative; overflow: hidden;">
-                <div style="position: absolute; inset: 0 0 0 0; width: 100%; background: linear-gradient(90deg, #A63A27 0%, #7C2A1B 100%);"></div>
-              </div>
-            </div>
-            <div>
-              <div style="display: flex; justify-content: space-between; font-size: 22px; margin-bottom: 6px;">
-                <span style="color: var(--ink); font-weight: 500;">30 岁</span>
-                <span style="color: var(--ink-mute);">一下午</span>
-              </div>
-              <div style="height: 22px; background: var(--paper-deep); position: relative; overflow: hidden;">
-                <div style="position: absolute; inset: 0; width: 18%; background: #A63A27;"></div>
-              </div>
-            </div>
-            <div>
-              <div style="display: flex; justify-content: space-between; font-size: 22px; margin-bottom: 6px;">
-                <span style="color: var(--ink); font-weight: 500;">40 岁</span>
-                <span style="color: var(--ink-mute);">三口气</span>
-              </div>
-              <div style="height: 22px; background: var(--paper-deep); position: relative; overflow: hidden;">
-                <div style="position: absolute; inset: 0; width: 3%; background: #A63A27;"></div>
-              </div>
-            </div>
-          </div>
-          <div style="margin-top: 36px; padding-top: 24px; border-top: 1px dashed var(--rule); font-size: 22px; line-height: 1.6; color: var(--ink-soft); max-width: 700px;">
-            不是因为事情变小了。<br/>
-            是因为你心里的 <span style="color: var(--cinnabar); font-weight: 500;">服务边界</span> 变清楚了——<br/>
-            <span style="color: var(--ink-mute); font-size: 20px; font-style: italic; font-family:'EB Garamond',serif;">the same arrow now hits fewer services.</span>
-          </div>
-        </div>
-      </div>
-    </div>
-    <div class="footer-mark"><span class="title">佛法与无明</span><span>30 / 30</span></div>
-  </section>
-
-  <!-- 31 渡河舍筏 -->
-  <section data-label="31 渡河舍筏">
-    <!-- River waves and a small raft -->
-    <div aria-hidden="true" class="theme-art" style="left: 0; bottom: 0; width: 1920px; height: 260px; opacity: 0.3;">
-      <svg viewBox="0 0 1920 260" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="none">
-        <g stroke="#A63A27" stroke-width="1.5" fill="none" stroke-linecap="round">
-          <path d="M 0 150 Q 120 130, 240 150 T 480 150 T 720 150 T 960 150 T 1200 150 T 1440 150 T 1680 150 T 1920 150"/>
-          <path d="M 0 190 Q 120 170, 240 190 T 480 190 T 720 190 T 960 190 T 1200 190 T 1440 190 T 1680 190 T 1920 190" opacity="0.6"/>
-          <path d="M 0 230 Q 120 210, 240 230 T 480 230 T 720 230 T 960 230 T 1200 230 T 1440 230 T 1680 230 T 1920 230" opacity="0.4"/>
-        </g>
-        <!-- small abandoned raft on the shore (right) -->
-        <g transform="translate(1550 100)" stroke="#1C1A17" stroke-width="1.5" fill="none" opacity="0.8">
-          <line x1="0" y1="0" x2="120" y2="0"/>
-          <line x1="0" y1="8" x2="120" y2="8"/>
-          <line x1="0" y1="16" x2="120" y2="16"/>
-          <line x1="10" y1="-4" x2="10" y2="20"/>
-          <line x1="40" y1="-4" x2="40" y2="20"/>
-          <line x1="70" y1="-4" x2="70" y2="20"/>
-          <line x1="100" y1="-4" x2="100" y2="20"/>
-        </g>
-      </svg>
-    </div>
-    <div aria-hidden="true" class="echo-glyph" style="right: 40px; top: 40px; font-size: 380px; font-weight: 400;">筏</div>
-    <div class="chapter-mark"><span class="num">VI</span><span class="bar"></span><span class="zh">最后一个提醒</span></div>
-    <div class="frame">
-      <h1 class="slide-title">渡河舍筏</h1>
-      <div style="height: var(--title-gap)"></div>
-      <div class="story-frame">
-        <div class="story-aside">
-          <div class="label">出处</div>
-          <div class="name">《中阿含经》<br/>筏喻经</div>
-          <div class="source" style="margin-top: 18px;">Alagaddūpama Sutta<br/>MN 22</div>
-        </div>
-        <div class="story-body">
-          <p>一个人砍木头造了一个筏子，靠着它渡到了对岸。</p>
-          <p>上岸以后他想："这个筏子帮了我这么大的忙，我要把它扛在肩上，带着它走一辈子。"</p>
-          <p style="margin-top: 32px; padding-top: 28px; border-top: 1px solid var(--rule);">
-            佛陀说：<span class="em">法如筏，渡过了就要放下。</span><br/>
-            <span style="color: var(--ink-mute); font-size: 28px;">连佛法本身都不能执着。</span>
-          </p>
-          <p style="margin-top: 28px; font-size: 26px; color: var(--ink-mute);">
-            ——《心经》："无无明，亦无无明尽。"<br/>
-            指向月亮的手指，不要当成月亮本身。
-          </p>
-        </div>
-      </div>
-    </div>
-    <div class="footer-mark"><span class="title">佛法与无明</span><span>31 / 32</span></div>
-  </section>
-
-  <!-- 32 closing -->
-  <section data-label="32 一句话总结">
-    <!-- Large ensō circle behind the closing text -->
-    <div aria-hidden="true" class="enso" style="left: 50%; top: 45%; transform: translate(-50%, -50%); width: 760px; height: 760px; opacity: 0.08;">
-      <svg viewBox="0 0 760 760" xmlns="http://www.w3.org/2000/svg">
-        <path d="M 380 40 A 340 340 0 1 1 140 560" stroke="#1C1A17" stroke-width="8" fill="none" stroke-linecap="round"/>
-      </svg>
-    </div>
-    <div class="frame" style="justify-content: center;">
-      <div style="font-family: 'EB Garamond', serif; font-style: italic; font-size: 30px; color: var(--cinnabar); letter-spacing: 0.2em; text-align: center; margin-bottom: 48px;">— IN ONE SENTENCE —</div>
-      <div class="closing-sentence" style="line-height: 1.5;">
-        无明是误以为现象是一个<span class="em">独立的实体</span>；<br/>
-        缘起性空是 <span class="em">看见它本就不是</span>。
-      </div>
-      <div style="margin-top: 80px; text-align: center; font-size: 36px; color: var(--ink-soft); line-height: 1.5; font-weight: 400;">
-        佛法的全部努力，就是让你看清这件事——<br/>
-        <span style="color: var(--cinnabar);">先看清，再放下。</span>
-      </div>
-      <div style="margin-top: 120px; text-align: center; display: flex; align-items: center; justify-content: center; gap: 20px;">
-        <span style="width: 60px; height: 1px; background: var(--ink-faint);"></span>
-        <span class="cinnabar-dot"></span>
-        <span style="width: 60px; height: 1px; background: var(--ink-faint);"></span>
-      </div>
-      <div style="margin-top: 32px; text-align: center; font-family: 'EB Garamond', serif; font-style: italic; font-size: 22px; color: var(--ink-mute); letter-spacing: 0.15em;">
-        谢谢 &nbsp; · &nbsp; Thank you
-      </div>
-    </div>
-  </section>
-
-</deck-stage>
-
-</body>
+    <script id="page-data" type="application/json">
+      {
+  "pageType": "post",
+  "lang": "zh",
+  "langSwitchUrl": null,
+  "langSwitcherMode": "hidden",
+  "markdownUrl": "/posts/buddhism-wuming/post.md",
+  "labels": {
+    "navAbout": "About",
+    "navBlog": "Blog",
+    "filterAll": "All"
+  },
+  "comments": {
+    "appId": "e224d3ce-6f5a-4777-bb80-b7bbf2e78d83",
+    "pageId": "buddhism-wuming",
+    "pageUrl": "https://www.yujiachen.com/buddhism-wuming/",
+    "pageTitle": "佛法与「无明」"
+  }
+}
+    </script>
+    <script type="module" src="/app.js"></script>
+  </body>
 </html>

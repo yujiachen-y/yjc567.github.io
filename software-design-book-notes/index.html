@@ -145,7 +145,12 @@
 <p>The book argues that good code attracts better developers, and that some startups believe tactical programming lets them move faster and they can hire better developers to fix the code later once the business takes off—but this approach is inadvisable. I think this is certainly true for a technology company, but for a business-driven company, it may depend on whether the business itself actually needs strong technical support. Some businesses genuinely don’t.</p>
 <h2 id="modules-should-be-deep">Modules Should Be Deep</h2>
 <p>A module is “deep” when it hides substantial implementation complexity behind a small and convenient interface.</p>
-<p><img src="https://img2.doubanio.com/view/thing_review/l/public/p7997103.jpg" alt="" /></p>
+<p>
+<picture>
+  <source srcset="/assets/posts/software-design-book-notes/en/image_2.webp" type="image/webp" />
+  <img src="/assets/posts/software-design-book-notes/en/image_2.jpg" alt="" class="article-image" width="640" height="420" />
+</picture>
+</p>
 <p>The book gives a fascinating example: GC in Go and Java. The implementation is very complex, but GC means the language does not need to expose manual memory-management interfaces to users. Even when we add substantial internal complexity, good modularization can still reduce the number of exposed interfaces.</p>
 <p>The GC example feels similar to the server-compute/client-render pattern: centralizing complex computation in one place means clients do not each need to maintain their own copy of that logic.</p>
 <p>The author also notes that some modern developers tend to make functions and classes smaller and smaller, which can also make them shallow (not deep). This is worth keeping in mind during everyday development.</p>

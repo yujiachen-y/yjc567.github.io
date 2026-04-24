@@ -647,6 +647,6 @@ BibTeX：
   year = {2023},
   publisher = {Jiachen Yu},
   url = {https://www.yujiachen.com/golang-generics/zh/},
-  urldate = {2026-02-08},
+  urldate = {2026-04-24},
 }
 ```

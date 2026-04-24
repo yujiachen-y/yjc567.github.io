@@ -38,7 +38,7 @@
 
 一个模块隐藏的实现越多，暴露接口越少，同时不让使用者觉得使用不便，那可以认为这个模块的复杂度是令人满意的。
 
-![](https://img2.doubanio.com/view/thing_review/l/public/p7997103.jpg)
+![](attachments/software-design-book-p7997103.jpg)
 
 文章中说到了一个非常有趣的例子：Go和Java中的GC，实现非常复杂，但是GC使得编程语言不需要暴露释放内存地址的接口。哪怕我们需要添加大量的复杂代码，但经过适当的排布后，这些代码甚至可以降低原有代码的接口数量。
 
@@ -140,6 +140,6 @@ BibTeX：
   year = {2022},
   publisher = {Jiachen Yu},
   url = {https://www.yujiachen.com/software-design-book-notes/zh/},
-  urldate = {2026-02-08},
+  urldate = {2026-04-24},
 }
 ```

@@ -144,7 +144,12 @@
 <p>书中认为好的代码可以吸引到更好的开发者，而一些startup认为采用战术编程可以跑得快，等业务跑起来了再用钱请更好的开发者来修代码其实是不可取的。我觉得这对一家科技公司来说是肯定的，但是对一个业务驱动的公司来说，可能还是看业务本身是否需要强有力的技术支持，有一些业务的确不需要。</p>
 <h2 id="模块应该尽量深"><strong>模块应该尽量深</strong></h2>
 <p>一个模块隐藏的实现越多，暴露接口越少，同时不让使用者觉得使用不便，那可以认为这个模块的复杂度是令人满意的。</p>
-<p><img src="https://img2.doubanio.com/view/thing_review/l/public/p7997103.jpg" alt="" /></p>
+<p>
+<picture>
+  <source srcset="/assets/posts/software-design-book-notes/zh/image_2.webp" type="image/webp" />
+  <img src="/assets/posts/software-design-book-notes/zh/image_2.jpg" alt="" class="article-image" width="640" height="420" />
+</picture>
+</p>
 <p>文章中说到了一个非常有趣的例子：Go和Java中的GC，实现非常复杂，但是GC使得编程语言不需要暴露释放内存地址的接口。哪怕我们需要添加大量的复杂代码，但经过适当的排布后，这些代码甚至可以降低原有代码的接口数量。</p>
 <p>感觉GC的例子和服务端负责计算，客户端负责渲染的情况有共同之处，复杂计算逻辑统一到一处，那么各种客户端就不需要各自独立维护一份计算代码了。</p>
 <p>作者也认为当今一些开发者倾向于把函数和class越拆越小，也会导致函数和class变得shallow（not deep），平时开发中要注意。</p>

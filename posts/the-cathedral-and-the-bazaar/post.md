@@ -212,6 +212,6 @@ BibTeX：
   year = {2021},
   publisher = {Jiachen Yu},
   url = {https://www.yujiachen.com/the-cathedral-and-the-bazaar/},
-  urldate = {2026-02-08},
+  urldate = {2026-04-24},
 }
 ```
