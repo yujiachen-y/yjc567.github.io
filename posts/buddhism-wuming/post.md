@@ -289,6 +289,6 @@ BibTeX：
   year = {2026},
   publisher = {Jiachen Yu},
   url = {https://www.yujiachen.com/buddhism-wuming/zh/},
-  urldate = {2026-04-24},
+  urldate = {2026-04-25},
 }
 ```

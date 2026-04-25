@@ -11,7 +11,7 @@ I have years of experience in backend engineering. I also worked as a business l
 ## Cite this article
 
 APA:
-Yu, J. (January 25, 2026). About. Jiachen Yu. https://www.yujiachen.com/
+Yu, J. (January 25, 2026). About. Jiachen Yu. https://www.yujiachen.com/about/
 
 BibTeX:
 ```bibtex
@@ -20,7 +20,7 @@ BibTeX:
   title = {About},
   year = {2026},
   publisher = {Jiachen Yu},
-  url = {https://www.yujiachen.com/},
-  urldate = {2026-04-24},
+  url = {https://www.yujiachen.com/about/},
+  urldate = {2026-04-25},
 }
 ```
