@@ -86,6 +86,6 @@ BibTeX：
   year = {2024},
   publisher = {Jiachen Yu},
   url = {https://www.yujiachen.com/2024-year-in-review/},
-  urldate = {2026-04-25},
+  urldate = {2026-04-26},
 }
 ```

@@ -19,6 +19,6 @@ BibTeX：
   year = {2025},
   publisher = {Jiachen Yu},
   url = {https://www.yujiachen.com/learnings-from-bytedance/zh/},
-  urldate = {2026-04-25},
+  urldate = {2026-04-26},
 }
 ```
