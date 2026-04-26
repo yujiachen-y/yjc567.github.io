@@ -120,8 +120,7 @@
 <div class="article-text-content">
   <div class="article-date">2022-10-09 · TECH</div>
   <h1 class="article-hero">Notes on A Philosophy of Software Design</h1>
-  <div class="article-body"><p><em>Translated by Claude from the Chinese original.</em></p>
-<p>About six months ago, I borrowed <em>A Philosophy of Software Design</em> from a friend who had not finished it yet, and then left it unread myself. During the National Day holiday, I spent three on-and-off days finishing it. The most useful part for me was its revised-edition pushback against some views in <em>Clean Code</em>. Software engineering is still a young discipline: there are best practices that many people agree on, but almost nothing is universally correct. I had also seen many of this book’s ideas in other books, sometimes in a stronger form. For example, this book explains why inheritance can be problematic but spends less time on alternatives, while <em>Effective Java</em> explicitly argues to “prefer composition over inheritance,” and <em>The Pragmatic Programmer</em> also discusses extensibility.</p>
+  <div class="article-body"><p>About six months ago, I borrowed <em>A Philosophy of Software Design</em> from a friend who had not finished it yet, and then left it unread myself. During the National Day holiday, I spent three on-and-off days finishing it. The most useful part for me was its revised-edition pushback against some views in <em>Clean Code</em>. Software engineering is still a young discipline: there are best practices that many people agree on, but almost nothing is universally correct. I had also seen many of this book’s ideas in other books, sometimes in a stronger form. For example, this book explains why inheritance can be problematic but spends less time on alternatives, while <em>Effective Java</em> explicitly argues to “prefer composition over inheritance,” and <em>The Pragmatic Programmer</em> also discusses extensibility.</p>
 <p>The book’s discussions on complexity are very helpful for software development, while the other parts are more ordinary—experienced developers can skim them quickly.</p>
 <h2 id="definition-of-complexity">Definition of Complexity</h2>
 <p>Summarized by a formula: software complexity is the sum of each component’s complexity multiplied by how frequently it’s modified. That is, to reduce software complexity, we can either lower individual component complexity or take a holistic view and place highly complex logic in modules that are modified less frequently.</p>
@@ -224,6 +223,8 @@ return obj                 #return current obj
 <p>This is similar to how I write reading notes immediately after finishing a book—it’s the most efficient approach.</p>
 <p>So the author advocates writing comments first, then code.</p>
 <p>A common counterargument is that code usually goes through several rounds of changes before it stabilizes, so writing comments only at the end seems more efficient. But the author argues that repeatedly modifying code is more expensive than iterating on comments first. Writing comments in advance helps stabilize structure; if the design keeps changing, revise the comments first, where iteration is cheaper.</p>
+<hr>
+<p><em>Translated by Claude from the Chinese original.</em></p>
 </div>
 </div>
 

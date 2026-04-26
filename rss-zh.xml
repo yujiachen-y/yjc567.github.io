@@ -254,8 +254,7 @@
     <guid isPermaLink="true">https://www.yujiachen.com/thoughts-on-the-video-quality-evaluation/zh/</guid>
     <pubDate>Sun, 08 Feb 2026 00:00:00 GMT</pubDate>
     <category>Tech</category>
-    <content:encoded><![CDATA[<p><em>由 Claude 从英文原文翻译。</em></p>
-<p>去年，我带领团队构建了 OpusClip 的 LLM-as-a-Judge 系统。既然我们已经发布了一篇关于<a href="https://medium.com/opus-engineering/a-scalable-llm-as-a-judge-framework-for-video-quality-evaluation-74612034bd1e">视频质量评估</a>的文章，我可以在这里做一个简短的回顾。目前我正在为 AgentOpus 做另一个方向的评估工作，所以文末我会提出一个我个人觉得很有意思的相关问题。</p>
+    <content:encoded><![CDATA[<p>去年，我带领团队构建了 OpusClip 的 LLM-as-a-Judge 系统。既然我们已经发布了一篇关于<a href="https://medium.com/opus-engineering/a-scalable-llm-as-a-judge-framework-for-video-quality-evaluation-74612034bd1e">视频质量评估</a>的文章，我可以在这里做一个简短的回顾。目前我正在为 AgentOpus 做另一个方向的评估工作，所以文末我会提出一个我个人觉得很有意思的相关问题。</p>
 <h2 id="去年我们做了什么">去年我们做了什么</h2>
 <p>完整细节可以参考<a href="https://medium.com/opus-engineering/a-scalable-llm-as-a-judge-framework-for-video-quality-evaluation-74612034bd1e">博客原文</a>，以下是简要回顾。</p>
 <p>我们的目标是构建一个视频质量评判系统，能够从不同维度（rubric）对视频质量进行打分。</p>
@@ -288,6 +287,8 @@
 <p>OpenAI 有<a href="https://github.com/openai/skills/tree/main/skills/.experimental/codex-readiness-integration-test">一个很有意思的做法</a>：让 Codex CLI 评估自身的表现。我从中学到的是，我们应该尝试让评估者和 agent 处于同一层级，这样当评估者改进 agent 时，agent 本身也能反过来改进评估者。</p>
 <p>由此，我们可以构建一个数据飞轮——一个 agent 的自我改进引导机制。然后通过不断注入更多数据和案例，快速迭代 agent 的能力。</p>
 <p>我在这个方向上还处于早期探索阶段，但背后的问题值得一问：如果评估者能给 agent 一个具体的诊断，而不仅仅是一个分数，这会如何改变你构建和迭代 agent 系统的方式？</p>
+<hr>
+<p><em>由 Claude 从英文原文翻译。</em></p>
 <hr class="footnotes-sep">
 <section class="footnotes">
 <ol class="footnotes-list">
@@ -303,8 +304,7 @@
     <guid isPermaLink="true">https://www.yujiachen.com/bridging-the-gap-how-engineers-and-pms-ship-winning-llm-features-together/zh/</guid>
     <pubDate>Mon, 15 Sep 2025 00:00:00 GMT</pubDate>
     <category>Tech</category>
-    <content:encoded><![CDATA[<p><em>由 Claude 从英文原文翻译。</em></p>
-<blockquote>
+    <content:encoded><![CDATA[<blockquote>
 <p>这篇文章最初由我发布于 Medium 的 <strong>OpusClip Engineering</strong>。<br>
 原文：<a href="https://medium.com/opus-engineering/bridging-the-gap-how-engineers-and-pms-ship-winning-llm-features-together-147a36ab4089">Bridging the Gap: How Engineers and PMs Ship Winning LLM Features Together</a></p>
 </blockquote>
@@ -486,6 +486,8 @@ Provide clear reasoning for why content is or isn't relevant.
 <li>建立指标：追踪迭代周期、单次请求成本、解析失败率。</li>
 </ol>
 <p>如果你有任何的疑问，欢迎评论。</p>
+<hr>
+<p><em>由 Claude 从英文原文翻译。</em></p>
 ]]></content:encoded>
   </item>
   <item>
@@ -494,8 +496,7 @@ Provide clear reasoning for why content is or isn't relevant.
     <guid isPermaLink="true">https://www.yujiachen.com/how-to-1-on-1/zh/</guid>
     <pubDate>Sat, 15 Feb 2025 00:00:00 GMT</pubDate>
     <category>Essays</category>
-    <content:encoded><![CDATA[<p><em>由 Claude 从英文原文翻译。</em></p>
-<h1 id="为什么要做-1-on-1">为什么要做 1-on-1？</h1>
+    <content:encoded><![CDATA[<h1 id="为什么要做-1-on-1">为什么要做 1-on-1？</h1>
 <p>驱动自己的职业成长是你自己的责任。</p>
 <p>除非你主动说出来，否则没人知道你想要什么。所以公司通过每周的 1-on-1 来&quot;强迫&quot;你的经理帮助你做这件事。</p>
 <p>一个更现实的理由是：你和经理的关系在很大程度上决定了你的工作体验。</p>
@@ -566,6 +567,8 @@ Provide clear reasoning for why content is or isn't relevant.
 <p>我不确定你对此有何感想。但我会觉得，如果CEO和领导者沉浸在一个信息被&quot;修饰&quot;的&quot;向上管理&quot;环境中，他们会非常困扰。假设指向你的信息是经过特殊角度处理的，或者我们在字节跳动所说的&quot;SEO化的信息&quot;，你将不得不通过其他渠道验证信息。那将非常低效。</p>
 <p>来源：<a href="https://sourcecodecap.com/code-class-post/bytedances-zhang-yiming-bring-outside-in-and-avoid-managing-up-how-to-protect-the-comp/">ByteDance’s Zhang Yiming: “Bring Outside in” and Avoid “Managing up”— How to Protect the Company from Diseconomies of Scale</a></p>
 </blockquote>
+<hr>
+<p><em>由 Claude 从英文原文翻译。</em></p>
 ]]></content:encoded>
   </item>
   <item>
@@ -709,8 +712,7 @@ Provide clear reasoning for why content is or isn't relevant.
     <guid isPermaLink="true">https://www.yujiachen.com/shape-your-mac/zh/</guid>
     <pubDate>Sun, 14 Jul 2024 00:00:00 GMT</pubDate>
     <category>Tech</category>
-    <content:encoded><![CDATA[<p><em>由 Claude 从英文原文翻译。</em></p>
-<h1 id="前言">📖 前言</h1>
+    <content:encoded><![CDATA[<h1 id="前言">📖 前言</h1>
 <p>你有没有自己布置过房间？说实话，我没有，因为我一直在租房。不过我确实会整理家里的东西。此刻，我正躺在沙发上写这篇文章。为了让它更生动，我决定放一张我现在环境的照片。</p>
 <p>
 <picture>
@@ -980,6 +982,8 @@ Provide clear reasoning for why content is or isn't relevant.
 <p><a href="https://mcluhangalaxy.wordpress.com/2013/04/01/we-shape-our-tools-and-thereafter-our-tools-shape-us/">我们塑造了工具，然后工具塑造了我们。</a></p>
 </li>
 </ul>
+<hr>
+<p><em>由 Claude 从英文原文翻译。</em></p>
 ]]></content:encoded>
   </item>
   <item>

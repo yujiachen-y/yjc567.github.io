@@ -148,8 +148,7 @@
 <div class="article-text-content">
   <div class="article-date">2021-09-27 · TECH</div>
   <h1 class="article-hero">Transactions and Consensus from DDIA</h1>
-  <div class="article-body"><p><em>Translated by Claude from the Chinese original.</em></p>
-<h1 id="some-reflections">Some Reflections</h1>
+  <div class="article-body"><h1 id="some-reflections">Some Reflections</h1>
 <p>Most applications are built by layering data models on top of one another.</p>
 <p>The problem of surplus and scarcity of computing resources will always exist. “Resource-saving technologies only lead to increased resource usage” (<a href="https://en.wikipedia.org/wiki/Jevons_paradox">Jevons paradox</a>).</p>
 <p>Many problems discussed in the book follow a pattern: under constraint P (the real-world problem), find the lowest-cost C (consistency level) that still achieves the best A (availability/outcome). One example in the book is multi-core CPUs. While multi-core CPUs can be viewed as distributed systems, they are not constrained by inter-machine network latency, so partition tolerance is effectively assumed. Even so, to maximize throughput, multi-core designs may still trade some consistency for higher availability, accepting occasional redundant or incorrect computation to squeeze out more performance.</p>
@@ -441,6 +440,8 @@
 <p>If more than half the nodes go down, the system enters a crash state. The benefit of requiring a majority: there’s always at least one node that participated in every vote, ensuring split-brain doesn’t occur and consensus is maintained.</p>
 <h3 id="membership-and-coordination-services">Membership and Coordination Services</h3>
 <p>Now we know how to achieve consensus. We also see that not all operations need consensus participation; only certain critical operations do. Therefore, we can use packaged systems like ZooKeeper (Zab) and etcd (Raft) to establish consensus for small, memory-resident datasets and build highly reliable coordination paths.</p>
+<hr>
+<p><em>Translated by Claude from the Chinese original.</em></p>
 </div>
 </div>
 

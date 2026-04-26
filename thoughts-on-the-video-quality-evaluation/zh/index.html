@@ -114,8 +114,7 @@
 <div class="article-text-content">
   <div class="article-date">2026-02-08 · TECH</div>
   <h1 class="article-hero">经验之谈：视频质量评估</h1>
-  <div class="article-body"><p><em>由 Claude 从英文原文翻译。</em></p>
-<p>去年，我带领团队构建了 OpusClip 的 LLM-as-a-Judge 系统。既然我们已经发布了一篇关于<a href="https://medium.com/opus-engineering/a-scalable-llm-as-a-judge-framework-for-video-quality-evaluation-74612034bd1e">视频质量评估</a>的文章，我可以在这里做一个简短的回顾。目前我正在为 AgentOpus 做另一个方向的评估工作，所以文末我会提出一个我个人觉得很有意思的相关问题。</p>
+  <div class="article-body"><p>去年，我带领团队构建了 OpusClip 的 LLM-as-a-Judge 系统。既然我们已经发布了一篇关于<a href="https://medium.com/opus-engineering/a-scalable-llm-as-a-judge-framework-for-video-quality-evaluation-74612034bd1e">视频质量评估</a>的文章，我可以在这里做一个简短的回顾。目前我正在为 AgentOpus 做另一个方向的评估工作，所以文末我会提出一个我个人觉得很有意思的相关问题。</p>
 <h2 id="去年我们做了什么">去年我们做了什么</h2>
 <p>完整细节可以参考<a href="https://medium.com/opus-engineering/a-scalable-llm-as-a-judge-framework-for-video-quality-evaluation-74612034bd1e">博客原文</a>，以下是简要回顾。</p>
 <p>我们的目标是构建一个视频质量评判系统，能够从不同维度（rubric）对视频质量进行打分。</p>
@@ -148,6 +147,8 @@
 <p>OpenAI 有<a href="https://github.com/openai/skills/tree/main/skills/.experimental/codex-readiness-integration-test">一个很有意思的做法</a>：让 Codex CLI 评估自身的表现。我从中学到的是，我们应该尝试让评估者和 agent 处于同一层级，这样当评估者改进 agent 时，agent 本身也能反过来改进评估者。</p>
 <p>由此，我们可以构建一个数据飞轮——一个 agent 的自我改进引导机制。然后通过不断注入更多数据和案例，快速迭代 agent 的能力。</p>
 <p>我在这个方向上还处于早期探索阶段，但背后的问题值得一问：如果评估者能给 agent 一个具体的诊断，而不仅仅是一个分数，这会如何改变你构建和迭代 agent 系统的方式？</p>
+<hr>
+<p><em>由 Claude 从英文原文翻译。</em></p>
 <hr class="footnotes-sep">
 <section class="footnotes">
 <ol class="footnotes-list">

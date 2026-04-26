@@ -576,8 +576,7 @@ I’m not sure how you feel about this. But I would feel that CEOs and leaders a
     <guid isPermaLink="true">https://www.yujiachen.com/simple-vs-easy/</guid>
     <pubDate>Sun, 19 Jan 2025 00:00:00 GMT</pubDate>
     <category>Essays</category>
-    <content:encoded><![CDATA[<p><em>Translated by Claude from the Chinese original.</em></p>
-<ul>
+    <content:encoded><![CDATA[<ul>
 <li>
 <p>An example of “simple” is a manual juicer—its principle is straightforward and easy to understand. An example of “easy” is an electric juicer—it’s very easy to use, but its internal mechanism is complex.</p>
 </li>
@@ -594,6 +593,8 @@ I’m not sure how you feel about this. But I would feel that CEOs and leaders a
 <p>As for myself: I prefer “simple” things. Simple things are simple because they follow principles and don’t change based on the number of participants or their attitudes. I don’t like “easy” things—they’re hard to replicate, and even if you can, they’re far less reliable than “simple” things. Complex systems change based on the number and attitudes of participants, consuming time and energy with no guaranteed returns.</p>
 </li>
 </ul>
+<hr>
+<p><em>Translated by Claude from the Chinese original.</em></p>
 ]]></content:encoded>
   </item>
   <item>
@@ -602,8 +603,7 @@ I’m not sure how you feel about this. But I would feel that CEOs and leaders a
     <guid isPermaLink="true">https://www.yujiachen.com/learnings-from-bytedance/</guid>
     <pubDate>Thu, 02 Jan 2025 00:00:00 GMT</pubDate>
     <category>Essays</category>
-    <content:encoded><![CDATA[<p><em>Translated by Claude from the Chinese original.</em></p>
-<ol>
+    <content:encoded><![CDATA[<ol>
 <li><strong>No boundaries</strong>: The market is a company’s boundary; demand is a product’s boundary; impact is work’s boundary.</li>
 <li><strong>Efficiency above all</strong>: The core of competition is ROI, not cost level.</li>
 <li><strong>Look forward</strong>: Competition only drives up costs. Revenue doesn’t come from competitors—it comes from users.</li>
@@ -611,6 +611,8 @@ I’m not sure how you feel about this. But I would feel that CEOs and leaders a
 <li><strong>Supply and demand are the core of markets</strong>: The happiest situation in business is when one group needs your resources, while another group is willing to provide other high-value resources to exchange for capabilities from you. That’s why multi-sided platforms beat two-sided ones, and two-sided platforms beat tools. A tool is merely a localized means to an end.</li>
 <li><strong>Focus on facts</strong>: Fantasy doesn’t help reshape reality. Reality has evolved based on the laws of physics—it is necessarily rational.</li>
 </ol>
+<hr>
+<p><em>Translated by Claude from the Chinese original.</em></p>
 ]]></content:encoded>
   </item>
   <item>
@@ -619,8 +621,7 @@ I’m not sure how you feel about this. But I would feel that CEOs and leaders a
     <guid isPermaLink="true">https://www.yujiachen.com/new-things-vs-old-things/</guid>
     <pubDate>Thu, 26 Dec 2024 00:00:00 GMT</pubDate>
     <category>Essays</category>
-    <content:encoded><![CDATA[<p><em>Translated by Claude from the Chinese original.</em></p>
-<p>It all started with a question I was asked today.</p>
+    <content:encoded><![CDATA[<p>It all started with a question I was asked today.</p>
 <hr>
 <h1 id="1">1</h1>
 <p>Today, a recruiter at my company came to ask me: “Do you think OpenAI is a phenomenal success or just a coincidence (with low technical barriers)?” A candidate had told her that OpenAI’s technical barriers aren’t that high—they were just the first to take the plunge. Looking at it now, OpenAI’s progress has indeed slowed down, and from what I know, other companies are catching up fast, even surpassing OpenAI in some models. But in my mind, OpenAI remains special. I believe OpenAI’s value lies not in its commercial success, but in its technology. Besides, while OpenAI may not be extremely successful commercially, it certainly can’t be called a failure.</p>
@@ -652,6 +653,8 @@ I’m not sure how you feel about this. But I would feel that CEOs and leaders a
 </ol>
 <hr>
 <p>What you don’t know is always more valuable than what you already know.</p>
+<hr>
+<p><em>Translated by Claude from the Chinese original.</em></p>
 ]]></content:encoded>
   </item>
   <item>
@@ -938,8 +941,7 @@ I’m not sure how you feel about this. But I would feel that CEOs and leaders a
     <guid isPermaLink="true">https://www.yujiachen.com/the-permission-model-myth/</guid>
     <pubDate>Sun, 25 Feb 2024 00:00:00 GMT</pubDate>
     <category>Tech</category>
-    <content:encoded><![CDATA[<p><em>Translated by Claude from the Chinese original.</em></p>
-<h1 id="basic-concepts">Basic Concepts</h1>
+    <content:encoded><![CDATA[<h1 id="basic-concepts">Basic Concepts</h1>
 <p>Depending on context, “permission” can mean different things. This article focuses on authorization in computing. Related concepts include:</p>
 <ul>
 <li><strong>Authentication (AuthN)</strong>: The process of confirming the identity of a person or entity. In computer security, this typically involves verifying whether a user or system is truly who it claims to be. Authentication can be performed through various methods, including passwords, biometrics, smart cards, or digital certificates. Authentication is the first step in the access control process—only after successful identity verification will the system consider granting access permissions. Related technical protocols and frameworks include OAuth, OpenID, and SAML.</li>
@@ -1146,6 +1148,8 @@ Finally, match the resource. The requested object is <code>rg1</code>, and Alice
 <li><strong>Micro-segmentation</strong>: Dividing the network into small, managed segments to reduce the potential attacker’s range of movement and limit access to sensitive data.</li>
 <li><strong>Risk-based adaptive policies</strong>: Dynamically adjusting access control policies based on factors such as user behavior, device security status, access time, and location.</li>
 </ol>
+<hr>
+<p><em>Translated by Claude from the Chinese original.</em></p>
 ]]></content:encoded>
   </item>
   <item>
@@ -1154,8 +1158,7 @@ Finally, match the resource. The requested object is <code>rg1</code>, and Alice
     <guid isPermaLink="true">https://www.yujiachen.com/golang-generics/</guid>
     <pubDate>Fri, 26 May 2023 00:00:00 GMT</pubDate>
     <category>Tech</category>
-    <content:encoded><![CDATA[<p><em>Translated by Claude from the Chinese original.</em></p>
-<p>Generics let us write reusable, type-safe logic over a family of types. In languages such as Java, C++, and C#, generics have long been a core feature. Go intentionally launched without generics, which kept the language simpler but made some abstractions awkward. As Go evolved, the community introduced generics to better support reusable data structures and common algorithms in production code.</p>
+    <content:encoded><![CDATA[<p>Generics let us write reusable, type-safe logic over a family of types. In languages such as Java, C++, and C#, generics have long been a core feature. Go intentionally launched without generics, which kept the language simpler but made some abstractions awkward. As Go evolved, the community introduced generics to better support reusable data structures and common algorithms in production code.</p>
 <p>An example:</p>
 <pre class="hljs"><code><span class="hljs-keyword">import</span> <span class="hljs-string">&quot;golang.org/x/exp/constraints&quot;</span>
 
@@ -1721,6 +1724,8 @@ unary_op   = &quot;+&quot; | &quot;-&quot; | &quot;!&quot; | &quot;^&quot; | &qu
                 }
 
 </code></pre>
+<hr>
+<p><em>Translated by Claude from the Chinese original.</em></p>
 ]]></content:encoded>
   </item>
   <item>
@@ -1729,8 +1734,7 @@ unary_op   = &quot;+&quot; | &quot;-&quot; | &quot;!&quot; | &quot;^&quot; | &qu
     <guid isPermaLink="true">https://www.yujiachen.com/software-design-book-notes/</guid>
     <pubDate>Sun, 09 Oct 2022 00:00:00 GMT</pubDate>
     <category>Tech</category>
-    <content:encoded><![CDATA[<p><em>Translated by Claude from the Chinese original.</em></p>
-<p>About six months ago, I borrowed <em>A Philosophy of Software Design</em> from a friend who had not finished it yet, and then left it unread myself. During the National Day holiday, I spent three on-and-off days finishing it. The most useful part for me was its revised-edition pushback against some views in <em>Clean Code</em>. Software engineering is still a young discipline: there are best practices that many people agree on, but almost nothing is universally correct. I had also seen many of this book’s ideas in other books, sometimes in a stronger form. For example, this book explains why inheritance can be problematic but spends less time on alternatives, while <em>Effective Java</em> explicitly argues to “prefer composition over inheritance,” and <em>The Pragmatic Programmer</em> also discusses extensibility.</p>
+    <content:encoded><![CDATA[<p>About six months ago, I borrowed <em>A Philosophy of Software Design</em> from a friend who had not finished it yet, and then left it unread myself. During the National Day holiday, I spent three on-and-off days finishing it. The most useful part for me was its revised-edition pushback against some views in <em>Clean Code</em>. Software engineering is still a young discipline: there are best practices that many people agree on, but almost nothing is universally correct. I had also seen many of this book’s ideas in other books, sometimes in a stronger form. For example, this book explains why inheritance can be problematic but spends less time on alternatives, while <em>Effective Java</em> explicitly argues to “prefer composition over inheritance,” and <em>The Pragmatic Programmer</em> also discusses extensibility.</p>
 <p>The book’s discussions on complexity are very helpful for software development, while the other parts are more ordinary—experienced developers can skim them quickly.</p>
 <h2 id="definition-of-complexity">Definition of Complexity</h2>
 <p>Summarized by a formula: software complexity is the sum of each component’s complexity multiplied by how frequently it’s modified. That is, to reduce software complexity, we can either lower individual component complexity or take a holistic view and place highly complex logic in modules that are modified less frequently.</p>
@@ -1833,6 +1837,8 @@ return obj                 #return current obj
 <p>This is similar to how I write reading notes immediately after finishing a book—it’s the most efficient approach.</p>
 <p>So the author advocates writing comments first, then code.</p>
 <p>A common counterargument is that code usually goes through several rounds of changes before it stabilizes, so writing comments only at the end seems more efficient. But the author argues that repeatedly modifying code is more expensive than iterating on comments first. Writing comments in advance helps stabilize structure; if the design keeps changing, revise the comments first, where iteration is cheaper.</p>
+<hr>
+<p><em>Translated by Claude from the Chinese original.</em></p>
 ]]></content:encoded>
   </item>
   <item>
@@ -1841,14 +1847,15 @@ return obj                 #return current obj
     <guid isPermaLink="true">https://www.yujiachen.com/dont-be-a-programmer/</guid>
     <pubDate>Sun, 01 May 2022 00:00:00 GMT</pubDate>
     <category>Essays</category>
-    <content:encoded><![CDATA[<p><em>Translated by Claude from the Chinese original.</em></p>
-<p>Late at night, taking a hot shower alone, hiding behind the bathroom curtain, as if hiding in a greenhouse—or perhaps a petri dish. Not wanting to stop the water, not wanting to leave this enclosed space. I feel so much pressure. At times like these, I often do things to relieve stress and anxiety, but the process of relief wastes time, which only adds to my anxiety. Being a programmer often means facing such situations. The imagined life is filled with glamorous phrases like “financial freedom,” but in reality, we’re stuck in the daily grind.</p>
+    <content:encoded><![CDATA[<p>Late at night, taking a hot shower alone, hiding behind the bathroom curtain, as if hiding in a greenhouse—or perhaps a petri dish. Not wanting to stop the water, not wanting to leave this enclosed space. I feel so much pressure. At times like these, I often do things to relieve stress and anxiety, but the process of relief wastes time, which only adds to my anxiety. Being a programmer often means facing such situations. The imagined life is filled with glamorous phrases like “financial freedom,” but in reality, we’re stuck in the daily grind.</p>
 <p>I suddenly remembered a phrase I once read: “Think more about how to build the product, less about how to be a product manager.” I think this can be extended to programming: “Think more about how to write programs, less about how to be a programmer.” That’s right—you don’t need to become a programmer, spending most of your day staring at a screen with swollen eyes. Your body gradually becoming out of shape, wanting to exercise but never finding the time. An increasingly rigid, mechanical way of thinking, and less and less contact with people. The ideal is beautiful, but reality is so disappointing. After all, programmers of the previous era had so many opportunities for financial freedom. So many stories of wealth creation, even world-changing tales, happened to programmers. But that era has passed. We can only watch its afterglow as the sun slowly sets.</p>
 <p>Recently, while preparing to change jobs, I discovered that the interview prep materials are full of things I don’t know. It’s hard not to feel anxious. And I noticed that even summarizing interview prep has become someone’s thriving side business and personal brand. Envy and jealousy—these are negative emotions programmers often have. You wonder why that person is better than you; why they can work so hard while you can’t; why some things come naturally to them but not to you. The longing for opportunities and uncertainty makes this industry exciting. It inflates your jealousy endlessly, making you believe that through effort you can gain infinitely, even making you feel that the distance between yourself and the world, between yourself and your dreams, is constantly shrinking. But is that really true? We always have all kinds of pressure. Society has developed quite a stereotypical image of programmers. How I wish there wasn’t so much overtime. How I wish life could be easy while also becoming a great developer, showing off online and being envied by others.</p>
 <p>With such desires, the work of a programmer can feel cold and abstract. Exceptional comprehension, even wisdom, yet losing so much rich emotion. Life becomes increasingly monotonous, even childish.</p>
 <p>Why did I choose to become a programmer? After finishing my shower, I looked at the night sky outside the window and asked myself. I think it was the inspiration and sentiment from various startup stories, and also a love for abstraction. A program is essentially a simpler language, yet with this language we can describe all kinds of problems and solutions in the world. Language is so important—just as I’m writing this article in Chinese right now. Language—when we discuss programming, what are we really discussing? We discuss programming itself: how code abstracts reality, how to design, what makes a good or bad design. But we’re not discussing programmers.</p>
 <p>Can you be a programmer and still love life? Of course you can. I don’t know how, but everyone has their own solution. Though I’m also anxious about my future—I don’t know how many more years I can stay in this industry, when I’ll become obsolete, what my income will be, what kind of life I’ll live, or how many layoffs await me. But this uncertainty brings so much excitement. Disappointment and excitement rise and fall like tides. This is what makes this industry special—risk and reward always come together.</p>
 <p>Embrace more uncertainty. Embrace true passion. Use language to reorganize life. Love code, love programming, love structure and design patterns—but don’t become what people call a programmer.</p>
+<hr>
+<p><em>Translated by Claude from the Chinese original.</em></p>
 ]]></content:encoded>
   </item>
   <item>
@@ -1857,8 +1864,7 @@ return obj                 #return current obj
     <guid isPermaLink="true">https://www.yujiachen.com/key-iterations-trustworthy-online-controlled-experiments/</guid>
     <pubDate>Fri, 24 Dec 2021 00:00:00 GMT</pubDate>
     <category>Tech</category>
-    <content:encoded><![CDATA[<p><em>Translated by Claude from the Chinese original.</em></p>
-<p>This article is a summary with excerpts from <em>Trustworthy Online Controlled Experiments</em> (the Chinese edition is titled “Key Iterations”). More specifically, these are notes from an Airbnb reader on a technical book whose authors and translators are also from Airbnb. Please point out any errors; comments are welcome.</p>
+    <content:encoded><![CDATA[<p>This article is a summary with excerpts from <em>Trustworthy Online Controlled Experiments</em> (the Chinese edition is titled “Key Iterations”). More specifically, these are notes from an Airbnb reader on a technical book whose authors and translators are also from Airbnb. Please point out any errors; comments are welcome.</p>
 <blockquote>
 <p>If all you have is a hammer, everything looks like a nail. —Abraham Maslow</p>
 </blockquote>
@@ -2056,6 +2062,8 @@ M1001 80h400000v40h-400000z"/></svg></span></span></span><span class="vlist-s">�
 <p>We can also verify by constructing a null distribution, but the concepts involved are more complex, so we’ll skip that here.</p>
 <h2 id="tbd-why-choose-the-t-distribution">TBD: Why Choose the t-Distribution?</h2>
 <p>This requires comparing the characteristics of several sampling distributions—refer to the summaries in university textbooks.</p>
+<hr>
+<p><em>Translated by Claude from the Chinese original.</em></p>
 ]]></content:encoded>
   </item>
   <item>
@@ -2064,8 +2072,7 @@ M1001 80h400000v40h-400000z"/></svg></span></span></span><span class="vlist-s">�
     <guid isPermaLink="true">https://www.yujiachen.com/transactions-and-consensus-from-ddia/</guid>
     <pubDate>Mon, 27 Sep 2021 00:00:00 GMT</pubDate>
     <category>Tech</category>
-    <content:encoded><![CDATA[<p><em>Translated by Claude from the Chinese original.</em></p>
-<h1 id="some-reflections">Some Reflections</h1>
+    <content:encoded><![CDATA[<h1 id="some-reflections">Some Reflections</h1>
 <p>Most applications are built by layering data models on top of one another.</p>
 <p>The problem of surplus and scarcity of computing resources will always exist. “Resource-saving technologies only lead to increased resource usage” (<a href="https://en.wikipedia.org/wiki/Jevons_paradox">Jevons paradox</a>).</p>
 <p>Many problems discussed in the book follow a pattern: under constraint P (the real-world problem), find the lowest-cost C (consistency level) that still achieves the best A (availability/outcome). One example in the book is multi-core CPUs. While multi-core CPUs can be viewed as distributed systems, they are not constrained by inter-machine network latency, so partition tolerance is effectively assumed. Even so, to maximize throughput, multi-core designs may still trade some consistency for higher availability, accepting occasional redundant or incorrect computation to squeeze out more performance.</p>
@@ -2357,6 +2364,8 @@ M1001 80h400000v40h-400000z"/></svg></span></span></span><span class="vlist-s">�
 <p>If more than half the nodes go down, the system enters a crash state. The benefit of requiring a majority: there’s always at least one node that participated in every vote, ensuring split-brain doesn’t occur and consensus is maintained.</p>
 <h3 id="membership-and-coordination-services">Membership and Coordination Services</h3>
 <p>Now we know how to achieve consensus. We also see that not all operations need consensus participation; only certain critical operations do. Therefore, we can use packaged systems like ZooKeeper (Zab) and etcd (Raft) to establish consensus for small, memory-resident datasets and build highly reliable coordination paths.</p>
+<hr>
+<p><em>Translated by Claude from the Chinese original.</em></p>
 ]]></content:encoded>
   </item>
   <item>
@@ -2365,8 +2374,7 @@ M1001 80h400000v40h-400000z"/></svg></span></span></span><span class="vlist-s">�
     <guid isPermaLink="true">https://www.yujiachen.com/ring-allreduce/</guid>
     <pubDate>Thu, 24 May 2018 00:00:00 GMT</pubDate>
     <category>Tech</category>
-    <content:encoded><![CDATA[<p><em>Translated by Claude from the Chinese original.</em></p>
-<p>Today I stumbled upon the ring-allreduce GPU communication algorithm out of curiosity. I originally wanted to read about it on <a href="http://research.baidu.com/bringing-hpc-techniques-deep-learning/">Baidu Research’s page</a>, but couldn’t find the relevant content on their site. After reading the comments in the <a href="https://github.com/baidu-research/baidu-allreduce">baidu-allreduce</a> code, I understood it. It’s actually a fairly simple algorithm to explain, so I’ll give a brief overview.</p>
+    <content:encoded><![CDATA[<p>Today I stumbled upon the ring-allreduce GPU communication algorithm out of curiosity. I originally wanted to read about it on <a href="http://research.baidu.com/bringing-hpc-techniques-deep-learning/">Baidu Research’s page</a>, but couldn’t find the relevant content on their site. After reading the comments in the <a href="https://github.com/baidu-research/baidu-allreduce">baidu-allreduce</a> code, I understood it. It’s actually a fairly simple algorithm to explain, so I’ll give a brief overview.</p>
 <p>If you want implementation details, you can read the comments on GitHub directly—they’re very clear: <a href="https://github.com/baidu-research/baidu-allreduce/blob/master/collectives.cu#L156">https://github.com/baidu-research/baidu-allreduce/blob/master/collectives.cu#L156</a></p>
 <ul>
 <li><em>Unless otherwise noted, the images in this post are from <a href="https://www.zhihu.com/question/57799212/answer/292494636?utm_source=ZHShareTargetIDMore&amp;utm_medium=social&amp;utm_oi=37729630945280">a Zhihu answer</a>, because I could not find the original Baidu Research article containing these diagrams.</em></li>
@@ -2420,6 +2428,8 @@ If it’s still unclear, let’s walk through a 3-GPU example:</p>
 <p>References:</p>
 <p><a href="https://github.com/baidu-research/baidu-allreduce">https://github.com/baidu-research/baidu-allreduce</a></p>
 <p><a href="https://www.zhihu.com/question/57799212/answer/292494636?utm_source=ZHShareTargetIDMore&amp;utm_medium=social&amp;utm_oi=37729630945280">https://www.zhihu.com/question/57799212/answer/292494636?utm_source=ZHShareTargetIDMore&amp;utm_medium=social&amp;utm_oi=37729630945280</a></p>
+<hr>
+<p><em>Translated by Claude from the Chinese original.</em></p>
 ]]></content:encoded>
   </item>
   </channel>

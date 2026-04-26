@@ -97,8 +97,7 @@
 <div class="article-text-content">
   <div class="article-date">2018-05-24 · TECH</div>
   <h1 class="article-hero">Introduction to Ring-Allreduce</h1>
-  <div class="article-body"><p><em>Translated by Claude from the Chinese original.</em></p>
-<p>Today I stumbled upon the ring-allreduce GPU communication algorithm out of curiosity. I originally wanted to read about it on <a href="http://research.baidu.com/bringing-hpc-techniques-deep-learning/">Baidu Research’s page</a>, but couldn’t find the relevant content on their site. After reading the comments in the <a href="https://github.com/baidu-research/baidu-allreduce">baidu-allreduce</a> code, I understood it. It’s actually a fairly simple algorithm to explain, so I’ll give a brief overview.</p>
+  <div class="article-body"><p>Today I stumbled upon the ring-allreduce GPU communication algorithm out of curiosity. I originally wanted to read about it on <a href="http://research.baidu.com/bringing-hpc-techniques-deep-learning/">Baidu Research’s page</a>, but couldn’t find the relevant content on their site. After reading the comments in the <a href="https://github.com/baidu-research/baidu-allreduce">baidu-allreduce</a> code, I understood it. It’s actually a fairly simple algorithm to explain, so I’ll give a brief overview.</p>
 <p>If you want implementation details, you can read the comments on GitHub directly—they’re very clear: <a href="https://github.com/baidu-research/baidu-allreduce/blob/master/collectives.cu#L156">https://github.com/baidu-research/baidu-allreduce/blob/master/collectives.cu#L156</a></p>
 <ul>
 <li><em>Unless otherwise noted, the images in this post are from <a href="https://www.zhihu.com/question/57799212/answer/292494636?utm_source=ZHShareTargetIDMore&amp;utm_medium=social&amp;utm_oi=37729630945280">a Zhihu answer</a>, because I could not find the original Baidu Research article containing these diagrams.</em></li>
@@ -152,6 +151,8 @@ If it’s still unclear, let’s walk through a 3-GPU example:</p>
 <p>References:</p>
 <p><a href="https://github.com/baidu-research/baidu-allreduce">https://github.com/baidu-research/baidu-allreduce</a></p>
 <p><a href="https://www.zhihu.com/question/57799212/answer/292494636?utm_source=ZHShareTargetIDMore&amp;utm_medium=social&amp;utm_oi=37729630945280">https://www.zhihu.com/question/57799212/answer/292494636?utm_source=ZHShareTargetIDMore&amp;utm_medium=social&amp;utm_oi=37729630945280</a></p>
+<hr>
+<p><em>Translated by Claude from the Chinese original.</em></p>
 </div>
 </div>
 
