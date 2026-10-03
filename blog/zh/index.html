@@ -16,11 +16,9 @@
 <link rel="alternate" type="application/rss+xml" title="RSS (ZH)" href="https://www.yujiachen.com/rss-zh.xml" /> <link rel="icon" href="/favicon-32.png" type="image/png" sizes="32x32" />
 <link rel="icon" href="/favicon.png" type="image/png" />
 <link rel="icon" href="/favicon.ico" type="image/x-icon" />
-<link rel="apple-touch-icon" href="/apple-touch-icon.png" sizes="180x180" /> <link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&amp;family=Source+Serif+4:ital,wght@0,400;0,600;0,700;1,400&amp;display=swap" />
+<link rel="apple-touch-icon" href="/apple-touch-icon.png" sizes="180x180" /> 
     <link rel="stylesheet" href="/styles.css" />
-    
+    <link rel="stylesheet" href="/fonts.css" />
 <link rel="modulepreload" href="/app/ask-ai-entry.js" />
 <link rel="modulepreload" href="/app/ask-ai-page-actions.js" />
 <link rel="modulepreload" href="/app/ask-ai-page-config.js" />
@@ -104,7 +102,11 @@
 
       <div class="filter-bar">
         <div class="filter-bar-row">
-          <div id="filter-pills" class="filter-pills"></div>
+          <div id="filter-pills" class="filter-pills">
+            <button class="filter-pill active" type="button" data-category="all">
+              All
+            </button>
+          </div>
           <div class="search-box">
             <input
               type="search"
