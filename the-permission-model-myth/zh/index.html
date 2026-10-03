@@ -19,10 +19,25 @@
 <link rel="icon" href="/favicon.ico" type="image/x-icon" />
 <link rel="apple-touch-icon" href="/apple-touch-icon.png" sizes="180x180" /> <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&amp;family=Source+Serif+4:ital,wght@0,400;0,600;0,700;1,400&amp;family=Noto+Serif+SC:wght@400;600;700&amp;display=swap" />
-    <link rel="stylesheet" href="/katex/katex.min.css" />
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&amp;family=Source+Serif+4:ital,wght@0,400;0,600;0,700;1,400&amp;display=swap" /> 
     <link rel="stylesheet" href="/styles.css" />
-    <link rel="stylesheet" href="/fonts.css" />
+    
+<link rel="modulepreload" href="/app/ask-ai-entry.js" />
+<link rel="modulepreload" href="/app/ask-ai-page-actions.js" />
+<link rel="modulepreload" href="/app/ask-ai-page-config.js" />
+<link rel="modulepreload" href="/app/ask-ai-page.js" />
+<link rel="modulepreload" href="/app/ask-ai-prompt.js" />
+<link rel="modulepreload" href="/app/citation-format.js" />
+<link rel="modulepreload" href="/app/citation.js" />
+<link rel="modulepreload" href="/app/comments.js" />
+<link rel="modulepreload" href="/app/filters.js" />
+<link rel="modulepreload" href="/app/image-preview-modal.js" />
+<link rel="modulepreload" href="/app/image-preview.js" />
+<link rel="modulepreload" href="/app/language.js" />
+<link rel="modulepreload" href="/app/nav-mobile.js" />
+<link rel="modulepreload" href="/app/state.js" />
+<link rel="modulepreload" href="/app/theme.js" />
+<link rel="modulepreload" href="/app/toc.js" />
   </head>
   <body data-page="post">
     <div id="root">
@@ -136,14 +151,14 @@
 <p>
 <picture>
   <source srcset="/assets/posts/the-permission-model-myth/zh/image_1.webp" type="image/webp" />
-  <img src="/assets/posts/the-permission-model-myth/zh/image_1.png" alt="" class="article-image" width="1080" height="214" />
+  <img src="/assets/posts/the-permission-model-myth/zh/image_1.png" alt="" class="article-image" width="1080" height="214" loading="lazy" />
 </picture>
 </p>
 <p>图中的 <code>drwx------</code> 即表示项目的权限，其中第一个字符表示文件类型（<code>-</code>表示普通文件，<code>d</code>表示目录），接下来的三组三个字符分别代表所有者、组和其他用户的读、写和执行权限。但我们看到有的字符串后面还跟着 <code>@</code> 和 <code>+</code> 符号，其中 <code>@</code> 符号表示当前文件或目录有扩展属性，此处不讨论；而 <code>+</code> 符号表示存在访问控制列表（Access Control List, ACL）。ACL 是一种用于定义额外权限的机制，允许对文件或目录进行更细粒度的访问控制，这意味着除了标准的文件权限（如读、写、执行）之外，还有额外的权限设置，这些设置可以针对不同的用户或组进行详细配置。使用 <code>ls -le</code> 操作后，我们可以看到这些访问控制列表：
 
 <picture>
   <source srcset="/assets/posts/the-permission-model-myth/zh/image_2.webp" type="image/webp" />
-  <img src="/assets/posts/the-permission-model-myth/zh/image_2.png" alt="" class="article-image" width="1080" height="349" />
+  <img src="/assets/posts/the-permission-model-myth/zh/image_2.png" alt="" class="article-image" width="1080" height="349" loading="lazy" />
 </picture>
 </p>
 <p>更具体的说明可以通过 <code>man chmod</code> 查看，这里我们有 2 点观察：</p>
@@ -153,7 +168,7 @@
 
 <picture>
   <source srcset="/assets/posts/the-permission-model-myth/zh/image_3.webp" type="image/webp" />
-  <img src="/assets/posts/the-permission-model-myth/zh/image_3.png" alt="" class="article-image" width="1080" height="810" />
+  <img src="/assets/posts/the-permission-model-myth/zh/image_3.png" alt="" class="article-image" width="1080" height="810" loading="lazy" />
 </picture>
 截图来自 macOS 14.2 manual</li>
 </ul>
@@ -163,19 +178,19 @@
 
 <picture>
   <source srcset="/assets/posts/the-permission-model-myth/zh/image_4.webp" type="image/webp" />
-  <img src="/assets/posts/the-permission-model-myth/zh/image_4.png" alt="" class="article-image" width="1080" height="114" />
+  <img src="/assets/posts/the-permission-model-myth/zh/image_4.png" alt="" class="article-image" width="1080" height="114" loading="lazy" />
 </picture>
 授权：为用户名为 ‘admin’ 的用户授予 ‘lark.message’ 表的 SELECT 权限。
 
 <picture>
   <source srcset="/assets/posts/the-permission-model-myth/zh/image_5.webp" type="image/webp" />
-  <img src="/assets/posts/the-permission-model-myth/zh/image_5.png" alt="" class="article-image" width="1080" height="232" />
+  <img src="/assets/posts/the-permission-model-myth/zh/image_5.png" alt="" class="article-image" width="1080" height="232" loading="lazy" />
 </picture>
 查看用户的全局权限：‘admin’用户没有任何全局权限。
 
 <picture>
   <source srcset="/assets/posts/the-permission-model-myth/zh/image_6.webp" type="image/webp" />
-  <img src="/assets/posts/the-permission-model-myth/zh/image_6.png" alt="" class="article-image" width="1080" height="152" />
+  <img src="/assets/posts/the-permission-model-myth/zh/image_6.png" alt="" class="article-image" width="1080" height="152" loading="lazy" />
 </picture>
 查看一个用户对一个数据表的权限：‘admin’用户对‘lark.message‘表有 SELECT 权限。</p>
 <p>从上面的例子中我们也有如下观察：</p>
@@ -199,7 +214,7 @@
 
 <picture>
   <source srcset="/assets/posts/the-permission-model-myth/zh/image_7.webp" type="image/webp" />
-  <img src="/assets/posts/the-permission-model-myth/zh/image_7.png" alt="" class="article-image" width="1080" height="650" />
+  <img src="/assets/posts/the-permission-model-myth/zh/image_7.png" alt="" class="article-image" width="1080" height="650" loading="lazy" />
 </picture>
 </p>
 <p>RBAC 有简化管理、灵活可配置的优点，但实践中也会表现出如下缺点：</p>
@@ -219,7 +234,7 @@
 <p>
 <picture>
   <source srcset="/assets/posts/the-permission-model-myth/zh/image_8.webp" type="image/webp" />
-  <img src="/assets/posts/the-permission-model-myth/zh/image_8.png" alt="" class="article-image" width="1080" height="608" />
+  <img src="/assets/posts/the-permission-model-myth/zh/image_8.png" alt="" class="article-image" width="1080" height="608" loading="lazy" />
 </picture>
 </p>
 <p>视频中展示了 4 中访问控制：</p>
@@ -287,21 +302,21 @@
 
 <picture>
   <source srcset="/assets/posts/the-permission-model-myth/zh/image_9.webp" type="image/webp" />
-  <img src="/assets/posts/the-permission-model-myth/zh/image_9.png" alt="" class="article-image" width="1080" height="573" />
+  <img src="/assets/posts/the-permission-model-myth/zh/image_9.png" alt="" class="article-image" width="1080" height="573" loading="lazy" />
 </picture>
 
 然后匹配操作，请求的操作是 <code>rg-read</code>，配置的 alice 操作角色是 <code>sub-reader</code>，配置 <code>g, sub-reader, rg-reader</code> 和 <code>g, rg-reader, rg-read</code> 可以从 alice 的 <code>sub-reader</code> 角色推理出其可以执行 <code>rg-read</code> 操作。
 
 <picture>
   <source srcset="/assets/posts/the-permission-model-myth/zh/image_10.webp" type="image/webp" />
-  <img src="/assets/posts/the-permission-model-myth/zh/image_10.png" alt="" class="article-image" width="1080" height="593" />
+  <img src="/assets/posts/the-permission-model-myth/zh/image_10.png" alt="" class="article-image" width="1080" height="593" loading="lazy" />
 </picture>
 
 最后匹配操作对象，请求的对象是 <code>rg1</code> ，配置的 alice 对象角色是 <code>sub1</code>，这层关系则可以通过 <code>g2, sub1, rg1</code> 配置推理出。
 
 <picture>
   <source srcset="/assets/posts/the-permission-model-myth/zh/image_11.webp" type="image/webp" />
-  <img src="/assets/posts/the-permission-model-myth/zh/image_11.png" alt="" class="article-image" width="1080" height="583" />
+  <img src="/assets/posts/the-permission-model-myth/zh/image_11.png" alt="" class="article-image" width="1080" height="583" loading="lazy" />
 </picture>
 </p>
 <h2 id="zanzibar">Zanzibar</h2>

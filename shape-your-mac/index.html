@@ -19,10 +19,25 @@
 <link rel="icon" href="/favicon.ico" type="image/x-icon" />
 <link rel="apple-touch-icon" href="/apple-touch-icon.png" sizes="180x180" /> <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&amp;family=Source+Serif+4:ital,wght@0,400;0,600;0,700;1,400&amp;family=Noto+Serif+SC:wght@400;600;700&amp;display=swap" />
-    <link rel="stylesheet" href="/katex/katex.min.css" />
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&amp;family=Source+Serif+4:ital,wght@0,400;0,600;0,700;1,400&amp;display=swap" /> 
     <link rel="stylesheet" href="/styles.css" />
-    <link rel="stylesheet" href="/fonts.css" />
+    
+<link rel="modulepreload" href="/app/ask-ai-entry.js" />
+<link rel="modulepreload" href="/app/ask-ai-page-actions.js" />
+<link rel="modulepreload" href="/app/ask-ai-page-config.js" />
+<link rel="modulepreload" href="/app/ask-ai-page.js" />
+<link rel="modulepreload" href="/app/ask-ai-prompt.js" />
+<link rel="modulepreload" href="/app/citation-format.js" />
+<link rel="modulepreload" href="/app/citation.js" />
+<link rel="modulepreload" href="/app/comments.js" />
+<link rel="modulepreload" href="/app/filters.js" />
+<link rel="modulepreload" href="/app/image-preview-modal.js" />
+<link rel="modulepreload" href="/app/image-preview.js" />
+<link rel="modulepreload" href="/app/language.js" />
+<link rel="modulepreload" href="/app/nav-mobile.js" />
+<link rel="modulepreload" href="/app/state.js" />
+<link rel="modulepreload" href="/app/theme.js" />
+<link rel="modulepreload" href="/app/toc.js" />
   </head>
   <body data-page="post">
     <div id="root">
@@ -125,7 +140,7 @@
 <p>
 <picture>
   <source srcset="/assets/posts/shape-your-mac/en/image_1.webp" type="image/webp" />
-  <img src="/assets/posts/shape-your-mac/en/image_1.png" alt="" class="article-image" width="1080" height="810" />
+  <img src="/assets/posts/shape-your-mac/en/image_1.png" alt="" class="article-image" width="1080" height="810" loading="lazy" />
 </picture>
 </p>
 <p>I moved to Shanghai less than two months ago, but I’ve already made this place feel familiar. This has allowed me to live happily and somewhat “efficiently” — meaning the room’s arrangement perfectly suits my daily routine.</p>
@@ -140,7 +155,7 @@
 <p>
 <picture>
   <source srcset="/assets/posts/shape-your-mac/en/image_2.webp" type="image/webp" />
-  <img src="/assets/posts/shape-your-mac/en/image_2.png" alt="" class="article-image" width="1080" height="719" />
+  <img src="/assets/posts/shape-your-mac/en/image_2.png" alt="" class="article-image" width="1080" height="719" loading="lazy" />
 </picture>
 </p>
 <p>I use <a href="https://www.warp.dev/">Warp</a> as my terminal emulator. However, I believe the differences between Terminal.app, iTerm2, and Warp are not significant. For me, Warp has 3 main advantages:</p>
@@ -174,21 +189,21 @@
 <p>
 <picture>
   <source srcset="/assets/posts/shape-your-mac/en/image_3.webp" type="image/webp" />
-  <img src="/assets/posts/shape-your-mac/en/image_3.png" alt="" class="article-image" width="1080" height="719" />
+  <img src="/assets/posts/shape-your-mac/en/image_3.png" alt="" class="article-image" width="1080" height="719" loading="lazy" />
 </picture>
 </p>
 <p>However, it’s not very flexible and cannot be used in other terminal emulators. If you use Warp’s shell prompt, you might encounter issues in VSCode or other text editors and IDEs. <a href="https://github.com/warpdotdev/Warp/issues/257#issuecomment-1274198741">Embedding Warp into VSCode is particularly challenging</a>.</p>
 <p>
 <picture>
   <source srcset="/assets/posts/shape-your-mac/en/image_4.webp" type="image/webp" />
-  <img src="/assets/posts/shape-your-mac/en/image_4.png" alt="" class="article-image" width="1080" height="719" />
+  <img src="/assets/posts/shape-your-mac/en/image_4.png" alt="" class="article-image" width="1080" height="719" loading="lazy" />
 </picture>
 </p>
 <p>I recommend using <a href="https://github.com/romkatv/powerlevel10k">p10k</a> as your shell prompt. It’s highly flexible and can be used across different terminal emulators since it’s not tied to any specific one.</p>
 <p>
 <picture>
   <source srcset="/assets/posts/shape-your-mac/en/image_5.webp" type="image/webp" />
-  <img src="/assets/posts/shape-your-mac/en/image_5.png" alt="" class="article-image" width="765" height="516" />
+  <img src="/assets/posts/shape-your-mac/en/image_5.png" alt="" class="article-image" width="765" height="516" loading="lazy" />
 </picture>
 </p>
 <p>I want to mention 2 of my favorite macOS commands here: <a href="https://ss64.com/mac/pbpaste.html">pbpaste</a> and <a href="https://ss64.com/mac/pbcopy.html">pbcopy</a>. There are already some useful examples on the manual pages.</p>
@@ -203,7 +218,7 @@
 <p>
 <picture>
   <source srcset="/assets/posts/shape-your-mac/en/image_6.webp" type="image/webp" />
-  <img src="/assets/posts/shape-your-mac/en/image_6.png" alt="" class="article-image" width="1080" height="767" />
+  <img src="/assets/posts/shape-your-mac/en/image_6.png" alt="" class="article-image" width="1080" height="767" loading="lazy" />
 </picture>
 </p>
 <ul>
@@ -212,7 +227,7 @@
 <p>
 <picture>
   <source srcset="/assets/posts/shape-your-mac/en/image_7.webp" type="image/webp" />
-  <img src="/assets/posts/shape-your-mac/en/image_7.png" alt="" class="article-image" width="1080" height="767" />
+  <img src="/assets/posts/shape-your-mac/en/image_7.png" alt="" class="article-image" width="1080" height="767" loading="lazy" />
 </picture>
 </p>
 <p><a href="https://youtu.be/-Fy6imaiHWE" title="Share link">How to select or drag using three fingers on your MacBook track pad</a></p>
@@ -222,7 +237,7 @@
 <p>
 <picture>
   <source srcset="/assets/posts/shape-your-mac/en/image_8.webp" type="image/webp" />
-  <img src="/assets/posts/shape-your-mac/en/image_8.png" alt="" class="article-image" width="1080" height="767" />
+  <img src="/assets/posts/shape-your-mac/en/image_8.png" alt="" class="article-image" width="1080" height="767" loading="lazy" />
 </picture>
 </p>
 <ul>
@@ -231,7 +246,7 @@
 <p>
 <picture>
   <source srcset="/assets/posts/shape-your-mac/en/image_9.webp" type="image/webp" />
-  <img src="/assets/posts/shape-your-mac/en/image_9.png" alt="" class="article-image" width="1080" height="767" />
+  <img src="/assets/posts/shape-your-mac/en/image_9.png" alt="" class="article-image" width="1080" height="767" loading="lazy" />
 </picture>
 </p>
 <ul>
@@ -240,7 +255,7 @@
 <p>
 <picture>
   <source srcset="/assets/posts/shape-your-mac/en/image_10.webp" type="image/webp" />
-  <img src="/assets/posts/shape-your-mac/en/image_10.png" alt="" class="article-image" width="1080" height="796" />
+  <img src="/assets/posts/shape-your-mac/en/image_10.png" alt="" class="article-image" width="1080" height="796" loading="lazy" />
 </picture>
 </p>
 <ul>
@@ -249,7 +264,7 @@
 <p>
 <picture>
   <source srcset="/assets/posts/shape-your-mac/en/image_11.webp" type="image/webp" />
-  <img src="/assets/posts/shape-your-mac/en/image_11.png" alt="" class="article-image" width="464" height="170" />
+  <img src="/assets/posts/shape-your-mac/en/image_11.png" alt="" class="article-image" width="464" height="170" loading="lazy" />
 </picture>
 </p>
 <pre class="hljs"><code>defaults write -g ApplePressAndHoldEnabled -bool <span class="hljs-literal">false</span>
@@ -262,7 +277,7 @@
 <p>
 <picture>
   <source srcset="/assets/posts/shape-your-mac/en/image_12.webp" type="image/webp" />
-  <img src="/assets/posts/shape-your-mac/en/image_12.png" alt="" class="article-image" width="1080" height="701" />
+  <img src="/assets/posts/shape-your-mac/en/image_12.png" alt="" class="article-image" width="1080" height="701" loading="lazy" />
 </picture>
 </p>
 <p><a href="https://www.raycast.com/store">Raycast is an everything store for Mac shortcuts.</a> Here are some shortcuts I often use:</p>
@@ -283,43 +298,43 @@
 <td>
 <picture>
   <source srcset="/assets/posts/shape-your-mac/en/image_13.webp" type="image/webp" />
-  <img src="/assets/posts/shape-your-mac/en/image_13.png" alt="" class="article-image" width="1080" height="661" />
+  <img src="/assets/posts/shape-your-mac/en/image_13.png" alt="" class="article-image" width="1080" height="661" loading="lazy" />
 </picture>
 </td>
 <td>
 <picture>
   <source srcset="/assets/posts/shape-your-mac/en/image_14.webp" type="image/webp" />
-  <img src="/assets/posts/shape-your-mac/en/image_14.png" alt="" class="article-image" width="1080" height="661" />
+  <img src="/assets/posts/shape-your-mac/en/image_14.png" alt="" class="article-image" width="1080" height="661" loading="lazy" />
 </picture>
 </td>
 <td>
 <picture>
   <source srcset="/assets/posts/shape-your-mac/en/image_15.webp" type="image/webp" />
-  <img src="/assets/posts/shape-your-mac/en/image_15.png" alt="" class="article-image" width="1080" height="661" />
+  <img src="/assets/posts/shape-your-mac/en/image_15.png" alt="" class="article-image" width="1080" height="661" loading="lazy" />
 </picture>
 </td>
 <td>
 <picture>
   <source srcset="/assets/posts/shape-your-mac/en/image_16.webp" type="image/webp" />
-  <img src="/assets/posts/shape-your-mac/en/image_16.png" alt="" class="article-image" width="1080" height="661" />
+  <img src="/assets/posts/shape-your-mac/en/image_16.png" alt="" class="article-image" width="1080" height="661" loading="lazy" />
 </picture>
 </td>
 <td>
 <picture>
   <source srcset="/assets/posts/shape-your-mac/en/image_17.webp" type="image/webp" />
-  <img src="/assets/posts/shape-your-mac/en/image_17.png" alt="" class="article-image" width="1080" height="661" />
+  <img src="/assets/posts/shape-your-mac/en/image_17.png" alt="" class="article-image" width="1080" height="661" loading="lazy" />
 </picture>
 </td>
 <td>
 <picture>
   <source srcset="/assets/posts/shape-your-mac/en/image_18.webp" type="image/webp" />
-  <img src="/assets/posts/shape-your-mac/en/image_18.png" alt="" class="article-image" width="1080" height="661" />
+  <img src="/assets/posts/shape-your-mac/en/image_18.png" alt="" class="article-image" width="1080" height="661" loading="lazy" />
 </picture>
 </td>
 <td>
 <picture>
   <source srcset="/assets/posts/shape-your-mac/en/image_19.webp" type="image/webp" />
-  <img src="/assets/posts/shape-your-mac/en/image_19.png" alt="" class="article-image" width="1080" height="661" />
+  <img src="/assets/posts/shape-your-mac/en/image_19.png" alt="" class="article-image" width="1080" height="661" loading="lazy" />
 </picture>
 </td>
 </tr>
@@ -329,7 +344,7 @@
 <p>
 <picture>
   <source srcset="/assets/posts/shape-your-mac/en/image_20.webp" type="image/webp" />
-  <img src="/assets/posts/shape-your-mac/en/image_20.png" alt="" class="article-image" width="1080" height="702" />
+  <img src="/assets/posts/shape-your-mac/en/image_20.png" alt="" class="article-image" width="1080" height="702" loading="lazy" />
 </picture>
 </p>
 <h2 id="alttab">🌟 AltTab</h2>
@@ -337,14 +352,14 @@
 <p>
 <picture>
   <source srcset="/assets/posts/shape-your-mac/en/image_21.webp" type="image/webp" />
-  <img src="/assets/posts/shape-your-mac/en/image_21.png" alt="" class="article-image" width="1080" height="701" />
+  <img src="/assets/posts/shape-your-mac/en/image_21.png" alt="" class="article-image" width="1080" height="701" loading="lazy" />
 </picture>
 </p>
 <p><a href="https://alt-tab-macos.netlify.app/">AltTab</a> solves this problem by allowing you to switch between windows across different Mac desktops. This way, you don’t need to use a mouse to switch between windows and desktops.</p>
 <p>
 <picture>
   <source srcset="/assets/posts/shape-your-mac/en/image_22.webp" type="image/webp" />
-  <img src="/assets/posts/shape-your-mac/en/image_22.png" alt="" class="article-image" width="1080" height="701" />
+  <img src="/assets/posts/shape-your-mac/en/image_22.png" alt="" class="article-image" width="1080" height="701" loading="lazy" />
 </picture>
 </p>
 <h1 id="backup">💾 Backup</h1>

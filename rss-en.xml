@@ -274,7 +274,7 @@ Gaze at any single jewel, and you are gazing at the entire universe.</p>
 <p>
 <picture>
   <source srcset="https://www.yujiachen.com/assets/posts/thoughts-on-the-video-quality-evaluation/en/image_1.webp" type="image/webp" />
-  <img src="https://www.yujiachen.com/assets/posts/thoughts-on-the-video-quality-evaluation/en/image_1.png" alt="" class="article-image" width="1080" height="602" />
+  <img src="https://www.yujiachen.com/assets/posts/thoughts-on-the-video-quality-evaluation/en/image_1.png" alt="" class="article-image" width="1080" height="602" loading="lazy" />
 </picture>
 </p>
 <p><em>Figure 1. Judge score vs. export rate on a holdout set. Each point represents a score bucket. The trend is monotonic: higher judge scores are associated with higher export rates.</em></p>
@@ -323,7 +323,7 @@ Original: <a href="https://medium.com/opus-engineering/bridging-the-gap-how-engi
 <p>
 <picture>
   <source srcset="https://www.yujiachen.com/assets/posts/bridging-the-gap-how-engineers-and-pms-ship-winning-llm-features-together/en/image_1.webp" type="image/webp" />
-  <img src="https://www.yujiachen.com/assets/posts/bridging-the-gap-how-engineers-and-pms-ship-winning-llm-features-together/en/image_1.png" alt="" class="article-image" width="1024" height="1572" />
+  <img src="https://www.yujiachen.com/assets/posts/bridging-the-gap-how-engineers-and-pms-ship-winning-llm-features-together/en/image_1.png" alt="" class="article-image" width="1024" height="1572" loading="lazy" />
 </picture>
 </p>
 <p><a href="https://www.linkedin.com/posts/manus-im_product-to-prompt-distance-is-fast-becoming-activity-7349444736048320512-zjjS?utm_source=share&amp;utm_medium=member_desktop&amp;rcm=ACoAACdAQCkBye_l2SHKxHq1FoCJdVQJdLz5Boc">Tao Zhang first defines this metric in Manus.</a></p>
@@ -348,7 +348,7 @@ Original: <a href="https://medium.com/opus-engineering/bridging-the-gap-how-engi
 <p>
 <picture>
   <source srcset="https://www.yujiachen.com/assets/posts/bridging-the-gap-how-engineers-and-pms-ship-winning-llm-features-together/en/image_2.webp" type="image/webp" />
-  <img src="https://www.yujiachen.com/assets/posts/bridging-the-gap-how-engineers-and-pms-ship-winning-llm-features-together/en/image_2.png" alt="" class="article-image" width="1024" height="276" />
+  <img src="https://www.yujiachen.com/assets/posts/bridging-the-gap-how-engineers-and-pms-ship-winning-llm-features-together/en/image_2.png" alt="" class="article-image" width="1024" height="276" loading="lazy" />
 </picture>
 </p>
 <p>KV-Cache has two major benefits:</p>
@@ -471,7 +471,7 @@ Provide clear reasoning for why content is or isn't relevant.
 <p>
 <picture>
   <source srcset="https://www.yujiachen.com/assets/posts/bridging-the-gap-how-engineers-and-pms-ship-winning-llm-features-together/en/image_3.webp" type="image/webp" />
-  <img src="https://www.yujiachen.com/assets/posts/bridging-the-gap-how-engineers-and-pms-ship-winning-llm-features-together/en/image_3.png" alt="" class="article-image" width="1024" height="512" />
+  <img src="https://www.yujiachen.com/assets/posts/bridging-the-gap-how-engineers-and-pms-ship-winning-llm-features-together/en/image_3.png" alt="" class="article-image" width="1024" height="512" loading="lazy" />
 </picture>
 </p>
 <ol>
@@ -668,7 +668,7 @@ I’m not sure how you feel about this. But I would feel that CEOs and leaders a
 <p>
 <picture>
   <source srcset="https://www.yujiachen.com/assets/posts/shape-your-mac/en/image_1.webp" type="image/webp" />
-  <img src="https://www.yujiachen.com/assets/posts/shape-your-mac/en/image_1.png" alt="" class="article-image" width="1080" height="810" />
+  <img src="https://www.yujiachen.com/assets/posts/shape-your-mac/en/image_1.png" alt="" class="article-image" width="1080" height="810" loading="lazy" />
 </picture>
 </p>
 <p>I moved to Shanghai less than two months ago, but I’ve already made this place feel familiar. This has allowed me to live happily and somewhat “efficiently” — meaning the room’s arrangement perfectly suits my daily routine.</p>
@@ -683,7 +683,7 @@ I’m not sure how you feel about this. But I would feel that CEOs and leaders a
 <p>
 <picture>
   <source srcset="https://www.yujiachen.com/assets/posts/shape-your-mac/en/image_2.webp" type="image/webp" />
-  <img src="https://www.yujiachen.com/assets/posts/shape-your-mac/en/image_2.png" alt="" class="article-image" width="1080" height="719" />
+  <img src="https://www.yujiachen.com/assets/posts/shape-your-mac/en/image_2.png" alt="" class="article-image" width="1080" height="719" loading="lazy" />
 </picture>
 </p>
 <p>I use <a href="https://www.warp.dev/">Warp</a> as my terminal emulator. However, I believe the differences between Terminal.app, iTerm2, and Warp are not significant. For me, Warp has 3 main advantages:</p>
@@ -717,21 +717,21 @@ I’m not sure how you feel about this. But I would feel that CEOs and leaders a
 <p>
 <picture>
   <source srcset="https://www.yujiachen.com/assets/posts/shape-your-mac/en/image_3.webp" type="image/webp" />
-  <img src="https://www.yujiachen.com/assets/posts/shape-your-mac/en/image_3.png" alt="" class="article-image" width="1080" height="719" />
+  <img src="https://www.yujiachen.com/assets/posts/shape-your-mac/en/image_3.png" alt="" class="article-image" width="1080" height="719" loading="lazy" />
 </picture>
 </p>
 <p>However, it’s not very flexible and cannot be used in other terminal emulators. If you use Warp’s shell prompt, you might encounter issues in VSCode or other text editors and IDEs. <a href="https://github.com/warpdotdev/Warp/issues/257#issuecomment-1274198741">Embedding Warp into VSCode is particularly challenging</a>.</p>
 <p>
 <picture>
   <source srcset="https://www.yujiachen.com/assets/posts/shape-your-mac/en/image_4.webp" type="image/webp" />
-  <img src="https://www.yujiachen.com/assets/posts/shape-your-mac/en/image_4.png" alt="" class="article-image" width="1080" height="719" />
+  <img src="https://www.yujiachen.com/assets/posts/shape-your-mac/en/image_4.png" alt="" class="article-image" width="1080" height="719" loading="lazy" />
 </picture>
 </p>
 <p>I recommend using <a href="https://github.com/romkatv/powerlevel10k">p10k</a> as your shell prompt. It’s highly flexible and can be used across different terminal emulators since it’s not tied to any specific one.</p>
 <p>
 <picture>
   <source srcset="https://www.yujiachen.com/assets/posts/shape-your-mac/en/image_5.webp" type="image/webp" />
-  <img src="https://www.yujiachen.com/assets/posts/shape-your-mac/en/image_5.png" alt="" class="article-image" width="765" height="516" />
+  <img src="https://www.yujiachen.com/assets/posts/shape-your-mac/en/image_5.png" alt="" class="article-image" width="765" height="516" loading="lazy" />
 </picture>
 </p>
 <p>I want to mention 2 of my favorite macOS commands here: <a href="https://ss64.com/mac/pbpaste.html">pbpaste</a> and <a href="https://ss64.com/mac/pbcopy.html">pbcopy</a>. There are already some useful examples on the manual pages.</p>
@@ -746,7 +746,7 @@ I’m not sure how you feel about this. But I would feel that CEOs and leaders a
 <p>
 <picture>
   <source srcset="https://www.yujiachen.com/assets/posts/shape-your-mac/en/image_6.webp" type="image/webp" />
-  <img src="https://www.yujiachen.com/assets/posts/shape-your-mac/en/image_6.png" alt="" class="article-image" width="1080" height="767" />
+  <img src="https://www.yujiachen.com/assets/posts/shape-your-mac/en/image_6.png" alt="" class="article-image" width="1080" height="767" loading="lazy" />
 </picture>
 </p>
 <ul>
@@ -755,7 +755,7 @@ I’m not sure how you feel about this. But I would feel that CEOs and leaders a
 <p>
 <picture>
   <source srcset="https://www.yujiachen.com/assets/posts/shape-your-mac/en/image_7.webp" type="image/webp" />
-  <img src="https://www.yujiachen.com/assets/posts/shape-your-mac/en/image_7.png" alt="" class="article-image" width="1080" height="767" />
+  <img src="https://www.yujiachen.com/assets/posts/shape-your-mac/en/image_7.png" alt="" class="article-image" width="1080" height="767" loading="lazy" />
 </picture>
 </p>
 <p><a href="https://youtu.be/-Fy6imaiHWE" title="Share link">How to select or drag using three fingers on your MacBook track pad</a></p>
@@ -765,7 +765,7 @@ I’m not sure how you feel about this. But I would feel that CEOs and leaders a
 <p>
 <picture>
   <source srcset="https://www.yujiachen.com/assets/posts/shape-your-mac/en/image_8.webp" type="image/webp" />
-  <img src="https://www.yujiachen.com/assets/posts/shape-your-mac/en/image_8.png" alt="" class="article-image" width="1080" height="767" />
+  <img src="https://www.yujiachen.com/assets/posts/shape-your-mac/en/image_8.png" alt="" class="article-image" width="1080" height="767" loading="lazy" />
 </picture>
 </p>
 <ul>
@@ -774,7 +774,7 @@ I’m not sure how you feel about this. But I would feel that CEOs and leaders a
 <p>
 <picture>
   <source srcset="https://www.yujiachen.com/assets/posts/shape-your-mac/en/image_9.webp" type="image/webp" />
-  <img src="https://www.yujiachen.com/assets/posts/shape-your-mac/en/image_9.png" alt="" class="article-image" width="1080" height="767" />
+  <img src="https://www.yujiachen.com/assets/posts/shape-your-mac/en/image_9.png" alt="" class="article-image" width="1080" height="767" loading="lazy" />
 </picture>
 </p>
 <ul>
@@ -783,7 +783,7 @@ I’m not sure how you feel about this. But I would feel that CEOs and leaders a
 <p>
 <picture>
   <source srcset="https://www.yujiachen.com/assets/posts/shape-your-mac/en/image_10.webp" type="image/webp" />
-  <img src="https://www.yujiachen.com/assets/posts/shape-your-mac/en/image_10.png" alt="" class="article-image" width="1080" height="796" />
+  <img src="https://www.yujiachen.com/assets/posts/shape-your-mac/en/image_10.png" alt="" class="article-image" width="1080" height="796" loading="lazy" />
 </picture>
 </p>
 <ul>
@@ -792,7 +792,7 @@ I’m not sure how you feel about this. But I would feel that CEOs and leaders a
 <p>
 <picture>
   <source srcset="https://www.yujiachen.com/assets/posts/shape-your-mac/en/image_11.webp" type="image/webp" />
-  <img src="https://www.yujiachen.com/assets/posts/shape-your-mac/en/image_11.png" alt="" class="article-image" width="464" height="170" />
+  <img src="https://www.yujiachen.com/assets/posts/shape-your-mac/en/image_11.png" alt="" class="article-image" width="464" height="170" loading="lazy" />
 </picture>
 </p>
 <pre class="hljs"><code>defaults write -g ApplePressAndHoldEnabled -bool <span class="hljs-literal">false</span>
@@ -805,7 +805,7 @@ I’m not sure how you feel about this. But I would feel that CEOs and leaders a
 <p>
 <picture>
   <source srcset="https://www.yujiachen.com/assets/posts/shape-your-mac/en/image_12.webp" type="image/webp" />
-  <img src="https://www.yujiachen.com/assets/posts/shape-your-mac/en/image_12.png" alt="" class="article-image" width="1080" height="701" />
+  <img src="https://www.yujiachen.com/assets/posts/shape-your-mac/en/image_12.png" alt="" class="article-image" width="1080" height="701" loading="lazy" />
 </picture>
 </p>
 <p><a href="https://www.raycast.com/store">Raycast is an everything store for Mac shortcuts.</a> Here are some shortcuts I often use:</p>
@@ -826,43 +826,43 @@ I’m not sure how you feel about this. But I would feel that CEOs and leaders a
 <td>
 <picture>
   <source srcset="https://www.yujiachen.com/assets/posts/shape-your-mac/en/image_13.webp" type="image/webp" />
-  <img src="https://www.yujiachen.com/assets/posts/shape-your-mac/en/image_13.png" alt="" class="article-image" width="1080" height="661" />
+  <img src="https://www.yujiachen.com/assets/posts/shape-your-mac/en/image_13.png" alt="" class="article-image" width="1080" height="661" loading="lazy" />
 </picture>
 </td>
 <td>
 <picture>
   <source srcset="https://www.yujiachen.com/assets/posts/shape-your-mac/en/image_14.webp" type="image/webp" />
-  <img src="https://www.yujiachen.com/assets/posts/shape-your-mac/en/image_14.png" alt="" class="article-image" width="1080" height="661" />
+  <img src="https://www.yujiachen.com/assets/posts/shape-your-mac/en/image_14.png" alt="" class="article-image" width="1080" height="661" loading="lazy" />
 </picture>
 </td>
 <td>
 <picture>
   <source srcset="https://www.yujiachen.com/assets/posts/shape-your-mac/en/image_15.webp" type="image/webp" />
-  <img src="https://www.yujiachen.com/assets/posts/shape-your-mac/en/image_15.png" alt="" class="article-image" width="1080" height="661" />
+  <img src="https://www.yujiachen.com/assets/posts/shape-your-mac/en/image_15.png" alt="" class="article-image" width="1080" height="661" loading="lazy" />
 </picture>
 </td>
 <td>
 <picture>
   <source srcset="https://www.yujiachen.com/assets/posts/shape-your-mac/en/image_16.webp" type="image/webp" />
-  <img src="https://www.yujiachen.com/assets/posts/shape-your-mac/en/image_16.png" alt="" class="article-image" width="1080" height="661" />
+  <img src="https://www.yujiachen.com/assets/posts/shape-your-mac/en/image_16.png" alt="" class="article-image" width="1080" height="661" loading="lazy" />
 </picture>
 </td>
 <td>
 <picture>
   <source srcset="https://www.yujiachen.com/assets/posts/shape-your-mac/en/image_17.webp" type="image/webp" />
-  <img src="https://www.yujiachen.com/assets/posts/shape-your-mac/en/image_17.png" alt="" class="article-image" width="1080" height="661" />
+  <img src="https://www.yujiachen.com/assets/posts/shape-your-mac/en/image_17.png" alt="" class="article-image" width="1080" height="661" loading="lazy" />
 </picture>
 </td>
 <td>
 <picture>
   <source srcset="https://www.yujiachen.com/assets/posts/shape-your-mac/en/image_18.webp" type="image/webp" />
-  <img src="https://www.yujiachen.com/assets/posts/shape-your-mac/en/image_18.png" alt="" class="article-image" width="1080" height="661" />
+  <img src="https://www.yujiachen.com/assets/posts/shape-your-mac/en/image_18.png" alt="" class="article-image" width="1080" height="661" loading="lazy" />
 </picture>
 </td>
 <td>
 <picture>
   <source srcset="https://www.yujiachen.com/assets/posts/shape-your-mac/en/image_19.webp" type="image/webp" />
-  <img src="https://www.yujiachen.com/assets/posts/shape-your-mac/en/image_19.png" alt="" class="article-image" width="1080" height="661" />
+  <img src="https://www.yujiachen.com/assets/posts/shape-your-mac/en/image_19.png" alt="" class="article-image" width="1080" height="661" loading="lazy" />
 </picture>
 </td>
 </tr>
@@ -872,7 +872,7 @@ I’m not sure how you feel about this. But I would feel that CEOs and leaders a
 <p>
 <picture>
   <source srcset="https://www.yujiachen.com/assets/posts/shape-your-mac/en/image_20.webp" type="image/webp" />
-  <img src="https://www.yujiachen.com/assets/posts/shape-your-mac/en/image_20.png" alt="" class="article-image" width="1080" height="702" />
+  <img src="https://www.yujiachen.com/assets/posts/shape-your-mac/en/image_20.png" alt="" class="article-image" width="1080" height="702" loading="lazy" />
 </picture>
 </p>
 <h2 id="alttab">🌟 AltTab</h2>
@@ -880,14 +880,14 @@ I’m not sure how you feel about this. But I would feel that CEOs and leaders a
 <p>
 <picture>
   <source srcset="https://www.yujiachen.com/assets/posts/shape-your-mac/en/image_21.webp" type="image/webp" />
-  <img src="https://www.yujiachen.com/assets/posts/shape-your-mac/en/image_21.png" alt="" class="article-image" width="1080" height="701" />
+  <img src="https://www.yujiachen.com/assets/posts/shape-your-mac/en/image_21.png" alt="" class="article-image" width="1080" height="701" loading="lazy" />
 </picture>
 </p>
 <p><a href="https://alt-tab-macos.netlify.app/">AltTab</a> solves this problem by allowing you to switch between windows across different Mac desktops. This way, you don’t need to use a mouse to switch between windows and desktops.</p>
 <p>
 <picture>
   <source srcset="https://www.yujiachen.com/assets/posts/shape-your-mac/en/image_22.webp" type="image/webp" />
-  <img src="https://www.yujiachen.com/assets/posts/shape-your-mac/en/image_22.png" alt="" class="article-image" width="1080" height="701" />
+  <img src="https://www.yujiachen.com/assets/posts/shape-your-mac/en/image_22.png" alt="" class="article-image" width="1080" height="701" loading="lazy" />
 </picture>
 </p>
 <h1 id="backup">💾 Backup</h1>
@@ -954,14 +954,14 @@ I’m not sure how you feel about this. But I would feel that CEOs and leaders a
 <p>
 <picture>
   <source srcset="https://www.yujiachen.com/assets/posts/the-permission-model-myth/en/image_1.webp" type="image/webp" />
-  <img src="https://www.yujiachen.com/assets/posts/the-permission-model-myth/en/image_1.png" alt="" class="article-image" width="1080" height="214" />
+  <img src="https://www.yujiachen.com/assets/posts/the-permission-model-myth/en/image_1.png" alt="" class="article-image" width="1080" height="214" loading="lazy" />
 </picture>
 </p>
 <p>The <code>drwx------</code> in the image is the mode string for a file-system entry. The first character indicates the file type (<code>-</code> for regular files, <code>d</code> for directories), followed by three groups of three characters representing read, write, and execute permissions for owner, group, and others. Some entries also include <code>@</code> or <code>+</code>. <code>@</code> means the file or directory has extended attributes (not discussed here). <code>+</code> means an Access Control List (ACL) is present. ACLs provide finer-grained rules beyond standard rwx bits, with per-user/per-group configuration. Using <code>ls -le</code>, we can inspect these ACL entries:
 
 <picture>
   <source srcset="https://www.yujiachen.com/assets/posts/the-permission-model-myth/en/image_2.webp" type="image/webp" />
-  <img src="https://www.yujiachen.com/assets/posts/the-permission-model-myth/en/image_2.png" alt="" class="article-image" width="1080" height="349" />
+  <img src="https://www.yujiachen.com/assets/posts/the-permission-model-myth/en/image_2.png" alt="" class="article-image" width="1080" height="349" loading="lazy" />
 </picture>
 </p>
 <p>For more details, see <code>man chmod</code>. Two observations:</p>
@@ -971,7 +971,7 @@ I’m not sure how you feel about this. But I would feel that CEOs and leaders a
 
 <picture>
   <source srcset="https://www.yujiachen.com/assets/posts/the-permission-model-myth/en/image_3.webp" type="image/webp" />
-  <img src="https://www.yujiachen.com/assets/posts/the-permission-model-myth/en/image_3.png" alt="" class="article-image" width="1080" height="810" />
+  <img src="https://www.yujiachen.com/assets/posts/the-permission-model-myth/en/image_3.png" alt="" class="article-image" width="1080" height="810" loading="lazy" />
 </picture>
 Screenshot from macOS 14.2 manual</li>
 </ul>
@@ -981,19 +981,19 @@ Screenshot from macOS 14.2 manual</li>
 
 <picture>
   <source srcset="https://www.yujiachen.com/assets/posts/the-permission-model-myth/en/image_4.webp" type="image/webp" />
-  <img src="https://www.yujiachen.com/assets/posts/the-permission-model-myth/en/image_4.png" alt="" class="article-image" width="1080" height="114" />
+  <img src="https://www.yujiachen.com/assets/posts/the-permission-model-myth/en/image_4.png" alt="" class="article-image" width="1080" height="114" loading="lazy" />
 </picture>
 Granting: Granting SELECT permission on the ‘lark.message’ table to the user ‘admin’.
 
 <picture>
   <source srcset="https://www.yujiachen.com/assets/posts/the-permission-model-myth/en/image_5.webp" type="image/webp" />
-  <img src="https://www.yujiachen.com/assets/posts/the-permission-model-myth/en/image_5.png" alt="" class="article-image" width="1080" height="232" />
+  <img src="https://www.yujiachen.com/assets/posts/the-permission-model-myth/en/image_5.png" alt="" class="article-image" width="1080" height="232" loading="lazy" />
 </picture>
 Viewing a user’s global permissions: The ‘admin’ user has no global permissions.
 
 <picture>
   <source srcset="https://www.yujiachen.com/assets/posts/the-permission-model-myth/en/image_6.webp" type="image/webp" />
-  <img src="https://www.yujiachen.com/assets/posts/the-permission-model-myth/en/image_6.png" alt="" class="article-image" width="1080" height="152" />
+  <img src="https://www.yujiachen.com/assets/posts/the-permission-model-myth/en/image_6.png" alt="" class="article-image" width="1080" height="152" loading="lazy" />
 </picture>
 Viewing a user’s permissions on a specific table: The ‘admin’ user has SELECT permission on the ‘lark.message’ table.</p>
 <p>From the examples above, we also observe:</p>
@@ -1017,7 +1017,7 @@ Viewing a user’s permissions on a specific table: The ‘admin’ user has SEL
 
 <picture>
   <source srcset="https://www.yujiachen.com/assets/posts/the-permission-model-myth/en/image_7.webp" type="image/webp" />
-  <img src="https://www.yujiachen.com/assets/posts/the-permission-model-myth/en/image_7.png" alt="" class="article-image" width="1080" height="650" />
+  <img src="https://www.yujiachen.com/assets/posts/the-permission-model-myth/en/image_7.png" alt="" class="article-image" width="1080" height="650" loading="lazy" />
 </picture>
 </p>
 <p>RBAC has the advantages of simplified management and flexible configuration, but in practice it also exhibits the following drawbacks:</p>
@@ -1037,7 +1037,7 @@ Viewing a user’s permissions on a specific table: The ‘admin’ user has SEL
 <p>
 <picture>
   <source srcset="https://www.yujiachen.com/assets/posts/the-permission-model-myth/en/image_8.webp" type="image/webp" />
-  <img src="https://www.yujiachen.com/assets/posts/the-permission-model-myth/en/image_8.png" alt="" class="article-image" width="1080" height="608" />
+  <img src="https://www.yujiachen.com/assets/posts/the-permission-model-myth/en/image_8.png" alt="" class="article-image" width="1080" height="608" loading="lazy" />
 </picture>
 </p>
 <p>The video demonstrates 4 types of access control:</p>
@@ -1105,21 +1105,21 @@ Viewing a user’s permissions on a specific table: The ‘admin’ user has SEL
 
 <picture>
   <source srcset="https://www.yujiachen.com/assets/posts/the-permission-model-myth/en/image_9.webp" type="image/webp" />
-  <img src="https://www.yujiachen.com/assets/posts/the-permission-model-myth/en/image_9.png" alt="" class="article-image" width="1080" height="573" />
+  <img src="https://www.yujiachen.com/assets/posts/the-permission-model-myth/en/image_9.png" alt="" class="article-image" width="1080" height="573" loading="lazy" />
 </picture>
 
 Then match the action. The requested action is <code>rg-read</code>, while Alice’s role is <code>sub-reader</code>. Through <code>g, sub-reader, rg-reader</code> and <code>g, rg-reader, rg-read</code>, we infer that <code>sub-reader</code> implies <code>rg-read</code>.
 
 <picture>
   <source srcset="https://www.yujiachen.com/assets/posts/the-permission-model-myth/en/image_10.webp" type="image/webp" />
-  <img src="https://www.yujiachen.com/assets/posts/the-permission-model-myth/en/image_10.png" alt="" class="article-image" width="1080" height="593" />
+  <img src="https://www.yujiachen.com/assets/posts/the-permission-model-myth/en/image_10.png" alt="" class="article-image" width="1080" height="593" loading="lazy" />
 </picture>
 
 Finally, match the resource. The requested object is <code>rg1</code>, and Alice’s mapped resource is <code>sub1</code>; <code>g2, sub1, rg1</code> links the two.
 
 <picture>
   <source srcset="https://www.yujiachen.com/assets/posts/the-permission-model-myth/en/image_11.webp" type="image/webp" />
-  <img src="https://www.yujiachen.com/assets/posts/the-permission-model-myth/en/image_11.png" alt="" class="article-image" width="1080" height="583" />
+  <img src="https://www.yujiachen.com/assets/posts/the-permission-model-myth/en/image_11.png" alt="" class="article-image" width="1080" height="583" loading="lazy" />
 </picture>
 </p>
 <h2 id="zanzibar">Zanzibar</h2>
@@ -1755,7 +1755,7 @@ unary_op   = &quot;+&quot; | &quot;-&quot; | &quot;!&quot; | &quot;^&quot; | &qu
 <p>
 <picture>
   <source srcset="https://www.yujiachen.com/assets/posts/software-design-book-notes/en/image_1.webp" type="image/webp" />
-  <img src="https://www.yujiachen.com/assets/posts/software-design-book-notes/en/image_1.png" alt="" class="article-image" width="640" height="391" />
+  <img src="https://www.yujiachen.com/assets/posts/software-design-book-notes/en/image_1.png" alt="" class="article-image" width="640" height="391" loading="lazy" />
 </picture>
 </p>
 <p>The 10-20% time mentioned in the book reminds me of:</p>
@@ -1769,7 +1769,7 @@ unary_op   = &quot;+&quot; | &quot;-&quot; | &quot;!&quot; | &quot;^&quot; | &qu
 <p>
 <picture>
   <source srcset="https://www.yujiachen.com/assets/posts/software-design-book-notes/en/image_2.webp" type="image/webp" />
-  <img src="https://www.yujiachen.com/assets/posts/software-design-book-notes/en/image_2.jpg" alt="" class="article-image" width="640" height="420" />
+  <img src="https://www.yujiachen.com/assets/posts/software-design-book-notes/en/image_2.jpg" alt="" class="article-image" width="640" height="420" loading="lazy" />
 </picture>
 </p>
 <p>The book gives a fascinating example: GC in Go and Java. The implementation is very complex, but GC means the language does not need to expose manual memory-management interfaces to users. Even when we add substantial internal complexity, good modularization can still reduce the number of exposed interfaces.</p>
@@ -2009,7 +2009,7 @@ return obj                 #return current obj
 <p>
 <picture>
   <source srcset="https://www.yujiachen.com/assets/posts/key-iterations-trustworthy-online-controlled-experiments/en/image_1.webp" type="image/webp" />
-  <img src="https://www.yujiachen.com/assets/posts/key-iterations-trustworthy-online-controlled-experiments/en/image_1.png" alt="" class="article-image" width="1055" height="506" />
+  <img src="https://www.yujiachen.com/assets/posts/key-iterations-trustworthy-online-controlled-experiments/en/image_1.png" alt="" class="article-image" width="1055" height="506" loading="lazy" />
 </picture>
 </p>
 <p>We use a two-sample t-test to calculate the p-value, which matches the actual experimental setup.</p>
@@ -2383,14 +2383,14 @@ M1001 80h400000v40h-400000z"/></svg></span></span></span><span class="vlist-s">�
 <p>
 <picture>
   <source srcset="https://www.yujiachen.com/assets/posts/ring-allreduce/en/image_1.webp" type="image/webp" />
-  <img src="https://www.yujiachen.com/assets/posts/ring-allreduce/en/image_1.png" alt="" class="article-image" width="452" height="310" />
+  <img src="https://www.yujiachen.com/assets/posts/ring-allreduce/en/image_1.png" alt="" class="article-image" width="452" height="310" loading="lazy" />
 </picture>
 </p>
 <p>The biggest drawback of this model is that GPU 0’s communication time grows linearly with the number of GPUs. This is why ring-allreduce was developed, as shown below:</p>
 <p>
 <picture>
   <source srcset="https://www.yujiachen.com/assets/posts/ring-allreduce/en/image_2.webp" type="image/webp" />
-  <img src="https://www.yujiachen.com/assets/posts/ring-allreduce/en/image_2.png" alt="" class="article-image" width="419" height="330" />
+  <img src="https://www.yujiachen.com/assets/posts/ring-allreduce/en/image_2.png" alt="" class="article-image" width="419" height="330" loading="lazy" />
 </picture>
 
 The basic idea of this algorithm is to eliminate the central reducer and let data flow through a ring formed by the GPUs. The entire ring-allreduce process consists of two major steps: the first step is reduce-scatter, and the second step is allgather.</p>
@@ -2398,7 +2398,7 @@ The basic idea of this algorithm is to eliminate the central reducer and let dat
 <p>
 <picture>
   <source srcset="https://www.yujiachen.com/assets/posts/ring-allreduce/en/image_3.webp" type="image/webp" />
-  <img src="https://www.yujiachen.com/assets/posts/ring-allreduce/en/image_3.png" alt="" class="article-image" width="480" height="335" />
+  <img src="https://www.yujiachen.com/assets/posts/ring-allreduce/en/image_3.png" alt="" class="article-image" width="480" height="335" loading="lazy" />
 </picture>
 
 After n-1 rounds, the first step (reduce-scatter) of ring-allreduce is complete. At this point, each GPU holds one fully reduced chunk. The algorithm then enters allgather, which also takes n-1 rounds.</p>
@@ -2407,7 +2407,7 @@ After n-1 rounds, the first step (reduce-scatter) of ring-allreduce is complete.
 <p>
 <picture>
   <source srcset="https://www.yujiachen.com/assets/posts/ring-allreduce/en/image_4.webp" type="image/webp" />
-  <img src="https://www.yujiachen.com/assets/posts/ring-allreduce/en/image_4.png" alt="" class="article-image" width="572" height="321" />
+  <img src="https://www.yujiachen.com/assets/posts/ring-allreduce/en/image_4.png" alt="" class="article-image" width="572" height="321" loading="lazy" />
 </picture>
 
 If it’s still unclear, let’s walk through a 3-GPU example:</p>
@@ -2415,14 +2415,14 @@ If it’s still unclear, let’s walk through a 3-GPU example:</p>
 <p>
 <picture>
   <source srcset="https://www.yujiachen.com/assets/posts/ring-allreduce/en/image_5.webp" type="image/webp" />
-  <img src="https://www.yujiachen.com/assets/posts/ring-allreduce/en/image_5.png" alt="" class="article-image" width="772" height="913" />
+  <img src="https://www.yujiachen.com/assets/posts/ring-allreduce/en/image_5.png" alt="" class="article-image" width="772" height="913" loading="lazy" />
 </picture>
 </p>
 <p>Then the allgather step:</p>
 <p>
 <picture>
   <source srcset="https://www.yujiachen.com/assets/posts/ring-allreduce/en/image_6.webp" type="image/webp" />
-  <img src="https://www.yujiachen.com/assets/posts/ring-allreduce/en/image_6.png" alt="" class="article-image" width="1080" height="1321" />
+  <img src="https://www.yujiachen.com/assets/posts/ring-allreduce/en/image_6.png" alt="" class="article-image" width="1080" height="1321" loading="lazy" />
 </picture>
 </p>
 <p>References:</p>

@@ -270,7 +270,7 @@
 <p>
 <picture>
   <source srcset="https://www.yujiachen.com/assets/posts/thoughts-on-the-video-quality-evaluation/zh/image_1.webp" type="image/webp" />
-  <img src="https://www.yujiachen.com/assets/posts/thoughts-on-the-video-quality-evaluation/zh/image_1.png" alt="" class="article-image" width="1080" height="602" />
+  <img src="https://www.yujiachen.com/assets/posts/thoughts-on-the-video-quality-evaluation/zh/image_1.png" alt="" class="article-image" width="1080" height="602" loading="lazy" />
 </picture>
 </p>
 <p>*图 1. 评判分数与导出率在留出集上的关系。每个点代表一个分数区间。趋势是单调的：更高的评判分数对应更高的导出率。</p>
@@ -321,7 +321,7 @@
 <p>
 <picture>
   <source srcset="https://www.yujiachen.com/assets/posts/bridging-the-gap-how-engineers-and-pms-ship-winning-llm-features-together/zh/image_1.webp" type="image/webp" />
-  <img src="https://www.yujiachen.com/assets/posts/bridging-the-gap-how-engineers-and-pms-ship-winning-llm-features-together/zh/image_1.png" alt="" class="article-image" width="1024" height="1572" />
+  <img src="https://www.yujiachen.com/assets/posts/bridging-the-gap-how-engineers-and-pms-ship-winning-llm-features-together/zh/image_1.png" alt="" class="article-image" width="1024" height="1572" loading="lazy" />
 </picture>
 </p>
 <p><a href="https://www.linkedin.com/posts/manus-im_product-to-prompt-distance-is-fast-becoming-activity-7349444736048320512-zjjS?utm_source=share&amp;utm_medium=member_desktop&amp;rcm=ACoAACdAQCkBye_l2SHKxHq1FoCJdVQJdLz5Boc">Tao Zhang first defines this metric in Manus.</a></p>
@@ -355,7 +355,7 @@
 <p>
 <picture>
   <source srcset="https://www.yujiachen.com/assets/posts/bridging-the-gap-how-engineers-and-pms-ship-winning-llm-features-together/zh/image_2.webp" type="image/webp" />
-  <img src="https://www.yujiachen.com/assets/posts/bridging-the-gap-how-engineers-and-pms-ship-winning-llm-features-together/zh/image_2.png" alt="" class="article-image" width="1024" height="276" />
+  <img src="https://www.yujiachen.com/assets/posts/bridging-the-gap-how-engineers-and-pms-ship-winning-llm-features-together/zh/image_2.png" alt="" class="article-image" width="1024" height="276" loading="lazy" />
 </picture>
 </p>
 <blockquote>
@@ -470,7 +470,7 @@ Provide clear reasoning for why content is or isn't relevant.
 <p>
 <picture>
   <source srcset="https://www.yujiachen.com/assets/posts/bridging-the-gap-how-engineers-and-pms-ship-winning-llm-features-together/zh/image_3.webp" type="image/webp" />
-  <img src="https://www.yujiachen.com/assets/posts/bridging-the-gap-how-engineers-and-pms-ship-winning-llm-features-together/zh/image_3.png" alt="" class="article-image" width="1024" height="512" />
+  <img src="https://www.yujiachen.com/assets/posts/bridging-the-gap-how-engineers-and-pms-ship-winning-llm-features-together/zh/image_3.png" alt="" class="article-image" width="1024" height="512" loading="lazy" />
 </picture>
 </p>
 <ol>
@@ -664,7 +664,7 @@ Provide clear reasoning for why content is or isn't relevant.
 
 <picture>
   <source srcset="https://www.yujiachen.com/assets/posts/2024-year-in-review/zh/image_1.webp" type="image/webp" />
-  <img src="https://www.yujiachen.com/assets/posts/2024-year-in-review/zh/image_1.png" alt="" class="article-image" width="1024" height="768" />
+  <img src="https://www.yujiachen.com/assets/posts/2024-year-in-review/zh/image_1.png" alt="" class="article-image" width="1024" height="768" loading="lazy" />
 </picture>
 </p>
 <p>最近也在思考，衰老后我会怎么样，是身体无法满足心理上的欲望而变的丑陋呢，还是内心渴求的东西也随之变少，从而自己变的更加自洽佛系？也有前同事来找我八卦，“和这样的人在一起是不会幸福的”——我被这样评论，真没想到离职这么久了我还会出现在同事们的话题里。虽然是负面的评价，但某方面来说我在以不同的方式被不同的人记住，这也算是年龄渐长才会发生的事吧。</p>
@@ -672,14 +672,14 @@ Provide clear reasoning for why content is or isn't relevant.
 
 <picture>
   <source srcset="https://www.yujiachen.com/assets/posts/2024-year-in-review/zh/image_2.webp" type="image/webp" />
-  <img src="https://www.yujiachen.com/assets/posts/2024-year-in-review/zh/image_2.png" alt="" class="article-image" width="1080" height="810" />
+  <img src="https://www.yujiachen.com/assets/posts/2024-year-in-review/zh/image_2.png" alt="" class="article-image" width="1080" height="810" loading="lazy" />
 </picture>
 </p>
 <p>暑期公司在东京团建，旅馆在南砂町附近，到达的第一天就是烟花大会，说实话烟花本身其实挺一般的，但氛围很好，整个街道都很安静，大家一起在江边看着烟火，也很难用某个照片记录下当时的感受，就放一张酒店的配餐在这里好了～
 
 <picture>
   <source srcset="https://www.yujiachen.com/assets/posts/2024-year-in-review/zh/image_3.webp" type="image/webp" />
-  <img src="https://www.yujiachen.com/assets/posts/2024-year-in-review/zh/image_3.png" alt="" class="article-image" width="1024" height="768" />
+  <img src="https://www.yujiachen.com/assets/posts/2024-year-in-review/zh/image_3.png" alt="" class="article-image" width="1024" height="768" loading="lazy" />
 </picture>
 </p>
 <p>自己顺便去看了正在上映的《蓦然回首》，事后也没想到这电影会在中国上映。这电影是很让我感动的，因为会让我想起大学的 ACM 时光，希望之后可以写一篇相关的文章，放个坑在这里，如果写好了来更新一下文章标题。</p>
@@ -687,20 +687,20 @@ Provide clear reasoning for why content is or isn't relevant.
 
 <picture>
   <source srcset="https://www.yujiachen.com/assets/posts/2024-year-in-review/zh/image_4.webp" type="image/webp" />
-  <img src="https://www.yujiachen.com/assets/posts/2024-year-in-review/zh/image_4.png" alt="" class="article-image" width="768" height="1024" />
+  <img src="https://www.yujiachen.com/assets/posts/2024-year-in-review/zh/image_4.png" alt="" class="article-image" width="768" height="1024" loading="lazy" />
 </picture>
 
 
 <picture>
   <source srcset="https://www.yujiachen.com/assets/posts/2024-year-in-review/zh/image_5.webp" type="image/webp" />
-  <img src="https://www.yujiachen.com/assets/posts/2024-year-in-review/zh/image_5.png" alt="" class="article-image" width="768" height="1024" />
+  <img src="https://www.yujiachen.com/assets/posts/2024-year-in-review/zh/image_5.png" alt="" class="article-image" width="768" height="1024" loading="lazy" />
 </picture>
 
 圣诞前几天，在当地的一家画廊拍出了今年最满意的几何形状。
 
 <picture>
   <source srcset="https://www.yujiachen.com/assets/posts/2024-year-in-review/zh/image_6.webp" type="image/webp" />
-  <img src="https://www.yujiachen.com/assets/posts/2024-year-in-review/zh/image_6.png" alt="" class="article-image" width="1024" height="768" />
+  <img src="https://www.yujiachen.com/assets/posts/2024-year-in-review/zh/image_6.png" alt="" class="article-image" width="1024" height="768" loading="lazy" />
 </picture>
 </p>
 <p>谢谢你读完了我今年的故事和感悟，朋友。</p>
@@ -717,7 +717,7 @@ Provide clear reasoning for why content is or isn't relevant.
 <p>
 <picture>
   <source srcset="https://www.yujiachen.com/assets/posts/shape-your-mac/zh/image_1.webp" type="image/webp" />
-  <img src="https://www.yujiachen.com/assets/posts/shape-your-mac/zh/image_1.png" alt="" class="article-image" width="1080" height="810" />
+  <img src="https://www.yujiachen.com/assets/posts/shape-your-mac/zh/image_1.png" alt="" class="article-image" width="1080" height="810" loading="lazy" />
 </picture>
 </p>
 <p>我搬到上海还不到两个月，但已经让这里变得很熟悉了。这让我能够生活得开心且有一定&quot;效率&quot;——意思是房间的布置完美契合了我的日常习惯。</p>
@@ -732,7 +732,7 @@ Provide clear reasoning for why content is or isn't relevant.
 <p>
 <picture>
   <source srcset="https://www.yujiachen.com/assets/posts/shape-your-mac/zh/image_2.webp" type="image/webp" />
-  <img src="https://www.yujiachen.com/assets/posts/shape-your-mac/zh/image_2.png" alt="" class="article-image" width="1080" height="719" />
+  <img src="https://www.yujiachen.com/assets/posts/shape-your-mac/zh/image_2.png" alt="" class="article-image" width="1080" height="719" loading="lazy" />
 </picture>
 </p>
 <p>我使用 <a href="https://www.warp.dev/">Warp</a> 作为终端模拟器。不过我认为 Terminal.app、iTerm2 和 Warp 之间的差异并不大。对我来说，Warp 有三个主要优势：</p>
@@ -766,21 +766,21 @@ Provide clear reasoning for why content is or isn't relevant.
 <p>
 <picture>
   <source srcset="https://www.yujiachen.com/assets/posts/shape-your-mac/zh/image_3.webp" type="image/webp" />
-  <img src="https://www.yujiachen.com/assets/posts/shape-your-mac/zh/image_3.png" alt="" class="article-image" width="1080" height="719" />
+  <img src="https://www.yujiachen.com/assets/posts/shape-your-mac/zh/image_3.png" alt="" class="article-image" width="1080" height="719" loading="lazy" />
 </picture>
 </p>
 <p>不过，它不太灵活，也无法在其他终端模拟器中使用。如果你用 Warp 的 shell 提示符，在 VSCode 或其他文本编辑器和 IDE 中可能会遇到问题。<a href="https://github.com/warpdotdev/Warp/issues/257#issuecomment-1274198741">把 Warp 嵌入 VSCode 尤其困难</a>。</p>
 <p>
 <picture>
   <source srcset="https://www.yujiachen.com/assets/posts/shape-your-mac/zh/image_4.webp" type="image/webp" />
-  <img src="https://www.yujiachen.com/assets/posts/shape-your-mac/zh/image_4.png" alt="" class="article-image" width="1080" height="719" />
+  <img src="https://www.yujiachen.com/assets/posts/shape-your-mac/zh/image_4.png" alt="" class="article-image" width="1080" height="719" loading="lazy" />
 </picture>
 </p>
 <p>我推荐使用 <a href="https://github.com/romkatv/powerlevel10k">p10k</a> 作为你的 shell 提示符。它非常灵活，且不绑定特定终端模拟器，可以跨不同终端使用。</p>
 <p>
 <picture>
   <source srcset="https://www.yujiachen.com/assets/posts/shape-your-mac/zh/image_5.webp" type="image/webp" />
-  <img src="https://www.yujiachen.com/assets/posts/shape-your-mac/zh/image_5.png" alt="" class="article-image" width="765" height="516" />
+  <img src="https://www.yujiachen.com/assets/posts/shape-your-mac/zh/image_5.png" alt="" class="article-image" width="765" height="516" loading="lazy" />
 </picture>
 </p>
 <p>这里我想提两个我最喜欢的 macOS 命令：<a href="https://ss64.com/mac/pbpaste.html">pbpaste</a> 和 <a href="https://ss64.com/mac/pbcopy.html">pbcopy</a>。它们的 Manual Page 上已经有一些实用的示例了。</p>
@@ -795,7 +795,7 @@ Provide clear reasoning for why content is or isn't relevant.
 <p>
 <picture>
   <source srcset="https://www.yujiachen.com/assets/posts/shape-your-mac/zh/image_6.webp" type="image/webp" />
-  <img src="https://www.yujiachen.com/assets/posts/shape-your-mac/zh/image_6.png" alt="" class="article-image" width="1080" height="767" />
+  <img src="https://www.yujiachen.com/assets/posts/shape-your-mac/zh/image_6.png" alt="" class="article-image" width="1080" height="767" loading="lazy" />
 </picture>
 </p>
 <ul>
@@ -804,7 +804,7 @@ Provide clear reasoning for why content is or isn't relevant.
 <p>
 <picture>
   <source srcset="https://www.yujiachen.com/assets/posts/shape-your-mac/zh/image_7.webp" type="image/webp" />
-  <img src="https://www.yujiachen.com/assets/posts/shape-your-mac/zh/image_7.png" alt="" class="article-image" width="1080" height="767" />
+  <img src="https://www.yujiachen.com/assets/posts/shape-your-mac/zh/image_7.png" alt="" class="article-image" width="1080" height="767" loading="lazy" />
 </picture>
 </p>
 <p><a href="https://youtu.be/-Fy6imaiHWE" title="Share link">How to select or drag using three fingers on your MacBook track pad</a></p>
@@ -814,7 +814,7 @@ Provide clear reasoning for why content is or isn't relevant.
 <p>
 <picture>
   <source srcset="https://www.yujiachen.com/assets/posts/shape-your-mac/zh/image_8.webp" type="image/webp" />
-  <img src="https://www.yujiachen.com/assets/posts/shape-your-mac/zh/image_8.png" alt="" class="article-image" width="1080" height="767" />
+  <img src="https://www.yujiachen.com/assets/posts/shape-your-mac/zh/image_8.png" alt="" class="article-image" width="1080" height="767" loading="lazy" />
 </picture>
 </p>
 <ul>
@@ -823,7 +823,7 @@ Provide clear reasoning for why content is or isn't relevant.
 <p>
 <picture>
   <source srcset="https://www.yujiachen.com/assets/posts/shape-your-mac/zh/image_9.webp" type="image/webp" />
-  <img src="https://www.yujiachen.com/assets/posts/shape-your-mac/zh/image_9.png" alt="" class="article-image" width="1080" height="767" />
+  <img src="https://www.yujiachen.com/assets/posts/shape-your-mac/zh/image_9.png" alt="" class="article-image" width="1080" height="767" loading="lazy" />
 </picture>
 </p>
 <ul>
@@ -832,7 +832,7 @@ Provide clear reasoning for why content is or isn't relevant.
 <p>
 <picture>
   <source srcset="https://www.yujiachen.com/assets/posts/shape-your-mac/zh/image_10.webp" type="image/webp" />
-  <img src="https://www.yujiachen.com/assets/posts/shape-your-mac/zh/image_10.png" alt="" class="article-image" width="1080" height="796" />
+  <img src="https://www.yujiachen.com/assets/posts/shape-your-mac/zh/image_10.png" alt="" class="article-image" width="1080" height="796" loading="lazy" />
 </picture>
 </p>
 <ul>
@@ -841,7 +841,7 @@ Provide clear reasoning for why content is or isn't relevant.
 <p>
 <picture>
   <source srcset="https://www.yujiachen.com/assets/posts/shape-your-mac/zh/image_11.webp" type="image/webp" />
-  <img src="https://www.yujiachen.com/assets/posts/shape-your-mac/zh/image_11.png" alt="" class="article-image" width="464" height="170" />
+  <img src="https://www.yujiachen.com/assets/posts/shape-your-mac/zh/image_11.png" alt="" class="article-image" width="464" height="170" loading="lazy" />
 </picture>
 </p>
 <pre class="hljs"><code>defaults write -g ApplePressAndHoldEnabled -bool <span class="hljs-literal">false</span>
@@ -854,7 +854,7 @@ Provide clear reasoning for why content is or isn't relevant.
 <p>
 <picture>
   <source srcset="https://www.yujiachen.com/assets/posts/shape-your-mac/zh/image_12.webp" type="image/webp" />
-  <img src="https://www.yujiachen.com/assets/posts/shape-your-mac/zh/image_12.png" alt="" class="article-image" width="1080" height="701" />
+  <img src="https://www.yujiachen.com/assets/posts/shape-your-mac/zh/image_12.png" alt="" class="article-image" width="1080" height="701" loading="lazy" />
 </picture>
 </p>
 <p><a href="https://www.raycast.com/store">Raycast 是 Mac 快捷操作的百宝箱。</a> 以下是我常用的一些快捷功能：</p>
@@ -875,43 +875,43 @@ Provide clear reasoning for why content is or isn't relevant.
 <td>
 <picture>
   <source srcset="https://www.yujiachen.com/assets/posts/shape-your-mac/zh/image_13.webp" type="image/webp" />
-  <img src="https://www.yujiachen.com/assets/posts/shape-your-mac/zh/image_13.png" alt="" class="article-image" width="1080" height="661" />
+  <img src="https://www.yujiachen.com/assets/posts/shape-your-mac/zh/image_13.png" alt="" class="article-image" width="1080" height="661" loading="lazy" />
 </picture>
 </td>
 <td>
 <picture>
   <source srcset="https://www.yujiachen.com/assets/posts/shape-your-mac/zh/image_14.webp" type="image/webp" />
-  <img src="https://www.yujiachen.com/assets/posts/shape-your-mac/zh/image_14.png" alt="" class="article-image" width="1080" height="661" />
+  <img src="https://www.yujiachen.com/assets/posts/shape-your-mac/zh/image_14.png" alt="" class="article-image" width="1080" height="661" loading="lazy" />
 </picture>
 </td>
 <td>
 <picture>
   <source srcset="https://www.yujiachen.com/assets/posts/shape-your-mac/zh/image_15.webp" type="image/webp" />
-  <img src="https://www.yujiachen.com/assets/posts/shape-your-mac/zh/image_15.png" alt="" class="article-image" width="1080" height="661" />
+  <img src="https://www.yujiachen.com/assets/posts/shape-your-mac/zh/image_15.png" alt="" class="article-image" width="1080" height="661" loading="lazy" />
 </picture>
 </td>
 <td>
 <picture>
   <source srcset="https://www.yujiachen.com/assets/posts/shape-your-mac/zh/image_16.webp" type="image/webp" />
-  <img src="https://www.yujiachen.com/assets/posts/shape-your-mac/zh/image_16.png" alt="" class="article-image" width="1080" height="661" />
+  <img src="https://www.yujiachen.com/assets/posts/shape-your-mac/zh/image_16.png" alt="" class="article-image" width="1080" height="661" loading="lazy" />
 </picture>
 </td>
 <td>
 <picture>
   <source srcset="https://www.yujiachen.com/assets/posts/shape-your-mac/zh/image_17.webp" type="image/webp" />
-  <img src="https://www.yujiachen.com/assets/posts/shape-your-mac/zh/image_17.png" alt="" class="article-image" width="1080" height="661" />
+  <img src="https://www.yujiachen.com/assets/posts/shape-your-mac/zh/image_17.png" alt="" class="article-image" width="1080" height="661" loading="lazy" />
 </picture>
 </td>
 <td>
 <picture>
   <source srcset="https://www.yujiachen.com/assets/posts/shape-your-mac/zh/image_18.webp" type="image/webp" />
-  <img src="https://www.yujiachen.com/assets/posts/shape-your-mac/zh/image_18.png" alt="" class="article-image" width="1080" height="661" />
+  <img src="https://www.yujiachen.com/assets/posts/shape-your-mac/zh/image_18.png" alt="" class="article-image" width="1080" height="661" loading="lazy" />
 </picture>
 </td>
 <td>
 <picture>
   <source srcset="https://www.yujiachen.com/assets/posts/shape-your-mac/zh/image_19.webp" type="image/webp" />
-  <img src="https://www.yujiachen.com/assets/posts/shape-your-mac/zh/image_19.png" alt="" class="article-image" width="1080" height="661" />
+  <img src="https://www.yujiachen.com/assets/posts/shape-your-mac/zh/image_19.png" alt="" class="article-image" width="1080" height="661" loading="lazy" />
 </picture>
 </td>
 </tr>
@@ -921,7 +921,7 @@ Provide clear reasoning for why content is or isn't relevant.
 <p>
 <picture>
   <source srcset="https://www.yujiachen.com/assets/posts/shape-your-mac/zh/image_20.webp" type="image/webp" />
-  <img src="https://www.yujiachen.com/assets/posts/shape-your-mac/zh/image_20.png" alt="" class="article-image" width="1080" height="702" />
+  <img src="https://www.yujiachen.com/assets/posts/shape-your-mac/zh/image_20.png" alt="" class="article-image" width="1080" height="702" loading="lazy" />
 </picture>
 </p>
 <h2 id="alttab">🌟 AltTab</h2>
@@ -929,14 +929,14 @@ Provide clear reasoning for why content is or isn't relevant.
 <p>
 <picture>
   <source srcset="https://www.yujiachen.com/assets/posts/shape-your-mac/zh/image_21.webp" type="image/webp" />
-  <img src="https://www.yujiachen.com/assets/posts/shape-your-mac/zh/image_21.png" alt="" class="article-image" width="1080" height="701" />
+  <img src="https://www.yujiachen.com/assets/posts/shape-your-mac/zh/image_21.png" alt="" class="article-image" width="1080" height="701" loading="lazy" />
 </picture>
 </p>
 <p><a href="https://alt-tab-macos.netlify.app/">AltTab</a> 解决了这个问题，它允许你在不同 Mac 桌面的窗口之间切换。这样你就不需要用鼠标来切换窗口和桌面了。</p>
 <p>
 <picture>
   <source srcset="https://www.yujiachen.com/assets/posts/shape-your-mac/zh/image_22.webp" type="image/webp" />
-  <img src="https://www.yujiachen.com/assets/posts/shape-your-mac/zh/image_22.png" alt="" class="article-image" width="1080" height="701" />
+  <img src="https://www.yujiachen.com/assets/posts/shape-your-mac/zh/image_22.png" alt="" class="article-image" width="1080" height="701" loading="lazy" />
 </picture>
 </p>
 <h1 id="备份">💾 备份</h1>
@@ -1005,14 +1005,14 @@ Provide clear reasoning for why content is or isn't relevant.
 <p>
 <picture>
   <source srcset="https://www.yujiachen.com/assets/posts/the-permission-model-myth/zh/image_1.webp" type="image/webp" />
-  <img src="https://www.yujiachen.com/assets/posts/the-permission-model-myth/zh/image_1.png" alt="" class="article-image" width="1080" height="214" />
+  <img src="https://www.yujiachen.com/assets/posts/the-permission-model-myth/zh/image_1.png" alt="" class="article-image" width="1080" height="214" loading="lazy" />
 </picture>
 </p>
 <p>图中的 <code>drwx------</code> 即表示项目的权限，其中第一个字符表示文件类型（<code>-</code>表示普通文件，<code>d</code>表示目录），接下来的三组三个字符分别代表所有者、组和其他用户的读、写和执行权限。但我们看到有的字符串后面还跟着 <code>@</code> 和 <code>+</code> 符号，其中 <code>@</code> 符号表示当前文件或目录有扩展属性，此处不讨论；而 <code>+</code> 符号表示存在访问控制列表（Access Control List, ACL）。ACL 是一种用于定义额外权限的机制，允许对文件或目录进行更细粒度的访问控制，这意味着除了标准的文件权限（如读、写、执行）之外，还有额外的权限设置，这些设置可以针对不同的用户或组进行详细配置。使用 <code>ls -le</code> 操作后，我们可以看到这些访问控制列表：
 
 <picture>
   <source srcset="https://www.yujiachen.com/assets/posts/the-permission-model-myth/zh/image_2.webp" type="image/webp" />
-  <img src="https://www.yujiachen.com/assets/posts/the-permission-model-myth/zh/image_2.png" alt="" class="article-image" width="1080" height="349" />
+  <img src="https://www.yujiachen.com/assets/posts/the-permission-model-myth/zh/image_2.png" alt="" class="article-image" width="1080" height="349" loading="lazy" />
 </picture>
 </p>
 <p>更具体的说明可以通过 <code>man chmod</code> 查看，这里我们有 2 点观察：</p>
@@ -1022,7 +1022,7 @@ Provide clear reasoning for why content is or isn't relevant.
 
 <picture>
   <source srcset="https://www.yujiachen.com/assets/posts/the-permission-model-myth/zh/image_3.webp" type="image/webp" />
-  <img src="https://www.yujiachen.com/assets/posts/the-permission-model-myth/zh/image_3.png" alt="" class="article-image" width="1080" height="810" />
+  <img src="https://www.yujiachen.com/assets/posts/the-permission-model-myth/zh/image_3.png" alt="" class="article-image" width="1080" height="810" loading="lazy" />
 </picture>
 截图来自 macOS 14.2 manual</li>
 </ul>
@@ -1032,19 +1032,19 @@ Provide clear reasoning for why content is or isn't relevant.
 
 <picture>
   <source srcset="https://www.yujiachen.com/assets/posts/the-permission-model-myth/zh/image_4.webp" type="image/webp" />
-  <img src="https://www.yujiachen.com/assets/posts/the-permission-model-myth/zh/image_4.png" alt="" class="article-image" width="1080" height="114" />
+  <img src="https://www.yujiachen.com/assets/posts/the-permission-model-myth/zh/image_4.png" alt="" class="article-image" width="1080" height="114" loading="lazy" />
 </picture>
 授权：为用户名为 ‘admin’ 的用户授予 ‘lark.message’ 表的 SELECT 权限。
 
 <picture>
   <source srcset="https://www.yujiachen.com/assets/posts/the-permission-model-myth/zh/image_5.webp" type="image/webp" />
-  <img src="https://www.yujiachen.com/assets/posts/the-permission-model-myth/zh/image_5.png" alt="" class="article-image" width="1080" height="232" />
+  <img src="https://www.yujiachen.com/assets/posts/the-permission-model-myth/zh/image_5.png" alt="" class="article-image" width="1080" height="232" loading="lazy" />
 </picture>
 查看用户的全局权限：‘admin’用户没有任何全局权限。
 
 <picture>
   <source srcset="https://www.yujiachen.com/assets/posts/the-permission-model-myth/zh/image_6.webp" type="image/webp" />
-  <img src="https://www.yujiachen.com/assets/posts/the-permission-model-myth/zh/image_6.png" alt="" class="article-image" width="1080" height="152" />
+  <img src="https://www.yujiachen.com/assets/posts/the-permission-model-myth/zh/image_6.png" alt="" class="article-image" width="1080" height="152" loading="lazy" />
 </picture>
 查看一个用户对一个数据表的权限：‘admin’用户对‘lark.message‘表有 SELECT 权限。</p>
 <p>从上面的例子中我们也有如下观察：</p>
@@ -1068,7 +1068,7 @@ Provide clear reasoning for why content is or isn't relevant.
 
 <picture>
   <source srcset="https://www.yujiachen.com/assets/posts/the-permission-model-myth/zh/image_7.webp" type="image/webp" />
-  <img src="https://www.yujiachen.com/assets/posts/the-permission-model-myth/zh/image_7.png" alt="" class="article-image" width="1080" height="650" />
+  <img src="https://www.yujiachen.com/assets/posts/the-permission-model-myth/zh/image_7.png" alt="" class="article-image" width="1080" height="650" loading="lazy" />
 </picture>
 </p>
 <p>RBAC 有简化管理、灵活可配置的优点，但实践中也会表现出如下缺点：</p>
@@ -1088,7 +1088,7 @@ Provide clear reasoning for why content is or isn't relevant.
 <p>
 <picture>
   <source srcset="https://www.yujiachen.com/assets/posts/the-permission-model-myth/zh/image_8.webp" type="image/webp" />
-  <img src="https://www.yujiachen.com/assets/posts/the-permission-model-myth/zh/image_8.png" alt="" class="article-image" width="1080" height="608" />
+  <img src="https://www.yujiachen.com/assets/posts/the-permission-model-myth/zh/image_8.png" alt="" class="article-image" width="1080" height="608" loading="lazy" />
 </picture>
 </p>
 <p>视频中展示了 4 中访问控制：</p>
@@ -1156,21 +1156,21 @@ Provide clear reasoning for why content is or isn't relevant.
 
 <picture>
   <source srcset="https://www.yujiachen.com/assets/posts/the-permission-model-myth/zh/image_9.webp" type="image/webp" />
-  <img src="https://www.yujiachen.com/assets/posts/the-permission-model-myth/zh/image_9.png" alt="" class="article-image" width="1080" height="573" />
+  <img src="https://www.yujiachen.com/assets/posts/the-permission-model-myth/zh/image_9.png" alt="" class="article-image" width="1080" height="573" loading="lazy" />
 </picture>
 
 然后匹配操作，请求的操作是 <code>rg-read</code>，配置的 alice 操作角色是 <code>sub-reader</code>，配置 <code>g, sub-reader, rg-reader</code> 和 <code>g, rg-reader, rg-read</code> 可以从 alice 的 <code>sub-reader</code> 角色推理出其可以执行 <code>rg-read</code> 操作。
 
 <picture>
   <source srcset="https://www.yujiachen.com/assets/posts/the-permission-model-myth/zh/image_10.webp" type="image/webp" />
-  <img src="https://www.yujiachen.com/assets/posts/the-permission-model-myth/zh/image_10.png" alt="" class="article-image" width="1080" height="593" />
+  <img src="https://www.yujiachen.com/assets/posts/the-permission-model-myth/zh/image_10.png" alt="" class="article-image" width="1080" height="593" loading="lazy" />
 </picture>
 
 最后匹配操作对象，请求的对象是 <code>rg1</code> ，配置的 alice 对象角色是 <code>sub1</code>，这层关系则可以通过 <code>g2, sub1, rg1</code> 配置推理出。
 
 <picture>
   <source srcset="https://www.yujiachen.com/assets/posts/the-permission-model-myth/zh/image_11.webp" type="image/webp" />
-  <img src="https://www.yujiachen.com/assets/posts/the-permission-model-myth/zh/image_11.png" alt="" class="article-image" width="1080" height="583" />
+  <img src="https://www.yujiachen.com/assets/posts/the-permission-model-myth/zh/image_11.png" alt="" class="article-image" width="1080" height="583" loading="lazy" />
 </picture>
 </p>
 <h2 id="zanzibar">Zanzibar</h2>
@@ -1227,7 +1227,7 @@ Provide clear reasoning for why content is or isn't relevant.
 <p>
 <picture>
   <source srcset="https://www.yujiachen.com/assets/posts/maximizing-llm-performance/zh/image_1.webp" type="image/webp" />
-  <img src="https://www.yujiachen.com/assets/posts/maximizing-llm-performance/zh/image_1.png" alt="" class="article-image" width="1080" height="539" />
+  <img src="https://www.yujiachen.com/assets/posts/maximizing-llm-performance/zh/image_1.png" alt="" class="article-image" width="1080" height="539" loading="lazy" />
 </picture>
 </p>
 <p>一般的演化方向</p>
@@ -1240,7 +1240,7 @@ Provide clear reasoning for why content is or isn't relevant.
 <p>
 <picture>
   <source srcset="https://www.yujiachen.com/assets/posts/maximizing-llm-performance/zh/image_2.webp" type="image/webp" />
-  <img src="https://www.yujiachen.com/assets/posts/maximizing-llm-performance/zh/image_2.png" alt="" class="article-image" width="1080" height="526" />
+  <img src="https://www.yujiachen.com/assets/posts/maximizing-llm-performance/zh/image_2.png" alt="" class="article-image" width="1080" height="526" loading="lazy" />
 </picture>
 </p>
 <h1 id="prompt-engineering">Prompt Engineering</h1>
@@ -1313,7 +1313,7 @@ Provide clear reasoning for why content is or isn't relevant.
 <p>
 <picture>
   <source srcset="https://www.yujiachen.com/assets/posts/maximizing-llm-performance/zh/image_3.webp" type="image/webp" />
-  <img src="https://www.yujiachen.com/assets/posts/maximizing-llm-performance/zh/image_3.png" alt="" class="article-image" width="1080" height="529" />
+  <img src="https://www.yujiachen.com/assets/posts/maximizing-llm-performance/zh/image_3.png" alt="" class="article-image" width="1080" height="529" loading="lazy" />
 </picture>
 </p>
 <h1 id="fine-tuning">Fine-tuning</h1>
@@ -1356,7 +1356,7 @@ Provide clear reasoning for why content is or isn't relevant.
 <p>
 <picture>
   <source srcset="https://www.yujiachen.com/assets/posts/maximizing-llm-performance/zh/image_4.webp" type="image/webp" />
-  <img src="https://www.yujiachen.com/assets/posts/maximizing-llm-performance/zh/image_4.png" alt="" class="article-image" width="1080" height="608" />
+  <img src="https://www.yujiachen.com/assets/posts/maximizing-llm-performance/zh/image_4.png" alt="" class="article-image" width="1080" height="608" loading="lazy" />
 </picture>
 </p>
 <h2 id="最佳实践-2">最佳实践</h2>
@@ -1386,14 +1386,14 @@ Provide clear reasoning for why content is or isn't relevant.
 
 <picture>
   <source srcset="https://www.yujiachen.com/assets/posts/2023-pivot/zh/image_1.webp" type="image/webp" />
-  <img src="https://www.yujiachen.com/assets/posts/2023-pivot/zh/image_1.png" alt="" class="article-image" width="1080" height="1080" />
+  <img src="https://www.yujiachen.com/assets/posts/2023-pivot/zh/image_1.png" alt="" class="article-image" width="1080" height="1080" loading="lazy" />
 </picture>
 </p>
 <p>另一件让我关注感受的事情是摩托车，我发现如果刻意在意摩托的各个部件，路上的各种路况和交规，那我上路时的大脑负担根本无法让我专心驾驶。相反，把车况和路况放进自己的潜意识，放下担心，才能在路上自如地驾驶，开心骑行。
 
 <picture>
   <source srcset="https://www.yujiachen.com/assets/posts/2023-pivot/zh/image_2.webp" type="image/webp" />
-  <img src="https://www.yujiachen.com/assets/posts/2023-pivot/zh/image_2.png" alt="" class="article-image" width="937" height="937" />
+  <img src="https://www.yujiachen.com/assets/posts/2023-pivot/zh/image_2.png" alt="" class="article-image" width="937" height="937" loading="lazy" />
 </picture>
 </p>
 <h2 id="为了他人写作">为了他人写作</h2>
@@ -2315,104 +2315,104 @@ unary_op   = &quot;+&quot; | &quot;-&quot; | &quot;!&quot; | &quot;^&quot; | &qu
 <p>
 <picture>
   <source srcset="https://www.yujiachen.com/assets/posts/re-2022/zh/image_1.webp" type="image/webp" />
-  <img src="https://www.yujiachen.com/assets/posts/re-2022/zh/image_1.png" alt="" class="article-image" width="1080" height="721" />
+  <img src="https://www.yujiachen.com/assets/posts/re-2022/zh/image_1.png" alt="" class="article-image" width="1080" height="721" loading="lazy" />
 </picture>
 </p>
 <p>之后的假期过得一般般，我在北京到处乱逛，谈不上抑郁但也无聊极了，有天晚上我路过家楼下的铁锅炖大鹅，自己想去吃好几次了，但没人陪我去，次次都是作罢。</p>
 <p>
 <picture>
   <source srcset="https://www.yujiachen.com/assets/posts/re-2022/zh/image_2.webp" type="image/webp" />
-  <img src="https://www.yujiachen.com/assets/posts/re-2022/zh/image_2.png" alt="" class="article-image" width="1080" height="810" />
+  <img src="https://www.yujiachen.com/assets/posts/re-2022/zh/image_2.png" alt="" class="article-image" width="1080" height="810" loading="lazy" />
 </picture>
 </p>
 <p>过年回家后，我爸不愿回农村老家过年，但我还是坚持一个人去我姑姑家过了年——因为老家要被拆了，那一次就是我最后一次在老家过年了。但我也没留下什么老家的照片，吃完年夜饭，我走到村口拦车，这是我第一次尝试搭顺风车，于是就离开了老家。</p>
 <p>
 <picture>
   <source srcset="https://www.yujiachen.com/assets/posts/re-2022/zh/image_3.webp" type="image/webp" />
-  <img src="https://www.yujiachen.com/assets/posts/re-2022/zh/image_3.png" alt="" class="article-image" width="1080" height="720" />
+  <img src="https://www.yujiachen.com/assets/posts/re-2022/zh/image_3.png" alt="" class="article-image" width="1080" height="720" loading="lazy" />
 </picture>
 年三十在姑姑家</p>
 <p>之后回到北京的日子平平淡淡，那是一个很好的春天，认识了一位朋友，我经常去家附近的公园散步，听好听的歌。后来疫情来了，那时早上我会悠闲地在家楼下喝咖啡，不能进店就搬把小椅子坐在梧桐树下。傍晚我会绕着整个街区跑个六七公里，全身都觉得状态良好。</p>
 <p>
 <picture>
   <source srcset="https://www.yujiachen.com/assets/posts/re-2022/zh/image_4.webp" type="image/webp" />
-  <img src="https://www.yujiachen.com/assets/posts/re-2022/zh/image_4.png" alt="" class="article-image" width="918" height="689" />
+  <img src="https://www.yujiachen.com/assets/posts/re-2022/zh/image_4.png" alt="" class="article-image" width="918" height="689" loading="lazy" />
 </picture>
 楼下的咖啡店
 <picture>
   <source srcset="https://www.yujiachen.com/assets/posts/re-2022/zh/image_5.webp" type="image/webp" />
-  <img src="https://www.yujiachen.com/assets/posts/re-2022/zh/image_5.png" alt="" class="article-image" width="1080" height="810" />
+  <img src="https://www.yujiachen.com/assets/posts/re-2022/zh/image_5.png" alt="" class="article-image" width="1080" height="810" loading="lazy" />
 </picture>
 一日跑步所拍</p>
 <p>北京解封后我就回了老家县城，那时乡下老家已经被拆了，回去给爷爷扫墓的时候，天气倒是很好，适合出片。
 
 <picture>
   <source srcset="https://www.yujiachen.com/assets/posts/re-2022/zh/image_6.webp" type="image/webp" />
-  <img src="https://www.yujiachen.com/assets/posts/re-2022/zh/image_6.png" alt="" class="article-image" width="1080" height="721" />
+  <img src="https://www.yujiachen.com/assets/posts/re-2022/zh/image_6.png" alt="" class="article-image" width="1080" height="721" loading="lazy" />
 </picture>
 被拆的乡下老家
 <picture>
   <source srcset="https://www.yujiachen.com/assets/posts/re-2022/zh/image_7.webp" type="image/webp" />
-  <img src="https://www.yujiachen.com/assets/posts/re-2022/zh/image_7.png" alt="" class="article-image" width="960" height="1280" />
+  <img src="https://www.yujiachen.com/assets/posts/re-2022/zh/image_7.png" alt="" class="article-image" width="960" height="1280" loading="lazy" />
 </picture>
 扫墓</p>
 <p>端午后，我还去宁波、黄山、杭州玩了一周多，那时南方刚过梅雨季，虽然空气潮湿很恼人，但是我很喜欢这样的南方。如果可以，我真想留在这样的季节里，和喜欢的人一起，过悠闲的日子。
 
 <picture>
   <source srcset="https://www.yujiachen.com/assets/posts/re-2022/zh/image_8.webp" type="image/webp" />
-  <img src="https://www.yujiachen.com/assets/posts/re-2022/zh/image_8.png" alt="" class="article-image" width="1080" height="721" />
+  <img src="https://www.yujiachen.com/assets/posts/re-2022/zh/image_8.png" alt="" class="article-image" width="1080" height="721" loading="lazy" />
 </picture>
 雨后杭州</p>
 <p>但是时间在向前，其实我心里还有一部分我并不容许这种悠闲的日子。我找了一份新工作，离职了，于是这些悠闲的日子彻底结束。不过在入职前，我去学了摩托车，当时我还意外得了阑尾炎，但是我身残志坚，依然顺利取得了驾照。
 
 <picture>
   <source srcset="https://www.yujiachen.com/assets/posts/re-2022/zh/image_9.webp" type="image/webp" />
-  <img src="https://www.yujiachen.com/assets/posts/re-2022/zh/image_9.png" alt="" class="article-image" width="1080" height="810" />
+  <img src="https://www.yujiachen.com/assets/posts/re-2022/zh/image_9.png" alt="" class="article-image" width="1080" height="810" loading="lazy" />
 </picture>
 驾校</p>
 <p>严格有意义上入职后的工作并不繁重，只不过可自由支配的时间少了很多，活干完了也不能下班，只能在工位上学习。我也正式搬进了一居室，结束了之前的合租生活。那段时候下班最喜欢做的事情是去骑着共享单车乱逛，心情舒畅，虽然浪费了不少时间。
 
 <picture>
   <source srcset="https://www.yujiachen.com/assets/posts/re-2022/zh/image_10.webp" type="image/webp" />
-  <img src="https://www.yujiachen.com/assets/posts/re-2022/zh/image_10.png" alt="" class="article-image" width="1080" height="810" />
+  <img src="https://www.yujiachen.com/assets/posts/re-2022/zh/image_10.png" alt="" class="article-image" width="1080" height="810" loading="lazy" />
 </picture>
 夜间租屋
 <picture>
   <source srcset="https://www.yujiachen.com/assets/posts/re-2022/zh/image_11.webp" type="image/webp" />
-  <img src="https://www.yujiachen.com/assets/posts/re-2022/zh/image_11.png" alt="" class="article-image" width="1080" height="810" />
+  <img src="https://www.yujiachen.com/assets/posts/re-2022/zh/image_11.png" alt="" class="article-image" width="1080" height="810" loading="lazy" />
 </picture>
 骑车遇见的狗狗</p>
 <p>工作后的周末我也充实了起来，九月份我连着两周往外地飞，一次是和某人过中秋，一次是老家同学结婚。之前在我觉得此类生活是浪费时间，但却一下变得不无聊了。然后我的摩托车也到了，虽然它很丑，以至于我至今没给它拍过什么好照片。但它长得很怪，没人和我撞车，我觉得它会陪伴我度过很长的一段时间。
 
 <picture>
   <source srcset="https://www.yujiachen.com/assets/posts/re-2022/zh/image_12.webp" type="image/webp" />
-  <img src="https://www.yujiachen.com/assets/posts/re-2022/zh/image_12.png" alt="" class="article-image" width="1080" height="810" />
+  <img src="https://www.yujiachen.com/assets/posts/re-2022/zh/image_12.png" alt="" class="article-image" width="1080" height="810" loading="lazy" />
 </picture>
 中秋
 <picture>
   <source srcset="https://www.yujiachen.com/assets/posts/re-2022/zh/image_13.webp" type="image/webp" />
-  <img src="https://www.yujiachen.com/assets/posts/re-2022/zh/image_13.png" alt="" class="article-image" width="1080" height="810" />
+  <img src="https://www.yujiachen.com/assets/posts/re-2022/zh/image_13.png" alt="" class="article-image" width="1080" height="810" loading="lazy" />
 </picture>
 县城老家街道</p>
 <p>十一月份北京又开始封控，当时挺让人抑郁的，我也开始后悔自己这样跳槽，觉得之前要是出国多好。结合前几年的经验，我决定赌一把，退租后老家，春节后再回来。但故事完全不是按我想得发展的，退租两周后，解封了。当时在老家也让人闷闷不乐，电影院没有电影，气温也急转直下，一直下着雨没有晴天，所以当我知道两周后又需要回北京的时候，简直整个人都爆炸了。
 
 <picture>
   <source srcset="https://www.yujiachen.com/assets/posts/re-2022/zh/image_14.webp" type="image/webp" />
-  <img src="https://www.yujiachen.com/assets/posts/re-2022/zh/image_14.png" alt="" class="article-image" width="1080" height="810" />
+  <img src="https://www.yujiachen.com/assets/posts/re-2022/zh/image_14.png" alt="" class="article-image" width="1080" height="810" loading="lazy" />
 </picture>
 部分搬家行李</p>
 <p>十二月回北京后，一切开始恢复正常。那时也没有太多工作，每天轻松完成工作之后则是充实的学习。
 
 <picture>
   <source srcset="https://www.yujiachen.com/assets/posts/re-2022/zh/image_15.webp" type="image/webp" />
-  <img src="https://www.yujiachen.com/assets/posts/re-2022/zh/image_15.png" alt="" class="article-image" width="1080" height="810" />
+  <img src="https://www.yujiachen.com/assets/posts/re-2022/zh/image_15.png" alt="" class="article-image" width="1080" height="810" loading="lazy" />
 </picture>
 楼下药房</p>
 <p>一转眼，就是新一年的元旦了，2022年12月31日傍晚，在灵境胡同瞎逛，意外地发现那儿新开了一家悠航鲜啤，在那儿她随手给我拍下了一张照片。
 
 <picture>
   <source srcset="https://www.yujiachen.com/assets/posts/re-2022/zh/image_16.webp" type="image/webp" />
-  <img src="https://www.yujiachen.com/assets/posts/re-2022/zh/image_16.png" alt="" class="article-image" width="816" height="1088" />
+  <img src="https://www.yujiachen.com/assets/posts/re-2022/zh/image_16.png" alt="" class="article-image" width="816" height="1088" loading="lazy" />
 </picture>
 </p>
 <p>一年就这样结束了。</p>
@@ -2472,7 +2472,7 @@ unary_op   = &quot;+&quot; | &quot;-&quot; | &quot;!&quot; | &quot;^&quot; | &qu
 <p>
 <picture>
   <source srcset="https://www.yujiachen.com/assets/posts/harvard-business-review-excerpts/zh/image_1.webp" type="image/webp" />
-  <img src="https://www.yujiachen.com/assets/posts/harvard-business-review-excerpts/zh/image_1.png" alt="" class="article-image" width="700" height="855" />
+  <img src="https://www.yujiachen.com/assets/posts/harvard-business-review-excerpts/zh/image_1.png" alt="" class="article-image" width="700" height="855" loading="lazy" />
 </picture>
 </p>
 <h1 id="蓝海战略">蓝海战略</h1>
@@ -2579,7 +2579,7 @@ unary_op   = &quot;+&quot; | &quot;-&quot; | &quot;!&quot; | &quot;^&quot; | &qu
 <p>
 <picture>
   <source srcset="https://www.yujiachen.com/assets/posts/software-design-book-notes/zh/image_1.webp" type="image/webp" />
-  <img src="https://www.yujiachen.com/assets/posts/software-design-book-notes/zh/image_1.png" alt="" class="article-image" width="640" height="391" />
+  <img src="https://www.yujiachen.com/assets/posts/software-design-book-notes/zh/image_1.png" alt="" class="article-image" width="640" height="391" loading="lazy" />
 </picture>
 </p>
 <p>同时书中说到的10-20%的时间，让我想到了：</p>
@@ -2593,7 +2593,7 @@ unary_op   = &quot;+&quot; | &quot;-&quot; | &quot;!&quot; | &quot;^&quot; | &qu
 <p>
 <picture>
   <source srcset="https://www.yujiachen.com/assets/posts/software-design-book-notes/zh/image_2.webp" type="image/webp" />
-  <img src="https://www.yujiachen.com/assets/posts/software-design-book-notes/zh/image_2.jpg" alt="" class="article-image" width="640" height="420" />
+  <img src="https://www.yujiachen.com/assets/posts/software-design-book-notes/zh/image_2.jpg" alt="" class="article-image" width="640" height="420" loading="lazy" />
 </picture>
 </p>
 <p>文章中说到了一个非常有趣的例子：Go和Java中的GC，实现非常复杂，但是GC使得编程语言不需要暴露释放内存地址的接口。哪怕我们需要添加大量的复杂代码，但经过适当的排布后，这些代码甚至可以降低原有代码的接口数量。</p>
@@ -3058,7 +3058,7 @@ WantedBy=multi-user.target
 <p>
 <picture>
   <source srcset="https://www.yujiachen.com/assets/posts/2021-year-in-review/zh/image_1.webp" type="image/webp" />
-  <img src="https://www.yujiachen.com/assets/posts/2021-year-in-review/zh/image_1.png" alt="" class="article-image" width="1080" height="675" />
+  <img src="https://www.yujiachen.com/assets/posts/2021-year-in-review/zh/image_1.png" alt="" class="article-image" width="1080" height="675" loading="lazy" />
 </picture>
 </p>
 <p>网络上各种事件的讨论和反转有太多的例子了，还有一个严肃的例子就是阿里女员工出差陪酒的事件，一些人因为这个事件从阿里辞职，但事情发酵了后竟然也发生了反转。当然不公值得我们的关注，也需要被关注，比如今年的西安地铁事件、上海小红楼事件……</p>
@@ -3171,13 +3171,13 @@ WantedBy=multi-user.target
 <p>
 <picture>
   <source srcset="https://www.yujiachen.com/assets/posts/in-the-system/zh/image_1.webp" type="image/webp" />
-  <img src="https://www.yujiachen.com/assets/posts/in-the-system/zh/image_1.png" alt="" class="article-image" width="600" height="408" />
+  <img src="https://www.yujiachen.com/assets/posts/in-the-system/zh/image_1.png" alt="" class="article-image" width="600" height="408" loading="lazy" />
 </picture>
 </p>
 <p>
 <picture>
   <source srcset="https://www.yujiachen.com/assets/posts/in-the-system/zh/image_2.webp" type="image/webp" />
-  <img src="https://www.yujiachen.com/assets/posts/in-the-system/zh/image_2.png" alt="" class="article-image" width="600" height="344" />
+  <img src="https://www.yujiachen.com/assets/posts/in-the-system/zh/image_2.png" alt="" class="article-image" width="600" height="344" loading="lazy" />
 </picture>
 </p>
 <p>上面两个图表分别是《2019年美国各州占全国GDP和人口比重》，以及《2019年中国各省、自治区、直辖市占全国GDP和人口的比重》</p>
@@ -3361,7 +3361,7 @@ WantedBy=multi-user.target
 <p>
 <picture>
   <source srcset="https://www.yujiachen.com/assets/posts/key-iterations-trustworthy-online-controlled-experiments/zh/image_1.webp" type="image/webp" />
-  <img src="https://www.yujiachen.com/assets/posts/key-iterations-trustworthy-online-controlled-experiments/zh/image_1.png" alt="" class="article-image" width="1055" height="506" />
+  <img src="https://www.yujiachen.com/assets/posts/key-iterations-trustworthy-online-controlled-experiments/zh/image_1.png" alt="" class="article-image" width="1055" height="506" loading="lazy" />
 </picture>
 </p>
 <p>我们用双样本t检验来计算p-value，这符合实际的实验设置。</p>
@@ -3997,7 +3997,7 @@ M1001 80h400000v40h-400000z"/></svg></span></span></span><span class="vlist-s">�
 <p>
 <picture>
   <source srcset="https://www.yujiachen.com/assets/posts/2020-summary/zh/image_1.webp" type="image/webp" />
-  <img src="https://www.yujiachen.com/assets/posts/2020-summary/zh/image_1.png" alt="" class="article-image" width="478" height="1648" />
+  <img src="https://www.yujiachen.com/assets/posts/2020-summary/zh/image_1.png" alt="" class="article-image" width="478" height="1648" loading="lazy" />
 </picture>
 感谢单向街对本文的帮助 : )</p>
 ]]></content:encoded>
@@ -4015,7 +4015,7 @@ M1001 80h400000v40h-400000z"/></svg></span></span></span><span class="vlist-s">�
 <p>
 <picture>
   <source srcset="https://www.yujiachen.com/assets/posts/2019-year-in-review/zh/image_1.webp" type="image/webp" />
-  <img src="https://www.yujiachen.com/assets/posts/2019-year-in-review/zh/image_1.jpg" alt="" class="article-image" width="886" height="886" />
+  <img src="https://www.yujiachen.com/assets/posts/2019-year-in-review/zh/image_1.jpg" alt="" class="article-image" width="886" height="886" loading="lazy" />
 </picture>
 
 我在上野公园许下的新年愿望</p>
@@ -4031,7 +4031,7 @@ M1001 80h400000v40h-400000z"/></svg></span></span></span><span class="vlist-s">�
 <p>
 <picture>
   <source srcset="https://www.yujiachen.com/assets/posts/2019-year-in-review/zh/image_2.webp" type="image/webp" />
-  <img src="https://www.yujiachen.com/assets/posts/2019-year-in-review/zh/image_2.png" alt="" class="article-image" width="1080" height="588" />
+  <img src="https://www.yujiachen.com/assets/posts/2019-year-in-review/zh/image_2.png" alt="" class="article-image" width="1080" height="588" loading="lazy" />
 </picture>
 
 魔法使之夜的结尾，青子发动第五法向未来的自己借了10年修行，现在看来这个结尾有着独特的讽刺意味</p>
@@ -4039,7 +4039,7 @@ M1001 80h400000v40h-400000z"/></svg></span></span></span><span class="vlist-s">�
 <p>
 <picture>
   <source srcset="https://www.yujiachen.com/assets/posts/2019-year-in-review/zh/image_3.webp" type="image/webp" />
-  <img src="https://www.yujiachen.com/assets/posts/2019-year-in-review/zh/image_3.jpg" alt="" class="article-image" width="1024" height="768" />
+  <img src="https://www.yujiachen.com/assets/posts/2019-year-in-review/zh/image_3.jpg" alt="" class="article-image" width="1024" height="768" loading="lazy" />
 </picture>
 
 我的毕业照之一</p>
@@ -4051,7 +4051,7 @@ M1001 80h400000v40h-400000z"/></svg></span></span></span><span class="vlist-s">�
 <p>
 <picture>
   <source srcset="https://www.yujiachen.com/assets/posts/2019-year-in-review/zh/image_4.webp" type="image/webp" />
-  <img src="https://www.yujiachen.com/assets/posts/2019-year-in-review/zh/image_4.jpg" alt="" class="article-image" width="1024" height="768" />
+  <img src="https://www.yujiachen.com/assets/posts/2019-year-in-review/zh/image_4.jpg" alt="" class="article-image" width="1024" height="768" loading="lazy" />
 </picture>
 
 9月份我就住在三藩的变形虫唱片附近，听说这条街是美国嘻哈乐的发源地，我自己住的房源曾今就是一个乐队的住所</p>
@@ -4063,7 +4063,7 @@ M1001 80h400000v40h-400000z"/></svg></span></span></span><span class="vlist-s">�
 
 <picture>
   <source srcset="https://www.yujiachen.com/assets/posts/2019-year-in-review/zh/image_5.webp" type="image/webp" />
-  <img src="https://www.yujiachen.com/assets/posts/2019-year-in-review/zh/image_5.png" alt="" class="article-image" width="1080" height="1920" />
+  <img src="https://www.yujiachen.com/assets/posts/2019-year-in-review/zh/image_5.png" alt="" class="article-image" width="1080" height="1920" loading="lazy" />
 </picture>
 
 看到凛老婆就突然有了想去送钱的欲望</p>
@@ -4071,7 +4071,7 @@ M1001 80h400000v40h-400000z"/></svg></span></span></span><span class="vlist-s">�
 
 <picture>
   <source srcset="https://www.yujiachen.com/assets/posts/2019-year-in-review/zh/image_6.webp" type="image/webp" />
-  <img src="https://www.yujiachen.com/assets/posts/2019-year-in-review/zh/image_6.jpg" alt="" class="article-image" width="768" height="1024" />
+  <img src="https://www.yujiachen.com/assets/posts/2019-year-in-review/zh/image_6.jpg" alt="" class="article-image" width="768" height="1024" loading="lazy" />
 </picture>
 
 看HF2送的明信片</p>
@@ -4082,14 +4082,14 @@ M1001 80h400000v40h-400000z"/></svg></span></span></span><span class="vlist-s">�
 
 <picture>
   <source srcset="https://www.yujiachen.com/assets/posts/2019-year-in-review/zh/image_7.webp" type="image/webp" />
-  <img src="https://www.yujiachen.com/assets/posts/2019-year-in-review/zh/image_7.jpg" alt="" class="article-image" width="1024" height="768" />
+  <img src="https://www.yujiachen.com/assets/posts/2019-year-in-review/zh/image_7.jpg" alt="" class="article-image" width="1024" height="768" loading="lazy" />
 </picture>
 
 看着LA，心里想到的却是EVA 中美里拍着真嗣的肩膀说，这就是你要守护的城市啊！
 
 <picture>
   <source srcset="https://www.yujiachen.com/assets/posts/2019-year-in-review/zh/image_8.webp" type="image/webp" />
-  <img src="https://www.yujiachen.com/assets/posts/2019-year-in-review/zh/image_8.jpg" alt="" class="article-image" width="1080" height="430" />
+  <img src="https://www.yujiachen.com/assets/posts/2019-year-in-review/zh/image_8.jpg" alt="" class="article-image" width="1080" height="430" loading="lazy" />
 </picture>
 
 黄昏的LA</p>
@@ -4099,14 +4099,14 @@ M1001 80h400000v40h-400000z"/></svg></span></span></span><span class="vlist-s">�
 
 <picture>
   <source srcset="https://www.yujiachen.com/assets/posts/2019-year-in-review/zh/image_9.webp" type="image/webp" />
-  <img src="https://www.yujiachen.com/assets/posts/2019-year-in-review/zh/image_9.jpg" alt="" class="article-image" width="1024" height="768" />
+  <img src="https://www.yujiachen.com/assets/posts/2019-year-in-review/zh/image_9.jpg" alt="" class="article-image" width="1024" height="768" loading="lazy" />
 </picture>
 
 大宋武侠城的节目表
 
 <picture>
   <source srcset="https://www.yujiachen.com/assets/posts/2019-year-in-review/zh/image_10.webp" type="image/webp" />
-  <img src="https://www.yujiachen.com/assets/posts/2019-year-in-review/zh/image_10.jpg" alt="" class="article-image" width="1024" height="768" />
+  <img src="https://www.yujiachen.com/assets/posts/2019-year-in-review/zh/image_10.jpg" alt="" class="article-image" width="1024" height="768" loading="lazy" />
 </picture>
 
 猛龙过江</p>
@@ -4114,7 +4114,7 @@ M1001 80h400000v40h-400000z"/></svg></span></span></span><span class="vlist-s">�
 
 <picture>
   <source srcset="https://www.yujiachen.com/assets/posts/2019-year-in-review/zh/image_11.webp" type="image/webp" />
-  <img src="https://www.yujiachen.com/assets/posts/2019-year-in-review/zh/image_11.jpg" alt="" class="article-image" width="1024" height="768" />
+  <img src="https://www.yujiachen.com/assets/posts/2019-year-in-review/zh/image_11.jpg" alt="" class="article-image" width="1024" height="768" loading="lazy" />
 </picture>
 
 沙滩上的主播</p>
@@ -4139,13 +4139,13 @@ M1001 80h400000v40h-400000z"/></svg></span></span></span><span class="vlist-s">�
 <p>
 <picture>
   <source srcset="https://www.yujiachen.com/assets/posts/2018-year-in-review/zh/image_1.webp" type="image/webp" />
-  <img src="https://www.yujiachen.com/assets/posts/2018-year-in-review/zh/image_1.jpg" alt="" class="article-image" width="1080" height="810" />
+  <img src="https://www.yujiachen.com/assets/posts/2018-year-in-review/zh/image_1.jpg" alt="" class="article-image" width="1080" height="810" loading="lazy" />
 </picture>
 </p>
 <p>
 <picture>
   <source srcset="https://www.yujiachen.com/assets/posts/2018-year-in-review/zh/image_2.webp" type="image/webp" />
-  <img src="https://www.yujiachen.com/assets/posts/2018-year-in-review/zh/image_2.jpg" alt="" class="article-image" width="1008" height="1008" />
+  <img src="https://www.yujiachen.com/assets/posts/2018-year-in-review/zh/image_2.jpg" alt="" class="article-image" width="1008" height="1008" loading="lazy" />
 </picture>
 </p>
 <p>旷视的实习面试只有一轮，这让自己有点沮丧，因为我春招的时候，除了旷视和华为其他所有公司都把我挂了（除了头条和微软我没有去面），自己当时对自己的评价就是很菜，只是运气好才过的面试，因此一直自信不起来，常常担心自己不能转正，秋招的时候也会找不到其他厂的工作。虽然说实话没有一场面试自己是准备过的，coding题完全随缘做，计网OS什么的基础题完全不会，本身实力不强，还不努力，自然还是比不过其他候选人的把。除此之外自己还十分内向，不懂得怎么和别人交往，周围很多实习生基本全是985的学生，清华的特别多，经常会闲聊说一些在清华上课时各种搞笑的事情，自己也因此不知道怎么和他们找到话题。不过还好自己还是认识了一些朋友，正式员工jianghao每天都会找我吃饭，说各种事情。后来自己边上坐了一位刚入职的Final选手tangdongjian，他也是一个很有趣的人，他是保送的复旦软件工程，但是转专业去了社会学，他说反正以后出来都是搬砖，大学期间不如学自己真正感兴趣的东西。</p>
@@ -4159,19 +4159,19 @@ M1001 80h400000v40h-400000z"/></svg></span></span></span><span class="vlist-s">�
 <p>
 <picture>
   <source srcset="https://www.yujiachen.com/assets/posts/2018-year-in-review/zh/image_3.webp" type="image/webp" />
-  <img src="https://www.yujiachen.com/assets/posts/2018-year-in-review/zh/image_3.jpg" alt="" class="article-image" width="1008" height="1008" />
+  <img src="https://www.yujiachen.com/assets/posts/2018-year-in-review/zh/image_3.jpg" alt="" class="article-image" width="1008" height="1008" loading="lazy" />
 </picture>
 </p>
 <p>
 <picture>
   <source srcset="https://www.yujiachen.com/assets/posts/2018-year-in-review/zh/image_4.webp" type="image/webp" />
-  <img src="https://www.yujiachen.com/assets/posts/2018-year-in-review/zh/image_4.jpg" alt="" class="article-image" width="1080" height="810" />
+  <img src="https://www.yujiachen.com/assets/posts/2018-year-in-review/zh/image_4.jpg" alt="" class="article-image" width="1080" height="810" loading="lazy" />
 </picture>
 </p>
 <p>
 <picture>
   <source srcset="https://www.yujiachen.com/assets/posts/2018-year-in-review/zh/image_5.webp" type="image/webp" />
-  <img src="https://www.yujiachen.com/assets/posts/2018-year-in-review/zh/image_5.jpg" alt="" class="article-image" width="1080" height="810" />
+  <img src="https://www.yujiachen.com/assets/posts/2018-year-in-review/zh/image_5.jpg" alt="" class="article-image" width="1080" height="810" loading="lazy" />
 </picture>
 </p>
 <p>秋 冬</p>
@@ -4231,14 +4231,14 @@ M1001 80h400000v40h-400000z"/></svg></span></span></span><span class="vlist-s">�
 <p>
 <picture>
   <source srcset="https://www.yujiachen.com/assets/posts/ring-allreduce/zh/image_1.webp" type="image/webp" />
-  <img src="https://www.yujiachen.com/assets/posts/ring-allreduce/zh/image_1.png" alt="" class="article-image" width="452" height="310" />
+  <img src="https://www.yujiachen.com/assets/posts/ring-allreduce/zh/image_1.png" alt="" class="article-image" width="452" height="310" loading="lazy" />
 </picture>
 </p>
 <p>这样的模型最大的缺陷是gpu 0的通信时间是随着gpu卡数的增长而线性增长的。所以就有了ring-allreduce，如下图：</p>
 <p>
 <picture>
   <source srcset="https://www.yujiachen.com/assets/posts/ring-allreduce/zh/image_2.webp" type="image/webp" />
-  <img src="https://www.yujiachen.com/assets/posts/ring-allreduce/zh/image_2.png" alt="" class="article-image" width="419" height="330" />
+  <img src="https://www.yujiachen.com/assets/posts/ring-allreduce/zh/image_2.png" alt="" class="article-image" width="419" height="330" loading="lazy" />
 </picture>
 
 该算法的基本思想是取消Reducer，让数据在gpu形成的环内流动，整个ring-allreduce的过程分为两大步，第一步是scatter-reduce，第二步是allgather。</p>
@@ -4246,7 +4246,7 @@ M1001 80h400000v40h-400000z"/></svg></span></span></span><span class="vlist-s">�
 <p>
 <picture>
   <source srcset="https://www.yujiachen.com/assets/posts/ring-allreduce/zh/image_3.webp" type="image/webp" />
-  <img src="https://www.yujiachen.com/assets/posts/ring-allreduce/zh/image_3.png" alt="" class="article-image" width="480" height="335" />
+  <img src="https://www.yujiachen.com/assets/posts/ring-allreduce/zh/image_3.png" alt="" class="article-image" width="480" height="335" loading="lazy" />
 </picture>
 
 当n-1次操作完成后，ring-allreduce的第一大步scatter-reduce就已经完成了，此时，第i块gpu的第(i + 1) % n块数据已经收集到了所有n块gpu的第(i + 1) % n块数据，那么，再进行一次allgather就可以完成算法了。</p>
@@ -4255,7 +4255,7 @@ M1001 80h400000v40h-400000z"/></svg></span></span></span><span class="vlist-s">�
 <p>
 <picture>
   <source srcset="https://www.yujiachen.com/assets/posts/ring-allreduce/zh/image_4.webp" type="image/webp" />
-  <img src="https://www.yujiachen.com/assets/posts/ring-allreduce/zh/image_4.png" alt="" class="article-image" width="572" height="321" />
+  <img src="https://www.yujiachen.com/assets/posts/ring-allreduce/zh/image_4.png" alt="" class="article-image" width="572" height="321" loading="lazy" />
 </picture>
 
 如果觉得不懂的话，我们举一个3gpu的例子：</p>
@@ -4263,14 +4263,14 @@ M1001 80h400000v40h-400000z"/></svg></span></span></span><span class="vlist-s">�
 <p>
 <picture>
   <source srcset="https://www.yujiachen.com/assets/posts/ring-allreduce/zh/image_5.webp" type="image/webp" />
-  <img src="https://www.yujiachen.com/assets/posts/ring-allreduce/zh/image_5.png" alt="" class="article-image" width="772" height="913" />
+  <img src="https://www.yujiachen.com/assets/posts/ring-allreduce/zh/image_5.png" alt="" class="article-image" width="772" height="913" loading="lazy" />
 </picture>
 </p>
 <p>然后是allgather的例子：</p>
 <p>
 <picture>
   <source srcset="https://www.yujiachen.com/assets/posts/ring-allreduce/zh/image_6.webp" type="image/webp" />
-  <img src="https://www.yujiachen.com/assets/posts/ring-allreduce/zh/image_6.png" alt="" class="article-image" width="1080" height="1321" />
+  <img src="https://www.yujiachen.com/assets/posts/ring-allreduce/zh/image_6.png" alt="" class="article-image" width="1080" height="1321" loading="lazy" />
 </picture>
 </p>
 <p>reference:</p>

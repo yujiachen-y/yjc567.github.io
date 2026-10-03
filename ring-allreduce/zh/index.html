@@ -19,10 +19,25 @@
 <link rel="icon" href="/favicon.ico" type="image/x-icon" />
 <link rel="apple-touch-icon" href="/apple-touch-icon.png" sizes="180x180" /> <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&amp;family=Source+Serif+4:ital,wght@0,400;0,600;0,700;1,400&amp;family=Noto+Serif+SC:wght@400;600;700&amp;display=swap" />
-    <link rel="stylesheet" href="/katex/katex.min.css" />
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&amp;family=Source+Serif+4:ital,wght@0,400;0,600;0,700;1,400&amp;display=swap" /> 
     <link rel="stylesheet" href="/styles.css" />
-    <link rel="stylesheet" href="/fonts.css" />
+    
+<link rel="modulepreload" href="/app/ask-ai-entry.js" />
+<link rel="modulepreload" href="/app/ask-ai-page-actions.js" />
+<link rel="modulepreload" href="/app/ask-ai-page-config.js" />
+<link rel="modulepreload" href="/app/ask-ai-page.js" />
+<link rel="modulepreload" href="/app/ask-ai-prompt.js" />
+<link rel="modulepreload" href="/app/citation-format.js" />
+<link rel="modulepreload" href="/app/citation.js" />
+<link rel="modulepreload" href="/app/comments.js" />
+<link rel="modulepreload" href="/app/filters.js" />
+<link rel="modulepreload" href="/app/image-preview-modal.js" />
+<link rel="modulepreload" href="/app/image-preview.js" />
+<link rel="modulepreload" href="/app/language.js" />
+<link rel="modulepreload" href="/app/nav-mobile.js" />
+<link rel="modulepreload" href="/app/state.js" />
+<link rel="modulepreload" href="/app/theme.js" />
+<link rel="modulepreload" href="/app/toc.js" />
   </head>
   <body data-page="post">
     <div id="root">
@@ -106,14 +121,14 @@
 <p>
 <picture>
   <source srcset="/assets/posts/ring-allreduce/zh/image_1.webp" type="image/webp" />
-  <img src="/assets/posts/ring-allreduce/zh/image_1.png" alt="" class="article-image" width="452" height="310" />
+  <img src="/assets/posts/ring-allreduce/zh/image_1.png" alt="" class="article-image" width="452" height="310" loading="lazy" />
 </picture>
 </p>
 <p>这样的模型最大的缺陷是gpu 0的通信时间是随着gpu卡数的增长而线性增长的。所以就有了ring-allreduce，如下图：</p>
 <p>
 <picture>
   <source srcset="/assets/posts/ring-allreduce/zh/image_2.webp" type="image/webp" />
-  <img src="/assets/posts/ring-allreduce/zh/image_2.png" alt="" class="article-image" width="419" height="330" />
+  <img src="/assets/posts/ring-allreduce/zh/image_2.png" alt="" class="article-image" width="419" height="330" loading="lazy" />
 </picture>
 
 该算法的基本思想是取消Reducer，让数据在gpu形成的环内流动，整个ring-allreduce的过程分为两大步，第一步是scatter-reduce，第二步是allgather。</p>
@@ -121,7 +136,7 @@
 <p>
 <picture>
   <source srcset="/assets/posts/ring-allreduce/zh/image_3.webp" type="image/webp" />
-  <img src="/assets/posts/ring-allreduce/zh/image_3.png" alt="" class="article-image" width="480" height="335" />
+  <img src="/assets/posts/ring-allreduce/zh/image_3.png" alt="" class="article-image" width="480" height="335" loading="lazy" />
 </picture>
 
 当n-1次操作完成后，ring-allreduce的第一大步scatter-reduce就已经完成了，此时，第i块gpu的第(i + 1) % n块数据已经收集到了所有n块gpu的第(i + 1) % n块数据，那么，再进行一次allgather就可以完成算法了。</p>
@@ -130,7 +145,7 @@
 <p>
 <picture>
   <source srcset="/assets/posts/ring-allreduce/zh/image_4.webp" type="image/webp" />
-  <img src="/assets/posts/ring-allreduce/zh/image_4.png" alt="" class="article-image" width="572" height="321" />
+  <img src="/assets/posts/ring-allreduce/zh/image_4.png" alt="" class="article-image" width="572" height="321" loading="lazy" />
 </picture>
 
 如果觉得不懂的话，我们举一个3gpu的例子：</p>
@@ -138,14 +153,14 @@
 <p>
 <picture>
   <source srcset="/assets/posts/ring-allreduce/zh/image_5.webp" type="image/webp" />
-  <img src="/assets/posts/ring-allreduce/zh/image_5.png" alt="" class="article-image" width="772" height="913" />
+  <img src="/assets/posts/ring-allreduce/zh/image_5.png" alt="" class="article-image" width="772" height="913" loading="lazy" />
 </picture>
 </p>
 <p>然后是allgather的例子：</p>
 <p>
 <picture>
   <source srcset="/assets/posts/ring-allreduce/zh/image_6.webp" type="image/webp" />
-  <img src="/assets/posts/ring-allreduce/zh/image_6.png" alt="" class="article-image" width="1080" height="1321" />
+  <img src="/assets/posts/ring-allreduce/zh/image_6.png" alt="" class="article-image" width="1080" height="1321" loading="lazy" />
 </picture>
 </p>
 <p>reference:</p>

@@ -19,10 +19,25 @@
 <link rel="icon" href="/favicon.ico" type="image/x-icon" />
 <link rel="apple-touch-icon" href="/apple-touch-icon.png" sizes="180x180" /> <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&amp;family=Source+Serif+4:ital,wght@0,400;0,600;0,700;1,400&amp;family=Noto+Serif+SC:wght@400;600;700&amp;display=swap" />
-    <link rel="stylesheet" href="/katex/katex.min.css" />
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&amp;family=Source+Serif+4:ital,wght@0,400;0,600;0,700;1,400&amp;display=swap" /> 
     <link rel="stylesheet" href="/styles.css" />
-    <link rel="stylesheet" href="/fonts.css" />
+    
+<link rel="modulepreload" href="/app/ask-ai-entry.js" />
+<link rel="modulepreload" href="/app/ask-ai-page-actions.js" />
+<link rel="modulepreload" href="/app/ask-ai-page-config.js" />
+<link rel="modulepreload" href="/app/ask-ai-page.js" />
+<link rel="modulepreload" href="/app/ask-ai-prompt.js" />
+<link rel="modulepreload" href="/app/citation-format.js" />
+<link rel="modulepreload" href="/app/citation.js" />
+<link rel="modulepreload" href="/app/comments.js" />
+<link rel="modulepreload" href="/app/filters.js" />
+<link rel="modulepreload" href="/app/image-preview-modal.js" />
+<link rel="modulepreload" href="/app/image-preview.js" />
+<link rel="modulepreload" href="/app/language.js" />
+<link rel="modulepreload" href="/app/nav-mobile.js" />
+<link rel="modulepreload" href="/app/state.js" />
+<link rel="modulepreload" href="/app/theme.js" />
+<link rel="modulepreload" href="/app/toc.js" />
   </head>
   <body data-page="post">
     <div id="root">
@@ -106,14 +121,14 @@
 <p>
 <picture>
   <source srcset="/assets/posts/ring-allreduce/en/image_1.webp" type="image/webp" />
-  <img src="/assets/posts/ring-allreduce/en/image_1.png" alt="" class="article-image" width="452" height="310" />
+  <img src="/assets/posts/ring-allreduce/en/image_1.png" alt="" class="article-image" width="452" height="310" loading="lazy" />
 </picture>
 </p>
 <p>The biggest drawback of this model is that GPU 0’s communication time grows linearly with the number of GPUs. This is why ring-allreduce was developed, as shown below:</p>
 <p>
 <picture>
   <source srcset="/assets/posts/ring-allreduce/en/image_2.webp" type="image/webp" />
-  <img src="/assets/posts/ring-allreduce/en/image_2.png" alt="" class="article-image" width="419" height="330" />
+  <img src="/assets/posts/ring-allreduce/en/image_2.png" alt="" class="article-image" width="419" height="330" loading="lazy" />
 </picture>
 
 The basic idea of this algorithm is to eliminate the central reducer and let data flow through a ring formed by the GPUs. The entire ring-allreduce process consists of two major steps: the first step is reduce-scatter, and the second step is allgather.</p>
@@ -121,7 +136,7 @@ The basic idea of this algorithm is to eliminate the central reducer and let dat
 <p>
 <picture>
   <source srcset="/assets/posts/ring-allreduce/en/image_3.webp" type="image/webp" />
-  <img src="/assets/posts/ring-allreduce/en/image_3.png" alt="" class="article-image" width="480" height="335" />
+  <img src="/assets/posts/ring-allreduce/en/image_3.png" alt="" class="article-image" width="480" height="335" loading="lazy" />
 </picture>
 
 After n-1 rounds, the first step (reduce-scatter) of ring-allreduce is complete. At this point, each GPU holds one fully reduced chunk. The algorithm then enters allgather, which also takes n-1 rounds.</p>
@@ -130,7 +145,7 @@ After n-1 rounds, the first step (reduce-scatter) of ring-allreduce is complete.
 <p>
 <picture>
   <source srcset="/assets/posts/ring-allreduce/en/image_4.webp" type="image/webp" />
-  <img src="/assets/posts/ring-allreduce/en/image_4.png" alt="" class="article-image" width="572" height="321" />
+  <img src="/assets/posts/ring-allreduce/en/image_4.png" alt="" class="article-image" width="572" height="321" loading="lazy" />
 </picture>
 
 If it’s still unclear, let’s walk through a 3-GPU example:</p>
@@ -138,14 +153,14 @@ If it’s still unclear, let’s walk through a 3-GPU example:</p>
 <p>
 <picture>
   <source srcset="/assets/posts/ring-allreduce/en/image_5.webp" type="image/webp" />
-  <img src="/assets/posts/ring-allreduce/en/image_5.png" alt="" class="article-image" width="772" height="913" />
+  <img src="/assets/posts/ring-allreduce/en/image_5.png" alt="" class="article-image" width="772" height="913" loading="lazy" />
 </picture>
 </p>
 <p>Then the allgather step:</p>
 <p>
 <picture>
   <source srcset="/assets/posts/ring-allreduce/en/image_6.webp" type="image/webp" />
-  <img src="/assets/posts/ring-allreduce/en/image_6.png" alt="" class="article-image" width="1080" height="1321" />
+  <img src="/assets/posts/ring-allreduce/en/image_6.png" alt="" class="article-image" width="1080" height="1321" loading="lazy" />
 </picture>
 </p>
 <p>References:</p>
