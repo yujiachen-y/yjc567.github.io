@@ -3,6 +3,21 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <script>
+      (function () {
+        var nav = performance.getEntriesByType('navigation')[0];
+        var returning = nav && nav.type === 'back_forward';
+        // Coming back (back/forward) should look exactly as the reader left it.
+        addEventListener('pagereveal', function (event) {
+          var activation = window.navigation && navigation.activation;
+          var traverse = activation ? activation.navigationType === 'traverse' : returning;
+          if (event.viewTransition && traverse) {
+            event.viewTransition.ready.catch(function () {});
+            event.viewTransition.skipTransition();
+          }
+        });
+      })();
+    </script>
     <title>Golang 泛型 | Jiachen Yu</title>
         <meta name="description" content="Golang 泛型" />
     <meta property="og:title" content="Golang 泛型 | Jiachen Yu" />
@@ -22,6 +37,7 @@
  
     <link rel="stylesheet" href="/styles.css" />
     <link rel="stylesheet" href="/fonts.css" />
+<link rel="modulepreload" href="/app/age.js" />
 <link rel="modulepreload" href="/app/ask-ai-entry.js" />
 <link rel="modulepreload" href="/app/ask-ai-page-actions.js" />
 <link rel="modulepreload" href="/app/ask-ai-page-config.js" />
@@ -31,15 +47,22 @@
 <link rel="modulepreload" href="/app/citation.js" />
 <link rel="modulepreload" href="/app/comments.js" />
 <link rel="modulepreload" href="/app/filters.js" />
+<link rel="modulepreload" href="/app/frame.js" />
 <link rel="modulepreload" href="/app/image-preview-modal.js" />
 <link rel="modulepreload" href="/app/image-preview.js" />
+<link rel="modulepreload" href="/app/ink-bleed.js" />
+<link rel="modulepreload" href="/app/ink-well.js" />
+<link rel="modulepreload" href="/app/keys.js" />
 <link rel="modulepreload" href="/app/language.js" />
 <link rel="modulepreload" href="/app/nav-mobile.js" />
+<link rel="modulepreload" href="/app/reading.js" />
+<link rel="modulepreload" href="/app/search.js" />
 <link rel="modulepreload" href="/app/state.js" />
+<link rel="modulepreload" href="/app/status-bar.js" />
 <link rel="modulepreload" href="/app/theme.js" />
 <link rel="modulepreload" href="/app/toc.js" />
   </head>
-  <body data-page="post">
+  <body data-page="post"  class="aged" style="--age: 0.422; --paper-age: 0.422">
     <div id="root">
       
 <header class="navbar" data-navbar>
@@ -53,6 +76,11 @@
     </div>
     <div class="controls">
       <div class="action-controls">
+        <button class="search-trigger" type="button" data-search-trigger aria-label="Search" aria-haspopup="dialog">
+          <svg class="search-trigger-icon" viewBox="0 0 24 24" aria-hidden="true"><circle cx="11" cy="11" r="6.5" /><path d="m20 20-4.2-4.2" /></svg>
+          <span class="search-trigger-label">Search</span>
+          <kbd class="search-trigger-key" data-search-key>⌘K</kbd>
+        </button>
         <div class="lang-switcher" data-lang-switcher data-lang-switcher-mode="toggle">
           <button class="lang-toggle" type="button" data-lang-toggle>EN</button>
         </div>
@@ -114,36 +142,26 @@
       <div class="toc-panel sidebar-panel-content" data-toc-panel>
         <div class="toc-title sidebar-title">目录</div>
         <ol class="toc-list sidebar-list">
-      <li class="toc-item sidebar-item toc-level-1"><a class="sidebar-link" href="#名词解释">名词解释</a></li>
-      <li class="toc-item sidebar-item toc-level-1"><a class="sidebar-link" href="#总览">总览</a></li>
-      <li class="toc-item sidebar-item toc-level-1"><a class="sidebar-link" href="#类型约束">类型约束</a></li>
+      <li class="toc-item sidebar-item toc-level-1 toc-top"><a class="sidebar-link" href="#名词解释">名词解释</a></li>
+      <li class="toc-item sidebar-item toc-level-1 toc-top"><a class="sidebar-link" href="#总览">总览</a></li>
+      <li class="toc-item sidebar-item toc-level-1 toc-top"><a class="sidebar-link" href="#类型约束">类型约束</a></li>
       <li class="toc-item sidebar-item toc-level-2"><a class="sidebar-link" href="#underlying-type">Underlying type</a></li>
       <li class="toc-item sidebar-item toc-level-2"><a class="sidebar-link" href="#使用-type-parameter-和直接使用-interface-的区别">使用 type parameter 和直接使用 interface 的区别</a></li>
-      <li class="toc-item sidebar-item toc-level-1"><a class="sidebar-link" href="#类型推断">类型推断</a></li>
+      <li class="toc-item sidebar-item toc-level-1 toc-top"><a class="sidebar-link" href="#类型推断">类型推断</a></li>
       <li class="toc-item sidebar-item toc-level-2"><a class="sidebar-link" href="#类型归一化-type-unification">类型归一化 ( Type unification )</a></li>
-      <li class="toc-item sidebar-item toc-level-3"><a class="sidebar-link" href="#功能描述">功能描述</a></li>
-      <li class="toc-item sidebar-item toc-level-3"><a class="sidebar-link" href="#具体操作">具体操作</a></li>
       <li class="toc-item sidebar-item toc-level-2"><a class="sidebar-link" href="#函数实参类型推断-function-argument-type-inference">函数实参类型推断 ( Function argument type inference )</a></li>
-      <li class="toc-item sidebar-item toc-level-3"><a class="sidebar-link" href="#功能描述-2">功能描述</a></li>
-      <li class="toc-item sidebar-item toc-level-3"><a class="sidebar-link" href="#具体实现">具体实现</a></li>
       <li class="toc-item sidebar-item toc-level-2"><a class="sidebar-link" href="#约束类型推断-constraint-type-inference">约束类型推断 ( Constraint type inference )</a></li>
-      <li class="toc-item sidebar-item toc-level-3"><a class="sidebar-link" href="#功能描述-3">功能描述</a></li>
-      <li class="toc-item sidebar-item toc-level-3"><a class="sidebar-link" href="#具体实现-2">具体实现</a></li>
       <li class="toc-item sidebar-item toc-level-2"><a class="sidebar-link" href="#类型推断执行步骤">类型推断执行步骤</a></li>
-      <li class="toc-item sidebar-item toc-level-1"><a class="sidebar-link" href="#其他">其他</a></li>
+      <li class="toc-item sidebar-item toc-level-1 toc-top"><a class="sidebar-link" href="#其他">其他</a></li>
       <li class="toc-item sidebar-item toc-level-2"><a class="sidebar-link" href="#泛型窘境">泛型窘境</a></li>
       <li class="toc-item sidebar-item toc-level-2"><a class="sidebar-link" href="#使用-t-而不是-t">使用 [T] 而不是 &lt;T&gt;</a></li>
       <li class="toc-item sidebar-item toc-level-2"><a class="sidebar-link" href="#为何-go-泛型不支持-method">为何 Go 泛型不支持 method？</a></li>
       <li class="toc-item sidebar-item toc-level-2"><a class="sidebar-link" href="#支持指针方法">支持指针方法</a></li>
       <li class="toc-item sidebar-item toc-level-2"><a class="sidebar-link" href="#在工作中使用泛型">在工作中使用泛型</a></li>
-      <li class="toc-item sidebar-item toc-level-1"><a class="sidebar-link" href="#类型推断代码">类型推断代码</a></li>
+      <li class="toc-item sidebar-item toc-level-1 toc-top"><a class="sidebar-link" href="#类型推断代码">类型推断代码</a></li>
       <li class="toc-item sidebar-item toc-level-2"><a class="sidebar-link" href="#类型归一化">类型归一化</a></li>
       <li class="toc-item sidebar-item toc-level-2"><a class="sidebar-link" href="#函数实参类型推断">函数实参类型推断</a></li>
-      <li class="toc-item sidebar-item toc-level-3"><a class="sidebar-link" href="#有类型的实参直接归一化">有类型的实参直接归一化</a></li>
-      <li class="toc-item sidebar-item toc-level-3"><a class="sidebar-link" href="#没有类型的实参赋予常量默认值后归一化">没有类型的实参赋予常量默认值后归一化</a></li>
       <li class="toc-item sidebar-item toc-level-2"><a class="sidebar-link" href="#约束类型推断">约束类型推断</a></li>
-      <li class="toc-item sidebar-item toc-level-3"><a class="sidebar-link" href="#类型参数-core-type-处理">类型参数 core type 处理</a></li>
-      <li class="toc-item sidebar-item toc-level-3"><a class="sidebar-link" href="#映射关系化简">映射关系化简</a></li>
         </ol>
       </div>
     </aside>
@@ -152,8 +170,13 @@
             
 
 <div class="article-text-content">
-  <div class="article-date">2023-05-26 · TECH</div>
   <h1 class="article-hero">Golang 泛型</h1>
+  <dl class="frontmatter">
+    <div><dt>date</dt><dd><time datetime="2023-05-26">2023-05-26</time></dd></div>
+    <div><dt>tags</dt><dd>#tech</dd></div>
+    <div><dt>length</dt><dd>5,707 字 · 14 分钟</dd></div>
+    <div><dt>lang</dt><dd><a href="/golang-generics/" hreflang="en">en</a> · <span aria-current="true">zh</span></dd></div>
+  </dl>
   <div class="article-body"><p>泛型是一种编程范式，允许在编写代码时使用通用的类型，从而提高代码的复用性和灵活性。在许多编程语言（如 Java、C++ 和 C#）中，泛型已经成为一种非常重要的特性，使得开发者能够编写更加通用、灵活且类型安全的代码。然而，Go 语言在最初的设计中并没有包含泛型特性，这导致了一些局限性和不便。随着 Go 语言的发展，为了使其更加完善，并满足开发者在实际工作中的需求，Go 语言社区逐渐引入了泛型特性。通过引入泛型，Go 语言能够实现更加通用的数据结构和函数，从而提高开发效率和代码质量。</p>
 <p>举个例子：</p>
 <pre class="hljs"><code><span class="hljs-keyword">import</span> <span class="hljs-string">&quot;golang.org/x/exp/constraints&quot;</span>
@@ -729,12 +752,45 @@ unary_op   = &quot;+&quot; | &quot;-&quot; | &quot;!&quot; | &quot;^&quot; | &qu
           </div>
         </div>
       </main>
+      
+<footer class="site-footer">
+  <div class="footer-paper has-curls">
+    <p class="footer-name" aria-hidden="true"><span>J</span><span>i</span><span>a</span><span>c</span><span>h</span><span>e</span><span>n</span> <span>Y</span><span>u</span></p>
+    <a class="page-curl page-curl-newer" href="/how-to-do-great-work/" style="--next-age: 0.395" aria-label="上一页: 【译】如何做出伟大工作">
+      <span class="page-curl-under"><i>← 上一页</i><b>【译】如何做出伟大工作</b><small>2023</small></span>
+      <span class="page-curl-flap"></span>
+    </a>
+    <a class="page-curl page-curl-older" href="/re-2022/" style="--next-age: 0.463" aria-label="下一页: re:2022">
+      <span class="page-curl-under"><i>下一页 →</i><b>re:2022</b><small>2023</small></span>
+      <span class="page-curl-flap"></span>
+    </a>
+  </div>
+  <div class="ink-well" data-ink-well>
+    <svg class="ink-well-edge" viewBox="0 0 1440 56" preserveAspectRatio="none" aria-hidden="true" focusable="false"><filter id="ink-well-soft"><feGaussianBlur stdDeviation="0.9" /></filter><path filter="url(#ink-well-soft)" d="M0,31 C40,29 70,34 118,32 C170,30 196,24 246,25 C300,26 318,35 372,34 C420,33 452,27 506,26 C566,25 590,18 648,20 C700,22 728,31 786,33 C838,35 874,29 930,27 C986,25 1010,33 1068,32 C1124,31 1150,22 1208,21 C1262,20 1296,28 1348,27 C1390,26 1414,23 1440,24 L1440,80 L0,80 Z" /></svg>
+    <canvas class="ink-well-water" aria-hidden="true"></canvas>
+    <div class="ink-well-inner">
+      <p class="ink-well-invite">写博客，是为了遇见新朋友。</p>
+      <ul class="about-social-list ink-well-links">
+    <li class="about-social-item sidebar-item"><a class="about-social-link sidebar-link" href="mailto:yu.jiachen@outlook.com" aria-label="Email"><span class="about-social-icon"><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false" width="24" height="24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="4" width="20" height="16" rx="2" /><path d="m22 6-10 7L2 6" /></svg></span><span class="about-social-link-text sidebar-link-text">Email</span></a></li>
+    <li class="about-social-item sidebar-item"><a class="about-social-link sidebar-link" href="https://github.com/yujiachen-y" aria-label="GitHub" target="_blank" rel="noopener noreferrer"><span class="about-social-icon"><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false" width="24" height="24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22" /></svg></span><span class="about-social-link-text sidebar-link-text">GitHub</span></a></li>
+    <li class="about-social-item sidebar-item"><a class="about-social-link sidebar-link" href="https://www.xiaohongshu.com/user/profile/68f9ad5a000000003702ac7c" aria-label="xiaohongshu" target="_blank" rel="noopener noreferrer"><span class="about-social-icon"><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false" width="24" height="24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M2 4h6a4 4 0 0 1 4 4v12a4 4 0 0 0-4-4H2z" /><path d="M22 4h-6a4 4 0 0 0-4 4v12a4 4 0 0 1 4-4h6z" /></svg></span><span class="about-social-link-text sidebar-link-text">xiaohongshu</span></a></li>
+    <li class="about-social-item sidebar-item"><a class="about-social-link sidebar-link" href="/rss.xml" aria-label="RSS" target="_blank" rel="noopener noreferrer"><span class="about-social-icon"><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false" width="24" height="24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M4 11a9 9 0 0 1 9 9" /><path d="M4 4a16 16 0 0 1 16 16" /><circle cx="5" cy="19" r="1.5" fill="currentColor" stroke="none" /></svg></span><span class="about-social-link-text sidebar-link-text">RSS</span></a></li>
+      </ul>
+      <p class="ink-well-colophon">
+        <span>31 篇 · 9.7 万字 · 2018–2026</span>
+        <span>用 Obsidian 写成，由 <a href="https://github.com/yujiachen-y/gen-blog">gen-blog</a> 排印</span>
+        <span>© 2026 Jiachen Yu</span>
+      </p>
+    </div>
+  </div>
+</footer>
     </div>
 
     <script id="page-data" type="application/json">
       {
   "pageType": "post",
   "lang": "zh",
+  "wordCount": 5707,
   "langSwitchUrl": "/golang-generics/",
   "langSwitcherMode": "toggle",
   "markdownUrl": "/posts/golang-generics/post.md",

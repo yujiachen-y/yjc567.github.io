@@ -3,6 +3,21 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <script>
+      (function () {
+        var nav = performance.getEntriesByType('navigation')[0];
+        var returning = nav && nav.type === 'back_forward';
+        // Coming back (back/forward) should look exactly as the reader left it.
+        addEventListener('pagereveal', function (event) {
+          var activation = window.navigation && navigation.activation;
+          var traverse = activation ? activation.navigationType === 'traverse' : returning;
+          if (event.viewTransition && traverse) {
+            event.viewTransition.ready.catch(function () {});
+            event.viewTransition.skipTransition();
+          }
+        });
+      })();
+    </script>
     <title>事务与共识 from DDIA | Jiachen Yu</title>
         <meta name="description" content="事务与共识 from DDIA" />
     <meta property="og:title" content="事务与共识 from DDIA | Jiachen Yu" />
@@ -22,6 +37,7 @@
  
     <link rel="stylesheet" href="/styles.css" />
     <link rel="stylesheet" href="/fonts.css" />
+<link rel="modulepreload" href="/app/age.js" />
 <link rel="modulepreload" href="/app/ask-ai-entry.js" />
 <link rel="modulepreload" href="/app/ask-ai-page-actions.js" />
 <link rel="modulepreload" href="/app/ask-ai-page-config.js" />
@@ -31,15 +47,22 @@
 <link rel="modulepreload" href="/app/citation.js" />
 <link rel="modulepreload" href="/app/comments.js" />
 <link rel="modulepreload" href="/app/filters.js" />
+<link rel="modulepreload" href="/app/frame.js" />
 <link rel="modulepreload" href="/app/image-preview-modal.js" />
 <link rel="modulepreload" href="/app/image-preview.js" />
+<link rel="modulepreload" href="/app/ink-bleed.js" />
+<link rel="modulepreload" href="/app/ink-well.js" />
+<link rel="modulepreload" href="/app/keys.js" />
 <link rel="modulepreload" href="/app/language.js" />
 <link rel="modulepreload" href="/app/nav-mobile.js" />
+<link rel="modulepreload" href="/app/reading.js" />
+<link rel="modulepreload" href="/app/search.js" />
 <link rel="modulepreload" href="/app/state.js" />
+<link rel="modulepreload" href="/app/status-bar.js" />
 <link rel="modulepreload" href="/app/theme.js" />
 <link rel="modulepreload" href="/app/toc.js" />
   </head>
-  <body data-page="post">
+  <body data-page="post"  class="aged" style="--age: 0.629; --paper-age: 0.629">
     <div id="root">
       
 <header class="navbar" data-navbar>
@@ -53,6 +76,11 @@
     </div>
     <div class="controls">
       <div class="action-controls">
+        <button class="search-trigger" type="button" data-search-trigger aria-label="Search" aria-haspopup="dialog">
+          <svg class="search-trigger-icon" viewBox="0 0 24 24" aria-hidden="true"><circle cx="11" cy="11" r="6.5" /><path d="m20 20-4.2-4.2" /></svg>
+          <span class="search-trigger-label">Search</span>
+          <kbd class="search-trigger-key" data-search-key>⌘K</kbd>
+        </button>
         <div class="lang-switcher" data-lang-switcher data-lang-switcher-mode="toggle">
           <button class="lang-toggle" type="button" data-lang-toggle>EN</button>
         </div>
@@ -114,45 +142,32 @@
       <div class="toc-panel sidebar-panel-content" data-toc-panel>
         <div class="toc-title sidebar-title">目录</div>
         <ol class="toc-list sidebar-list">
-      <li class="toc-item sidebar-item toc-level-1"><a class="sidebar-link" href="#一些感想">一些感想</a></li>
-      <li class="toc-item sidebar-item toc-level-1"><a class="sidebar-link" href="#范式有用吗">范式有用吗？</a></li>
-      <li class="toc-item sidebar-item toc-level-1"><a class="sidebar-link" href="#什么是并发问题">什么是并发问题？</a></li>
-      <li class="toc-item sidebar-item toc-level-1"><a class="sidebar-link" href="#单机并发问题">单机并发问题</a></li>
+      <li class="toc-item sidebar-item toc-level-1 toc-top"><a class="sidebar-link" href="#一些感想">一些感想</a></li>
+      <li class="toc-item sidebar-item toc-level-1 toc-top"><a class="sidebar-link" href="#范式有用吗">范式有用吗？</a></li>
+      <li class="toc-item sidebar-item toc-level-1 toc-top"><a class="sidebar-link" href="#什么是并发问题">什么是并发问题？</a></li>
+      <li class="toc-item sidebar-item toc-level-1 toc-top"><a class="sidebar-link" href="#单机并发问题">单机并发问题</a></li>
       <li class="toc-item sidebar-item toc-level-2"><a class="sidebar-link" href="#脏读">脏读</a></li>
       <li class="toc-item sidebar-item toc-level-2"><a class="sidebar-link" href="#脏写">脏写</a></li>
       <li class="toc-item sidebar-item toc-level-2"><a class="sidebar-link" href="#不可重复读取-读倾斜">不可重复读取 / 读倾斜</a></li>
       <li class="toc-item sidebar-item toc-level-2"><a class="sidebar-link" href="#更新丢失">更新丢失</a></li>
       <li class="toc-item sidebar-item toc-level-2"><a class="sidebar-link" href="#写倾斜">写倾斜</a></li>
-      <li class="toc-item sidebar-item toc-level-3"><a class="sidebar-link" href="#实体化冲突">实体化冲突</a></li>
       <li class="toc-item sidebar-item toc-level-2"><a class="sidebar-link" href="#幻读">幻读</a></li>
-      <li class="toc-item sidebar-item toc-level-1"><a class="sidebar-link" href="#防止更新丢失">防止更新丢失</a></li>
+      <li class="toc-item sidebar-item toc-level-1 toc-top"><a class="sidebar-link" href="#防止更新丢失">防止更新丢失</a></li>
       <li class="toc-item sidebar-item toc-level-2"><a class="sidebar-link" href="#原子写操作">原子写操作</a></li>
       <li class="toc-item sidebar-item toc-level-2"><a class="sidebar-link" href="#显式加锁">显式加锁</a></li>
       <li class="toc-item sidebar-item toc-level-2"><a class="sidebar-link" href="#自动检查更新丢失">自动检查更新丢失</a></li>
       <li class="toc-item sidebar-item toc-level-2"><a class="sidebar-link" href="#原子比较和设置">原子比较和设置</a></li>
       <li class="toc-item sidebar-item toc-level-2"><a class="sidebar-link" href="#冲突解决与复制">冲突解决与复制</a></li>
-      <li class="toc-item sidebar-item toc-level-1"><a class="sidebar-link" href="#隔离级别">隔离级别</a></li>
+      <li class="toc-item sidebar-item toc-level-1 toc-top"><a class="sidebar-link" href="#隔离级别">隔离级别</a></li>
       <li class="toc-item sidebar-item toc-level-2"><a class="sidebar-link" href="#读-提交">读-提交</a></li>
-      <li class="toc-item sidebar-item toc-level-3"><a class="sidebar-link" href="#行级读锁">行级读锁</a></li>
-      <li class="toc-item sidebar-item toc-level-3"><a class="sidebar-link" href="#新旧值快照">新旧值快照</a></li>
-      <li class="toc-item sidebar-item toc-level-3"><a class="sidebar-link" href="#多版本并发控制-mvcc">多版本并发控制 / MVCC</a></li>
       <li class="toc-item sidebar-item toc-level-2"><a class="sidebar-link" href="#快照级别隔离">快照级别隔离</a></li>
-      <li class="toc-item sidebar-item toc-level-3"><a class="sidebar-link" href="#多版本并发控制-mvcc-2">多版本并发控制 / MVCC</a></li>
       <li class="toc-item sidebar-item toc-level-2"><a class="sidebar-link" href="#可串行化隔离">可串行化隔离</a></li>
-      <li class="toc-item sidebar-item toc-level-3"><a class="sidebar-link" href="#实际串行执行">实际串行执行</a></li>
-      <li class="toc-item sidebar-item toc-level-3"><a class="sidebar-link" href="#两阶段加锁">两阶段加锁</a></li>
-      <li class="toc-item sidebar-item toc-level-3"><a class="sidebar-link" href="#可串行化的快照隔离">可串行化的快照隔离</a></li>
-      <li class="toc-item sidebar-item toc-level-1"><a class="sidebar-link" href="#分布式系统挑战">分布式系统挑战</a></li>
+      <li class="toc-item sidebar-item toc-level-1 toc-top"><a class="sidebar-link" href="#分布式系统挑战">分布式系统挑战</a></li>
       <li class="toc-item sidebar-item toc-level-2"><a class="sidebar-link" href="#拜占庭错误">拜占庭错误</a></li>
-      <li class="toc-item sidebar-item toc-level-1"><a class="sidebar-link" href="#共识">共识</a></li>
+      <li class="toc-item sidebar-item toc-level-1 toc-top"><a class="sidebar-link" href="#共识">共识</a></li>
       <li class="toc-item sidebar-item toc-level-2"><a class="sidebar-link" href="#可线性化">可线性化</a></li>
       <li class="toc-item sidebar-item toc-level-2"><a class="sidebar-link" href="#顺序保证">顺序保证</a></li>
-      <li class="toc-item sidebar-item toc-level-3"><a class="sidebar-link" href="#因果一致性">因果一致性</a></li>
-      <li class="toc-item sidebar-item toc-level-3"><a class="sidebar-link" href="#全序关系广播">全序关系广播</a></li>
       <li class="toc-item sidebar-item toc-level-2"><a class="sidebar-link" href="#实现全序关系广播">实现全序关系广播</a></li>
-      <li class="toc-item sidebar-item toc-level-3"><a class="sidebar-link" href="#两阶段提交-2pc">两阶段提交 (2PC)</a></li>
-      <li class="toc-item sidebar-item toc-level-3"><a class="sidebar-link" href="#支持容错的共识">支持容错的共识</a></li>
-      <li class="toc-item sidebar-item toc-level-3"><a class="sidebar-link" href="#成员与协调服务">成员与协调服务</a></li>
         </ol>
       </div>
     </aside>
@@ -161,8 +176,13 @@
             
 
 <div class="article-text-content">
-  <div class="article-date">2021-09-27 · TECH</div>
   <h1 class="article-hero">事务与共识 from DDIA</h1>
+  <dl class="frontmatter">
+    <div><dt>date</dt><dd><time datetime="2021-09-27">2021-09-27</time></dd></div>
+    <div><dt>tags</dt><dd>#tech</dd></div>
+    <div><dt>length</dt><dd>7,232 字 · 18 分钟</dd></div>
+    <div><dt>lang</dt><dd><a href="/transactions-and-consensus-from-ddia/" hreflang="en">en</a> · <span aria-current="true">zh</span></dd></div>
+  </dl>
   <div class="article-body"><h1 id="一些感想">一些感想</h1>
 <p>大多数的应用程序是通过一层一层叠加数据模型来构建的。</p>
 <p>计算资源的过剩和短缺问题是会一直存在的，“节省资源的技术，只会带来资源使用率的增加”（<a href="https://en.wikipedia.org/wiki/Jevons_paradox">Jevons paradox</a>）。</p>
@@ -467,12 +487,45 @@
           </div>
         </div>
       </main>
+      
+<footer class="site-footer">
+  <div class="footer-paper has-curls">
+    <p class="footer-name" aria-hidden="true"><span>J</span><span>i</span><span>a</span><span>c</span><span>h</span><span>e</span><span>n</span> <span>Y</span><span>u</span></p>
+    <a class="page-curl page-curl-newer" href="/the-cathedral-and-the-bazaar/" style="--next-age: 0.599" aria-label="上一页: 大教堂与集市">
+      <span class="page-curl-under"><i>← 上一页</i><b>大教堂与集市</b><small>2021</small></span>
+      <span class="page-curl-flap"></span>
+    </a>
+    <a class="page-curl page-curl-older" href="/how-to-disagree/" style="--next-age: 0.689" aria-label="下一页: 如何反对">
+      <span class="page-curl-under"><i>下一页 →</i><b>如何反对</b><small>2021</small></span>
+      <span class="page-curl-flap"></span>
+    </a>
+  </div>
+  <div class="ink-well" data-ink-well>
+    <svg class="ink-well-edge" viewBox="0 0 1440 56" preserveAspectRatio="none" aria-hidden="true" focusable="false"><filter id="ink-well-soft"><feGaussianBlur stdDeviation="0.9" /></filter><path filter="url(#ink-well-soft)" d="M0,31 C40,29 70,34 118,32 C170,30 196,24 246,25 C300,26 318,35 372,34 C420,33 452,27 506,26 C566,25 590,18 648,20 C700,22 728,31 786,33 C838,35 874,29 930,27 C986,25 1010,33 1068,32 C1124,31 1150,22 1208,21 C1262,20 1296,28 1348,27 C1390,26 1414,23 1440,24 L1440,80 L0,80 Z" /></svg>
+    <canvas class="ink-well-water" aria-hidden="true"></canvas>
+    <div class="ink-well-inner">
+      <p class="ink-well-invite">写博客，是为了遇见新朋友。</p>
+      <ul class="about-social-list ink-well-links">
+    <li class="about-social-item sidebar-item"><a class="about-social-link sidebar-link" href="mailto:yu.jiachen@outlook.com" aria-label="Email"><span class="about-social-icon"><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false" width="24" height="24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="4" width="20" height="16" rx="2" /><path d="m22 6-10 7L2 6" /></svg></span><span class="about-social-link-text sidebar-link-text">Email</span></a></li>
+    <li class="about-social-item sidebar-item"><a class="about-social-link sidebar-link" href="https://github.com/yujiachen-y" aria-label="GitHub" target="_blank" rel="noopener noreferrer"><span class="about-social-icon"><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false" width="24" height="24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22" /></svg></span><span class="about-social-link-text sidebar-link-text">GitHub</span></a></li>
+    <li class="about-social-item sidebar-item"><a class="about-social-link sidebar-link" href="https://www.xiaohongshu.com/user/profile/68f9ad5a000000003702ac7c" aria-label="xiaohongshu" target="_blank" rel="noopener noreferrer"><span class="about-social-icon"><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false" width="24" height="24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M2 4h6a4 4 0 0 1 4 4v12a4 4 0 0 0-4-4H2z" /><path d="M22 4h-6a4 4 0 0 0-4 4v12a4 4 0 0 1 4-4h6z" /></svg></span><span class="about-social-link-text sidebar-link-text">xiaohongshu</span></a></li>
+    <li class="about-social-item sidebar-item"><a class="about-social-link sidebar-link" href="/rss.xml" aria-label="RSS" target="_blank" rel="noopener noreferrer"><span class="about-social-icon"><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false" width="24" height="24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M4 11a9 9 0 0 1 9 9" /><path d="M4 4a16 16 0 0 1 16 16" /><circle cx="5" cy="19" r="1.5" fill="currentColor" stroke="none" /></svg></span><span class="about-social-link-text sidebar-link-text">RSS</span></a></li>
+      </ul>
+      <p class="ink-well-colophon">
+        <span>31 篇 · 9.7 万字 · 2018–2026</span>
+        <span>用 Obsidian 写成，由 <a href="https://github.com/yujiachen-y/gen-blog">gen-blog</a> 排印</span>
+        <span>© 2026 Jiachen Yu</span>
+      </p>
+    </div>
+  </div>
+</footer>
     </div>
 
     <script id="page-data" type="application/json">
       {
   "pageType": "post",
   "lang": "zh",
+  "wordCount": 7232,
   "langSwitchUrl": "/transactions-and-consensus-from-ddia/",
   "langSwitcherMode": "toggle",
   "markdownUrl": "/posts/transactions-and-consensus-from-ddia/post.md",

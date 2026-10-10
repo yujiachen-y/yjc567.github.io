@@ -3,6 +3,21 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <script>
+      (function () {
+        var nav = performance.getEntriesByType('navigation')[0];
+        var returning = nav && nav.type === 'back_forward';
+        // Coming back (back/forward) should look exactly as the reader left it.
+        addEventListener('pagereveal', function (event) {
+          var activation = window.navigation && navigation.activation;
+          var traverse = activation ? activation.navigationType === 'traverse' : returning;
+          if (event.viewTransition && traverse) {
+            event.viewTransition.ready.catch(function () {});
+            event.viewTransition.skipTransition();
+          }
+        });
+      })();
+    </script>
     <title>Golang Generics | Jiachen Yu</title>
         <meta name="description" content="Golang Generics" />
     <meta property="og:title" content="Golang Generics | Jiachen Yu" />
@@ -22,6 +37,7 @@
  
     <link rel="stylesheet" href="/styles.css" />
     <link rel="stylesheet" href="/fonts.css" />
+<link rel="modulepreload" href="/app/age.js" />
 <link rel="modulepreload" href="/app/ask-ai-entry.js" />
 <link rel="modulepreload" href="/app/ask-ai-page-actions.js" />
 <link rel="modulepreload" href="/app/ask-ai-page-config.js" />
@@ -31,15 +47,22 @@
 <link rel="modulepreload" href="/app/citation.js" />
 <link rel="modulepreload" href="/app/comments.js" />
 <link rel="modulepreload" href="/app/filters.js" />
+<link rel="modulepreload" href="/app/frame.js" />
 <link rel="modulepreload" href="/app/image-preview-modal.js" />
 <link rel="modulepreload" href="/app/image-preview.js" />
+<link rel="modulepreload" href="/app/ink-bleed.js" />
+<link rel="modulepreload" href="/app/ink-well.js" />
+<link rel="modulepreload" href="/app/keys.js" />
 <link rel="modulepreload" href="/app/language.js" />
 <link rel="modulepreload" href="/app/nav-mobile.js" />
+<link rel="modulepreload" href="/app/reading.js" />
+<link rel="modulepreload" href="/app/search.js" />
 <link rel="modulepreload" href="/app/state.js" />
+<link rel="modulepreload" href="/app/status-bar.js" />
 <link rel="modulepreload" href="/app/theme.js" />
 <link rel="modulepreload" href="/app/toc.js" />
   </head>
-  <body data-page="post">
+  <body data-page="post"  class="aged" style="--age: 0.422; --paper-age: 0.422">
     <div id="root">
       
 <header class="navbar" data-navbar>
@@ -53,6 +76,11 @@
     </div>
     <div class="controls">
       <div class="action-controls">
+        <button class="search-trigger" type="button" data-search-trigger aria-label="Search" aria-haspopup="dialog">
+          <svg class="search-trigger-icon" viewBox="0 0 24 24" aria-hidden="true"><circle cx="11" cy="11" r="6.5" /><path d="m20 20-4.2-4.2" /></svg>
+          <span class="search-trigger-label">Search</span>
+          <kbd class="search-trigger-key" data-search-key>⌘K</kbd>
+        </button>
         <div class="lang-switcher" data-lang-switcher data-lang-switcher-mode="toggle">
           <button class="lang-toggle" type="button" data-lang-toggle>EN</button>
         </div>
@@ -114,36 +142,26 @@
       <div class="toc-panel sidebar-panel-content" data-toc-panel>
         <div class="toc-title sidebar-title">Contents</div>
         <ol class="toc-list sidebar-list">
-      <li class="toc-item sidebar-item toc-level-1"><a class="sidebar-link" href="#terminology">Terminology</a></li>
-      <li class="toc-item sidebar-item toc-level-1"><a class="sidebar-link" href="#overview">Overview</a></li>
-      <li class="toc-item sidebar-item toc-level-1"><a class="sidebar-link" href="#type-constraints">Type Constraints</a></li>
+      <li class="toc-item sidebar-item toc-level-1 toc-top"><a class="sidebar-link" href="#terminology">Terminology</a></li>
+      <li class="toc-item sidebar-item toc-level-1 toc-top"><a class="sidebar-link" href="#overview">Overview</a></li>
+      <li class="toc-item sidebar-item toc-level-1 toc-top"><a class="sidebar-link" href="#type-constraints">Type Constraints</a></li>
       <li class="toc-item sidebar-item toc-level-2"><a class="sidebar-link" href="#underlying-type">Underlying Type</a></li>
       <li class="toc-item sidebar-item toc-level-2"><a class="sidebar-link" href="#difference-between-using-type-parameters-and-using-interfaces-directly">Difference Between Using Type Parameters and Using Interfaces Directly</a></li>
-      <li class="toc-item sidebar-item toc-level-1"><a class="sidebar-link" href="#type-inference">Type Inference</a></li>
+      <li class="toc-item sidebar-item toc-level-1 toc-top"><a class="sidebar-link" href="#type-inference">Type Inference</a></li>
       <li class="toc-item sidebar-item toc-level-2"><a class="sidebar-link" href="#type-unification">Type Unification</a></li>
-      <li class="toc-item sidebar-item toc-level-3"><a class="sidebar-link" href="#description">Description</a></li>
-      <li class="toc-item sidebar-item toc-level-3"><a class="sidebar-link" href="#operations">Operations</a></li>
       <li class="toc-item sidebar-item toc-level-2"><a class="sidebar-link" href="#function-argument-type-inference">Function Argument Type Inference</a></li>
-      <li class="toc-item sidebar-item toc-level-3"><a class="sidebar-link" href="#description-2">Description</a></li>
-      <li class="toc-item sidebar-item toc-level-3"><a class="sidebar-link" href="#implementation">Implementation</a></li>
       <li class="toc-item sidebar-item toc-level-2"><a class="sidebar-link" href="#constraint-type-inference">Constraint Type Inference</a></li>
-      <li class="toc-item sidebar-item toc-level-3"><a class="sidebar-link" href="#description-3">Description</a></li>
-      <li class="toc-item sidebar-item toc-level-3"><a class="sidebar-link" href="#implementation-2">Implementation</a></li>
       <li class="toc-item sidebar-item toc-level-2"><a class="sidebar-link" href="#type-inference-execution-steps">Type Inference Execution Steps</a></li>
-      <li class="toc-item sidebar-item toc-level-1"><a class="sidebar-link" href="#other-topics">Other Topics</a></li>
+      <li class="toc-item sidebar-item toc-level-1 toc-top"><a class="sidebar-link" href="#other-topics">Other Topics</a></li>
       <li class="toc-item sidebar-item toc-level-2"><a class="sidebar-link" href="#the-generics-dilemma">The Generics Dilemma</a></li>
       <li class="toc-item sidebar-item toc-level-2"><a class="sidebar-link" href="#using-t-instead-of-t">Using [T] Instead of &lt;T&gt;</a></li>
       <li class="toc-item sidebar-item toc-level-2"><a class="sidebar-link" href="#why-don-t-go-generics-support-methods">Why Don’t Go Generics Support Methods?</a></li>
       <li class="toc-item sidebar-item toc-level-2"><a class="sidebar-link" href="#supporting-pointer-methods">Supporting Pointer Methods</a></li>
       <li class="toc-item sidebar-item toc-level-2"><a class="sidebar-link" href="#using-generics-in-practice">Using Generics in Practice</a></li>
-      <li class="toc-item sidebar-item toc-level-1"><a class="sidebar-link" href="#type-inference-code">Type Inference Code</a></li>
+      <li class="toc-item sidebar-item toc-level-1 toc-top"><a class="sidebar-link" href="#type-inference-code">Type Inference Code</a></li>
       <li class="toc-item sidebar-item toc-level-2"><a class="sidebar-link" href="#type-unification-2">Type Unification</a></li>
       <li class="toc-item sidebar-item toc-level-2"><a class="sidebar-link" href="#function-argument-type-inference-2">Function Argument Type Inference</a></li>
-      <li class="toc-item sidebar-item toc-level-3"><a class="sidebar-link" href="#typed-arguments-are-directly-unified">Typed Arguments Are Directly Unified</a></li>
-      <li class="toc-item sidebar-item toc-level-3"><a class="sidebar-link" href="#untyped-arguments-are-assigned-constant-default-values-then-unified">Untyped Arguments Are Assigned Constant Default Values Then Unified</a></li>
       <li class="toc-item sidebar-item toc-level-2"><a class="sidebar-link" href="#constraint-type-inference-2">Constraint Type Inference</a></li>
-      <li class="toc-item sidebar-item toc-level-3"><a class="sidebar-link" href="#core-type-processing-for-type-parameters">Core Type Processing for Type Parameters</a></li>
-      <li class="toc-item sidebar-item toc-level-3"><a class="sidebar-link" href="#mapping-simplification">Mapping Simplification</a></li>
         </ol>
       </div>
     </aside>
@@ -152,8 +170,13 @@
             
 
 <div class="article-text-content">
-  <div class="article-date">2023-05-26 · TECH</div>
   <h1 class="article-hero">Golang Generics</h1>
+  <dl class="frontmatter">
+    <div><dt>date</dt><dd><time datetime="2023-05-26">2023-05-26</time></dd></div>
+    <div><dt>tags</dt><dd>#tech</dd></div>
+    <div><dt>length</dt><dd>3,724 words · 16 min</dd></div>
+    <div><dt>lang</dt><dd><span aria-current="true">en</span> · <a href="/golang-generics/zh/" hreflang="zh">zh</a></dd></div>
+  </dl>
   <div class="article-body"><p>Generics let us write reusable, type-safe logic over a family of types. In languages such as Java, C++, and C#, generics have long been a core feature. Go intentionally launched without generics, which kept the language simpler but made some abstractions awkward. As Go evolved, the community introduced generics to better support reusable data structures and common algorithms in production code.</p>
 <p>An example:</p>
 <pre class="hljs"><code><span class="hljs-keyword">import</span> <span class="hljs-string">&quot;golang.org/x/exp/constraints&quot;</span>
@@ -730,12 +753,45 @@ unary_op   = &quot;+&quot; | &quot;-&quot; | &quot;!&quot; | &quot;^&quot; | &qu
           </div>
         </div>
       </main>
+      
+<footer class="site-footer">
+  <div class="footer-paper has-curls">
+    <p class="footer-name" aria-hidden="true"><span>J</span><span>i</span><span>a</span><span>c</span><span>h</span><span>e</span><span>n</span> <span>Y</span><span>u</span></p>
+    <a class="page-curl page-curl-newer" href="/the-permission-model-myth/" style="--next-age: 0.328" aria-label="Previous: The Permission Model Myth">
+      <span class="page-curl-under"><i>← Previous</i><b>The Permission Model Myth</b><small>2024</small></span>
+      <span class="page-curl-flap"></span>
+    </a>
+    <a class="page-curl page-curl-older" href="/software-design-book-notes/" style="--next-age: 0.5" aria-label="Next: Notes on A Philosophy of Software Design">
+      <span class="page-curl-under"><i>Next →</i><b>Notes on A Philosophy of Software Design</b><small>2022</small></span>
+      <span class="page-curl-flap"></span>
+    </a>
+  </div>
+  <div class="ink-well" data-ink-well>
+    <svg class="ink-well-edge" viewBox="0 0 1440 56" preserveAspectRatio="none" aria-hidden="true" focusable="false"><filter id="ink-well-soft"><feGaussianBlur stdDeviation="0.9" /></filter><path filter="url(#ink-well-soft)" d="M0,31 C40,29 70,34 118,32 C170,30 196,24 246,25 C300,26 318,35 372,34 C420,33 452,27 506,26 C566,25 590,18 648,20 C700,22 728,31 786,33 C838,35 874,29 930,27 C986,25 1010,33 1068,32 C1124,31 1150,22 1208,21 C1262,20 1296,28 1348,27 C1390,26 1414,23 1440,24 L1440,80 L0,80 Z" /></svg>
+    <canvas class="ink-well-water" aria-hidden="true"></canvas>
+    <div class="ink-well-inner">
+      <p class="ink-well-invite">I write to meet new friends.</p>
+      <ul class="about-social-list ink-well-links">
+    <li class="about-social-item sidebar-item"><a class="about-social-link sidebar-link" href="mailto:yu.jiachen@outlook.com" aria-label="Email"><span class="about-social-icon"><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false" width="24" height="24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="4" width="20" height="16" rx="2" /><path d="m22 6-10 7L2 6" /></svg></span><span class="about-social-link-text sidebar-link-text">Email</span></a></li>
+    <li class="about-social-item sidebar-item"><a class="about-social-link sidebar-link" href="https://github.com/yujiachen-y" aria-label="GitHub" target="_blank" rel="noopener noreferrer"><span class="about-social-icon"><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false" width="24" height="24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22" /></svg></span><span class="about-social-link-text sidebar-link-text">GitHub</span></a></li>
+    <li class="about-social-item sidebar-item"><a class="about-social-link sidebar-link" href="https://www.xiaohongshu.com/user/profile/68f9ad5a000000003702ac7c" aria-label="xiaohongshu" target="_blank" rel="noopener noreferrer"><span class="about-social-icon"><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false" width="24" height="24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M2 4h6a4 4 0 0 1 4 4v12a4 4 0 0 0-4-4H2z" /><path d="M22 4h-6a4 4 0 0 0-4 4v12a4 4 0 0 1 4-4h6z" /></svg></span><span class="about-social-link-text sidebar-link-text">xiaohongshu</span></a></li>
+    <li class="about-social-item sidebar-item"><a class="about-social-link sidebar-link" href="/rss.xml" aria-label="RSS" target="_blank" rel="noopener noreferrer"><span class="about-social-icon"><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false" width="24" height="24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M4 11a9 9 0 0 1 9 9" /><path d="M4 4a16 16 0 0 1 16 16" /><circle cx="5" cy="19" r="1.5" fill="currentColor" stroke="none" /></svg></span><span class="about-social-link-text sidebar-link-text">RSS</span></a></li>
+      </ul>
+      <p class="ink-well-colophon">
+        <span>15 posts · 25k words · 2018–2026</span>
+        <span>Written in Obsidian, set by <a href="https://github.com/yujiachen-y/gen-blog">gen-blog</a></span>
+        <span>© 2026 Jiachen Yu</span>
+      </p>
+    </div>
+  </div>
+</footer>
     </div>
 
     <script id="page-data" type="application/json">
       {
   "pageType": "post",
   "lang": "en",
+  "wordCount": 3724,
   "langSwitchUrl": "/golang-generics/zh/",
   "langSwitcherMode": "toggle",
   "markdownUrl": "/posts/golang-generics/post.md",
