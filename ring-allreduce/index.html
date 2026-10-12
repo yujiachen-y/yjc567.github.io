@@ -82,7 +82,7 @@
           <kbd class="search-trigger-key" data-search-key>⌘K</kbd>
         </button>
         <div class="lang-switcher" data-lang-switcher data-lang-switcher-mode="toggle">
-          <button class="lang-toggle" type="button" data-lang-toggle>EN</button>
+          <button class="lang-toggle" type="button" data-lang-toggle><span data-lang="en">EN</span><span class="lang-toggle-sep" aria-hidden="true">/</span><span data-lang="zh">中文</span></button>
         </div>
         <div class="theme-switcher" data-theme-switcher data-theme-state="light">
           <button class="theme-trigger" type="button" data-theme-trigger aria-label="Theme mode toggle" aria-pressed="false">
@@ -113,7 +113,7 @@
   <a class="nav-mobile-link" href="/ask-ai/" data-nav-mobile="ask-ai">Ask AI</a>
   <div class="nav-mobile-utilities">
     <div class="lang-switcher" data-lang-switcher data-lang-switcher-mode="toggle">
-      <button class="lang-toggle" type="button" data-lang-toggle>EN</button>
+      <button class="lang-toggle" type="button" data-lang-toggle><span data-lang="en">EN</span><span class="lang-toggle-sep" aria-hidden="true">/</span><span data-lang="zh">中文</span></button>
     </div>
     <div class="theme-switcher" data-theme-switcher data-theme-state="light">
       <button class="theme-trigger" type="button" data-theme-trigger aria-label="Theme mode toggle" aria-pressed="false">
@@ -203,7 +203,13 @@ If it’s still unclear, let’s walk through a 3-GPU example:</p>
 <p><em>Translated by Claude from the Chinese original.</em></p>
 </div>
 </div>
-
+ 
+<nav class="post-nav" aria-label="More posts">
+  <a class="post-nav-link post-nav-newer" href="/transactions-and-consensus-from-ddia/">
+    <span class="post-nav-meta"><span class="post-nav-dir">← Newer</span><time datetime="2021-09-27">2021-09-27</time></span>
+    <span class="post-nav-title">Transactions and Consensus from DDIA</span>
+  </a>
+</nav>
             <section class="citation-section" data-citation-section></section>
             <section class="comment-section" data-comment-section></section>
           </div>
@@ -213,8 +219,8 @@ If it’s still unclear, let’s walk through a 3-GPU example:</p>
 <footer class="site-footer">
   <div class="footer-paper has-curls">
     <p class="footer-name" aria-hidden="true"><span>J</span><span>i</span><span>a</span><span>c</span><span>h</span><span>e</span><span>n</span> <span>Y</span><span>u</span></p>
-    <a class="page-curl page-curl-newer" href="/transactions-and-consensus-from-ddia/" style="--next-age: 0.629" aria-label="Previous: Transactions and Consensus from DDIA">
-      <span class="page-curl-under"><i>← Previous</i><b>Transactions and Consensus from DDIA</b><small>2021</small></span>
+    <a class="page-curl page-curl-newer" href="/transactions-and-consensus-from-ddia/" style="--next-age: 0.63" aria-label="Newer: Transactions and Consensus from DDIA">
+      <span class="page-curl-under"><i>← Newer</i><b>Transactions and Consensus from DDIA</b><small>2021</small></span>
       <span class="page-curl-flap"></span>
     </a>
   </div>
@@ -257,6 +263,10 @@ If it’s still unclear, let’s walk through a 3-GPU example:</p>
     "pageId": "ring-allreduce",
     "pageUrl": "https://www.yujiachen.com/ring-allreduce/",
     "pageTitle": "Introduction to Ring-Allreduce"
+  },
+  "searchPlaceholder": {
+    "en": "Search titles and text, e.g. OpenAI, consensus",
+    "zh": "搜标题或正文，比如 OpenAI、事务、无明"
   }
 }
     </script>

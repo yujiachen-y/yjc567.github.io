@@ -62,7 +62,7 @@
 <link rel="modulepreload" href="/app/theme.js" />
 <link rel="modulepreload" href="/app/toc.js" />
   </head>
-  <body data-page="post"  class="aged" style="--age: 0.5; --paper-age: 0.5">
+  <body data-page="post"  class="aged" style="--age: 0.501; --paper-age: 0.501">
     <div id="root">
       
 <header class="navbar" data-navbar>
@@ -82,7 +82,7 @@
           <kbd class="search-trigger-key" data-search-key>⌘K</kbd>
         </button>
         <div class="lang-switcher" data-lang-switcher data-lang-switcher-mode="toggle">
-          <button class="lang-toggle" type="button" data-lang-toggle>EN</button>
+          <button class="lang-toggle" type="button" data-lang-toggle><span data-lang="en">EN</span><span class="lang-toggle-sep" aria-hidden="true">/</span><span data-lang="zh">中文</span></button>
         </div>
         <div class="theme-switcher" data-theme-switcher data-theme-state="light">
           <button class="theme-trigger" type="button" data-theme-trigger aria-label="Theme mode toggle" aria-pressed="false">
@@ -113,7 +113,7 @@
   <a class="nav-mobile-link" href="/ask-ai/" data-nav-mobile="ask-ai">Ask AI</a>
   <div class="nav-mobile-utilities">
     <div class="lang-switcher" data-lang-switcher data-lang-switcher-mode="toggle">
-      <button class="lang-toggle" type="button" data-lang-toggle>EN</button>
+      <button class="lang-toggle" type="button" data-lang-toggle><span data-lang="en">EN</span><span class="lang-toggle-sep" aria-hidden="true">/</span><span data-lang="zh">中文</span></button>
     </div>
     <div class="theme-switcher" data-theme-switcher data-theme-state="light">
       <button class="theme-trigger" type="button" data-theme-trigger aria-label="Theme mode toggle" aria-pressed="false">
@@ -273,7 +273,17 @@ returnobj                 #re*turncurrentobj
 <p>作者说一般人不这么做的理由通常是代码需要来回几次修改才能最终固定下来，所以等代码写完再写注释最省力。但作者提出反复修改代码的代价太大，提前写注释其实就是一种固定代码结构的方法，如果代码的结构需要反复修改，不如就在注释中反复修改，这样修改成本更小，开发成本反而更低。</p>
 </div>
 </div>
-
+ 
+<nav class="post-nav" aria-label="更多文章">
+  <a class="post-nav-link post-nav-newer" href="/harvard-business-review-excerpts/">
+    <span class="post-nav-meta"><span class="post-nav-dir">← 较新</span><time datetime="2023-01-02">2023-01-02</time></span>
+    <span class="post-nav-title">哈佛商业评论摘抄</span>
+  </a>
+  <a class="post-nav-link post-nav-older" href="/how-to-read-a-book/">
+    <span class="post-nav-meta"><span class="post-nav-dir">较早 →</span><time datetime="2022-08-14">2022-08-14</time></span>
+    <span class="post-nav-title">如何阅读一本书</span>
+  </a>
+</nav>
             <section class="citation-section" data-citation-section></section>
             <section class="comment-section" data-comment-section></section>
           </div>
@@ -283,12 +293,12 @@ returnobj                 #re*turncurrentobj
 <footer class="site-footer">
   <div class="footer-paper has-curls">
     <p class="footer-name" aria-hidden="true"><span>J</span><span>i</span><span>a</span><span>c</span><span>h</span><span>e</span><span>n</span> <span>Y</span><span>u</span></p>
-    <a class="page-curl page-curl-newer" href="/harvard-business-review-excerpts/" style="--next-age: 0.471" aria-label="上一页: 哈佛商业评论摘抄">
-      <span class="page-curl-under"><i>← 上一页</i><b>哈佛商业评论摘抄</b><small>2023</small></span>
+    <a class="page-curl page-curl-newer" href="/harvard-business-review-excerpts/" style="--next-age: 0.472" aria-label="较新: 哈佛商业评论摘抄">
+      <span class="page-curl-under"><i>← 较新</i><b>哈佛商业评论摘抄</b><small>2023</small></span>
       <span class="page-curl-flap"></span>
     </a>
-    <a class="page-curl page-curl-older" href="/how-to-read-a-book/" style="--next-age: 0.52" aria-label="下一页: 如何阅读一本书">
-      <span class="page-curl-under"><i>下一页 →</i><b>如何阅读一本书</b><small>2022</small></span>
+    <a class="page-curl page-curl-older" href="/how-to-read-a-book/" style="--next-age: 0.52" aria-label="较早: 如何阅读一本书">
+      <span class="page-curl-under"><i>较早 →</i><b>如何阅读一本书</b><small>2022</small></span>
       <span class="page-curl-flap"></span>
     </a>
   </div>
@@ -331,6 +341,10 @@ returnobj                 #re*turncurrentobj
     "pageId": "software-design-book-notes",
     "pageUrl": "https://www.yujiachen.com/software-design-book-notes/zh/",
     "pageTitle": "Software Design Book 小记"
+  },
+  "searchPlaceholder": {
+    "en": "Search titles and text, e.g. OpenAI, consensus",
+    "zh": "搜标题或正文，比如 OpenAI、事务、无明"
   }
 }
     </script>

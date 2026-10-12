@@ -7,7 +7,12 @@
       (function () {
         var nav = performance.getEntriesByType('navigation')[0];
         var returning = nav && nav.type === 'back_forward';
-        if (!returning && !matchMedia('(prefers-reduced-motion: reduce)').matches) {
+        // The ink soaks in once per visit; later trips to the list show it settled.
+        var inked = false;
+        try {
+          inked = sessionStorage.getItem('gen-blog-inked') === '1';
+        } catch (error) {}
+        if (!returning && !inked && !matchMedia('(prefers-reduced-motion: reduce)').matches) {
           document.documentElement.classList.add('ink-pending');
         }
         // Coming back (back/forward) should look exactly as the reader left it.
@@ -64,7 +69,7 @@
 <link rel="modulepreload" href="/app/theme.js" />
 <link rel="modulepreload" href="/app/toc.js" />
   </head>
-  <body data-page="list"  style="--paper-from: 0.058; --paper-to: 1">
+  <body data-page="list"  style="--paper-from: 0.059; --paper-to: 1">
     <svg class="ink-defs" aria-hidden="true" focusable="false">
       <defs>
         <filter id="ink-wash" x="-20%" y="-20%" width="140%" height="140%">
@@ -97,7 +102,7 @@
           <kbd class="search-trigger-key" data-search-key>⌘K</kbd>
         </button>
         <div class="lang-switcher" data-lang-switcher data-lang-switcher-mode="toggle">
-          <button class="lang-toggle" type="button" data-lang-toggle>EN</button>
+          <button class="lang-toggle" type="button" data-lang-toggle><span data-lang="en">EN</span><span class="lang-toggle-sep" aria-hidden="true">/</span><span data-lang="zh">中文</span></button>
         </div>
         <div class="theme-switcher" data-theme-switcher data-theme-state="light">
           <button class="theme-trigger" type="button" data-theme-trigger aria-label="Theme mode toggle" aria-pressed="false">
@@ -128,7 +133,7 @@
   <a class="nav-mobile-link" href="/ask-ai/" data-nav-mobile="ask-ai">Ask AI</a>
   <div class="nav-mobile-utilities">
     <div class="lang-switcher" data-lang-switcher data-lang-switcher-mode="toggle">
-      <button class="lang-toggle" type="button" data-lang-toggle>EN</button>
+      <button class="lang-toggle" type="button" data-lang-toggle><span data-lang="en">EN</span><span class="lang-toggle-sep" aria-hidden="true">/</span><span data-lang="zh">中文</span></button>
     </div>
     <div class="theme-switcher" data-theme-switcher data-theme-state="light">
       <button class="theme-trigger" type="button" data-theme-trigger aria-label="Theme mode toggle" aria-pressed="false">
@@ -222,7 +227,7 @@
 </div>
 </section>
 
-<section class="year-section aged" style="--age: 0.284">
+<section class="year-section aged" style="--age: 0.285">
   <h2 class="year-heading">2024</h2>
   <div class="year-posts">
 <a class="card" href="/new-things-vs-old-things/zh/">
@@ -263,7 +268,7 @@
 </div>
 </section>
 
-<section class="year-section aged" style="--age: 0.41">
+<section class="year-section aged" style="--age: 0.411">
   <h2 class="year-heading">2023</h2>
   <div class="year-posts">
 <a class="card" href="/maximizing-llm-performance/">
@@ -431,7 +436,7 @@
 </div>
 </section>
 
-<section class="year-section aged" style="--age: 0.784">
+<section class="year-section aged" style="--age: 0.785">
   <h2 class="year-heading">2020</h2>
   <div class="year-posts">
 <a class="card" href="/2020-summary/">
@@ -445,7 +450,7 @@
 </div>
 </section>
 
-<section class="year-section aged" style="--age: 0.91">
+<section class="year-section aged" style="--age: 0.911">
   <h2 class="year-heading">2019</h2>
   <div class="year-posts">
 <a class="card" href="/2019-year-in-review/">
@@ -533,7 +538,7 @@
         "Essays"
       ],
       "categoryColorIndex": 0,
-      "wordCount": 5236,
+      "wordCount": 5220,
       "coverImage": null,
       "url": "/buddhism-wuming/zh/"
     },
@@ -563,7 +568,7 @@
         "Tech"
       ],
       "categoryColorIndex": 1,
-      "wordCount": 1319,
+      "wordCount": 1309,
       "coverImage": null,
       "url": "/bridging-the-gap-how-engineers-and-pms-ship-winning-llm-features-together/zh/"
     },
@@ -987,7 +992,11 @@
       "coverImage": null,
       "url": "/ring-allreduce/zh/"
     }
-  ]
+  ],
+  "searchPlaceholder": {
+    "en": "Search titles and text, e.g. OpenAI, consensus",
+    "zh": "搜标题或正文，比如 OpenAI、事务、无明"
+  }
 }
     </script>
     <script type="module" src="/app.js"></script>

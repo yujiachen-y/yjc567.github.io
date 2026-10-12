@@ -62,7 +62,7 @@
 <link rel="modulepreload" href="/app/theme.js" />
 <link rel="modulepreload" href="/app/toc.js" />
   </head>
-  <body data-page="post"  class="aged" style="--age: 0.555; --paper-age: 0.555">
+  <body data-page="post"  class="aged" style="--age: 0.556; --paper-age: 0.556">
     <div id="root">
       
 <header class="navbar" data-navbar>
@@ -82,7 +82,7 @@
           <kbd class="search-trigger-key" data-search-key>⌘K</kbd>
         </button>
         <div class="lang-switcher" data-lang-switcher data-lang-switcher-mode="toggle">
-          <button class="lang-toggle" type="button" data-lang-toggle>EN</button>
+          <button class="lang-toggle" type="button" data-lang-toggle><span data-lang="en">EN</span><span class="lang-toggle-sep" aria-hidden="true">/</span><span data-lang="zh">中文</span></button>
         </div>
         <div class="theme-switcher" data-theme-switcher data-theme-state="light">
           <button class="theme-trigger" type="button" data-theme-trigger aria-label="Theme mode toggle" aria-pressed="false">
@@ -113,7 +113,7 @@
   <a class="nav-mobile-link" href="/ask-ai/" data-nav-mobile="ask-ai">Ask AI</a>
   <div class="nav-mobile-utilities">
     <div class="lang-switcher" data-lang-switcher data-lang-switcher-mode="toggle">
-      <button class="lang-toggle" type="button" data-lang-toggle>EN</button>
+      <button class="lang-toggle" type="button" data-lang-toggle><span data-lang="en">EN</span><span class="lang-toggle-sep" aria-hidden="true">/</span><span data-lang="zh">中文</span></button>
     </div>
     <div class="theme-switcher" data-theme-switcher data-theme-state="light">
       <button class="theme-trigger" type="button" data-theme-trigger aria-label="Theme mode toggle" aria-pressed="false">
@@ -154,7 +154,17 @@
 <p>拥抱更多的不确定性吧，拥抱真正的热爱，用语言去重新组织生活，热爱代码，热爱编程，热爱结构化和设计模式，但不要去成为一个所谓的程序员。</p>
 </div>
 </div>
-
+ 
+<nav class="post-nav" aria-label="更多文章">
+  <a class="post-nav-link post-nav-newer" href="/the-missing-semester-of-your-cs-education/">
+    <span class="post-nav-meta"><span class="post-nav-dir">← 较新</span><time datetime="2022-06-14">2022-06-14</time></span>
+    <span class="post-nav-title">编程以外的编程知识</span>
+  </a>
+  <a class="post-nav-link post-nav-older" href="/2021-year-in-review/">
+    <span class="post-nav-meta"><span class="post-nav-dir">较早 →</span><time datetime="2021-12-28">2021-12-28</time></span>
+    <span class="post-nav-title">2021 年小结</span>
+  </a>
+</nav>
             <section class="citation-section" data-citation-section></section>
             <section class="comment-section" data-comment-section></section>
           </div>
@@ -164,12 +174,12 @@
 <footer class="site-footer">
   <div class="footer-paper has-curls">
     <p class="footer-name" aria-hidden="true"><span>J</span><span>i</span><span>a</span><span>c</span><span>h</span><span>e</span><span>n</span> <span>Y</span><span>u</span></p>
-    <a class="page-curl page-curl-newer" href="/the-missing-semester-of-your-cs-education/" style="--next-age: 0.54" aria-label="上一页: 编程以外的编程知识">
-      <span class="page-curl-under"><i>← 上一页</i><b>编程以外的编程知识</b><small>2022</small></span>
+    <a class="page-curl page-curl-newer" href="/the-missing-semester-of-your-cs-education/" style="--next-age: 0.541" aria-label="较新: 编程以外的编程知识">
+      <span class="page-curl-under"><i>← 较新</i><b>编程以外的编程知识</b><small>2022</small></span>
       <span class="page-curl-flap"></span>
     </a>
-    <a class="page-curl page-curl-older" href="/2021-year-in-review/" style="--next-age: 0.598" aria-label="下一页: 2021 年小结">
-      <span class="page-curl-under"><i>下一页 →</i><b>2021 年小结</b><small>2021</small></span>
+    <a class="page-curl page-curl-older" href="/2021-year-in-review/" style="--next-age: 0.599" aria-label="较早: 2021 年小结">
+      <span class="page-curl-under"><i>较早 →</i><b>2021 年小结</b><small>2021</small></span>
       <span class="page-curl-flap"></span>
     </a>
   </div>
@@ -212,6 +222,10 @@
     "pageId": "dont-be-a-programmer",
     "pageUrl": "https://www.yujiachen.com/dont-be-a-programmer/zh/",
     "pageTitle": "不要成为一个程序员"
+  },
+  "searchPlaceholder": {
+    "en": "Search titles and text, e.g. OpenAI, consensus",
+    "zh": "搜标题或正文，比如 OpenAI、事务、无明"
   }
 }
     </script>

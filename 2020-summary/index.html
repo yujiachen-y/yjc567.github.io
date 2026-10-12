@@ -81,7 +81,7 @@
           <kbd class="search-trigger-key" data-search-key>⌘K</kbd>
         </button>
         <div class="lang-switcher" data-lang-switcher data-lang-switcher-mode="hidden">
-          <button class="lang-toggle" type="button" data-lang-toggle>EN</button>
+          <button class="lang-toggle" type="button" data-lang-toggle><span data-lang="en">EN</span><span class="lang-toggle-sep" aria-hidden="true">/</span><span data-lang="zh">中文</span></button>
         </div>
         <div class="theme-switcher" data-theme-switcher data-theme-state="light">
           <button class="theme-trigger" type="button" data-theme-trigger aria-label="Theme mode toggle" aria-pressed="false">
@@ -112,7 +112,7 @@
   <a class="nav-mobile-link" href="/ask-ai/" data-nav-mobile="ask-ai">Ask AI</a>
   <div class="nav-mobile-utilities">
     <div class="lang-switcher" data-lang-switcher data-lang-switcher-mode="hidden">
-      <button class="lang-toggle" type="button" data-lang-toggle>EN</button>
+      <button class="lang-toggle" type="button" data-lang-toggle><span data-lang="en">EN</span><span class="lang-toggle-sep" aria-hidden="true">/</span><span data-lang="zh">中文</span></button>
     </div>
     <div class="theme-switcher" data-theme-switcher data-theme-state="light">
       <button class="theme-trigger" type="button" data-theme-trigger aria-label="Theme mode toggle" aria-pressed="false">
@@ -246,7 +246,17 @@
 感谢单向街对本文的帮助 : )</p>
 </div>
 </div>
-
+ 
+<nav class="post-nav" aria-label="更多文章">
+  <a class="post-nav-link post-nav-newer" href="/how-to-disagree/">
+    <span class="post-nav-meta"><span class="post-nav-dir">← 较新</span><time datetime="2021-04-06">2021-04-06</time></span>
+    <span class="post-nav-title">如何反对</span>
+  </a>
+  <a class="post-nav-link post-nav-older" href="/2019-year-in-review/">
+    <span class="post-nav-meta"><span class="post-nav-dir">较早 →</span><time datetime="2019-12-31">2019-12-31</time></span>
+    <span class="post-nav-title">2019 年小结</span>
+  </a>
+</nav>
             <section class="citation-section" data-citation-section></section>
             <section class="comment-section" data-comment-section></section>
           </div>
@@ -256,12 +266,12 @@
 <footer class="site-footer">
   <div class="footer-paper has-curls">
     <p class="footer-name" aria-hidden="true"><span>J</span><span>i</span><span>a</span><span>c</span><span>h</span><span>e</span><span>n</span> <span>Y</span><span>u</span></p>
-    <a class="page-curl page-curl-newer" href="/how-to-disagree/" style="--next-age: 0.689" aria-label="上一页: 如何反对">
-      <span class="page-curl-under"><i>← 上一页</i><b>如何反对</b><small>2021</small></span>
+    <a class="page-curl page-curl-newer" href="/how-to-disagree/" style="--next-age: 0.69" aria-label="较新: 如何反对">
+      <span class="page-curl-under"><i>← 较新</i><b>如何反对</b><small>2021</small></span>
       <span class="page-curl-flap"></span>
     </a>
-    <a class="page-curl page-curl-older" href="/2019-year-in-review/" style="--next-age: 0.847" aria-label="下一页: 2019 年小结">
-      <span class="page-curl-under"><i>下一页 →</i><b>2019 年小结</b><small>2019</small></span>
+    <a class="page-curl page-curl-older" href="/2019-year-in-review/" style="--next-age: 0.848" aria-label="较早: 2019 年小结">
+      <span class="page-curl-under"><i>较早 →</i><b>2019 年小结</b><small>2019</small></span>
       <span class="page-curl-flap"></span>
     </a>
   </div>
@@ -304,6 +314,10 @@
     "pageId": "2020-summary",
     "pageUrl": "https://www.yujiachen.com/2020-summary/",
     "pageTitle": "特别的一年——2020 小结"
+  },
+  "searchPlaceholder": {
+    "en": "Search titles and text, e.g. OpenAI, consensus",
+    "zh": "搜标题或正文，比如 OpenAI、事务、无明"
   }
 }
     </script>

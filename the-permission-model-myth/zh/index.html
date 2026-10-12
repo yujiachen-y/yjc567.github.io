@@ -62,7 +62,7 @@
 <link rel="modulepreload" href="/app/theme.js" />
 <link rel="modulepreload" href="/app/toc.js" />
   </head>
-  <body data-page="post"  class="aged" style="--age: 0.328; --paper-age: 0.328">
+  <body data-page="post"  class="aged" style="--age: 0.329; --paper-age: 0.329">
     <div id="root">
       
 <header class="navbar" data-navbar>
@@ -82,7 +82,7 @@
           <kbd class="search-trigger-key" data-search-key>⌘K</kbd>
         </button>
         <div class="lang-switcher" data-lang-switcher data-lang-switcher-mode="toggle">
-          <button class="lang-toggle" type="button" data-lang-toggle>EN</button>
+          <button class="lang-toggle" type="button" data-lang-toggle><span data-lang="en">EN</span><span class="lang-toggle-sep" aria-hidden="true">/</span><span data-lang="zh">中文</span></button>
         </div>
         <div class="theme-switcher" data-theme-switcher data-theme-state="light">
           <button class="theme-trigger" type="button" data-theme-trigger aria-label="Theme mode toggle" aria-pressed="false">
@@ -113,7 +113,7 @@
   <a class="nav-mobile-link" href="/ask-ai/" data-nav-mobile="ask-ai">Ask AI</a>
   <div class="nav-mobile-utilities">
     <div class="lang-switcher" data-lang-switcher data-lang-switcher-mode="toggle">
-      <button class="lang-toggle" type="button" data-lang-toggle>EN</button>
+      <button class="lang-toggle" type="button" data-lang-toggle><span data-lang="en">EN</span><span class="lang-toggle-sep" aria-hidden="true">/</span><span data-lang="zh">中文</span></button>
     </div>
     <div class="theme-switcher" data-theme-switcher data-theme-state="light">
       <button class="theme-trigger" type="button" data-theme-trigger aria-label="Theme mode toggle" aria-pressed="false">
@@ -142,20 +142,20 @@
       <div class="toc-panel sidebar-panel-content" data-toc-panel>
         <div class="toc-title sidebar-title">目录</div>
         <ol class="toc-list sidebar-list">
-      <li class="toc-item sidebar-item toc-level-1 toc-top"><a class="sidebar-link" href="#基本概念">基本概念</a></li>
-      <li class="toc-item sidebar-item toc-level-1 toc-top"><a class="sidebar-link" href="#使用场景">使用场景</a></li>
-      <li class="toc-item sidebar-item toc-level-2"><a class="sidebar-link" href="#文件系统权限">文件系统权限</a></li>
-      <li class="toc-item sidebar-item toc-level-2"><a class="sidebar-link" href="#数据库权限">数据库权限</a></li>
-      <li class="toc-item sidebar-item toc-level-1 toc-top"><a class="sidebar-link" href="#访问控制模型">访问控制模型</a></li>
-      <li class="toc-item sidebar-item toc-level-2"><a class="sidebar-link" href="#dac">DAC</a></li>
-      <li class="toc-item sidebar-item toc-level-2"><a class="sidebar-link" href="#rbac">RBAC</a></li>
-      <li class="toc-item sidebar-item toc-level-2"><a class="sidebar-link" href="#abac">ABAC</a></li>
-      <li class="toc-item sidebar-item toc-level-2"><a class="sidebar-link" href="#现实案例">现实案例</a></li>
-      <li class="toc-item sidebar-item toc-level-1 toc-top"><a class="sidebar-link" href="#业界解决方案">业界解决方案</a></li>
-      <li class="toc-item sidebar-item toc-level-2"><a class="sidebar-link" href="#casbin">Casbin</a></li>
-      <li class="toc-item sidebar-item toc-level-2"><a class="sidebar-link" href="#zanzibar">Zanzibar</a></li>
-      <li class="toc-item sidebar-item toc-level-1 toc-top"><a class="sidebar-link" href="#抽象的难点">抽象的难点</a></li>
-      <li class="toc-item sidebar-item toc-level-2"><a class="sidebar-link" href="#拓展-零信任网络模型">拓展：零信任网络模型</a></li>
+      <li class="toc-item sidebar-item toc-level-2 toc-top"><a class="sidebar-link" href="#基本概念">基本概念</a></li>
+      <li class="toc-item sidebar-item toc-level-2 toc-top"><a class="sidebar-link" href="#使用场景">使用场景</a></li>
+      <li class="toc-item sidebar-item toc-level-3"><a class="sidebar-link" href="#文件系统权限">文件系统权限</a></li>
+      <li class="toc-item sidebar-item toc-level-3"><a class="sidebar-link" href="#数据库权限">数据库权限</a></li>
+      <li class="toc-item sidebar-item toc-level-2 toc-top"><a class="sidebar-link" href="#访问控制模型">访问控制模型</a></li>
+      <li class="toc-item sidebar-item toc-level-3"><a class="sidebar-link" href="#dac">DAC</a></li>
+      <li class="toc-item sidebar-item toc-level-3"><a class="sidebar-link" href="#rbac">RBAC</a></li>
+      <li class="toc-item sidebar-item toc-level-3"><a class="sidebar-link" href="#abac">ABAC</a></li>
+      <li class="toc-item sidebar-item toc-level-3"><a class="sidebar-link" href="#现实案例">现实案例</a></li>
+      <li class="toc-item sidebar-item toc-level-2 toc-top"><a class="sidebar-link" href="#业界解决方案">业界解决方案</a></li>
+      <li class="toc-item sidebar-item toc-level-3"><a class="sidebar-link" href="#casbin">Casbin</a></li>
+      <li class="toc-item sidebar-item toc-level-3"><a class="sidebar-link" href="#zanzibar">Zanzibar</a></li>
+      <li class="toc-item sidebar-item toc-level-2 toc-top"><a class="sidebar-link" href="#抽象的难点">抽象的难点</a></li>
+      <li class="toc-item sidebar-item toc-level-3"><a class="sidebar-link" href="#拓展-零信任网络模型">拓展：零信任网络模型</a></li>
         </ol>
       </div>
     </aside>
@@ -171,16 +171,16 @@
     <div><dt>length</dt><dd>3,830 字 · 10 分钟</dd></div>
     <div><dt>lang</dt><dd><a href="/the-permission-model-myth/" hreflang="en">en</a> · <span aria-current="true">zh</span></dd></div>
   </dl>
-  <div class="article-body"><h1 id="基本概念">基本概念</h1>
+  <div class="article-body"><h2 id="基本概念">基本概念</h2>
 <p>随着上下文不同，“权限”所指代的东西也是不同的，本文讨论的是在计算机领域下应用的“授权”（authorization），与之关联的几个概念有：</p>
 <ul>
 <li>“验证”（authentication）：简称 AuthN，是指确认某人或某事的身份的过程。在计算机安全领域，这通常涉及到确认一个用户或系统是否真的是它声称的那个实体。验证可以通过多种方式进行，包括密码、生物识别技术、智能卡或数字证书等。验证是访问控制过程的第一步，只有在成功验证身份后，系统才会进一步考虑授予访问权限。其涉及到的技术协议和框架有：OAuth, OpenID 及 SAML 等。</li>
 <li>“授权”（authorization）：简称 AuthZ，在用户的身份得到验证后，系统需要决定该用户能够访问哪些资源，以及可以执行哪些操作。授权是一个定义和管理访问权限的过程，它决定了验证过的用户可以查看、使用、修改或删除哪些数据或资源，旨在确保只有得到适当权限的用户才能访问特定的资源或数据。其涉及到的授权模型有基于角色的访问控制（RBAC）、基于属性的访问控制（ABAC） 等。</li>
 <li>“权限控制”（access control）：是一种更广泛的概念，涵盖了验证和授权的过程，是指限制对系统和数据的访问和使用的各种方法和技术的总称。</li>
 </ul>
-<h1 id="使用场景">使用场景</h1>
+<h2 id="使用场景">使用场景</h2>
 <p>下面列举一些研发场景中会遇到的权限场景。</p>
-<h2 id="文件系统权限">文件系统权限</h2>
+<h3 id="文件系统权限">文件系统权限</h3>
 <p>
 <picture>
   <source srcset="/assets/posts/the-permission-model-myth/zh/image_1.webp" type="image/webp" />
@@ -205,7 +205,7 @@
 </picture>
 截图来自 macOS 14.2 manual</li>
 </ul>
-<h2 id="数据库权限">数据库权限</h2>
+<h3 id="数据库权限">数据库权限</h3>
 <p>数据库系统提供一系列的权限或权限组合，使数据库管理员可以为用户或用户组分配、审计权限。</p>
 <p>下面的一系列截图是一组授权和查看权限的例子：
 
@@ -231,15 +231,15 @@
 <li>MySQL 的权限控制是有多个层级的，一个用户有全局范围的权限，也有针对具体表范围的权限。</li>
 <li>MySQL 的权限控制也是<code>（用户，允许 / 拒绝，操作）</code> 的三元组。</li>
 </ol>
-<h1 id="访问控制模型">访问控制模型</h1>
+<h2 id="访问控制模型">访问控制模型</h2>
 <p>业界常用的访问控制模型有多种，如：自主访问控制（Discretionary Access Control, DAC）、强制访问控制（Mandatory Access Control, MAC）、基于角色的访问控制（Role-Based Access Control, RBAC）、基于属性的访问控制（Attribute-Based Access Control, ABAC）、基于策略的访问控制（Policy-Based Access Control, PBAC）。</p>
 <blockquote class="callout callout-note">
 <p>💡 请注意：虽然相关的访问控制模型算是一种共识，但目前业界并没有统一的标准去判定一个现实中的方案属于哪一个访问控制模型，因此下面的说明主要是起到概念说明的作用，而不是做明确的定义和区分。</p>
 </blockquote>
-<h2 id="dac">DAC</h2>
+<h3 id="dac">DAC</h3>
 <p>DAC 是一种最基本的访问控制模型，允许资源的所有者对资源的访问进行控制。在 DAC 模型中，用户可以根据自己的判断将访问权限分配给其他用户。</p>
 <p>上面举的文件系统权限和数据库权限的例子，其实都是 DAC 系统，直接指定了“谁可以做什么操作”，如文件系统的 <code>User 1 allow read</code> ，数据库的 <code>GRANT SELECT ON lark.message TO 'admin'@'%';</code>。</p>
-<h2 id="rbac">RBAC</h2>
+<h3 id="rbac">RBAC</h3>
 <p>RBAC 是一种以用户的角色为基础进行访问控制的模型，它允许系统管理员根据组织的职能和职责将用户分配到不同的角色中，每个角色都有一组预定义的访问权限。RBAC 简化了权限管理，因为管理员只需管理角色与权限的关系，而不是每个用户的权限。</p>
 <p>下面的这篇文章介绍了如何在 SAP 中配置 RBAC：</p>
 <p><a href="https://community.sap.com/t5/human-capital-management-blogs-by-sap/sap-commissions-implementing-authorization-with-user-roles-rbac/ba-p/13554527">SAP Commissions - Implementing Authorization With User Roles (RBAC)</a></p>
@@ -258,11 +258,11 @@
 <li><strong>性能问题</strong>：在拥有大量用户、角色和权限规则的大型系统中，权限检查可能会导致性能问题。</li>
 <li><strong>管理挑战</strong>：随着组织的发展，管理和更新角色及其权限可能变得复杂，尤其是在缺乏自动化工具支持的情况下。</li>
 </ol>
-<h2 id="abac">ABAC</h2>
+<h3 id="abac">ABAC</h3>
 <p>ABAC 是一种更为灵活和动态的访问控制模型，它根据访问请求者的属性（如年龄、职位等）、资源的属性和环境条件（如时间）来决定访问权限。ABAC 提供了更细粒度的访问控制，支持更复杂的安全策略，适用于需要高度定制化访问控制的场景。</p>
 <p>ABAC 相对于 RBAC 的优点，主要在于 RBAC 的授权基于用户组，一个组内的成员权限互通，用一个医疗系统举例，如果我们希望一个护士只能看见 ta 负责的病人病历，除非给每个护士创建一个用户组，不然无法用 RBAC 实现。而 RBAC 只需要 <code>病历负责护士 == 当前用户</code> 这样一个规则就可以实现。</p>
 <p>一种现实中的实践是，用 RBAC 分发规则组，及一个用户需要哪些授权规则，到具体的授权规则上，则是 ABAC，即考虑用户和实体的属性来决定是否授权。</p>
-<h2 id="现实案例">现实案例</h2>
+<h3 id="现实案例">现实案例</h3>
 <p><a href="https://www.youtube.com/watch?v=ZUmzELJ2UcM&amp;list=PLnobS_RgN7JZxK1wjUvQ84jMFqRZoJXbD&amp;index=1">https://www.youtube.com/watch?v=ZUmzELJ2UcM&amp;list=PLnobS_RgN7JZxK1wjUvQ84jMFqRZoJXbD&amp;index=1</a></p>
 <p>
 <picture>
@@ -278,7 +278,7 @@
 <li>用户权限组决定能否访问一个记录上的具体字段。</li>
 </ol>
 <p>可以看到不同的权限访问控制模型存在于系统的不同层级，这也是权限系统的一个抽象难点。</p>
-<h1 id="业界解决方案">业界解决方案</h1>
+<h2 id="业界解决方案">业界解决方案</h2>
 <p>早期业界的很多解决方案并不会刻意区分认证（AuthN）和授权（AuthZ），在我自己的观察中，RBAC 通常是这类框架首要支持的访问控制模型，因为认证是围绕着用户进行的，那么之后的访问控制围绕着用户展开也在情理之中。</p>
 <ul>
 <li><a href="https://github.com/spring-projects/spring-security">Spring Security</a>：没有控制面板、提供了各类 API，但不支持配置文件。</li>
@@ -289,7 +289,7 @@
 <li><a href="https://github.com/casbin/casbin">Casbin</a>：开源，定位是一个 SDK，支持各类访问控制模型，对现存的各类系统都有集成，通过配置定义权限。</li>
 <li><a href="https://research.google/pubs/zanzibar-googles-consistent-global-authorization-system/">Zanzibar</a>：闭源，定位是一个鉴权服务，也支持各类访问各类控制模型，控制粒度更细，权限通过接口调用配置。</li>
 </ul>
-<h2 id="casbin">Casbin</h2>
+<h3 id="casbin">Casbin</h3>
 <p>下面给一个 Casbin 创建 RBAC 的例子。</p>
 <p>model 文件：</p>
 <pre class="hljs"><code>[<span class="hljs-string">request_definition</span>]
@@ -352,11 +352,11 @@
   <img src="/assets/posts/the-permission-model-myth/zh/image_11.png" alt="" class="article-image" width="1080" height="583" loading="lazy" />
 </picture>
 </p>
-<h2 id="zanzibar">Zanzibar</h2>
+<h3 id="zanzibar">Zanzibar</h3>
 <p>关于 Zanzibar 的具体介绍本文略过，下面的网址给出了 Zanzibar 的具体介绍。</p>
 <p><a href="https://zanzibar.academy/">Zanzibar: A Global Authorization System - Presented by Auth0</a></p>
 <p>值得一提的是 Zanzibar 作为一个独立服务，与 Casbin 作为 SDK 的不同点，独立服务有自己的存储来记录关系数据，也需要自己进行缓存、数据更新冲突等问题，Zanzibar 相比于 Casbin 肯定是一个更成熟的方案，但也意味着更多的运维成本，以及和 SDK 相比，对现有系统可能会有更多的兼容性问题。</p>
-<h1 id="抽象的难点">抽象的难点</h1>
+<h2 id="抽象的难点">抽象的难点</h2>
 <p>权限系统没有像TCP/IP这样的通用标准，主要是因为权限管理的需求和实现方式在不同的应用和环境中差异很大。TCP/IP协议是网络通信的基础，为不同类型的网络提供了一个统一的通信标准，其设计目的是为了实现网络间的互连互通。而权限系统则涉及到更多层面的因素，包括但不限于业务逻辑、组织结构、安全要求等，这些因素在不同的应用场景中会有很大的不同。下面列出了几个为什么权限系统难以有通用标准的原因：</p>
 <ol>
 <li><strong>多样性的业务需求</strong>：不同类型的应用有着不同的业务模型和安全需求。例如，金融行业的权限管理系统需要考虑到复杂的合规性和审计要求，而社交媒体平台的权限系统可能更关注用户隐私和内容管理。这种多样性使得难以制定一个覆盖所有场景的统一标准。</li>
@@ -366,7 +366,7 @@
 <li><strong>标准化的难度</strong>：虽然有些权限管理的概念（如基于角色的访问控制RBAC）被广泛接受和使用，但将这些概念扩展到一个通用的、覆盖所有可能用例的标准是非常困难的。尝试制定这样的标准可能会导致过于复杂和笨重，难以适应快速变化的技术和业务需求。</li>
 </ol>
 <p>因此，虽然在某些方面（如认证和加密技术）可以有一定程度的标准化，权限管理系统的具体实现往往需要根据特定的应用场景和需求来定制。</p>
-<h2 id="拓展-零信任网络模型">拓展：零信任网络模型</h2>
+<h3 id="拓展-零信任网络模型">拓展：零信任网络模型</h3>
 <p>零信任网络模型更偏向于身份认知（即 AuthN）的内容，但是其许多思想与 AuthZ 的设计息息相关，因此本文最后罗列一下零信任网络模型的知识：</p>
 <p>零信任（Zero Trust）是一种网络安全模型，其核心原则是“永不信任，始终验证”。这种模型要求对所有试图访问网络资源的用户和设备进行严格的身份验证，无论它们位于网络的内部还是外部。零信任模型的出发点是不再假设网络内部是安全的，而是认为威胁可能来自任何地方，因此需要对每个访问请求进行验证和授权。</p>
 <p>零信任模型的核心原则包括：</p>
@@ -380,7 +380,17 @@
 </ol>
 </div>
 </div>
-
+ 
+<nav class="post-nav" aria-label="更多文章">
+  <a class="post-nav-link post-nav-newer" href="/shape-your-mac/zh/">
+    <span class="post-nav-meta"><span class="post-nav-dir">← 较新</span><time datetime="2024-07-14">2024-07-14</time></span>
+    <span class="post-nav-title">打造你的 Mac</span>
+  </a>
+  <a class="post-nav-link post-nav-older" href="/maximizing-llm-performance/">
+    <span class="post-nav-meta"><span class="post-nav-dir">较早 →</span><time datetime="2023-11-26">2023-11-26</time></span>
+    <span class="post-nav-title">最大化 LLM 性能的技术概览</span>
+  </a>
+</nav>
             <section class="citation-section" data-citation-section></section>
             <section class="comment-section" data-comment-section></section>
           </div>
@@ -390,12 +400,12 @@
 <footer class="site-footer">
   <div class="footer-paper has-curls">
     <p class="footer-name" aria-hidden="true"><span>J</span><span>i</span><span>a</span><span>c</span><span>h</span><span>e</span><span>n</span> <span>Y</span><span>u</span></p>
-    <a class="page-curl page-curl-newer" href="/shape-your-mac/zh/" style="--next-age: 0.28" aria-label="上一页: 打造你的 Mac">
-      <span class="page-curl-under"><i>← 上一页</i><b>打造你的 Mac</b><small>2024</small></span>
+    <a class="page-curl page-curl-newer" href="/shape-your-mac/zh/" style="--next-age: 0.281" aria-label="较新: 打造你的 Mac">
+      <span class="page-curl-under"><i>← 较新</i><b>打造你的 Mac</b><small>2024</small></span>
       <span class="page-curl-flap"></span>
     </a>
-    <a class="page-curl page-curl-older" href="/maximizing-llm-performance/" style="--next-age: 0.359" aria-label="下一页: 最大化 LLM 性能的技术概览">
-      <span class="page-curl-under"><i>下一页 →</i><b>最大化 LLM 性能的技术概览</b><small>2023</small></span>
+    <a class="page-curl page-curl-older" href="/maximizing-llm-performance/" style="--next-age: 0.36" aria-label="较早: 最大化 LLM 性能的技术概览">
+      <span class="page-curl-under"><i>较早 →</i><b>最大化 LLM 性能的技术概览</b><small>2023</small></span>
       <span class="page-curl-flap"></span>
     </a>
   </div>
@@ -438,6 +448,10 @@
     "pageId": "the-permission-model-myth",
     "pageUrl": "https://www.yujiachen.com/the-permission-model-myth/zh/",
     "pageTitle": "权限模型的迷思"
+  },
+  "searchPlaceholder": {
+    "en": "Search titles and text, e.g. OpenAI, consensus",
+    "zh": "搜标题或正文，比如 OpenAI、事务、无明"
   }
 }
     </script>

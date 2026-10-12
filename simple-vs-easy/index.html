@@ -62,7 +62,7 @@
 <link rel="modulepreload" href="/app/theme.js" />
 <link rel="modulepreload" href="/app/toc.js" />
   </head>
-  <body data-page="post"  class="aged" style="--age: 0.215; --paper-age: 0.215">
+  <body data-page="post"  class="aged" style="--age: 0.216; --paper-age: 0.216">
     <div id="root">
       
 <header class="navbar" data-navbar>
@@ -82,7 +82,7 @@
           <kbd class="search-trigger-key" data-search-key>⌘K</kbd>
         </button>
         <div class="lang-switcher" data-lang-switcher data-lang-switcher-mode="toggle">
-          <button class="lang-toggle" type="button" data-lang-toggle>EN</button>
+          <button class="lang-toggle" type="button" data-lang-toggle><span data-lang="en">EN</span><span class="lang-toggle-sep" aria-hidden="true">/</span><span data-lang="zh">中文</span></button>
         </div>
         <div class="theme-switcher" data-theme-switcher data-theme-state="light">
           <button class="theme-trigger" type="button" data-theme-trigger aria-label="Theme mode toggle" aria-pressed="false">
@@ -113,7 +113,7 @@
   <a class="nav-mobile-link" href="/ask-ai/" data-nav-mobile="ask-ai">Ask AI</a>
   <div class="nav-mobile-utilities">
     <div class="lang-switcher" data-lang-switcher data-lang-switcher-mode="toggle">
-      <button class="lang-toggle" type="button" data-lang-toggle>EN</button>
+      <button class="lang-toggle" type="button" data-lang-toggle><span data-lang="en">EN</span><span class="lang-toggle-sep" aria-hidden="true">/</span><span data-lang="zh">中文</span></button>
     </div>
     <div class="theme-switcher" data-theme-switcher data-theme-state="light">
       <button class="theme-trigger" type="button" data-theme-trigger aria-label="Theme mode toggle" aria-pressed="false">
@@ -166,7 +166,17 @@
 <p><em>Translated by Claude from the Chinese original.</em></p>
 </div>
 </div>
-
+ 
+<nav class="post-nav" aria-label="More posts">
+  <a class="post-nav-link post-nav-newer" href="/how-to-1-on-1/">
+    <span class="post-nav-meta"><span class="post-nav-dir">← Newer</span><time datetime="2025-02-15">2025-02-15</time></span>
+    <span class="post-nav-title">How to 1-on-1</span>
+  </a>
+  <a class="post-nav-link post-nav-older" href="/learnings-from-bytedance/">
+    <span class="post-nav-meta"><span class="post-nav-dir">Older →</span><time datetime="2025-01-02">2025-01-02</time></span>
+    <span class="post-nav-title">Learnings from ByteDance</span>
+  </a>
+</nav>
             <section class="citation-section" data-citation-section></section>
             <section class="comment-section" data-comment-section></section>
           </div>
@@ -176,12 +186,12 @@
 <footer class="site-footer">
   <div class="footer-paper has-curls">
     <p class="footer-name" aria-hidden="true"><span>J</span><span>i</span><span>a</span><span>c</span><span>h</span><span>e</span><span>n</span> <span>Y</span><span>u</span></p>
-    <a class="page-curl page-curl-newer" href="/how-to-1-on-1/" style="--next-age: 0.206" aria-label="Previous: How to 1-on-1">
-      <span class="page-curl-under"><i>← Previous</i><b>How to 1-on-1</b><small>2025</small></span>
+    <a class="page-curl page-curl-newer" href="/how-to-1-on-1/" style="--next-age: 0.207" aria-label="Newer: How to 1-on-1">
+      <span class="page-curl-under"><i>← Newer</i><b>How to 1-on-1</b><small>2025</small></span>
       <span class="page-curl-flap"></span>
     </a>
-    <a class="page-curl page-curl-older" href="/learnings-from-bytedance/" style="--next-age: 0.221" aria-label="Next: Learnings from ByteDance">
-      <span class="page-curl-under"><i>Next →</i><b>Learnings from ByteDance</b><small>2025</small></span>
+    <a class="page-curl page-curl-older" href="/learnings-from-bytedance/" style="--next-age: 0.222" aria-label="Older: Learnings from ByteDance">
+      <span class="page-curl-under"><i>Older →</i><b>Learnings from ByteDance</b><small>2025</small></span>
       <span class="page-curl-flap"></span>
     </a>
   </div>
@@ -224,6 +234,10 @@
     "pageId": "simple-vs-easy",
     "pageUrl": "https://www.yujiachen.com/simple-vs-easy/",
     "pageTitle": "Simple vs Easy"
+  },
+  "searchPlaceholder": {
+    "en": "Search titles and text, e.g. OpenAI, consensus",
+    "zh": "搜标题或正文，比如 OpenAI、事务、无明"
   }
 }
     </script>

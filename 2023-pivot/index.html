@@ -61,7 +61,7 @@
 <link rel="modulepreload" href="/app/theme.js" />
 <link rel="modulepreload" href="/app/toc.js" />
   </head>
-  <body data-page="post"  class="aged" style="--age: 0.382; --paper-age: 0.382">
+  <body data-page="post"  class="aged" style="--age: 0.383; --paper-age: 0.383">
     <div id="root">
       
 <header class="navbar" data-navbar>
@@ -81,7 +81,7 @@
           <kbd class="search-trigger-key" data-search-key>⌘K</kbd>
         </button>
         <div class="lang-switcher" data-lang-switcher data-lang-switcher-mode="hidden">
-          <button class="lang-toggle" type="button" data-lang-toggle>EN</button>
+          <button class="lang-toggle" type="button" data-lang-toggle><span data-lang="en">EN</span><span class="lang-toggle-sep" aria-hidden="true">/</span><span data-lang="zh">中文</span></button>
         </div>
         <div class="theme-switcher" data-theme-switcher data-theme-state="light">
           <button class="theme-trigger" type="button" data-theme-trigger aria-label="Theme mode toggle" aria-pressed="false">
@@ -112,7 +112,7 @@
   <a class="nav-mobile-link" href="/ask-ai/" data-nav-mobile="ask-ai">Ask AI</a>
   <div class="nav-mobile-utilities">
     <div class="lang-switcher" data-lang-switcher data-lang-switcher-mode="hidden">
-      <button class="lang-toggle" type="button" data-lang-toggle>EN</button>
+      <button class="lang-toggle" type="button" data-lang-toggle><span data-lang="en">EN</span><span class="lang-toggle-sep" aria-hidden="true">/</span><span data-lang="zh">中文</span></button>
     </div>
     <div class="theme-switcher" data-theme-switcher data-theme-state="light">
       <button class="theme-trigger" type="button" data-theme-trigger aria-label="Theme mode toggle" aria-pressed="false">
@@ -198,7 +198,17 @@ But when you decide to design your own building, you have to ask the question, �
 </blockquote>
 </div>
 </div>
-
+ 
+<nav class="post-nav" aria-label="更多文章">
+  <a class="post-nav-link post-nav-newer" href="/maximizing-llm-performance/">
+    <span class="post-nav-meta"><span class="post-nav-dir">← 较新</span><time datetime="2023-11-26">2023-11-26</time></span>
+    <span class="post-nav-title">最大化 LLM 性能的技术概览</span>
+  </a>
+  <a class="post-nav-link post-nav-older" href="/how-to-do-great-work/">
+    <span class="post-nav-meta"><span class="post-nav-dir">较早 →</span><time datetime="2023-08-12">2023-08-12</time></span>
+    <span class="post-nav-title">【译】如何做出伟大工作</span>
+  </a>
+</nav>
             <section class="citation-section" data-citation-section></section>
             <section class="comment-section" data-comment-section></section>
           </div>
@@ -208,12 +218,12 @@ But when you decide to design your own building, you have to ask the question, �
 <footer class="site-footer">
   <div class="footer-paper has-curls">
     <p class="footer-name" aria-hidden="true"><span>J</span><span>i</span><span>a</span><span>c</span><span>h</span><span>e</span><span>n</span> <span>Y</span><span>u</span></p>
-    <a class="page-curl page-curl-newer" href="/maximizing-llm-performance/" style="--next-age: 0.359" aria-label="上一页: 最大化 LLM 性能的技术概览">
-      <span class="page-curl-under"><i>← 上一页</i><b>最大化 LLM 性能的技术概览</b><small>2023</small></span>
+    <a class="page-curl page-curl-newer" href="/maximizing-llm-performance/" style="--next-age: 0.36" aria-label="较新: 最大化 LLM 性能的技术概览">
+      <span class="page-curl-under"><i>← 较新</i><b>最大化 LLM 性能的技术概览</b><small>2023</small></span>
       <span class="page-curl-flap"></span>
     </a>
-    <a class="page-curl page-curl-older" href="/how-to-do-great-work/" style="--next-age: 0.395" aria-label="下一页: 【译】如何做出伟大工作">
-      <span class="page-curl-under"><i>下一页 →</i><b>【译】如何做出伟大工作</b><small>2023</small></span>
+    <a class="page-curl page-curl-older" href="/how-to-do-great-work/" style="--next-age: 0.396" aria-label="较早: 【译】如何做出伟大工作">
+      <span class="page-curl-under"><i>较早 →</i><b>【译】如何做出伟大工作</b><small>2023</small></span>
       <span class="page-curl-flap"></span>
     </a>
   </div>
@@ -256,6 +266,10 @@ But when you decide to design your own building, you have to ask the question, �
     "pageId": "2023-pivot",
     "pageUrl": "https://www.yujiachen.com/2023-pivot/",
     "pageTitle": "2023 - pivot"
+  },
+  "searchPlaceholder": {
+    "en": "Search titles and text, e.g. OpenAI, consensus",
+    "zh": "搜标题或正文，比如 OpenAI、事务、无明"
   }
 }
     </script>

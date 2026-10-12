@@ -61,7 +61,7 @@
 <link rel="modulepreload" href="/app/theme.js" />
 <link rel="modulepreload" href="/app/toc.js" />
   </head>
-  <body data-page="post"  class="aged" style="--age: 0.534; --paper-age: 0.534">
+  <body data-page="post"  class="aged" style="--age: 0.535; --paper-age: 0.535">
     <div id="root">
       
 <header class="navbar" data-navbar>
@@ -81,7 +81,7 @@
           <kbd class="search-trigger-key" data-search-key>⌘K</kbd>
         </button>
         <div class="lang-switcher" data-lang-switcher data-lang-switcher-mode="hidden">
-          <button class="lang-toggle" type="button" data-lang-toggle>EN</button>
+          <button class="lang-toggle" type="button" data-lang-toggle><span data-lang="en">EN</span><span class="lang-toggle-sep" aria-hidden="true">/</span><span data-lang="zh">中文</span></button>
         </div>
         <div class="theme-switcher" data-theme-switcher data-theme-state="light">
           <button class="theme-trigger" type="button" data-theme-trigger aria-label="Theme mode toggle" aria-pressed="false">
@@ -112,7 +112,7 @@
   <a class="nav-mobile-link" href="/ask-ai/" data-nav-mobile="ask-ai">Ask AI</a>
   <div class="nav-mobile-utilities">
     <div class="lang-switcher" data-lang-switcher data-lang-switcher-mode="hidden">
-      <button class="lang-toggle" type="button" data-lang-toggle>EN</button>
+      <button class="lang-toggle" type="button" data-lang-toggle><span data-lang="en">EN</span><span class="lang-toggle-sep" aria-hidden="true">/</span><span data-lang="zh">中文</span></button>
     </div>
     <div class="theme-switcher" data-theme-switcher data-theme-state="light">
       <button class="theme-trigger" type="button" data-theme-trigger aria-label="Theme mode toggle" aria-pressed="false">
@@ -141,10 +141,10 @@
       <div class="toc-panel sidebar-panel-content" data-toc-panel>
         <div class="toc-title sidebar-title">目录</div>
         <ol class="toc-list sidebar-list">
-      <li class="toc-item sidebar-item toc-level-1 toc-top"><a class="sidebar-link" href="#策略">策略</a></li>
-      <li class="toc-item sidebar-item toc-level-1 toc-top"><a class="sidebar-link" href="#文档">文档</a></li>
-      <li class="toc-item sidebar-item toc-level-2"><a class="sidebar-link" href="#影音资料">影音资料</a></li>
-      <li class="toc-item sidebar-item toc-level-2"><a class="sidebar-link" href="#隐私">隐私</a></li>
+      <li class="toc-item sidebar-item toc-level-2 toc-top"><a class="sidebar-link" href="#策略">策略</a></li>
+      <li class="toc-item sidebar-item toc-level-2 toc-top"><a class="sidebar-link" href="#文档">文档</a></li>
+      <li class="toc-item sidebar-item toc-level-3"><a class="sidebar-link" href="#影音资料">影音资料</a></li>
+      <li class="toc-item sidebar-item toc-level-3"><a class="sidebar-link" href="#隐私">隐私</a></li>
         </ol>
       </div>
     </aside>
@@ -160,11 +160,11 @@
     <div><dt>length</dt><dd>1,055 字 · 3 分钟</dd></div>
   </dl>
   <div class="article-body"><p>最近因为跳槽之间的gap赋闲在家，整理了一下个人数据并尝试对其备份，在这里简单记录一下。</p>
-<h1 id="策略">策略</h1>
+<h2 id="策略">策略</h2>
 <p>备份整体的策略就是遵循3-2-1原则：至少三个备份，两种介质，一个offsite（备份之间的最大物理距离不能过于接近，即不要把所有备份放在同一处）。</p>
 <p>自己因为是苹果全家桶，所以可以从文件系统层面进行备份，之前也有想过针对不同应用和文件类型做不同的备份策略，但这需要的工作量过大且不必要。基于苹果全家桶的文件系统备份如下：用Time Machine和iCloud分别备份整个/部分文件系统，因为Time Machine是把备份写在硬盘上，我们就可以利用多个移动硬盘制作对个备份，恰好我作为打工人有老家、出租屋多个住所，所以可以为每个住所设置一个备份。</p>
 <p>基于此，不同类型的数据还需要不同的处理：</p>
-<h1 id="文档">文档</h1>
+<h2 id="文档">文档</h2>
 <p>一般的pdf等各种资料文档不表，存储起来都很简单，自己整理是发现和预期不符的是各种笔记app。</p>
 <p>我平时主要用3个笔记app：</p>
 <ul>
@@ -175,14 +175,24 @@
 <p>这期间我也比较了这些笔记类app是否可以用其他app替代，因为市面上有更方便导出数据的笔记类app。出乎我意料的是不能，因为这些app的核心功能的数据即使可以导出，我们也没有合适的解析器—— Notion就是database数据的最佳解析器，Ulysses的markdown XL就没有其他笔记类app支持。Flomo的情况也略类似，我们随便用一个笔记app都能实现Flomo的卡片笔记，但貌似没啥用，Flomo的优势是笔记之间的关联性和灵活的多级标签系统，这些数据也无法找到合适的编辑与解析器。</p>
 <p>因此这些App的备份目的只是为了保证数据在本地有一个备份，防止服务器断网或产品停止运营这一类极小概率事件，所以不需要过于仔细，有一个数据备份就好，不必过于在意数据解析的问题。</p>
 <p>同理类似的还有微信聊天记录，你也无法从微信里导出（除非使用一些非正常途径，不一定能成功复现还可能会丢图片），我用mac微信备份了相关的聊天记录，同时mac微信的数据则由Time Machine负责备份。</p>
-<h2 id="影音资料">影音资料</h2>
+<h3 id="影音资料">影音资料</h3>
 <p>影音资料的问题则是太大了，同时影音资料的信噪比偏低，比如我的很多相机照片都是重复的，还是RAW，修理过并导出的照片其实我都存在了iCloud里；还有很多电影，网上都有各种资源可以重复下载。</p>
 <p>所以这一类我单独存在了一块硬盘中，未来会考虑在家中安装NAT，配合放置在别处的硬盘进行备份。</p>
-<h2 id="隐私">隐私</h2>
+<h3 id="隐私">隐私</h3>
 <p>密码和一些证件照片我则是统一收集到了1Password里面，这一类的备份并不是特别重要，首先证件照片即使丢失也有本体，密码的话我有重设密码的方法。</p>
 </div>
 </div>
-
+ 
+<nav class="post-nav" aria-label="更多文章">
+  <a class="post-nav-link post-nav-newer" href="/how-to-read-a-book/">
+    <span class="post-nav-meta"><span class="post-nav-dir">← 较新</span><time datetime="2022-08-14">2022-08-14</time></span>
+    <span class="post-nav-title">如何阅读一本书</span>
+  </a>
+  <a class="post-nav-link post-nav-older" href="/the-missing-semester-of-your-cs-education/">
+    <span class="post-nav-meta"><span class="post-nav-dir">较早 →</span><time datetime="2022-06-14">2022-06-14</time></span>
+    <span class="post-nav-title">编程以外的编程知识</span>
+  </a>
+</nav>
             <section class="citation-section" data-citation-section></section>
             <section class="comment-section" data-comment-section></section>
           </div>
@@ -192,12 +202,12 @@
 <footer class="site-footer">
   <div class="footer-paper has-curls">
     <p class="footer-name" aria-hidden="true"><span>J</span><span>i</span><span>a</span><span>c</span><span>h</span><span>e</span><span>n</span> <span>Y</span><span>u</span></p>
-    <a class="page-curl page-curl-newer" href="/how-to-read-a-book/" style="--next-age: 0.52" aria-label="上一页: 如何阅读一本书">
-      <span class="page-curl-under"><i>← 上一页</i><b>如何阅读一本书</b><small>2022</small></span>
+    <a class="page-curl page-curl-newer" href="/how-to-read-a-book/" style="--next-age: 0.52" aria-label="较新: 如何阅读一本书">
+      <span class="page-curl-under"><i>← 较新</i><b>如何阅读一本书</b><small>2022</small></span>
       <span class="page-curl-flap"></span>
     </a>
-    <a class="page-curl page-curl-older" href="/the-missing-semester-of-your-cs-education/" style="--next-age: 0.54" aria-label="下一页: 编程以外的编程知识">
-      <span class="page-curl-under"><i>下一页 →</i><b>编程以外的编程知识</b><small>2022</small></span>
+    <a class="page-curl page-curl-older" href="/the-missing-semester-of-your-cs-education/" style="--next-age: 0.541" aria-label="较早: 编程以外的编程知识">
+      <span class="page-curl-under"><i>较早 →</i><b>编程以外的编程知识</b><small>2022</small></span>
       <span class="page-curl-flap"></span>
     </a>
   </div>
@@ -240,6 +250,10 @@
     "pageId": "personal-data-backup-practices",
     "pageUrl": "https://www.yujiachen.com/personal-data-backup-practices/",
     "pageTitle": "个人数据备份实践"
+  },
+  "searchPlaceholder": {
+    "en": "Search titles and text, e.g. OpenAI, consensus",
+    "zh": "搜标题或正文，比如 OpenAI、事务、无明"
   }
 }
     </script>

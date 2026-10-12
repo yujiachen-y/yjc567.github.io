@@ -62,7 +62,7 @@
 <link rel="modulepreload" href="/app/theme.js" />
 <link rel="modulepreload" href="/app/toc.js" />
   </head>
-  <body data-page="post"  class="aged" style="--age: 0.221; --paper-age: 0.221">
+  <body data-page="post"  class="aged" style="--age: 0.222; --paper-age: 0.222">
     <div id="root">
       
 <header class="navbar" data-navbar>
@@ -82,7 +82,7 @@
           <kbd class="search-trigger-key" data-search-key>⌘K</kbd>
         </button>
         <div class="lang-switcher" data-lang-switcher data-lang-switcher-mode="toggle">
-          <button class="lang-toggle" type="button" data-lang-toggle>EN</button>
+          <button class="lang-toggle" type="button" data-lang-toggle><span data-lang="en">EN</span><span class="lang-toggle-sep" aria-hidden="true">/</span><span data-lang="zh">中文</span></button>
         </div>
         <div class="theme-switcher" data-theme-switcher data-theme-state="light">
           <button class="theme-trigger" type="button" data-theme-trigger aria-label="Theme mode toggle" aria-pressed="false">
@@ -113,7 +113,7 @@
   <a class="nav-mobile-link" href="/ask-ai/" data-nav-mobile="ask-ai">Ask AI</a>
   <div class="nav-mobile-utilities">
     <div class="lang-switcher" data-lang-switcher data-lang-switcher-mode="toggle">
-      <button class="lang-toggle" type="button" data-lang-toggle>EN</button>
+      <button class="lang-toggle" type="button" data-lang-toggle><span data-lang="en">EN</span><span class="lang-toggle-sep" aria-hidden="true">/</span><span data-lang="zh">中文</span></button>
     </div>
     <div class="theme-switcher" data-theme-switcher data-theme-state="light">
       <button class="theme-trigger" type="button" data-theme-trigger aria-label="Theme mode toggle" aria-pressed="false">
@@ -157,7 +157,17 @@
 <p><em>Translated by Claude from the Chinese original.</em></p>
 </div>
 </div>
-
+ 
+<nav class="post-nav" aria-label="More posts">
+  <a class="post-nav-link post-nav-newer" href="/simple-vs-easy/">
+    <span class="post-nav-meta"><span class="post-nav-dir">← Newer</span><time datetime="2025-01-19">2025-01-19</time></span>
+    <span class="post-nav-title">Simple vs Easy</span>
+  </a>
+  <a class="post-nav-link post-nav-older" href="/new-things-vs-old-things/">
+    <span class="post-nav-meta"><span class="post-nav-dir">Older →</span><time datetime="2024-12-26">2024-12-26</time></span>
+    <span class="post-nav-title">New Things vs Old Things</span>
+  </a>
+</nav>
             <section class="citation-section" data-citation-section></section>
             <section class="comment-section" data-comment-section></section>
           </div>
@@ -167,12 +177,12 @@
 <footer class="site-footer">
   <div class="footer-paper has-curls">
     <p class="footer-name" aria-hidden="true"><span>J</span><span>i</span><span>a</span><span>c</span><span>h</span><span>e</span><span>n</span> <span>Y</span><span>u</span></p>
-    <a class="page-curl page-curl-newer" href="/simple-vs-easy/" style="--next-age: 0.215" aria-label="Previous: Simple vs Easy">
-      <span class="page-curl-under"><i>← Previous</i><b>Simple vs Easy</b><small>2025</small></span>
+    <a class="page-curl page-curl-newer" href="/simple-vs-easy/" style="--next-age: 0.216" aria-label="Newer: Simple vs Easy">
+      <span class="page-curl-under"><i>← Newer</i><b>Simple vs Easy</b><small>2025</small></span>
       <span class="page-curl-flap"></span>
     </a>
-    <a class="page-curl page-curl-older" href="/new-things-vs-old-things/" style="--next-age: 0.224" aria-label="Next: New Things vs Old Things">
-      <span class="page-curl-under"><i>Next →</i><b>New Things vs Old Things</b><small>2024</small></span>
+    <a class="page-curl page-curl-older" href="/new-things-vs-old-things/" style="--next-age: 0.224" aria-label="Older: New Things vs Old Things">
+      <span class="page-curl-under"><i>Older →</i><b>New Things vs Old Things</b><small>2024</small></span>
       <span class="page-curl-flap"></span>
     </a>
   </div>
@@ -215,6 +225,10 @@
     "pageId": "learnings-from-bytedance",
     "pageUrl": "https://www.yujiachen.com/learnings-from-bytedance/",
     "pageTitle": "Learnings from ByteDance"
+  },
+  "searchPlaceholder": {
+    "en": "Search titles and text, e.g. OpenAI, consensus",
+    "zh": "搜标题或正文，比如 OpenAI、事务、无明"
   }
 }
     </script>

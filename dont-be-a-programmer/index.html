@@ -62,7 +62,7 @@
 <link rel="modulepreload" href="/app/theme.js" />
 <link rel="modulepreload" href="/app/toc.js" />
   </head>
-  <body data-page="post"  class="aged" style="--age: 0.555; --paper-age: 0.555">
+  <body data-page="post"  class="aged" style="--age: 0.556; --paper-age: 0.556">
     <div id="root">
       
 <header class="navbar" data-navbar>
@@ -82,7 +82,7 @@
           <kbd class="search-trigger-key" data-search-key>⌘K</kbd>
         </button>
         <div class="lang-switcher" data-lang-switcher data-lang-switcher-mode="toggle">
-          <button class="lang-toggle" type="button" data-lang-toggle>EN</button>
+          <button class="lang-toggle" type="button" data-lang-toggle><span data-lang="en">EN</span><span class="lang-toggle-sep" aria-hidden="true">/</span><span data-lang="zh">中文</span></button>
         </div>
         <div class="theme-switcher" data-theme-switcher data-theme-state="light">
           <button class="theme-trigger" type="button" data-theme-trigger aria-label="Theme mode toggle" aria-pressed="false">
@@ -113,7 +113,7 @@
   <a class="nav-mobile-link" href="/ask-ai/" data-nav-mobile="ask-ai">Ask AI</a>
   <div class="nav-mobile-utilities">
     <div class="lang-switcher" data-lang-switcher data-lang-switcher-mode="toggle">
-      <button class="lang-toggle" type="button" data-lang-toggle>EN</button>
+      <button class="lang-toggle" type="button" data-lang-toggle><span data-lang="en">EN</span><span class="lang-toggle-sep" aria-hidden="true">/</span><span data-lang="zh">中文</span></button>
     </div>
     <div class="theme-switcher" data-theme-switcher data-theme-state="light">
       <button class="theme-trigger" type="button" data-theme-trigger aria-label="Theme mode toggle" aria-pressed="false">
@@ -156,7 +156,17 @@
 <p><em>Translated by Claude from the Chinese original.</em></p>
 </div>
 </div>
-
+ 
+<nav class="post-nav" aria-label="More posts">
+  <a class="post-nav-link post-nav-newer" href="/software-design-book-notes/">
+    <span class="post-nav-meta"><span class="post-nav-dir">← Newer</span><time datetime="2022-10-09">2022-10-09</time></span>
+    <span class="post-nav-title">Notes on A Philosophy of Software Design</span>
+  </a>
+  <a class="post-nav-link post-nav-older" href="/key-iterations-trustworthy-online-controlled-experiments/">
+    <span class="post-nav-meta"><span class="post-nav-dir">Older →</span><time datetime="2021-12-24">2021-12-24</time></span>
+    <span class="post-nav-title">Key Iterations: Trustworthy Online Controlled Experiments</span>
+  </a>
+</nav>
             <section class="citation-section" data-citation-section></section>
             <section class="comment-section" data-comment-section></section>
           </div>
@@ -166,12 +176,12 @@
 <footer class="site-footer">
   <div class="footer-paper has-curls">
     <p class="footer-name" aria-hidden="true"><span>J</span><span>i</span><span>a</span><span>c</span><span>h</span><span>e</span><span>n</span> <span>Y</span><span>u</span></p>
-    <a class="page-curl page-curl-newer" href="/software-design-book-notes/" style="--next-age: 0.5" aria-label="Previous: Notes on A Philosophy of Software Design">
-      <span class="page-curl-under"><i>← Previous</i><b>Notes on A Philosophy of Software Design</b><small>2022</small></span>
+    <a class="page-curl page-curl-newer" href="/software-design-book-notes/" style="--next-age: 0.501" aria-label="Newer: Notes on A Philosophy of Software Design">
+      <span class="page-curl-under"><i>← Newer</i><b>Notes on A Philosophy of Software Design</b><small>2022</small></span>
       <span class="page-curl-flap"></span>
     </a>
-    <a class="page-curl page-curl-older" href="/key-iterations-trustworthy-online-controlled-experiments/" style="--next-age: 0.599" aria-label="Next: Key Iterations: Trustworthy Online Controlled Experiments">
-      <span class="page-curl-under"><i>Next →</i><b>Key Iterations: Trustworthy Online Controlled Experiments</b><small>2021</small></span>
+    <a class="page-curl page-curl-older" href="/key-iterations-trustworthy-online-controlled-experiments/" style="--next-age: 0.6" aria-label="Older: Key Iterations: Trustworthy Online Controlled Experiments">
+      <span class="page-curl-under"><i>Older →</i><b>Key Iterations: Trustworthy Online Controlled Experiments</b><small>2021</small></span>
       <span class="page-curl-flap"></span>
     </a>
   </div>
@@ -214,6 +224,10 @@
     "pageId": "dont-be-a-programmer",
     "pageUrl": "https://www.yujiachen.com/dont-be-a-programmer/",
     "pageTitle": "Don't Be a Programmer"
+  },
+  "searchPlaceholder": {
+    "en": "Search titles and text, e.g. OpenAI, consensus",
+    "zh": "搜标题或正文，比如 OpenAI、事务、无明"
   }
 }
     </script>

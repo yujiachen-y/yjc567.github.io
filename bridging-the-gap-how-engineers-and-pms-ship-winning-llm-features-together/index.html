@@ -82,7 +82,7 @@
           <kbd class="search-trigger-key" data-search-key>⌘K</kbd>
         </button>
         <div class="lang-switcher" data-lang-switcher data-lang-switcher-mode="toggle">
-          <button class="lang-toggle" type="button" data-lang-toggle>EN</button>
+          <button class="lang-toggle" type="button" data-lang-toggle><span data-lang="en">EN</span><span class="lang-toggle-sep" aria-hidden="true">/</span><span data-lang="zh">中文</span></button>
         </div>
         <div class="theme-switcher" data-theme-switcher data-theme-state="light">
           <button class="theme-trigger" type="button" data-theme-trigger aria-label="Theme mode toggle" aria-pressed="false">
@@ -113,7 +113,7 @@
   <a class="nav-mobile-link" href="/ask-ai/" data-nav-mobile="ask-ai">Ask AI</a>
   <div class="nav-mobile-utilities">
     <div class="lang-switcher" data-lang-switcher data-lang-switcher-mode="toggle">
-      <button class="lang-toggle" type="button" data-lang-toggle>EN</button>
+      <button class="lang-toggle" type="button" data-lang-toggle><span data-lang="en">EN</span><span class="lang-toggle-sep" aria-hidden="true">/</span><span data-lang="zh">中文</span></button>
     </div>
     <div class="theme-switcher" data-theme-switcher data-theme-state="light">
       <button class="theme-trigger" type="button" data-theme-trigger aria-label="Theme mode toggle" aria-pressed="false">
@@ -142,12 +142,12 @@
       <div class="toc-panel sidebar-panel-content" data-toc-panel>
         <div class="toc-title sidebar-title">Contents</div>
         <ol class="toc-list sidebar-list">
-      <li class="toc-item sidebar-item toc-level-3"><a class="sidebar-link" href="#pm-to-prompt-distance">PM to Prompt Distance</a></li>
-      <li class="toc-item sidebar-item toc-level-3"><a class="sidebar-link" href="#kv-cache">KV‑Cache</a></li>
-      <li class="toc-item sidebar-item toc-level-3"><a class="sidebar-link" href="#structured-output-response-schema">Structured Output / Response Schema</a></li>
-      <li class="toc-item sidebar-item toc-level-3"><a class="sidebar-link" href="#putting-it-all-together">Putting It All Together</a></li>
-      <li class="toc-item sidebar-item toc-level-3"><a class="sidebar-link" href="#next-steps">Next Steps</a></li>
-      <li class="toc-item sidebar-item toc-level-3"><a class="sidebar-link" href="#join-our-team">Join Our Team</a></li>
+      <li class="toc-item sidebar-item toc-level-3 toc-top"><a class="sidebar-link" href="#pm-to-prompt-distance">PM to Prompt Distance</a></li>
+      <li class="toc-item sidebar-item toc-level-3 toc-top"><a class="sidebar-link" href="#kv-cache">KV‑Cache</a></li>
+      <li class="toc-item sidebar-item toc-level-3 toc-top"><a class="sidebar-link" href="#structured-output-response-schema">Structured Output / Response Schema</a></li>
+      <li class="toc-item sidebar-item toc-level-3 toc-top"><a class="sidebar-link" href="#putting-it-all-together">Putting It All Together</a></li>
+      <li class="toc-item sidebar-item toc-level-3 toc-top"><a class="sidebar-link" href="#next-steps">Next Steps</a></li>
+      <li class="toc-item sidebar-item toc-level-3 toc-top"><a class="sidebar-link" href="#join-our-team">Join Our Team</a></li>
         </ol>
       </div>
     </aside>
@@ -157,17 +157,18 @@
 
 <div class="article-text-content">
   <h1 class="article-hero">How Engineers and PMs Ship LLM Features Together</h1>
+  <p class="article-subtitle">How Engineers and PMs Ship Winning LLM Features Faster: 3 Technical Decisions</p>
   <dl class="frontmatter">
     <div><dt>date</dt><dd><time datetime="2025-09-15">2025-09-15</time></dd></div>
     <div><dt>tags</dt><dd>#tech</dd></div>
-    <div><dt>length</dt><dd>1,355 words · 6 min</dd></div>
+    <div><dt>length</dt><dd>1,343 words · 6 min</dd></div>
     <div><dt>lang</dt><dd><span aria-current="true">en</span> · <a href="/bridging-the-gap-how-engineers-and-pms-ship-winning-llm-features-together/zh/" hreflang="zh">zh</a></dd></div>
   </dl>
   <div class="article-body"><blockquote>
 <p>Originally published on Medium via <strong>OpusClip Engineering</strong>; reposted here on my blog.<br>
 Original: <a href="https://medium.com/opus-engineering/bridging-the-gap-how-engineers-and-pms-ship-winning-llm-features-together-147a36ab4089">Bridging the Gap: How Engineers and PMs Ship Winning LLM Features Together</a></p>
 </blockquote>
-<h1 id="how-engineers-and-pms-ship-winning-llm-features-faster-3-technical-decisions">How Engineers and PMs Ship Winning LLM Features Faster: 3 Technical Decisions</h1>
+
 <p><strong>TL;DR:</strong></p>
 <ul>
 <li><strong>Prompts belong in configs, not code:</strong> Enable rapid iteration without deployments</li>
@@ -348,7 +349,17 @@ Provide clear reasoning for why content is or isn't relevant.
 <p>Check out our open positions: <a href="https://www.opus.pro/careers">opus.pro/careers</a></p>
 </div>
 </div>
-
+ 
+<nav class="post-nav" aria-label="More posts">
+  <a class="post-nav-link post-nav-newer" href="/thoughts-on-the-video-quality-evaluation/">
+    <span class="post-nav-meta"><span class="post-nav-dir">← Newer</span><time datetime="2026-02-08">2026-02-08</time></span>
+    <span class="post-nav-title">Thoughts on the Video Quality Evaluation</span>
+  </a>
+  <a class="post-nav-link post-nav-older" href="/how-to-1-on-1/">
+    <span class="post-nav-meta"><span class="post-nav-dir">Older →</span><time datetime="2025-02-15">2025-02-15</time></span>
+    <span class="post-nav-title">How to 1-on-1</span>
+  </a>
+</nav>
             <section class="citation-section" data-citation-section></section>
             <section class="comment-section" data-comment-section></section>
           </div>
@@ -358,12 +369,12 @@ Provide clear reasoning for why content is or isn't relevant.
 <footer class="site-footer">
   <div class="footer-paper has-curls">
     <p class="footer-name" aria-hidden="true"><span>J</span><span>i</span><span>a</span><span>c</span><span>h</span><span>e</span><span>n</span> <span>Y</span><span>u</span></p>
-    <a class="page-curl page-curl-newer" href="/thoughts-on-the-video-quality-evaluation/" style="--next-age: 0.084" aria-label="Previous: Thoughts on the Video Quality Evaluation">
-      <span class="page-curl-under"><i>← Previous</i><b>Thoughts on the Video Quality Evaluation</b><small>2026</small></span>
+    <a class="page-curl page-curl-newer" href="/thoughts-on-the-video-quality-evaluation/" style="--next-age: 0.084" aria-label="Newer: Thoughts on the Video Quality Evaluation">
+      <span class="page-curl-under"><i>← Newer</i><b>Thoughts on the Video Quality Evaluation</b><small>2026</small></span>
       <span class="page-curl-flap"></span>
     </a>
-    <a class="page-curl page-curl-older" href="/how-to-1-on-1/" style="--next-age: 0.206" aria-label="Next: How to 1-on-1">
-      <span class="page-curl-under"><i>Next →</i><b>How to 1-on-1</b><small>2025</small></span>
+    <a class="page-curl page-curl-older" href="/how-to-1-on-1/" style="--next-age: 0.207" aria-label="Older: How to 1-on-1">
+      <span class="page-curl-under"><i>Older →</i><b>How to 1-on-1</b><small>2025</small></span>
       <span class="page-curl-flap"></span>
     </a>
   </div>
@@ -392,7 +403,7 @@ Provide clear reasoning for why content is or isn't relevant.
       {
   "pageType": "post",
   "lang": "en",
-  "wordCount": 1355,
+  "wordCount": 1343,
   "langSwitchUrl": "/bridging-the-gap-how-engineers-and-pms-ship-winning-llm-features-together/zh/",
   "langSwitcherMode": "toggle",
   "markdownUrl": "/posts/bridging-the-gap-how-engineers-and-pms-ship-winning-llm-features-together/post.md",
@@ -406,6 +417,10 @@ Provide clear reasoning for why content is or isn't relevant.
     "pageId": "bridging-the-gap-how-engineers-and-pms-ship-winning-llm-features-together",
     "pageUrl": "https://www.yujiachen.com/bridging-the-gap-how-engineers-and-pms-ship-winning-llm-features-together/",
     "pageTitle": "How Engineers and PMs Ship LLM Features Together"
+  },
+  "searchPlaceholder": {
+    "en": "Search titles and text, e.g. OpenAI, consensus",
+    "zh": "搜标题或正文，比如 OpenAI、事务、无明"
   }
 }
     </script>

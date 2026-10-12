@@ -1,6 +1,6 @@
 // Nav search: ⌘K or / opens a panel that searches titles and full text.
 // The index is fetched on first open, so pages that never search pay nothing.
-import { state } from './state.js';
+import { pageData, state } from './state.js';
 import { ageOf } from './age.js';
 
 const INDEX_URL = '/posts/search-index.json';
@@ -11,7 +11,7 @@ const SEARCH_ICON =
 const COPY = {
   zh: {
     label: '搜索',
-    placeholder: '搜标题或正文，比如 OpenAI、事务、无明',
+    placeholder: '搜标题或正文',
     titles: '标题',
     texts: '正文',
     recent: '最近写的',
@@ -22,7 +22,7 @@ const COPY = {
   },
   en: {
     label: 'Search',
-    placeholder: 'Search titles and text, e.g. OpenAI, consensus',
+    placeholder: 'Search titles and text',
     titles: 'Titles',
     texts: 'In the text',
     recent: 'Recent',
@@ -47,10 +47,20 @@ const highlight = (text, terms) =>
     escapeHtml(text)
   );
 
+// Cut at spaces so English words stay whole; CJK text has none and is cut by character.
 const snippet = (text, term) => {
   const at = text.toLowerCase().indexOf(term);
-  const from = Math.max(0, at - 28);
-  return `${from > 0 ? '…' : ''}${text.slice(from, at + 80)}…`;
+  let from = Math.max(0, at - 28);
+  let to = Math.min(text.length, at + 80);
+  if (from > 0 && text[from - 1] !== ' ') {
+    const space = text.indexOf(' ', from);
+    if (space !== -1 && space < at) from = space + 1;
+  }
+  if (to < text.length && text[to] !== ' ') {
+    const space = text.lastIndexOf(' ', to);
+    if (space > at + term.length) to = space;
+  }
+  return `${from > 0 ? '…' : ''}${text.slice(from, to)}${to < text.length ? '…' : ''}`;
 };
 
 // ponytail: substring match over the whole index; switch to a prebuilt inverted index past ~1 MB.
@@ -194,7 +204,12 @@ export const initSearch = () => {
   if (!/Mac|iPhone|iPad/.test(navigator.platform)) {
     ui.trigger.querySelector('[data-search-key]').textContent = 'Ctrl K';
   }
-  ui.copy = COPY[state.language === 'zh' ? 'zh' : 'en'];
+  const lang = state.language === 'zh' ? 'zh' : 'en';
+  // The vault's blog.config.json can suggest words from its own posts.
+  ui.copy = {
+    ...COPY[lang],
+    placeholder: pageData.searchPlaceholder?.[lang] || COPY[lang].placeholder,
+  };
   ui.trigger.addEventListener('click', open);
   document.addEventListener('keydown', onShortcut);
 };

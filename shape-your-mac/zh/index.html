@@ -62,7 +62,7 @@
 <link rel="modulepreload" href="/app/theme.js" />
 <link rel="modulepreload" href="/app/toc.js" />
   </head>
-  <body data-page="post"  class="aged" style="--age: 0.28; --paper-age: 0.28">
+  <body data-page="post"  class="aged" style="--age: 0.281; --paper-age: 0.281">
     <div id="root">
       
 <header class="navbar" data-navbar>
@@ -82,7 +82,7 @@
           <kbd class="search-trigger-key" data-search-key>⌘K</kbd>
         </button>
         <div class="lang-switcher" data-lang-switcher data-lang-switcher-mode="toggle">
-          <button class="lang-toggle" type="button" data-lang-toggle>EN</button>
+          <button class="lang-toggle" type="button" data-lang-toggle><span data-lang="en">EN</span><span class="lang-toggle-sep" aria-hidden="true">/</span><span data-lang="zh">中文</span></button>
         </div>
         <div class="theme-switcher" data-theme-switcher data-theme-state="light">
           <button class="theme-trigger" type="button" data-theme-trigger aria-label="Theme mode toggle" aria-pressed="false">
@@ -113,7 +113,7 @@
   <a class="nav-mobile-link" href="/ask-ai/" data-nav-mobile="ask-ai">Ask AI</a>
   <div class="nav-mobile-utilities">
     <div class="lang-switcher" data-lang-switcher data-lang-switcher-mode="toggle">
-      <button class="lang-toggle" type="button" data-lang-toggle>EN</button>
+      <button class="lang-toggle" type="button" data-lang-toggle><span data-lang="en">EN</span><span class="lang-toggle-sep" aria-hidden="true">/</span><span data-lang="zh">中文</span></button>
     </div>
     <div class="theme-switcher" data-theme-switcher data-theme-state="light">
       <button class="theme-trigger" type="button" data-theme-trigger aria-label="Theme mode toggle" aria-pressed="false">
@@ -142,17 +142,17 @@
       <div class="toc-panel sidebar-panel-content" data-toc-panel>
         <div class="toc-title sidebar-title">目录</div>
         <ol class="toc-list sidebar-list">
-      <li class="toc-item sidebar-item toc-level-1 toc-top"><a class="sidebar-link" href="#前言">📖 前言</a></li>
-      <li class="toc-item sidebar-item toc-level-1 toc-top"><a class="sidebar-link" href="#基础设置">🔧 基础设置</a></li>
-      <li class="toc-item sidebar-item toc-level-2"><a class="sidebar-link" href="#dotfiles">🗂️ Dotfiles</a></li>
-      <li class="toc-item sidebar-item toc-level-2"><a class="sidebar-link" href="#命令行配置">💻 命令行配置</a></li>
-      <li class="toc-item sidebar-item toc-level-2"><a class="sidebar-link" href="#系统设置">⚙️ 系统设置</a></li>
-      <li class="toc-item sidebar-item toc-level-1 toc-top"><a class="sidebar-link" href="#应用">📱 应用</a></li>
-      <li class="toc-item sidebar-item toc-level-2"><a class="sidebar-link" href="#raycast">🌟 Raycast</a></li>
-      <li class="toc-item sidebar-item toc-level-2"><a class="sidebar-link" href="#alttab">🌟 AltTab</a></li>
-      <li class="toc-item sidebar-item toc-level-1 toc-top"><a class="sidebar-link" href="#备份">💾 备份</a></li>
-      <li class="toc-item sidebar-item toc-level-2"><a class="sidebar-link" href="#3-2-1-原则">3-2-1 原则</a></li>
-      <li class="toc-item sidebar-item toc-level-1 toc-top"><a class="sidebar-link" href="#反思">💭 反思</a></li>
+      <li class="toc-item sidebar-item toc-level-2 toc-top"><a class="sidebar-link" href="#前言">📖 前言</a></li>
+      <li class="toc-item sidebar-item toc-level-2 toc-top"><a class="sidebar-link" href="#基础设置">🔧 基础设置</a></li>
+      <li class="toc-item sidebar-item toc-level-3"><a class="sidebar-link" href="#dotfiles">🗂️ Dotfiles</a></li>
+      <li class="toc-item sidebar-item toc-level-3"><a class="sidebar-link" href="#命令行配置">💻 命令行配置</a></li>
+      <li class="toc-item sidebar-item toc-level-3"><a class="sidebar-link" href="#系统设置">⚙️ 系统设置</a></li>
+      <li class="toc-item sidebar-item toc-level-2 toc-top"><a class="sidebar-link" href="#应用">📱 应用</a></li>
+      <li class="toc-item sidebar-item toc-level-3"><a class="sidebar-link" href="#raycast">🌟 Raycast</a></li>
+      <li class="toc-item sidebar-item toc-level-3"><a class="sidebar-link" href="#alttab">🌟 AltTab</a></li>
+      <li class="toc-item sidebar-item toc-level-2 toc-top"><a class="sidebar-link" href="#备份">💾 备份</a></li>
+      <li class="toc-item sidebar-item toc-level-3"><a class="sidebar-link" href="#3-2-1-原则">3-2-1 原则</a></li>
+      <li class="toc-item sidebar-item toc-level-2 toc-top"><a class="sidebar-link" href="#反思">💭 反思</a></li>
         </ol>
       </div>
     </aside>
@@ -168,7 +168,7 @@
     <div><dt>length</dt><dd>1,568 字 · 4 分钟</dd></div>
     <div><dt>lang</dt><dd><a href="/shape-your-mac/" hreflang="en">en</a> · <span aria-current="true">zh</span></dd></div>
   </dl>
-  <div class="article-body"><h1 id="前言">📖 前言</h1>
+  <div class="article-body"><h2 id="前言">📖 前言</h2>
 <p>你有没有自己布置过房间？说实话，我没有，因为我一直在租房。不过我确实会整理家里的东西。此刻，我正躺在沙发上写这篇文章。为了让它更生动，我决定放一张我现在环境的照片。</p>
 <p>
 <picture>
@@ -178,13 +178,13 @@
 </p>
 <p>我搬到上海还不到两个月，但已经让这里变得很熟悉了。这让我能够生活得开心且有一定&quot;效率&quot;——意思是房间的布置完美契合了我的日常习惯。</p>
 <p>电脑也是一样，尤其是工作电脑。我们并不拥有工作电脑，它们属于公司。但既然我们大部分屏幕时间都花在上面，确保它们让我们感到愉快且高效就很重要。</p>
-<h1 id="基础设置">🔧 基础设置</h1>
-<h2 id="dotfiles">🗂️ Dotfiles</h2>
+<h2 id="基础设置">🔧 基础设置</h2>
+<h3 id="dotfiles">🗂️ Dotfiles</h3>
 <p><a href="https://github.com/yujiachen-y/dotfiles">https://github.com/yujiachen-y/dotfiles</a></p>
 <p>Dotfiles 可以看作是你电脑的元数据。我个人使用 <a href="https://github.com/yujiachen-y/dotfiles/blob/main/macos/Brewfile">Brewfile</a> 来管理 Mac 的依赖。只要一个应用能通过 Homebrew 安装，你就应该把它加到 Brewfile 里。实际上，只有极少数应用无法通过 Homebrew 安装。</p>
 <p>我还把 <a href="https://github.com/yujiachen-y/dotfiles/blob/main/zsh/.zshrc">.zshrc</a> 和 <a href="https://github.com/yujiachen-y/dotfiles/blob/main/.vimrc">.vimrc</a> 文件存在 Dotfiles 里，这样就不需要重复配置 zsh 和 vim。</p>
 <p>此外，把 <a href="https://github.com/yujiachen-y/dotfiles/blob/main/macos/system_settings.sh">Mac 设置</a>存在 dotfiles 里也是常见做法。不过，有些无法通过命令行修改的选项仍然需要去系统设置里手动配置。顺便说一句，每次我配置新 Mac 时，系统偏好设置里总会有 UI 变化和新选项。所以手动设置也帮我发现了苹果做了哪些改动 哈哈。</p>
-<h2 id="命令行配置">💻 命令行配置</h2>
+<h3 id="命令行配置">💻 命令行配置</h3>
 <p>
 <picture>
   <source srcset="/assets/posts/shape-your-mac/zh/image_2.webp" type="image/webp" />
@@ -240,7 +240,7 @@
 </picture>
 </p>
 <p>这里我想提两个我最喜欢的 macOS 命令：<a href="https://ss64.com/mac/pbpaste.html">pbpaste</a> 和 <a href="https://ss64.com/mac/pbcopy.html">pbcopy</a>。它们的 Manual Page 上已经有一些实用的示例了。</p>
-<h2 id="系统设置">⚙️ 系统设置</h2>
+<h3 id="系统设置">⚙️ 系统设置</h3>
 <blockquote>
 <p>如前所述，以下部分设置可以整合到你的 dotfiles 中。</p>
 </blockquote>
@@ -302,11 +302,11 @@
 </p>
 <pre class="hljs"><code>defaults write -g ApplePressAndHoldEnabled -bool <span class="hljs-literal">false</span>
 </code></pre>
-<h1 id="应用">📱 应用</h1>
+<h2 id="应用">📱 应用</h2>
 <blockquote>
 <p>如前所述，这里列出的所有应用都应该通过 Brewfile 来管理。</p>
 </blockquote>
-<h2 id="raycast">🌟 Raycast</h2>
+<h3 id="raycast">🌟 Raycast</h3>
 <p>
 <picture>
   <source srcset="/assets/posts/shape-your-mac/zh/image_12.webp" type="image/webp" />
@@ -380,7 +380,7 @@
   <img src="/assets/posts/shape-your-mac/zh/image_20.png" alt="" class="article-image" width="1080" height="702" loading="lazy" />
 </picture>
 </p>
-<h2 id="alttab">🌟 AltTab</h2>
+<h3 id="alttab">🌟 AltTab</h3>
 <p>在 Mac 上，你可以用 Command + Tab 切换应用。但内置的应用切换器不支持在同一应用的不同窗口之间切换，如果你需要频繁在一个应用的多个窗口间来回切换，就会很不方便。</p>
 <p>
 <picture>
@@ -395,7 +395,7 @@
   <img src="/assets/posts/shape-your-mac/zh/image_22.png" alt="" class="article-image" width="1080" height="701" loading="lazy" />
 </picture>
 </p>
-<h1 id="备份">💾 备份</h1>
+<h2 id="备份">💾 备份</h2>
 <blockquote>
 <p>世界上有两种人：</p>
 <ul>
@@ -407,7 +407,7 @@
 </li>
 </ul>
 <p>你拥有但没有备份的数据，随时可能永远消失。下面我们将介绍一些良好的备份基础知识以及某些方法的陷阱。</p>
-<h2 id="3-2-1-原则"><strong>3-2-1 原则</strong></h2>
+<h3 id="3-2-1-原则"><strong>3-2-1 原则</strong></h3>
 <p><a href="https://www.us-cert.gov/sites/default/files/publications/data_backup_options.pdf">3-2-1 原则</a>是备份数据的通用推荐策略。它要求你：</p>
 <ul>
 <li>
@@ -423,7 +423,7 @@
 <p>这个建议背后的核心思想是不要把所有鸡蛋放在一个篮子里。拥有 2 个不同的设备/磁盘可以确保单个硬件故障不会夺走你所有的数据。同样，如果你唯一的备份存放在家里，而房子着火了或被盗了，你就会失去一切——这就是异地备份的意义。本地备份提供可用性和速度，异地备份提供灾难恢复能力。</p>
 <p>来源：<a href="https://missing.csail.mit.edu/2019/backups/">Backups</a></p>
 </blockquote>
-<h1 id="反思">💭 反思</h1>
+<h2 id="反思">💭 反思</h2>
 <ul>
 <li>
 <p>定期审视你的工作流程，尝试提升效率。</p>
@@ -442,7 +442,17 @@
 <p><em>由 Claude 从英文原文翻译。</em></p>
 </div>
 </div>
-
+ 
+<nav class="post-nav" aria-label="更多文章">
+  <a class="post-nav-link post-nav-newer" href="/2024-year-in-review/">
+    <span class="post-nav-meta"><span class="post-nav-dir">← 较新</span><time datetime="2024-08-03">2024-08-03</time></span>
+    <span class="post-nav-title">2024 年小结</span>
+  </a>
+  <a class="post-nav-link post-nav-older" href="/the-permission-model-myth/zh/">
+    <span class="post-nav-meta"><span class="post-nav-dir">较早 →</span><time datetime="2024-02-25">2024-02-25</time></span>
+    <span class="post-nav-title">权限模型的迷思</span>
+  </a>
+</nav>
             <section class="citation-section" data-citation-section></section>
             <section class="comment-section" data-comment-section></section>
           </div>
@@ -452,12 +462,12 @@
 <footer class="site-footer">
   <div class="footer-paper has-curls">
     <p class="footer-name" aria-hidden="true"><span>J</span><span>i</span><span>a</span><span>c</span><span>h</span><span>e</span><span>n</span> <span>Y</span><span>u</span></p>
-    <a class="page-curl page-curl-newer" href="/2024-year-in-review/" style="--next-age: 0.273" aria-label="上一页: 2024 年小结">
-      <span class="page-curl-under"><i>← 上一页</i><b>2024 年小结</b><small>2024</small></span>
+    <a class="page-curl page-curl-newer" href="/2024-year-in-review/" style="--next-age: 0.274" aria-label="较新: 2024 年小结">
+      <span class="page-curl-under"><i>← 较新</i><b>2024 年小结</b><small>2024</small></span>
       <span class="page-curl-flap"></span>
     </a>
-    <a class="page-curl page-curl-older" href="/the-permission-model-myth/zh/" style="--next-age: 0.328" aria-label="下一页: 权限模型的迷思">
-      <span class="page-curl-under"><i>下一页 →</i><b>权限模型的迷思</b><small>2024</small></span>
+    <a class="page-curl page-curl-older" href="/the-permission-model-myth/zh/" style="--next-age: 0.329" aria-label="较早: 权限模型的迷思">
+      <span class="page-curl-under"><i>较早 →</i><b>权限模型的迷思</b><small>2024</small></span>
       <span class="page-curl-flap"></span>
     </a>
   </div>
@@ -500,6 +510,10 @@
     "pageId": "shape-your-mac",
     "pageUrl": "https://www.yujiachen.com/shape-your-mac/zh/",
     "pageTitle": "打造你的 Mac"
+  },
+  "searchPlaceholder": {
+    "en": "Search titles and text, e.g. OpenAI, consensus",
+    "zh": "搜标题或正文，比如 OpenAI、事务、无明"
   }
 }
     </script>

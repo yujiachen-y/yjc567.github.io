@@ -62,7 +62,7 @@
 <link rel="modulepreload" href="/app/theme.js" />
 <link rel="modulepreload" href="/app/toc.js" />
   </head>
-  <body data-page="post"  class="aged" style="--age: 0.28; --paper-age: 0.28">
+  <body data-page="post"  class="aged" style="--age: 0.281; --paper-age: 0.281">
     <div id="root">
       
 <header class="navbar" data-navbar>
@@ -82,7 +82,7 @@
           <kbd class="search-trigger-key" data-search-key>⌘K</kbd>
         </button>
         <div class="lang-switcher" data-lang-switcher data-lang-switcher-mode="toggle">
-          <button class="lang-toggle" type="button" data-lang-toggle>EN</button>
+          <button class="lang-toggle" type="button" data-lang-toggle><span data-lang="en">EN</span><span class="lang-toggle-sep" aria-hidden="true">/</span><span data-lang="zh">中文</span></button>
         </div>
         <div class="theme-switcher" data-theme-switcher data-theme-state="light">
           <button class="theme-trigger" type="button" data-theme-trigger aria-label="Theme mode toggle" aria-pressed="false">
@@ -113,7 +113,7 @@
   <a class="nav-mobile-link" href="/ask-ai/" data-nav-mobile="ask-ai">Ask AI</a>
   <div class="nav-mobile-utilities">
     <div class="lang-switcher" data-lang-switcher data-lang-switcher-mode="toggle">
-      <button class="lang-toggle" type="button" data-lang-toggle>EN</button>
+      <button class="lang-toggle" type="button" data-lang-toggle><span data-lang="en">EN</span><span class="lang-toggle-sep" aria-hidden="true">/</span><span data-lang="zh">中文</span></button>
     </div>
     <div class="theme-switcher" data-theme-switcher data-theme-state="light">
       <button class="theme-trigger" type="button" data-theme-trigger aria-label="Theme mode toggle" aria-pressed="false">
@@ -142,17 +142,17 @@
       <div class="toc-panel sidebar-panel-content" data-toc-panel>
         <div class="toc-title sidebar-title">Contents</div>
         <ol class="toc-list sidebar-list">
-      <li class="toc-item sidebar-item toc-level-1 toc-top"><a class="sidebar-link" href="#foreword">📖 Foreword</a></li>
-      <li class="toc-item sidebar-item toc-level-1 toc-top"><a class="sidebar-link" href="#basic-settings">🔧 Basic Settings</a></li>
-      <li class="toc-item sidebar-item toc-level-2"><a class="sidebar-link" href="#dotfiles">🗂️ Dotfiles</a></li>
-      <li class="toc-item sidebar-item toc-level-2"><a class="sidebar-link" href="#command-line-config">💻 Command Line Config</a></li>
-      <li class="toc-item sidebar-item toc-level-2"><a class="sidebar-link" href="#system-settings">⚙️ System Settings</a></li>
-      <li class="toc-item sidebar-item toc-level-1 toc-top"><a class="sidebar-link" href="#apps">📱 Apps</a></li>
-      <li class="toc-item sidebar-item toc-level-2"><a class="sidebar-link" href="#raycast">🌟 Raycast</a></li>
-      <li class="toc-item sidebar-item toc-level-2"><a class="sidebar-link" href="#alttab">🌟 AltTab</a></li>
-      <li class="toc-item sidebar-item toc-level-1 toc-top"><a class="sidebar-link" href="#backup">💾 Backup</a></li>
-      <li class="toc-item sidebar-item toc-level-2"><a class="sidebar-link" href="#3-2-1-rule">3-2-1 Rule</a></li>
-      <li class="toc-item sidebar-item toc-level-1 toc-top"><a class="sidebar-link" href="#reflecting-thoughts">💭 Reflecting thoughts</a></li>
+      <li class="toc-item sidebar-item toc-level-2 toc-top"><a class="sidebar-link" href="#foreword">📖 Foreword</a></li>
+      <li class="toc-item sidebar-item toc-level-2 toc-top"><a class="sidebar-link" href="#basic-settings">🔧 Basic Settings</a></li>
+      <li class="toc-item sidebar-item toc-level-3"><a class="sidebar-link" href="#dotfiles">🗂️ Dotfiles</a></li>
+      <li class="toc-item sidebar-item toc-level-3"><a class="sidebar-link" href="#command-line-config">💻 Command Line Config</a></li>
+      <li class="toc-item sidebar-item toc-level-3"><a class="sidebar-link" href="#system-settings">⚙️ System Settings</a></li>
+      <li class="toc-item sidebar-item toc-level-2 toc-top"><a class="sidebar-link" href="#apps">📱 Apps</a></li>
+      <li class="toc-item sidebar-item toc-level-3"><a class="sidebar-link" href="#raycast">🌟 Raycast</a></li>
+      <li class="toc-item sidebar-item toc-level-3"><a class="sidebar-link" href="#alttab">🌟 AltTab</a></li>
+      <li class="toc-item sidebar-item toc-level-2 toc-top"><a class="sidebar-link" href="#backup">💾 Backup</a></li>
+      <li class="toc-item sidebar-item toc-level-3"><a class="sidebar-link" href="#3-2-1-rule">3-2-1 Rule</a></li>
+      <li class="toc-item sidebar-item toc-level-2 toc-top"><a class="sidebar-link" href="#reflecting-thoughts">💭 Reflecting thoughts</a></li>
         </ol>
       </div>
     </aside>
@@ -168,7 +168,7 @@
     <div><dt>length</dt><dd>1,061 words · 5 min</dd></div>
     <div><dt>lang</dt><dd><span aria-current="true">en</span> · <a href="/shape-your-mac/zh/" hreflang="zh">zh</a></dd></div>
   </dl>
-  <div class="article-body"><h1 id="foreword">📖 Foreword</h1>
+  <div class="article-body"><h2 id="foreword">📖 Foreword</h2>
 <p>Have you ever furnished your own house? To be honest, I haven’t, since I always rent. However, I do arrange things in my home. Right now, I’m lying on my sofa and writing this doc. To make it more engaging, I decided to include a picture of my current setup.</p>
 <p>
 <picture>
@@ -178,13 +178,13 @@
 </p>
 <p>I moved to Shanghai less than two months ago, but I’ve already made this place feel familiar. This has allowed me to live happily and somewhat “efficiently” — meaning the room’s arrangement perfectly suits my daily routine.</p>
 <p>It’s the same with a computer, especially a work computer. We don’t own our work computers; they belong to the company. But since we spend most of our screen time on them, it’s important to make sure they make us feel happy and efficient.</p>
-<h1 id="basic-settings">🔧 Basic Settings</h1>
-<h2 id="dotfiles">🗂️ Dotfiles</h2>
+<h2 id="basic-settings">🔧 Basic Settings</h2>
+<h3 id="dotfiles">🗂️ Dotfiles</h3>
 <p><a href="https://github.com/yujiachen-y/dotfiles">https://github.com/yujiachen-y/dotfiles</a></p>
 <p>Dotfiles can be considered the metadata of your computer. Personally, I use <a href="https://github.com/yujiachen-y/dotfiles/blob/main/macos/Brewfile">a Brewfile</a> to manage my Mac’s dependencies. As long as an app can be installed via Homebrew, you should add it to your Brewfile. In fact, only a few apps cannot be installed using Homebrew.</p>
 <p>I also store my <a href="https://github.com/yujiachen-y/dotfiles/blob/main/zsh/.zshrc">.zshrc</a> and <a href="https://github.com/yujiachen-y/dotfiles/blob/main/.vimrc">.vimrc</a> files in Dotfiles, so that I don’t need to configure my zsh and vim repeatedly.</p>
 <p>Additionally, it’s common practice to store <a href="https://github.com/yujiachen-y/dotfiles/blob/main/macos/system_settings.sh">Mac settings</a> in dotfiles. However, you still need to go to System Settings to configure some options that can’t be changed via command lines. BTW, every time I set up a Mac, there are often UI changes and new options in System Preferences. So, the manual setup helps me discover what changes Apple has made lol.</p>
-<h2 id="command-line-config">💻 Command Line Config</h2>
+<h3 id="command-line-config">💻 Command Line Config</h3>
 <p>
 <picture>
   <source srcset="/assets/posts/shape-your-mac/en/image_2.webp" type="image/webp" />
@@ -240,7 +240,7 @@
 </picture>
 </p>
 <p>I want to mention 2 of my favorite macOS commands here: <a href="https://ss64.com/mac/pbpaste.html">pbpaste</a> and <a href="https://ss64.com/mac/pbcopy.html">pbcopy</a>. There are already some useful examples on the manual pages.</p>
-<h2 id="system-settings">⚙️ System Settings</h2>
+<h3 id="system-settings">⚙️ System Settings</h3>
 <blockquote>
 <p>As mentioned earlier, some settings below can be incorporated into your dotfiles.</p>
 </blockquote>
@@ -302,11 +302,11 @@
 </p>
 <pre class="hljs"><code>defaults write -g ApplePressAndHoldEnabled -bool <span class="hljs-literal">false</span>
 </code></pre>
-<h1 id="apps">📱 Apps</h1>
+<h2 id="apps">📱 Apps</h2>
 <blockquote>
 <p>As I mentioned earlier, all apps listed here should be managed by your Brewfile.</p>
 </blockquote>
-<h2 id="raycast">🌟 Raycast</h2>
+<h3 id="raycast">🌟 Raycast</h3>
 <p>
 <picture>
   <source srcset="/assets/posts/shape-your-mac/en/image_12.webp" type="image/webp" />
@@ -380,7 +380,7 @@
   <img src="/assets/posts/shape-your-mac/en/image_20.png" alt="" class="article-image" width="1080" height="702" loading="lazy" />
 </picture>
 </p>
-<h2 id="alttab">🌟 AltTab</h2>
+<h3 id="alttab">🌟 AltTab</h3>
 <p>On a Mac, you can use Command + Tab to switch between apps. However, the built-in app switcher doesn’t allow you to switch between windows within the same application, which can be inconvenient if you need to frequently switch between windows of a single app.</p>
 <p>
 <picture>
@@ -395,7 +395,7 @@
   <img src="/assets/posts/shape-your-mac/en/image_22.png" alt="" class="article-image" width="1080" height="701" loading="lazy" />
 </picture>
 </p>
-<h1 id="backup">💾 Backup</h1>
+<h2 id="backup">💾 Backup</h2>
 <blockquote>
 <p>There are two types of people:</p>
 <ul>
@@ -407,7 +407,7 @@
 </li>
 </ul>
 <p>Any data you own that you haven’t backed up is data that could be gone at any moment, forever. Here we will cover some good backup basics and the pitfalls of some approaches.</p>
-<h2 id="3-2-1-rule"><strong>3-2-1 Rule</strong></h2>
+<h3 id="3-2-1-rule"><strong>3-2-1 Rule</strong></h3>
 <p>The <a href="https://www.us-cert.gov/sites/default/files/publications/data_backup_options.pdf">3-2-1 rule</a> is a general recommended strategy for backing up your data. It state that you should have:</p>
 <ul>
 <li>
@@ -423,7 +423,7 @@
 <p>The main idea behind this recommendation is not to put all your eggs in one basket. Having 2 different devices/disks ensures that a single hardware failure doesn’t take away all your data. Similarly, if you store your only backup at home and the house burns down or gets robbed you lose everything, that’s what the offsite copy is there for. Onsite backups give you availability and speed, offsite give you the resiliency should a disaster happen.</p>
 <p>From <a href="https://missing.csail.mit.edu/2019/backups/">Backups</a></p>
 </blockquote>
-<h1 id="reflecting-thoughts">💭 Reflecting thoughts</h1>
+<h2 id="reflecting-thoughts">💭 Reflecting thoughts</h2>
 <ul>
 <li>
 <p>Routinely review your workflow and try to improve your efficiency.</p>
@@ -440,7 +440,17 @@
 </ul>
 </div>
 </div>
-
+ 
+<nav class="post-nav" aria-label="More posts">
+  <a class="post-nav-link post-nav-newer" href="/new-things-vs-old-things/">
+    <span class="post-nav-meta"><span class="post-nav-dir">← Newer</span><time datetime="2024-12-26">2024-12-26</time></span>
+    <span class="post-nav-title">New Things vs Old Things</span>
+  </a>
+  <a class="post-nav-link post-nav-older" href="/the-permission-model-myth/">
+    <span class="post-nav-meta"><span class="post-nav-dir">Older →</span><time datetime="2024-02-25">2024-02-25</time></span>
+    <span class="post-nav-title">The Permission Model Myth</span>
+  </a>
+</nav>
             <section class="citation-section" data-citation-section></section>
             <section class="comment-section" data-comment-section></section>
           </div>
@@ -450,12 +460,12 @@
 <footer class="site-footer">
   <div class="footer-paper has-curls">
     <p class="footer-name" aria-hidden="true"><span>J</span><span>i</span><span>a</span><span>c</span><span>h</span><span>e</span><span>n</span> <span>Y</span><span>u</span></p>
-    <a class="page-curl page-curl-newer" href="/new-things-vs-old-things/" style="--next-age: 0.224" aria-label="Previous: New Things vs Old Things">
-      <span class="page-curl-under"><i>← Previous</i><b>New Things vs Old Things</b><small>2024</small></span>
+    <a class="page-curl page-curl-newer" href="/new-things-vs-old-things/" style="--next-age: 0.224" aria-label="Newer: New Things vs Old Things">
+      <span class="page-curl-under"><i>← Newer</i><b>New Things vs Old Things</b><small>2024</small></span>
       <span class="page-curl-flap"></span>
     </a>
-    <a class="page-curl page-curl-older" href="/the-permission-model-myth/" style="--next-age: 0.328" aria-label="Next: The Permission Model Myth">
-      <span class="page-curl-under"><i>Next →</i><b>The Permission Model Myth</b><small>2024</small></span>
+    <a class="page-curl page-curl-older" href="/the-permission-model-myth/" style="--next-age: 0.329" aria-label="Older: The Permission Model Myth">
+      <span class="page-curl-under"><i>Older →</i><b>The Permission Model Myth</b><small>2024</small></span>
       <span class="page-curl-flap"></span>
     </a>
   </div>
@@ -498,6 +508,10 @@
     "pageId": "shape-your-mac",
     "pageUrl": "https://www.yujiachen.com/shape-your-mac/",
     "pageTitle": "Shape Your Mac"
+  },
+  "searchPlaceholder": {
+    "en": "Search titles and text, e.g. OpenAI, consensus",
+    "zh": "搜标题或正文，比如 OpenAI、事务、无明"
   }
 }
     </script>

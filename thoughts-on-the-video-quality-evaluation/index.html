@@ -82,7 +82,7 @@
           <kbd class="search-trigger-key" data-search-key>⌘K</kbd>
         </button>
         <div class="lang-switcher" data-lang-switcher data-lang-switcher-mode="toggle">
-          <button class="lang-toggle" type="button" data-lang-toggle>EN</button>
+          <button class="lang-toggle" type="button" data-lang-toggle><span data-lang="en">EN</span><span class="lang-toggle-sep" aria-hidden="true">/</span><span data-lang="zh">中文</span></button>
         </div>
         <div class="theme-switcher" data-theme-switcher data-theme-state="light">
           <button class="theme-trigger" type="button" data-theme-trigger aria-label="Theme mode toggle" aria-pressed="false">
@@ -113,7 +113,7 @@
   <a class="nav-mobile-link" href="/ask-ai/" data-nav-mobile="ask-ai">Ask AI</a>
   <div class="nav-mobile-utilities">
     <div class="lang-switcher" data-lang-switcher data-lang-switcher-mode="toggle">
-      <button class="lang-toggle" type="button" data-lang-toggle>EN</button>
+      <button class="lang-toggle" type="button" data-lang-toggle><span data-lang="en">EN</span><span class="lang-toggle-sep" aria-hidden="true">/</span><span data-lang="zh">中文</span></button>
     </div>
     <div class="theme-switcher" data-theme-switcher data-theme-state="light">
       <button class="theme-trigger" type="button" data-theme-trigger aria-label="Theme mode toggle" aria-pressed="false">
@@ -204,7 +204,17 @@
 </section>
 </div>
 </div>
-
+ 
+<nav class="post-nav" aria-label="More posts">
+  <a class="post-nav-link post-nav-newer" href="/buddhism-wuming/">
+    <span class="post-nav-meta"><span class="post-nav-dir">← Newer</span><time datetime="2026-04-24">2026-04-24</time></span>
+    <span class="post-nav-title">Buddhism and Avidyā</span>
+  </a>
+  <a class="post-nav-link post-nav-older" href="/bridging-the-gap-how-engineers-and-pms-ship-winning-llm-features-together/">
+    <span class="post-nav-meta"><span class="post-nav-dir">Older →</span><time datetime="2025-09-15">2025-09-15</time></span>
+    <span class="post-nav-title">How Engineers and PMs Ship LLM Features Together</span>
+  </a>
+</nav>
             <section class="citation-section" data-citation-section></section>
             <section class="comment-section" data-comment-section></section>
           </div>
@@ -214,12 +224,12 @@
 <footer class="site-footer">
   <div class="footer-paper has-curls">
     <p class="footer-name" aria-hidden="true"><span>J</span><span>i</span><span>a</span><span>c</span><span>h</span><span>e</span><span>n</span> <span>Y</span><span>u</span></p>
-    <a class="page-curl page-curl-newer" href="/buddhism-wuming/" style="--next-age: 0.058" aria-label="Previous: Buddhism and Avidyā">
-      <span class="page-curl-under"><i>← Previous</i><b>Buddhism and Avidyā</b><small>2026</small></span>
+    <a class="page-curl page-curl-newer" href="/buddhism-wuming/" style="--next-age: 0.059" aria-label="Newer: Buddhism and Avidyā">
+      <span class="page-curl-under"><i>← Newer</i><b>Buddhism and Avidyā</b><small>2026</small></span>
       <span class="page-curl-flap"></span>
     </a>
-    <a class="page-curl page-curl-older" href="/bridging-the-gap-how-engineers-and-pms-ship-winning-llm-features-together/" style="--next-age: 0.134" aria-label="Next: How Engineers and PMs Ship LLM Features Together">
-      <span class="page-curl-under"><i>Next →</i><b>How Engineers and PMs Ship LLM Features Together</b><small>2025</small></span>
+    <a class="page-curl page-curl-older" href="/bridging-the-gap-how-engineers-and-pms-ship-winning-llm-features-together/" style="--next-age: 0.134" aria-label="Older: How Engineers and PMs Ship LLM Features Together">
+      <span class="page-curl-under"><i>Older →</i><b>How Engineers and PMs Ship LLM Features Together</b><small>2025</small></span>
       <span class="page-curl-flap"></span>
     </a>
   </div>
@@ -262,6 +272,10 @@
     "pageId": "thoughts-on-the-video-quality-evaluation",
     "pageUrl": "https://www.yujiachen.com/thoughts-on-the-video-quality-evaluation/",
     "pageTitle": "Thoughts on the Video Quality Evaluation"
+  },
+  "searchPlaceholder": {
+    "en": "Search titles and text, e.g. OpenAI, consensus",
+    "zh": "搜标题或正文，比如 OpenAI、事务、无明"
   }
 }
     </script>

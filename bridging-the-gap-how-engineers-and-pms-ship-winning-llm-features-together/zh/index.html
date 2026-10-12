@@ -82,7 +82,7 @@
           <kbd class="search-trigger-key" data-search-key>⌘K</kbd>
         </button>
         <div class="lang-switcher" data-lang-switcher data-lang-switcher-mode="toggle">
-          <button class="lang-toggle" type="button" data-lang-toggle>EN</button>
+          <button class="lang-toggle" type="button" data-lang-toggle><span data-lang="en">EN</span><span class="lang-toggle-sep" aria-hidden="true">/</span><span data-lang="zh">中文</span></button>
         </div>
         <div class="theme-switcher" data-theme-switcher data-theme-state="light">
           <button class="theme-trigger" type="button" data-theme-trigger aria-label="Theme mode toggle" aria-pressed="false">
@@ -113,7 +113,7 @@
   <a class="nav-mobile-link" href="/ask-ai/" data-nav-mobile="ask-ai">Ask AI</a>
   <div class="nav-mobile-utilities">
     <div class="lang-switcher" data-lang-switcher data-lang-switcher-mode="toggle">
-      <button class="lang-toggle" type="button" data-lang-toggle>EN</button>
+      <button class="lang-toggle" type="button" data-lang-toggle><span data-lang="en">EN</span><span class="lang-toggle-sep" aria-hidden="true">/</span><span data-lang="zh">中文</span></button>
     </div>
     <div class="theme-switcher" data-theme-switcher data-theme-state="light">
       <button class="theme-trigger" type="button" data-theme-trigger aria-label="Theme mode toggle" aria-pressed="false">
@@ -159,14 +159,14 @@
   <dl class="frontmatter">
     <div><dt>date</dt><dd><time datetime="2025-09-15">2025-09-15</time></dd></div>
     <div><dt>tags</dt><dd>#tech</dd></div>
-    <div><dt>length</dt><dd>1,319 字 · 3 分钟</dd></div>
+    <div><dt>length</dt><dd>1,309 字 · 3 分钟</dd></div>
     <div><dt>lang</dt><dd><a href="/bridging-the-gap-how-engineers-and-pms-ship-winning-llm-features-together/" hreflang="en">en</a> · <span aria-current="true">zh</span></dd></div>
   </dl>
   <div class="article-body"><blockquote>
 <p>这篇文章最初由我发布于 Medium 的 <strong>OpusClip Engineering</strong>。<br>
 原文：<a href="https://medium.com/opus-engineering/bridging-the-gap-how-engineers-and-pms-ship-winning-llm-features-together-147a36ab4089">Bridging the Gap: How Engineers and PMs Ship Winning LLM Features Together</a></p>
 </blockquote>
-<h1 id="写给-pm-的-llm-工程知识点">写给 PM 的 LLM 工程知识点</h1>
+
 <p><strong>TL;DR：</strong></p>
 <ul>
 <li><strong>Prompt 放在配置里，不要写死在代码里。</strong></li>
@@ -348,7 +348,17 @@ Provide clear reasoning for why content is or isn't relevant.
 <p><em>由 Claude 从英文原文翻译。</em></p>
 </div>
 </div>
-
+ 
+<nav class="post-nav" aria-label="更多文章">
+  <a class="post-nav-link post-nav-newer" href="/thoughts-on-the-video-quality-evaluation/zh/">
+    <span class="post-nav-meta"><span class="post-nav-dir">← 较新</span><time datetime="2026-02-08">2026-02-08</time></span>
+    <span class="post-nav-title">经验之谈：视频质量评估</span>
+  </a>
+  <a class="post-nav-link post-nav-older" href="/how-to-1-on-1/zh/">
+    <span class="post-nav-meta"><span class="post-nav-dir">较早 →</span><time datetime="2025-02-15">2025-02-15</time></span>
+    <span class="post-nav-title">如何进行 1-on-1</span>
+  </a>
+</nav>
             <section class="citation-section" data-citation-section></section>
             <section class="comment-section" data-comment-section></section>
           </div>
@@ -358,12 +368,12 @@ Provide clear reasoning for why content is or isn't relevant.
 <footer class="site-footer">
   <div class="footer-paper has-curls">
     <p class="footer-name" aria-hidden="true"><span>J</span><span>i</span><span>a</span><span>c</span><span>h</span><span>e</span><span>n</span> <span>Y</span><span>u</span></p>
-    <a class="page-curl page-curl-newer" href="/thoughts-on-the-video-quality-evaluation/zh/" style="--next-age: 0.084" aria-label="上一页: 经验之谈：视频质量评估">
-      <span class="page-curl-under"><i>← 上一页</i><b>经验之谈：视频质量评估</b><small>2026</small></span>
+    <a class="page-curl page-curl-newer" href="/thoughts-on-the-video-quality-evaluation/zh/" style="--next-age: 0.084" aria-label="较新: 经验之谈：视频质量评估">
+      <span class="page-curl-under"><i>← 较新</i><b>经验之谈：视频质量评估</b><small>2026</small></span>
       <span class="page-curl-flap"></span>
     </a>
-    <a class="page-curl page-curl-older" href="/how-to-1-on-1/zh/" style="--next-age: 0.206" aria-label="下一页: 如何进行 1-on-1">
-      <span class="page-curl-under"><i>下一页 →</i><b>如何进行 1-on-1</b><small>2025</small></span>
+    <a class="page-curl page-curl-older" href="/how-to-1-on-1/zh/" style="--next-age: 0.207" aria-label="较早: 如何进行 1-on-1">
+      <span class="page-curl-under"><i>较早 →</i><b>如何进行 1-on-1</b><small>2025</small></span>
       <span class="page-curl-flap"></span>
     </a>
   </div>
@@ -392,7 +402,7 @@ Provide clear reasoning for why content is or isn't relevant.
       {
   "pageType": "post",
   "lang": "zh",
-  "wordCount": 1319,
+  "wordCount": 1309,
   "langSwitchUrl": "/bridging-the-gap-how-engineers-and-pms-ship-winning-llm-features-together/",
   "langSwitcherMode": "toggle",
   "markdownUrl": "/posts/bridging-the-gap-how-engineers-and-pms-ship-winning-llm-features-together/post.md",
@@ -406,6 +416,10 @@ Provide clear reasoning for why content is or isn't relevant.
     "pageId": "bridging-the-gap-how-engineers-and-pms-ship-winning-llm-features-together",
     "pageUrl": "https://www.yujiachen.com/bridging-the-gap-how-engineers-and-pms-ship-winning-llm-features-together/zh/",
     "pageTitle": "写给 PM 的 LLM 工程知识点"
+  },
+  "searchPlaceholder": {
+    "en": "Search titles and text, e.g. OpenAI, consensus",
+    "zh": "搜标题或正文，比如 OpenAI、事务、无明"
   }
 }
     </script>

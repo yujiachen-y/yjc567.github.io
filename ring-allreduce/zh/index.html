@@ -82,7 +82,7 @@
           <kbd class="search-trigger-key" data-search-key>⌘K</kbd>
         </button>
         <div class="lang-switcher" data-lang-switcher data-lang-switcher-mode="toggle">
-          <button class="lang-toggle" type="button" data-lang-toggle>EN</button>
+          <button class="lang-toggle" type="button" data-lang-toggle><span data-lang="en">EN</span><span class="lang-toggle-sep" aria-hidden="true">/</span><span data-lang="zh">中文</span></button>
         </div>
         <div class="theme-switcher" data-theme-switcher data-theme-state="light">
           <button class="theme-trigger" type="button" data-theme-trigger aria-label="Theme mode toggle" aria-pressed="false">
@@ -113,7 +113,7 @@
   <a class="nav-mobile-link" href="/ask-ai/" data-nav-mobile="ask-ai">Ask AI</a>
   <div class="nav-mobile-utilities">
     <div class="lang-switcher" data-lang-switcher data-lang-switcher-mode="toggle">
-      <button class="lang-toggle" type="button" data-lang-toggle>EN</button>
+      <button class="lang-toggle" type="button" data-lang-toggle><span data-lang="en">EN</span><span class="lang-toggle-sep" aria-hidden="true">/</span><span data-lang="zh">中文</span></button>
     </div>
     <div class="theme-switcher" data-theme-switcher data-theme-state="light">
       <button class="theme-trigger" type="button" data-theme-trigger aria-label="Theme mode toggle" aria-pressed="false">
@@ -201,7 +201,13 @@
 <p><a href="https://www.zhihu.com/question/57799212/answer/292494636?utm_source=ZHShareTargetIDMore&amp;utm_medium=social&amp;utm_oi=37729630945280">https://www.zhihu.com/question/57799212/answer/292494636?utm_source=ZHShareTargetIDMore&amp;utm_medium=social&amp;utm_oi=37729630945280</a></p>
 </div>
 </div>
-
+ 
+<nav class="post-nav" aria-label="更多文章">
+  <a class="post-nav-link post-nav-newer" href="/2018-year-in-review/">
+    <span class="post-nav-meta"><span class="post-nav-dir">← 较新</span><time datetime="2018-12-29">2018-12-29</time></span>
+    <span class="post-nav-title">2018 年小结</span>
+  </a>
+</nav>
             <section class="citation-section" data-citation-section></section>
             <section class="comment-section" data-comment-section></section>
           </div>
@@ -211,8 +217,8 @@
 <footer class="site-footer">
   <div class="footer-paper has-curls">
     <p class="footer-name" aria-hidden="true"><span>J</span><span>i</span><span>a</span><span>c</span><span>h</span><span>e</span><span>n</span> <span>Y</span><span>u</span></p>
-    <a class="page-curl page-curl-newer" href="/2018-year-in-review/" style="--next-age: 0.973" aria-label="上一页: 2018 年小结">
-      <span class="page-curl-under"><i>← 上一页</i><b>2018 年小结</b><small>2018</small></span>
+    <a class="page-curl page-curl-newer" href="/2018-year-in-review/" style="--next-age: 0.974" aria-label="较新: 2018 年小结">
+      <span class="page-curl-under"><i>← 较新</i><b>2018 年小结</b><small>2018</small></span>
       <span class="page-curl-flap"></span>
     </a>
   </div>
@@ -255,6 +261,10 @@
     "pageId": "ring-allreduce",
     "pageUrl": "https://www.yujiachen.com/ring-allreduce/zh/",
     "pageTitle": "ring-allreduce 简介"
+  },
+  "searchPlaceholder": {
+    "en": "Search titles and text, e.g. OpenAI, consensus",
+    "zh": "搜标题或正文，比如 OpenAI、事务、无明"
   }
 }
     </script>

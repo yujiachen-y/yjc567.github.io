@@ -61,7 +61,7 @@
 <link rel="modulepreload" href="/app/theme.js" />
 <link rel="modulepreload" href="/app/toc.js" />
   </head>
-  <body data-page="post"  class="aged" style="--age: 0.54; --paper-age: 0.54">
+  <body data-page="post"  class="aged" style="--age: 0.541; --paper-age: 0.541">
     <div id="root">
       
 <header class="navbar" data-navbar>
@@ -81,7 +81,7 @@
           <kbd class="search-trigger-key" data-search-key>⌘K</kbd>
         </button>
         <div class="lang-switcher" data-lang-switcher data-lang-switcher-mode="hidden">
-          <button class="lang-toggle" type="button" data-lang-toggle>EN</button>
+          <button class="lang-toggle" type="button" data-lang-toggle><span data-lang="en">EN</span><span class="lang-toggle-sep" aria-hidden="true">/</span><span data-lang="zh">中文</span></button>
         </div>
         <div class="theme-switcher" data-theme-switcher data-theme-state="light">
           <button class="theme-trigger" type="button" data-theme-trigger aria-label="Theme mode toggle" aria-pressed="false">
@@ -112,7 +112,7 @@
   <a class="nav-mobile-link" href="/ask-ai/" data-nav-mobile="ask-ai">Ask AI</a>
   <div class="nav-mobile-utilities">
     <div class="lang-switcher" data-lang-switcher data-lang-switcher-mode="hidden">
-      <button class="lang-toggle" type="button" data-lang-toggle>EN</button>
+      <button class="lang-toggle" type="button" data-lang-toggle><span data-lang="en">EN</span><span class="lang-toggle-sep" aria-hidden="true">/</span><span data-lang="zh">中文</span></button>
     </div>
     <div class="theme-switcher" data-theme-switcher data-theme-state="light">
       <button class="theme-trigger" type="button" data-theme-trigger aria-label="Theme mode toggle" aria-pressed="false">
@@ -141,19 +141,19 @@
       <div class="toc-panel sidebar-panel-content" data-toc-panel>
         <div class="toc-title sidebar-title">目录</div>
         <ol class="toc-list sidebar-list">
-      <li class="toc-item sidebar-item toc-level-1 toc-top"><a class="sidebar-link" href="#shell">Shell</a></li>
-      <li class="toc-item sidebar-item toc-level-2"><a class="sidebar-link" href="#tools">Tools</a></li>
-      <li class="toc-item sidebar-item toc-level-2"><a class="sidebar-link" href="#job-control">Job Control</a></li>
-      <li class="toc-item sidebar-item toc-level-2"><a class="sidebar-link" href="#aliases">Aliases</a></li>
-      <li class="toc-item sidebar-item toc-level-2"><a class="sidebar-link" href="#dotfiles">Dotfiles</a></li>
-      <li class="toc-item sidebar-item toc-level-2"><a class="sidebar-link" href="#ssh-configuration">SSH Configuration</a></li>
-      <li class="toc-item sidebar-item toc-level-2"><a class="sidebar-link" href="#zsh">ZSH</a></li>
-      <li class="toc-item sidebar-item toc-level-1 toc-top"><a class="sidebar-link" href="#editors-vim">Editors (Vim)</a></li>
-      <li class="toc-item sidebar-item toc-level-1 toc-top"><a class="sidebar-link" href="#keyboard-remapping">Keyboard remapping</a></li>
-      <li class="toc-item sidebar-item toc-level-1 toc-top"><a class="sidebar-link" href="#daemon-automation">Daemon &amp; Automation</a></li>
-      <li class="toc-item sidebar-item toc-level-1 toc-top"><a class="sidebar-link" href="#fuse">FUSE</a></li>
-      <li class="toc-item sidebar-item toc-level-1 toc-top"><a class="sidebar-link" href="#backups">Backups</a></li>
-      <li class="toc-item sidebar-item toc-level-1 toc-top"><a class="sidebar-link" href="#filesystem-hierarchy-standard">Filesystem Hierarchy Standard</a></li>
+      <li class="toc-item sidebar-item toc-level-2 toc-top"><a class="sidebar-link" href="#shell">Shell</a></li>
+      <li class="toc-item sidebar-item toc-level-3"><a class="sidebar-link" href="#tools">Tools</a></li>
+      <li class="toc-item sidebar-item toc-level-3"><a class="sidebar-link" href="#job-control">Job Control</a></li>
+      <li class="toc-item sidebar-item toc-level-3"><a class="sidebar-link" href="#aliases">Aliases</a></li>
+      <li class="toc-item sidebar-item toc-level-3"><a class="sidebar-link" href="#dotfiles">Dotfiles</a></li>
+      <li class="toc-item sidebar-item toc-level-3"><a class="sidebar-link" href="#ssh-configuration">SSH Configuration</a></li>
+      <li class="toc-item sidebar-item toc-level-3"><a class="sidebar-link" href="#zsh">ZSH</a></li>
+      <li class="toc-item sidebar-item toc-level-2 toc-top"><a class="sidebar-link" href="#editors-vim">Editors (Vim)</a></li>
+      <li class="toc-item sidebar-item toc-level-2 toc-top"><a class="sidebar-link" href="#keyboard-remapping">Keyboard remapping</a></li>
+      <li class="toc-item sidebar-item toc-level-2 toc-top"><a class="sidebar-link" href="#daemon-automation">Daemon &amp; Automation</a></li>
+      <li class="toc-item sidebar-item toc-level-2 toc-top"><a class="sidebar-link" href="#fuse">FUSE</a></li>
+      <li class="toc-item sidebar-item toc-level-2 toc-top"><a class="sidebar-link" href="#backups">Backups</a></li>
+      <li class="toc-item sidebar-item toc-level-2 toc-top"><a class="sidebar-link" href="#filesystem-hierarchy-standard">Filesystem Hierarchy Standard</a></li>
         </ol>
       </div>
     </aside>
@@ -173,7 +173,7 @@
 </blockquote>
 <p>知道的前提是知道自己不知道什么。</p>
 <p><a href="https://missing.csail.mit.edu/">The Missing Semester of Your CS Education</a></p>
-<h1 id="shell">Shell</h1>
+<h2 id="shell">Shell</h2>
 <ul>
 <li>Connecting programs
 <ul>
@@ -204,7 +204,7 @@
 </ul>
 <p><a href="https://tldp.org/LDP/abs/html/special-chars.html">Special Characters</a></p>
 <p><a href="https://github.com/koalaman/shellcheck">GitHub - koalaman/shellcheck: ShellCheck, a static analysis tool for shell scripts</a></p>
-<h2 id="tools">Tools</h2>
+<h3 id="tools">Tools</h3>
 <p><a href="https://en.wikipedia.org/wiki/List_of_GNU_Core_Utilities_commands">GNU coreutils</a> via <a href="https://formulae.brew.sh/formula/coreutils">Homebrew</a></p>
 <ul>
 <li><code>xargs</code></li>
@@ -217,7 +217,7 @@
 <li>Stream editor <code>sed</code> , a useful programming language <code>awk</code> (人生苦短，我用Python</li>
 <li><a href="https://www.man7.org/linux/man-pages/man1/rsync.1.html"><code>rsync</code></a></li>
 </ul>
-<h2 id="job-control">Job Control</h2>
+<h3 id="job-control">Job Control</h3>
 <ul>
 <li><code>kill</code></li>
 <li>Stop a process <code>Ctrl-Z</code></li>
@@ -225,12 +225,12 @@
 <li><code>jobs</code></li>
 <li><code>tmux</code></li>
 </ul>
-<h2 id="aliases">Aliases</h2>
+<h3 id="aliases">Aliases</h3>
 <p>Note that there is no space around the equal sign <code>=</code>, because <a href="https://www.man7.org/linux/man-pages/man1/alias.1p.html"><code>alias</code></a>  is a shell command that takes a single argument.</p>
-<h2 id="dotfiles">Dotfiles</h2>
+<h3 id="dotfiles">Dotfiles</h3>
 <p><a href="https://dotfiles.github.io/">GitHub does dotfiles - dotfiles.github.io</a></p>
 <p><a href="https://abdullah.today/encrypted-dotfiles/">Use Git to manage secret content</a> via creating bash functions to encrypt / decrypt secret content into / from Git.</p>
-<h3 id="portability">Portability</h3>
+<h4 id="portability">Portability</h4>
 <pre class="hljs"><code><span class="hljs-keyword">if</span> [[ <span class="hljs-string">&quot;<span class="hljs-subst">$(uname)</span>&quot;</span> == <span class="hljs-string">&quot;Linux&quot;</span> ]]; <span class="hljs-keyword">then</span> {do_something}; <span class="hljs-keyword">fi</span>
 
 <span class="hljs-comment"># Check before using shell-specific features</span>
@@ -248,7 +248,7 @@
 <pre class="hljs"><code>[include]
     path = ~/.gitconfig_local
 </code></pre>
-<h2 id="ssh-configuration">SSH Configuration</h2>
+<h3 id="ssh-configuration">SSH Configuration</h3>
 <ul>
 <li>generate a key pair → <code>ssh-keygen</code></li>
 <li>manage passphrase → <code>ssh-agent</code> <code>gpg-agent</code></li>
@@ -267,27 +267,27 @@
 Host *.mit.edu
     User foobaz
 </code></pre>
-<h3 id="key-based-authentication">Key based authentication</h3>
+<h4 id="key-based-authentication">Key based authentication</h4>
 <pre class="hljs"><code><span class="hljs-built_in">cat</span> .ssh/id_ed25519.pub | ssh foobar@remote <span class="hljs-string">&#x27;cat &gt;&gt; ~/.ssh/authorized_keys&#x27;</span>
 
 <span class="hljs-comment"># Or</span>
 ssh-copy-id -i .ssh/id_ed25519 foobar@remote
 </code></pre>
-<h3 id="copying-files-over-ssh">Copying files over SSH</h3>
+<h4 id="copying-files-over-ssh">Copying files over SSH</h4>
 <p><code>rsync</code></p>
-<h2 id="zsh">ZSH</h2>
+<h3 id="zsh">ZSH</h3>
 <p>为什么不使用fish？</p>
 <p>因为我对shell不够了解，fish不支持Posix标准，我觉得有很多我不知道的坑。</p>
-<h1 id="editors-vim">Editors (Vim)</h1>
+<h2 id="editors-vim">Editors (Vim)</h2>
 <p>Know keyboard shortcuts about your most recently used editor!d</p>
 <p><a href="https://missing.csail.mit.edu/2020/files/vimrc"></a></p>
 <p><a href="https://vimawesome.com/"></a></p>
 <p><a href="https://reversed.top/2016-08-13/big-list-of-vim-like-software">The big list of Vim-like software</a></p>
-<h1 id="keyboard-remapping">Keyboard remapping</h1>
+<h2 id="keyboard-remapping">Keyboard remapping</h2>
 <p><a href="https://pqrs.org/osx/karabiner/">Karabiner-Elements</a></p>
 <p><a href="https://github.com/koekeishiya/skhd">GitHub - koekeishiya/skhd: Simple hotkey daemon for macOS</a></p>
 <p><a href="https://folivora.ai/">folivora.ai - Great Tools for your Mac!</a></p>
-<h1 id="daemon-automation">Daemon &amp; Automation</h1>
+<h2 id="daemon-automation">Daemon &amp; Automation</h2>
 <p><code>systemd</code></p>
 <pre class="hljs"><code><span class="hljs-comment"># /etc/systemd/system/myapp.service</span>
 [Unit]
@@ -306,7 +306,7 @@ WantedBy=multi-user.target
 </code></pre>
 <p><code>cron</code></p>
 <p><a href="https://www.hammerspoon.org/">Hammerspoon</a></p>
-<h1 id="fuse">FUSE</h1>
+<h2 id="fuse">FUSE</h2>
 <p>filesystem in user space，对文件系统的中间抽象，用来加上远程、分布式、加密等功能。</p>
 <ul>
 <li><a href="https://github.com/libfuse/sshfs">sshfs</a> - Open locally remote files/folder through an SSH connection.</li>
@@ -315,9 +315,9 @@ WantedBy=multi-user.target
 <li><a href="https://keybase.io/docs/kbfs">kbfs</a> - Distributed filesystem with end-to-end encryption. You can have private, shared and public folders.</li>
 <li><a href="https://borgbackup.readthedocs.io/en/stable/usage/mount.html">borgbackup</a> - Mount your deduplicated, compressed and encrypted backups for ease of browsing.</li>
 </ul>
-<h1 id="backups">Backups</h1>
+<h2 id="backups">Backups</h2>
 <p><a href="https://www.cisa.gov/uscert/sites/default/files/publications/data_backup_options.pdf">https://www.cisa.gov/uscert/sites/default/files/publications/data_backup_options.pdf</a></p>
-<h1 id="filesystem-hierarchy-standard">Filesystem Hierarchy Standard</h1>
+<h2 id="filesystem-hierarchy-standard">Filesystem Hierarchy Standard</h2>
 <ul>
 <li><code>/bin</code> - Essential command binaries</li>
 <li><code>/sbin</code> - Essential system binaries, usually to be run by root</li>
@@ -339,7 +339,17 @@ WantedBy=multi-user.target
 </ul>
 </div>
 </div>
-
+ 
+<nav class="post-nav" aria-label="更多文章">
+  <a class="post-nav-link post-nav-newer" href="/personal-data-backup-practices/">
+    <span class="post-nav-meta"><span class="post-nav-dir">← 较新</span><time datetime="2022-07-02">2022-07-02</time></span>
+    <span class="post-nav-title">个人数据备份实践</span>
+  </a>
+  <a class="post-nav-link post-nav-older" href="/dont-be-a-programmer/zh/">
+    <span class="post-nav-meta"><span class="post-nav-dir">较早 →</span><time datetime="2022-05-01">2022-05-01</time></span>
+    <span class="post-nav-title">不要成为一个程序员</span>
+  </a>
+</nav>
             <section class="citation-section" data-citation-section></section>
             <section class="comment-section" data-comment-section></section>
           </div>
@@ -349,12 +359,12 @@ WantedBy=multi-user.target
 <footer class="site-footer">
   <div class="footer-paper has-curls">
     <p class="footer-name" aria-hidden="true"><span>J</span><span>i</span><span>a</span><span>c</span><span>h</span><span>e</span><span>n</span> <span>Y</span><span>u</span></p>
-    <a class="page-curl page-curl-newer" href="/personal-data-backup-practices/" style="--next-age: 0.534" aria-label="上一页: 个人数据备份实践">
-      <span class="page-curl-under"><i>← 上一页</i><b>个人数据备份实践</b><small>2022</small></span>
+    <a class="page-curl page-curl-newer" href="/personal-data-backup-practices/" style="--next-age: 0.535" aria-label="较新: 个人数据备份实践">
+      <span class="page-curl-under"><i>← 较新</i><b>个人数据备份实践</b><small>2022</small></span>
       <span class="page-curl-flap"></span>
     </a>
-    <a class="page-curl page-curl-older" href="/dont-be-a-programmer/zh/" style="--next-age: 0.555" aria-label="下一页: 不要成为一个程序员">
-      <span class="page-curl-under"><i>下一页 →</i><b>不要成为一个程序员</b><small>2022</small></span>
+    <a class="page-curl page-curl-older" href="/dont-be-a-programmer/zh/" style="--next-age: 0.556" aria-label="较早: 不要成为一个程序员">
+      <span class="page-curl-under"><i>较早 →</i><b>不要成为一个程序员</b><small>2022</small></span>
       <span class="page-curl-flap"></span>
     </a>
   </div>
@@ -397,6 +407,10 @@ WantedBy=multi-user.target
     "pageId": "the-missing-semester-of-your-cs-education",
     "pageUrl": "https://www.yujiachen.com/the-missing-semester-of-your-cs-education/",
     "pageTitle": "编程以外的编程知识"
+  },
+  "searchPlaceholder": {
+    "en": "Search titles and text, e.g. OpenAI, consensus",
+    "zh": "搜标题或正文，比如 OpenAI、事务、无明"
   }
 }
     </script>

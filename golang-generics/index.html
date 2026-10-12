@@ -62,7 +62,7 @@
 <link rel="modulepreload" href="/app/theme.js" />
 <link rel="modulepreload" href="/app/toc.js" />
   </head>
-  <body data-page="post"  class="aged" style="--age: 0.422; --paper-age: 0.422">
+  <body data-page="post"  class="aged" style="--age: 0.423; --paper-age: 0.423">
     <div id="root">
       
 <header class="navbar" data-navbar>
@@ -82,7 +82,7 @@
           <kbd class="search-trigger-key" data-search-key>⌘K</kbd>
         </button>
         <div class="lang-switcher" data-lang-switcher data-lang-switcher-mode="toggle">
-          <button class="lang-toggle" type="button" data-lang-toggle>EN</button>
+          <button class="lang-toggle" type="button" data-lang-toggle><span data-lang="en">EN</span><span class="lang-toggle-sep" aria-hidden="true">/</span><span data-lang="zh">中文</span></button>
         </div>
         <div class="theme-switcher" data-theme-switcher data-theme-state="light">
           <button class="theme-trigger" type="button" data-theme-trigger aria-label="Theme mode toggle" aria-pressed="false">
@@ -113,7 +113,7 @@
   <a class="nav-mobile-link" href="/ask-ai/" data-nav-mobile="ask-ai">Ask AI</a>
   <div class="nav-mobile-utilities">
     <div class="lang-switcher" data-lang-switcher data-lang-switcher-mode="toggle">
-      <button class="lang-toggle" type="button" data-lang-toggle>EN</button>
+      <button class="lang-toggle" type="button" data-lang-toggle><span data-lang="en">EN</span><span class="lang-toggle-sep" aria-hidden="true">/</span><span data-lang="zh">中文</span></button>
     </div>
     <div class="theme-switcher" data-theme-switcher data-theme-state="light">
       <button class="theme-trigger" type="button" data-theme-trigger aria-label="Theme mode toggle" aria-pressed="false">
@@ -142,26 +142,26 @@
       <div class="toc-panel sidebar-panel-content" data-toc-panel>
         <div class="toc-title sidebar-title">Contents</div>
         <ol class="toc-list sidebar-list">
-      <li class="toc-item sidebar-item toc-level-1 toc-top"><a class="sidebar-link" href="#terminology">Terminology</a></li>
-      <li class="toc-item sidebar-item toc-level-1 toc-top"><a class="sidebar-link" href="#overview">Overview</a></li>
-      <li class="toc-item sidebar-item toc-level-1 toc-top"><a class="sidebar-link" href="#type-constraints">Type Constraints</a></li>
-      <li class="toc-item sidebar-item toc-level-2"><a class="sidebar-link" href="#underlying-type">Underlying Type</a></li>
-      <li class="toc-item sidebar-item toc-level-2"><a class="sidebar-link" href="#difference-between-using-type-parameters-and-using-interfaces-directly">Difference Between Using Type Parameters and Using Interfaces Directly</a></li>
-      <li class="toc-item sidebar-item toc-level-1 toc-top"><a class="sidebar-link" href="#type-inference">Type Inference</a></li>
-      <li class="toc-item sidebar-item toc-level-2"><a class="sidebar-link" href="#type-unification">Type Unification</a></li>
-      <li class="toc-item sidebar-item toc-level-2"><a class="sidebar-link" href="#function-argument-type-inference">Function Argument Type Inference</a></li>
-      <li class="toc-item sidebar-item toc-level-2"><a class="sidebar-link" href="#constraint-type-inference">Constraint Type Inference</a></li>
-      <li class="toc-item sidebar-item toc-level-2"><a class="sidebar-link" href="#type-inference-execution-steps">Type Inference Execution Steps</a></li>
-      <li class="toc-item sidebar-item toc-level-1 toc-top"><a class="sidebar-link" href="#other-topics">Other Topics</a></li>
-      <li class="toc-item sidebar-item toc-level-2"><a class="sidebar-link" href="#the-generics-dilemma">The Generics Dilemma</a></li>
-      <li class="toc-item sidebar-item toc-level-2"><a class="sidebar-link" href="#using-t-instead-of-t">Using [T] Instead of &lt;T&gt;</a></li>
-      <li class="toc-item sidebar-item toc-level-2"><a class="sidebar-link" href="#why-don-t-go-generics-support-methods">Why Don’t Go Generics Support Methods?</a></li>
-      <li class="toc-item sidebar-item toc-level-2"><a class="sidebar-link" href="#supporting-pointer-methods">Supporting Pointer Methods</a></li>
-      <li class="toc-item sidebar-item toc-level-2"><a class="sidebar-link" href="#using-generics-in-practice">Using Generics in Practice</a></li>
-      <li class="toc-item sidebar-item toc-level-1 toc-top"><a class="sidebar-link" href="#type-inference-code">Type Inference Code</a></li>
-      <li class="toc-item sidebar-item toc-level-2"><a class="sidebar-link" href="#type-unification-2">Type Unification</a></li>
-      <li class="toc-item sidebar-item toc-level-2"><a class="sidebar-link" href="#function-argument-type-inference-2">Function Argument Type Inference</a></li>
-      <li class="toc-item sidebar-item toc-level-2"><a class="sidebar-link" href="#constraint-type-inference-2">Constraint Type Inference</a></li>
+      <li class="toc-item sidebar-item toc-level-2 toc-top"><a class="sidebar-link" href="#terminology">Terminology</a></li>
+      <li class="toc-item sidebar-item toc-level-2 toc-top"><a class="sidebar-link" href="#overview">Overview</a></li>
+      <li class="toc-item sidebar-item toc-level-2 toc-top"><a class="sidebar-link" href="#type-constraints">Type Constraints</a></li>
+      <li class="toc-item sidebar-item toc-level-3"><a class="sidebar-link" href="#underlying-type">Underlying Type</a></li>
+      <li class="toc-item sidebar-item toc-level-3"><a class="sidebar-link" href="#difference-between-using-type-parameters-and-using-interfaces-directly">Difference Between Using Type Parameters and Using Interfaces Directly</a></li>
+      <li class="toc-item sidebar-item toc-level-2 toc-top"><a class="sidebar-link" href="#type-inference">Type Inference</a></li>
+      <li class="toc-item sidebar-item toc-level-3"><a class="sidebar-link" href="#type-unification">Type Unification</a></li>
+      <li class="toc-item sidebar-item toc-level-3"><a class="sidebar-link" href="#function-argument-type-inference">Function Argument Type Inference</a></li>
+      <li class="toc-item sidebar-item toc-level-3"><a class="sidebar-link" href="#constraint-type-inference">Constraint Type Inference</a></li>
+      <li class="toc-item sidebar-item toc-level-3"><a class="sidebar-link" href="#type-inference-execution-steps">Type Inference Execution Steps</a></li>
+      <li class="toc-item sidebar-item toc-level-2 toc-top"><a class="sidebar-link" href="#other-topics">Other Topics</a></li>
+      <li class="toc-item sidebar-item toc-level-3"><a class="sidebar-link" href="#the-generics-dilemma">The Generics Dilemma</a></li>
+      <li class="toc-item sidebar-item toc-level-3"><a class="sidebar-link" href="#using-t-instead-of-t">Using [T] Instead of &lt;T&gt;</a></li>
+      <li class="toc-item sidebar-item toc-level-3"><a class="sidebar-link" href="#why-don-t-go-generics-support-methods">Why Don’t Go Generics Support Methods?</a></li>
+      <li class="toc-item sidebar-item toc-level-3"><a class="sidebar-link" href="#supporting-pointer-methods">Supporting Pointer Methods</a></li>
+      <li class="toc-item sidebar-item toc-level-3"><a class="sidebar-link" href="#using-generics-in-practice">Using Generics in Practice</a></li>
+      <li class="toc-item sidebar-item toc-level-2 toc-top"><a class="sidebar-link" href="#type-inference-code">Type Inference Code</a></li>
+      <li class="toc-item sidebar-item toc-level-3"><a class="sidebar-link" href="#type-unification-2">Type Unification</a></li>
+      <li class="toc-item sidebar-item toc-level-3"><a class="sidebar-link" href="#function-argument-type-inference-2">Function Argument Type Inference</a></li>
+      <li class="toc-item sidebar-item toc-level-3"><a class="sidebar-link" href="#constraint-type-inference-2">Constraint Type Inference</a></li>
         </ol>
       </div>
     </aside>
@@ -193,7 +193,7 @@
 <blockquote>
 <p>Main reference: <a href="https://go.googlesource.com/proposal/+/HEAD/design/43651-type-parameters.md">https://go.googlesource.com/proposal/+/HEAD/design/43651-type-parameters.md</a></p>
 </blockquote>
-<h1 id="terminology">Terminology</h1>
+<h2 id="terminology">Terminology</h2>
 <ul>
 <li><strong>parameter</strong> (formal parameter): A placeholder declared in a function definition, e.g., <code>a</code> and <code>b</code> in <code>func Add(a, b int) int</code>. In this article, “type parameter” refers to this concept; for example, <code>T</code> in <code>func Add[T any](a, b T) T</code>.</li>
 <li><strong>argument</strong> (actual argument): A concrete value passed at a call site, e.g., <code>a</code> and <code>2</code> in <code>sum := Add[int](a, 2)</code>. In this article, “type argument” refers to this concept; for example, <code>int</code> in <code>Add[int]</code>.</li>
@@ -212,7 +212,7 @@ mul_op     = &quot;*&quot; | &quot;/&quot; | &quot;%&quot; | &quot;&lt;&lt;&quot
 unary_op   = &quot;+&quot; | &quot;-&quot; | &quot;!&quot; | &quot;^&quot; | &quot;*&quot; | &quot;&amp;&quot; | &quot;&lt;-&quot; .
 
 </code></pre>
-<h1 id="overview">Overview</h1>
+<h2 id="overview">Overview</h2>
 <p>The Go type parameters proposal summarizes several key points (<a href="https://go.googlesource.com/proposal/+/HEAD/design/43651-type-parameters.md#summary">https://go.googlesource.com/proposal/+/HEAD/design/43651-type-parameters.md#summary</a>):</p>
 <ul>
 <li>Functions and types can have type parameters, and those parameters are constrained by interface types. (Methods are not included here; methods cannot declare their own type parameters.)</li>
@@ -227,7 +227,7 @@ unary_op   = &quot;+&quot; | &quot;-&quot; | &quot;!&quot; | &quot;^&quot; | &qu
 <li>Some other related topics</li>
 <li>Selected type inference code</li>
 </ul>
-<h1 id="type-constraints">Type Constraints</h1>
+<h2 id="type-constraints">Type Constraints</h2>
 <p>Go type constraints can be seen as the “type” of type parameters. For example, in the following, <code>T</code> is the type parameter and <code>Stringer</code> is the type constraint—i.e., the type of <code>T</code>.</p>
 <pre class="hljs"><code><span class="hljs-function"><span class="hljs-keyword">func</span> <span class="hljs-title">Stringify</span>[<span class="hljs-title">T</span> <span class="hljs-title">Stringer</span>]<span class="hljs-params">(s []T)</span></span> (ret []<span class="hljs-type">string</span>) {
         <span class="hljs-keyword">for</span> _, v := <span class="hljs-keyword">range</span> s {
@@ -258,7 +258,7 @@ unary_op   = &quot;+&quot; | &quot;-&quot; | &quot;!&quot; | &quot;^&quot; | &qu
 
 </code></pre>
 <p>As we can see, the <code>Integer</code> interface doesn’t define any methods. This brings us to the concept of underlying types.</p>
-<h2 id="underlying-type">Underlying Type</h2>
+<h3 id="underlying-type">Underlying Type</h3>
 <blockquote>
 <p>Reference: <a href="https://go.dev/ref/spec#Underlying_types">https://go.dev/ref/spec#Underlying_types</a></p>
 </blockquote>
@@ -294,7 +294,7 @@ unary_op   = &quot;+&quot; | &quot;-&quot; | &quot;!&quot; | &quot;^&quot; | &qu
 </code></pre>
 <p>Here A1 follows rule 1, so its underlying type is string. A2 follows rule 2, and its underlying type is also string.</p>
 <p>Looking back at the definition of <code>constraints.Integer</code>, it represents the set of all types whose underlying type is <code>int</code>, <code>int8</code>, <code>int16</code>, <code>int32</code>, <code>int64</code>, <code>uint</code>, <code>uint8</code>, <code>uint16</code>, <code>uint32</code>, <code>uint64</code>, or <code>uintptr</code>. All these types support the <code>+</code> operation, so the <code>Add</code> function can be defined.</p>
-<h2 id="difference-between-using-type-parameters-and-using-interfaces-directly">Difference Between Using Type Parameters and Using Interfaces Directly</h2>
+<h3 id="difference-between-using-type-parameters-and-using-interfaces-directly">Difference Between Using Type Parameters and Using Interfaces Directly</h3>
 <blockquote>
 <p>Reference: <a href="https://go.googlesource.com/proposal/+/HEAD/design/43651-type-parameters.md#values-of-type-parameters-are-not-boxed">https://go.googlesource.com/proposal/+/HEAD/design/43651-type-parameters.md#values-of-type-parameters-are-not-boxed</a></p>
 </blockquote>
@@ -317,14 +317,14 @@ unary_op   = &quot;+&quot; | &quot;-&quot; | &quot;!&quot; | &quot;^&quot; | &qu
 
 </code></pre>
 <p>Also recall how Go interfaces are represented: an interface value carries both dynamic type information and the underlying value. That extra boxing/unboxing path may add overhead, which generics can often avoid.</p>
-<h1 id="type-inference">Type Inference</h1>
+<h2 id="type-inference">Type Inference</h2>
 <p>Not every call to a generic function requires explicit type arguments. Under certain conditions, the compiler can infer missing type arguments. Note that inference itself does not complete all semantic checks; some checks happen afterward.</p>
 <p>The following sections introduce 3 key concepts of type inference, followed by the complete type inference process.</p>
-<h2 id="type-unification">Type Unification</h2>
+<h3 id="type-unification">Type Unification</h3>
 <blockquote>
 <p>Reference: <a href="https://go.dev/ref/spec#Type_unification">https://go.dev/ref/spec#Type_unification</a></p>
 </blockquote>
-<h3 id="description">Description</h3>
+<h4 id="description">Description</h4>
 <p><strong>Input</strong></p>
 <ol>
 <li>A mapping P -&gt; A, where P is a type parameter and A is a known type argument. For example, for <code>func Add[T any](a, b T) T</code>, a possible mapping is T -&gt; int.</li>
@@ -334,7 +334,7 @@ unary_op   = &quot;+&quot; | &quot;-&quot; | &quot;!&quot; | &quot;^&quot; | &qu
 <ol>
 <li>Given known mappings, determine whether the two input types can be unified.</li>
 </ol>
-<h3 id="operations">Operations</h3>
+<h4 id="operations">Operations</h4>
 <ol>
 <li>For types without type parameters: the type must be equivalent to the comparison type, otherwise unification fails.
 <ol>
@@ -351,7 +351,7 @@ unary_op   = &quot;+&quot; | &quot;-&quot; | &quot;!&quot; | &quot;^&quot; | &qu
 </li>
 <li>If matching succeeds and the type contains type parameters, we learn a new P’ -&gt; A’ mapping, which is added to the existing mappings.</li>
 </ol>
-<h2 id="function-argument-type-inference">Function Argument Type Inference</h2>
+<h3 id="function-argument-type-inference">Function Argument Type Inference</h3>
 <blockquote>
 <p>References:</p>
 <ul>
@@ -359,11 +359,11 @@ unary_op   = &quot;+&quot; | &quot;-&quot; | &quot;!&quot; | &quot;^&quot; | &qu
 <li><a href="https://go.dev/ref/spec#Function_argument_type_inference">https://go.dev/ref/spec#Function_argument_type_inference</a></li>
 </ul>
 </blockquote>
-<h3 id="description-2">Description</h3>
+<h4 id="description-2">Description</h4>
 <ol>
 <li>When calling a function with type parameters, if the caller doesn’t pass type arguments, infer the type arguments from the actual arguments.</li>
 </ol>
-<h3 id="implementation">Implementation</h3>
+<h4 id="implementation">Implementation</h4>
 <ol>
 <li>Get a set of <code>(parameter, argument)</code> pairs from the caller’s actual arguments.</li>
 <li>First ignore combinations where the <code>argument</code> has no type (i.e., constants, which have their own type inference rules). For typed <code>(parameter, argument)</code> pairs, perform type unification on their corresponding types and continuously update the mapping P -&gt; A.</li>
@@ -390,16 +390,16 @@ unary_op   = &quot;+&quot; | &quot;-&quot; | &quot;!&quot; | &quot;^&quot; | &qu
 <p>First, perform type unification on <code>(v []Number, vector []float64)</code>, yielding the mapping <code>Number -&gt; float64</code>.</p>
 <p>Since we’ve already inferred the mapping <code>Number -&gt; float64</code>, the <code>(s Number, 42)</code> pair doesn’t need type unification.</p>
 <p>If there were no mapping <code>Number -&gt; float64</code>, the type of 42 in <code>(s Number, 42)</code> would be treated as the default type <code>int</code>, and the mapping would be <code>Number -&gt; int</code>.</p>
-<h2 id="constraint-type-inference">Constraint Type Inference</h2>
+<h3 id="constraint-type-inference">Constraint Type Inference</h3>
 <blockquote>
 <p>Reference: <a href="https://go.dev/ref/spec#Constraint_type_inference">https://go.dev/ref/spec#Constraint_type_inference</a></p>
 </blockquote>
-<h3 id="description-3">Description</h3>
+<h4 id="description-3">Description</h4>
 <ol>
 <li>Based on defined type parameter constraints, infer other unknown type parameters from a known type parameter.</li>
 <li>For example, given a function <code>func Double[S ~[]E, E constraints.Integer](s S) S</code>, called as <code>Double([]int{1, 2, 3})</code>, we can infer <code>E -&gt; int</code> from the type constraint <code>S ~[]E</code> and <code>S -&gt; []int</code>.</li>
 </ol>
-<h3 id="implementation-2">Implementation</h3>
+<h4 id="implementation-2">Implementation</h4>
 <ol>
 <li>Iterate through all type parameters:
 <ol>
@@ -410,7 +410,7 @@ unary_op   = &quot;+&quot; | &quot;-&quot; | &quot;!&quot; | &quot;^&quot; | &qu
 <li>In known mappings, if we have P -&gt; A and Q -&gt; B and A contains Q, substitute Q in A with B. For example, in <code>func Copy[T any, P *T](value T, dst P)</code>, given <code>T -&gt; int</code> and <code>P -&gt; *T</code>, we can infer <code>P -&gt; *int</code>.</li>
 <li>Repeat step 2 until no type parameter P can be found that is contained in some type argument A.</li>
 </ol>
-<h2 id="type-inference-execution-steps">Type Inference Execution Steps</h2>
+<h3 id="type-inference-execution-steps">Type Inference Execution Steps</h3>
 <blockquote>
 <p>Reference: <a href="https://github.com/golang/go/blob/go1.18/src/cmd/compile/internal/types2/infer.go#L33">https://github.com/golang/go/blob/go1.18/src/cmd/compile/internal/types2/infer.go#L33</a></p>
 </blockquote>
@@ -451,9 +451,9 @@ unary_op   = &quot;+&quot; | &quot;-&quot; | &quot;!&quot; | &quot;^&quot; | &qu
 <li>Perform type inference on untyped function arguments, i.e., on <code>(x X, 3)</code>. Take the default value <code>int</code> for constant <code>3</code>, yielding <code>X -&gt; int</code>.</li>
 <li>Perform constraint type inference again, but since all parameter types are known, it terminates early.</li>
 </ol>
-<h1 id="other-topics">Other Topics</h1>
+<h2 id="other-topics">Other Topics</h2>
 <p>A few related notes.</p>
-<h2 id="the-generics-dilemma">The Generics Dilemma</h2>
+<h3 id="the-generics-dilemma">The Generics Dilemma</h3>
 <blockquote>
 <p>Reference: <a href="https://research.swtch.com/generic">https://research.swtch.com/generic</a></p>
 </blockquote>
@@ -464,9 +464,9 @@ unary_op   = &quot;+&quot; | &quot;-&quot; | &quot;!&quot; | &quot;^&quot; | &qu
 <li><strong>Runtime</strong>: Java takes a different approach centered on erasure, with trade-offs in runtime behavior and type expressiveness.</li>
 </ul>
 <p>As discussed above, Go mainly chooses to pay more at compile time: type information needed for generic function instantiation is resolved during compilation.</p>
-<h2 id="using-t-instead-of-t">Using [T] Instead of <code>&lt;T&gt;</code></h2>
+<h3 id="using-t-instead-of-t">Using [T] Instead of <code>&lt;T&gt;</code></h3>
 <p>Many developers’ first impression of generics comes from the <code>&lt;T&gt;</code> syntax in C++ or Java. <a href="https://go.googlesource.com/proposal/+/HEAD/design/43651-type-parameters.md#why-not-use-the-syntax-like-c_and-java">The proposal explains</a> that since <code>&lt;</code> and <code>&gt;</code> are also used as comparison operators, distinguishing whether <code>&lt;</code> and <code>&gt;</code> represent comparison or type parameters would create additional burden. So <code>[T]</code> was chosen instead.</p>
-<h2 id="why-don-t-go-generics-support-methods">Why Don’t Go Generics Support Methods?</h2>
+<h3 id="why-don-t-go-generics-support-methods">Why Don’t Go Generics Support Methods?</h3>
 <blockquote>
 <p>This section is somewhat brief. For more detailed explanations and examples, see: <a href="https://go.googlesource.com/proposal/+/HEAD/design/43651-type-parameters.md#no-parameterized-methods">https://go.googlesource.com/proposal/+/HEAD/design/43651-type-parameters.md#no-parameterized-methods</a></p>
 </blockquote>
@@ -478,7 +478,7 @@ unary_op   = &quot;+&quot; | &quot;-&quot; | &quot;!&quot; | &quot;^&quot; | &qu
 
 </code></pre>
 <p>Since Go has no explicit <code>implements</code> or <code>extends</code> declaration between structs and interfaces, adding method-level type parameters would require much heavier inference to decide interface conformance, with significant compiler complexity and cost.</p>
-<h2 id="supporting-pointer-methods">Supporting Pointer Methods</h2>
+<h3 id="supporting-pointer-methods">Supporting Pointer Methods</h3>
 <p>When we define a generic function <code>F[T C]</code> and constraint <code>C</code> requires methods, passing a type <code>X</code> will fail if those required methods exist on <code>*X</code> rather than on <code>X</code>.</p>
 <p>A concrete example:</p>
 <pre class="hljs"><code><span class="hljs-keyword">type</span> Setter <span class="hljs-keyword">interface</span> {
@@ -529,7 +529,7 @@ unary_op   = &quot;+&quot; | &quot;-&quot; | &quot;!&quot; | &quot;^&quot; | &qu
 
 </code></pre>
 <p>This pattern explicitly distinguishes value type <code>T</code> from pointer type <code>PT</code>, and encodes their relationship in <code>Setter2[B any]</code>. We then convert <code>&amp;result[i]</code> to <code>PT</code>, so calling <code>Set</code> succeeds.</p>
-<h2 id="using-generics-in-practice">Using Generics in Practice</h2>
+<h3 id="using-generics-in-practice">Using Generics in Practice</h3>
 <p>With the above knowledge of defining generic functions through type constraints and understanding of type inference, let’s discuss practical applications of generics:</p>
 <ul>
 <li>Container operations.</li>
@@ -537,8 +537,8 @@ unary_op   = &quot;+&quot; | &quot;-&quot; | &quot;!&quot; | &quot;^&quot; | &qu
 <li>General-purpose operation logic. In my own code, I call a data-gateway service that returns a fixed structure. I used generics to wrap request/response handling so data from different sources can be converted into target structs with less boilerplate.</li>
 </ul>
 <p>If you have other ways of using generics in your work or have recommendations for useful generic libraries, feel free to share in the comments :)</p>
-<h1 id="type-inference-code">Type Inference Code</h1>
-<h2 id="type-unification-2">Type Unification</h2>
+<h2 id="type-inference-code">Type Inference Code</h2>
+<h3 id="type-unification-2">Type Unification</h3>
 <blockquote>
 <p>Reference: <a href="https://github.com/golang/go/blob/go1.18/src/cmd/compile/internal/types2/unify.go">https://github.com/golang/go/blob/go1.18/src/cmd/compile/internal/types2/unify.go</a></p>
 </blockquote>
@@ -618,8 +618,8 @@ unary_op   = &quot;+&quot; | &quot;-&quot; | &quot;!&quot; | &quot;^&quot; | &qu
 }
 
 </code></pre>
-<h2 id="function-argument-type-inference-2">Function Argument Type Inference</h2>
-<h3 id="typed-arguments-are-directly-unified">Typed Arguments Are Directly Unified</h3>
+<h3 id="function-argument-type-inference-2">Function Argument Type Inference</h3>
+<h4 id="typed-arguments-are-directly-unified">Typed Arguments Are Directly Unified</h4>
 <blockquote>
 <p>Reference: <a href="https://github.com/golang/go/blob/go1.18/src/cmd/compile/internal/types2/infer.go#L250">https://github.com/golang/go/blob/go1.18/src/cmd/compile/internal/types2/infer.go#L250</a></p>
 </blockquote>
@@ -657,7 +657,7 @@ unary_op   = &quot;+&quot; | &quot;-&quot; | &quot;!&quot; | &quot;^&quot; | &qu
         }
 
 </code></pre>
-<h3 id="untyped-arguments-are-assigned-constant-default-values-then-unified">Untyped Arguments Are Assigned Constant Default Values Then Unified</h3>
+<h4 id="untyped-arguments-are-assigned-constant-default-values-then-unified">Untyped Arguments Are Assigned Constant Default Values Then Unified</h4>
 <blockquote>
 <p>Reference: <a href="https://github.com/golang/go/blob/go1.18/src/cmd/compile/internal/types2/infer.go#L297">https://github.com/golang/go/blob/go1.18/src/cmd/compile/internal/types2/infer.go#L297</a></p>
 </blockquote>
@@ -682,11 +682,11 @@ unary_op   = &quot;+&quot; | &quot;-&quot; | &quot;!&quot; | &quot;^&quot; | &qu
         }
 
 </code></pre>
-<h2 id="constraint-type-inference-2">Constraint Type Inference</h2>
+<h3 id="constraint-type-inference-2">Constraint Type Inference</h3>
 <blockquote>
 <p>Reference: <a href="https://github.com/golang/go/blob/go1.18/src/cmd/compile/internal/types2/infer.go#L468">https://github.com/golang/go/blob/go1.18/src/cmd/compile/internal/types2/infer.go#L468</a></p>
 </blockquote>
-<h3 id="core-type-processing-for-type-parameters">Core Type Processing for Type Parameters</h3>
+<h4 id="core-type-processing-for-type-parameters">Core Type Processing for Type Parameters</h4>
 <p>In the first phase of constraint type inference, a new concept called “core type” is introduced. We won’t go into too much detail here—it can be understood as the underlying type of the type corresponding to a type constraint. Using core types and known arguments, some type inferences can be completed.</p>
 <pre class="hljs"><code>                <span class="hljs-keyword">for</span> i, tpar := <span class="hljs-keyword">range</span> tparams {
                         <span class="hljs-comment">// If there is a core term (i.e., a core type with tilde information)</span>
@@ -729,7 +729,7 @@ unary_op   = &quot;+&quot; | &quot;-&quot; | &quot;!&quot; | &quot;^&quot; | &qu
                 }
 
 </code></pre>
-<h3 id="mapping-simplification">Mapping Simplification</h3>
+<h4 id="mapping-simplification">Mapping Simplification</h4>
 <p>The second phase of constraint type inference continuously simplifies the mappings.</p>
 <pre class="hljs"><code>                smap := makeSubstMap(tparams, types)
                 n := <span class="hljs-number">0</span>
@@ -747,7 +747,17 @@ unary_op   = &quot;+&quot; | &quot;-&quot; | &quot;!&quot; | &quot;^&quot; | &qu
 <p><em>Translated by Claude from the Chinese original.</em></p>
 </div>
 </div>
-
+ 
+<nav class="post-nav" aria-label="More posts">
+  <a class="post-nav-link post-nav-newer" href="/the-permission-model-myth/">
+    <span class="post-nav-meta"><span class="post-nav-dir">← Newer</span><time datetime="2024-02-25">2024-02-25</time></span>
+    <span class="post-nav-title">The Permission Model Myth</span>
+  </a>
+  <a class="post-nav-link post-nav-older" href="/software-design-book-notes/">
+    <span class="post-nav-meta"><span class="post-nav-dir">Older →</span><time datetime="2022-10-09">2022-10-09</time></span>
+    <span class="post-nav-title">Notes on A Philosophy of Software Design</span>
+  </a>
+</nav>
             <section class="citation-section" data-citation-section></section>
             <section class="comment-section" data-comment-section></section>
           </div>
@@ -757,12 +767,12 @@ unary_op   = &quot;+&quot; | &quot;-&quot; | &quot;!&quot; | &quot;^&quot; | &qu
 <footer class="site-footer">
   <div class="footer-paper has-curls">
     <p class="footer-name" aria-hidden="true"><span>J</span><span>i</span><span>a</span><span>c</span><span>h</span><span>e</span><span>n</span> <span>Y</span><span>u</span></p>
-    <a class="page-curl page-curl-newer" href="/the-permission-model-myth/" style="--next-age: 0.328" aria-label="Previous: The Permission Model Myth">
-      <span class="page-curl-under"><i>← Previous</i><b>The Permission Model Myth</b><small>2024</small></span>
+    <a class="page-curl page-curl-newer" href="/the-permission-model-myth/" style="--next-age: 0.329" aria-label="Newer: The Permission Model Myth">
+      <span class="page-curl-under"><i>← Newer</i><b>The Permission Model Myth</b><small>2024</small></span>
       <span class="page-curl-flap"></span>
     </a>
-    <a class="page-curl page-curl-older" href="/software-design-book-notes/" style="--next-age: 0.5" aria-label="Next: Notes on A Philosophy of Software Design">
-      <span class="page-curl-under"><i>Next →</i><b>Notes on A Philosophy of Software Design</b><small>2022</small></span>
+    <a class="page-curl page-curl-older" href="/software-design-book-notes/" style="--next-age: 0.501" aria-label="Older: Notes on A Philosophy of Software Design">
+      <span class="page-curl-under"><i>Older →</i><b>Notes on A Philosophy of Software Design</b><small>2022</small></span>
       <span class="page-curl-flap"></span>
     </a>
   </div>
@@ -805,6 +815,10 @@ unary_op   = &quot;+&quot; | &quot;-&quot; | &quot;!&quot; | &quot;^&quot; | &qu
     "pageId": "golang-generics",
     "pageUrl": "https://www.yujiachen.com/golang-generics/",
     "pageTitle": "Golang Generics"
+  },
+  "searchPlaceholder": {
+    "en": "Search titles and text, e.g. OpenAI, consensus",
+    "zh": "搜标题或正文，比如 OpenAI、事务、无明"
   }
 }
     </script>
